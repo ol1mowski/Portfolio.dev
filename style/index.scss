@@ -26,6 +26,7 @@ $black: #000;
 $red: #ff3d00;
 $grey: #999;
 $dark-grey: #666;
+$dark-white-background-color: #f9f9f9;
 
 //box shadow
 $box-shadow-low: #e0e1e322 10px 5px 15px;
@@ -79,18 +80,15 @@ $text-size: 1.1rem;
 
 @mixin description() {
   font-size: $text-size;
+  @include textFont();
   color: $dark;
 }
 
-@mixin category() {
-  color: $orange;
-  font-weight: 600;
-}
 
 @mixin title($color) {
   font-size: 1.5rem;
   color: $color;
-  @media screen and (min-width: $big-tablets) {
+  @media screen and (min-width: $big-tablet) {
     font-size: 2rem;
   }
 }

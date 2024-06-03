@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import './globals.scss';
 
 export const metadata: Metadata = {
   title: "Oliwier Markiewicz | Twórca Stron Internetowych",
