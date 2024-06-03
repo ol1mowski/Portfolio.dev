@@ -1,2 +1,104 @@
-@import '@/style/index.scss';
+@import "@/style/index.scss";
 
+.homeContainer {
+  padding-top: 2rem;
+  scroll-margin-top: 10rem;
+  background-color: $dark-white-background-color;
+  @media screen and (min-width: $big-tablet) {
+    width: 100vw;
+  }
+
+  &__infoSection {
+    @include d-flex-column;
+    @media screen and (min-width: $big-tablet) {
+      @include d-flex;
+      flex-direction: row-reverse;
+    }
+
+    &__img {
+      width: 90%;
+      height: 90%;
+      border-radius: 30%;
+      @media screen and (min-width: $mobile) {
+        width: 30rem;
+      }
+      @media screen and (min-width: $big-tablet) {
+        width: 30%;
+        margin-right: 2rem;
+      }
+      @media screen and (min-width: 1450px) {
+        margin-right: 15rem;
+        margin-top: 1rem;
+      }
+    }
+
+    &__content {
+      margin-top: $standard-margin;
+      text-align: center;
+      width: 90vw;
+      position: relative;
+
+      &__h1 {
+        font-size: 2.5rem;
+        color: $dark;
+        @media screen and (min-width: 500px) {
+          font-size: 4rem;
+        }
+        @media screen and (min-width: 1200px) {
+          font-size: 4.5rem;
+        }
+        &__underText {
+          width: 100%;
+          position: relative;
+          &__decoration {
+            display: none;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 3.5rem;
+            width: 42rem;
+            border-radius: 1rem;
+            height: 2rem;
+            background-color: #007acc8f;
+            animation: spanAnimation 2s linear;
+            @media screen and (min-width: $desktop) {
+              display: block;
+            }
+          }
+        }
+      }
+
+      &__p {
+        margin-top: $standard-margin;
+        @include description();
+        @media screen and (min-width: 500px) {
+          width: 30rem;
+          margin: 2rem auto;
+        }
+      }
+
+      &__icons {
+        margin-top: 1.5rem;
+        @include d-flex;
+        gap: 1rem;
+        &__a {
+          will-change: color, scale;
+          transition: color, scale, 0.5s;
+        }
+        &__a:hover {
+          scale: $hover-med-scale;
+          color: $dark;
+        }
+      }
+    }
+  }
+}
+
+@keyframes spanAnimation {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 42rem;
+  }
+}
