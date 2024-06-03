@@ -1,0 +1,123 @@
+//fonts
+
+@mixin headerFont() {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin textFont() {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.7rem;
+  letter-spacing: 1.25px;
+}
+
+//colors
+
+$footer-dark-blue: #1480fba9;
+$dark-blue: #007ACC;
+$light-blue: #00BFD1;
+$white: #FEFEFE;
+$dark: #333;
+$black: #000;
+$red: #FF3D00;
+$grey: #999;
+$dark-grey: #666;
+
+//box shadow
+$box-shadow-low: #e0e1e322 10px 5px 15px;
+$box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+//margin
+$standard-margin: 1rem;
+$big-margin: 2rem;
+$small-margin: 0.5rem;
+
+//padding
+
+$small-padding: 0.7rem;
+$standard-padding: 1rem;
+$big-padding: 2rem;
+
+//hover scale size
+
+$hover-min-scale: 1.01;
+$hover-med-scale: 1.05;
+$hover-max-scale: 1.1;
+
+//border size
+
+$border-min: 0.3rem;
+$border-med: 0.5rem;
+$border-max: 1rem;
+
+//breakpoint
+
+$mobile: 560px;
+$tablet: 768px;
+$big-tablet: 900px;
+$small-desktop: 1024px;
+$desktop: 1200px;
+$large-desktop: 1700px;
+
+//gaps
+$small-gap: 0.5rem;
+$standard-gap: 1rem;
+$big-gap: 2rem;
+
+$text-size: 1.1rem;
+
+//mixins
+
+@mixin category() {
+  color: $orange;
+  font-weight: 600;
+}
+
+@mixin description() {
+  font-size: $text-size;
+  color: $dark;
+}
+
+@mixin category() {
+  color: $orange;
+  font-weight: 600;
+}
+
+@mixin title($color) {
+  font-size: 1.5rem;
+  color: $color;
+  @media screen and (min-width: $big-tablets) {
+    font-size: 2rem;
+  }
+}
+
+@mixin btn() {
+  @include d-flex;
+  gap: $small-gap;
+  background-color: $light-blue;
+  border: none;
+  padding: $small-padding $standard-padding;
+  font-size: $text-size;
+  color: $white;
+  cursor: pointer;
+  transition: scale, 0.7s;
+  will-change: scale;
+  border-radius: $border-med;
+}
+
+@mixin d-flex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+@mixin d-flex-column() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
