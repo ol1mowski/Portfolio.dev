@@ -1,9 +1,9 @@
 import Image from "next/image";
 import s from "./HomePage.page.module.scss";
 
-import TechStack from "./techStack/techStack.component";
+import TechStack from "../../UI/techStack/techStack.component";
 import img from "@/assets/main_image.svg";
-import Text from "./Text-component/Text.component";
+import Text from "../../utils/Text-component/Text.component";
 
 function HomePage() {
   return (
