@@ -32,7 +32,7 @@ function HomePage() {
             </span>
           </h1>
           <p className={s.homeContainer__infoSection__content__p}>
-            <Text textValue="Cześć! Nazywam się Oliwier Markiewicz i zajmuję się tworzeniem stron internetowych, które wyróżniają się na tle konkurencji." />
+            <Text textValue="Cześć! Nazywam się Oliwier Markiewicz i zajmuję się tworzeniem stron internetowych, które wyróżniają się na tle konkurencji 🏆 😉" />
           </p>
           <section className={s.homeContainer__infoSection__content__icons}>
             <a

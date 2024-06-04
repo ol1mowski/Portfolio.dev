@@ -37,14 +37,13 @@
       text-align: center;
       width: 90vw;
       position: relative;
-    
 
       &__h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         color: $dark;
         font-weight: 700;
         @media screen and (min-width: 500px) {
-          font-size: 4rem;
+          font-size: 3rem;
         }
         @media screen and (min-width: 1200px) {
           font-size: 4.5rem;
@@ -75,9 +74,11 @@
         margin-top: $standard-margin;
         @include description();
         text-align: left;
+        padding: 0 2rem;
         @media screen and (min-width: 500px) {
           width: 30rem;
           margin: 2rem auto;
+          padding: 0;
         }
       }
 
