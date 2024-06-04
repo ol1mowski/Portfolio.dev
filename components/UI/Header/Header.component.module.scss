@@ -27,6 +27,9 @@
     @media screen and (min-width: $big-tablet) {
       display: none;
     }
+    &__icon {
+      cursor: pointer;
+    }
   }
 
   &__menu {
@@ -41,38 +44,22 @@
     height: 100vh;
     animation: showMenu 0.7s linear forwards;
 
-    &__img {
-      position: absolute;
-      top: 5rem;
-      left: 3rem;
-    }
-    &__imgPy {
-      position: absolute;
-      bottom: 3rem;
-      right: 3rem;
-    }
-
     &__x {
       height: 10%;
+      margin-top: 2rem;
       display: flex;
       justify-content: flex-end;
 
       &__icon {
+        cursor: pointer;
         width: 2rem;
-        margin-top: 1rem;
-        margin-right: 2rem;
+        margin-right: 1.2rem;
       }
     }
 
     &__nav {
       @include d-flex-column;
-      height: 90%;
-
-      &__item {
-        margin-bottom: 2rem;
-        font-weight: 500;
-        font-size: 2rem;
-      }
+      height: 50%;
     }
   }
 }
