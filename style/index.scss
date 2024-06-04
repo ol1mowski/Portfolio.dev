@@ -74,20 +74,20 @@ $text-size: 1.1rem;
 //mixins
 
 @mixin small-headers() {
-    margin-top: $standard-margin;
-    color: $dark-blue;
-    font-size: 1rem;
-    font-weight: 700;
-    text-align: center;
+  margin-top: $standard-margin;
+  color: $dark-blue;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 @mixin below-headers() {
-    text-align: center;
-    color: $dark;
-    font-size: 1.5rem;
-    line-height: 1.4;
-    margin-top: 1rem;
-    font-weight: 700;
+  text-align: center;
+  color: $dark;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-top: 1rem;
+  font-weight: 700;
 }
 
 @mixin category() {
@@ -100,7 +100,6 @@ $text-size: 1.1rem;
   @include textFont();
   color: $dark;
 }
-
 
 @mixin title($color) {
   font-size: 1.5rem;
