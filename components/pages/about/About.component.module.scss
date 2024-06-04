@@ -1,0 +1,88 @@
+@import "@/style/index.scss";
+
+.aboutContainer {
+  margin: 5rem 0;
+  scroll-margin-top: 10rem;
+  background-color: #fff;
+  @media screen and (min-width: 1020px) {
+    @include d-flex;
+    padding: 0 3rem;
+    gap: 5rem;
+  }
+
+  &__imageSection {
+    width: 80vw;
+    margin: 0 auto;
+    @include d-flex;
+    position: relative;
+    @media screen and (min-width: 1020px) {
+      justify-content: flex-end;
+    }
+
+    &__img {
+      width: 90%;
+      height: 90%;
+      border-radius: 30%;
+      @media screen and (min-width: $mobile) {
+        width: 30rem;
+      }
+      @media screen and (min-width: $big-tablet) {
+        width: 50%;
+      }
+      @media screen and (min-width: $small-desktop) {
+        width: 90%;
+      }
+      @media screen and (min-width: $desktop) {
+        width: 60%;
+      }
+      @media screen and (min-width: 1450px) {
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  &__contentSection {
+    @include d-flex-column;
+    width: 80vw;
+    margin: 5rem auto;
+    @media screen and (min-width: 1020px) {
+      display: block;
+    }
+    &__p {
+      text-align: center;
+      @include description();
+      margin-top: $standard-margin;
+      color: #767676;
+      @media screen and (min-width: 1020px) {
+        text-align: left;
+        font-size: 1.1rem;
+        width: 35rem;
+      }
+      &__yt {
+        color: $red;
+        cursor: pointer;
+      }
+    }
+
+    &__h3 {
+      @include small-headers;
+      @media screen and (min-width: 1020px) {
+        text-align: left;
+      }
+    }
+
+    &__h4 {
+      @include below-headers;
+      @media screen and (min-width: 1020px) {
+        text-align: left;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+@keyframes iconSpin {
+  100% {
+    transform: rotate(1turn);
+  }
+}
