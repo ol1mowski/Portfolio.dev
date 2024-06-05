@@ -1,7 +1,8 @@
-import Image from "next/image";
-import { type ProjectType } from "../../pages/Projects/Projects.data";
 import style from "./ProjectContainer.component.module.scss";
-import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
+
+import Image from "next/image";
+
+import { type ProjectType } from "../../pages/Projects/Projects.data";
 
 const ProjectComponent = ({
   image,
@@ -15,7 +16,7 @@ const ProjectComponent = ({
 }: ProjectType) => {
   return (
     <section id={id} className={style.projectWrapper}>
-      <div className={style.projectWrapper__imgSection}>
+      <section className={style.projectWrapper__imgSection}>
         <Image
           src={image}
           width={605}
@@ -23,7 +24,7 @@ const ProjectComponent = ({
           alt="website"
           className={style.projectWrapper__imgSection__img}
         />
-      </div>
+      </section>
       <section className={style.projectWrapper__descriSection}>
         <section className={style.projectWrapper__titleSection}>
           <div className={style.projectWrapper__titleSection__wrapper}>
@@ -41,7 +42,7 @@ const ProjectComponent = ({
           </p>
         </section>
         <section className={style.projectWrapper__toolsSection}>
-          {technologies.map((technology, index) => (
+          {technologies.map((_, index) => (
             <div
               key={index}
               className={style.projectWrapper__toolsSection__tool}
