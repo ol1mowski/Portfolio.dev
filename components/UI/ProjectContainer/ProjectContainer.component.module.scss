@@ -1,0 +1,107 @@
+@import "@/style/index.scss";
+
+.projectWrapper {
+  width: 90vw;
+  background-color: #fff;
+  border-radius: 1.7rem;
+  margin-bottom: 5rem;
+  @include d-flex-column;
+  @media screen and (min-width: 650px) {
+    width: 30rem;
+  }
+  @media screen and (min-width: 1020px) {
+    @include d-flex;
+    width: 60rem;
+  }
+
+  &__imgSection {
+    margin-top: 1.5rem;
+    @media screen and (min-width: 1020px) {
+      width: 70%;
+    }
+
+    &__img {
+      margin: 0 auto;
+      display: block;
+      border-radius: 1.7rem;
+      width: 90%;
+    }
+  }
+
+  &__descriSection {
+    @media screen and (min-width: 1020px) {
+      width: 30%;
+    }
+  }
+
+  &__titleSection {
+    margin: 2rem 0;
+
+    &__wrapper {
+      @include d-flex;
+      padding: 0 3rem;
+      gap: 1rem;
+
+      &__h3 {
+        color: $dark;
+      }
+
+      &__p {
+        color: #555;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__contentSection {
+    width: 80%;
+    margin: 0 auto;
+
+    &__pBig {
+      @include description();
+      line-height: 1.5rem;
+      text-align: center;
+    }
+  }
+  &__toolsSection {
+    @include d-flex;
+    margin-top: 1rem;
+    gap: 1rem;
+    &__tool {
+      padding: 0.5rem 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+      font-weight: 600;
+    }
+  }
+  &__iconSection {
+    @include d-flex;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    gap: 2rem;
+    &__a {
+      transition: color 0.3s;
+      will-change: transition;
+    }
+    &__a:hover {
+      color: $dark-blue;
+    }
+    &__icon {
+      @include d-flex;
+      gap: 0.5rem;
+      &__span {
+        font-size: 1.2rem;
+        color: $dark;
+        transition: color 0.3s;
+        will-change: transition;
+      }
+      &__span:hover {
+        color: $dark-blue;
+      }
+    }
+  }
+}
+
+#icon_img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
