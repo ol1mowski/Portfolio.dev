@@ -3,7 +3,7 @@
 #reverse {
   @media screen and (min-width: 1020px) {
     @include d-flex;
-    width: 60rem;
+    width: 70rem;
     flex-direction: row-reverse;
   }
 }

@@ -11,7 +11,7 @@
   }
   @media screen and (min-width: 1020px) {
     @include d-flex;
-    width: 60rem;
+    width: 70rem;
   }
 
   &__imgSection {
@@ -29,8 +29,11 @@
   }
 
   &__descriSection {
+    @include d-flex-column;
+    align-items: flex-start;
+    margin-left: 5rem;
     @media screen and (min-width: 1020px) {
-      width: 30%;
+      width: 40%;
     }
   }
 
@@ -39,28 +42,27 @@
 
     &__wrapper {
       @include d-flex;
-      padding: 0 3rem;
       gap: 1rem;
 
       &__h3 {
-        color: $dark;
+        @include headerFont();
+        color: $dark-blue;
+        font-weight: 500;
+        font-size: 1.3rem;
       }
 
       &__p {
-        color: #555;
-        font-size: 1rem;
+        @include description();
       }
     }
   }
 
   &__contentSection {
     width: 80%;
-    margin: 0 auto;
-
     &__pBig {
       @include description();
       line-height: 1.5rem;
-      text-align: center;
+      text-align: left;
     }
   }
   &__toolsSection {
@@ -68,6 +70,7 @@
     margin-top: 1rem;
     gap: 1rem;
     &__tool {
+      cursor: pointer;
       padding: 0.5rem 1rem;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
       font-weight: 600;
