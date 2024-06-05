@@ -12,7 +12,7 @@ export type ProjectType = {
 
 export const PROJECTS: ProjectType[] = [
   {
-    id: "Courses Online Portal",
+    id: "Courses Online Platform",
     date: "Listopad 2023",
     description:
       "Strona internetowa sklepu z kursami to platforma online, która pozwala użytkownikom kupować kursy do użytku osobistego lub biznesowego.",
@@ -22,7 +22,7 @@ export const PROJECTS: ProjectType[] = [
     liveLink: "https://ol1mowski.github.io/it-shop.de/",
     reverse: false,
     technologies: ["React", "SCSS"],
-    title: "Courses Online Portal",
+    title: "Courses Online Platform",
   },
   {
     id: "Photographer Portfolio",

@@ -8,10 +8,10 @@ const Projects = () => {
     <section id="projects" className={style.projectsContainer}>
       <section className={style.projectsContainer__contentSection}>
         <h3 className={style.projectsContainer__contentSection__h3}>
-          PORTFOLIO
+          PROJEKTY
         </h3>
         <h4 className={style.projectsContainer__contentSection__h4}>
-          Each project is a unique piece of development 🧩
+          Zobacz Stworzone Przeze Mnie Strony Internetowe
         </h4>
       </section>
       <section className={style.projectsContainer__projectsWrapper}>
