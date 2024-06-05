@@ -1,8 +1,10 @@
 import Header from "@/components/UI/Header/Header.component";
 import HomePage from "@/components/pages/HomePage/HomePage.page";
-import InfoBar from "@/components/pages/InfoBar/InfoBar.page";
+
 import About from "@/components/pages/About/About.component";
 import Projects from "@/components/pages/Projects/Projects.page";
+import PostsAmount from "@/components/pages/PostsAmount/PostsAmount.page";
+import SubscribersAmount from "@/components/pages/SubscribersAmount/SubscribersAmount.page";
 
 export default function Home() {
   return (
@@ -10,8 +12,9 @@ export default function Home() {
       <Header />
       <HomePage />
       <About />
-      <InfoBar />
+      <SubscribersAmount />
       <Projects />
+      <PostsAmount />
     </>
   );
 }
