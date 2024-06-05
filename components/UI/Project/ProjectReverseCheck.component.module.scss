@@ -1,0 +1,9 @@
+@import '@/style/index.scss';
+
+#reverse {
+  @media screen and (min-width: 1020px) {
+    @include d-flex;
+    width: 60rem;
+    flex-direction: row-reverse;
+  }
+}
