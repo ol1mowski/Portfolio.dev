@@ -6,15 +6,16 @@
   background-color: $dark-blue;
   height: 20vh;
   width: 100vw;
+  line-height: 2rem;
 
   &__content {
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.7rem;
     letter-spacing: 2px;
     text-align: center;
     &__amount {
       font-weight: 700;
-      font-size: 2rem;
+      font-size: 1.7rem;
       letter-spacing: 2px;
       color: $light-blue;
       cursor: pointer;
