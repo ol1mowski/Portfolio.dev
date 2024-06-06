@@ -30,8 +30,6 @@
 
   &__descriSection {
     @include d-flex-column;
-    align-items: flex-start;
-    margin-left: 5rem;
     @media screen and (min-width: 1020px) {
       width: 40%;
     }
@@ -41,14 +39,14 @@
     margin: 2rem 0;
 
     &__wrapper {
-      @include d-flex;
-      gap: 1rem;
+      text-align: center;
 
       &__h3 {
         @include headerFont();
         color: $dark-blue;
         font-weight: 500;
         font-size: 1.3rem;
+        margin-bottom: 0.5rem;
       }
 
       &__p {
@@ -58,11 +56,16 @@
   }
 
   &__contentSection {
-    width: 80%;
+    width: 85%;
+    margin-bottom: 1rem;
     &__pBig {
+      margin: 0 auto;
       @include description();
       line-height: 1.5rem;
       text-align: left;
+      @media screen and (min-width: $mobile) {
+        margin-left: 3rem;
+      }
     }
   }
   &__toolsSection {
