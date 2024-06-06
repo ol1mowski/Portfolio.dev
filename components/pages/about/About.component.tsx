@@ -21,7 +21,7 @@ const About = () => {
           <h3 className={style.aboutContainer__contentSection__h3}>O Mnie</h3>
           <h4 className={style.aboutContainer__contentSection__h4}>
             Nazywam się Oliwier Markiewicz,
-            <br /> mieszkam w Sieradzu, Polska📍
+            <br /> mieszkam w Sieradzu
           </h4>
           <p className={style.aboutContainer__contentSection__p}>
             Zajmuję się projektowaniem oraz tworzeniem nowoczesnych i
