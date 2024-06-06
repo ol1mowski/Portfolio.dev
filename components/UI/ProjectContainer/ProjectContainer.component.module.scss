@@ -11,7 +11,7 @@
   }
   @media screen and (min-width: 1020px) {
     @include d-flex;
-    width: 70rem;
+    width: 60rem;
   }
 
   &__imgSection {
@@ -25,6 +25,9 @@
       display: block;
       border-radius: 1.7rem;
       width: 90%;
+      @media screen and (min-width: 1022px){
+        height: 340px;
+      }
     }
   }
 
