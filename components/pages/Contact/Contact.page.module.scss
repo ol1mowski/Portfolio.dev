@@ -1,0 +1,97 @@
+@import "@/style/index.scss";
+
+.contactContainer {
+  @include d-flex;
+  margin-bottom: 2rem;
+  padding-top: 4rem;
+  scroll-margin-top: 10rem;
+
+  &__wrapper {
+    @include d-flex-column;
+    @media screen and (min-width: 750px) {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    &__title {
+      padding: 0 2rem;
+      @include d-flex-column;
+      @media screen and (min-width: 750px) {
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+
+      &__h3 {
+        @include small-headers;
+      }
+
+      &__h4 {
+        @include below-headers;
+        font-size: 1.7rem;
+      }
+    }
+
+    &__icons {
+      @media screen and (min-width: 750px) {
+        @include d-flex;
+        gap: 5rem;
+      }
+
+      &__icon {
+        margin-top: 2rem;
+
+        @include d-flex-column;
+
+        @media screen and (min-width: 750px) {
+          @include d-flex;
+          gap: 1rem;
+        }
+
+        &__span {
+          align-items: center;
+          background-color: #fff;
+          border-radius: 50%;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          color: $dark-blue;
+          display: flex;
+          height: 3rem;
+          justify-content: center;
+          width: 3rem;
+        }
+
+        &__info {
+          text-align: center;
+
+          @media screen and (min-width: 750px) {
+            text-align: left;
+          }
+
+          &__h3 {
+            margin-top: 1rem;
+            color: $dark;
+          }
+
+          &__p {
+            @include description();
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            will-change: color;
+            transition: color 0.3s;
+          }
+          &__p:hover {
+            color: $dark-blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 750px) {
+  #mail {
+    padding-top: 1rem;
+
+    &__icon {
+      margin-top: 2rem;
+    }
+  }
+}

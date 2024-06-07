@@ -5,6 +5,7 @@ import About from "@/components/pages/About/About.component";
 import Projects from "@/components/pages/Projects/Projects.page";
 import PostsAmount from "@/components/pages/PostsAmount/PostsAmount.page";
 import SubscribersAmount from "@/components/pages/SubscribersAmount/SubscribersAmount.page";
+import Contact from "@/components/pages/Contact/Contact.page";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <SubscribersAmount />
       <Projects />
       <PostsAmount />
+      <Contact />
     </>
   );
 }
