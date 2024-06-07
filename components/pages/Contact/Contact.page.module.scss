@@ -2,8 +2,7 @@
 
 .contactContainer {
   @include d-flex;
-  margin-bottom: 2rem;
-  padding-top: 4rem;
+  padding: 4rem 0;
   scroll-margin-top: 10rem;
 
   &__wrapper {

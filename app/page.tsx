@@ -7,6 +7,7 @@ import PostsAmount from "@/components/pages/PostsAmount/PostsAmount.page";
 import SubscribersAmount from "@/components/pages/SubscribersAmount/SubscribersAmount.page";
 import Contact from "@/components/pages/Contact/Contact.page";
 import Footer from "@/components/pages/Footer/Footer.page";
+import Opinions from "@/components/pages/Opinions/Opinions.page";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <SubscribersAmount />
       <Projects />
       <PostsAmount />
+      <Opinions />
       <Contact />
       <Footer />
     </>
