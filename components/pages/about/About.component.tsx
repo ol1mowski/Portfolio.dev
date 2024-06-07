@@ -26,7 +26,22 @@ const About = () => {
           <p className={style.aboutContainer__contentSection__p}>
             Zajmuję się projektowaniem oraz tworzeniem nowoczesnych i
             funkcjonalnych stron internetowych w technologiach takich jak
-            Wordpress, Next.js czy React, które spełniają indywidualne potrzeby
+            <a
+              href="https://wordpress.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={style.aboutContainer__contentSection__p__special}>Wordpress</span></a>, <a
+              href="https://nextjs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={style.aboutContainer__contentSection__p__special}>Next.js</span></a> czy <a
+              href="https://react.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={style.aboutContainer__contentSection__p__special}>React</span></a>, które spełniają indywidualne potrzeby
             klientów.
           </p>{" "}
           <p className={style.aboutContainer__contentSection__p}>
@@ -41,7 +56,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className={style.aboutContainer__contentSection__p__yt}>
+              <span className={style.aboutContainer__contentSection__p__special}>
                 YouTube
               </span>
             </a>{" "}
