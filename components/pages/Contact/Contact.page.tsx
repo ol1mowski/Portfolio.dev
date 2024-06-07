@@ -1,4 +1,4 @@
-import style from "./contact.module.scss";
+import style from "./Contact.page.module.scss";
 
 const Contact = () => {
   return (
@@ -7,10 +7,10 @@ const Contact = () => {
         <div className={style.contactContainer__wrapper}>
           <div className={style.contactContainer__wrapper__title}>
             <h3 className={style.contactContainer__wrapper__title__h3}>
-              CONTACT
+              Kontakt
             </h3>
             <h4 className={style.contactContainer__wrapper__title__h4}>
-              Don't be shy! Hit me up! 👇
+              Skontaktuj się ze mną 👇
             </h4>
           </div>
           <div className={style.contactContainer__wrapper__icons}>
@@ -107,7 +107,7 @@ const Contact = () => {
                     Mail
                   </h3>
                   <a
-                    href="mailto:oliwier.markiewicz@gmx.co.uk"
+                    href="mailto:oliwier.markiewicz.dev@gmail.com"
                     target="_blank"
                     rel="noreferrer"
                     className={
@@ -119,7 +119,7 @@ const Contact = () => {
                         style.contactContainer__wrapper__icons__icon__info__p
                       }
                     >
-                      oliwier.markiewicz@gmx.co.uk
+                      oliwier.markiewicz.dev@gmail.com
                     </p>
                   </a>
                 </div>
