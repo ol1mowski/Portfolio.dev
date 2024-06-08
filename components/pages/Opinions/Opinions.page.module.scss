@@ -1,1 +1,29 @@
 @import "@/style/index.scss";
+
+.container {
+  padding-top: 3rem;
+  position: relative;
+  height: 100vh;
+  @include d-flex;
+  &__rec1 {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+  }
+  &__rec2 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+  &__boxWrapper {
+    box-shadow: $box-shadow;
+    width: 50rem;
+    background-color: $white;
+    height: 30rem;
+    border-radius: 1rem;
+    @include d-flex-column;
+    padding: 2rem 1rem;
+    justify-content: flex-start;
+  }
+}
