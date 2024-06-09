@@ -9,6 +9,7 @@ function Opinions() {
     <section className={s.container}>
       <Image
         height={700}
+        width={600}
         src={rec_1}
         alt="Reactangel"
         className={s.container__rec1}
@@ -20,7 +21,13 @@ function Opinions() {
         className={s.container__rec2}
       />
       <section className={s.container__boxWrapper}>
-        <h2>Zobacz Co myślą o mnie moi Klienci</h2>
+        <h2 className={s.container__boxWrapper__header}>
+          Zobacz Co myślą o mnie moi{" "}
+          <span className={s.container__boxWrapper__header__mark}>Klienci</span>{" "}
+        </h2>
+      <section className={s.container__boxWrapper__opinionContainer}>
+
+      </section>
       </section>
     </section>
   );

@@ -1,7 +1,7 @@
 //fonts
 
 @mixin headerFont() {
-  font-family: "Lora", serif;
+  font-family: "Lora", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -74,6 +74,7 @@ $text-size: 1.1rem;
 //mixins
 
 @mixin small-headers() {
+  @include textFont();
   margin-top: $standard-margin;
   color: $dark-blue;
   font-size: 1rem;
@@ -83,6 +84,7 @@ $text-size: 1.1rem;
 
 @mixin below-headers() {
   text-align: center;
+  @include headerFont();
   color: $dark;
   font-size: 1.5rem;
   line-height: 1.4;
