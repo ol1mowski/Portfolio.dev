@@ -15,7 +15,7 @@ const Header = () => {
 
   const showMenuHandler = () => {
     if (menu.current) {
-      menu.current.style.display = "block";
+      menu.current.style.display = "block"; 
     }
   };
 
