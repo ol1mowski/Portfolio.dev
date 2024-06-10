@@ -1,7 +1,7 @@
 @import "@/style/index.scss";
 
 .container {
-  padding-top: 3rem;
+  padding-top: 7rem;
   position: relative;
   @include d-flex;
   height: 100%;
@@ -38,31 +38,50 @@
       }
     }
     &__opinionContainer {
-      width: 15rem;
       box-shadow: $box-shadow;
       background-color: $white;
       border-radius: 1rem;
-      height: 17rem;
+      width: 90%;
+      height: 30vh;
       border-top-right-radius: 3rem;
-      margin-top: 7vh;
       cursor: pointer;
       transition: scale, opacity, 0.7s;
       will-change: scale, opacity;
+      margin-top: 7vh;
       @include d-flex-column;
-      gap: 2vh;
+      justify-content: space-around;
+      padding-top: 3vh;
+      @media screen and (min-width: 350px) {
+        width: 15rem;
+        height: 17rem;
+      }
       @media screen and (min-width: $tablet) {
         width: 18rem;
         height: 20rem;
       }
-      &__read {
-        color: $dark-blue;
-        font-weight: 400;
-        font-size: 1.125rem;
+
+      &__img {
+        width: 60%;
+        height: 60%;
+      }
+      &__readWrapper {
+        @include d-flex;
+        gap: .5vw;
+        &__icon {
+          margin-top: .3vh
+        }
+        &__text {
+          @include description();
+          font-weight: 500;
+          font-size: 1.2rem;
+          &__mark {
+            color: $light-blue;
+          }
+        }
       }
     }
     &__opinionContainer:hover {
       scale: $hover-med-scale;
-      opacity: 0.1;
     }
   }
 }
