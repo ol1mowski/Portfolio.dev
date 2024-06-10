@@ -2,7 +2,7 @@
 
 .navSectionBig {
   display: none;
-  @media screen and (min-width: $big-tablet) {
+  @media screen and (min-width: $small-desktop) {
     display: block;
     @include d-flex;
     gap: 2rem;

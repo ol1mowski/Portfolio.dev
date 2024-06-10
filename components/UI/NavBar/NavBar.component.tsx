@@ -77,6 +77,22 @@ const NavBar = () => {
         </Link>
         <AnimationLink
           activeClass="active"
+          to="opinions"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={1200}
+        >
+          <motion.div
+            className={style.navSectionBig__items}
+            variants={buttonVariants}
+            whileHover="hover"
+          >
+            Opinie
+          </motion.div>
+        </AnimationLink>
+        <AnimationLink
+          activeClass="active"
           to="contact"
           spy={true}
           smooth={true}

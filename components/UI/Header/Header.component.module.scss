@@ -24,7 +24,7 @@
   }
 
   &__navSection {
-    @media screen and (min-width: $big-tablet) {
+    @media screen and (min-width: $small-desktop) {
       display: none;
     }
     &__icon {
