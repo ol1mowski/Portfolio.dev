@@ -10,7 +10,7 @@ import { POSTS_CONTENT } from "./PostContent.data";
 import Caption from "@/components/UI/Caption/Caption.component";
 
 import headerLogo from "@/assets/logo_black.svg";
-import authorImage from "@/assets/background_image.jpg";
+import authorImage from "@/assets/author_about.svg";
 import postImage from "@/assets/post_image.jpg";
 import categoryIcon from "@/assets/category.svg";
 import calenderIcon from "@/assets/calendar.svg";
