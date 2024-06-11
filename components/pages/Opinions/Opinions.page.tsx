@@ -9,23 +9,23 @@ import Image from "next/image";
 
 function Opinions() {
   return (
-    <a href="https://jmp.sh/s/mNlcSWPwdNWRNFOaei2n" target="_blank">
-      <section id="opinions" className={s.container}>
-        <Image
-          height={700}
-          width={600}
-          src={rec_1}
-          alt="Reactangel"
-          className={s.container__rec1}
-        />
-        <section className={s.container__boxWrapper}>
-          <section className={s.container__boxWrapper__contentSection}>
-            <h3 className={s.container__boxWrapper__contentSection__h3}>
-              OPINIE
-            </h3>
-            <h4 className={s.container__boxWrapper__contentSection__h4}>
-              Zobacz Co Myślą O Mnie Moi Klienci
-            </h4>
+    <section id="opinions" className={s.container}>
+      <Image
+        height={700}
+        width={600}
+        src={rec_1}
+        alt="Reactangel"
+        className={s.container__rec1}
+      />
+      <section className={s.container__boxWrapper}>
+        <section className={s.container__boxWrapper__contentSection}>
+          <h3 className={s.container__boxWrapper__contentSection__h3}>
+            OPINIE
+          </h3>
+          <h4 className={s.container__boxWrapper__contentSection__h4}>
+            Zobacz Co Myślą O Mnie Moi Klienci
+          </h4>
+          <a href="https://jmp.sh/s/mNlcSWPwdNWRNFOaei2n" target="_blank">
             <section className={s.container__boxWrapper__opinionContainer}>
               <Image
                 width={300}
@@ -65,10 +65,10 @@ function Opinions() {
                 />
               </section>
             </section>
-          </section>
+          </a>
         </section>
       </section>
-    </a>
+    </section>
   );
 }
 
