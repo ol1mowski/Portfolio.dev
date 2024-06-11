@@ -1,0 +1,55 @@
+@import "@/style/index.scss";
+
+.container {
+  padding: 5vh 10vw;
+  @include d-flex-column;
+  gap: 5rem;
+  @media screen and (min-width: $desktop) {
+    padding: 5vh 15vw;
+  }
+  &__header {
+    @include d-flex;
+    justify-content: flex-start;
+    width: 100%;
+    &__content {
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      font-size: 2.5rem;
+      @media screen and (min-width: $tablet) {
+        font-size: 3rem;
+      }
+    }
+  }
+  &__postsWrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 5rem;
+    justify-items: center;
+    @media screen and (min-width: $big-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+    @media screen and (min-width: $desktop) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+  }
+  &__button {
+    @include d-flex;
+    &__btn {
+      margin-top: 1rem;
+      @include btn();
+      transition: scale, background-color, color, border, 0.7s;
+      will-change: scale, background-color, color, border;
+    }
+    &__btn:hover {
+      scale: $hover-med-scale;
+      background-color: transparent;
+      color: $light-blue;
+      border: 1px solid $light-blue;
+    }
+  }
+}

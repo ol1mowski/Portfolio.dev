@@ -1,8 +1,10 @@
 import Image from "next/image";
 import s from "./HomePage.page.module.scss";
 
-import TechStack from "./techStack/techStack.component";
+import TechStack from "../../UI/techStack/techStack.component";
 import img from "@/assets/main_image.svg";
+import Text from "@/components/Utils/Text-component/Text.component";
+
 
 function HomePage() {
   return (
@@ -30,8 +32,7 @@ function HomePage() {
             </span>
           </h1>
           <p className={s.homeContainer__infoSection__content__p}>
-            Hi, I'm Oliwier Markiewicz. A passionate Front-end React Developer
-            based in Sieradz, Poland. 📍
+            <Text textValue="Cześć! Nazywam się Oliwier Markiewicz i zajmuję się tworzeniem stron internetowych, które wyróżniają się na tle konkurencji 🏆 😉" />
           </p>
           <section className={s.homeContainer__infoSection__content__icons}>
             <a

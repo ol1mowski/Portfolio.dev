@@ -1,0 +1,25 @@
+@import "@/style/index.scss";
+
+.container {
+  @include d-flex;
+  color: $white;
+  background-color: $dark-blue;
+  height: 20vh;
+  width: 100vw;
+  line-height: 2rem;
+  padding: 0 2vw;
+
+  &__content {
+    font-weight: 700;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    text-align: center;
+    &__amount {
+      font-weight: 700;
+      font-size: 1.7rem;
+      letter-spacing: 2px;
+      color: $light-blue;
+      cursor: pointer;
+    }
+  }
+}
