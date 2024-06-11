@@ -66,7 +66,7 @@ const NavBar = () => {
             Projekty
           </motion.div>
         </AnimationLink>
-        <Link href="/blog">
+        <Link href="/Blog">
           <motion.div
             className={style.navSectionBig__items}
             variants={buttonVariants}

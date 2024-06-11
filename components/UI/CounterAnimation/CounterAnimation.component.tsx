@@ -44,7 +44,7 @@ const CounterAnimation = ({
         </animated.span>{" "}
         {description}{" "}
         {tag === "Blog" ? (
-          <Link href="/blog">
+          <Link href="/Blog">
             <span className={s.container__content__amount}>{action}</span>
           </Link>
         ) : (

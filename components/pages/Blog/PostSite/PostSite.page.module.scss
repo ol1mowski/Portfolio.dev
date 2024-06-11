@@ -1,0 +1,47 @@
+@import "@/style/index.scss";
+
+.container {
+  &__content {
+    padding: 5vh 10vw;
+    position: relative;
+    @media screen and (min-width: $desktop) {
+      padding: 5vh 15vw;
+    }
+  }
+  &__imageSection {
+    padding: 0 10vw;
+    padding-top: 3vh;
+    @media screen and (min-width: $desktop) {
+      padding: 0vh 15vw;
+      padding-top: 7vh;
+    }
+    &__img {
+      border-radius: 1rem;
+      width: 100%;
+      height: 35vh;
+      @media screen and (min-width: $big-tablet) {
+        height: 55vh;
+      }
+    }
+  }
+  &__headerSection {
+    @include d-flex-column;
+    align-items: flex-start;
+    gap: 5vh;
+    margin: 1vh 0;
+    @media screen and (min-width: $desktop) {
+      width: 70%;
+    }
+    &__postInfo {
+      @include d-flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      color: $grey;
+      font-size: 0.8rem;
+      justify-content: flex-start;
+      &__avatar {
+        border-radius: 100%;
+      }
+    }
+  }
+}
