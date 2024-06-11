@@ -1,0 +1,44 @@
+@import "@/style/index.scss";
+
+.container {
+  background-image: url("../../../../assets/background_image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  color: $white;
+
+
+  &__content {
+    padding: 0 10vw;
+    @media screen and (min-width: $desktop) {
+      padding: 0 15vw;
+    }
+  }
+
+  &__contentSection {
+    margin-top: 20vh;
+    @include d-flex-column;
+    align-items: flex-start;
+    gap: 1.3rem;
+    max-width: 30rem;
+    padding-bottom: 10vh;
+    @media screen and (min-width: $small-desktop) {
+      margin-top: 30vh;
+    }
+    &__category {
+      font-weight: 700;
+    }
+    &__btn {
+      margin-top: 1rem;
+      @include btn();
+      transition: scale, background-color, color, border, 0.7s;
+      will-change: scale, background-color, color, border;
+    }
+    &__btn:hover {
+      scale: $hover-med-scale;
+      background-color: transparent;
+      color: $light-blue;
+      border: 1px solid $light-blue;
+    }
+  }
+}

@@ -29,7 +29,7 @@ const Header = () => {
     { to: "home", label: "Home" },
     { to: "about", label: "O mnie" },
     { to: "projects", label: "Projekty" },
-    { to: "/", label: "Blog" },
+    { to: "/Blog", label: "Blog" },
     { to: "opinions", label: "Opinie" },
     { to: "contact", label: "Kontakt" },
   ];

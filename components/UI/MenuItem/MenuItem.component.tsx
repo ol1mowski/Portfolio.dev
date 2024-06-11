@@ -19,7 +19,7 @@ const MenuItem = ({
 }) => (
   <>
     {label === "Blog" ? (
-      <Link href={'/blog'}>
+      <Link href={'/Blog'}>
         <motion.div
           onClick={hideMenu}
           className={s.item}

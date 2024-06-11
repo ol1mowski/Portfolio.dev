@@ -1,0 +1,12 @@
+@import "@/style/index.scss";
+
+.container {
+  height: 30vh;
+  padding: 5vh 10vw;
+  @media screen and (min-width: $desktop) {
+    padding: 5vh 15vw;
+  }
+  &__link {
+    text-decoration: underline;
+  }
+}
