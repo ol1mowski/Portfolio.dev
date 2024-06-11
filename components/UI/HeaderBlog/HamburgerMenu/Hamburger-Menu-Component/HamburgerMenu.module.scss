@@ -1,0 +1,82 @@
+@import "@/style/index.scss";
+
+.hamburgerMenu {
+  background-color: $white;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  transform: translateX(100vw);
+  padding: $standard-padding;
+  animation: showMenu .5s linear forwards;
+  &__close {
+    height: 15%;
+    cursor: pointer;
+    @include d-flex;
+    justify-content: flex-end;
+    padding-right: $big-padding;
+    transition: transform 0.7s;
+    margin-top: 2.5rem;
+    will-change: transform;
+
+  }
+  &__close:hover {
+    transform: translateY(-1rem);
+  }
+  &__nav {
+    width: 100%;
+    @include d-flex-column;
+    justify-content: flex-start;
+    height: 40%;
+    margin-top: 3rem;
+    &__search {
+      @include d-flex;
+      &__btn {
+        border-radius: 0 0.7rem 0.7rem 0;
+        padding: 0.93rem $standard-padding;
+        cursor: pointer;
+      }
+      &__inp {
+        border-radius: 0.7rem 0 0 0.7rem;
+
+        border: none;
+        padding: 1.1rem $standard-padding;
+        color: $white;
+      }
+    }
+    &__items {
+      @include d-flex-column;
+      list-style-type: none;
+      align-items: flex-start;
+      gap: $hover-min-scale;
+      &__item {
+        color: $dark-blue;
+        font-size: 2rem;
+        margin-bottom: 0.7rem;
+        @include headerFont;
+        cursor: pointer;
+        transition: color, scale, .7s;
+        will-change: color, scale;
+      }
+      &__item:hover {
+        scale: $hover-med-scale;
+        color: $dark;
+      }
+    }
+  }
+  &__logo {
+    @include d-flex;
+    align-items: flex-start;
+    height: 60%;
+  }
+}
+@keyframes showMenu {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

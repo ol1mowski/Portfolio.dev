@@ -1,0 +1,65 @@
+@import "@/style/index.scss";
+
+.postCard {
+  @include d-flex-column;
+  gap: 2rem;
+  @media screen and (min-width: 425px) {
+    width: 18rem;
+  }
+  @media screen and (min-width: 1600px) {
+    width: 20rem;
+  }
+  transition: scale, 0.7s;
+  will-change: scale;
+  &__imageSection {
+    @include d-flex;
+    width: 100%;
+    &__img {
+      border-radius: 1rem;
+      width: 100%;
+    }
+  }
+  &__contentSection {
+    @include d-flex-column;
+    gap: 0.7rem;
+    padding: 0 0.5rem;
+    align-items: flex-start;
+    &__title {
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      font-size: 1.4rem;
+      color: $dark;
+    }
+    &__description {
+      font-weight: 300;
+      line-height: 24px;
+      font-size: 1rem;
+      color: $grey;
+    }
+  }
+  &__authorSection {
+    @include d-flex;
+    width: 100%;
+    gap: 0.7rem;
+    justify-content: flex-start;
+    &__avatar {
+      border-radius: 50%;
+    }
+    &__dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 100%;
+      background-color: $black;
+    }
+    &__name,
+    &__date {
+      font-size: 0.8rem;
+      color: $dark-grey;
+    }
+  }
+}
+.postCard:hover {
+  scale: $hover-med-scale;
+  cursor: pointer;
+}

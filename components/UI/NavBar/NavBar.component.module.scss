@@ -1,0 +1,19 @@
+@import "@/style/index.scss";
+
+.navSectionBig {
+  display: none;
+  @media screen and (min-width: $small-desktop) {
+    display: block;
+    @include d-flex;
+    gap: 2rem;
+  }
+  &__items {
+    color: $dark;
+    font-weight: 600;
+    transition: color 0.4s;
+  }
+  &__items:hover {
+    color: $dark-blue;
+    cursor: pointer;
+  }
+}

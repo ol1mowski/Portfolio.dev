@@ -1,0 +1,74 @@
+@import "@/style/index.scss";
+
+.headerContainer {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+  position: sticky;
+  background-color: #fff;
+  @include d-flex;
+  padding: 2rem 0;
+  justify-content: space-around;
+  z-index: 100;
+  top: 0;
+  gap: 30vw;
+
+  &__nameSection {
+    &__content {
+      font-size: 1.5rem;
+      color: $dark;
+      font-weight: 800;
+      &__name {
+        color: $dark-blue;
+        font-weight: 800;
+      }
+    }
+  }
+
+  &__navSection {
+    @media screen and (min-width: $small-desktop) {
+      display: none;
+    }
+    &__icon {
+      cursor: pointer;
+    }
+  }
+
+  &__menu {
+    display: none;
+    transform: translateX(-20rem);
+    z-index: 300;
+    width: 100vw;
+    position: fixed;
+    background-color: #fff;
+    color: $dark;
+    top: 0;
+    height: 100vh;
+    animation: showMenu 0.7s linear forwards;
+
+    &__x {
+      height: 10%;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-end;
+
+      &__icon {
+        cursor: pointer;
+        width: 2rem;
+        margin-right: 1.2rem;
+      }
+    }
+
+    &__nav {
+      @include d-flex-column;
+      height: 50%;
+    }
+  }
+}
+
+@keyframes showMenu {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

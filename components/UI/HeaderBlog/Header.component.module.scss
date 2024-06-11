@@ -1,0 +1,44 @@
+@import "@/style/index.scss";
+
+.headerWrapper {
+  @include d-flex;
+  justify-content: space-between;
+  padding: 0 10vw;
+  @media screen and (min-width: $desktop) {
+    padding: 0 15vw;
+  }
+  &__logoSection {
+    cursor: pointer;
+    &__img {
+      will-change: scale;
+      transition: scale 0.7s;
+    }
+    &__img:hover {
+      scale: $hover-med-scale;
+    }
+  }
+  &__hamburgerMenu {
+    cursor: pointer;
+    @media screen and (min-width: $big-tablet) {
+      display: none;
+    }
+  }
+  &__menuList {
+    display: none;
+    @media screen and (min-width: $big-tablet) {
+      @include d-flex;
+      gap: 5vw;
+    }
+    &__linksWrapper {
+      @include d-flex;
+      &__links {
+        @include d-flex;
+        gap: 2.5rem;
+        list-style-type: none;
+      }
+    }
+    &__findJob {
+      @include d-flex;
+    }
+  }
+}

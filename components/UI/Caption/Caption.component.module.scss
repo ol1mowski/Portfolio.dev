@@ -1,0 +1,21 @@
+@import "@/style/index.scss";
+
+.title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 2.5rem;
+  @media screen and (min-width: $tablet) {
+    font-size: 3rem;
+  }
+}
+.title_sub {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2.5rem;
+  line-height: 6vh;
+  @media screen and (min-width: $tablet) {
+    font-size: 3rem;
+  }
+}

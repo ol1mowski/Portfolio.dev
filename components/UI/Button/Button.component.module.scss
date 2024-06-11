@@ -1,0 +1,28 @@
+@import "@/style/index.scss";
+
+.btn {
+  @include btn();
+  transition: scale, background-color, color, border, 0.7s;
+  will-change: scale, background-color, color, border;
+}
+.btn:hover {
+  scale: $hover-med-scale;
+  background-color: transparent;
+  color: $light-blue;
+  border: 1px solid $light-blue;
+}
+
+.btn_yt {
+  margin-top: 1rem;
+  @include btn();
+  background-color: $red;
+  transition: scale, background-color, color, border, 0.7s;
+  will-change: scale, background-color, color, border;
+}
+
+.btn_yt:hover {
+  scale: $hover-med-scale;
+  background-color: transparent;
+  color: $red;
+  border: 1px solid $red;
+}

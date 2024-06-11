@@ -1,0 +1,41 @@
+@import "@/style/index.scss";
+
+.form {
+  @include d-flex;
+  margin-top: 1rem;
+  &__inp {
+    padding: 0.75rem $standard-padding;
+    border-radius: 0.5rem 0 0 0.5rem;
+    font-size: $text-size;
+    border: 0.1rem solid $dark-blue;
+    color: $dark;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 2px;
+  }
+  &__btn {
+    @include btn();
+    padding: 0.625rem $standard-padding;
+    background-color: $dark-blue;
+    border-radius: 0 0.5rem 0.5rem 0;
+    border: 0.1rem solid $dark-blue;
+  }
+  &__btn:hover {
+    background-color: $light-blue;
+    color: $dark-blue;
+    border: 0.1rem solid $light-blue;
+  }
+  &__sending,
+  &__error {
+    font-weight: 300;
+    line-height: 24px;
+    font-size: $text-size;
+  }
+  &__error {
+    color: $red;
+  }
+  &__success {
+    color: green;
+  }
+}
