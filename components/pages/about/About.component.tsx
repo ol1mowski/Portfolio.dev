@@ -31,7 +31,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className={style.aboutContainer__contentSection__p__special}>Wordpress</span></a>, <a
+              <span className={style.aboutContainer__contentSection__p__special}> Wordpress</span></a>, <a
               href="https://nextjs.org/"
               target="_blank"
               rel="noopener noreferrer"
