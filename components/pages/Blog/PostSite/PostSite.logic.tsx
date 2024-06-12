@@ -23,6 +23,7 @@ import TableOfContents from "@/components/UI/TableOfContents/TableOfContents.com
 import PostArticle from "@/components/UI/PostArticle/PostArticle.component";
 import SimilarPosts from "@/components/UI/SimilarPosts/SimilarPosts.component";
 import Header from "@/components/UI/HeaderBlog/Header.component.page";
+import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
 
 function PostSite() {
   const [isVisible, reference] = useElementVisible();
@@ -47,48 +48,59 @@ function PostSite() {
         />
       </section>
       <article className={s.container__content}>
-        <section className={s.container__headerSection}>
-          <div className={s.container__headerSection__header}>
-            <Caption type="sub" value={"Jak Technologia zmienia branże IT ?"} />
-          </div>
-          <div className={s.container__headerSection__postInfo}>
-            <Image
-              src={authorImage}
-              alt="author's avatar"
-              width={40}
-              height={40}
-              className={s.container__headerSection__postInfo__avatar}
-            />
-            <span className={s.container__headerSection__postInfo__info}>
-              Oliwier Markiewicz
-            </span>
-            <Image src={calenderIcon} alt="date icon" width={25} height={25} />
+        <AnimationWrapper>
+          <section className={s.container__headerSection}>
+            <div className={s.container__headerSection__header}>
+              <Caption
+                type="sub"
+                value={"Jak Technologia zmienia branże IT ?"}
+              />
+            </div>
+            <div className={s.container__headerSection__postInfo}>
+              <Image
+                src={authorImage}
+                alt="author's avatar"
+                width={40}
+                height={40}
+                className={s.container__headerSection__postInfo__avatar}
+              />
+              <span className={s.container__headerSection__postInfo__info}>
+                Oliwier Markiewicz
+              </span>
+              <Image
+                src={calenderIcon}
+                alt="date icon"
+                width={25}
+                height={25}
+              />
 
-            <span className={s.container__headerSection__postInfo__info}>
-              20 Maj 2024
-            </span>
-            <Image
-              src={categoryIcon}
-              alt="category icon"
-              width={25}
-              height={25}
-            />
+              <span className={s.container__headerSection__postInfo__info}>
+                20 Maj 2024
+              </span>
+              <Image
+                src={categoryIcon}
+                alt="category icon"
+                width={25}
+                height={25}
+              />
 
-            <span className={s.container__headerSection__postInfo__info}>
-              React
-            </span>
-            <Image
-              src={readingTimeIcon}
-              alt="reading time icon"
-              width={25}
-              height={25}
-            />
+              <span className={s.container__headerSection__postInfo__info}>
+                React
+              </span>
+              <Image
+                src={readingTimeIcon}
+                alt="reading time icon"
+                width={25}
+                height={25}
+              />
 
-            <span className={s.container__headerSection__postInfo__info}>
-              5 min.
-            </span>
-          </div>
-        </section>
+              <span className={s.container__headerSection__postInfo__info}>
+                5 min.
+              </span>
+            </div>
+          </section>
+        </AnimationWrapper>
+
         {isSimilarPostsVisible ? null : <TableOfContents />}
         {POSTS_CONTENT.map((item) => (
           <PostArticle
