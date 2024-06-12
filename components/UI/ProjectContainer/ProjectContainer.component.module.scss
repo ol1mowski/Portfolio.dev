@@ -2,9 +2,10 @@
 
 .projectWrapper {
   width: 90vw;
-  background-color: #fff;
   border-radius: 1.7rem;
   margin-bottom: 5rem;
+  box-shadow: $box-shadow;
+  background-color: $dark-white-background-color;
   @include d-flex-column;
   @media screen and (min-width: 650px) {
     width: 30rem;
@@ -25,7 +26,7 @@
       display: block;
       border-radius: 1.7rem;
       width: 90%;
-      @media screen and (min-width: 1022px){
+      @media screen and (min-width: 1022px) {
         height: 320px;
       }
     }
