@@ -1,4 +1,3 @@
-import postImage from "@/assets/background_image.jpg";
 import fastWebsite from "@/assets/fast_webpage.png";
 import onlineShop from "@/assets/online_shop.png";
 import mistakes from "@/assets/mistakes.jpeg";
@@ -36,7 +35,7 @@ export const POSTS: PostCardType[] = [
   {
     id: 3,
     title: "Najczęstsze Błędy w Tworzeniu Stron Internetowych i Jak Ich Unikać",
-    slug: "najczęstsze-błędy-w-tworzeniu-stron-internetowych-i-jak-ich-unikać",
+    slug: "najczestsze-bledy-w-tworzeniu-stron-internetowych-i-jak-ich-unikac",
 
     description: `Lista powszechnych błędów popełnianych przez początkujących twórców stron oraz porady, jak ich unikać. Przykłady złych praktyk i jak je naprawić.`,
     author: "Oliwier Markiewicz",
@@ -94,7 +93,7 @@ export const POSTS: PostCardType[] = [
   {
     id: 8,
     title: "HTML i CSS: Podstawy, Które Musisz Znać",
-    slug: "html-i-css-podstawy-które-musisz-znać",
+    slug: "html-i-css-podstawy-ktore-musisz-znac",
 
     description: `Wyjaśnienie, czym są HTML i CSS oraz dlaczego są one fundamentem każdej strony internetowej. Przykłady podstawowych znaczników HTML i stylów CSS.`,
     author: "Oliwier Markiewicz",
