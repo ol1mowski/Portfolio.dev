@@ -73,7 +73,7 @@ export const POSTS_CONTENT: PostContent = [
   {
     id: 2,
     image: htmlcss,
-    slug: "html-css-podstawy-ktore-musisz-znac",
+    slug: "html-i-css-podstawy-ktore-musisz-znac",
     title: "HTML i CSS: Podstawy, Które Musisz Znać",
     readTime: 5,
     date: "06 Czerwiec",

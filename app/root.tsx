@@ -2,6 +2,7 @@
 
 import HamburgerClickContext from "@/store/HamburgerClickContext";
 import PostVisibleContext from "@/store/PostVisible.context";
+import UrlSlug from "@/store/UrlSlug.context";
 import React, { useState } from "react";
 
 function Root({
@@ -10,6 +11,7 @@ function Root({
   children: React.ReactNode;
 }>) {
   const [open, setOpen] = useState<boolean>(false);
+  const [urlSlug, setUrlSlug] = useState<string>("");
   const [sectionVisible, setSectionVisible] = useState<{
     sectionName: string;
     isVisible: boolean;
@@ -18,26 +20,33 @@ function Root({
   return (
     <html lang="pl-PL">
       <body>
-        <HamburgerClickContext.Provider
+        <UrlSlug.Provider
           value={{
-            isOpen: open,
-            setOpen: (open: boolean) => setOpen(open),
+            urlSlug: urlSlug,
+            setUrlSlug: (value: string) => setUrlSlug,
           }}
         >
-          <PostVisibleContext.Provider
+          <HamburgerClickContext.Provider
             value={{
-              sectionVisible: sectionVisible,
-              setSectionVisible(sectionName, isVisible) {
-                setSectionVisible({
-                  sectionName: sectionName,
-                  isVisible: isVisible,
-                });
-              },
+              isOpen: open,
+              setOpen: (open: boolean) => setOpen(open),
             }}
           >
-            {children}
-          </PostVisibleContext.Provider>
-        </HamburgerClickContext.Provider>
+            <PostVisibleContext.Provider
+              value={{
+                sectionVisible: sectionVisible,
+                setSectionVisible(sectionName, isVisible) {
+                  setSectionVisible({
+                    sectionName: sectionName,
+                    isVisible: isVisible,
+                  });
+                },
+              }}
+            >
+              {children}
+            </PostVisibleContext.Provider>
+          </HamburgerClickContext.Provider>
+        </UrlSlug.Provider>
       </body>
     </html>
   );
