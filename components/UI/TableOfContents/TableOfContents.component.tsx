@@ -4,9 +4,12 @@ import { useContext, useEffect, useRef, useState } from "react";
 import s from "./TableOfContents.component.module.scss";
 import PostVisibleContext from "@/store/PostVisible.context";
 import ScrollLink from "@/components/Utils/ScrollLink.component";
-import { POSTS_CONTENT } from "@/components/pages/Blog/PostSite/PostContent.data";
 
-function TableOfContents() {
+function TableOfContents({
+  content,
+}: {
+  content: Array<{ id: number; slug: string; title: string }>;
+}) {
   const { sectionVisible } = useContext(PostVisibleContext);
 
   const { isVisible, sectionName } = sectionVisible;
@@ -30,8 +33,6 @@ function TableOfContents() {
     };
   }, []);
 
-  const content = POSTS_CONTENT[0].content;
-
   return (
     <section
       ref={header}
@@ -40,7 +41,7 @@ function TableOfContents() {
       <h3 className={s.tableOfContents__caption}>Spis Treści</h3>
       <ul className={s.tableOfContents__listItems}>
         {content.map((item) => (
-          <ScrollLink link={`#${item.slug}`}>
+          <ScrollLink key={item.id} link={`#${item.slug}`}>
             <li
               className={
                 sectionName === item.title && isVisible

@@ -20,26 +20,34 @@ import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.
 import PostInfo from "./PostInfo/PostInfo.component";
 
 function PostSite() {
+  
   const [isVisible, reference] = useElementVisible();
-
-  const [isSimilarPostsVisible, setSimilarPostsVisible] =
-    useState<boolean>(true);
+  const [isSimilarPostsVisible, setSimilarPostsVisible] = useState(true);
+  const [urlSlug, setUrlSlug] = useState('');
 
   useEffect(() => {
     isVisible ? setSimilarPostsVisible(true) : setSimilarPostsVisible(false);
   }, [isVisible]);
 
-  const content = POSTS_CONTENT[0].content;
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setUrlSlug(location.href.split("/")[5]);
+    }
+  }, []);
 
-  
+  const correctPostArticle = POSTS_CONTENT.filter(
+    (item) => item.slug === urlSlug
+  );
 
+  const correctPostArticleContent = correctPostArticle.length > 0 ? correctPostArticle[0].content : [];
 
   return (
     <section className={s.container}>
       <Header logo={headerLogo} hamburger={hamburger} />
       <section className={s.container__imageSection}>
-        {POSTS_CONTENT.map((item) => (
+        {correctPostArticle.map((item) => (
           <Image
+            key={item.id}
             className={s.container__imageSection__img}
             src={item.image}
             alt="post image"
@@ -51,8 +59,9 @@ function PostSite() {
       <article className={s.container__content}>
         <AnimationWrapper>
           <section className={s.container__headerSection}>
-            {POSTS_CONTENT.map((item) => (
+            {correctPostArticle.map((item) => (
               <PostInfo
+                key={item.id}
                 author={item.author}
                 date={item.date}
                 readTime={item.readTime}
@@ -63,8 +72,8 @@ function PostSite() {
           </section>
         </AnimationWrapper>
 
-        {isSimilarPostsVisible ? null : <TableOfContents />}
-        {content.map((item) => (
+        {isSimilarPostsVisible ? null : <TableOfContents content={correctPostArticleContent}/>}
+        {correctPostArticleContent.map((item) => (
           <PostArticle
             key={item.id}
             slug={item.slug}
