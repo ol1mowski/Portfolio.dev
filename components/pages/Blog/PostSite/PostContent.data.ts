@@ -122,6 +122,18 @@ export const POSTS_CONTENT: PostContent = [
         slug: "zaawansowane-techniki-css",
         description: `CSS oferuje wiele zaawansowanych technik, które pozwalają na tworzenie bardziej skomplikowanych i atrakcyjnych wizualnie stron. Do tych technik należą animacje CSS, flexbox, grid layout oraz preprocesory CSS takie jak SASS czy LESS. Poznanie tych technik może znacznie zwiększyć Twoje umiejętności w zakresie projektowania stron.`,
       },
+      {
+        id: 8,
+        title: "Podsumowanie",
+        slug: "podsumowanie",
+        description: `HTML (HyperText Markup Language) i CSS (Cascading Style Sheets) są podstawowymi technologiami tworzenia stron internetowych, które każdy web developer powinien znać. HTML tworzy strukturę strony, umożliwiając organizację treści za pomocą elementów takich jak nagłówki, paragrafy, linki, obrazy oraz sekcje stron. Każdy z tych elementów pełni określoną rolę w organizacji i hierarchii treści.
+
+CSS z kolei kontroluje wygląd i układ tych elementów, umożliwiając stylizowanie strony w sposób, który zwiększa jej atrakcyjność wizualną. Poprzez selektory CSS możemy precyzyjnie określać, które elementy mają być stylizowane, a Box Model pozwala na dokładne zarządzanie przestrzenią wokół i wewnątrz elementów. Dzięki technikom responsywnego projektowania strony są dostosowane do wyświetlania na różnych urządzeniach, co jest kluczowe w dzisiejszym mobilnym świecie.
+
+Dla bardziej zaawansowanych zastosowań CSS oferuje techniki takie jak animacje, flexbox, grid layout oraz preprocesory CSS jak SASS i LESS, które znacznie zwiększają możliwości tworzenia złożonych i interaktywnych stron internetowych.
+
+Zrozumienie i umiejętne wykorzystanie HTML i CSS stanowi fundament efektywnego projektowania i tworzenia nowoczesnych, responsywnych oraz estetycznych stron internetowych.`,
+      },
     ],
   },
 ];

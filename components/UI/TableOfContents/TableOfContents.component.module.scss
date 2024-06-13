@@ -4,7 +4,7 @@
   position: absolute;
   background-color: $white;
   top: 10vh;
-  right: 15vw;
+  right: 3vw;
   @include d-flex-column;
   align-items: flex-start;
   display: none;
@@ -51,7 +51,7 @@
   z-index: 1;
   background-color: $white;
   top: 10vh;
-  right: 15vw;
+  right: 3vw;
   @include d-flex-column;
   align-items: flex-start;
   display: none;
