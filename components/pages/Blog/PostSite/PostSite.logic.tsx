@@ -50,7 +50,7 @@ function PostSite() {
     return (
       <>
         <Header logo={headerLogo} hamburger={hamburger} />
-        <NotFound link="/Blog" />
+        <NotFound link="/Blog" info="Nie znaleziono takiego postu"/>
       </>
     );
   }
