@@ -14,7 +14,7 @@ export const POSTS: PostCardType[] = [
   {
     id: 1,
     title: "Jak Poprawić Wydajność i Szybkość Ładowania Strony Internetowej",
-    slug: "jak-poprawić-wydajność-i-szybkość-ładowania-strony-internetowej",
+    slug: "jak-poprawic-wydajnosc-i-szybkosc-ładowania-strony-internetowej",
     description: `Praktyczne porady dotyczące optymalizacji strony internetowej pod kątem szybkości ładowania. Wskazówki dotyczące kompresji obrazów, optymalizacji kodu i korzystania z CDN.`,
     author: "Oliwier Markiewicz",
     authorImage: authorImage,
@@ -24,7 +24,7 @@ export const POSTS: PostCardType[] = [
   {
     id: 2,
     title: "Tworzenie Stron eCommerce: Co Musisz Wiedzieć, Zanim Zaczniesz",
-    slug: "tworzenie-stron-ecommerce-co-musisz-wiedzieć-zanim-zaczniesz",
+    slug: "tworzenie-stron-ecommerce-co-musisz-wiedziec-zanim-zaczniesz",
 
     description: `Omówienie specyficznych wyzwań związanych z tworzeniem stron internetowych dla sklepów online. Przegląd niezbędnych funkcji i narzędzi eCommerce.`,
     author: "Oliwier Markiewicz",
@@ -47,7 +47,7 @@ export const POSTS: PostCardType[] = [
     id: 4,
     title:
       "SEO dla Twórców Stron Internetowych: Jak Zwiększyć Widoczność Swojej Witryny",
-    slug: "seo-dla-twórców-stron-internetowych-jak-zwiększyć-widoczność-swojej-witryny",
+    slug: "seo-dla-tworcow-stron-internetowych-jak-zwiekszyc-widocznosc-swojej-witryny",
 
     description: `Wskazówki i najlepsze praktyki dotyczące optymalizacji stron internetowych pod kątem wyszukiwarek. Podstawowe techniki SEO, które każdy twórca powinien znać.`,
     author: "Oliwier Markiewicz",
@@ -59,7 +59,7 @@ export const POSTS: PostCardType[] = [
     id: 5,
     title:
       "Najlepsze Narzędzia do Projektowania Stron Internetowych w 2024 roku",
-    slug: "najlepsze-narzędzia-do-projektowania-stron-internetowych-w-2024-roku",
+    slug: "najlepsze-narzedzia-do-projektowania-stron-internetowych-w-2024-roku",
 
     description: `Przegląd najnowszych narzędzi i technologii używanych w projektowaniu stron internetowych. Opis ich funkcji, zalet i wad.`,
     author: "Oliwier Markiewicz",
@@ -71,7 +71,7 @@ export const POSTS: PostCardType[] = [
     id: 6,
     title:
       "Responsywne Strony Internetowe: Jak Tworzyć Witryny Dostosowane do Wszystkich Urządzeń",
-    slug: "responsywne-strony-internetowe:-jak-tworzyć-witryny-dostosowane-do-wszystkich-urządzeń",
+    slug: "responsywne-strony-internetowe-jak-tworzyc-witryny-dostosowane-do-wszystkich-urzadzen",
 
     description: `Omówienie znaczenia responsywnego projektowania i jak zapewnić, aby strony internetowe wyglądały dobrze i działały poprawnie na różnych urządzeniach.`,
     author: "Oliwier Markiewicz",
@@ -82,7 +82,7 @@ export const POSTS: PostCardType[] = [
   {
     id: 7,
     title: "JavaScript dla Początkujących: Dodaj Dynamikę do Swojej Strony",
-    slug: "javascript-dla-początkujących-dodaj-dynamikę-do-swojej-strony",
+    slug: "javascript-dla-poczatkujacych-dodaj-dynamike-do-swojej-strony",
 
     description: `Wprowadzenie do JavaScriptu, który pozwala na dodanie interaktywnych elementów do strony. Proste przykłady pokazujące, jak zacząć korzystać z tego języka programowania.`,
     author: "Oliwier Markiewicz",

@@ -2,6 +2,13 @@ import { PostContent } from "@/types/PostType";
 
 import introduce from "@/assets/introduce.jpeg";
 import htmlcss from "@/assets/html_css.jpeg";
+import js from "@/assets/js.png";
+import rwd from "@/assets/RWD.png";
+import tools from "@/assets/tools.png";
+import seo from "@/assets/seo.png";
+import mistake from "@/assets/mistakes.jpeg";
+import ecommerce from "@/assets/online_shop.png";
+import fast_page from "@/assets/fast_webpage.png";
 
 export const POSTS_CONTENT: PostContent = [
   {
@@ -133,6 +140,352 @@ CSS z kolei kontroluje wygląd i układ tych elementów, umożliwiając stylizow
 Dla bardziej zaawansowanych zastosowań CSS oferuje techniki takie jak animacje, flexbox, grid layout oraz preprocesory CSS jak SASS i LESS, które znacznie zwiększają możliwości tworzenia złożonych i interaktywnych stron internetowych.
 
 Zrozumienie i umiejętne wykorzystanie HTML i CSS stanowi fundament efektywnego projektowania i tworzenia nowoczesnych, responsywnych oraz estetycznych stron internetowych.`,
+      },
+    ],
+  },
+  {
+    id: 3,
+    image: js,
+    slug: "javascript-dla-poczatkujacych-dodaj-dynamike-do-swojej-strony",
+    title: "JavaScript dla początkujących: dodaj dynamikę do swojej strony",
+    readTime: 6,
+    date: "10 Czerwiec",
+    author: "Oliwier Markiewicz",
+    category: "Programowanie",
+    content: [
+      {
+        id: 1,
+        title: "Wprowadzenie do JavaScript",
+        slug: "wprowadzenie-do-javascript",
+        description:
+          "JavaScript to język programowania, który pozwala na tworzenie interaktywnych elementów na stronach internetowych. Pozwala na dynamiczne aktualizowanie treści, kontrolowanie multimediów, animowanie obrazów i wiele innych.",
+      },
+      {
+        id: 2,
+        title: "Podstawowe Elementy JavaScript",
+        slug: "podstawowe-elementy-javascript",
+        description:
+          "JavaScript składa się z podstawowych elementów takich jak zmienne, funkcje, pętle, warunki i obiekty. Każdy z tych elementów pełni ważną rolę w procesie programowania i pozwala na tworzenie skomplikowanych funkcji.",
+      },
+      {
+        id: 3,
+        title: "Manipulowanie DOM",
+        slug: "manipulowanie-dom",
+        description:
+          "Document Object Model (DOM) to struktura dokumentu HTML, którą można manipulować za pomocą JavaScriptu. Dzięki DOM można dynamicznie zmieniać zawartość strony, dodawać lub usuwać elementy oraz reagować na interakcje użytkownika.",
+      },
+      {
+        id: 4,
+        title: "Eventy i Obsługa Zdarzeń",
+        slug: "eventy-i-obsluga-zdarzen",
+        description:
+          "Eventy w JavaScript to zdarzenia, które mogą wystąpić na stronie, takie jak kliknięcie, przewijanie czy najechanie kursorem. Obsługa zdarzeń pozwala na reagowanie na te eventy i wykonanie określonych akcji.",
+      },
+      {
+        id: 5,
+        title: "Ajax i Fetch API",
+        slug: "ajax-i-fetch-api",
+        description:
+          "Ajax i Fetch API to technologie pozwalające na asynchroniczne pobieranie danych z serwera bez konieczności przeładowywania strony. Pozwalają na tworzenie dynamicznych i responsywnych aplikacji internetowych.",
+      },
+      {
+        id: 6,
+        title: "Podsumowanie",
+        slug: "podsumowanie",
+        description:
+          "JavaScript to potężne narzędzie do tworzenia interaktywnych stron internetowych. Dzięki znajomości podstawowych elementów, manipulowania DOM, obsługi zdarzeń oraz technologii Ajax i Fetch API, możesz tworzyć dynamiczne i atrakcyjne wizualnie witryny. Nauka JavaScriptu otwiera drzwi do bardziej zaawansowanych technik i bibliotek, takich jak React, Angular czy Vue, które są szeroko stosowane w nowoczesnym web developmencie.",
+      },
+    ],
+  },
+  {
+    id: 4,
+    image: rwd,
+    slug: "responsywne-strony-internetowe-jak-tworzyc-witryny-dostosowane-do-wszystkich-urzadzen",
+    title:
+      "Responsywne Strony Internetowe: Jak Tworzyć Witryny Dostosowane do Wszystkich Urządzeń",
+    readTime: 7,
+    date: "08 Czerwiec",
+    author: "Oliwier Markiewicz",
+    category: "Programowanie",
+    content: [
+      {
+        id: 1,
+        title: "Czym Jest Responsywne Projektowanie",
+        slug: "czym-jest-responsywne-projektowanie",
+        description:
+          "Definicja i znaczenie responsywnego projektowania stron internetowych. Dlaczego jest to ważne w dzisiejszym świecie pełnym różnych urządzeń.",
+      },
+      {
+        id: 2,
+        title: "Podstawowe Techniki Responsywnego Projektowania",
+        slug: "podstawowe-techniki-responsywnego-projektowania",
+        description:
+          "Wprowadzenie do media queries, elastycznych układów i obrazów, a także jednostek względnych takich jak em i rem.",
+      },
+      {
+        id: 3,
+        title: "Frameworki CSS",
+        slug: "frameworki-css",
+        description:
+          "Przegląd popularnych frameworków takich jak Bootstrap i Foundation, które ułatwiają tworzenie responsywnych stron.",
+      },
+      {
+        id: 4,
+        title: "Testowanie Responsywności",
+        slug: "testowanie-responsywnosci",
+        description:
+          "Narzędzia i metody do testowania, jak strona wygląda i działa na różnych urządzeniach i ekranach.",
+      },
+      {
+        id: 5,
+        title: "Podsumowanie",
+        slug: "podsumowanie",
+        description:
+          "Tworzenie responsywnych stron jest niezbędne, aby zapewnić użytkownikom najlepsze doświadczenie bez względu na to, z jakiego urządzenia korzystają.",
+      },
+    ],
+  },
+  {
+    id: 5,
+    image: tools,
+    slug: "najlepsze-narzedzia-do-projektowania-stron-internetowych-w-2024-roku",
+    title:
+      "Najlepsze Narzędzia do Projektowania Stron Internetowych w 2024 Roku",
+    readTime: 8,
+    date: "09 Czerwiec",
+    author: "Oliwier Markiewicz",
+    category: "Programowanie",
+    content: [
+      {
+        id: 1,
+        title: "Wprowadzenie do Narzędzi Projektowych",
+        slug: "wprowadzenie-do-narzedzi-projektowych",
+        description:
+          "Krótkie wprowadzenie do najnowszych narzędzi używanych w projektowaniu stron internetowych, ich funkcji i korzyści z ich użycia.",
+      },
+      {
+        id: 2,
+        title: "Narzędzia do Prototypowania",
+        slug: "narzedzia-do-prototypowania",
+        description:
+          "Omówienie narzędzi takich jak Figma, Sketch i Adobe XD, które są popularne w prototypowaniu i projektowaniu interfejsów użytkownika.",
+      },
+      {
+        id: 3,
+        title: "Edytory Kodowania",
+        slug: "edytory-kodowania",
+        description:
+          "Przegląd najlepszych edytorów kodowania, takich jak Visual Studio Code, Sublime Text i Atom, oraz ich funkcji ułatwiających pracę programistom.",
+      },
+      {
+        id: 4,
+        title: "Frameworki CSS",
+        slug: "frameworki-css",
+        description:
+          "Opis najpopularniejszych frameworków CSS, takich jak Bootstrap, Tailwind CSS i Bulma, oraz ich zastosowania w przyspieszeniu procesu projektowania stron.",
+      },
+      {
+        id: 5,
+        title: "Narzędzia do Testowania",
+        slug: "narzedzia-do-testowania",
+        description:
+          "Przegląd narzędzi do testowania responsywności, wydajności i bezpieczeństwa stron internetowych, takich jak Lighthouse, BrowserStack i WebPageTest.",
+      },
+      {
+        id: 6,
+        title: "Podsumowanie",
+        slug: "podsumowanie",
+        description:
+          "Wybór odpowiednich narzędzi do projektowania stron internetowych może znacząco wpłynąć na efektywność i jakość pracy. Znajomość najnowszych narzędzi i ich funkcji jest kluczowa dla każdego web developera.",
+      },
+    ],
+  },
+  {
+    id: 6,
+    image: seo,
+    slug: "seo-dla-tworcow-stron-internetowych-jak-zwiekszyc-widocznosc-swojej-witryny",
+    title:
+      "SEO dla Twórców Stron Internetowych: Jak Zwiększyć Widoczność Swojej Witryny",
+    readTime: 7,
+    date: "10 Czerwiec",
+    author: "Oliwier Markiewicz",
+    category: "Marketing",
+    content: [
+      {
+        id: 1,
+        title: "Wprowadzenie do SEO",
+        slug: "wprowadzenie-do-seo",
+        description:
+          "SEO (Search Engine Optimization) to zestaw technik, które pomagają poprawić widoczność strony internetowej w wynikach wyszukiwarek. Jest kluczowe dla przyciągnięcia większej liczby odwiedzających.",
+      },
+      {
+        id: 2,
+        title: "Podstawowe Techniki SEO",
+        slug: "podstawowe-techniki-seo",
+        description:
+          "Omówienie podstawowych technik SEO, takich jak optymalizacja treści, użycie odpowiednich słów kluczowych, optymalizacja meta tagów i struktury URL.",
+      },
+      {
+        id: 3,
+        title: "Znaczenie Linkowania Wewnętrznego i Zewnętrznego",
+        slug: "znaczenie-linkowania-wewnetrznego-i-zewnetrznego",
+        description:
+          "Jak linkowanie wewnętrzne i zewnętrzne wpływa na SEO oraz najlepsze praktyki w ich stosowaniu.",
+      },
+      {
+        id: 4,
+        title: "Optymalizacja Strony dla Mobilnych Użytkowników",
+        slug: "optymalizacja-strony-dla-mobilnych-uzytkownikow",
+        description:
+          "Dlaczego optymalizacja strony dla urządzeń mobilnych jest kluczowa dla SEO i jak to zrobić.",
+      },
+      {
+        id: 5,
+        title: "Podsumowanie",
+        slug: "podsumowanie",
+        description:
+          "Zrozumienie i wdrożenie technik SEO jest niezbędne dla każdego twórcy stron internetowych, aby zapewnić wysoką widoczność i przyciągnąć więcej użytkowników.",
+      },
+    ],
+  },
+  {
+    id: 7,
+    image: mistake,
+    slug: "najczestsze-bledy-w-tworzeniu-stron-internetowych-i-jak-ich-unikac",
+    title: "Najczęstsze Błędy w Tworzeniu Stron Internetowych i Jak Ich Unikać",
+    readTime: 6,
+    date: "11 Czerwiec",
+    author: "Oliwier Markiewicz",
+    category: "Web Design",
+    content: [
+      {
+        id: 1,
+        title: "Brak Responsywności",
+        slug: "brak-responsywnosci",
+        description:
+          "Jednym z najczęstszych błędów jest tworzenie stron, które nie są responsywne. Wyjaśnienie, dlaczego jest to problem i jak go rozwiązać.",
+      },
+      {
+        id: 2,
+        title: "Zbyt Duże Obrazy",
+        slug: "zbyt-duze-obrazy",
+        description:
+          "Używanie zbyt dużych obrazów może znacznie spowolnić stronę. Porady dotyczące optymalizacji obrazów.",
+      },
+      {
+        id: 3,
+        title: "Złe Nawigacje",
+        slug: "zle-nawigacje",
+        description:
+          "Nawigacja, która jest nieintuicyjna lub zbyt skomplikowana, może odstraszyć użytkowników. Jak stworzyć przyjazne dla użytkownika menu nawigacyjne.",
+      },
+      {
+        id: 4,
+        title: "Brak Optymalizacji SEO",
+        slug: "brak-optymalizacji-seo",
+        description:
+          "Niedostateczna optymalizacja strony pod kątem SEO może utrudnić jej znalezienie w wyszukiwarkach. Jakie są podstawowe techniki SEO, które warto zastosować.",
+      },
+      {
+        id: 5,
+        title: "Podsumowanie",
+        slug: "podsumowanie",
+        description:
+          "Unikanie najczęstszych błędów w tworzeniu stron internetowych jest kluczowe dla zapewnienia użytkownikom dobrego doświadczenia i osiągnięcia sukcesu online.",
+      },
+    ],
+  },
+  {
+    id: 8,
+    image: ecommerce,
+    slug: "tworzenie-stron-ecommerce-co-musisz-wiedziec-zanim-zaczniesz",
+    title: "Tworzenie Stron eCommerce: Co Musisz Wiedzieć, Zanim Zaczniesz",
+    readTime: 7,
+    date: "12 Czerwiec",
+    author: "Oliwier Markiewicz",
+    category: "Biznes",
+    content: [
+      {
+        id: 1,
+        title: "Wprowadzenie do eCommerce",
+        slug: "wprowadzenie-do-ecommerce",
+        description:
+          "Tworzenie strony eCommerce wymaga zrozumienia specyficznych wyzwań i potrzeb, które różnią się od tradycyjnych stron internetowych.",
+      },
+      {
+        id: 2,
+        title: "Niezbędne Funkcje eCommerce",
+        slug: "niezbedne-funkcje-ecommerce",
+        description:
+          "Przegląd niezbędnych funkcji takich jak koszyk, proces płatności, zarządzanie zapasami i obsługa klienta, które muszą być zaimplementowane na stronie eCommerce.",
+      },
+      {
+        id: 3,
+        title: "Bezpieczeństwo i Ochrona Danych",
+        slug: "bezpieczenstwo-i-ochrona-danych",
+        description:
+          "Jak zapewnić bezpieczeństwo transakcji online i ochronę danych klientów.",
+      },
+      {
+        id: 4,
+        title: "Integracje z Zewnętrznymi Narzędziami",
+        slug: "integracje-z-zewnetrznymi-narzedziami",
+        description:
+          "Opis integracji z narzędziami do zarządzania płatnościami, wysyłką i marketingiem, które ułatwiają prowadzenie sklepu online.",
+      },
+      {
+        id: 5,
+        title: "Podsumowanie",
+        slug: "podsumowanie",
+        description:
+          "Tworzenie strony eCommerce wymaga uwzględnienia wielu aspektów, które mają na celu zapewnienie wygodnego i bezpiecznego doświadczenia zakupowego dla klientów.",
+      },
+    ],
+  },
+  {
+    id: 9,
+    image: fast_page,
+    slug: "jak-poprawic-wydajnosc-i-szybkosc-ladowania-strony-internetowej",
+    title: "Jak Poprawić Wydajność i Szybkość Ładowania Strony Internetowej",
+    readTime: 6,
+    date: "13 Czerwiec",
+    author: "Oliwier Markiewicz",
+    category: "Web Performance",
+    content: [
+      {
+        id: 1,
+        title: "Wprowadzenie do Optymalizacji Wydajności",
+        slug: "wprowadzenie-do-optymalizacji-wydajności",
+        description:
+          "Dlaczego wydajność strony internetowej jest kluczowa i jak wpływa na doświadczenia użytkowników oraz SEO.",
+      },
+      {
+        id: 2,
+        title: "Kompresja Obrazów",
+        slug: "kompresja-obrazów",
+        description:
+          "Techniki kompresji obrazów bez utraty jakości, które mogą znacznie przyspieszyć ładowanie strony.",
+      },
+      {
+        id: 3,
+        title: "Optymalizacja Kodu",
+        slug: "optymalizacja-kodu",
+        description:
+          "Najlepsze praktyki w optymalizacji kodu HTML, CSS i JavaScript, aby zmniejszyć czas ładowania strony.",
+      },
+      {
+        id: 4,
+        title: "Korzystanie z CDN",
+        slug: "korzystanie-z-cdn",
+        description:
+          "Jak używanie sieci dostarczania treści (CDN) może poprawić szybkość ładowania strony, zwłaszcza dla użytkowników z różnych regionów geograficznych.",
+      },
+      {
+        id: 5,
+        title: "Podsumowanie",
+        slug: "podsumowanie",
+        description:
+          "Optymalizacja wydajności strony internetowej jest niezbędna, aby zapewnić użytkownikom szybkie i płynne doświadczenia. Kilka prostych technik może znacznie poprawić szybkość ładowania strony.",
       },
     ],
   },
