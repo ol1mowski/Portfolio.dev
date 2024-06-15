@@ -1,9 +1,9 @@
 import s from "./Posts.page.module.scss";
 
-import { POSTS } from "./PostsStaticData";
 import Button from "@/components/UI/Button/Button.component";
 import PostCardComponent from "./PostCardComponent/PostCardComponent.component";
 import Caption from "@/components/UI/Caption/Caption.component";
+import { POSTS_CONTENT } from "../PostSite/PostContent.data";
 
 function Posts() {
   return (
@@ -13,14 +13,14 @@ function Posts() {
       </section>
 
       <section className={s.container__postsWrapper}>
-        {POSTS.map((post) => (
+        {POSTS_CONTENT.map((post) => (
           <PostCardComponent
             key={post.id}
             title={post.title}
             slug={post.slug}
             description={post.description}
             author={post.author}
-            postImage={post.postImage}
+            postImage={post.image}
             authorImage={post.authorImage}
             date={post.date}
           />

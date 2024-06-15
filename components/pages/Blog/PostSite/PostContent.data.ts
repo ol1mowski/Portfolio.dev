@@ -9,17 +9,20 @@ import seo from "@/assets/seo.png";
 import mistake from "@/assets/mistakes.jpeg";
 import ecommerce from "@/assets/online_shop.png";
 import fast_page from "@/assets/fast_webpage.png";
+import authorImage from "@/assets/author_about.svg";
 
 export const POSTS_CONTENT: PostContent = [
   {
     id: 1,
     image: introduce,
+    authorImage: authorImage,
     slug: "wprowadzenie-do-tworzenia-stron-internetowych-podstawowe-kroki",
     title: "Wprowadzenie do Tworzenia Stron Internetowych: Podstawowe Kroki",
     readTime: 5,
     date: "06 Czerwiec",
     author: "Oliwier Markiewicz",
-    category: "React",
+    category: "Tworzenie Stron Internetowych",
+    description: `Krótkie wprowadzenie do procesu tworzenia strony internetowej, od planowania po uruchomienie. Omówienie podstawowych narzędzi i technologii, które są potrzebne.`,
     content: [
       {
         id: 1,
@@ -80,6 +83,8 @@ export const POSTS_CONTENT: PostContent = [
   {
     id: 2,
     image: htmlcss,
+    authorImage: authorImage,
+    description: `Wyjaśnienie, czym są HTML i CSS oraz dlaczego są one fundamentem każdej strony internetowej. Przykłady podstawowych znaczników HTML i stylów CSS.`,
     slug: "html-i-css-podstawy-ktore-musisz-znac",
     title: "HTML i CSS: Podstawy, Które Musisz Znać",
     readTime: 5,
@@ -146,6 +151,8 @@ Zrozumienie i umiejętne wykorzystanie HTML i CSS stanowi fundament efektywnego 
   {
     id: 3,
     image: js,
+    authorImage: authorImage,
+    description: `Wprowadzenie do JavaScriptu, który pozwala na dodanie interaktywnych elementów do strony. Proste przykłady pokazujące, jak zacząć korzystać z tego języka programowania.`,
     slug: "javascript-dla-poczatkujacych-dodaj-dynamike-do-swojej-strony",
     title: "JavaScript dla początkujących: dodaj dynamikę do swojej strony",
     readTime: 6,
@@ -200,6 +207,8 @@ Zrozumienie i umiejętne wykorzystanie HTML i CSS stanowi fundament efektywnego 
   {
     id: 4,
     image: rwd,
+    authorImage: authorImage,
+    description: `Omówienie znaczenia responsywnego projektowania i jak zapewnić, aby strony internetowe wyglądały dobrze i działały poprawnie na różnych urządzeniach.`,
     slug: "responsywne-strony-internetowe-jak-tworzyc-witryny-dostosowane-do-wszystkich-urzadzen",
     title:
       "Responsywne Strony Internetowe: Jak Tworzyć Witryny Dostosowane do Wszystkich Urządzeń",
@@ -248,13 +257,15 @@ Zrozumienie i umiejętne wykorzystanie HTML i CSS stanowi fundament efektywnego 
   {
     id: 5,
     image: tools,
+    authorImage: authorImage,
+    description: `Przegląd najnowszych narzędzi i technologii używanych w projektowaniu stron internetowych. Opis ich funkcji, zalet i wad.`,
     slug: "najlepsze-narzedzia-do-projektowania-stron-internetowych-w-2024-roku",
     title:
       "Najlepsze Narzędzia do Projektowania Stron Internetowych w 2024 Roku",
     readTime: 8,
     date: "09 Czerwiec",
     author: "Oliwier Markiewicz",
-    category: "Programowanie",
+    category: "Narzędzie",
     content: [
       {
         id: 1,
@@ -303,6 +314,8 @@ Zrozumienie i umiejętne wykorzystanie HTML i CSS stanowi fundament efektywnego 
   {
     id: 6,
     image: seo,
+    authorImage: authorImage,
+    description: `Wskazówki i najlepsze praktyki dotyczące optymalizacji stron internetowych pod kątem wyszukiwarek. Podstawowe techniki SEO, które każdy twórca powinien znać.`,
     slug: "seo-dla-tworcow-stron-internetowych-jak-zwiekszyc-widocznosc-swojej-witryny",
     title:
       "SEO dla Twórców Stron Internetowych: Jak Zwiększyć Widoczność Swojej Witryny",
@@ -351,12 +364,14 @@ Zrozumienie i umiejętne wykorzystanie HTML i CSS stanowi fundament efektywnego 
   {
     id: 7,
     image: mistake,
+    authorImage: authorImage,
+    description: `Lista powszechnych błędów popełnianych przez początkujących twórców stron oraz porady, jak ich unikać. Przykłady złych praktyk i jak je naprawić.`,
     slug: "najczestsze-bledy-w-tworzeniu-stron-internetowych-i-jak-ich-unikac",
     title: "Najczęstsze Błędy w Tworzeniu Stron Internetowych i Jak Ich Unikać",
     readTime: 6,
     date: "11 Czerwiec",
     author: "Oliwier Markiewicz",
-    category: "Web Design",
+    category: "Tworzenie Stron Internetowych",
     content: [
       {
         id: 1,
@@ -398,6 +413,8 @@ Zrozumienie i umiejętne wykorzystanie HTML i CSS stanowi fundament efektywnego 
   {
     id: 8,
     image: ecommerce,
+    authorImage: authorImage,
+    description: `Omówienie specyficznych wyzwań związanych z tworzeniem stron internetowych dla sklepów online. Przegląd niezbędnych funkcji i narzędzi eCommerce.`,
     slug: "tworzenie-stron-ecommerce-co-musisz-wiedziec-zanim-zaczniesz",
     title: "Tworzenie Stron eCommerce: Co Musisz Wiedzieć, Zanim Zaczniesz",
     readTime: 7,
@@ -445,12 +462,14 @@ Zrozumienie i umiejętne wykorzystanie HTML i CSS stanowi fundament efektywnego 
   {
     id: 9,
     image: fast_page,
+    authorImage: authorImage,
+    description: `Praktyczne porady dotyczące optymalizacji strony internetowej pod kątem szybkości ładowania. Wskazówki dotyczące kompresji obrazów, optymalizacji kodu i korzystania z CDN.`,
     slug: "jak-poprawic-wydajnosc-i-szybkosc-ladowania-strony-internetowej",
     title: "Jak Poprawić Wydajność i Szybkość Ładowania Strony Internetowej",
     readTime: 6,
     date: "13 Czerwiec",
     author: "Oliwier Markiewicz",
-    category: "Web Performance",
+    category: "Tworzenie Stron Internetowych",
     content: [
       {
         id: 1,

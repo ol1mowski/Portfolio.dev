@@ -4,9 +4,8 @@ import { forwardRef, type RefObject } from "react";
 
 import Caption from "../Caption/Caption.component";
 
-import authorImage from "@/assets/background_image.jpg";
 import PostCardComponent from "@/components/pages/Blog/Posts/PostCardComponent/PostCardComponent.component";
-import { POSTS } from "@/components/pages/Blog/Posts/PostsStaticData";
+import { POSTS_CONTENT } from "@/components/pages/Blog/PostSite/PostContent.data";
 
 interface SimilarPostsProps {
   reference: RefObject<HTMLDivElement>;
@@ -20,7 +19,7 @@ const SimilarPosts = forwardRef<HTMLDivElement, SimilarPostsProps>(
       <section ref={ref} className={s.similarPosts}>
         <Caption type="sub" value={"Podobne Posty"} />
         <div className={s.similarPosts__posts}>
-          {POSTS.map((item, index) =>
+          {POSTS_CONTENT.map((item, index) =>
             index < 3 ? (
               <PostCardComponent
               key={item.id}
@@ -28,7 +27,7 @@ const SimilarPosts = forwardRef<HTMLDivElement, SimilarPostsProps>(
                 slug={item.slug}
                 description={item.description}
                 author={item.author}
-                postImage={item.postImage}
+                postImage={item.image}
                 authorImage={item.authorImage}
                 date={item.date}
               />
