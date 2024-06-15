@@ -16,6 +16,8 @@ export type PostContent = Array<{
   slug: string;
   image: StaticImageData;
   title: string;
+  authorImage: StaticImageData;
+  description: string;
   date: string;
   readTime: number;
   category: string;

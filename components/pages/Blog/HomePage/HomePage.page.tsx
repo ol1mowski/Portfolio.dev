@@ -8,24 +8,25 @@ import hamburger from "@/assets/hamburger.svg";
 import Link from "next/link";
 import Header from "@/components/UI/HeaderBlog/Header.component.page";
 import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
+import { POSTS_CONTENT } from "../PostSite/PostContent.data";
 
 function HomePage() {
+  const lastPost = POSTS_CONTENT[POSTS_CONTENT.length - 1];
+
   return (
     <section className={s.container}>
       <Header logo={logo} hamburger={hamburger} />
       <AnimationWrapper>
         <section className={s.container__content}>
           <section className={s.container__contentSection}>
-            <span className={s.container__contentSection__category}>React</span>
-            <Caption
-              type="main"
-              value="Jak zacząć się uczyć React w 2024 roku ?"
-            />
+            <span className={s.container__contentSection__category}>
+              {lastPost.category}
+            </span>
+            <Caption type="main" value={lastPost.title} />
             <Description
-              value="Tutaj podzielę się z wami najlepszymi kursami i ksiązkami o tematyce
-      tworzenia stron internetowych. Koniecznie musisz je znać"
+              value={lastPost.description}
             />
-            <Link href={`/Blog/posty/jak-technologia-zmienia-branze-it`}>
+            <Link href={`/Blog/posty/${lastPost.slug}`}>
               <Button type="normal" value={"Czytaj"} />
             </Link>
           </section>

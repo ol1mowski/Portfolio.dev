@@ -2,7 +2,6 @@
 
 import HamburgerClickContext from "@/store/HamburgerClickContext";
 import PostVisibleContext from "@/store/PostVisible.context";
-import UrlSlug from "@/store/UrlSlug.context";
 import React, { useState } from "react";
 
 function Root({
@@ -11,7 +10,6 @@ function Root({
   children: React.ReactNode;
 }>) {
   const [open, setOpen] = useState<boolean>(false);
-  const [urlSlug, setUrlSlug] = useState<string>("");
   const [sectionVisible, setSectionVisible] = useState<{
     sectionName: string;
     isVisible: boolean;
@@ -20,12 +18,6 @@ function Root({
   return (
     <html lang="pl-PL">
       <body>
-        <UrlSlug.Provider
-          value={{
-            urlSlug: urlSlug,
-            setUrlSlug: (value: string) => setUrlSlug,
-          }}
-        >
           <HamburgerClickContext.Provider
             value={{
               isOpen: open,
@@ -46,7 +38,6 @@ function Root({
               {children}
             </PostVisibleContext.Provider>
           </HamburgerClickContext.Provider>
-        </UrlSlug.Provider>
       </body>
     </html>
   );

@@ -61,13 +61,13 @@
   @media screen and (min-width: $desktop) {
     display: flex;
   }
-  animation: showAnimation .3s linear;
+  animation: showAnimation 0.3s linear;
 }
 
 @keyframes showAnimation {
   0% {
     transform: translateX(5vw);
-    opacity: .3;
+    opacity: 0.3;
   }
   100% {
     transform: translateX(0);
