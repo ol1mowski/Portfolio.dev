@@ -11,18 +11,26 @@ interface SimilarPostsProps {
   reference: RefObject<HTMLDivElement>;
 }
 
-
-
 const SimilarPosts = forwardRef<HTMLDivElement, SimilarPostsProps>(
   function SimilarPosts(props, ref) {
+    function getRandomIndexes(length: number, count: number): number[] {
+      const indexes = new Set<number>();
+      while (indexes.size < count) {
+        indexes.add(Math.floor(Math.random() * length));
+      }
+      return Array.from(indexes);
+    }
+
+    const randomIndexes = getRandomIndexes(POSTS_CONTENT.length, 3);
+
     return (
       <section ref={ref} className={s.similarPosts}>
         <Caption type="sub" value={"Podobne Posty"} />
         <div className={s.similarPosts__posts}>
           {POSTS_CONTENT.map((item, index) =>
-            index < 3 ? (
+            randomIndexes.includes(index) ? (
               <PostCardComponent
-              key={item.id}
+                key={item.id}
                 title={item.title}
                 slug={item.slug}
                 description={item.description}
