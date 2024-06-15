@@ -12,7 +12,7 @@ interface SimilarPostsProps {
 }
 
 const SimilarPosts = forwardRef<HTMLDivElement, SimilarPostsProps>(
-  function SimilarPosts(props, ref) {
+  function SimilarPosts(_, ref) {
     function getRandomIndexes(length: number, count: number): number[] {
       const indexes = new Set<number>();
       while (indexes.size < count) {

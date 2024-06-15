@@ -16,7 +16,7 @@ function PostCardComponent({
   return (
     <AnimationWrapper>
       <Link href={`/Blog/posty/${slug}`}>
-        <div className={s.postCard}>
+        <section className={s.postCard}>
           <div className={s.postCard__imageSection}>
             <Image
               className={s.postCard__imageSection__img}
@@ -45,7 +45,7 @@ function PostCardComponent({
             <div className={s.postCard__authorSection__dot}></div>
             <span className={s.postCard__authorSection__date}>{date}</span>
           </div>
-        </div>
+        </section>
       </Link>
     </AnimationWrapper>
   );
