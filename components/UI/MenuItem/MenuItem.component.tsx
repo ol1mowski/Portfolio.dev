@@ -19,7 +19,7 @@ const MenuItem = ({
 }) => (
   <>
     {label === "Blog" ? (
-      <Link href={'/Blog'}>
+      <Link href={"/Blog"}>
         <motion.div
           onClick={hideMenu}
           className={s.item}
@@ -38,6 +38,7 @@ const MenuItem = ({
         smooth={true}
         offset={-70}
         duration={1200}
+        href={to}
       >
         <motion.div
           onClick={hideMenu}
