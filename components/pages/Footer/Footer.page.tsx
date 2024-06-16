@@ -16,8 +16,9 @@ const Footer = () => {
             <a
               className={style.footerContainer__wrapper__icons__a}
               href="https://www.linkedin.com/in/oliwier-markiewicz-47857228a/"
+              aria-label="Find me on LinkedIn"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -41,8 +42,9 @@ const Footer = () => {
             <a
               className={style.footerContainer__wrapper__icons__a}
               href="https://github.com/ol1mowski"
+              aria-label="Find me on GitHub"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

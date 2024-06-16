@@ -25,6 +25,7 @@ const NavBar = () => {
           smooth={true}
           offset={-70}
           duration={1200}
+          href="#home" // Dodaj href dla indeksowania
         >
           <motion.div
             className={style.navSectionBig__items}
@@ -41,6 +42,7 @@ const NavBar = () => {
           smooth={true}
           offset={-70}
           duration={1200}
+          href="#about" // Dodaj href dla indeksowania
         >
           <motion.div
             className={style.navSectionBig__items}
@@ -57,6 +59,7 @@ const NavBar = () => {
           smooth={true}
           offset={-70}
           duration={1200}
+          href="#projects" // Dodaj href dla indeksowania
         >
           <motion.div
             className={style.navSectionBig__items}
@@ -82,6 +85,7 @@ const NavBar = () => {
           smooth={true}
           offset={-70}
           duration={1200}
+          href="#opinions" // Dodaj href dla indeksowania
         >
           <motion.div
             className={style.navSectionBig__items}
@@ -98,6 +102,7 @@ const NavBar = () => {
           smooth={true}
           offset={-70}
           duration={1200}
+          href="#contact" // Dodaj href dla indeksowania
         >
           <motion.div
             className={style.navSectionBig__items}
