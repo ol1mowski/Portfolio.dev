@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import s from "./PostArticle.component.module.scss";
 import Caption from "../Caption/Caption.component";
@@ -19,7 +19,9 @@ function PostArticle({
   const { setSectionVisible } = useContext(PostVisibleContext);
 
   useEffect(() => {
-    if (ref.current) {
+    const currentRef = ref.current;
+
+    if (currentRef) {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -35,17 +37,17 @@ function PostArticle({
         }
       );
 
-      observer.observe(ref.current);
+      observer.observe(currentRef);
 
       return () => {
-        if (ref.current) {
-          observer.unobserve(ref.current);
+        if (currentRef) {
+          observer.unobserve(currentRef);
         }
       };
     } else {
       setSectionVisible(title, false);
     }
-  }, []);
+  }, [setSectionVisible, title]);
 
   return (
     <section id={slug} ref={ref} className={s.postContentSection}>
