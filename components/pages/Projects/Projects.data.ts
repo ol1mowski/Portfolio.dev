@@ -51,16 +51,16 @@ export const PROJECTS: ProjectType[] = [
     title: "Hotel's Webpage",
   },
   {
-    id: "IT-Blog",
+    id: "Blog",
     date: "Maj 2024",
     description:
-      "Projekt IT Blog w Next.js to dynamiczna aplikacja internetowa, która pozwala użytkownikom przeglądać, czytać i dodawać artykuły związane z technologią.",
-    githubLink: "https://github.com/ol1mowski/it-blog",
+      "Projekt Bloga w Next.js to dynamiczna aplikacja internetowa, która pozwala użytkownikom przeglądać, czytać i dodawać artykuły związane z technologią.",
+    githubLink: "https://github.com/ol1mowski/Portfolio.dev",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/portfolio-a109e.appspot.com/o/images%2Fblog.webp?alt=media&token=ed2499d4-1059-41e5-8156-8b9be6c7b73e",
-    liveLink: "https://webblogger.netlify.app/",
+      "https://res.cloudinary.com/dbbuav0rj/image/upload/v1718622382/blog_vuam1g.png",
+    liveLink: "/Blog",
     reverse: true,
     technologies: ["Next.js", "SCSS"],
-    title: "IT-Blog",
+    title: "Blog",
   },
 ];
