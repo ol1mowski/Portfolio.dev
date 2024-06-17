@@ -1,4 +1,4 @@
-import s from './HomePageInfoSection.component.module.scss';
+import s from "./HomePageInfoSection.component.module.scss";
 
 import Text from "@/components/Utils/Text-component/Text.component";
 
@@ -9,11 +9,7 @@ function HomePageInfoSection() {
         Twórca <br />
         <span className={s.content__h1__underText}>
           Stron Internetowych
-          <span
-            className={
-              s.content__h1__underText__decoration
-            }
-          ></span>
+          <span className={s.content__h1__underText__decoration}></span>
         </span>
       </h1>
       <p className={s.content__p}>
@@ -24,6 +20,7 @@ function HomePageInfoSection() {
           className={s.content__icons__a}
           href="https://www.linkedin.com/in/oliwier-markiewicz-47857228a/"
           target="_blank"
+          aria-label="Find me on LinkedIn"
           rel="noreferrer"
         >
           <svg
@@ -48,6 +45,7 @@ function HomePageInfoSection() {
         <a
           className={s.content__icons__a}
           href="https://github.com/ol1mowski"
+          aria-label="Find me on Github"
           rel="noreferrer"
           target="_blank"
         >
