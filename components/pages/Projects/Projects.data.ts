@@ -18,7 +18,7 @@ export const PROJECTS: ProjectType[] = [
       "Strona internetowa sklepu z kursami to platforma online, która pozwala użytkownikom kupować kursy do użytku osobistego lub biznesowego.",
     githubLink: "https://github.com/ol1mowski/it-shop.de",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/portfolio-a109e.appspot.com/o/images%2Fcourses.webp?alt=media&token=fb50713d-3806-4682-aaee-4e700d1455c7",
+      "https://res.cloudinary.com/dbbuav0rj/image/upload/v1718622790/courses_ohtwhp.webp",
     liveLink: "https://ol1mowski.github.io/it-shop.de/",
     reverse: false,
     technologies: ["React", "SCSS"],
@@ -31,7 +31,7 @@ export const PROJECTS: ProjectType[] = [
       "To jest oszałamiająca i interaktywna strona internetowa portfolio fotografa zbudowana przy użyciu React.",
     githubLink: "https://github.com/ol1mowski/Misia_photo.de",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/portfolio-a109e.appspot.com/o/images%2Fphoto.webp?alt=media&token=ef8aab80-46b8-4c43-9e94-7ce0f8c119c3",
+      "https://res.cloudinary.com/dbbuav0rj/image/upload/v1718622785/photo_ieb6iq.webp",
     liveLink: "https://ol1mowski.github.io/Misia_photo.de/",
     reverse: true,
     technologies: ["React", "SCSS"],
@@ -44,7 +44,7 @@ export const PROJECTS: ProjectType[] = [
       "Moja strona internetowa hotelu to twoje wejście do niezapomnianych doświadczeń podróżniczych. Strona posiada przyjazny dla użytkownika system rezerwacji online, który pozwala łatwo zaplanować pobyt.",
     githubLink: "https://github.com/ol1mowski/Best_hotel.de",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/portfolio-a109e.appspot.com/o/images%2Fhotel.webp?alt=media&token=412c67c1-bb67-4442-998c-803f574b56ae",
+      "https://res.cloudinary.com/dbbuav0rj/image/upload/v1718622781/hotel_xjxd51.webp",
     liveLink: "https://ol1mowski.github.io/Best_hotel.de/",
     reverse: false,
     technologies: ["React", "SCSS"],
