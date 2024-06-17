@@ -1,7 +1,10 @@
-import Image from "next/image";
 import s from "./PostCardComponent.component.module.scss";
-import { PostCardType } from "@/types/PostType";
+
+import Image from "next/image";
 import Link from "next/link";
+
+import { type PostCardType } from "@/types/PostType";
+
 import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
 
 function PostCardComponent({
