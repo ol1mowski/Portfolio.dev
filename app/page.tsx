@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <Header />
       <HomePage />
-      {/* <About /> */}
+      <About />
       <SubscribersAmount />
       <Projects />
       <PostsAmount />
