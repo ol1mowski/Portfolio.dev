@@ -36,8 +36,6 @@ function PostSite() {
     }
   }, []);
 
-  console.log(sectionName);
-  
 
   const correctPostArticle = POSTS_CONTENT.filter(
     (item) => item.slug === urlSlug
