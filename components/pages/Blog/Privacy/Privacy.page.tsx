@@ -293,7 +293,7 @@ function Privacy() {
         <ol className={s.container__content__ol}>
           <li>Serwis korzysta z plików cookies.</li>
           <li>
-            Pliki cookies (tzw. „ciasteczka”) stanowią dane informatyczne, w
+            Pliki cookies (tzw. &quot;ciasteczka&quot;) stanowią dane informatyczne, w
             szczególności pliki tekstowe, które przechowywane są w urządzeniu
             końcowym Użytkownika Serwisu i przeznaczone są do korzystania ze
             stron internetowych Serwisu. Cookies zazwyczaj zawierają nazwę
@@ -313,18 +313,18 @@ function Privacy() {
                 wpisywać loginu i hasła;
               </li>
               <li>
-                realizacji celów określonych powyżej w części "Istotne techniki
-                marketingowe";
+                realizacji celów określonych powyżej w części &quot;Istotne
+                techniki marketingowe&quot;;
               </li>
             </ol>
           </li>
           <li>
             W ramach Serwisu stosowane są dwa zasadnicze rodzaje plików cookies:
-            „sesyjne” (session cookies) oraz „stałe” (persistent cookies).
-            Cookies „sesyjne” są plikami tymczasowymi, które przechowywane są w
+            &quot;sesyjne&quot; (session cookies) oraz &quot;stałe&quot; (persistent cookies).
+            Cookies &quot;sesyjne&quot; są plikami tymczasowymi, które przechowywane są w
             urządzeniu końcowym Użytkownika do czasu wylogowania, opuszczenia
             strony internetowej lub wyłączenia oprogramowania (przeglądarki
-            internetowej). „Stałe” pliki cookies przechowywane są w urządzeniu
+            internetowej). &quot;Stałe&quot; pliki cookies przechowywane są w urządzeniu
             końcowym Użytkownika przez czas określony w parametrach plików
             cookies lub do czasu ich usunięcia przez Użytkownika.
           </li>
