@@ -1,7 +1,7 @@
 import s from "./Posts.page.module.scss";
 
 import Button from "@/components/UI/Button/Button.component";
-import PostCardComponent from "./PostCardComponent/PostCardComponent.component";
+import PostCardComponent from "../../../UI/PostCardComponent/PostCardComponent.component";
 import Caption from "@/components/UI/Caption/Caption.component";
 import { POSTS_CONTENT } from "../PostSite/PostContent.data";
 

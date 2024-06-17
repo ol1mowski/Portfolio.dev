@@ -4,7 +4,7 @@ import { forwardRef, type RefObject } from "react";
 
 import Caption from "../Caption/Caption.component";
 
-import PostCardComponent from "@/components/pages/Blog/Posts/PostCardComponent/PostCardComponent.component";
+import PostCardComponent from "@/components/UI/PostCardComponent/PostCardComponent.component";
 import { POSTS_CONTENT } from "@/components/pages/Blog/PostSite/PostContent.data";
 
 interface SimilarPostsProps {
