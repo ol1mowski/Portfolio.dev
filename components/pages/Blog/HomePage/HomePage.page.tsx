@@ -1,14 +1,17 @@
-import Caption from "@/components/UI/Caption/Caption.component";
 import s from "./HomePage.page.module.scss";
 
-import logo from "@/assets/logo.svg";
+import Link from "next/link";
+
+import Caption from "@/components/UI/Caption/Caption.component";
 import Description from "@/components/UI/Description/Description.component";
 import Button from "@/components/UI/Button/Button.component";
-import hamburger from "@/assets/hamburger.svg";
-import Link from "next/link";
 import Header from "@/components/UI/HeaderBlog/Header.component.page";
 import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
+
 import { POSTS_CONTENT } from "../PostSite/PostContent.data";
+
+import logo from "@/assets/logo.svg";
+import hamburger from "@/assets/hamburger.svg";
 
 function HomePage() {
   const lastPost = POSTS_CONTENT[POSTS_CONTENT.length - 1];
