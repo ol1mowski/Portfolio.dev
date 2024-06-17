@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.oliwiermarkiewicz.pl/</loc>
+  <lastmod>2024-06-17T13:28:21+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.oliwiermarkiewicz.pl/Blog</loc>
+  <lastmod>2024-06-17T13:28:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.oliwiermarkiewicz.pl/Blog/posty/jak-poprawic-wydajnosc-i-szybkosc-ladowania-strony-internetowej</loc>
+  <lastmod>2024-06-17T13:28:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.oliwiermarkiewicz.pl/Blog/posty/wprowadzenie-do-tworzenia-stron-internetowych-podstawowe-kroki</loc>
+  <lastmod>2024-06-17T13:28:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.oliwiermarkiewicz.pl/Blog/posty/html-i-css-podstawy-ktore-musisz-znac</loc>
+  <lastmod>2024-06-17T13:28:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.oliwiermarkiewicz.pl/Blog/posty/javascript-dla-poczatkujacych-dodaj-dynamike-do-swojej-strony</loc>
+  <lastmod>2024-06-17T13:28:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.oliwiermarkiewicz.pl/Blog/posty/responsywne-strony-internetowe-jak-tworzyc-witryny-dostosowane-do-wszystkich-urzadzen</loc>
+  <lastmod>2024-06-17T13:28:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.oliwiermarkiewicz.pl/Blog/posty/najlepsze-narzedzia-do-projektowania-stron-internetowych-w-2024-roku</loc>
+  <lastmod>2024-06-17T13:28:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.oliwiermarkiewicz.pl/Blog/posty/seo-dla-tworcow-stron-internetowych-jak-zwiekszyc-widocznosc-swojej-witryny</loc>
+  <lastmod>2024-06-17T13:28:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.oliwiermarkiewicz.pl/Blog/posty/najczestsze-bledy-w-tworzeniu-stron-internetowych-i-jak-ich-unikac</loc>
+  <lastmod>2024-06-17T13:28:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.oliwiermarkiewicz.pl/Blog/posty/tworzenie-stron-ecommerce-co-musisz-wiedziec-zanim-zaczniesz</loc>
+  <lastmod>2024-06-17T13:28:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.oliwiermarkiewicz.pl/Blog/prywatnosc</loc>
+  <lastmod>2024-06-17T13:28:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
