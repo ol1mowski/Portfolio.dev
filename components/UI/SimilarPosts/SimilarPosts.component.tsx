@@ -42,7 +42,7 @@ const SimilarPosts = forwardRef<HTMLDivElement, SimilarPostsProps>((props, ref) 
   );
 });
 
-// Set display name for the component
+
 SimilarPosts.displayName = 'SimilarPosts';
 
 export default SimilarPosts;
