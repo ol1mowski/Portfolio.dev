@@ -1,10 +1,12 @@
-import Image from "next/image";
 import s from "./YTSection.module.scss";
 
-import ytImage from "@/assets/yt.svg";
+import Image from "next/image";
+
 import Description from "@/components/UI/Description/Description.component";
 import Button from "@/components/UI/Button/Button.component";
 import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
+
+import ytImage from "@/assets/yt.svg";
 
 function YTSection() {
   return (
