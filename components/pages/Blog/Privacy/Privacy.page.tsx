@@ -1,5 +1,6 @@
-import Caption from "@/components/UI/Caption/Caption.component";
 import s from "./Privacy.page.module.scss";
+
+import Caption from "@/components/UI/Caption/Caption.component";
 
 function Privacy() {
   return (
