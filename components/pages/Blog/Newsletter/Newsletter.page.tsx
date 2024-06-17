@@ -1,11 +1,13 @@
-import Image from "next/image";
 import s from "./Newsletter.module.scss";
 
-import newsletterImage from "@/assets/newsletter_image.svg";
+import Image from "next/image";
+
 import Description from "@/components/UI/Description/Description.component";
 import Form from "@/components/UI/Form/Form.logic";
-import { saveClientEmail } from "@/actions/SaveClientEmail";
 import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
+
+import newsletterImage from "@/assets/newsletter_image.svg";
+import { saveClientEmail } from "@/actions/SaveClientEmail";
 
 function Newsletter() {
   return (
