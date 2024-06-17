@@ -47,7 +47,7 @@ function PostArticle({
     } else {
       setSectionVisible(title, false);
     }
-  }, [setSectionVisible, title]);
+  }, []);
 
   return (
     <section id={slug} ref={ref} className={s.postContentSection}>
