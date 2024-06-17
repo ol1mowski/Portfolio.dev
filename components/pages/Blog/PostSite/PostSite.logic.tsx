@@ -97,7 +97,7 @@ function PostSite() {
               description={item.description}
             />
           ))}
-          <SimilarPosts ref={reference} />
+          <SimilarPosts reference={reference} />
         </article>
       </section>
     </>
