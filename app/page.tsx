@@ -1,7 +1,7 @@
 import Header from "@/components/UI/Header/Header.component";
 import HomePage from "@/components/pages/HomePage/HomePage.page";
 
-import About from "@/components/pages/About/About.component";
+import About from "@/components/pages/About/About.page";
 import Projects from "@/components/pages/Projects/Projects.page";
 import PostsAmount from "@/components/pages/PostsAmount/PostsAmount.page";
 import SubscribersAmount from "@/components/pages/SubscribersAmount/SubscribersAmount.page";
