@@ -1,0 +1,48 @@
+@import "@/style/index.scss";
+
+.icon {
+  margin-top: 2rem;
+
+  @include d-flex-column;
+
+  @media screen and (min-width: 750px) {
+    @include d-flex;
+    gap: 1rem;
+  }
+
+  &__span {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: $dark-blue;
+    display: flex;
+    height: 3rem;
+    justify-content: center;
+    width: 3rem;
+  }
+
+  &__info {
+    text-align: center;
+
+    @media screen and (min-width: 750px) {
+      text-align: left;
+    }
+
+    &__h3 {
+      margin-top: 1rem;
+      color: $dark;
+    }
+
+    &__p {
+      @include description();
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      will-change: color;
+      transition: color 0.3s;
+    }
+    &__p:hover {
+      color: $dark-blue;
+    }
+  }
+}

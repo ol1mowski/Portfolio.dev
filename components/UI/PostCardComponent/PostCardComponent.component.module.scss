@@ -3,6 +3,7 @@
 .postCard {
   @include d-flex-column;
   gap: 2rem;
+  justify-content: space-between;
   @media screen and (min-width: 425px) {
     width: 18rem;
   }
@@ -29,6 +30,7 @@
       font-weight: 500;
       font-style: normal;
       font-size: 1.4rem;
+      line-height: 4.5vh;
       color: $dark;
     }
     &__description {

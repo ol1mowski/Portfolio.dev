@@ -3,6 +3,7 @@ import HamburgerMenu from "@/components/UI/HeaderBlog/HamburgerMenu/HamburgerMen
 import PostSite from "@/components/pages/Blog/PostSite/PostSite.logic";
 
 function page() {
+
   return (
     <>
       <PostSite />
