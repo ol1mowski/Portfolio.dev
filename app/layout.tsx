@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import './globals.scss';
+import Root from "./root";
 
 export const metadata: Metadata = {
   title: "Oliwier Markiewicz | Twórca Stron Internetowych",
@@ -12,8 +13,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="PL-pl">
-      <body>{children}</body>
-    </html>
+    <Root>{ children }</Root>
   );
 }

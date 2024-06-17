@@ -1,5 +1,6 @@
-import Caption from "@/components/UI/Caption/Caption.component";
 import s from "./Privacy.page.module.scss";
+
+import Caption from "@/components/UI/Caption/Caption.component";
 
 function Privacy() {
   return (
@@ -10,7 +11,7 @@ function Privacy() {
         <ol className={s.container__content__ol}>
           <li>
             Niniejsza polityka dotyczy Serwisu www, funkcjonującego pod adresem
-            url: <b>oliwiermarkiewicz.netlify.app</b>
+            url: <b>oliwiermarkiewicz.pl</b>
           </li>
           <li>
             Operatorem serwisu oraz Administratorem danych osobowych jest:

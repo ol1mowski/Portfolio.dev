@@ -4,7 +4,9 @@
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-style: normal;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
+  line-height: 8vh;
+
   @media screen and (min-width: $tablet) {
     font-size: 3rem;
   }
@@ -14,7 +16,7 @@
   font-weight: 500;
   font-style: normal;
   font-size: 2.5rem;
-  line-height: 6vh;
+  line-height: 8vh;
   @media screen and (min-width: $tablet) {
     font-size: 3rem;
   }

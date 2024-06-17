@@ -3,9 +3,13 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import s from "./TableOfContents.component.module.scss";
 import PostVisibleContext from "@/store/PostVisible.context";
-import ScrollLink from "@/components/utils/ScrollLink.component";
+import ScrollLink from "@/components/Utils/ScrollLink.component";
 
-function TableOfContents() {
+function TableOfContents({
+  content,
+}: {
+  content: Array<{ id: number; slug: string; title: string }>;
+}) {
   const { sectionVisible } = useContext(PostVisibleContext);
 
   const { isVisible, sectionName } = sectionVisible;
@@ -21,7 +25,6 @@ function TableOfContents() {
       }
     }
   };
-  
 
   useEffect(() => {
     addEventListener("scroll", handleScroll);
@@ -37,50 +40,19 @@ function TableOfContents() {
     >
       <h3 className={s.tableOfContents__caption}>Spis Treści</h3>
       <ul className={s.tableOfContents__listItems}>
-        <ScrollLink link={"#co-to-jest-react"}>
-          <li
-            className={
-              sectionName === "Co to jest React ?" && isVisible
-                ? `${s.tableOfContents__listItems__item_active}`
-                : `${s.tableOfContents__listItems__item}`
-            }
-          >
-            Co to jest React ?
-          </li>
-        </ScrollLink>
-        <ScrollLink link="#jak-uzywac-hooks">
-          <li
-            className={
-              sectionName === "Jak używać Hooks ?" && isVisible
-                ? `${s.tableOfContents__listItems__item_active}`
-                : `${s.tableOfContents__listItems__item}`
-            }
-          >
-            Jak używać Hooks ?
-          </li>
-        </ScrollLink>
-        <ScrollLink link="#zarzadzanie-stanem">
-          <li
-            className={
-              sectionName === "Zarządzanie stanem" && isVisible
-                ? `${s.tableOfContents__listItems__item_active}`
-                : `${s.tableOfContents__listItems__item}`
-            }
-          >
-            Zarządzanie stanem
-          </li>
-        </ScrollLink>
-        <ScrollLink link="#advanced-patterns">
-          <li
-            className={
-              sectionName === "Advanced Patterns" && isVisible
-                ? `${s.tableOfContents__listItems__item_active}`
-                : `${s.tableOfContents__listItems__item}`
-            }
-          >
-            Advanced Patterns
-          </li>
-        </ScrollLink>
+        {content.map((item) => (
+          <ScrollLink key={item.id} link={`#${item.slug}`}>
+            <li
+              className={
+                sectionName === item.title && isVisible
+                  ? `${s.tableOfContents__listItems__item_active}`
+                  : `${s.tableOfContents__listItems__item}`
+              }
+            >
+              {item.title}
+            </li>
+          </ScrollLink>
+        ))}
       </ul>
     </section>
   );

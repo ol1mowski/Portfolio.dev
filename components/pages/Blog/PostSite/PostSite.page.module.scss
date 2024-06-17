@@ -18,9 +18,9 @@
     &__img {
       border-radius: 1rem;
       width: 100%;
-      height: 35vh;
+      height: 40vh;
       @media screen and (min-width: $big-tablet) {
-        height: 55vh;
+        height: 60vh;
       }
     }
   }
@@ -31,17 +31,6 @@
     margin: 1vh 0;
     @media screen and (min-width: $desktop) {
       width: 70%;
-    }
-    &__postInfo {
-      @include d-flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      color: $grey;
-      font-size: 0.8rem;
-      justify-content: flex-start;
-      &__avatar {
-        border-radius: 100%;
-      }
     }
   }
 }
