@@ -17,8 +17,6 @@ try {
   console.log("Connection error:", e);
 }
 
-getProjects().then((pr) => console.log(pr));
-
 module.exports = {
   getProjects: getProjects,
 };
