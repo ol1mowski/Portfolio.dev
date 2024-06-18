@@ -1,6 +1,6 @@
-import { ProjectType } from "../../pages/Projects/Projects.data";
 import style from "./ProjectReverseCheck.component.module.scss";
 import ProjectComponent from "../ProjectContainer/ProjectContainer.component";
+import { type ProjectType } from "@/types/PostType";
 
 const Project = ({
   reverse,

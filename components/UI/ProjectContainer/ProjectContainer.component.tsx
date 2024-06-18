@@ -1,8 +1,8 @@
+import { type ProjectType } from "@/types/PostType";
 import style from "./ProjectContainer.component.module.scss";
 
 import Image from "next/image";
 
-import { type ProjectType } from "../../pages/Projects/Projects.data";
 
 const ProjectComponent = ({
   image,
