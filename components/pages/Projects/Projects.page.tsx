@@ -1,9 +1,14 @@
 import style from "./Projects.page.module.scss";
+import ProjectComponent from "../../UI/Project/ProjectReverseCheck.component";
+import { type ProjectType, type ProjectsType } from "@/types/PostType";
 
-import Project from "../../UI/Project/ProjectReverseCheck.component";
-import { PROJECTS } from "./Projects.data";
+const Projects = ({ projects }: { projects: ProjectsType[] }) => {
+  if (!projects.length) {
+    return <p>[-]No projects available.</p>;
+  }
 
-const Projects = () => {
+  const projectList = projects[0].projects;
+
   return (
     <section id="projects" className={style.projectsContainer}>
       <section className={style.projectsContainer__contentSection}>
@@ -15,18 +20,18 @@ const Projects = () => {
         </h4>
       </section>
       <section className={style.projectsContainer__projectsWrapper}>
-        {PROJECTS.map((val) => (
-          <Project
-            id={val.id}
-            key={val.id}
-            image={val.image}
-            title={val.title}
-            date={val.date}
-            description={val.description}
-            technologies={val.technologies}
-            githubLink={val.githubLink}
-            liveLink={val.liveLink}
-            reverse={val.reverse}
+        {projectList.map((project: ProjectType) => (
+          <ProjectComponent
+            id={project.id}
+            key={project.id}
+            image={project.image}
+            title={project.title}
+            date={project.date}
+            description={project.description}
+            technologies={project.technologies}
+            githubLink={project.githubLink}
+            liveLink={project.liveLink}
+            reverse={project.reverse}
           />
         ))}
       </section>
