@@ -1,10 +1,37 @@
 const mongoose = require("mongoose");
 
-const ProjectsSchema = new mongoose.Schema({
-  projects: [{ id: String, date: String, description: String, githubLink: String, image: String, liveLink: String, reverse: Boolean, technologies: [], title: String }]
+const projectSchema = new mongoose.Schema({
+  id: {
+    type: String,
+  },
+  date: {
+    type: String,
+  },
+  description: {
+    type: String,
+  },
+  githubLink: {
+    type: String,
+  },
+  image: {
+    type: String,
+  },
+  liveLink: {
+    type: String,
+  },
+  reverse: {
+    type: Boolean,
+  },
+  technologies: {
+    type: [],
+  },
+  title: {
+    type: String,
+  },
 });
 
-const Projects = mongoose.model("Projects", ProjectsSchema);
+const Projects =
+  mongoose.models.Projects || mongoose.model("Projects", projectSchema);
 
 module.exports = {
   Projects: Projects,
