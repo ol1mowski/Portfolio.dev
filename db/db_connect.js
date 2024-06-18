@@ -6,8 +6,7 @@ const {
   getProjects,
 } = require("./Utils/DataFetchingFunctions/DataFetchingFunctions");
 
-const uri =
-  "mongodb+srv://Olim:Hugo2004@cluster0.2qjo7tz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = process.env.DB_URL;
 
 try {
   mongoose.connect(uri, {
