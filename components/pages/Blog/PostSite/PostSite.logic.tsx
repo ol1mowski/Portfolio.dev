@@ -89,7 +89,7 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
               description={item.description}
             />
           ))}
-          {/* <SimilarPosts reference={reference} /> */}
+          <SimilarPosts reference={reference} posts={posts} />
         </article>
       </section>
     </>
