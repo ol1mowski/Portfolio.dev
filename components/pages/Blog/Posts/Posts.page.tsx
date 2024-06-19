@@ -3,9 +3,9 @@ import s from "./Posts.page.module.scss";
 import Button from "@/components/UI/Button/Button.component";
 import PostCardComponent from "../../../UI/PostCardComponent/PostCardComponent.component";
 import Caption from "@/components/UI/Caption/Caption.component";
-import { POSTS_CONTENT } from "../PostSite/PostContent.data";
+import { type PostsType } from "@/types/PostType";
 
-function Posts() {
+function PostsComponent({ posts }: { posts: PostsType[] }) {
   return (
     <section id="posts" className={s.container}>
       <section className={s.container__header}>
@@ -13,14 +13,15 @@ function Posts() {
       </section>
 
       <section className={s.container__postsWrapper}>
-        {POSTS_CONTENT.map((post) => (
+        {posts.map((post) => (
           <PostCardComponent
+            id={post.id}
             key={post.id}
             title={post.title}
             slug={post.slug}
             description={post.description}
             author={post.author}
-            postImage={post.image}
+            image={post.image}
             authorImage={post.authorImage}
             date={post.date}
           />
@@ -33,4 +34,4 @@ function Posts() {
   );
 }
 
-export default Posts;
+export default PostsComponent;

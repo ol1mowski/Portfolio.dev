@@ -1,24 +1,31 @@
-'use client'
+"use client";
 
 import s from "./Header.component.module.scss";
 
 import Image, { type StaticImageData } from "next/image";
 
-import { ITEMS } from "./StaticData";
+import { BlogITEMS, ITEMS } from "./StaticData";
 import Button from "../Button/Button.component";
 import Item from "./Item/Item.component";
 import Link from "next/link";
 import { useContext } from "react";
 import HamburgerClickContext from "@/store/HamburgerClickContext";
+import HamburgerMenuComponent from "./HamburgerMenu/Hamburger-Menu.component";
 
 function Header({
   logo,
   hamburger,
+  type,
 }: {
+  type?: string;
   logo: StaticImageData;
   hamburger: StaticImageData;
 }) {
-  const { setOpen } = useContext(HamburgerClickContext);
+  const { isOpen, setOpen } = useContext(HamburgerClickContext);
+
+  const closeMenuHandler = () => {
+    setOpen(false);
+  };
 
   const openHamburgerMenuHandler = () => {
     setOpen(true);
@@ -51,14 +58,23 @@ function Header({
       <section className={s.headerWrapper__menuList}>
         <section className={s.headerWrapper__menuList__linksWrapper}>
           <ul className={s.headerWrapper__menuList__linksWrapper__links}>
-            {ITEMS.map((item) => (
-              <Item
-                key={item.id}
-                value={item.value}
-                href={item.href}
-                type={item.type}
-              />
-            ))}
+            {type === "Blog"
+              ? BlogITEMS.map((item) => (
+                  <Item
+                    key={item.id}
+                    value={item.value}
+                    href={item.href}
+                    type={item.type}
+                  />
+                ))
+              : ITEMS.map((item) => (
+                  <Item
+                    key={item.id}
+                    value={item.value}
+                    href={item.href}
+                    type={item.type}
+                  />
+                ))}
           </ul>
         </section>
         <section className={s.headerWrapper__menuList__findJob}>
@@ -71,6 +87,9 @@ function Header({
           </a>
         </section>
       </section>
+      {isOpen ? (
+        <HamburgerMenuComponent closeMenuHandler={closeMenuHandler} />
+      ) : null}
     </header>
   );
 }

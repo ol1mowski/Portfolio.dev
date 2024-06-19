@@ -19,32 +19,32 @@ export type ProjectsType = {
   projects: ProjectType[];
 };
 
-export type PostCardType = {
-  id?: number;
-  title: string;
-  slug: string;
-  description: string;
-  postImage: StaticImageData;
-  authorImage: StaticImageData;
-  author: string;
-  date: string;
-};
-
-export type PostContent = Array<{
-  id: number;
-  slug: string;
-  image: StaticImageData;
-  title: string;
-  authorImage: StaticImageData;
-  description: string;
-  date: string;
+export type PostsType = {
   readTime: number;
   category: string;
-  author: string;
   content: Array<{
     id: number;
     slug: string;
     title: string;
     description: string;
   }>;
-}>;
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  image: StaticImageData;
+  authorImage: StaticImageData;
+  author: string;
+  date: string;
+};
+
+export type PostCardType = {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  image: StaticImageData;
+  authorImage: StaticImageData;
+  author: string;
+  date: string;
+};
