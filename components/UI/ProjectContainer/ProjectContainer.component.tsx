@@ -20,7 +20,7 @@ const ProjectComponent = ({
         <Image
           src={image}
           width={605}
-          height={220}
+          height={180}
           alt="website"
           className={style.projectWrapper__imgSection__img}
         />
