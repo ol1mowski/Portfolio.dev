@@ -4,6 +4,7 @@ const { mongoose } = require("mongoose");
 
 const {
   getProjects,
+  getPosts,
 } = require("./Utils/DataFetchingFunctions/DataFetchingFunctions");
 
 const uri = process.env.DB_URL;
@@ -19,4 +20,5 @@ try {
 
 module.exports = {
   getProjects: getProjects,
+  getPosts: getPosts,
 };
