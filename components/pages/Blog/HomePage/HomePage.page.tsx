@@ -5,13 +5,13 @@ import Link from "next/link";
 import Caption from "@/components/UI/Caption/Caption.component";
 import Description from "@/components/UI/Description/Description.component";
 import Button from "@/components/UI/Button/Button.component";
-import Header from "@/components/UI/HeaderBlog/Header.component.page";
 import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
 
 import logo from "@/assets/logo.svg";
 import hamburger from "@/assets/hamburger.svg";
 
 import { type PostsType } from "@/types/PostType";
+import Header from "@/components/UI/HeaderBlog/Header.component.page";
 
 function HomePageComponent({ posts }: { posts: PostsType[] }) {
   const lastPost = posts[posts.length - 1];

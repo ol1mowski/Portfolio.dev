@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import s from "./Header.component.module.scss";
 
@@ -10,6 +10,7 @@ import Item from "./Item/Item.component";
 import Link from "next/link";
 import { useContext } from "react";
 import HamburgerClickContext from "@/store/HamburgerClickContext";
+import HamburgerMenuComponent from "./HamburgerMenu/Hamburger-Menu.component";
 
 function Header({
   logo,
@@ -18,7 +19,11 @@ function Header({
   logo: StaticImageData;
   hamburger: StaticImageData;
 }) {
-  const { setOpen } = useContext(HamburgerClickContext);
+  const { isOpen, setOpen } = useContext(HamburgerClickContext);
+
+  const closeMenuHandler = () => {
+    setOpen(false);
+  };
 
   const openHamburgerMenuHandler = () => {
     setOpen(true);
@@ -71,6 +76,9 @@ function Header({
           </a>
         </section>
       </section>
+      {isOpen ? (
+        <HamburgerMenuComponent closeMenuHandler={closeMenuHandler} />
+      ) : null}
     </header>
   );
 }
