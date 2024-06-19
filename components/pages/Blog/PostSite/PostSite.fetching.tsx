@@ -1,7 +1,7 @@
 import { getPosts } from "@/db/db_connect";
-import PostsComponent from "./Posts.page";
+import PostSiteComponent from "./PostSite.logic";
 
-async function Posts() {
+async function PostSite() {
   try {
     const fetchedItems = await getPosts();
 
@@ -9,11 +9,11 @@ async function Posts() {
       throw new Error("No data received from the server.");
     }
 
-    return <PostsComponent posts={fetchedItems[0].posts} />;
+    return <PostSiteComponent posts={fetchedItems[0].posts} />;
   } catch (error) {
     console.error("Error fetching Projects data:", error);
     return <p>Error loading Projects section.</p>;
   }
 }
 
-export default Posts;
+export default PostSite;
