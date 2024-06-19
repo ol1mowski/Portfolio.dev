@@ -27,6 +27,7 @@ const SimilarPosts = forwardRef<HTMLDivElement, SimilarPostsProps>(
       <section
         ref={ref as LegacyRef<HTMLDivElement>}
         className={s.similarPosts}
+        id="similar"
       >
         <Caption type="sub" value={"Podobne Posty"} />
         <div className={s.similarPosts__posts}>
