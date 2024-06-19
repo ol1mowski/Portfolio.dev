@@ -32,7 +32,7 @@ export type PostsType = {
   title: string;
   slug: string;
   description: string;
-  postImage: StaticImageData;
+  image: StaticImageData;
   authorImage: StaticImageData;
   author: string;
   date: string;

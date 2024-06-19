@@ -16,8 +16,6 @@ import { type PostsType } from "@/types/PostType";
 function HomePageComponent({ posts }: { posts: PostsType[] }) {
   const lastPost = posts[posts.length - 1];
 
-  console.log(lastPost);
-
   return (
     <section className={s.container}>
       <Header logo={logo} hamburger={hamburger} />
