@@ -15,12 +15,13 @@ function PostsComponent({ posts }: { posts: PostsType[] }) {
       <section className={s.container__postsWrapper}>
         {posts.map((post) => (
           <PostCardComponent
+            id={post.id}
             key={post.id}
             title={post.title}
             slug={post.slug}
             description={post.description}
             author={post.author}
-            postImage={post.image}
+            image={post.image}
             authorImage={post.authorImage}
             date={post.date}
           />

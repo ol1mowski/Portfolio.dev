@@ -34,15 +34,9 @@ export const BlogITEMS: LinkItemsType = [
     href: "/Blog",
     type: "outpage",
   },
-  {
-    id: 2,
-    value: "Podobne Posty",
-    href: "#similar",
-    type: "onpage",
-  },
 
   {
-    id: 3,
+    id: 2,
     value: "Portfolio",
     href: "/",
     type: "outpage",
