@@ -41,7 +41,7 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
   if (correctPostArticle.length === 0) {
     return (
       <>
-        <Header logo={headerLogo} hamburger={hamburger} />
+        <Header type="Blog" logo={headerLogo} hamburger={hamburger} />
         <NotFound link="/Blog" info="Nie znaleziono takiego postu" />
       </>
     );
@@ -50,7 +50,7 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
   return (
     <>
       <section className={s.container}>
-        <Header logo={headerLogo} hamburger={hamburger} />
+        <Header type="Blog" logo={headerLogo} hamburger={hamburger} />
         <section className={s.container__imageSection}>
           {correctPostArticle.map((item) => (
             <Image

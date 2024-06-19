@@ -4,7 +4,7 @@ import s from "./Header.component.module.scss";
 
 import Image, { type StaticImageData } from "next/image";
 
-import { ITEMS } from "./StaticData";
+import { BlogITEMS, ITEMS } from "./StaticData";
 import Button from "../Button/Button.component";
 import Item from "./Item/Item.component";
 import Link from "next/link";
@@ -15,7 +15,9 @@ import HamburgerMenuComponent from "./HamburgerMenu/Hamburger-Menu.component";
 function Header({
   logo,
   hamburger,
+  type,
 }: {
+  type?: string;
   logo: StaticImageData;
   hamburger: StaticImageData;
 }) {
@@ -56,14 +58,23 @@ function Header({
       <section className={s.headerWrapper__menuList}>
         <section className={s.headerWrapper__menuList__linksWrapper}>
           <ul className={s.headerWrapper__menuList__linksWrapper__links}>
-            {ITEMS.map((item) => (
-              <Item
-                key={item.id}
-                value={item.value}
-                href={item.href}
-                type={item.type}
-              />
-            ))}
+            {type === "Blog"
+              ? BlogITEMS.map((item) => (
+                  <Item
+                    key={item.id}
+                    value={item.value}
+                    href={item.href}
+                    type={item.type}
+                  />
+                ))
+              : ITEMS.map((item) => (
+                  <Item
+                    key={item.id}
+                    value={item.value}
+                    href={item.href}
+                    type={item.type}
+                  />
+                ))}
           </ul>
         </section>
         <section className={s.headerWrapper__menuList__findJob}>
