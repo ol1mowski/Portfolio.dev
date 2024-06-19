@@ -60,7 +60,7 @@ const ProjectComponent = ({
           >
             <div className={style.projectWrapper__iconSection__icon}>
               <span className={style.projectWrapper__iconSection__icon__span}>
-                Code
+                Kod
               </span>
               <svg
                 id={style.icon_img}
@@ -87,7 +87,7 @@ const ProjectComponent = ({
           >
             <section className={style.projectWrapper__iconSection__icon}>
               <span className={style.projectWrapper__iconSection__icon__span}>
-                Live Demo
+                Zobacz
               </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
