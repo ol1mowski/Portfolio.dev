@@ -37,3 +37,14 @@ export type PostsType = {
   author: string;
   date: string;
 };
+
+export type PostCardType = {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  image: StaticImageData;
+  authorImage: StaticImageData;
+  author: string;
+  date: string;
+};

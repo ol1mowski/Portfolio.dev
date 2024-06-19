@@ -34,12 +34,13 @@ const SimilarPosts = forwardRef<HTMLDivElement, SimilarPostsProps>(
           {posts.map((item, index) =>
             randomIndexes.includes(index) ? (
               <PostCardComponent
+                id={item.id}
                 key={item.id}
                 title={item.title}
                 slug={item.slug}
                 description={item.description}
                 author={item.author}
-                postImage={item.image}
+                image={item.image}
                 authorImage={item.authorImage}
                 date={item.date}
               />
