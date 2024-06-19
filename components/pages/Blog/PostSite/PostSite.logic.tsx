@@ -13,13 +13,12 @@ import useElementVisible from "@/hooks/useElementVisible.hook";
 import TableOfContents from "@/components/UI/TableOfContents/TableOfContents.component";
 import PostArticle from "@/components/UI/PostArticle/PostArticle.component";
 import SimilarPosts from "@/components/UI/SimilarPosts/SimilarPosts.component";
-import Header from "@/components/UI/HeaderBlog/Header.component.page";
-import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
 
 import PostInfo from "./PostInfo/PostInfo.component";
 import NotFound from "../NotFound/NotFound.page";
 import PostVisibleContext from "@/store/PostVisible.context";
 import { type PostsType } from "@/types/PostType";
+import Header from "@/components/UI/HeaderBlog/Header.component.page";
 
 function PostSiteComponent({ posts }: { posts: PostsType[] }) {
   const [isVisible1, reference] = useElementVisible();
