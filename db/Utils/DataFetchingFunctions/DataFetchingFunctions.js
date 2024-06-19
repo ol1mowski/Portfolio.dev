@@ -1,4 +1,5 @@
 const { Projects } = require("../../Schemas/Projects");
+const { Posts } = require("../../Schemas/Posts");
 
 
 async function getProjects() {
@@ -11,6 +12,17 @@ async function getProjects() {
   }
 }
 
+async function getPosts() {
+  try {
+    const data = await Posts.find();
+    return data;
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+}
+
 module.exports = {
   getProjects: getProjects,
+  getPosts: getPosts,
 };

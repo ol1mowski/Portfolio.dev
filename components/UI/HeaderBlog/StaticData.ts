@@ -26,3 +26,19 @@ export const ITEMS: LinkItemsType = [
     type: "onpage",
   },
 ];
+
+export const BlogITEMS: LinkItemsType = [
+  {
+    id: 1,
+    value: "Home",
+    href: "/Blog",
+    type: "outpage",
+  },
+
+  {
+    id: 2,
+    value: "Portfolio",
+    href: "/",
+    type: "outpage",
+  },
+];

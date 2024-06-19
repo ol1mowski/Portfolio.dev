@@ -10,7 +10,7 @@ import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.
 function PostCardComponent({
   title,
   description,
-  postImage,
+  image,
   authorImage,
   author,
   date,
@@ -23,7 +23,7 @@ function PostCardComponent({
           <div className={s.postCard__imageSection}>
             <Image
               className={s.postCard__imageSection__img}
-              src={postImage}
+              src={image}
               alt="post image"
               width={300}
               height={200}
