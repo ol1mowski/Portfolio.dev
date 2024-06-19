@@ -13,8 +13,6 @@ if (!uri) {
   process.exit(1);
 }
 
-console.log("MongoDB URI:", uri);
-
 mongoose
   .connect(uri, {
     serverSelectionTimeoutMS: 10000,
