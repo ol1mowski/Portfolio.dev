@@ -26,7 +26,7 @@ export type PostsType = {
     id: number;
     slug: string;
     title: string;
-    description: string;
+    description: string[];
   }>;
   id: number;
   title: string;

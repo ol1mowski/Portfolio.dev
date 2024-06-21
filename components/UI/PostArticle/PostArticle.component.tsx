@@ -12,7 +12,7 @@ function PostArticle({
 }: {
   title: string;
   slug: string;
-  description: string;
+  description: string[];
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -49,10 +49,13 @@ function PostArticle({
     }
   }, []);
 
+  console.log(typeof description);
+  
+
   return (
     <section id={slug} ref={ref} className={s.postContentSection}>
       <Caption type="sub" value={title} />
-      <p className={s.postContentSection__text}>{description}</p>
+      { description.map(desc => <p key={desc} className={s.postContentSection__text}>{desc}</p>) }
     </section>
   );
 }
