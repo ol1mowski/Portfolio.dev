@@ -34,7 +34,7 @@ function Header({
   return (
     <header className={s.headerWrapper}>
       <section className={s.headerWrapper__logoSection}>
-        <Link href={"/Blog"}>
+        <Link prefetch={true} href={"/Blog"}>
           <Image
             className={s.headerWrapper__logoSection__img}
             src={logo}
