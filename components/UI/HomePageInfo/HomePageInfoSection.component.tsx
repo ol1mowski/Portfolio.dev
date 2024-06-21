@@ -6,7 +6,7 @@ function HomePageInfoSection() {
   return (
     <article className={s.content}>
       <h1 className={s.content__h1}>
-        Twórca <br />
+        Twórca Nowoczesnych<br />
         <span className={s.content__h1__underText}>
           Stron Internetowych
           <span className={s.content__h1__underText__decoration}></span>
