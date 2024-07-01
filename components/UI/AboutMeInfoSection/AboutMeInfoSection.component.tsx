@@ -28,7 +28,7 @@ function AboutMeInfoSection() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span className={s.contentSection__p__special}> Wordpress</span>
+          <span className={s.contentSection__p__special}> WordPress</span>
         </a>
         , które spełniają indywidualne potrzeby klientów.
       </p>
@@ -73,7 +73,7 @@ function AboutMeInfoSection() {
         >
           <span className={s.contentSection__p__special}>YouTube</span>
         </a>{" "}
-        gdzie dzielę się wiedzą z zakresu programowania stron internetowych.
+        gdzie dzielę się wiedzą z zakresu programowania oraz tworzenia stron internetowych.
       </p>
     </div>
   );
