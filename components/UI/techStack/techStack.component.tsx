@@ -10,6 +10,7 @@ import next from "@/assets/nextjs.svg";
 import python from "@/assets/python.svg";
 import figma from "@/assets/figma.svg";
 import wordPress from "@/assets/wordpress.svg";
+import webflow from '@/assets/webflow.svg';
 
 import Image from "next/image";
 
@@ -128,6 +129,19 @@ const TechStack = () => {
             <Image
               src={figma}
               alt="figma icon"
+              width={75}
+              height={75}
+              className={s.techStackContainer__skillsWrapper__skill}
+            />
+          </a>{" "}
+          <a
+            href="https://webflow.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={webflow}
+              alt="webflow icon"
               width={75}
               height={75}
               className={s.techStackContainer__skillsWrapper__skill}
