@@ -18,12 +18,27 @@
     gap: 5rem;
     margin: 5rem 0;
     @media screen and (min-width: $desktop) {
-      margin-top: 10rem;
+      margin: 10rem 0;
       gap: 10rem;
     }
   }
   &__cta {
-    @include d-flex;
+    @include d-flex-column;
+    gap: 10vh;
+    margin-bottom: 10vh;
+    &__header {
+      font-size: 2rem;
+      color: $dark;
+      @include headerFont();
+      font-weight: 600;
+      &__mark {
+        font-size: 2rem;
+        color: $dark;
+        @include headerFont();
+        font-weight: 600;
+        color: $light-blue;
+      }
+    }
     &__btn {
       @include btn();
       padding: 1.2rem;
