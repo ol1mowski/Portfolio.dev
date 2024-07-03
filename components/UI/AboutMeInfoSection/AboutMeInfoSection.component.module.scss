@@ -8,7 +8,6 @@
       display: block;
     }
     &__p {
-      text-align: center;
       @include description();
       margin-top: $standard-margin;
       color: $dark-grey;
