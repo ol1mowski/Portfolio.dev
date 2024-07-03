@@ -4,7 +4,7 @@ function AboutMeInfoSection() {
   return (
     <div className={s.contentSection}>
       <h2 className={s.contentSection__h3}>O Mnie</h2>
-      <h3 className={s.contentSection__h4}>Nazywam się Oliwier Markiewicz</h3>
+      <h3 className={s.contentSection__h4}>Cześć, Nazywam się Oliwier Markiewicz</h3>
       <p className={s.contentSection__p}>
         Zajmuję się projektowaniem oraz tworzeniem nowoczesnych i funkcjonalnych
         stron internetowych w technologiach takich jak
