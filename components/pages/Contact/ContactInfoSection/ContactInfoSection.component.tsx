@@ -38,7 +38,7 @@ function ContactInfoSection({
                 <path d="M20.2 20.2l1.8 1.8" />
               </svg>
             )}
-            {title === "Mail" && (
+            {title === "e-mail" && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
