@@ -1,7 +1,7 @@
 import s from "./techStack.module.scss";
 
-import html from "@/assets/html_icon.svg";
-import css from "@/assets/css.svg";
+import google_ads from "@/assets/html_icon.svg";
+import facebook_ads from "@/assets/css.svg";
 import scss from "@/assets/sass.svg";
 import js from "@/assets/javascript.svg";
 import ts from "@/assets/typescript.svg";
@@ -10,7 +10,7 @@ import next from "@/assets/nextjs.svg";
 import python from "@/assets/python.svg";
 import figma from "@/assets/figma.svg";
 import wordPress from "@/assets/wordpress.svg";
-import webflow from '@/assets/webflow.svg';
+import webflow from "@/assets/webflow.svg";
 
 import Image from "next/image";
 
@@ -22,20 +22,84 @@ const TechStack = () => {
           <p className={s.techStackContainer__title__p}>Tech Stack</p>
         </div>
         <div className={s.techStackContainer__skillsWrapper}>
-          <Image
-            src={html}
-            alt="html icon"
-            width={75}
-            height={75}
-            className={s.techStackContainer__skillsWrapper__skill}
-          />
-          <Image
-            src={css}
-            alt="css icon"
-            width={75}
-            height={75}
-            className={s.techStackContainer__skillsWrapper__skill}
-          />{" "}
+          <a
+            href="https://nextjs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={next}
+              alt="nextjs icon"
+              width={75}
+              height={75}
+              className={s.techStackContainer__skillsWrapper__skill}
+            />
+          </a>
+          <a
+            href="https://wordpress.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={wordPress}
+              alt="wordpress icon"
+              width={75}
+              height={75}
+              className={s.techStackContainer__skillsWrapper__skill}
+            />
+          </a>
+          <a
+            href="https://www.figma.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={figma}
+              alt="figma icon"
+              width={75}
+              height={75}
+              className={s.techStackContainer__skillsWrapper__skill}
+            />
+          </a>{" "}
+          <a
+            href="https://webflow.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={webflow}
+              alt="webflow icon"
+              width={75}
+              height={75}
+              className={s.techStackContainer__skillsWrapper__skill}
+            />
+          </a>
+          <a
+            href="https://ads.google.com/home/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={google_ads}
+              alt="google Ads icon"
+              width={75}
+              height={75}
+              className={s.techStackContainer__skillsWrapper__skill}
+            />
+          </a>
+          <a
+            href="https://www.facebook.com/business/ads"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={facebook_ads}
+              alt="Facebook Ads icon"
+              width={155}
+              height={155}
+              className={s.techStackContainer__skillsWrapper__skill}
+            />{" "}
+          </a>
           <a
             href="https://sass-lang.com/"
             target="_blank"
@@ -90,58 +154,6 @@ const TechStack = () => {
             <Image
               src={python}
               alt="python icon"
-              width={75}
-              height={75}
-              className={s.techStackContainer__skillsWrapper__skill}
-            />
-          </a>
-          <a
-            href="https://nextjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src={next}
-              alt="nextjs icon"
-              width={75}
-              height={75}
-              className={s.techStackContainer__skillsWrapper__skill}
-            />
-          </a>
-          <a
-            href="https://wordpress.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src={wordPress}
-              alt="wordpress icon"
-              width={75}
-              height={75}
-              className={s.techStackContainer__skillsWrapper__skill}
-            />
-          </a>
-          <a
-            href="https://www.figma.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src={figma}
-              alt="figma icon"
-              width={75}
-              height={75}
-              className={s.techStackContainer__skillsWrapper__skill}
-            />
-          </a>{" "}
-          <a
-            href="https://webflow.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src={webflow}
-              alt="webflow icon"
               width={75}
               height={75}
               className={s.techStackContainer__skillsWrapper__skill}
