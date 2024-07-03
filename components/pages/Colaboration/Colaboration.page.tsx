@@ -53,7 +53,7 @@ function Colaboration() {
       <section className={s.container__contentSection}>
         <h3 className={s.container__contentSection__h3}>WSPÓŁPRACA</h3>
         <h4 className={s.container__contentSection__h4}>
-          Zobacz Etapy Współpracy Z Mną
+          Zobacz Etapy Współpracy Ze Mną
         </h4>
       </section>
       <section className={s.container__stepWrapper}>
