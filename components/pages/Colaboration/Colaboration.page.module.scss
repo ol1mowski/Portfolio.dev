@@ -18,8 +18,24 @@
     gap: 5rem;
     margin: 5rem 0;
     @media screen and (min-width: $desktop) {
-      margin: 10rem 0;
+      margin-top: 10rem;
       gap: 10rem;
+    }
+  }
+  &__cta {
+    @include d-flex;
+    &__btn {
+      @include btn();
+      padding: 1.2rem;
+      font-size: 1.5rem;
+      transition: scale, background-color, color, border, 0.7s;
+      will-change: scale, background-color, color, border;
+    }
+    &__btn:hover {
+      scale: $hover-med-scale;
+      background-color: transparent;
+      color: $light-blue;
+      border: 1px solid $light-blue;
     }
   }
 }
