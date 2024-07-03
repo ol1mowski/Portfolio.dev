@@ -3,7 +3,7 @@ import s from "./HomePage.page.module.scss";
 import TechStack from "../../UI/techStack/techStack.component";
 import HomePageInfo from "../../UI/HomePageInfo/HomePageInfoSection.component";
 
-import img from "@/assets/main_image.svg";
+import img from "@/assets/new_main.svg";
 import HomePageImageSection from "../../UI/HomePageImageSection/HomePageImageSection.component";
 
 function HomePage() {

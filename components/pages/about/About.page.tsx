@@ -1,6 +1,6 @@
 import s from "./About.component.module.scss";
 
-import about from "@/assets/author_about.svg";
+import about from "@/assets/new_about.svg";
 
 import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
 
