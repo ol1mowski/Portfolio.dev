@@ -1,0 +1,78 @@
+@import "@/style/index.scss";
+
+.container {
+  background-color: #007acc17;
+  @include d-flex-column;
+  justify-content: flex-start;
+  padding: 10vh 0;
+  gap: 5rem;
+  &__header {
+    @include d-flex-column;
+    position: relative;
+    &__title {
+      text-align: center;
+      @include headerFont();
+      font-size: 2rem;
+      color: $dark;
+      font-weight: 600;
+    }
+    &__line {
+      position: absolute;
+      background-color: $dark-blue;
+      height: 0.5rem;
+      width: 5rem;
+      border-radius: $border-med;
+      top: 3.5rem;
+      left: 0;
+    }
+  }
+  &__servicesWrapper {
+    @include d-flex-column;
+    gap: 2rem;
+    @media screen and (min-width: $desktop) {
+      @include d-flex;
+      flex-wrap: wrap;
+    }
+    &__service {
+      cursor: pointer;
+      transition: scale 0.7s;
+      will-change: scale;
+      background-color: $white;
+      width: 80vw;
+      border-radius: $border-med;
+      box-shadow: $box-shadow;
+      @include d-flex-column;
+      padding: 2rem;
+      justify-content: flex-start;
+      align-items: flex-start;
+      @media screen and (min-width: $mobile) {
+        width: 25rem;
+      }
+      @media screen and (min-width: $desktop) {
+        height: 22rem;
+      }
+      &__headerWWW {
+        @include headerFont();
+        font-size: 1.5rem;
+        @media screen and (min-width: $mobile) {
+          width: 20rem;
+        }
+      }
+      &__header {
+        margin-top: 3vh;
+        @include headerFont();
+        font-size: 1.5rem;
+        @media screen and (min-width: $mobile) {
+          width: 20rem;
+        }
+      }
+      &__description {
+        @include textFont();
+        margin-top: 1vh;
+      }
+    }
+    &__service:hover {
+      scale: $hover-med-scale;
+    }
+  }
+}
