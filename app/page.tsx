@@ -9,6 +9,7 @@ import Footer from "@/components/pages/Footer/Footer.page";
 import Opinions from "@/components/pages/Opinions/Opinions.page";
 import Projects from "@/components/pages/Projects/Projects.fetching";
 import Help from "@/components/pages/Help/Help.page";
+import Colaboration from "@/components/pages/Colaboration/Colaboration.page";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Projects />
       <PostsAmount />
       <Opinions />
+      <Colaboration />
       <Contact />
       <Footer />
     </>
