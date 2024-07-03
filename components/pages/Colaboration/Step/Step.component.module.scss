@@ -21,6 +21,9 @@
       @include headerFont();
       font-size: 1.3rem;
       font-weight: 600;
+      @media screen and (min-width: $desktop) {
+        font-size: 2rem;
+      }
     }
     &__description {
       @include textFont();

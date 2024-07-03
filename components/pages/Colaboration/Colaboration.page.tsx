@@ -67,6 +67,13 @@ function Colaboration() {
           />
         ))}
       </section>
+      <section className={s.container__cta}>
+        <a href="tel:+48 693 851 878">
+          <button className={s.container__cta__btn}>
+            Zadzwoń: 693 851 878
+          </button>
+        </a>
+      </section>
     </section>
   );
 }
