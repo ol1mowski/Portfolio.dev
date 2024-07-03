@@ -19,7 +19,7 @@ function HomePageInfoSection() {
         <p className={s.content__cta__p}>
           <Text textValue="Cześć! Nazywam się Oliwier Markiewicz i zajmuję się tworzeniem stron internetowych, które wyróżniają się na tle konkurencji 🏆 😉" />
         </p>
-        <ScrollLink link="#about">
+        <ScrollLink link="#services">
           <button className={s.content__cta__btn}>Stwórzmy coś razem</button>
         </ScrollLink>
       </section>
