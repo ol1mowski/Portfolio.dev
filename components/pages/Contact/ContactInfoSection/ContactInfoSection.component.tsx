@@ -1,6 +1,8 @@
 import s from "./ContactInfoSection.component.module.scss";
 
-import { type StaticImageData } from "next/image";
+import Image from "next/image";
+
+import telephone from "@/assets/telephone.png";
 
 function ContactInfoSection({
   title,
@@ -16,7 +18,7 @@ function ContactInfoSection({
       <div className={s.icon}>
         <div className={s.icon}>
           <span className={s.icon__span}>
-            {title === "Lokalizacja" ? (
+            {title === "Lokalizacja" && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
@@ -35,7 +37,8 @@ function ContactInfoSection({
                 <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
                 <path d="M20.2 20.2l1.8 1.8" />
               </svg>
-            ) : (
+            )}
+            {title === "Mail" && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
@@ -51,6 +54,14 @@ function ContactInfoSection({
                 <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
                 <path d="M3 7l9 6l9 -6"></path>
               </svg>
+            )}
+            {title === "Telefon" && (
+              <Image
+                src={telephone}
+                width={30}
+                height={30}
+                alt="Telephone Icon"
+              />
             )}
           </span>
           <div className={s.icon__info}>
