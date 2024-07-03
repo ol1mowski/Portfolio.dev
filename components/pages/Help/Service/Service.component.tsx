@@ -1,5 +1,5 @@
 import Image, { type StaticImageData } from "next/image";
-import s from "./service.component.module.scss";
+import s from "./Service.component.module.scss";
 import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
 
 function Service({
