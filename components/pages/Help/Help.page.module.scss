@@ -33,46 +33,6 @@
       @include d-flex;
       flex-wrap: wrap;
     }
-    &__service {
-      cursor: pointer;
-      transition: scale 0.7s;
-      will-change: scale;
-      background-color: $white;
-      width: 80vw;
-      border-radius: $border-med;
-      box-shadow: $box-shadow;
-      @include d-flex-column;
-      padding: 2rem;
-      justify-content: flex-start;
-      align-items: flex-start;
-      @media screen and (min-width: $mobile) {
-        width: 25rem;
-      }
-      @media screen and (min-width: $desktop) {
-        height: 22rem;
-      }
-      &__headerWWW {
-        @include headerFont();
-        font-size: 1.5rem;
-        @media screen and (min-width: $mobile) {
-          width: 20rem;
-        }
-      }
-      &__header {
-        margin-top: 3vh;
-        @include headerFont();
-        font-size: 1.5rem;
-        @media screen and (min-width: $mobile) {
-          width: 20rem;
-        }
-      }
-      &__description {
-        @include textFont();
-        margin-top: 1vh;
-      }
-    }
-    &__service:hover {
-      scale: $hover-med-scale;
-    }
+    
   }
 }
