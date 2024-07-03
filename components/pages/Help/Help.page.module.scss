@@ -1,0 +1,38 @@
+@import "@/style/index.scss";
+
+.container {
+  background-color: #007acc17;
+  @include d-flex-column;
+  justify-content: flex-start;
+  padding: 10vh 0;
+  gap: 5rem;
+  &__header {
+    @include d-flex-column;
+    position: relative;
+    &__title {
+      text-align: center;
+      @include headerFont();
+      font-size: 2rem;
+      color: $dark;
+      font-weight: 600;
+    }
+    &__line {
+      position: absolute;
+      background-color: $dark-blue;
+      height: 0.5rem;
+      width: 5rem;
+      border-radius: $border-med;
+      top: 3.5rem;
+      left: 0;
+    }
+  }
+  &__servicesWrapper {
+    @include d-flex-column;
+    gap: 2rem;
+    @media screen and (min-width: $desktop) {
+      @include d-flex;
+      flex-wrap: wrap;
+    }
+    
+  }
+}
