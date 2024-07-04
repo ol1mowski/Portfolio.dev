@@ -1,4 +1,3 @@
-import Image from "next/image";
 import s from "./Colaboration.page.module.scss";
 
 import one from "@/assets/wsp_1.svg";
