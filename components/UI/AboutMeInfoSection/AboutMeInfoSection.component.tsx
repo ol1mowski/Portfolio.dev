@@ -30,7 +30,7 @@ function AboutMeInfoSection() {
         , które spełniają indywidualne potrzeby klientów.
       </p>
       <p className={s.contentSection__p}>
-        Pomagam małym firmą zaistnieć w internecie, oferując kompleksowe
+        Pomagam małym firmom zaistnieć w internecie, oferując kompleksowe
         rozwiązania obejmujące wdrażanie strategii marketingowych, takich jak
         Reklama
         <a
