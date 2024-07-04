@@ -17,7 +17,7 @@ const Contact = () => {
             />
             <ContactInfoSection
               link="mailto:oliwier.markiewicz.dev@gmail.com"
-              title="Mail"
+              title="e-mail"
               content="oliwier.markiewicz.dev@gmail.com"
             />
             <ContactInfoSection
