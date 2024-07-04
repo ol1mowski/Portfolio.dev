@@ -1,0 +1,34 @@
+@import "@/style/index.scss";
+
+.container {
+  @include d-flex-column;
+  color: $white;
+  background-color: $dark-blue;
+  width: 100vw;
+  line-height: 2rem;
+  gap: 10vh;
+  padding: 5rem 0;
+  @media screen and (min-width: $big-tablet) {
+    flex-direction: row;
+    gap: 10vw;
+    padding: 6rem 0;
+  }
+  &__media {
+    @include d-flex-column;
+    gap: 3vh;
+    &__beforeNumber {
+      font-size: 3rem;
+      margin-right: 0.2rem;
+      @media screen and (min-width: $big-tablet) {
+        font-size: 4rem;
+      }
+    }
+    &__description {
+      font-size: 1.1rem;
+      transition: font-size 0.7s;
+    }
+    &__description:hover {
+      font-size: 1.2rem;
+    }
+  }
+}
