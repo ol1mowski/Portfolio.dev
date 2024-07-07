@@ -30,11 +30,11 @@ const STEP = [
     description: `Zanim strona internetowa zostanie uruchomiona, przeprowadzam dokładne testy funkcjonalności na różnych urządzeniach i przeglądarkach. Upewniam się, że wszystko działa bez zarzutu, a następnie wdrażam stronę na hosting, dbając o każdy szczegół.`,
     reverse: false,
   },
-  {
+   {
     id: 4,
     image: four,
-    title: "Marketing na Życzenie Klienta",
-    description: `Na życzenie klienta przygotowuję i realizuję specjalne kampanie marketingowe, dostosowane do specyficznych potrzeb i celów takie jak kampania Google czy Facebook Ads czy pozycjonowanie wizytówki Google Moja Firma, które pomogą w osiągnięciu zamierzonych wyników.`,
+    title: "Pozycjonowanie Lokalne i Kampania Marketingowa",
+    description: `Przygotowuję i realizuję specjalne strategie marketingowe kampanie marketingowe, dostosowane do specyficznych potrzeb i celów takie jak kampania Google czy Facebook Ads czy pozycjonowanie wizytówki Google Moja Firma, które pomogą w zdobyciu nowych klientów`,
     reverse: true,
   },
   {
