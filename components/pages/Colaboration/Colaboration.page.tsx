@@ -33,8 +33,8 @@ const STEP = [
    {
     id: 4,
     image: four,
-    title: "Pozycjonowanie Lokalne i Kampania Marketingowa",
-    description: `Przygotowuję i realizuję specjalne strategie marketingowe kampanie marketingowe, dostosowane do specyficznych potrzeb i celów takie jak kampania Google czy Facebook Ads czy pozycjonowanie wizytówki Google Moja Firma, które pomogą w zdobyciu nowych klientów`,
+    title: "Pozycjonowanie Lokalne",
+    description: `Przygotowuję i realizuję specjalne strategie marketingowe dostosowane do specyficznych potrzeb i celów takie jak kampania Google czy Facebook Ads czy pozycjonowanie wizytówki Google Moja Firma, które pomogą w zdobyciu nowych klientów`,
     reverse: true,
   },
   {
