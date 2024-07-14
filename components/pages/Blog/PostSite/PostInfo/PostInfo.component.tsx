@@ -2,7 +2,7 @@ import s from "./PostInfo.component.module.scss";
 
 import Image from "next/image";
 
-import authorImage from "@/assets/author_about.svg";
+import authorImage from "@/assets/ja.png";
 import categoryIcon from "@/assets/category.svg";
 import calenderIcon from "@/assets/calendar.svg";
 import readingTimeIcon from "@/assets/time.svg";

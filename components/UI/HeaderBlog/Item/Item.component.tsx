@@ -19,9 +19,9 @@ function Item({
           <li className={s.item}>{value}</li>
         </ScrollLink>
       ) : (
-        <Link prefetch={true} href={href}>
+        <a href={href}>
           <li className={s.item}>{value}</li>
-        </Link>
+        </a>
       )}
     </>
   );
