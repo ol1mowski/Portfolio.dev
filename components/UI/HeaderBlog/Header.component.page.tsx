@@ -7,7 +7,6 @@ import Image, { type StaticImageData } from "next/image";
 import { BlogITEMS, ITEMS } from "./StaticData";
 import Button from "../Button/Button.component";
 import Item from "./Item/Item.component";
-import Link from "next/link";
 import { useContext } from "react";
 import HamburgerClickContext from "@/store/HamburgerClickContext";
 import HamburgerMenuComponent from "./HamburgerMenu/Hamburger-Menu.component";
@@ -34,7 +33,7 @@ function Header({
   return (
     <header className={s.headerWrapper}>
       <section className={s.headerWrapper__logoSection}>
-        <Link prefetch={true} href={"/Blog"}>
+        <a href={"/Blog"}>
           <Image
             className={s.headerWrapper__logoSection__img}
             src={logo}
@@ -42,7 +41,7 @@ function Header({
             width={150}
             height={150}
           />
-        </Link>
+        </a>
       </section>
 
       <section className={s.headerWrapper__hamburgerMenu}>
