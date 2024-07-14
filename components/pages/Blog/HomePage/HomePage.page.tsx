@@ -1,6 +1,5 @@
 import s from "./HomePage.page.module.scss";
 
-import Link from "next/link";
 
 import Caption from "@/components/UI/Caption/Caption.component";
 import Description from "@/components/UI/Description/Description.component";
@@ -27,9 +26,9 @@ function HomePageComponent({ posts }: { posts: PostsType[] }) {
             </span>
             <Caption type="main" value={lastPost.title} />
             <Description value={lastPost.description} />
-            <Link href={`/Blog/posty/${lastPost.slug}`}>
+            <a href={`/Blog/posty/${lastPost.slug}`}>
               <Button type="normal" value={"Czytaj"} />
-            </Link>
+            </a>
           </section>
         </section>
       </AnimationWrapper>
