@@ -2,7 +2,6 @@ import s from "./MenuItem.component.module.scss";
 
 import { Link as AnimateLink } from "react-scroll";
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 const MenuItem = ({
   to,
@@ -19,7 +18,7 @@ const MenuItem = ({
 }) => (
   <>
     {label === "Blog" ? (
-      <Link prefetch={true} href={"/Blog"}>
+      <a href={"/Blog"}>
         <motion.div
           onClick={hideMenu}
           className={s.item}
@@ -28,7 +27,7 @@ const MenuItem = ({
         >
           {label}
         </motion.div>
-      </Link>
+      </a>
     ) : (
       <AnimateLink
         key={index}
