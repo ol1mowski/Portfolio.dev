@@ -17,6 +17,7 @@
   }
   @media screen and (min-width: $desktop) {
     height: 22rem;
+    width: 25rem;
   }
   &__headerWWW {
     @include headerFont();
