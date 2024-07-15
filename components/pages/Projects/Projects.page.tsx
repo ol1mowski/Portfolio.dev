@@ -16,7 +16,7 @@ const Projects = ({ projects }: { projects: ProjectsType[] }) => {
           PROJEKTY
         </h3>
         <h4 className={style.projectsContainer__contentSection__h4}>
-          Zobacz Stworzone Przeze Mnie Strony Internetowe
+          Zobacz Ostatnie Stworzone Przeze Mnie Strony Internetowe
         </h4>
       </section>
       <section className={style.projectsContainer__projectsWrapper}>
