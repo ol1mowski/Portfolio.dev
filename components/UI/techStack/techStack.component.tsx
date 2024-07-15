@@ -19,7 +19,7 @@ const TechStack = () => {
     <>
       <section className={s.techStackContainer}>
         <div className={s.techStackContainer__title}>
-          <p className={s.techStackContainer__title__p}>Tech Stack</p>
+          <p className={s.techStackContainer__title__p}>Narzędzia</p>
         </div>
         <div className={s.techStackContainer__skillsWrapper}>
           <a
@@ -86,19 +86,6 @@ const TechStack = () => {
               height={75}
               className={s.techStackContainer__skillsWrapper__skill}
             />
-          </a>
-          <a
-            href="https://www.facebook.com/business/ads"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src={facebook_ads}
-              alt="Facebook Ads icon"
-              width={155}
-              height={155}
-              className={s.techStackContainer__skillsWrapper__skill}
-            />{" "}
           </a>
           <a
             href="https://sass-lang.com/"
