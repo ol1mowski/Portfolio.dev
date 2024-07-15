@@ -88,19 +88,6 @@ const TechStack = () => {
             />
           </a>
           <a
-            href="https://www.facebook.com/business/ads"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src={facebook_ads}
-              alt="Facebook Ads icon"
-              width={155}
-              height={155}
-              className={s.techStackContainer__skillsWrapper__skill}
-            />{" "}
-          </a>
-          <a
             href="https://sass-lang.com/"
             target="_blank"
             rel="noopener noreferrer"
