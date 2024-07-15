@@ -2,6 +2,8 @@ import website from "@/assets/website.png";
 import marketing from "@/assets/marketing.png";
 import social from "@/assets/social.png";
 import google from "@/assets/google.png";
+import ai from "@/assets/ai.png";
+import graphic from "@/assets/graphic.png";
 
 export const SERVICES = [
   {
@@ -34,11 +36,27 @@ export const SERVICES = [
   },
   {
     id: 4,
-    title: "Optymalizacja Wizytówki Google Moja Firma",
+    title: "Pozycjonowanie Lokalne",
     description: `Oferuję profesjonalną optymalizację wizytówki Google Moja Firma,
             która pozwoli Twojej firmie wyróżnić się w wynikach wyszukiwania
             lokalnego.`,
     image: google,
+    width: 64,
+    height: 64,
+  },
+  {
+    id: 5,
+    title: "Grafiki Dla Twojej Firmy",
+    description: `Tworzę unikalne i profesjonalne grafiki, które wyróżnią Twoją firmę na rynku, wzmocnią jej wizerunek i przyciągną uwagę klientów, dzięki czemu Twoja marka zyska na rozpoznawalności i atrakcyjności.`,
+    image: graphic,
+    width: 50,
+    height: 50,
+  },
+  {
+    id: 6,
+    title: "AI w Twojej Firmie",
+    description: `Pomagam firmom zwiększać zyski i optymalizować procesy dzięki nowoczesnym rozwiązaniom opartym na sztucznej inteligencji, dostosowanym do indywidualnych potrzeb każdego przedsiębiorstwa.`,
+    image: ai,
     width: 64,
     height: 64,
   },

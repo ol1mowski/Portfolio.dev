@@ -63,6 +63,13 @@ function AboutMeInfoSection() {
         które zwiększają widoczność i przyciągają nowych klientów.
       </p>
       <p className={s.contentSection__p}>
+        Oferuję usługi wsparcia dla firm w zakresie wdrażania Sztucznej
+        Inteligencji{" "}
+        <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank" rel="noopener noreferrer">
+          <span className={s.contentSection__p__special}>AI</span>
+        </a>
+      </p>
+      <p className={s.contentSection__p}>
         Prowadzę również kanał na{" "}
         <a
           href="https://www.youtube.com/channel/UCTNFKRALTZoSQS6mDOuDs2Q"
