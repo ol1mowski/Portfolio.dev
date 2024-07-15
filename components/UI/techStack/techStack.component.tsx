@@ -19,7 +19,7 @@ const TechStack = () => {
     <>
       <section className={s.techStackContainer}>
         <div className={s.techStackContainer__title}>
-          <p className={s.techStackContainer__title__p}>Tech Stack</p>
+          <p className={s.techStackContainer__title__p}>Narzędzia</p>
         </div>
         <div className={s.techStackContainer__skillsWrapper}>
           <a
