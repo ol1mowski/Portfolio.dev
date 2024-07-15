@@ -6,6 +6,32 @@
   justify-content: flex-start;
   padding: 10vh 0;
   gap: 5rem;
+  &__cta {
+    margin-top: 2vh;
+    @include d-flex-column;
+    gap: 3vh;
+    margin-bottom: 10vh;
+    &__header {
+      font-size: 2rem;
+      color: $dark;
+      opacity: .9;
+      @include headerFont();
+      font-weight: 600;
+    }
+    &__btn {
+      @include btn();
+      padding: 1.2rem;
+      font-size: 1.5rem;
+      transition: scale, background-color, color, border, 0.7s;
+      will-change: scale, background-color, color, border;
+    }
+    &__btn:hover {
+      scale: $hover-med-scale;
+      background-color: transparent;
+      color: $light-blue;
+      border: 1px solid $light-blue;
+    }
+  }
   &__header {
     @include d-flex-column;
     position: relative;
@@ -27,12 +53,18 @@
     }
   }
   &__servicesWrapper {
-    @include d-flex-column;
+    display: grid;
     gap: 2rem;
+    justify-content: center;
+    width: 80vw;
     @media screen and (min-width: $desktop) {
-      @include d-flex;
-      flex-wrap: wrap;
+      width: 25rem;
     }
-    
+    @media screen and (min-width: $desktop) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);
+      width: 70vw;
+      gap: 10vh;
+    }
   }
 }

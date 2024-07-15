@@ -22,6 +22,17 @@ function Help() {
           />
         ))}
       </section>
+      <section className={s.container__cta}>
+        <h3 className={s.container__cta__header}>
+          Darmowa Konsultacja
+        </h3>
+          <span className={s.container__header__line}></span>
+        <a href="tel:+48 693 851 878">
+          <button className={s.container__cta__btn}>
+            Zadzwoń: 693 851 878
+          </button>
+        </a>
+      </section>
     </section>
   );
 }

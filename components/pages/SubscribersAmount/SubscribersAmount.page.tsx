@@ -39,7 +39,7 @@ function SubscribersAmount() {
       <article className={s.container__media}>
          <div>
           <span className={s.container__media__beforeNumber}></span>
-          <CounterAnimation duration={2000} target={10} />
+          <CounterAnimation duration={2000} target={7} />
         </div>
         <Link href={"/"}>
           <span className={s.container__media__description}>
