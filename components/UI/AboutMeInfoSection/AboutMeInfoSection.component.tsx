@@ -65,7 +65,11 @@ function AboutMeInfoSection() {
       <p className={s.contentSection__p}>
         Oferuję usługi wsparcia dla firm w zakresie wdrażania Sztucznej
         Inteligencji{" "}
-        <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://en.wikipedia.org/wiki/Artificial_intelligence"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span className={s.contentSection__p__special}>AI</span>
         </a>
       </p>
@@ -80,6 +84,16 @@ function AboutMeInfoSection() {
         </a>{" "}
         gdzie dzielę się wiedzą z zakresu programowania oraz tworzenia stron
         internetowych.
+      </p>
+      <p className={s.contentSection__p}>
+        Zobacz Wszystkie Moje Certyfikaty Na Profilu
+        <a
+          href="https://www.linkedin.com/in/oliwier-markiewicz-47857228a/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className={s.contentSection__p__special}> LinkedIn</span>
+        </a>
       </p>
     </div>
   );
