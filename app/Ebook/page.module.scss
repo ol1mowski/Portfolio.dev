@@ -1,0 +1,105 @@
+@import "@/style/index.scss";
+
+.container {
+  @include d-flex-column;
+  justify-content: flex-start;
+  gap: 3rem;
+  padding: 10vh 0;
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-around;
+    width: 80rem;
+    margin-left: 10vw;
+  }
+  margin: 0 auto;
+  &__content {
+    @include d-flex-column;
+
+    width: 80%;
+    gap: 2rem;
+    margin: 0 auto;
+    @media screen and (min-width: $desktop) {
+      width: 40%;
+    }
+    &__header {
+      position: relative;
+      &__title {
+        text-align: center;
+        @include headerFont();
+        font-size: 1.7rem;
+        color: $dark;
+        width: 15rem;
+        text-align: left;
+        font-weight: 600;
+        @media screen and (min-width: $mobile) {
+          font-size: 2rem;
+        }
+      }
+      &__line {
+        position: absolute;
+        background-color: $dark-blue;
+        height: 0.5rem;
+        width: 5rem;
+        border-radius: $border-med;
+        top: 5.5rem;
+        left: 0;
+      }
+    }
+    &__p {
+      @include description();
+      color: $dark-grey;
+      width: 80%;
+      font-size: 1rem;
+      @media screen and (min-width: 1020px) {
+        text-align: left;
+        font-size: 1.1rem;
+        width: 35rem;
+      }
+      &__special {
+        color: $light-blue;
+      }
+    }
+  }
+  &__image__img {
+    @media screen and (min-width: $desktop) {
+      width: 850px;
+      height: 800px;
+    }
+  }
+  &__form {
+    @include d-flex-column;
+    gap: 2rem;
+    margin-top: $standard-margin;
+    align-items: flex-start;
+    &__privacyInp {
+      @include d-flex;
+      gap: 0.5rem;
+      &__content {
+        @include description();
+        font-size: 0.8rem;
+      }
+    }
+    &__inp {
+      border: 1px solid $dark-blue;
+      padding: 0.7rem;
+      width: 15rem;
+      border-radius: 0.3rem;
+      @include description();
+      font-size: 1rem;
+    }
+    &__btn {
+      @include btn();
+      padding: 1.2rem;
+      font-size: 1.3rem;
+      transition: scale, background-color, color, border, 0.7s;
+      will-change: scale, background-color, color, border;
+    }
+    &__btn:hover {
+      scale: $hover-med-scale;
+      background-color: transparent;
+      color: $light-blue;
+      border: 1px solid $light-blue;
+    }
+  }
+}
