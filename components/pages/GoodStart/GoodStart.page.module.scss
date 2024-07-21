@@ -9,7 +9,10 @@
     flex-direction: row;
     gap: 0;
     justify-content: space-around;
+    width: 80rem;
+    margin-left: 10vw;
   }
+  margin: 0 auto;
   &__content {
     @include d-flex-column;
     align-items: flex-start;
@@ -42,7 +45,7 @@
     }
     &__p {
       @include description();
-      margin-top: $big-margin;
+      margin-top: $standard-margin;
       color: $dark-grey;
       width: 80%;
       font-size: 1rem;
@@ -50,6 +53,9 @@
         text-align: left;
         font-size: 1.1rem;
         width: 35rem;
+      }
+      &__special {
+        color: $light-blue;
       }
     }
     &__btn {
@@ -64,6 +70,12 @@
       background-color: transparent;
       color: $light-blue;
       border: 1px solid $light-blue;
+    }
+  }
+  &__image__img {
+    @media screen and (min-width: $desktop) {
+      width: 850px;
+      height: 800px;
     }
   }
 }
