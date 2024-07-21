@@ -12,11 +12,14 @@
     gap: 3vh;
     margin-bottom: 10vh;
     &__header {
-      font-size: 2rem;
+      font-size: 1.7rem;
       color: $dark;
-      opacity: .9;
+      opacity: 0.9;
       @include headerFont();
       font-weight: 600;
+      @media screen and (min-width: $mobile) {
+        font-size: 2rem;
+      }
     }
     &__btn {
       @include btn();
@@ -38,9 +41,12 @@
     &__title {
       text-align: center;
       @include headerFont();
-      font-size: 2rem;
+      font-size: 1.7rem;
       color: $dark;
       font-weight: 600;
+      @media screen and (min-width: $mobile) {
+        font-size: 2rem;
+      }
     }
     &__line {
       position: absolute;
