@@ -29,8 +29,9 @@
   &__header {
     margin-top: 3vh;
     @include headerFont();
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     @media screen and (min-width: $mobile) {
+      font-size: 1.5rem;
       width: 20rem;
     }
   }
