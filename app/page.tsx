@@ -9,12 +9,14 @@ import Opinions from "@/components/pages/Opinions/Opinions.page";
 import Projects from "@/components/pages/Projects/Projects.fetching";
 import Help from "@/components/pages/Help/Help.page";
 import Colaboration from "@/components/pages/Colaboration/Colaboration.page";
+import GoodStart from "@/components/pages/GoodStart/GoodStart.page";
 
 export default function Home() {
   return (
     <>
       <Header />
       <HomePage />
+      <GoodStart />
       <Help />
       <About />
       <SubscribersAmount />
