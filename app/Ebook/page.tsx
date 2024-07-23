@@ -2,14 +2,13 @@ import Image from "next/image";
 import s from "./page.module.scss";
 
 import ebook from "@/assets/bezplatny_ebook.png";
-import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
 import Header from "@/components/UI/Header/Header.component";
 import Footer from "@/components/pages/Footer/Footer.page";
 
 function GoodStart() {
   return (
     <>
-      <Header />
+      <Header type="out"/>
       <section className={s.container}>
         <section className={s.container__content}>
           <section className={s.container__content__header}>
@@ -35,7 +34,7 @@ function GoodStart() {
               <div className={s.container__form__privacyInp}>
                 <input type="checkbox" name="formInput" id="privacy" />
                 <span className={s.container__form__privacyInp__content}>
-                  *Akceptuję Politykę Prywatnosci
+                  *Akceptuję <a href="/prywatnosc">Politykę Prywatnoci</a>
                 </span>
               </div>
 

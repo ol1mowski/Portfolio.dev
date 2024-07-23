@@ -14,7 +14,7 @@ import GoodStart from "@/components/pages/GoodStart/GoodStart.page";
 export default function Home() {
   return (
     <>
-      <Header />
+      <Header type="in"/>
       <HomePage />
       <GoodStart />
       <Help />

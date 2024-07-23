@@ -118,7 +118,7 @@ function Footer() {
                     s.container__linksSection__linksWrapper__sectionElementsWrapper__listItems__item
                   }
                 >
-                  <Link href={"/Blog/prywatnosc"}>Polityka Prywatności</Link>
+                  <Link href={"/prywatnosc"}>Polityka Prywatności</Link>
                 </li>
               </ul>
             </div>
