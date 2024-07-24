@@ -41,10 +41,6 @@ function Privacy() {
                 Poprzez dobrowolnie wprowadzone w formularzach dane, które
                 zostają wprowadzone do systemów Operatora.
               </li>
-              <li>
-                Poprzez zapisywanie w urządzeniach końcowych plików cookie (tzw.
-                „ciasteczka”).
-              </li>
             </ol>
           </li>
         </ol>
@@ -79,7 +75,7 @@ function Privacy() {
         <ol className={s.container__content__ol}>
           <li>
             Serwis jest hostowany (technicznie utrzymywany) na serwerach
-            operatora: Netlify
+            operatora: Vercel
           </li>
 
           <li>
@@ -288,135 +284,6 @@ function Privacy() {
           </li>
         </ol>
         <br />
-        <Caption type="sub" value="8. Informacja o plikach cookies" />
-        <br />
-        <ol className={s.container__content__ol}>
-          <li>Serwis korzysta z plików cookies.</li>
-          <li>
-            Pliki cookies (tzw. &quot;ciasteczka&quot;) stanowią dane informatyczne, w
-            szczególności pliki tekstowe, które przechowywane są w urządzeniu
-            końcowym Użytkownika Serwisu i przeznaczone są do korzystania ze
-            stron internetowych Serwisu. Cookies zazwyczaj zawierają nazwę
-            strony internetowej, z której pochodzą, czas przechowywania ich na
-            urządzeniu końcowym oraz unikalny numer.
-          </li>
-          <li>
-            Podmiotem zamieszczającym na urządzeniu końcowym Użytkownika Serwisu
-            pliki cookies oraz uzyskującym do nich dostęp jest operator Serwisu.
-          </li>
-          <li>
-            Pliki cookies wykorzystywane są w następujących celach:
-            <ol className={s.container__content__ol}>
-              <li>
-                utrzymanie sesji użytkownika Serwisu (po zalogowaniu), dzięki
-                której użytkownik nie musi na każdej podstronie Serwisu ponownie
-                wpisywać loginu i hasła;
-              </li>
-              <li>
-                realizacji celów określonych powyżej w części &quot;Istotne
-                techniki marketingowe&quot;;
-              </li>
-            </ol>
-          </li>
-          <li>
-            W ramach Serwisu stosowane są dwa zasadnicze rodzaje plików cookies:
-            &quot;sesyjne&quot; (session cookies) oraz &quot;stałe&quot; (persistent cookies).
-            Cookies &quot;sesyjne&quot; są plikami tymczasowymi, które przechowywane są w
-            urządzeniu końcowym Użytkownika do czasu wylogowania, opuszczenia
-            strony internetowej lub wyłączenia oprogramowania (przeglądarki
-            internetowej). &quot;Stałe&quot; pliki cookies przechowywane są w urządzeniu
-            końcowym Użytkownika przez czas określony w parametrach plików
-            cookies lub do czasu ich usunięcia przez Użytkownika.
-          </li>
-          <li>
-            Oprogramowanie do przeglądania stron internetowych (przeglądarka
-            internetowa) zazwyczaj domyślnie dopuszcza przechowywanie plików
-            cookies w urządzeniu końcowym Użytkownika. Użytkownicy Serwisu mogą
-            dokonać zmiany ustawień w tym zakresie.&nbsp;Przeglądarka
-            internetowa umożliwia usunięcie plików cookies. Możliwe jest także
-            automatyczne blokowanie plików cookies Szczegółowe informacje na ten
-            temat zawiera pomoc lub dokumentacja przeglądarki internetowej.
-          </li>
-          <li>
-            Ograniczenia stosowania plików cookies mogą wpłynąć na niektóre
-            funkcjonalności dostępne na stronach internetowych Serwisu.
-          </li>
-          <li>
-            Pliki cookies zamieszczane w urządzeniu końcowym Użytkownika Serwisu
-            wykorzystywane mogą być również przez współpracujące z operatorem
-            Serwisu podmioty, w szczególności dotyczy to firm: Google (Google
-            Inc. z siedzibą w USA), Facebook (Facebook Inc. z siedzibą w USA),
-            Twitter (Twitter Inc. z siedzibą w USA).
-          </li>
-        </ol>
-        <br />
-        <Caption
-          type="sub"
-          value=" 9. Zarządzanie plikami cookies – jak w praktyce wyrażać i cofać zgodę?"
-        />
-        <br />
-        <ol className={s.container__content__ol}>
-          <li>
-            Jeśli użytkownik nie chce otrzymywać plików cookies, może zmienić
-            ustawienia przeglądarki. Zastrzegamy, że wyłączenie obsługi plików
-            cookies niezbędnych dla procesów uwierzytelniania, bezpieczeństwa,
-            utrzymania preferencji użytkownika może utrudnić,&nbsp;a w skrajnych
-            przypadkach może uniemożliwić korzystanie ze stron www
-          </li>
-          <li>
-            W celu zarządzania ustawienia cookies wybierz z listy poniżej
-            przeglądarkę internetową, której używasz i postępuj zgodnie z
-            instrukcjami:
-            <ul>
-              <li>
-                <a href="https://support.microsoft.com/pl-pl/help/10607/microsoft-edge-view-delete-browser-history">
-                  Edge
-                </a>
-              </li>
-              <li>
-                <a href="https://support.microsoft.com/pl-pl/help/278835/how-to-delete-cookie-files-in-internet-explorer">
-                  Internet Explorer
-                </a>
-              </li>
-              <li>
-                <a href="http://support.google.com/chrome/bin/answer.py?hl=pl&amp;answer=95647">
-                  Chrome
-                </a>
-              </li>
-              <li>
-                <a href="http://support.apple.com/kb/PH5042">Safari</a>
-              </li>
-              <li>
-                <a href="http://support.mozilla.org/pl/kb/W%C5%82%C4%85czanie%20i%20wy%C5%82%C4%85czanie%20obs%C5%82ugi%20ciasteczek">
-                  Firefox
-                </a>
-              </li>
-              <li>
-                <a href="http://help.opera.com/Windows/12.10/pl/cookies.html">
-                  Opera
-                </a>
-              </li>
-            </ul>
-            <p>Urządzenia mobilne:</p>
-            <ul>
-              <li>
-                <a href="http://support.google.com/chrome/bin/answer.py?hl=pl&amp;answer=95647">
-                  Android
-                </a>
-              </li>
-              <li>
-                <a href="http://support.apple.com/kb/HT1677?viewlocale=pl_PL">
-                  Safari (iOS)
-                </a>
-              </li>
-              <li>
-                <a href="http://www.windowsphone.com/pl-pl/how-to/wp7/web/changing-privacy-and-other-browser-settings">
-                  Windows Phone
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ol>
       </section>
     </section>
   );

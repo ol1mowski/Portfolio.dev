@@ -1,7 +1,7 @@
 import Image from "next/image";
 import s from "./GoodStart.page.module.scss";
 
-import ebook from "@/assets/bezplatny_ebook.png";
+import ebook from "@/assets/bezplatny_ebook.svg";
 import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
 
 function GoodStart() {
@@ -28,8 +28,8 @@ function GoodStart() {
           </a>
           <p className={s.container__content__p}>
             Chcesz więcej bezpłatnej wiedzy ? Zobacz mojego
-            <a href="/Blog"><span className={s.container__content__p__special}> Bloga </span>{" "}</a>
-            lub mój kanał na <a href="https://www.youtube.com/channel/UCTNFKRALTZoSQS6mDOuDs2Q"><span className={s.container__content__p__special}> YouTube </span>{" "}</a>
+            <a target="_blank" href="/Blog"><span className={s.container__content__p__special}> Bloga </span>{" "}</a>
+            lub mój kanał na <a target="_blank" href="https://www.youtube.com/channel/UCTNFKRALTZoSQS6mDOuDs2Q"><span className={s.container__content__p__special}> YouTube </span>{" "}</a>
             !
           </p>
         </section>
