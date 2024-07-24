@@ -1,7 +1,7 @@
 import Image from "next/image";
 import s from "./page.module.scss";
 
-import ebook from "@/assets/bezplatny_ebook.png";
+import ebook from "@/assets/bezplatny_ebook.svg";
 import Header from "@/components/UI/Header/Header.component";
 import Footer from "@/components/pages/Footer/Footer.page";
 

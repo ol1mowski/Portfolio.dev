@@ -5,7 +5,7 @@ import Footer from "@/components/pages/Footer/Footer.page";
 function page() {
   return (
     <>
-      <Header/>
+      <Header type="out"/>
       <Privacy />
       <Footer />
     </>
