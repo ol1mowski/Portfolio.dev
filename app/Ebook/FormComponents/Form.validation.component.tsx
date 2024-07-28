@@ -26,10 +26,10 @@ function Form({ action }: { action: (formData: FormData) => Promise<void> }) {
     if (!emailValue) {
       newErrors.email = "*Email jest wymagany";
     } else if (!/\S+@\S+\.\S+/.test(emailValue)) {
-      newErrors.email = "*Nieprawidłowy email";
+      newErrors.email = "Nieprawidłowy email";
     }
     if (!privacyChecked) {
-      newErrors.privacy = "*Musisz zaakceptować politykę prywatności";
+      newErrors.privacy = "Musisz zaakceptować politykę prywatności";
     }
 
     setErrors(newErrors);
