@@ -16,7 +16,6 @@ const FormComponent: React.FC<FormComponentProps> = ({
   name,
   email,
   privacy,
-  error,
   errors,
   isPending,
   success,
@@ -44,20 +43,20 @@ const FormComponent: React.FC<FormComponentProps> = ({
       {errors.name && <p className={s.form__error}>{errors.name}</p>}
     </div>
     <div className={s.form__inpWrapper}>
-      {errors.name ? (
+      {errors.email ? (
         <input
           type="text"
-          name="name"
-          placeholder="Twoje Imię"
-          ref={name}
+          name="email"
+          placeholder="Twój Email"
+          ref={email}
           className={s.form__inp_err}
         />
       ) : (
         <input
           type="text"
-          name="name"
+          name="email"
           placeholder="Twój Email"
-          ref={name}
+          ref={email}
           className={s.form__inp}
         />
       )}
@@ -77,7 +76,6 @@ const FormComponent: React.FC<FormComponentProps> = ({
     <button type="submit" className={s.form__btn} disabled={isPending}>
       Odbieram Bezpłatnie
     </button>
-    {error && <p className={s.form__error}>{error}</p>}
     {success && <p className={s.form__success}>{success}</p>}
   </form>
 );

@@ -1,3 +1,4 @@
+import { saveClientToDB } from "@/db/db_connect";
 import { redirect } from "next/navigation";
 
 export const saveClientData = async (formData: FormData) => {
@@ -25,5 +26,6 @@ export const saveClientData = async (formData: FormData) => {
 
   console.log("Saving email:", email.trim());
   console.log("Saving name:", name.trim());
+  saveClientToDB({ name: name, email: email });
   redirect("/");
 };
