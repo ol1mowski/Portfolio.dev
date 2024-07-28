@@ -1,14 +1,19 @@
 import Image from "next/image";
 import s from "./page.module.scss";
-
 import ebook from "@/assets/bezplatny_ebook.svg";
 import Header from "@/components/UI/Header/Header.component";
 import Footer from "@/components/pages/Footer/Footer.page";
+import dynamic from "next/dynamic";
+import { saveClientData } from "@/actions/SaveClientEmail";
+
+const ClientForm = dynamic(() => import("./FormComponents/Form.validation.component"), {
+  ssr: false,
+});
 
 function GoodStart() {
   return (
     <>
-      <Header type="out"/>
+      <Header type="out" />
       <section className={s.container}>
         <section className={s.container__content}>
           <section className={s.container__content__header}>
@@ -18,30 +23,7 @@ function GoodStart() {
             <span className={s.container__content__header__line}></span>
           </section>
           <section className={s.container__form}>
-            <form className={s.container__form} action="">
-              <input
-                type="text"
-                name="formInput"
-                placeholder="Twoje Imię"
-                className={s.container__form__inp}
-              />
-              <input
-                type="text"
-                name="formInput"
-                placeholder="Twój Email"
-                className={s.container__form__inp}
-              />
-              <div className={s.container__form__privacyInp}>
-                <input type="checkbox" name="formInput" id="privacy" />
-                <span className={s.container__form__privacyInp__content}>
-                  *Akceptuję <a href="/prywatnosc">Politykę Prywatnoci</a>
-                </span>
-              </div>
-
-              <button className={s.container__form__btn}>
-                Odbieram Bezpłatnie
-              </button>
-            </form>
+            <ClientForm action={saveClientData} />
           </section>
         </section>
         <section className={s.container__image}>
