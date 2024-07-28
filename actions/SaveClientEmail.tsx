@@ -1,6 +1,9 @@
-export const saveClientEmail = async (formData: FormData) => {
+import { redirect } from "next/navigation";
+
+export const saveClientData = async (formData: FormData) => {
   "use server";
-  const email = formData.get("email") as string ;
+  const email = formData.get("email") as string;
+  const name = formData.get("name") as string;
   let errors: string[] = [];
 
   if (!email || typeof email !== "string" || email.trim().length === 0) {
@@ -12,15 +15,15 @@ export const saveClientEmail = async (formData: FormData) => {
     }
   }
 
-  if (errors.length > 0) {
-    throw new Error('Error: ' + { errors })
+  if (!name || typeof name !== "string" || name.trim().length === 0) {
+    errors.push("Name is required.");
   }
 
-  try {
-    console.log("Saving email:", email.trim());
-  } catch (error) {
-    throw new Error(
-      "Adding to newsletter failed, email was not saved. Please try again later."
-    );
+  if (errors.length > 0) {
+    throw new Error("Error: " + JSON.stringify(errors));
   }
+
+  console.log("Saving email:", email.trim());
+  console.log("Saving name:", name.trim());
+  redirect("/");
 };

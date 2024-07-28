@@ -10,12 +10,19 @@
     gap: 0;
     justify-content: space-around;
     width: 80rem;
-    margin-left: 10vw;
+    margin-left: 22vw;
   }
   margin: 0 auto;
+  &__form {
+    margin-top: 5vh;
+    @media screen and (min-width: $desktop) {
+      width: 100%;
+      @include d-flex-column;
+      align-items: flex-start;
+    }
+  }
   &__content {
     @include d-flex-column;
-
     width: 80%;
     gap: 2rem;
     margin: 0 auto;
@@ -35,6 +42,10 @@
         @media screen and (min-width: $mobile) {
           font-size: 2rem;
         }
+        @media screen and (min-width: $desktop) {
+          font-size: 3rem;
+          width: 100%;
+        }
       }
       &__line {
         position: absolute;
@@ -42,8 +53,11 @@
         height: 0.5rem;
         width: 5rem;
         border-radius: $border-med;
-        top: 5.5rem;
+        top: 6.5rem;
         left: 0;
+        @media screen and (min-width: $desktop) {
+          top: 8.5rem;
+        }
       }
     }
     &__p {
@@ -65,41 +79,6 @@
     @media screen and (min-width: $desktop) {
       width: 850px;
       height: 800px;
-    }
-  }
-  &__form {
-    @include d-flex-column;
-    gap: 2rem;
-    margin-top: $standard-margin;
-    align-items: flex-start;
-    &__privacyInp {
-      @include d-flex;
-      gap: 0.5rem;
-      &__content {
-        @include description();
-        font-size: 0.8rem;
-      }
-    }
-    &__inp {
-      border: 1px solid $dark-blue;
-      padding: 0.7rem;
-      width: 15rem;
-      border-radius: 0.3rem;
-      @include description();
-      font-size: 1rem;
-    }
-    &__btn {
-      @include btn();
-      padding: 1.2rem;
-      font-size: 1.3rem;
-      transition: scale, background-color, color, border, 0.7s;
-      will-change: scale, background-color, color, border;
-    }
-    &__btn:hover {
-      scale: $hover-med-scale;
-      background-color: transparent;
-      color: $light-blue;
-      border: 1px solid $light-blue;
     }
   }
 }
