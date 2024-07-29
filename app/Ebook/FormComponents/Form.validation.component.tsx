@@ -29,7 +29,7 @@ function Form({ action }: { action: (formData: FormData) => Promise<void> }) {
       newErrors.email = "Nieprawidłowy email";
     }
     if (!privacyChecked) {
-      newErrors.privacy = "Musisz zaakceptować politykę prywatności";
+      newErrors.privacy = "*Musisz zaakceptować politykę prywatności";
     }
 
     setErrors(newErrors);

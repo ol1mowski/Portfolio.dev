@@ -7,10 +7,9 @@
   gap: 3rem;
   @media screen and (min-width: $desktop) {
     flex-direction: row;
-    gap: 0;
+    gap: 10vw;
     justify-content: space-around;
     width: 80rem;
-    margin-left: 22vw;
   }
   margin: 0 auto;
   &__content {
@@ -74,8 +73,8 @@
   }
   &__image__img {
     @media screen and (min-width: $desktop) {
-      width: 850px;
-      height: 800px;
+      width: 950px;
+      height: 900px;
     }
   }
 }
