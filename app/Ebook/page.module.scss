@@ -2,19 +2,22 @@
 
 .container {
   @include d-flex-column;
-  justify-content: flex-start;
+  align-self: flex-start;
   gap: 3rem;
   padding: 10vh 0;
   @media screen and (min-width: $desktop) {
     flex-direction: row;
     gap: 0;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 80rem;
-    margin-left: 22vw;
+    margin-left: 15vw;
   }
-  margin: 0 auto;
+  @media screen and (min-width: $large-desktop) {
+    margin-left: 25vw;
+  }
   &__form {
     margin-top: 5vh;
+    width: 20rem;
     @media screen and (min-width: $desktop) {
       width: 100%;
       @include d-flex-column;
@@ -26,17 +29,20 @@
     width: 80%;
     gap: 2rem;
     margin: 0 auto;
+
     @media screen and (min-width: $desktop) {
       width: 40%;
+      margin-left: 0;
     }
     &__header {
+      @include d-flex;
       position: relative;
       &__title {
         text-align: center;
         @include headerFont();
         font-size: 1.7rem;
         color: $dark;
-        width: 15rem;
+        width: 20rem;
         text-align: left;
         font-weight: 600;
         @media screen and (min-width: $mobile) {
@@ -53,7 +59,7 @@
         height: 0.5rem;
         width: 5rem;
         border-radius: $border-med;
-        top: 6.5rem;
+        top: 6rem;
         left: 0;
         @media screen and (min-width: $desktop) {
           top: 8.5rem;
