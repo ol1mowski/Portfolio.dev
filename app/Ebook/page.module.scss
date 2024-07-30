@@ -4,7 +4,6 @@
   @include d-flex-column;
   align-self: flex-start;
   gap: 3rem;
-  padding: 10vh 0;
   @media screen and (min-width: $desktop) {
     flex-direction: row;
     gap: 0;

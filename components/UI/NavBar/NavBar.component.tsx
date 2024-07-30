@@ -27,7 +27,7 @@ const NavBar = ({ type }: { type: string }) => {
               smooth={true}
               offset={-70}
               duration={1200}
-              href="#home" // Dodaj href dla indeksowania
+              href="#home"
             >
               <motion.div
                 className={style.navSectionBig__items}
@@ -44,7 +44,7 @@ const NavBar = ({ type }: { type: string }) => {
               smooth={true}
               offset={-70}
               duration={1200}
-              href="#about" // Dodaj href dla indeksowania
+              href="#about"
             >
               <motion.div
                 className={style.navSectionBig__items}
@@ -61,7 +61,7 @@ const NavBar = ({ type }: { type: string }) => {
               smooth={true}
               offset={-70}
               duration={1200}
-              href="#projects" // Dodaj href dla indeksowania
+              href="#projects"
             >
               <motion.div
                 className={style.navSectionBig__items}
@@ -71,7 +71,7 @@ const NavBar = ({ type }: { type: string }) => {
                 Projekty
               </motion.div>
             </AnimationLink>
-            <Link href="/Blog">
+            <a href="/Blog">
               <motion.div
                 className={style.navSectionBig__items}
                 variants={buttonVariants}
@@ -79,7 +79,7 @@ const NavBar = ({ type }: { type: string }) => {
               >
                 Blog
               </motion.div>
-            </Link>
+            </a>
             <AnimationLink
               activeClass="active"
               to="opinions"
@@ -87,7 +87,7 @@ const NavBar = ({ type }: { type: string }) => {
               smooth={true}
               offset={-70}
               duration={1200}
-              href="#opinions" // Dodaj href dla indeksowania
+              href="#opinions"
             >
               <motion.div
                 className={style.navSectionBig__items}
@@ -104,7 +104,7 @@ const NavBar = ({ type }: { type: string }) => {
               smooth={true}
               offset={-70}
               duration={1200}
-              href="#contact" // Dodaj href dla indeksowania
+              href="#contact"
             >
               <motion.div
                 className={style.navSectionBig__items}
@@ -117,8 +117,6 @@ const NavBar = ({ type }: { type: string }) => {
           </>
         ) : (
           <>
-            
-            
             <a href="/#home">Home</a>
             <a href="/#about">O Mnie</a>
             <a href="/#projects">Projekty</a>

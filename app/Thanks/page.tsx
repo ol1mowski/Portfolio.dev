@@ -8,8 +8,6 @@ import { validateSession } from "@/lib/auth";
 const Thanks = async () => {
   const result = await validateSession();
 
-  console.log(result);
-
   if (result.session) {
     return (
       <>
