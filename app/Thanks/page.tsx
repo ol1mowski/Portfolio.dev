@@ -3,11 +3,14 @@ import Footer from "@/components/pages/Footer/Footer.page";
 import s from "./page.module.scss";
 import Button from "@/components/UI/Button/Button.component";
 import { redirect } from "next/navigation";
+import { validateSession } from "@/lib/auth";
 
-const Thanks = () => {
-  const userEmail = true;
+const Thanks = async () => {
+  const result = await validateSession();
 
-  if (userEmail) {
+  console.log(result);
+
+  if (result.session) {
     return (
       <>
         <Header type="out" />

@@ -12,11 +12,8 @@ const ClientsSchema = new mongoose.Schema({
 });
 
 const Clients =
-  mongoose.models.Clients || mongoose.model("Clients", ClientsSchema);
+  mongoose.models.Customers || mongoose.model("Customers", ClientsSchema);
 
-const newClient = new Clients({ name: "test", email: "test@example.com" });
-
-newClient.save();
 
 module.exports = {
   Clients: Clients,
