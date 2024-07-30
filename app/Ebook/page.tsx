@@ -10,7 +10,7 @@ const ClientForm = dynamic(() => import("./FormComponents/Form.validation.compon
   ssr: false,
 });
 
-function GoodStart() {
+function page() {
   return (
     <>
       <Header type="out" />
@@ -41,4 +41,4 @@ function GoodStart() {
   );
 }
 
-export default GoodStart;
+export default page;
