@@ -4,8 +4,8 @@ import NotFound from "@/components/pages/Blog/NotFound/NotFound.page";
 function notFound() {
   return (
     <>
-      <Header />
-      <NotFound link={'/'}/>
+      <Header type="out" />
+      <NotFound link={"/"} />
     </>
   );
 }
