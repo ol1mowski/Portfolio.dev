@@ -64,9 +64,10 @@
     justify-content: center;
     width: 80vw;
     @media screen and (min-width: $desktop) {
-      width: 25rem;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, auto);
     }
-    @media screen and (min-width: $desktop) {
+    @media screen and (min-width: 1400px) {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, auto);
       width: 70vw;

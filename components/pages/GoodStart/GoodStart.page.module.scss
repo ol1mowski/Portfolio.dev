@@ -5,7 +5,7 @@
   justify-content: flex-start;
   padding: 10vh 0;
   gap: 3rem;
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: 1400px) {
     flex-direction: row;
     gap: 5vw;
     justify-content: space-around;
@@ -17,7 +17,7 @@
     align-items: flex-start;
     width: 80%;
     gap: 2rem;
-    @media screen and (min-width: $desktop) {
+    @media screen and (min-width: 1400px) {
       width: 40%;
     }
     &__header {
@@ -72,7 +72,7 @@
     }
   }
   &__image__img {
-    @media screen and (min-width: $desktop) {
+    @media screen and (min-width: 1400px) {
       width: 950px;
       height: 900px;
     }
