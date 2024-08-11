@@ -4,10 +4,11 @@
   padding: 5rem 10vw;
   @include d-flex-column;
   color: $dark;
+  gap: 2rem;
   @media screen and (min-width: $desktop) {
     flex-direction: row;
     justify-content: space-between;
-    padding: 10rem 15vw;
+    padding: 5rem 15vw;
     gap: 5vw;
   }
   &__contentSection {
@@ -17,7 +18,7 @@
     gap: 1rem;
     max-width: 30rem;
     padding-bottom: 5vh;
-    &__newsletterSpan {
+    &__ytSpan {
       color: $dark-blue;
     }
     &__title {

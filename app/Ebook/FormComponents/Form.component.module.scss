@@ -1,0 +1,59 @@
+@import "@/style/index.scss";
+
+.form {
+  @include d-flex-column;
+  gap: 2rem;
+  margin-top: $standard-margin;
+  align-items: flex-start;
+  &__error {
+    color: rgba(255, 0, 0, 0.697);
+  }
+  &__inpWrapper {
+    @include d-flex-column;
+    gap: 2vh;
+    align-items: flex-start;
+    &__privacyWrapper {
+      @include d-flex;
+      gap: 0.5vw;
+      &__content {
+        margin-left: .2rem;
+        @include description();
+        color: #2e2d2e;
+        font-size: 0.7rem;
+        @media screen and (min-width: $desktop) {
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+
+  &__inp {
+    border: 1px solid $dark-blue;
+    padding: 0.7rem;
+    width: 17rem;
+    border-radius: 0.3rem;
+    @include description();
+    font-size: 1rem;
+  }
+  &__inp_err {
+    border: 1px solid rgba(255, 0, 0, 0.697);
+    padding: 0.7rem;
+    width: 15rem;
+    border-radius: 0.3rem;
+    @include description();
+    font-size: 1rem;
+  }
+  &__btn {
+    @include btn();
+    padding: 1.2rem;
+    font-size: 1.3rem;
+    transition: scale, background-color, color, border, 0.7s;
+    will-change: scale, background-color, color, border;
+  }
+  &__btn:hover {
+    scale: $hover-med-scale;
+    background-color: transparent;
+    color: $light-blue;
+    border: 1px solid $light-blue;
+  }
+}

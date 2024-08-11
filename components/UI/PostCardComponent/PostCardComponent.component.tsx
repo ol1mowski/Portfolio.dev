@@ -1,7 +1,6 @@
 import s from "./PostCardComponent.component.module.scss";
 
 import Image from "next/image";
-import Link from "next/link";
 
 import { type PostCardType } from "@/types/PostType";
 

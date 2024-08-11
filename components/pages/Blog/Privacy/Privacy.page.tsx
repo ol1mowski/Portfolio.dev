@@ -41,10 +41,6 @@ function Privacy() {
                 Poprzez dobrowolnie wprowadzone w formularzach dane, które
                 zostają wprowadzone do systemów Operatora.
               </li>
-              <li>
-                Poprzez zapisywanie w urządzeniach końcowych plików cookie (tzw.
-                „ciasteczka”).
-              </li>
             </ol>
           </li>
         </ol>
@@ -79,7 +75,7 @@ function Privacy() {
         <ol className={s.container__content__ol}>
           <li>
             Serwis jest hostowany (technicznie utrzymywany) na serwerach
-            operatora: Netlify
+            operatora: Vercel
           </li>
 
           <li>
@@ -293,12 +289,12 @@ function Privacy() {
         <ol className={s.container__content__ol}>
           <li>Serwis korzysta z plików cookies.</li>
           <li>
-            Pliki cookies (tzw. &quot;ciasteczka&quot;) stanowią dane informatyczne, w
-            szczególności pliki tekstowe, które przechowywane są w urządzeniu
-            końcowym Użytkownika Serwisu i przeznaczone są do korzystania ze
-            stron internetowych Serwisu. Cookies zazwyczaj zawierają nazwę
-            strony internetowej, z której pochodzą, czas przechowywania ich na
-            urządzeniu końcowym oraz unikalny numer.
+            Pliki cookies (tzw. &quot;ciasteczka&quot;) stanowią dane
+            informatyczne, w szczególności pliki tekstowe, które przechowywane
+            są w urządzeniu końcowym Użytkownika Serwisu i przeznaczone są do
+            korzystania ze stron internetowych Serwisu. Cookies zazwyczaj
+            zawierają nazwę strony internetowej, z której pochodzą, czas
+            przechowywania ich na urządzeniu końcowym oraz unikalny numer.
           </li>
           <li>
             Podmiotem zamieszczającym na urządzeniu końcowym Użytkownika Serwisu
@@ -312,19 +308,16 @@ function Privacy() {
                 której użytkownik nie musi na każdej podstronie Serwisu ponownie
                 wpisywać loginu i hasła;
               </li>
-              <li>
-                realizacji celów określonych powyżej w części &quot;Istotne
-                techniki marketingowe&quot;;
-              </li>
             </ol>
           </li>
           <li>
             W ramach Serwisu stosowane są dwa zasadnicze rodzaje plików cookies:
-            &quot;sesyjne&quot; (session cookies) oraz &quot;stałe&quot; (persistent cookies).
-            Cookies &quot;sesyjne&quot; są plikami tymczasowymi, które przechowywane są w
-            urządzeniu końcowym Użytkownika do czasu wylogowania, opuszczenia
-            strony internetowej lub wyłączenia oprogramowania (przeglądarki
-            internetowej). &quot;Stałe&quot; pliki cookies przechowywane są w urządzeniu
+            &quot;sesyjne&quot; (session cookies) oraz &quot;stałe&quot;
+            (persistent cookies). Cookies &quot;sesyjne&quot; są plikami
+            tymczasowymi, które przechowywane są w urządzeniu końcowym
+            Użytkownika do czasu wylogowania, opuszczenia strony internetowej
+            lub wyłączenia oprogramowania (przeglądarki internetowej).
+            &quot;Stałe&quot; pliki cookies przechowywane są w urządzeniu
             końcowym Użytkownika przez czas określony w parametrach plików
             cookies lub do czasu ich usunięcia przez Użytkownika.
           </li>

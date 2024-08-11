@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const {
   getProjects,
   getPosts,
+  saveClientToDB,
 } = require("./Utils/DataFetchingFunctions/DataFetchingFunctions");
 
 const uri = process.env.DB_URL;
@@ -15,12 +16,11 @@ if (!uri) {
 
 mongoose
   .connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
     serverSelectionTimeoutMS: 10000,
     socketTimeoutMS: 45000,
     connectTimeoutMS: 30000,
-  })
-  .then(() => {
-    console.log("Connected to MongoDB");
   })
   .catch((e) => {
     console.error("Connection error:", e);
@@ -29,4 +29,5 @@ mongoose
 module.exports = {
   getProjects,
   getPosts,
+  saveClientToDB,
 };
