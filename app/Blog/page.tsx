@@ -5,11 +5,13 @@ import Posts from "@/components/pages/Blog/Posts/Posts.fetching";
 import YTSection from "@/components/pages/Blog/YTSection/YTSection.page";
 import GoodStart from "@/components/pages/GoodStart/GoodStart.page";
 import React from "react";
+import EbookSection from "./Ebook/EbookSection.page";
 
 function page() {
   return (
     <>
       <HomePage />
+      <EbookSection />
       <YTSection />
       <Posts />
       {/* <Newsletter /> */}
