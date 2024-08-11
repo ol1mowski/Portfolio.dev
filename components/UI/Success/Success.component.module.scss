@@ -1,0 +1,27 @@
+@import "@/style/index.scss";
+
+.success {
+  border-radius: $border-med;
+  box-shadow: $box-shadow;
+  padding: $big-padding $standard-padding;
+  @include d-flex-column;
+  gap: 2vh;
+  animation: showUp .5s linear;
+  &__header {
+    @include headerFont();
+    font-size: 2rem;
+    color: #00a35c;
+  }
+  &__text {
+    color: $dark;
+  } 
+}
+
+@keyframes showUp {
+  0% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}

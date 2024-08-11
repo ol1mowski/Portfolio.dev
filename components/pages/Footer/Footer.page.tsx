@@ -7,6 +7,13 @@ const Footer = () => {
     <>
       <footer className={style.footerContainer}>
         <div className={style.footerContainer__wrapper}>
+          <div className={style.footerContainer__wrapper__links}>
+            <a target="_blank" href="/prywatnosc">
+              <span className={style.footerContainer__wrapper__links__span}>
+                Polityka Prywatnosci
+              </span>
+            </a>
+          </div>
           <div className={style.footerContainer__wrapper__header}>
             <h3 className={style.footerContainer__wrapper__header__h3}>
               Copyright © {date.getFullYear()}. Wszelkie prawa zastrzeżone

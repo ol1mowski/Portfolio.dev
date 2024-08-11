@@ -10,6 +10,10 @@
   z-index: 100;
   top: 0;
   gap: 30vw;
+  width: 90vw;
+  margin: 0 auto;
+  border-bottom-left-radius: 1.7rem;
+  border-bottom-right-radius: 1.7rem;
 
   &__nameSection {
     &__content {

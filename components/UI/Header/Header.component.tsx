@@ -10,7 +10,7 @@ import NavBar from "../NavBar/NavBar.component";
 import Image from "next/image";
 import MenuItem from "../MenuItem/MenuItem.component";
 
-const Header = () => {
+const Header = ({type}: { type: string }) => {
   const menu = useRef<HTMLDivElement>(null);
 
   const showMenuHandler = () => {
@@ -26,12 +26,12 @@ const Header = () => {
   };
 
   const menuItems = [
-    { to: "home", label: "Home" },
-    { to: "about", label: "O mnie" },
-    { to: "projects", label: "Projekty" },
+    { to: "/home", label: "Home" },
+    { to: "/about", label: "O mnie" },
+    { to: "/projects", label: "Projekty" },
     { to: "/Blog", label: "Blog" },
-    { to: "opinions", label: "Opinie" },
-    { to: "contact", label: "Kontakt" },
+    { to: "/opinions", label: "Opinie" },
+    { to: "/contact", label: "Kontakt" },
   ];
 
   const buttonVariants = {
@@ -67,7 +67,7 @@ const Header = () => {
             />
           </div>
         </nav>
-        <NavBar />
+        <NavBar type={type}/>
       </header>
 
       <nav

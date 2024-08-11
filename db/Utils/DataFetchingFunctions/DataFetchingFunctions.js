@@ -1,6 +1,6 @@
 const { Projects } = require("../../Schemas/Projects");
 const { Posts } = require("../../Schemas/Posts");
-
+const { Clients } = require("../../Schemas/Clients");
 
 async function getProjects() {
   try {
@@ -22,7 +22,24 @@ async function getPosts() {
   }
 }
 
+async function saveClientToDB({ name, email }) {
+  console.log("Received data:", { name, email });
+
+  const newClient = new Clients({ name: name.trim(), email: email.trim() });
+  console.log("New client object:", newClient);
+
+  try {
+    const savedClient = await newClient.save();
+    console.log("Client saved successfully:", savedClient);
+  } catch (error) {
+    console.error("Error saving client:", error);
+    throw new Error("Error saving client data");
+  }
+}
+
+
 module.exports = {
   getProjects: getProjects,
   getPosts: getPosts,
+  saveClientToDB: saveClientToDB,
 };

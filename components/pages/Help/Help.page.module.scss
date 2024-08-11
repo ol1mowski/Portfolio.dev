@@ -12,16 +12,19 @@
     gap: 3vh;
     margin-bottom: 10vh;
     &__header {
-      font-size: 2rem;
+      font-size: 1.7rem;
       color: $dark;
-      opacity: .9;
+      opacity: 0.9;
       @include headerFont();
       font-weight: 600;
+      @media screen and (min-width: $mobile) {
+        font-size: 2rem;
+      }
     }
     &__btn {
       @include btn();
       padding: 1.2rem;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       transition: scale, background-color, color, border, 0.7s;
       will-change: scale, background-color, color, border;
     }
@@ -38,9 +41,12 @@
     &__title {
       text-align: center;
       @include headerFont();
-      font-size: 2rem;
+      font-size: 1.7rem;
       color: $dark;
       font-weight: 600;
+      @media screen and (min-width: $mobile) {
+        font-size: 2rem;
+      }
     }
     &__line {
       position: absolute;
@@ -58,9 +64,10 @@
     justify-content: center;
     width: 80vw;
     @media screen and (min-width: $desktop) {
-      width: 25rem;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, auto);
     }
-    @media screen and (min-width: $desktop) {
+    @media screen and (min-width: 1400px) {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, auto);
       width: 70vw;
