@@ -16,9 +16,13 @@
       @include d-flex;
       gap: 0.5vw;
       &__content {
+        margin-left: .2rem;
         @include description();
         color: #2e2d2e;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+        @media screen and (min-width: $desktop) {
+          font-size: .8rem;
+        }
       }
     }
   }
@@ -26,7 +30,7 @@
   &__inp {
     border: 1px solid $dark-blue;
     padding: 0.7rem;
-    width: 15rem;
+    width: 17rem;
     border-radius: 0.3rem;
     @include description();
     font-size: 1rem;
