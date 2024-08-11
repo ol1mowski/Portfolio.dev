@@ -17,7 +17,7 @@ const Thanks = async () => {
           <p className={s.container__text}>
             Twój E-Book jest dostępny do pobrania poniżej
           </p>
-          <a href="/ebook.pdf" download>
+          <a href="/Praktyczne Porady Na Co Zwrócić Uwagę Podczas Projektowania Strony Internetowej.pdf" download>
             <Button type="normal" value="Pobierz E-Book" />
           </a>
         </section>
