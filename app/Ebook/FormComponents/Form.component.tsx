@@ -18,7 +18,6 @@ const FormComponent: React.FC<FormComponentProps> = ({
   privacy,
   errors,
   isPending,
-  success,
   handleSubmit,
 }) => (
   <form className={s.form} onSubmit={handleSubmit}>
@@ -66,17 +65,18 @@ const FormComponent: React.FC<FormComponentProps> = ({
       <div className={s.form__inpWrapper__privacyWrapper}>
         <input type="checkbox" name="privacy" id="privacy" ref={privacy} />
         <span className={s.form__inpWrapper__privacyWrapper__content}>
-          *Akceptuję <a href="/prywatnosc">Politykę Prywatności i pliki cookies</a>
+          *Akceptuję{" "}
+          <a href="/prywatnosc">Politykę Prywatności i pliki cookies</a>
         </span>
       </div>
       {errors.privacy && (
         <span className={s.form__error}>{errors.privacy}</span>
       )}
     </div>
+
     <button type="submit" className={s.form__btn} disabled={isPending}>
-      Odbieram Bezpłatnie
+      {isPending ? "Wysyłanie..." : "Odbieram Bezpłatnie"}
     </button>
-    {success && <p className={s.form__success}>{success}</p>}
   </form>
 );
 

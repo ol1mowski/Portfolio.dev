@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import FormComponent from "./Form.component";
 import { redirect } from "next/navigation";
+import Success from "@/components/UI/Success/Success.component";
 
 function Form({ action }: { action: (formData: FormData) => Promise<void> }) {
   const [isPending, setIsPending] = useState(false);
@@ -22,6 +23,8 @@ function Form({ action }: { action: (formData: FormData) => Promise<void> }) {
 
     if (!nameValue) {
       newErrors.name = "*Imię jest wymagane";
+    } else if (nameValue.length <= 3) {
+      newErrors.name = "*Imię musi zawierać co najmniej 3 litery";
     }
     if (!emailValue) {
       newErrors.email = "*Email jest wymagany";
@@ -57,23 +60,29 @@ function Form({ action }: { action: (formData: FormData) => Promise<void> }) {
       setSuccess("Udało się ! wkrótce otrzymasz mojego E-booka !");
       redirect("/");
     } catch (err) {
-      setError("[-] Błędny adres email, Spróbuj ponownie");
+      setError("[-] Coś Poszło Nie Tak, Spróbuj ponownie");
     } finally {
       setIsPending(false);
     }
   };
 
   return (
-    <FormComponent
-      name={name}
-      email={email}
-      privacy={privacy}
-      error={error}
-      errors={errors}
-      isPending={isPending}
-      success={success}
-      handleSubmit={handleSubmit}
-    />
+    <>
+      {success ? (
+        <Success />
+      ) : (
+        <FormComponent
+          name={name}
+          email={email}
+          privacy={privacy}
+          error={error}
+          errors={errors}
+          isPending={isPending}
+          success={success}
+          handleSubmit={handleSubmit}
+        />
+      )}
+    </>
   );
 }
 

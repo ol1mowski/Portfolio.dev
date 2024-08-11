@@ -4,12 +4,14 @@
   @include d-flex-column;
   align-self: flex-start;
   gap: 3rem;
+  margin-top: 15vh;
   @media screen and (min-width: $desktop) {
     flex-direction: row;
     gap: 0;
     justify-content: space-between;
     width: 80rem;
     margin-left: 15vw;
+    margin-top: 0;
   }
   @media screen and (min-width: $large-desktop) {
     margin-left: 25vw;
