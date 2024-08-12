@@ -17,6 +17,8 @@ const ClientForm = dynamic(
 
 async function page() {
   const result = await validateSession();
+  console.log(result.session);
+  
   if (result.session) {
     redirect("/Thanks");
   } else {

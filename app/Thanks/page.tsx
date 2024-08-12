@@ -7,6 +7,7 @@ import { validateSession } from "@/lib/auth";
 
 const Thanks = async () => {
   const result = await validateSession();
+  console.log(result.session);
 
   if (result.session) {
     return (
@@ -17,7 +18,10 @@ const Thanks = async () => {
           <p className={s.container__text}>
             Twój E-Book jest dostępny do pobrania poniżej
           </p>
-          <a href="/Praktyczne Porady Na Co Zwrócić Uwagę Podczas Projektowania Strony Internetowej.pdf" download>
+          <a
+            href="/Praktyczne Porady Na Co Zwrócić Uwagę Podczas Projektowania Strony Internetowej.pdf"
+            download
+          >
             <Button type="normal" value="Pobierz E-Book" />
           </a>
         </section>
