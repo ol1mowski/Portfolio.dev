@@ -20,7 +20,7 @@ const page = async () => {
             Twój E-Book jest dostępny do pobrania poniżej
           </p>
           <a
-            href="/Praktyczne Porady Na Co Zwrócić Uwagę Podczas Projektowania Strony Internetowej.pdf"
+            href="/Praktyczne%20Porady%20Na%20Co%20Zwrócić%20Uwagę%20Podczas%20Projektowania%20Strony%20Internetowej.pdf"
             download
           >
             <Button type="normal" value="Pobierz E-Book" />
