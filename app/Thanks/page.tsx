@@ -7,7 +7,9 @@ import { validateSession } from "@/lib/auth";
 
 const Thanks = async () => {
   const result = await validateSession();
-  console.log(result.session);
+
+  console.log(result.session?.session);
+  console.log(result.session?.session === null);
 
   if (result.session?.session === null) {
     return (
