@@ -9,8 +9,9 @@ const page = async () => {
   const result = await validateSession();
   console.log(result.session);
 
+  console.log(result.session?.session !== null);
   if (result.session?.session !== null) {
-    redirect("/");
+    return null;
   } else {
     return (
       <>
