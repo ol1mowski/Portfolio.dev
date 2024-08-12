@@ -19,7 +19,7 @@ async function page() {
   const result = await validateSession();
   console.log(result.session);
   
-  if (result.session) {
+  if (result.session?.session === null) {
     redirect("/Thanks");
   } else {
     return(
