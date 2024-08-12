@@ -5,7 +5,7 @@ export function middleware(request: NextRequest) {
   const userEmail = request.cookies.get("userEmail");
 
   if (!userEmail) {
-    return NextResponse.redirect(new URL("/", request.url));
+    console.log("No user email");
   }
 
   return NextResponse.next();
