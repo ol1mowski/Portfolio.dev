@@ -1,6 +1,6 @@
 import { Lucia } from "lucia";
 import { MongodbAdapter } from "@lucia-auth/adapter-mongodb";
-import { Collection, MongoClient, ObjectId } from "mongodb";
+import { Collection, MongoClient } from "mongodb";
 import { cookies } from "next/headers";
 
 interface UserDoc {
@@ -31,9 +31,6 @@ async function initializeLucia() {
     sessionCookie: {
       name: "session_id",
       expires: false,
-      attributes: {
-        secure: process.env.NODE_ENV === "production",
-      },
     },
   });
 
