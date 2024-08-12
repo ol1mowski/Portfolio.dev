@@ -5,13 +5,13 @@ import Button from "@/components/UI/Button/Button.component";
 import { redirect } from "next/navigation";
 import { validateSession } from "@/lib/auth";
 
-const Thanks = async () => {
+const page = async () => {
   const result = await validateSession();
+  console.log(result.session);
 
-  console.log(result.session?.session);
-  console.log(result.session?.session === null);
-
-  if (result.session?.session === null) {
+  if (result.session?.session !== null) {
+    redirect("/");
+  } else {
     return (
       <>
         <Header type="out" />
@@ -30,9 +30,7 @@ const Thanks = async () => {
         <Footer />
       </>
     );
-  } else {
-    redirect("/");
   }
 };
 
-export default Thanks;
+export default page;
