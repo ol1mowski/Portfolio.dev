@@ -9,7 +9,7 @@ const Thanks = async () => {
   const result = await validateSession();
   console.log(result.session);
 
-  if (result.session) {
+  if (result.session?.session === null) {
     return (
       <>
         <Header type="out" />
