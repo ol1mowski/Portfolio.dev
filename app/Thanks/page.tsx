@@ -7,11 +7,9 @@ import { validateSession } from "@/lib/auth";
 
 const page = async () => {
   const result = await validateSession();
-  console.log(result.session);
 
-  console.log(result.session?.session !== null);
   if (result.session?.session !== null) {
-    return null;
+    redirect("/");
   } else {
     return (
       <>
