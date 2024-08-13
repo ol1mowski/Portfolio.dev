@@ -38,6 +38,7 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
   const correctPostArticleContent =
     correctPostArticle.length > 0 ? correctPostArticle[0].content : [];
 
+
   if (correctPostArticle.length === 0) {
     return (
       <>
@@ -69,6 +70,7 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
               <PostInfo
                 key={item.id}
                 author={item.author}
+                authorImage={item.authorImage}
                 date={item.date}
                 readTime={item.readTime}
                 category={item.category}
@@ -82,7 +84,7 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
           )}
           {correctPostArticleContent.map((item) => (
             <PostArticle
-              key={item.id}
+              key={item.title}
               slug={item.slug}
               title={item.title}
               description={item.description}

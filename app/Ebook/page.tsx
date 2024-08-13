@@ -1,6 +1,6 @@
 import Image from "next/image";
 import s from "./page.module.scss";
-import ebook from "@/assets/bezplatny_ebook.svg";
+import ebook from "@/assets/bezplatny_ebook.webp";
 import Header from "@/components/UI/Header/Header.component";
 import Footer from "@/components/pages/Footer/Footer.page";
 import dynamic from "next/dynamic";
@@ -18,11 +18,11 @@ const ClientForm = dynamic(
 async function page() {
   const result = await validateSession();
   console.log(result.session);
-  
+
   if (result.session?.session === null) {
     redirect("/Thanks");
   } else {
-    return(
+    return (
       <>
         <Header type="out" />
         <section className={s.container}>

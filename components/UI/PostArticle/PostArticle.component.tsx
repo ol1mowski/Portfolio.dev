@@ -49,13 +49,14 @@ function PostArticle({
     }
   }, []);
 
-  console.log(typeof description);
-  
-
   return (
     <section id={slug} ref={ref} className={s.postContentSection}>
       <Caption type="sub" value={title} />
-      { description.map(desc => <p key={desc} className={s.postContentSection__text}>{desc}</p>) }
+      {description.map((desc) => (
+        <p key={desc} className={s.postContentSection__text}>
+          {desc}
+        </p>
+      ))}
     </section>
   );
 }

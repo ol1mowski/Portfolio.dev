@@ -63,12 +63,18 @@ const FormComponent: React.FC<FormComponentProps> = ({
     </div>
     <div className={s.form__inpWrapper}>
       <div className={s.form__inpWrapper__privacyWrapper}>
-        <input type="checkbox" name="privacy" id="privacy" ref={privacy} />
-        <span className={s.form__inpWrapper__privacyWrapper__content}>
-          *Akceptuję{" "}
-          <a href="/prywatnosc">Politykę Prywatności i pliki cookies</a>
-        </span>
+        <label
+          htmlFor="privacy"
+          className={s.form__inpWrapper__privacyWrapper__label}
+        >
+          <input type="checkbox" name="privacy" id="privacy" ref={privacy} />
+          <span className={s.form__inpWrapper__privacyWrapper__content}>
+            *Akceptuję{" "}
+            <a href="/prywatnosc">Politykę Prywatności i pliki cookies</a>
+          </span>
+        </label>
       </div>
+
       {errors.privacy && (
         <span className={s.form__error}>{errors.privacy}</span>
       )}
