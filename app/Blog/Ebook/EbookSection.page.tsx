@@ -6,7 +6,7 @@ import Description from "@/components/UI/Description/Description.component";
 import Button from "@/components/UI/Button/Button.component";
 import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
 
-import ytImage from "@/assets/bezplatny_ebook.png";
+import ebookImage from "@/assets/bezplatny_ebook.svg";
 
 function EbookSection() {
   return (
@@ -28,8 +28,8 @@ function EbookSection() {
         <section className={s.container__imageSection}>
           <Image
             className={s.container__imageSection__img}
-            src={ytImage}
-            alt="image to YouTube section"
+            src={ebookImage}
+            alt="Okładka mojego ebooka"
             width={300}
             height={300}
           />
