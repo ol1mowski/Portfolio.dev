@@ -1,6 +1,6 @@
 import s from "./PostInfo.component.module.scss";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 import authorImage from "@/assets/ja.png";
 import categoryIcon from "@/assets/category.svg";
@@ -14,9 +14,11 @@ function PostInfo({
   date,
   category,
   title,
+  authorImage,
 }: {
   author: string;
   readTime: number;
+  authorImage: StaticImageData;
   date: string;
   title: string;
   category: string;
