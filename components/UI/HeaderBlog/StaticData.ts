@@ -19,12 +19,6 @@ export const ITEMS: LinkItemsType = [
     href: "/",
     type: "outpage",
   },
-  {
-    id: 4,
-    value: "Newsletter",
-    href: "#newsletter",
-    type: "onpage",
-  },
 ];
 
 export const BlogITEMS: LinkItemsType = [

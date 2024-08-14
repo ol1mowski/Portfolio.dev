@@ -87,7 +87,7 @@ function Header({
         </section>
       </section>
       {isOpen ? (
-        <HamburgerMenuComponent closeMenuHandler={closeMenuHandler} />
+        <HamburgerMenuComponent type={type} closeMenuHandler={closeMenuHandler} />
       ) : null}
     </header>
   );
