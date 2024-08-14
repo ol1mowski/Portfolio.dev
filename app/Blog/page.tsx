@@ -6,10 +6,18 @@ import YTSection from "@/components/pages/Blog/YTSection/YTSection.page";
 import GoodStart from "@/components/pages/GoodStart/GoodStart.page";
 import React from "react";
 import EbookSection from "./Ebook/EbookSection.page";
+import Head from "next/head";
 
 function page() {
   return (
     <>
+      <Head>
+        <title>Blog</title>
+        <meta
+          name="description"
+          content="Blog o Tworzeniu Stron Internetowych"
+        />
+      </Head>
       <HomePage />
       <EbookSection />
       <YTSection />
