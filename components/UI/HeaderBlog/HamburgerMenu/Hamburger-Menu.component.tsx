@@ -9,10 +9,14 @@ import ScrollLink from "@/components/Utils/ScrollLink.component";
 import Link from "next/link";
 
 type HamburgerMenuProps = {
+  type: string | undefined;
   closeMenuHandler: () => void;
 };
 
-function HamburgerMenuComponent({ closeMenuHandler }: HamburgerMenuProps) {
+function HamburgerMenuComponent({
+  type,
+  closeMenuHandler,
+}: HamburgerMenuProps) {
   return (
     <menu className={s.hamburgerMenu}>
       <section className={s.hamburgerMenu__close}>
@@ -28,17 +32,42 @@ function HamburgerMenuComponent({ closeMenuHandler }: HamburgerMenuProps) {
       <nav className={s.hamburgerMenu__nav}>
         <ul className={s.hamburgerMenu__nav__items}>
           <Link href={"/Blog"}>
-            <li onClick={closeMenuHandler} className={s.hamburgerMenu__nav__items__item}>Home</li>
+            <li
+              onClick={closeMenuHandler}
+              className={s.hamburgerMenu__nav__items__item}
+            >
+              Home
+            </li>
+          </Link>
+          {type === "in" ? (
+            <>
+              <ScrollLink link={"#posts"}>
+                <li
+                  onClick={closeMenuHandler}
+                  className={s.hamburgerMenu__nav__items__item}
+                >
+                  Posty
+                </li>
+              </ScrollLink>
+            </>
+          ) : (
+            <a href="/#posts">
+              <li
+                onClick={closeMenuHandler}
+                className={s.hamburgerMenu__nav__items__item}
+              >
+                Posty
+              </li>
+            </a>
+          )}
+          <Link href={"/"}>
+            <li
+              onClick={closeMenuHandler}
+              className={s.hamburgerMenu__nav__items__item}
+            >
+              Portfolio
+            </li>
           </Link>{" "}
-          <ScrollLink link={"#posts"}>
-            <li onClick={closeMenuHandler} className={s.hamburgerMenu__nav__items__item}>Posty</li>
-          </ScrollLink>{" "}
-          <Link href={'/'}>
-            <li onClick={closeMenuHandler} className={s.hamburgerMenu__nav__items__item}>Portfolio</li>
-          </Link>{" "}
-          <ScrollLink link={"#newsletter"}>
-            <li onClick={closeMenuHandler} className={s.hamburgerMenu__nav__items__item}>Newsletter</li>
-          </ScrollLink>
         </ul>
       </nav>
       <section className={s.hamburgerMenu__logo}>

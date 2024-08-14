@@ -9,8 +9,10 @@ const MenuItem = ({
   index,
   buttonVariants,
   hideMenu,
+  type,
 }: {
   to: string;
+  type: string;
   label: string;
   index: number;
   buttonVariants: any;
@@ -29,25 +31,35 @@ const MenuItem = ({
         </motion.div>
       </a>
     ) : (
-      <AnimateLink
-        key={index}
-        activeClass="active"
-        to={to}
-        spy={true}
-        smooth={true}
-        offset={-70}
-        duration={1200}
-        href={to}
-      >
-        <motion.div
-          onClick={hideMenu}
-          className={s.item}
-          variants={buttonVariants}
-          whileHover="hover"
-        >
-          {label}
-        </motion.div>
-      </AnimateLink>
+      <>
+        {type === "out" ? (
+          <a href={to}>
+            <div onClick={hideMenu} className={s.item}>
+              {label}
+            </div>
+          </a>
+        ) : (
+          <AnimateLink
+            key={index}
+            activeClass="active"
+            to={to}
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={1200}
+            href={to}
+          >
+            <motion.div
+              onClick={hideMenu}
+              className={s.item}
+              variants={buttonVariants}
+              whileHover="hover"
+            >
+              {label}
+            </motion.div>
+          </AnimateLink>
+        )}
+      </>
     )}
   </>
 );
