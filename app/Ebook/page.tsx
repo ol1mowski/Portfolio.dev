@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 import { saveClientData } from "@/actions/SaveClientEmail";
 import { validateSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
+import Head from "next/head";
 
 const ClientForm = dynamic(
   () => import("./FormComponents/Form.validation.component"),
@@ -24,6 +25,13 @@ async function page() {
   } else {
     return (
       <>
+        <Head>
+          <title>E-Book</title>
+          <meta
+            name="description"
+            content="E-Book o Tworzeniu Stron Internetowych"
+          />
+        </Head>
         <Header type="out" />
         <section className={s.container}>
           <section className={s.container__content}>

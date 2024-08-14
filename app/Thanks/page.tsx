@@ -4,6 +4,7 @@ import s from "./page.module.scss";
 import Button from "@/components/UI/Button/Button.component";
 import { redirect } from "next/navigation";
 import { validateSession } from "@/lib/auth";
+import Head from "next/head";
 
 const page = async () => {
   const result = await validateSession();
@@ -13,6 +14,13 @@ const page = async () => {
   } else {
     return (
       <>
+      <Head>
+        <title>Dziękuję</title>
+          <meta
+          name="description"
+          content="Zakładka Dziękuję"
+        />
+      </Head>
         <Header type="out" />
         <section className={s.container}>
           <h1 className={s.container__header}>Dziękuję</h1>
