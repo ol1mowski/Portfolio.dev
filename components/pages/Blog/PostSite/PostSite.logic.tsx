@@ -19,6 +19,7 @@ import NotFound from "../NotFound/NotFound.page";
 import PostVisibleContext from "@/store/PostVisible.context";
 import { type PostsType } from "@/types/PostType";
 import Header from "@/components/UI/HeaderBlog/Header.component.page";
+import Head from "next/head";
 
 function PostSiteComponent({ posts }: { posts: PostsType[] }) {
   const [isVisible1, reference] = useElementVisible();
@@ -38,7 +39,6 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
   const correctPostArticleContent =
     correctPostArticle.length > 0 ? correctPostArticle[0].content : [];
 
-
   if (correctPostArticle.length === 0) {
     return (
       <>
@@ -50,6 +50,13 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
 
   return (
     <>
+      <Head>
+        <title>{correctPostArticle[0].title}</title>
+        <meta
+          name="description"
+          content="Post o Tworzeniu Stron Internetowych"
+        />
+      </Head>
       <section className={s.container}>
         <Header type="Blog" logo={headerLogo} hamburger={hamburger} />
         <section className={s.container__imageSection}>
