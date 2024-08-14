@@ -10,12 +10,12 @@ import NavBar from "../NavBar/NavBar.component";
 import Image from "next/image";
 import MenuItem from "../MenuItem/MenuItem.component";
 
-const Header = ({type}: { type: string }) => {
+const Header = ({ type }: { type: string }) => {
   const menu = useRef<HTMLDivElement>(null);
 
   const showMenuHandler = () => {
     if (menu.current) {
-      menu.current.style.display = "block"; 
+      menu.current.style.display = "block";
     }
   };
 
@@ -32,6 +32,15 @@ const Header = ({type}: { type: string }) => {
     { to: "/Blog", label: "Blog" },
     { to: "/opinions", label: "Opinie" },
     { to: "/contact", label: "Kontakt" },
+  ];
+
+  const menuItemsOut = [
+    { to: "/#home", label: "Home" },
+    { to: "/#about", label: "O mnie" },
+    { to: "/#projects", label: "Projekty" },
+    { to: "/Blog", label: "Blog" },
+    { to: "/#opinions", label: "Opinie" },
+    { to: "/#contact", label: "Kontakt" },
   ];
 
   const buttonVariants = {
@@ -67,7 +76,7 @@ const Header = ({type}: { type: string }) => {
             />
           </div>
         </nav>
-        <NavBar type={type}/>
+        <NavBar type={type} />
       </header>
 
       <nav
@@ -85,16 +94,29 @@ const Header = ({type}: { type: string }) => {
           />
         </div>
         <section className={s.headerContainer__menu__nav}>
-          {menuItems.map((item, index) => (
-            <MenuItem
-              key={index}
-              to={item.to}
-              label={item.label}
-              index={index + 1}
-              buttonVariants={buttonVariants}
-              hideMenu={hideMenuHandler}
-            />
-          ))}
+          {type === "in"
+            ? menuItems.map((item, index) => (
+                <MenuItem
+                  type={type}
+                  key={index}
+                  to={item.to}
+                  label={item.label}
+                  index={index + 1}
+                  buttonVariants={buttonVariants}
+                  hideMenu={hideMenuHandler}
+                />
+              ))
+            : menuItemsOut.map((item, index) => (
+                <MenuItem
+                  type={type}
+                  key={index}
+                  to={item.to}
+                  label={item.label}
+                  index={index + 1}
+                  buttonVariants={buttonVariants}
+                  hideMenu={hideMenuHandler}
+                />
+              ))}
         </section>
       </nav>
     </>

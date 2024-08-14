@@ -21,8 +21,7 @@ function YTSection() {
             </span>
           </h2>
           <Description
-            value="Znajdziesz tu konkretne informacje o pracy w branży IT,
-          najnowocześniejsze rozwiązania w branży, praktyczne porady i wiele
+            value="Znajdziesz tu konkretne informacje na temat tworzenia stron internetowych, praktyczne porady i wiele
           więcej."
           />
           <a
