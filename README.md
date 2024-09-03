@@ -72,8 +72,4 @@ Feel free to reach out if you have any questions or feedback. Connect with me on
 
 ## ⭐️ Show Your Support
 
-If you like this project, please give it a ⭐️ on GitHub—it means a lot!
-
----
-
-This README not only introduces your project but also emphasizes your skills and the technologies you've used. It’s designed to be engaging, with clear calls to action that encourage visitors to explore your work and connect with you.
+If you like this project, please give it a ⭐️ on GitHub—it means 
