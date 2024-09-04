@@ -4,10 +4,9 @@
   width: 90%;
   height: 90%;
   border-radius: 30%;
-  @media screen and (min-width: $mobile) {
-    width: 30rem;
-  }
+  display: none;
   @media screen and (min-width: $big-tablet) {
+    display: block;
     width: 30%;
     margin-right: 2rem;
   }
