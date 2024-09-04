@@ -14,11 +14,11 @@
   margin: 0 auto;
   &__content {
     @include d-flex-column;
-    align-items: flex-start;
     width: 80%;
     gap: 2rem;
     @media screen and (min-width: 1400px) {
       width: 40%;
+      align-items: flex-start;
     }
     &__header {
       position: relative;

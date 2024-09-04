@@ -1,7 +1,6 @@
 import s from "./techStack.module.scss";
 
 import google_ads from "@/assets/html_icon.svg";
-import facebook_ads from "@/assets/css.svg";
 import scss from "@/assets/sass.svg";
 import js from "@/assets/javascript.svg";
 import ts from "@/assets/typescript.svg";
