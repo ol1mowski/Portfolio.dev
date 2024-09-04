@@ -12,8 +12,9 @@
     text-align: left;
     @include headerFont();
     font-weight: 700;
-    @media screen and (min-width: 500px) {
-      font-size: 3rem;
+    @media screen and (min-width: 700px) {
+      text-align: center;
+      font-size: 3.5rem;
     }
     @media screen and (min-width: 1200px) {
       font-size: 4.5rem;
@@ -49,7 +50,7 @@
       margin-top: $standard-margin;
       @include description();
       text-align: left;
-      @media screen and (min-width: 500px) {
+      @media screen and (min-width: $small-desktop) {
         width: 40rem;
         padding: 0;
       }

@@ -5,7 +5,7 @@
   height: 90%;
   border-radius: 30%;
   display: none;
-  @media screen and (min-width: $big-tablet) {
+  @media screen and (min-width: $desktop) {
     display: block;
     width: 30%;
     margin-right: 2rem;
