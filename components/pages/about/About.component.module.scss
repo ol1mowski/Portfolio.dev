@@ -4,6 +4,8 @@
   margin: 5rem 0;
   scroll-margin-top: 10rem;
   background-color: $white;
+  box-shadow: $box-shadow;
+  border-radius: $border-med;
   @media screen and (min-width: 1020px) {
     @include d-flex;
     padding: 0 3rem;
