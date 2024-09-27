@@ -1,6 +1,6 @@
 import s from "./techStack.module.scss";
 
-import google_ads from "@/assets/html_icon.svg";
+import tailwindcss from "@/assets/tailwindcss.svg";
 import scss from "@/assets/sass.svg";
 import js from "@/assets/javascript.svg";
 import ts from "@/assets/typescript.svg";
@@ -22,32 +22,6 @@ const TechStack = () => {
         </div>
         <div className={s.techStackContainer__skillsWrapper}>
           <a
-            href="https://nextjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src={next}
-              alt="nextjs icon"
-              width={75}
-              height={75}
-              className={s.techStackContainer__skillsWrapper__skill}
-            />
-          </a>
-          <a
-            href="https://wordpress.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src={wordPress}
-              alt="wordpress icon"
-              width={75}
-              height={75}
-              className={s.techStackContainer__skillsWrapper__skill}
-            />
-          </a>
-          <a
             href="https://www.figma.com/"
             target="_blank"
             rel="noopener noreferrer"
@@ -61,26 +35,13 @@ const TechStack = () => {
             />
           </a>{" "}
           <a
-            href="https://webflow.com/"
+            href="https://tailwindcss.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Image
-              src={webflow}
-              alt="webflow icon"
-              width={75}
-              height={75}
-              className={s.techStackContainer__skillsWrapper__skill}
-            />
-          </a>
-          <a
-            href="https://ads.google.com/home/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src={google_ads}
-              alt="google Ads icon"
+              src={tailwindcss}
+              alt="Tailwindcss icon"
               width={75}
               height={75}
               className={s.techStackContainer__skillsWrapper__skill}
@@ -133,6 +94,19 @@ const TechStack = () => {
             />
           </a>
           <a
+            href="https://nextjs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={next}
+              alt="nextjs icon"
+              width={75}
+              height={75}
+              className={s.techStackContainer__skillsWrapper__skill}
+            />
+          </a>
+          <a
             href="https://www.python.org/"
             target="_blank"
             rel="noopener noreferrer"
@@ -140,6 +114,32 @@ const TechStack = () => {
             <Image
               src={python}
               alt="python icon"
+              width={75}
+              height={75}
+              className={s.techStackContainer__skillsWrapper__skill}
+            />
+          </a>
+          <a
+            href="https://webflow.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={webflow}
+              alt="webflow icon"
+              width={75}
+              height={75}
+              className={s.techStackContainer__skillsWrapper__skill}
+            />
+          </a>
+          <a
+            href="https://wordpress.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={wordPress}
+              alt="wordpress icon"
               width={75}
               height={75}
               className={s.techStackContainer__skillsWrapper__skill}
