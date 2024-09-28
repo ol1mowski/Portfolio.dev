@@ -1,7 +1,3 @@
-### Viral README for Your GitHub Repository
-
----
-
 # 🚀 My React Front-End Developer Portfolio
 
 Welcome to my **React Front-End Developer Portfolio**! This project showcases my skills as a front-end developer, featuring a beautifully crafted portfolio site built with the latest web technologies.
