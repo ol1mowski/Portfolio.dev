@@ -6,7 +6,8 @@
 
 Welcome to my **React Front-End Developer Portfolio**! This project showcases my skills as a front-end developer, featuring a beautifully crafted portfolio site built with the latest web technologies.
 
-![Portfolio Preview](your-screenshot-url-here) <!-- Add a screenshot or GIF of your portfolio -->
+![Portfolio](https://github.com/user-attachments/assets/34bd6439-d605-43dd-b2f7-e9b18ddfd56c)
+
 
 ## ✨ Overview
 
