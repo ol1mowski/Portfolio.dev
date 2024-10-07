@@ -2,6 +2,7 @@
 
 .container {
   padding: 5vh 10vw;
+  margin-block: 15vh;
   @include d-flex-column;
   gap: 5rem;
   @media screen and (min-width: $desktop) {
