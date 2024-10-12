@@ -9,7 +9,7 @@ function AboutMeInfoSection() {
       </h3>
       <p className={s.contentSection__p}>
         Zajmuję się projektowaniem oraz tworzeniem nowoczesnych i funkcjonalnych
-        stron internetowych w technologiach takich jak
+        stron, sklepów i aplikacji internetowych w technologiach takich jak
         <a
           href="https://webflow.com/"
           target="_blank"
@@ -32,47 +32,21 @@ function AboutMeInfoSection() {
         , które spełniają indywidualne potrzeby klientów.
       </p>
       <p className={s.contentSection__p}>
-        Pomagam małym firmom zaistnieć w internecie, oferując kompleksowe
-        rozwiązania obejmujące wdrażanie strategii marketingowych, takich jak
-        Reklama
-        <a
-          href="https://ads.google.com/home/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className={s.contentSection__p__special}> Google Ads</span>
-        </a>
-        ,{" "}
-        <a
-          href="https://pl-pl.facebook.com/business/ads"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className={s.contentSection__p__special}>Facebook Ads</span>
-        </a>{" "}
-        czy{" "}
+        Pomagam małym firmom zaistnieć w internecie, poprzez
+        {" "}
+
         <a
           href="https://www.google.com/intl/pl_pl/business/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <span className={s.contentSection__p__special}>
-            Pozycjonowanie wizytówki Google Moja Firma
+             Pozycjonowanie wizytówki Google Moja Firma
           </span>
         </a>{" "}
-        które zwiększają widoczność i przyciągają nowych klientów.
+        ,które zwiększają widoczność i przyciąga nowych klientów.
       </p>
-      <p className={s.contentSection__p}>
-        Oferuję usługi wsparcia dla firm w zakresie wdrażania Sztucznej
-        Inteligencji{" "}
-        <a
-          href="https://en.wikipedia.org/wiki/Artificial_intelligence"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className={s.contentSection__p__special}>AI</span>
-        </a>
-      </p>
+      
       <p className={s.contentSection__p}>
         Prowadzę również kanał na{" "}
         <a
