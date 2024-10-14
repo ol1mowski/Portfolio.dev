@@ -77,6 +77,9 @@ function Ebook() {
           </a>
         </div>
       </section>
+
+
+
       <section className={s.container__imageSide}>
         <Image
           className={s.container__imageSide__backgroundItemImg}
@@ -93,7 +96,7 @@ function Ebook() {
             "https://res.cloudinary.com/dbbuav0rj/image/upload/v1728905079/Portfolio/images/ebook_mockup_sotb2v.webp"
           }
           alt="E-Book Graphic"
-          width={300}
+          width={305}
           height={500}
         />
       </section>
