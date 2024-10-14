@@ -7,47 +7,58 @@ function Ebook() {
       <section className={s.container__cta}>
         <div className={s.container__cta__headerWrapper}>
           <h2 className={s.container__cta__headerWrapper__header}>
-            Mój Bezpłatny E-Book
+            Mój Bezpłatny <br /> E-Book
           </h2>
         </div>
         <div className={s.container__cta__opinionWrapper}>
           <span className={s.container__cta__opinionWrapper__note}>5.0</span>
-          <Image
-            className={s.container__cta__opinionWrapper__starIcon}
-            src={
-              "https://res.cloudinary.com/dbbuav0rj/image/upload/v1728905012/Portfolio/Icons/star_dorn3r.svg"
-            }
-            alt="star icon"
-            width={40}
-            height={40}
-          />
-          <Image
-            className={s.container__cta__opinionWrapper__starIcon}
-            src={
-              "https://res.cloudinary.com/dbbuav0rj/image/upload/v1728905012/Portfolio/Icons/star_dorn3r.svg"
-            }
-            alt="star icon"
-            width={40}
-            height={40}
-          />
-          <Image
-            className={s.container__cta__opinionWrapper__starIcon}
-            src={
-              "https://res.cloudinary.com/dbbuav0rj/image/upload/v1728905012/Portfolio/Icons/star_dorn3r.svg"
-            }
-            alt="star icon"
-            width={40}
-            height={40}
-          />
-          <Image
-            className={s.container__cta__opinionWrapper__starIcon}
-            src={
-              "https://res.cloudinary.com/dbbuav0rj/image/upload/v1728905012/Portfolio/Icons/star_dorn3r.svg"
-            }
-            alt="star icon"
-            width={40}
-            height={40}
-          />
+          <div className={s.container__cta__opinionWrapper__starsWrapper}>
+            <Image
+              className={s.container__cta__opinionWrapper__starIcon}
+              src={
+                "https://res.cloudinary.com/dbbuav0rj/image/upload/v1728905012/Portfolio/Icons/star_dorn3r.svg"
+              }
+              alt="star icon"
+              width={40}
+              height={40}
+            />
+            <Image
+              className={s.container__cta__opinionWrapper__starIcon}
+              src={
+                "https://res.cloudinary.com/dbbuav0rj/image/upload/v1728905012/Portfolio/Icons/star_dorn3r.svg"
+              }
+              alt="star icon"
+              width={40}
+              height={40}
+            />
+            <Image
+              className={s.container__cta__opinionWrapper__starIcon}
+              src={
+                "https://res.cloudinary.com/dbbuav0rj/image/upload/v1728905012/Portfolio/Icons/star_dorn3r.svg"
+              }
+              alt="star icon"
+              width={40}
+              height={40}
+            />
+            <Image
+              className={s.container__cta__opinionWrapper__starIcon}
+              src={
+                "https://res.cloudinary.com/dbbuav0rj/image/upload/v1728905012/Portfolio/Icons/star_dorn3r.svg"
+              }
+              alt="star icon"
+              width={40}
+              height={40}
+            />
+            <Image
+              className={s.container__cta__opinionWrapper__starIcon}
+              src={
+                "https://res.cloudinary.com/dbbuav0rj/image/upload/v1728905012/Portfolio/Icons/star_dorn3r.svg"
+              }
+              alt="star icon"
+              width={40}
+              height={40}
+            />
+          </div>
         </div>
         <div className={s.container__cta__pWrapper}>
           <p className={s.container__cta__pWrapper__p}>
@@ -68,7 +79,7 @@ function Ebook() {
       </section>
       <section className={s.container__imageSide}>
         <Image
-        className={s.container__imageSide__backgroundItemImg}
+          className={s.container__imageSide__backgroundItemImg}
           src={
             "https://res.cloudinary.com/dbbuav0rj/image/upload/v1728905822/Portfolio/images/mobile-background-item_leiajm.webp"
           }
@@ -77,7 +88,7 @@ function Ebook() {
           height={748}
         />
         <Image
-            className={s.container__imageSide__ebookImg}
+          className={s.container__imageSide__ebookImg}
           src={
             "https://res.cloudinary.com/dbbuav0rj/image/upload/v1728905079/Portfolio/images/ebook_mockup_sotb2v.webp"
           }
