@@ -4,6 +4,11 @@
   margin-top: 15vh;
   @include d-flex-column;
   gap: 10vh;
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    margin-top: 25vh;
+    align-items: flex-start;
+  }
   &__importantTextDecorate {
     font-weight: 500;
     color: $dark-blue;
@@ -14,6 +19,10 @@
     @include d-flex-column;
     gap: 5vh;
     align-items: flex-start;
+    @media screen and (min-width: $desktop) {
+      margin-left: 5vw;
+      margin-top: 5vh;
+    }
     &__headerWrapper {
       width: 100%;
       &__header {
@@ -38,6 +47,9 @@
     }
     &__pWrapper {
       @include d-flex;
+      @media screen and (min-width: $mobile) {
+        width: 30rem;
+      }
       &__p {
         @include textFont();
         font-size: 1.2rem;
@@ -49,6 +61,15 @@
       &__btn {
         @include btn();
         padding: 1rem 2rem;
+        @media screen and (min-width: $desktop) {
+          font-size: 1.3rem;
+          padding: 1rem;
+        }
+        &:hover {
+          background-color: $white;
+          border: 1px solid $dark-blue;
+          color: $dark-blue;
+        }
       }
     }
   }
@@ -56,16 +77,34 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    &__backgroundItemImg {
+    &__mobileBackgroundItemImg {
+      position: absolute;
+      left: 0;
+      z-index: 0;
+      @media screen and (min-width: $small-desktop) {
+        display: none;
+      }
+    }
+    &__desktopBackgroundItemImg {
+      display: none;
+      @media screen and (min-width: $small-desktop) {
+        display: block;
         position: absolute;
-        left: 0;
-        z-index: 0;
+        right: 0;
+        bottom: 5rem;
+      }
     }
     &__ebookImg {
-        position: absolute;
-        z-index: 1;
-        left: 2rem;
-        top: 5rem;
+      position: absolute;
+      z-index: 1;
+      left: 10%;
+      top: 5rem;
+      @media screen and (min-width: $small-desktop) {
+        top: 0;
+        left: 1rem;
+        width: 467px;
+        height: 711px;
+      }
     }
   }
 }
