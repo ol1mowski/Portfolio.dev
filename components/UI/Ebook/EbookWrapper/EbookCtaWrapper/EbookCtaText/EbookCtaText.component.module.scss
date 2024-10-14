@@ -1,0 +1,17 @@
+@import "@/style/index.scss";
+
+.importantTextDecorate {
+  font-weight: 500;
+  color: $dark-blue;
+}
+
+.pWrapper {
+  @include d-flex;
+  @media screen and (min-width: $mobile) {
+    width: 30rem;
+  }
+  &__p {
+    @include textFont();
+    font-size: 1.2rem;
+  }
+}
