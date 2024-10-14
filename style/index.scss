@@ -114,7 +114,7 @@ $text-size: 1.1rem;
 @mixin btn() {
   @include d-flex;
   gap: $small-gap;
-  background-color: $light-blue;
+  background-color: $dark-blue;
   border: none;
   padding: $small-padding $standard-padding;
   font-size: $text-size;

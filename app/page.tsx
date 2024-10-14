@@ -9,14 +9,14 @@ import Opinions from "@/components/pages/Opinions/Opinions.page";
 import Projects from "@/components/pages/Projects/Projects.fetching";
 import Help from "@/components/pages/Help/Help.page";
 import Colaboration from "@/components/pages/Colaboration/Colaboration.page";
-import GoodStart from "@/components/pages/GoodStart/GoodStart.page";
+import Ebook from "@/components/pages/EBook/Ebook.page";
 
 export default function Home() {
   return (
     <>
       <Header type="in"/>
       <HomePage />
-      <GoodStart />
+      <Ebook />
       <Help />
       <About />
       <SubscribersAmount />

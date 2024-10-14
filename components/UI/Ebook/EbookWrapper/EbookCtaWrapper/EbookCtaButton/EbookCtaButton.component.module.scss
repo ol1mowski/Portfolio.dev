@@ -1,0 +1,19 @@
+@import "@/style/index.scss";
+
+.buttonWrapper {
+  margin-top: 2vh;
+  @include d-flex;
+  &__btn {
+    @include btn();
+    padding: 1rem 2rem;
+    @media screen and (min-width: $desktop) {
+      font-size: 1.3rem;
+      padding: 1rem;
+    }
+    &:hover {
+      background-color: $white;
+      border: 1px solid $dark-blue;
+      color: $dark-blue;
+    }
+  }
+}
