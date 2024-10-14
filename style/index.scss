@@ -9,7 +9,7 @@
 
 @mixin textFont() {
   font-family: "Lato", sans-serif;
-  font-weight: 300;
+  font-weight: 200;
   font-style: normal;
   line-height: 1.7rem;
   letter-spacing: 1.25px;
@@ -114,7 +114,7 @@ $text-size: 1.1rem;
 @mixin btn() {
   @include d-flex;
   gap: $small-gap;
-  background-color: $light-blue;
+  background-color: $dark-blue;
   border: none;
   padding: $small-padding $standard-padding;
   font-size: $text-size;

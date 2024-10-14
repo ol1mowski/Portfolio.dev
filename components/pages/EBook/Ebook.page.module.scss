@@ -1,3 +1,54 @@
 @import "@/style/index.scss";
 
-
+.container {
+  margin-top: 15vh;
+  @include d-flex-column;
+  &__importantTextDecorate {
+    font-weight: 500;
+    color: $dark-blue;
+  }
+  &__cta {
+    width: 90%;
+    margin: 0 auto;
+    @include d-flex-column;
+    gap: 5vh;
+    align-items: flex-start;
+    &__headerWrapper {
+      width: 100%;
+      &__header {
+        @include headerFont();
+        font-weight: 700;
+        font-size: 2.5rem;
+      }
+    }
+    &__opinionWrapper {
+      @include d-flex;
+      align-items: flex-end;
+      gap: 2vh;
+      &__note {
+        position: relative;
+        top: 0.2rem;
+        font-weight: 500;
+        font-size: 2rem;
+      }
+      &__starsWrapper {
+        @include d-flex;
+      }
+    }
+    &__pWrapper {
+      @include d-flex;
+      &__p {
+        @include textFont();
+        font-size: 1.2rem;
+      }
+    }
+    &__buttonWrapper {
+      margin-top: 2vh;
+      @include d-flex;
+      &__btn {
+        @include btn();
+        padding: 1rem 2rem;
+      }
+    }
+  }
+}
