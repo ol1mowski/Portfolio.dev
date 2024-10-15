@@ -47,4 +47,36 @@
     @include d-flex-column;
     align-items: flex-start;
   }
+  &__infoAboutMeWrapper {
+    background-color: $white;
+    box-shadow: $box-shadow;
+    border-radius: $border-med;
+    width: 90%;
+    padding: $big-padding;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    &__header {
+        font-weight: 500;
+        font-size: 1.4rem;
+    }
+    &__des {
+        @include textFont;
+        line-height: 1.3rem;
+    }
+    &__iconsWrapper {
+        @include d-flex;
+        gap: 2vw;
+    }
+    &__infoWrapper {
+      @include d-flex-column;
+      gap: 2vh;
+      align-items: flex-start;
+      background-color: $white;
+      box-shadow: $box-shadow;
+      border-radius: $border-med;
+      padding: $standard-padding;
+    }
+  }
 }

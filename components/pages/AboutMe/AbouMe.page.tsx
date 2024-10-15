@@ -49,15 +49,15 @@ function AbourMe() {
       </section>
 
       <section className={s.container__infoAboutMeWrapper}>
-        <div className={s.container__infoAboutMeWrapper}>
+        <div className={s.container__infoAboutMeWrapper__infoWrapper}>
           <h4 className={s.container__infoAboutMeWrapper__header}>10</h4>
           <span className={s.container__infoAboutMeWrapper__des}>Zrealizowanych Projektów</span>
         </div>
-        <div className={s.container__infoAboutMeWrapper}>
+        <div className={s.container__infoAboutMeWrapper__infoWrapper}>
           <h4 className={s.container__infoAboutMeWrapper__header}>2</h4>
           <span className={s.container__infoAboutMeWrapper__des}>Lata Doświadczenia</span>
         </div>
-        <div className={s.container__infoAboutMeWrapper}>
+        <div className={s.container__infoAboutMeWrapper__infoWrapper}>
           <div className={s.container__infoAboutMeWrapper__iconsWrapper}>
             <Image
               className={s.container__infoAboutMeWrapper__iconsWrapper__img}
@@ -98,7 +98,7 @@ function AbourMe() {
           </div>
           <span className={s.container__infoAboutMeWrapper__des}>Kluczowe Technologie</span>
         </div>
-        <div className={s.container__infoAboutMeWrapper}>
+        <div className={s.container__infoAboutMeWrapper__infoWrapper}>
           <div className={s.container__infoAboutMeWrapper__iconsWrapper}>
             <a href="https://www.linkedin.com/in/oliwier-markiewicz-47857228a/" target="_blank" rel="noopener noreferrer">
               <Image
