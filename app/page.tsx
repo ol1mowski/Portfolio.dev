@@ -9,6 +9,7 @@ import Projects from "@/components/pages/Projects/Projects.fetching";
 import Help from "@/components/pages/Help/Help.page";
 import Colaboration from "@/components/pages/Colaboration/Colaboration.page";
 import Ebook from "@/components/pages/EBook/Ebook.page";
+import AbourMe from "@/components/pages/AboutMe/AbouMe.page";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Header type="in"/>
       <HomePage />
       <Ebook />
+      <AbourMe />
       <Help />
       <SubscribersAmount />
       <Projects />
