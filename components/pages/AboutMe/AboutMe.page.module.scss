@@ -1,14 +1,28 @@
 @import "@/style/index.scss";
 
+.shadow {
+  border-radius: 100%;
+  width: 10rem;
+  height: 10rem;
+  position: absolute;
+  bottom: 30rem;
+  left: 30rem;
+  z-index: -1;
+  background-color: #007acc5d;
+  box-shadow: 0px 0px 1000px 400px #007acc1e;
+}
+
 .container {
+  position: relative;
+  z-index: 1;
   @include d-flex-column;
   gap: 10vh;
   margin-block: 20vh;
   @media screen and (min-width: $desktop) {
     flex-direction: row;
-    align-items: flex-start;
     width: 90vw;
     margin: 20vh auto;
+    gap: 10vw;
   }
   &__leftSection {
     @include d-flex-column;
@@ -120,6 +134,14 @@
     &__iconsWrapper {
       @include d-flex;
       gap: 1rem;
+      &__img {
+        transition: scale 0.7s;
+        will-change: scale;
+        cursor: pointer;
+        &:hover {
+          scale: 1.1;
+        }
+      }
     }
     &__infoWrapper {
       @include d-flex-column;
@@ -130,7 +152,7 @@
       box-shadow: $box-shadow;
       border-radius: $border-med;
       padding: $standard-padding;
-      transition: background-color .7s;
+      transition: background-color 0.7s;
       will-change: background-color;
       @media screen and (min-width: $desktop) {
         width: 15rem;

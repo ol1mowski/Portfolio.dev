@@ -4,6 +4,7 @@ import s from "./AboutMe.page.module.scss";
 function AbourMe() {
   return (
     <section className={s.container}>
+      <div className={s.shadow}></div>
       <section className={s.container__aboutMeWrapper}>
         <section className={s.container__aboutMeWrapper__headerContainer}>
           <div className={s.container__aboutMeWrapper__sectionInfoWrapper}>
@@ -65,7 +66,7 @@ function AbourMe() {
 
         <section className={s.container__infoAboutMeWrapper}>
           <div className={s.container__infoAboutMeWrapper__infoWrapper}>
-            <h4 className={s.container__infoAboutMeWrapper__header}>10</h4>
+            <h4 className={s.container__infoAboutMeWrapper__header}>7</h4>
             <span className={s.container__infoAboutMeWrapper__des}>
               Zrealizowanych Projektów
             </span>
