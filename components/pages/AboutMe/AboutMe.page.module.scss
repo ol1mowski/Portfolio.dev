@@ -2,6 +2,7 @@
 
 .container {
   @include d-flex-column;
+  gap: 10vh;
   &__aboutMeWrapper {
     background-color: $white;
     box-shadow: $box-shadow;
@@ -36,5 +37,14 @@
         font-size: 1.2rem;
       }
     }
+  }
+  &__imgWrapper {
+    background-color: $white;
+    box-shadow: $box-shadow;
+    border-radius: $border-med;
+    width: 90%;
+    padding: $big-padding;
+    @include d-flex-column;
+    align-items: flex-start;
   }
 }
