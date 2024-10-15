@@ -4,32 +4,32 @@ import s from "./AboutMe.page.module.scss";
 function AbourMe() {
   return (
     <section className={s.container}>
-      <section className={s.container__desWrapper}>
-        <div className={s.container__desWrapper__sectionInfoWrapper}>
+      <section className={s.container__aboutMeWrapper}>
+        <div className={s.container__aboutMeWrapper__sectionInfoWrapper}>
           <span
-            className={s.container__desWrapper__sectionInfoWrapper__content}
+            className={s.container__aboutMeWrapper__sectionInfoWrapper__content}
           >
             O Mnie
           </span>
         </div>
-        <div className={s.container__desWrapper__headerWrapper}>
-          <h3 className={s.container__desWrapper__headerWrapper__header}>
+        <div className={s.container__aboutMeWrapper__headerWrapper}>
+          <h3 className={s.container__aboutMeWrapper__headerWrapper__header}>
             Cześć, Nazywam się <br /> Oliwier Markiewicz
           </h3>
         </div>
-        <div className={s.container__desWrapper__desWrapper}>
-          <p className={s.container__desWrapper__desWrapper__des}>
+        <div className={s.container__aboutMeWrapper__desWrapper}>
+          <p className={s.container__aboutMeWrapper__desWrapper__des}>
             Zajmuję się projektowaniem oraz tworzeniem nowoczesnych i
             funkcjonalnych stron, sklepów i aplikacji internetowych w
-            technologiach takich jak Webflow, Next.js czy WordPress, które
+            technologiach takich jak Webflow,Next.js czy WordPress, które
             spełniają indywidualne potrzeby klientów.
           </p>{" "}
-          <p className={s.container__desWrapper__desWrapper__des}>
+          <p className={s.container__aboutMeWrapper__desWrapper__des}>
             Pomagam małym firmom zaistnieć w internecie, poprzez Pozycjonowanie
             wizytówki Google Moja Firma ,które zwiększają widoczność i przyciąga
             nowych klientów.
           </p>{" "}
-          <p className={s.container__desWrapper__desWrapper__des}>
+          <p className={s.container__aboutMeWrapper__desWrapper__des}>
             Prowadzę również kanał na YouTube gdzie dzielę się wiedzą z zakresu
             programowania oraz tworzenia stron internetowych.
           </p>

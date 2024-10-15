@@ -1,2 +1,40 @@
 @import "@/style/index.scss";
 
+.container {
+  @include d-flex-column;
+  &__aboutMeWrapper {
+    background-color: $white;
+    box-shadow: $box-shadow;
+    border-radius: $border-med;
+    width: 90%;
+    padding: $big-padding;
+    @include d-flex-column;
+    align-items: flex-start;
+    gap: 2vh;
+    &__sectionInfoWrapper {
+      @include d-flex;
+      justify-content: flex-start;
+      &__content {
+        @include small-headers;
+      }
+    }
+    &__headerWrapper {
+      @include d-flex;
+      justify-content: flex-start;
+      &__header {
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+    }
+    &__desWrapper {
+      margin-top: 10vh;
+      @include d-flex-column;
+      gap: 5vh;
+      justify-content: flex-start;
+      &__des {
+        @include textFont;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
