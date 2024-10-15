@@ -3,15 +3,52 @@
 .container {
   @include d-flex-column;
   gap: 10vh;
+  margin-block: 20vh;
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 90vw;
+    margin: 20vh auto;
+  }
+  &__leftSection {
+    @include d-flex-column;
+    gap: 10vh;
+    width: 100%;
+    @media screen and (min-width: $desktop) {
+      align-items: flex-start;
+      width: auto;
+    }
+  }
+  &__importantTextDecorate {
+    font-weight: 500;
+    color: $dark-blue;
+  }
+  &__importantTextYtDecorate {
+    font-weight: 500;
+    color: $red;
+  }
   &__aboutMeWrapper {
     background-color: $white;
     box-shadow: $box-shadow;
     border-radius: $border-med;
     width: 90%;
     padding: $big-padding;
+    padding-bottom: 3rem;
     @include d-flex-column;
     align-items: flex-start;
     gap: 2vh;
+    @media screen and (min-width: $tablet) {
+      width: 40rem;
+    }
+    @media screen and (min-width: $desktop) {
+      height: 52rem;
+      justify-content: space-between;
+    }
+    &__headerContainer {
+      @include d-flex-column;
+      align-items: flex-start;
+      gap: 3vh;
+    }
     &__sectionInfoWrapper {
       @include d-flex;
       justify-content: flex-start;
@@ -24,7 +61,7 @@
       justify-content: flex-start;
       &__header {
         font-weight: 700;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
       }
     }
     &__desWrapper {
@@ -46,37 +83,62 @@
     padding: $big-padding;
     @include d-flex-column;
     align-items: flex-start;
+    @media screen and (min-width: $mobile) {
+      width: 20rem;
+    }
   }
   &__infoAboutMeWrapper {
     background-color: $white;
     box-shadow: $box-shadow;
     border-radius: $border-med;
     width: 90%;
-    padding: $big-padding;
+    padding: 3rem $big-padding;
     display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    min-width: 19rem;
+    max-width: 35rem;
+    @media screen and (min-width: $desktop) {
+      width: 70rem;
+      justify-items: start;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    @media screen and (min-width: $large-desktop) {
+      max-width: 40rem;
+    }
     &__header {
-        font-weight: 500;
-        font-size: 1.4rem;
+      font-weight: 500;
+      font-size: 1.7rem;
     }
     &__des {
-        @include textFont;
-        line-height: 1.3rem;
+      @include textFont;
+      line-height: 1.3rem;
     }
     &__iconsWrapper {
-        @include d-flex;
-        gap: 2vw;
+      @include d-flex;
+      gap: 1rem;
     }
     &__infoWrapper {
       @include d-flex-column;
       gap: 2vh;
+      width: 16rem;
       align-items: flex-start;
       background-color: $white;
       box-shadow: $box-shadow;
       border-radius: $border-med;
       padding: $standard-padding;
+      transition: background-color .7s;
+      will-change: background-color;
+      @media screen and (min-width: $desktop) {
+        width: 15rem;
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: #f9f9f9;
+      }
     }
   }
 }
