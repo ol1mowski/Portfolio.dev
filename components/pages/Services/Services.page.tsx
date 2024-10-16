@@ -10,7 +10,7 @@ function Services() {
       </div>
       <div className={s.container__headerWrapper}>
         <h5 className={s.container__headerWrapper__header}>
-          Strony Internetowe
+          Strony <br /> Internetowe
         </h5>
       </div>{" "}
       <section className={s.container__ctaWrapper}>

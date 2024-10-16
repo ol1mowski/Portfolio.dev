@@ -6,6 +6,9 @@
   padding: 5%;
   gap: 5vh;
   margin-bottom: 20vh;
+  @media screen and (min-width: $small-desktop) {
+    padding-right: 15%;
+  }
   &__importantTextDecorate {
     font-weight: 500;
     color: $dark-blue;
@@ -15,6 +18,9 @@
     &__content {
       @include small-headers;
       font-size: 1.3rem;
+      @media screen and (min-width: $large-desktop) {
+        font-size: 1.5rem;
+      }
     }
   }
   &__headerWrapper {
@@ -23,17 +29,33 @@
       @include headerFont;
       font-weight: 700;
       font-size: 3rem;
+      @media screen and (min-width: $mobile) {
+        font-size: 5rem;
+      }
+      @media screen and (min-width: $large-desktop) {
+        font-size: 7rem;
+      }
     }
   }
   &__ctaWrapper {
     @include d-flex-column;
     gap: 5vh;
     align-items: flex-end;
+    @media screen and (min-width: $mobile) {
+      gap: 7vh;
+    }
+    @media screen and (min-width: $small-desktop) {
+      margin-top: 5vh;
+    }
     &__desWrapper {
       @include d-flex;
       &__des {
         @include textFont;
         font-size: 1.2rem;
+        @media screen and (min-width: $small-desktop) {
+          font-size: 1.5rem;
+          line-height: 2.5rem;
+        }
       }
     }
     &__buttonWrapper {
@@ -42,6 +64,10 @@
         @include btn;
         padding: 3vh 8vw;
         font-size: 1.3rem;
+        @media screen and (min-width: $small-desktop) {
+          padding: 3vh 4vw;
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -50,6 +76,9 @@
     &__number {
       font-weight: 700;
       font-size: 6rem;
+      @media screen and (min-width: $small-desktop) {
+        font-size: 7rem;
+      }
     }
   }
 }
