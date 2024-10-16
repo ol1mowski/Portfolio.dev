@@ -21,7 +21,7 @@ function Services() {
             stron internetowych, dostosowanych do Twoich indywidualnych potrzeb
             i celów biznesowych. Korzystam z najnowszych technologii, takich jak{" "}
             <span className={s.container__importantTextDecorate}>Webflow</span>
-            czy{" "}
+            {" "}czy{" "}
             <span className={s.container__importantTextDecorate}>Next.js</span>,
             aby dostarczyć nowoczesne, responsywne oraz zoptymalizowane pod
             kątem SEO witryny.
