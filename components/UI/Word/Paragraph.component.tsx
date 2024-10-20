@@ -13,8 +13,10 @@ function Paragraph({ value, className }: { value: string; className: string }) {
 
   const words = value.split(" ");
 
+  const paragraphOpacity = useTransform(scrollYProgress, [0, 1], [0.2, 1]);
+
   return (
-    <span ref={element}>
+    <motion.span ref={element} style={{ opacity: paragraphOpacity }}>
       {words.map((word, i) => {
         const start = i / words.length;
         const end = start + 1 / words.length;
@@ -29,7 +31,7 @@ function Paragraph({ value, className }: { value: string; className: string }) {
           </Word>
         );
       })}
-    </span>
+    </motion.span>
   );
 }
 
