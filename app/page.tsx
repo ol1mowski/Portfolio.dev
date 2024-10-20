@@ -10,11 +10,13 @@ import Colaboration from "@/components/pages/Colaboration/Colaboration.page";
 import Ebook from "@/components/pages/EBook/Ebook.page";
 import AbourMe from "@/components/pages/AboutMe/AbouMe.page";
 import Services from "@/components/pages/Services/Services.page";
+import CursorShadow from "@/components/UI/CursorShadow/CursorShadow.component";
 
 export default function Home() {
   return (
     <>
-      <Header type="in"/>
+      <CursorShadow />
+      <Header type="in" />
       <HomePage />
       <Ebook />
       <AbourMe />
