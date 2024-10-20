@@ -1,5 +1,6 @@
 import Image from "next/image";
 import s from "./AboutMe.page.module.scss";
+import Paragraph from "@/components/UI/Word/Paragraph.component";
 
 function AbourMe() {
   return (
@@ -17,35 +18,57 @@ function AbourMe() {
           </div>
           <div className={s.container__aboutMeWrapper__headerWrapper}>
             <h3 className={s.container__aboutMeWrapper__headerWrapper__header}>
-              Cześć, Nazywam się <br /> Oliwier Markiewicz
+              <Paragraph
+                className={s.container__aboutMeWrapper__headerWrapper__header}
+                value="Cześć, Nazywam się"
+              />{" "}
+              <br />{" "}
+              <Paragraph
+                className={s.container__aboutMeWrapper__headerWrapper__header}
+                value="Oliwier Markiewicz"
+              />
             </h3>
           </div>
         </section>
         <div className={s.container__aboutMeWrapper__desWrapper}>
           <p className={s.container__aboutMeWrapper__desWrapper__des}>
-            Zajmuję się projektowaniem oraz tworzeniem nowoczesnych i
+            <Paragraph
+              value="Zajmuję się projektowaniem oraz tworzeniem nowoczesnych i
             funkcjonalnych stron, sklepów i aplikacji internetowych w
-            technologiach takich jak{" "}
+            technologiach takich jak"
+              className={s.container__aboutMeWrapper__desWrapper__des}
+            />
             <span className={s.container__importantTextDecorate}>Webflow</span>{" "}
             ,<span className={s.container__importantTextDecorate}>Next.js</span>{" "}
             czy{" "}
             <span className={s.container__importantTextDecorate}>
               WordPress
             </span>
-            , które spełniają indywidualne potrzeby klientów.
+            <Paragraph
+              value=", które spełniają indywidualne potrzeby klientów."
+              className={s.container__aboutMeWrapper__desWrapper__des}
+            />
           </p>{" "}
-          <p className={s.container__aboutMeWrapper__desWrapper__des}>
-            Pomagam małym firmom zaistnieć w internecie, poprzez Pozycjonowanie
+          <Paragraph
+            value="Pomagam małym firmom zaistnieć w internecie, poprzez Pozycjonowanie
             wizytówki Google Moja Firma ,które zwiększają widoczność i przyciąga
-            nowych klientów.
-          </p>{" "}
+            nowych klientów."
+            className={s.container__aboutMeWrapper__desWrapper__des}
+          />
           <p className={s.container__aboutMeWrapper__desWrapper__des}>
-            Prowadzę również kanał na 
+            <Paragraph
+              value="Prowadzę również kanał na "
+              className={s.container__aboutMeWrapper__desWrapper__des}
+            />
             <span className={s.container__importantTextYtDecorate}>
               YouTube
             </span>
-             gdzie dzielę się wiedzą z zakresu programowania oraz tworzenia
-            stron internetowych.
+            <Paragraph
+              value=" gdzie dzielę się wiedzą z zakresu programowania oraz tworzenia
+            stron internetowych. "
+              className={s.container__aboutMeWrapper__desWrapper__des}
+            />
+             
           </p>
         </div>
       </section>
