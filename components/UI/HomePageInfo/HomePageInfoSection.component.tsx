@@ -2,6 +2,7 @@ import ScrollLink from "@/components/Utils/ScrollLink.component";
 import s from "./HomePageInfoSection.component.module.scss";
 
 import Text from "@/components/Utils/Text-component/Text.component";
+import TypingRepleaceAnimation from "../TypingRepleaceAnimation/TypingRepleaceAnimation.component";
 
 function HomePageInfoSection() {
   return (
@@ -10,7 +11,7 @@ function HomePageInfoSection() {
         Twórca Nowoczesnych
         <br />
         <span className={s.content__h1__underText}>
-          Stron Internetowych
+          <TypingRepleaceAnimation className={s.content__h1} />
           <span className={s.content__h1__underText__decoration}></span>
         </span>
       </h1>
