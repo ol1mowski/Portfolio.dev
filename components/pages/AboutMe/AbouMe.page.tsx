@@ -4,7 +4,6 @@ import s from "./AboutMe.page.module.scss";
 function AbourMe() {
   return (
     <section className={s.container}>
-      <div className={s.shadow}></div>
       <section className={s.container__aboutMeWrapper}>
         <section className={s.container__aboutMeWrapper__headerContainer}>
           <div className={s.container__aboutMeWrapper__sectionInfoWrapper}>
