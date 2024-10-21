@@ -1,6 +1,7 @@
 import Image from "next/image";
 import s from "./AboutMe.page.module.scss";
 import Paragraph from "@/components/UI/Word/Paragraph.component";
+import Link from "next/link";
 
 function AbourMe() {
   return (
@@ -57,12 +58,25 @@ function AbourMe() {
           />
           <p className={s.container__aboutMeWrapper__desWrapper__des}>
             <Paragraph
-              value="Prowadzę również kanał na "
+              value="Prowadzę również "
               className={s.container__aboutMeWrapper__desWrapper__des}
             />
-            <span className={s.container__importantTextYtDecorate}>
-              YouTube
-            </span>
+            <Link href="/Blog">
+              <span className={s.container__importantTextDecorate}>Bloga</span>
+            </Link>
+            <Paragraph
+              value=" oraz kanał na "
+              className={s.container__aboutMeWrapper__desWrapper__des}
+            />
+            <a
+              href="https://www.youtube.com/channel/UCTNFKRALTZoSQS6mDOuDs2Q"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={s.container__importantTextYtDecorate}>
+                YouTube
+              </span>
+            </a>
             <Paragraph
               value=" gdzie dzielę się wiedzą z zakresu programowania oraz tworzenia
             stron internetowych. "

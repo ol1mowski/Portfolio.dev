@@ -30,11 +30,11 @@ const STEP = [
     description: `Zanim strona internetowa zostanie uruchomiona, przeprowadzam dokładne testy funkcjonalności na różnych urządzeniach i przeglądarkach. Upewniam się, że wszystko działa bez zarzutu, a następnie wdrażam stronę na hosting, dbając o każdy szczegół.`,
     reverse: false,
   },
-   {
+  {
     id: 4,
     image: four,
     title: "Pozycjonowanie Lokalne",
-    description: `Przygotowuję i realizuję specjalne strategie marketingowe dostosowane do specyficznych potrzeb i celów takie jak kampania Google czy Facebook Ads czy pozycjonowanie wizytówki Google Moja Firma, które pomogą w zdobyciu nowych klientów`,
+    description: `Oferuję profesjonalne usługi pozycjonowania wizytówki Google Moja Firma, które pomogą Twojej firmie wyróżnić się w lokalnych wynikach wyszukiwania. Dzięki optymalizacji profilu Google Moja Firma poprawisz widoczność swojego biznesu w Google Maps i wyszukiwarce, przyciągniesz więcej klientów oraz zwiększysz ruch na stronie internetowej.`,
     reverse: true,
   },
   {
