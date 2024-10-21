@@ -5,9 +5,9 @@ import Image from "next/image";
 
 function Opinions() {
   return (
-    <section className={s.container}>
+    <section id="opinions" className={s.container}>
       <div className={s.container__sectionInfoWrapper}>
-        <span className={s.container__sectionInfoWrapper__content}>O Mnie</span>
+        <span className={s.container__sectionInfoWrapper__content}>Opinie</span>
       </div>
       <div className={s.container__headerWrapper}>
         <h3 className={s.container__headerWrapper__header}>

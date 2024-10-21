@@ -34,7 +34,7 @@
       border-radius: $border-med;
       @include d-flex-column;
       align-items: flex-start;
-      gap: 3vh;
+      gap: 5vh;
       &__text {
         @include textFont;
       }
