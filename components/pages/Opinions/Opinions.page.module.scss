@@ -1,1 +1,47 @@
 @import "@/style/index.scss";
+
+.container {
+  background-color: #fff;
+  @include d-flex-column;
+  gap: 5vh;
+  height: 100vh;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 5%;
+  &__importantTextDecorate {
+    font-weight: 500;
+    color: $dark-blue;
+  }
+  &__sectionInfoWrapper {
+    @include d-flex;
+    &__content {
+      @include small-headers;
+    }
+  }
+  &__headerWrapper {
+    @include d-flex;
+    &__header {
+      font-weight: 700;
+      font-size: 1.7rem;
+    }
+  }
+  &__opinionsWrapper {
+    margin-top: 10vh;
+    @include d-flex-column;
+    &__opinion {
+      box-shadow: $box-shadow;
+      padding: $big-padding;
+      border-radius: $border-med;
+      @include d-flex-column;
+      align-items: flex-start;
+      gap: 3vh;
+      &__text {
+        @include textFont;
+      }
+      &__imgWrapper {
+        @include d-flex;
+        gap: 5vw;
+      }
+    }
+  }
+}
