@@ -4,7 +4,7 @@ import Paragraph from "@/components/UI/Word/Paragraph.component";
 
 function AbourMe() {
   return (
-    <section className={s.container}>
+    <section id="about" className={s.container}>
       <section className={s.container__aboutMeWrapper}>
         <section className={s.container__aboutMeWrapper__headerContainer}>
           <div className={s.container__aboutMeWrapper__sectionInfoWrapper}>
