@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 const TypingReplaceAnimation = ({ className }: { className: string }) => {
-  const texts = ["Stron Internetowych", "Sklepów Internetowych"];
+  const texts = ["Stron Internetowych", "Sklepów Internetowych", "Projektów Graficznych"];
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFinished, setIsFinished] = useState(false); 
 
   useEffect(() => {
     let index = 0;
@@ -16,8 +16,8 @@ const TypingReplaceAnimation = ({ className }: { className: string }) => {
     const typeText = () => {
       const fullText = texts[currentIndex];
 
-      if (index < fullText.length) {
-        setDisplayText((prev) => prev + fullText.charAt(index));
+      if (index <= fullText.length) {
+        setDisplayText(fullText.substring(0, index));
         index++;
       } else {
         clearInterval(typingInterval);
@@ -38,22 +38,31 @@ const TypingReplaceAnimation = ({ className }: { className: string }) => {
         } else {
           clearInterval(deletingInterval);
           setIsDeleting(false);
-          setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
+
+          if (currentIndex + 1 === texts.length) {
+            setIsFinished(true);
+          } else {
+            setCurrentIndex((prevIndex) => prevIndex + 1); 
+          }
         }
       }, 100);
 
       return () => clearInterval(deletingInterval);
     }
-  }, [isDeleting, displayText, texts]);
+  }, [isDeleting, displayText, currentIndex]);
+
+  if (isFinished) {
+    return (
+      <div>
+        <span className={className}>Stron Internetowych</span>
+      </div>
+    );
+  }
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 2 }}
-    >
+    <div>
       <span className={className}>{displayText}</span>
-    </motion.div>
+    </div>
   );
 };
 
