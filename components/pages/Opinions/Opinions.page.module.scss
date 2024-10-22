@@ -28,6 +28,9 @@
   &__opinionsWrapper {
     margin-top: 10vh;
     @include d-flex-column;
+    @media screen and (min-width: $mobile) {
+      width: 30rem;
+    }
     &__opinion {
       box-shadow: $box-shadow;
       padding: $big-padding;
@@ -40,7 +43,7 @@
       }
       &__imgWrapper {
         @include d-flex;
-        gap: 5vw;
+        gap: 1rem;
       }
     }
   }
