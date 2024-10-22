@@ -28,7 +28,7 @@
   }
 
   &__navSection {
-    @media screen and (min-width: $small-desktop) {
+    @media screen and (min-width: $desktop) {
       display: none;
     }
     &__icon {
