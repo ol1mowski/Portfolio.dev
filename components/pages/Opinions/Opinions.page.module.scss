@@ -4,10 +4,10 @@
   background-color: #fff;
   @include d-flex-column;
   gap: 5vh;
-  height: 100vh;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 5%;
+  padding-inline: 5%;
+  padding-block: 15%;
   &__importantTextDecorate {
     font-weight: 500;
     color: $dark-blue;
@@ -28,8 +28,9 @@
   &__opinionsWrapper {
     margin-top: 10vh;
     @include d-flex-column;
-    @media screen and (min-width: $mobile) {
-      width: 30rem;
+    gap: 10vh;
+    @media screen and (min-width: $desktop) {
+      flex-direction: row;
     }
     &__opinion {
       box-shadow: $box-shadow;
@@ -38,6 +39,9 @@
       @include d-flex-column;
       align-items: flex-start;
       gap: 5vh;
+      @media screen and (min-width: $mobile) {
+        width: 27rem;
+      }
       &__text {
         @include textFont;
       }
