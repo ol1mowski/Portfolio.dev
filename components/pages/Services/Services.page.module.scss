@@ -5,9 +5,11 @@
   align-items: flex-start;
   padding: 5%;
   gap: 5vh;
-  margin-bottom: 20vh;
   @media screen and (min-width: $small-desktop) {
     padding-right: 15%;
+  }
+  &_reverse {
+    align-items: flex-end;
   }
   &__importantTextDecorate {
     font-weight: 500;
@@ -67,6 +69,13 @@
         @media screen and (min-width: $small-desktop) {
           padding: 3vh 4vw;
           font-size: 1.5rem;
+        }
+        transition: background-color, color, border, .7s;
+        will-change: background-color, color, border;
+        &:hover {
+          background-color: $white;
+          color: $dark-blue;
+          border: 1px solid $dark-blue;
         }
       }
     }
