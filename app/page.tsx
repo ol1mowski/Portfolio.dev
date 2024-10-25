@@ -1,4 +1,4 @@
-import Header from "@/components/UI/Header/Header.component";
+
 import HomePage from "@/components/pages/HomePage/HomePage.page";
 
 import SubscribersAmount from "@/components/pages/SubscribersAmount/SubscribersAmount.page";
@@ -11,12 +11,13 @@ import Ebook from "@/components/pages/EBook/Ebook.page";
 import AbourMe from "@/components/pages/AboutMe/AbouMe.page";
 import Services from "@/components/pages/Services/Services.page";
 import CursorShadow from "@/components/UI/CursorShadow/CursorShadow.component";
+import Header from "@/components/pages/Header/Header.component";
 
 export default function Home() {
   return (
     <>
       <CursorShadow />
-      <Header type="in" />
+      <Header />
       <HomePage />
       <Ebook />
       <AbourMe />
