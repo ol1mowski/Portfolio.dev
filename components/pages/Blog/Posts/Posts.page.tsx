@@ -3,7 +3,7 @@ import s from "./Posts.page.module.scss";
 import Button from "@/components/UI/Button/Button.component";
 import PostCardComponent from "../../../UI/PostCardComponent/PostCardComponent.component";
 import Caption from "@/components/UI/Caption/Caption.component";
-import { type PostsType } from "@/types/PostType";
+import { PostsType } from "@/types/PostType.type";
 
 function PostsComponent({ posts }: { posts: PostsType[] }) {
   return (

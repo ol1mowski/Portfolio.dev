@@ -1,13 +1,13 @@
 import Image from "next/image";
 import s from "./page.module.scss";
 import ebook from "@/assets/bezplatny_ebook.webp";
-import Header from "@/components/UI/Header/Header.component";
 import Footer from "@/components/pages/Footer/Footer.page";
 import dynamic from "next/dynamic";
 import { saveClientData } from "@/actions/SaveClientEmail";
 import { validateSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import Head from "next/head";
+import Header from "@/components/pages/Header/Header.component";
 
 const ClientForm = dynamic(
   () => import("./FormComponents/Form.validation.component"),
@@ -32,7 +32,7 @@ async function page() {
             content="E-Book o Tworzeniu Stron Internetowych"
           />
         </Head>
-        <Header type="out" />
+        <Header />
         <section className={s.container}>
           <section className={s.container__content}>
             <section className={s.container__content__header}>

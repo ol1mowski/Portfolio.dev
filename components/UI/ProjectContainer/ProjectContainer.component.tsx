@@ -1,8 +1,9 @@
-import { type ProjectType } from "@/types/PostType";
+
 import style from "./ProjectContainer.component.module.scss";
 
 import Image from "next/image";
 import AnimationWrapper from "../AnimationWrapper/AnimationWrapper.component";
+import { ProjectType } from "@/types/PostType.type";
 
 const ProjectComponent = ({
   image,

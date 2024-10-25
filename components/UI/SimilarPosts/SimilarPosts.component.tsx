@@ -2,7 +2,8 @@ import s from "./SimilarPosts.component.module.scss";
 import { forwardRef, LegacyRef, RefObject } from "react";
 import Caption from "../Caption/Caption.component";
 import PostCardComponent from "@/components/UI/PostCardComponent/PostCardComponent.component";
-import { type PostsType } from "@/types/PostType";
+import { PostsType } from "@/types/PostType.type";
+
 
 interface SimilarPostsProps {
   reference?: RefObject<HTMLDivElement> | boolean;

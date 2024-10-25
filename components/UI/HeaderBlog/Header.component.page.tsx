@@ -63,7 +63,7 @@ function Header({
                     key={item.id}
                     value={item.value}
                     href={item.href}
-                    type={item.type}
+                    type={item.type as "outpage" | "onpage"}
                   />
                 ))
               : ITEMS.map((item) => (
@@ -71,7 +71,7 @@ function Header({
                     key={item.id}
                     value={item.value}
                     href={item.href}
-                    type={item.type}
+                    type={item.type as "outpage" | "onpage"}
                   />
                 ))}
           </ul>
@@ -87,7 +87,10 @@ function Header({
         </section>
       </section>
       {isOpen ? (
-        <HamburgerMenuComponent type={type} closeMenuHandler={closeMenuHandler} />
+        <HamburgerMenuComponent
+          type={type}
+          closeMenuHandler={closeMenuHandler}
+        />
       ) : null}
     </header>
   );

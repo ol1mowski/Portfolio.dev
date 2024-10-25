@@ -1,6 +1,7 @@
 import style from "./Projects.page.module.scss";
 import ProjectComponent from "../../UI/Project/ProjectReverseCheck.component";
-import { type ProjectType, type ProjectsType } from "@/types/PostType";
+import { ProjectsType, ProjectType } from "@/types/PostType.type";
+
 
 const Projects = ({ projects }: { projects: ProjectsType[] }) => {
   if (!projects.length) {
