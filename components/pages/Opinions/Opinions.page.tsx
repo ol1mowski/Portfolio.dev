@@ -44,7 +44,7 @@ function Opinions() {
             <span>Infmovilweb</span>
           </div>
         </div>
-        <div className={s.container__opinionsWrapper__opinion}>
+        {/* <div className={s.container__opinionsWrapper__opinion}>
           <p className={s.container__opinionsWrapper__opinion__text}>
             Oliwier Markiewicz is a good lad and very hardworking. He make us
             the company website as we instructed. We hope you do well in life.
@@ -69,7 +69,7 @@ function Opinions() {
             />
             <span>Troska</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
