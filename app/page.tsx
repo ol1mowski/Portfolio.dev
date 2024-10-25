@@ -20,7 +20,19 @@ export default function Home() {
       <HomePage />
       <Ebook />
       <AbourMe />
-      <Services />
+      <Services
+        type="Strony-Internetowe"
+        number={1}
+        ifFirst
+        des="W dzisiejszym świecie internet jest kluczowym narzędziem dla rozwoju
+            każdej firmy. Oferuję kompleksową usługę tworzenia zjawiskowych
+            stron internetowych, dostosowanych do Twoich indywidualnych potrzeb
+            i celów biznesowych. Korzystam z najnowszych technologii, takich jak
+            Webflow czy Next.js, aby dostarczyć nowoczesne, responsywne oraz
+            zoptymalizowane pod kątem SEO witryny."
+      />
+      <Services type="Sklepy-Internetowe" number={2} reverse des="W dzisiejszym konkurencyjnym środowisku e-commerce nowoczesny sklep internetowy powinien nie tylko przyciągać klientów swoim wyglądem, ale również oferować doskonałe doświadczenia zakupowe, bezpieczeństwo oraz wydajność. Specjalizuję się w tworzeniu funkcjonalnych i profesjonalnych sklepów internetowych opartych na takich technologiach jak WordPress (WooCommerce), Webflow i Next.js. Każdy projekt dostosowany jest do indywidualnych potrzeb biznesowych, aby zwiększyć sprzedaż i zapewnić klientom wygodę zakupów online."/>
+      <Services type="Projekty-Stron Internetowych" number={3} des="Profesjonalna strona internetowa to podstawowy element budowania wizerunku i rozwoju każdej firmy w świecie cyfrowym. Oferuję usługę projektowania nowoczesnych stron internetowych, które wyróżniają się nie tylko estetyką, ale również pełną funkcjonalnością oraz intuicyjną nawigacją. Specjalizuję się w tworzeniu stron dostosowanych do potrzeb klientów, z myślą o ich użytkownikach i skutecznej komunikacji marki."/>
       <SubscribersAmount />
       <Projects />
       <Opinions />
