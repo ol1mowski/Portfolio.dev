@@ -33,7 +33,7 @@
     "**/*.tsx",
     "next/types/**/*.ts",
     ".next/types/**/*.ts"
-  ],
+, "types/PostType..typets"  ],
   "exclude": [
     "node_modules"
   ]

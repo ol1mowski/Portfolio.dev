@@ -1,12 +1,6 @@
-type ImageType = {
-  id: number;
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-};
+import { type StarIconType } from "@/types/StarIconType.type";
 
-export const STAR_IMAGES: ImageType[] = [
+export const STAR_IMAGES: StarIconType[] = [
   {
     id: 1,
     src: "https://res.cloudinary.com/dbbuav0rj/image/upload/v1728905012/Portfolio/Icons/star_dorn3r.svg",
