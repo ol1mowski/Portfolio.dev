@@ -6,11 +6,11 @@ import x from "@/assets/close_icon.png";
 import hamburger from "@/assets/hamburger.png";
 
 import { useRef } from "react";
-import NavBar from "../NavBar/NavBar.component";
+import NavBar from "./NavBar/NavBar.component";
 import Image from "next/image";
-import MenuItem from "../MenuItem/MenuItem.component";
+import MenuItem from "./MenuItem/MenuItem.component";
 
-const Header = ({ type }: { type: string }) => {
+const Header = () => {
   const menu = useRef<HTMLDivElement>(null);
 
   const showMenuHandler = () => {
@@ -34,24 +34,6 @@ const Header = ({ type }: { type: string }) => {
     { to: "/contact", label: "Kontakt" },
   ];
 
-  const menuItemsOut = [
-    { to: "/#home", label: "Home" },
-    { to: "/#about", label: "O mnie" },
-    { to: "/#projects", label: "Projekty" },
-    { to: "/Blog", label: "Blog" },
-    { to: "/#opinions", label: "Opinie" },
-    { to: "/#contact", label: "Kontakt" },
-  ];
-
-  const buttonVariants = {
-    hover: {
-      scale: 1.05,
-      transition: {
-        duration: 0.3,
-        yoyo: Infinity,
-      },
-    },
-  };
 
   return (
     <>
@@ -76,7 +58,7 @@ const Header = ({ type }: { type: string }) => {
             />
           </div>
         </nav>
-        <NavBar type={type} />
+        <NavBar/>
       </header>
 
       <nav
@@ -94,29 +76,15 @@ const Header = ({ type }: { type: string }) => {
           />
         </div>
         <section className={s.headerContainer__menu__nav}>
-          {type === "in"
-            ? menuItems.map((item, index) => (
+          {menuItems.map((item, index) => (
                 <MenuItem
-                  type={type}
                   key={index}
                   to={item.to}
                   label={item.label}
-                  index={index + 1}
-                  buttonVariants={buttonVariants}
                   hideMenu={hideMenuHandler}
                 />
               ))
-            : menuItemsOut.map((item, index) => (
-                <MenuItem
-                  type={type}
-                  key={index}
-                  to={item.to}
-                  label={item.label}
-                  index={index + 1}
-                  buttonVariants={buttonVariants}
-                  hideMenu={hideMenuHandler}
-                />
-              ))}
+            }
         </section>
       </nav>
     </>

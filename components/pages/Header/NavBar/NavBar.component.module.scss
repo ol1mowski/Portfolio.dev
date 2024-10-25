@@ -7,12 +7,12 @@
     @include d-flex;
     gap: 2rem;
   }
-  &__items {
+  &__item {
     color: $dark;
     font-weight: 600;
     transition: color 0.4s;
   }
-  &__items:hover {
+  &__item:hover {
     color: $dark-blue;
     cursor: pointer;
   }
