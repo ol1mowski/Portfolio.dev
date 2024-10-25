@@ -1,6 +1,5 @@
 import s from "./HamburgerMenu.module.scss";
 
-import close from "@/assets/close.svg";
 
 import Image from "next/image";
 
@@ -25,7 +24,7 @@ function HamburgerMenuComponent({
           className={s.hamburgerMenu__close__icon}
           width="30"
           height="30"
-          src={close}
+          src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1729846726/Portfolio/Icons/close_bgh7rx.svg"
           alt="delete-sign"
         />
       </section>
