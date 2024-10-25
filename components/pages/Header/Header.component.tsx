@@ -2,9 +2,6 @@
 
 import s from "./Header.component.module.scss";
 
-import x from "@/assets/close_icon.png";
-import hamburger from "@/assets/hamburger.png";
-
 import { useRef } from "react";
 import NavBar from "./NavBar/NavBar.component";
 import Image from "next/image";
@@ -34,7 +31,6 @@ const Header = () => {
     { to: "/contact", label: "Kontakt" },
   ];
 
-
   return (
     <>
       <header className={s.headerContainer}>
@@ -50,15 +46,15 @@ const Header = () => {
           <div className={s.headerContainer__navSection__icon}>
             <Image
               onClick={showMenuHandler}
-              src={hamburger}
-              alt="hamburger manu icon"
+              src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1729846726/Portfolio/Icons/hamburger_black_cyojcu.svg"
+              alt="hamburger menu icon"
               width={30}
               height={30}
               className={s.headerContainer__navSection__icon__img}
             />
           </div>
         </nav>
-        <NavBar/>
+        <NavBar />
       </header>
 
       <nav
@@ -70,21 +66,20 @@ const Header = () => {
           <Image
             width={30}
             height={30}
-            src={x}
-            alt="close icon"
+            src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1729846726/Portfolio/Icons/close_bgh7rx.svg"
+            alt="close Menu icon"
             className={s.headerContainer__menu__x__icon}
           />
         </div>
         <section className={s.headerContainer__menu__nav}>
           {menuItems.map((item, index) => (
-                <MenuItem
-                  key={index}
-                  to={item.to}
-                  label={item.label}
-                  hideMenu={hideMenuHandler}
-                />
-              ))
-            }
+            <MenuItem
+              key={index}
+              to={item.to}
+              label={item.label}
+              hideMenu={hideMenuHandler}
+            />
+          ))}
         </section>
       </nav>
     </>

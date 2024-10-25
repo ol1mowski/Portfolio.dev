@@ -1,17 +1,14 @@
 import s from "./MenuItem.component.module.scss";
 
-import { Link as AnimateLink } from "react-scroll";
 import { motion } from "framer-motion";
 
 const MenuItem = ({
   to,
   label,
-  index,
   hideMenu,
 }: {
   to: string;
   label: string;
-  index: number;
   hideMenu: () => void;
 }) => (
   <>
