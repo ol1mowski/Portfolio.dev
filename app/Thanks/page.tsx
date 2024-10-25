@@ -1,10 +1,10 @@
-import Header from "@/components/UI/Header/Header.component";
 import Footer from "@/components/pages/Footer/Footer.page";
 import s from "./page.module.scss";
 import Button from "@/components/UI/Button/Button.component";
 import { redirect } from "next/navigation";
 import { validateSession } from "@/lib/auth";
 import Head from "next/head";
+import Header from "@/components/pages/Header/Header.component";
 
 const page = async () => {
   const result = await validateSession();
@@ -14,14 +14,11 @@ const page = async () => {
   } else {
     return (
       <>
-      <Head>
-        <title>Dziękuję</title>
-          <meta
-          name="description"
-          content="Zakładka Dziękuję"
-        />
-      </Head>
-        <Header type="out" />
+        <Head>
+          <title>Dziękuję</title>
+          <meta name="description" content="Zakładka Dziękuję" />
+        </Head>
+        <Header />
         <section className={s.container}>
           <h1 className={s.container__header}>Dziękuję</h1>
           <p className={s.container__text}>

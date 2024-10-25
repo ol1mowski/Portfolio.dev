@@ -9,8 +9,9 @@ import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.
 import logo from "@/assets/logo.svg";
 import hamburger from "@/assets/hamburger.svg";
 
-import { type PostsType } from "@/types/PostType";
+
 import Header from "@/components/UI/HeaderBlog/Header.component.page";
+import { PostsType } from "@/types/PostType.type";
 
 function HomePageComponent({ posts }: { posts: PostsType[] }) {
   const lastPost = posts[posts.length - 1];

@@ -1,6 +1,6 @@
-import { LinkItemsType } from "@/types/HeaderLinksType";
 
-export const ITEMS: LinkItemsType = [
+
+export const ITEMS = [
   {
     id: 1,
     value: "Home",
@@ -21,7 +21,7 @@ export const ITEMS: LinkItemsType = [
   },
 ];
 
-export const BlogITEMS: LinkItemsType = [
+export const BlogITEMS = [
   {
     id: 1,
     value: "Home",
