@@ -1,0 +1,22 @@
+@import "@/style/index.scss";
+
+.headerContainer {
+  @include d-flex-column;
+  align-items: flex-start;
+  gap: 3vh;
+  &__sectionInfoWrapper {
+    @include d-flex;
+    justify-content: flex-start;
+    &__content {
+      @include small-headers;
+    }
+  }
+  &__headerWrapper {
+    @include d-flex;
+    justify-content: flex-start;
+    &__header {
+      font-weight: 700;
+      font-size: 1.7rem;
+    }
+  }
+}

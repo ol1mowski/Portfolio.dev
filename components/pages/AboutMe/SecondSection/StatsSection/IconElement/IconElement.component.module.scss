@@ -1,0 +1,10 @@
+@import "@/style/index.scss";
+
+.img {
+  transition: scale 0.7s;
+  will-change: scale;
+  cursor: pointer;
+  &:hover {
+    scale: 1.1;
+  }
+}
