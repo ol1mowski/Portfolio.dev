@@ -1,16 +1,15 @@
-import TechStack from "../../UI/techStack/techStack.component";
-import HomePageInfo from "../../UI/HomePageInfo/HomePageInfoSection.component";
-
-import HomePageImageSection from "../../UI/HomePageImageSection/HomePageImageSection.component";
+import HomePageImageSection from "./HomePageImageSection/HomePageImageSection.component";
 import HeroSectionWrapper from "./HeroSectionWrapper/HeroSectionWrapper.component";
 import MainSectionWrapper from "./MainSectionWrapper/MainSectionWrapper.component";
+import HomePageInfoSection from "./HomePageInfo/HomePageInfoSection.component";
+import TechStack from "./TechStack/TechStack.component";
 
 function HomePage() {
   return (
     <HeroSectionWrapper>
       <MainSectionWrapper>
         <HomePageImageSection />
-        <HomePageInfo />
+        <HomePageInfoSection />
       </MainSectionWrapper>
 
       <TechStack />

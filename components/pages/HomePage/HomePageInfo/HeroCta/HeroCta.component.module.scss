@@ -1,0 +1,29 @@
+@import "@/style/index.scss";
+
+.cta {
+  margin-top: 1.5rem;
+  @include d-flex-column;
+  gap: 3rem;
+  &__p {
+    margin-top: $standard-margin;
+    @include description();
+    text-align: left;
+    @media screen and (min-width: $small-desktop) {
+      width: 40rem;
+      padding: 0;
+    }
+  }
+  &__btn {
+    @include btn();
+    padding: 1.2rem;
+    font-size: 1.5rem;
+    transition: scale, background-color, color, border, 0.7s;
+    will-change: scale, background-color, color, border;
+  }
+  &__btn:hover {
+    scale: $hover-med-scale;
+    background-color: transparent;
+    color: $light-blue;
+    border: 1px solid $light-blue;
+  }
+}

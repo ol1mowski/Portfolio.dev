@@ -37,13 +37,6 @@
     flex-wrap: wrap;
     gap: 1.5rem;
     align-content: center;
-    &__skill {
-      cursor: pointer;
-      transition: scale, 0.7s;
-      will-change: scale;
-    }
-    &__skill:hover {
-      scale: $hover-max-scale;
-    }
+    
   }
 }
