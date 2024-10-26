@@ -1,5 +1,5 @@
 import style from "./ProjectReverseCheck.component.module.scss";
-import ProjectComponent from "../ProjectContainer/ProjectContainer.component";
+import ProjectComponent from "../../pages/Projects/ProjectContainer/ProjectContainer.component";
 import { ProjectType } from "@/types/PostType.type";
 
 

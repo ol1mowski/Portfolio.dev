@@ -4,20 +4,4 @@
   scroll-margin-top: 10rem;
   padding-top: 3rem;
   background-color: $white;
-
-  &__contentSection {
-    width: 80%;
-    margin: 0 auto;
-    @include d-flex-column;
-    &__h3 {
-      @include small-headers;
-    }
-    &__h4 {
-      @include below-headers;
-    }
-  }
-  &__projectsWrapper {
-    @include d-flex-column;
-    margin-top: 5rem;
-  }
 }

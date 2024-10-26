@@ -1,0 +1,13 @@
+@import "@/style/index.scss";
+
+.contentSection {
+  width: 80%;
+  margin: 0 auto;
+  @include d-flex-column;
+  &__h3 {
+    @include small-headers;
+  }
+  &__h4 {
+    @include below-headers;
+  }
+}

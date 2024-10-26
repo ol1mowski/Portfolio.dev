@@ -1,0 +1,6 @@
+@import "@/style/index.scss";
+
+.projectsWrapper {
+  @include d-flex-column;
+  margin-top: 5rem;
+}

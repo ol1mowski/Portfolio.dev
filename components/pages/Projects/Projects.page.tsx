@@ -1,7 +1,9 @@
-import style from "./Projects.page.module.scss";
-import ProjectComponent from "../../UI/Project/ProjectReverseCheck.component";
-import { ProjectsType, ProjectType } from "@/types/PostType.type";
+import ProjectComponent from "./ProjectContainer/ProjectContainer.component";
+import ProjectHeader from "./ProjectHeader/ProjectHeader.component";
+import s from "./Projects.page.module.scss";
 
+import { type ProjectsType, type ProjectType } from "@/types/PostType.type";
+import ProjectsWrapper from "./ProjectsWrapper/ProjectsWrapper.component";
 
 const Projects = ({ projects }: { projects: ProjectsType[] }) => {
   if (!projects.length) {
@@ -11,16 +13,9 @@ const Projects = ({ projects }: { projects: ProjectsType[] }) => {
   const projectList = projects[0].projects;
 
   return (
-    <section id="projects" className={style.projectsContainer}>
-      <section className={style.projectsContainer__contentSection}>
-        <h3 className={style.projectsContainer__contentSection__h3}>
-          PROJEKTY
-        </h3>
-        <h4 className={style.projectsContainer__contentSection__h4}>
-          Zobacz Ostatnie Stworzone Przeze Mnie Strony Internetowe
-        </h4>
-      </section>
-      <section className={style.projectsContainer__projectsWrapper}>
+    <section id="projects" className={s.projectsContainer}>
+      <ProjectHeader />
+      <ProjectsWrapper>
         {projectList.map((project: ProjectType) => (
           <ProjectComponent
             id={project.id}
@@ -32,10 +27,9 @@ const Projects = ({ projects }: { projects: ProjectsType[] }) => {
             technologies={project.technologies}
             githubLink={project.githubLink}
             liveLink={project.liveLink}
-            reverse={project.reverse}
           />
         ))}
-      </section>
+      </ProjectsWrapper>
     </section>
   );
 };
