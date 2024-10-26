@@ -1,10 +1,10 @@
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 import s from './HomePageImageSection.component.module.scss';
 
-function HomePageImageSection({ img }: { img: StaticImageData}) {
+function HomePageImageSection() {
   return (
     <Image
-      src={img}
+      src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1729942605/Portfolio/images/new_main_im3s4v.svg"
       width={600}
       height={600}
       alt="oliwier img"
