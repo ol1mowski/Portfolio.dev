@@ -7,12 +7,4 @@
   @media screen and (min-width: $big-tablet) {
     width: 100vw;
   }
-
-  &__infoSection {
-    @include d-flex-column;
-    @media screen and (min-width: $big-tablet) {
-      @include d-flex;
-      flex-direction: row-reverse;
-    }
-  }
 }
