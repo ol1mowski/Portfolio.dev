@@ -1,0 +1,10 @@
+@import "@/style/index.scss";
+
+.skill {
+  cursor: pointer;
+  transition: scale, 0.7s;
+  will-change: scale;
+  &:hover {
+    scale: $hover-max-scale;
+  }
+}
