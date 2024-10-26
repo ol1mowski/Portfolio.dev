@@ -1,0 +1,11 @@
+@import "@/style/index.scss";
+
+.secondSection {
+  @include d-flex-column;
+  gap: 10vh;
+  width: 100%;
+  @media screen and (min-width: $desktop) {
+    align-items: flex-start;
+    width: auto;
+  }
+}

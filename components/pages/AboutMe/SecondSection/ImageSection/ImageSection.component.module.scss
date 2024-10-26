@@ -1,0 +1,14 @@
+@import "@/style/index.scss";
+
+.imgWrapper {
+  background-color: $white;
+  box-shadow: $box-shadow;
+  border-radius: $border-med;
+  width: 90%;
+  padding: $big-padding;
+  @include d-flex-column;
+  align-items: flex-start;
+  @media screen and (min-width: $mobile) {
+    width: 20rem;
+  }
+}
