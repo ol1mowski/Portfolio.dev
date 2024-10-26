@@ -1,10 +1,11 @@
-import EbookWrapper from "@/components/UI/Ebook/EbookWrapper/EbookWrapper.component";
-import EbookCtaHeader from "@/components/UI/Ebook/EbookWrapper/EbookCtaWrapper/EbookCtaHeader/EbookCtaHeader.component";
-import EbookCtaOpinion from "@/components/UI/Ebook/EbookWrapper/EbookCtaWrapper/EbookCtaOpinion/EbookCtaOpinion.component";
-import EbookCtaText from "@/components/UI/Ebook/EbookWrapper/EbookCtaWrapper/EbookCtaText/EbookCtaText.component";
-import EbookCtaWrapper from "@/components/UI/Ebook/EbookWrapper/EbookCtaWrapper/EbookCtaWrapper.component";
-import EbookCtaButton from "@/components/UI/Ebook/EbookWrapper/EbookCtaWrapper/EbookCtaButton/EbookCtaButton.component";
-import EbookImageSide from "@/components/UI/Ebook/EbookWrapper/EbookImageSide/EbookImageSide.component";
+import EbookCtaHeader from "@/components/pages/EBook/EbookCtaWrapper/EbookCtaHeader/EbookCtaHeader.component";
+import EbookCtaOpinion from "@/components/pages/EBook/EbookCtaWrapper/EbookCtaOpinion/EbookCtaOpinion.component";
+import EbookCtaText from "@/components/pages/EBook/EbookCtaWrapper/EbookCtaText/EbookCtaText.component";
+import EbookCtaWrapper from "@/components/pages/EBook/EbookCtaWrapper/EbookCtaWrapper.component";
+
+import EbookWrapper from "./EbookWrapper/EbookWrapper.component";
+import EbookImageSide from "./EbookImageSide/EbookImageSide.component";
+import EbookCtaButton from "./EbookCtaWrapper/EbookCtaButton/EbookCtaButton.component";
 
 function Ebook() {
   return (
