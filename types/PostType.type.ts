@@ -7,7 +7,6 @@ export type ProjectType = {
   githubLink: string;
   image: string;
   liveLink: string;
-  reverse?: boolean;
   technologies: string[];
   title: string;
 };

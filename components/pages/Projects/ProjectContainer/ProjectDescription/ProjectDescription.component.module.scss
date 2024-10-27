@@ -1,0 +1,15 @@
+@import "@/style/index.scss";
+
+.contentSection {
+  width: 85%;
+  margin-bottom: 1rem;
+  &__pBig {
+    margin: 0 auto;
+    @include description();
+    line-height: 1.5rem;
+    text-align: left;
+    @media screen and (min-width: $mobile) {
+      margin-left: 3rem;
+    }
+  }
+}

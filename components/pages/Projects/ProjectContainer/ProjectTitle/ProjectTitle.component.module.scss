@@ -1,0 +1,21 @@
+@import "@/style/index.scss";
+
+.titleSection {
+  margin: 2rem 0;
+
+  &__wrapper {
+    text-align: center;
+
+    &__h3 {
+      @include headerFont();
+      color: $dark-blue;
+      font-weight: 500;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &__p {
+      @include description();
+    }
+  }
+}

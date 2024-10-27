@@ -16,17 +16,17 @@ const Projects = ({ projects }: { projects: ProjectsType[] }) => {
     <section id="projects" className={s.projectsContainer}>
       <ProjectHeader />
       <ProjectsWrapper>
-        {projectList.map((project: ProjectType) => (
+        {projectList.map(({ id, image, title, date, description, technologies, githubLink, liveLink }: ProjectType) => (
           <ProjectComponent
-            id={project.id}
-            key={project.id}
-            image={project.image}
-            title={project.title}
-            date={project.date}
-            description={project.description}
-            technologies={project.technologies}
-            githubLink={project.githubLink}
-            liveLink={project.liveLink}
+            id={id}
+            key={id}
+            image={image}
+            title={title}
+            date={date}
+            description={description}
+            technologies={technologies}
+            githubLink={githubLink}
+            liveLink={liveLink}
           />
         ))}
       </ProjectsWrapper>
