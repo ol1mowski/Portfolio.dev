@@ -1,0 +1,18 @@
+@import "@/style/index.scss";
+
+.imgSection {
+  margin-top: 1.5rem;
+  @media screen and (min-width: 1020px) {
+    width: 70%;
+  }
+
+  &__img {
+    margin: 0 auto;
+    display: block;
+    border-radius: 1.7rem;
+    width: 90%;
+    @media screen and (min-width: 1022px) {
+      height: 320px;
+    }
+  }
+}

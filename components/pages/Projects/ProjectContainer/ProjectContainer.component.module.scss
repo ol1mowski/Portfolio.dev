@@ -14,98 +14,10 @@
     width: 60rem;
   }
 
-  &__imgSection {
-    margin-top: 1.5rem;
-    @media screen and (min-width: 1020px) {
-      width: 70%;
-    }
-
-    &__img {
-      margin: 0 auto;
-      display: block;
-      border-radius: 1.7rem;
-      width: 90%;
-      @media screen and (min-width: 1022px) {
-        height: 320px;
-      }
-    }
-  }
-
   &__descriSection {
     @include d-flex-column;
     @media screen and (min-width: 1020px) {
       width: 40%;
-    }
-  }
-
-  &__titleSection {
-    margin: 2rem 0;
-
-    &__wrapper {
-      text-align: center;
-
-      &__h3 {
-        @include headerFont();
-        color: $dark-blue;
-        font-weight: 500;
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
-      }
-
-      &__p {
-        @include description();
-      }
-    }
-  }
-
-  &__contentSection {
-    width: 85%;
-    margin-bottom: 1rem;
-    &__pBig {
-      margin: 0 auto;
-      @include description();
-      line-height: 1.5rem;
-      text-align: left;
-      @media screen and (min-width: $mobile) {
-        margin-left: 3rem;
-      }
-    }
-  }
-  &__toolsSection {
-    @include d-flex;
-    margin-top: 1rem;
-    gap: 1rem;
-    &__tool {
-      cursor: pointer;
-      padding: 0.5rem 1rem;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
-      font-weight: 600;
-    }
-  }
-  &__iconSection {
-    @include d-flex;
-    margin-top: 2rem;
-    padding-bottom: 2rem;
-    gap: 2rem;
-    &__a {
-      transition: color 0.3s;
-      will-change: transition;
-    }
-    &__a:hover {
-      color: $dark-blue;
-    }
-    &__icon {
-      @include d-flex;
-      gap: 0.5rem;
-      &__span {
-        font-size: 1.2rem;
-        color: $dark;
-        transition: color 0.3s;
-        will-change: transition;
-      }
-      &__span:hover {
-        color: $dark-blue;
-      }
     }
   }
 }

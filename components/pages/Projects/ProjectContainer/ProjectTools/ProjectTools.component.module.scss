@@ -1,0 +1,13 @@
+@import "@/style/index.scss";
+
+.toolsSection {
+  @include d-flex;
+  margin-top: 1rem;
+  gap: 1rem;
+  &__tool {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+    font-weight: 600;
+  }
+}

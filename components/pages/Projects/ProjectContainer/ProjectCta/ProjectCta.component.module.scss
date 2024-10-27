@@ -1,0 +1,28 @@
+@import "@/style/index.scss";
+
+.iconSection {
+  @include d-flex;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  gap: 2rem;
+  &__a {
+    transition: color 0.3s;
+    will-change: transition;
+  }
+  &__a:hover {
+    color: $dark-blue;
+  }
+  &__icon {
+    @include d-flex;
+    gap: 0.5rem;
+    &__span {
+      font-size: 1.2rem;
+      color: $dark;
+      transition: color 0.3s;
+      will-change: transition;
+    }
+    &__span:hover {
+      color: $dark-blue;
+    }
+  }
+}
