@@ -1,18 +1,14 @@
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 import s from "./Step.component.module.scss";
 import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
+import { type CollaborationStepType } from "@/types/CollaborationStep";
 
 function Step({
   image,
   title,
   reverse,
   description,
-}: {
-  image: StaticImageData;
-  title: string;
-  description: string;
-  reverse: boolean;
-}) {
+}: CollaborationStepType) {
   return (
     <>
       {reverse ? (

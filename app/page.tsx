@@ -6,12 +6,12 @@ import Contact from "@/components/pages/Contact/Contact.page";
 import Footer from "@/components/pages/Footer/Footer.page";
 import Opinions from "@/components/pages/Opinions/Opinions.page";
 import Projects from "@/components/pages/Projects/Projects.fetching";
-import Colaboration from "@/components/pages/Colaboration/Colaboration.page";
 import Ebook from "@/components/pages/EBook/Ebook.page";
 import AbourMe from "@/components/pages/AboutMe/AbouMe.page";
 import Services from "@/components/pages/Services/Services.page";
 import CursorShadow from "@/components/UI/CursorShadow/CursorShadow.component";
 import Header from "@/components/pages/Header/Header.component";
+import Collaboration from "@/components/pages/Collaboration/Collaboration.page";
 
 export default function Home() {
   return (
@@ -37,7 +37,7 @@ export default function Home() {
       <SubscribersAmount />
       <Projects />
       <Opinions />
-      <Colaboration />
+      <Collaboration />
       <Contact />
       <Footer />
     </>
