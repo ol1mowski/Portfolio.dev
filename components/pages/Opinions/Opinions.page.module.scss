@@ -8,47 +8,4 @@
   justify-content: flex-start;
   padding-inline: 5%;
   padding-block: 15%;
-  &__importantTextDecorate {
-    font-weight: 500;
-    color: $dark-blue;
-  }
-  &__sectionInfoWrapper {
-    @include d-flex;
-    &__content {
-      @include small-headers;
-    }
-  }
-  &__headerWrapper {
-    @include d-flex;
-    &__header {
-      font-weight: 700;
-      font-size: 1.7rem;
-    }
-  }
-  &__opinionsWrapper {
-    margin-top: 10vh;
-    @include d-flex-column;
-    gap: 10vh;
-    @media screen and (min-width: $desktop) {
-      flex-direction: row;
-    }
-    &__opinion {
-      box-shadow: $box-shadow;
-      padding: $big-padding;
-      border-radius: $border-med;
-      @include d-flex-column;
-      align-items: flex-start;
-      gap: 5vh;
-      @media screen and (min-width: $mobile) {
-        width: 27rem;
-      }
-      &__text {
-        @include textFont;
-      }
-      &__imgWrapper {
-        @include d-flex;
-        gap: 1rem;
-      }
-    }
-  }
 }

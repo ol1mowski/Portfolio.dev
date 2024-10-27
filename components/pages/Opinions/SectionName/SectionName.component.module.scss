@@ -1,0 +1,8 @@
+@import "@/style/index.scss";
+
+.sectionInfoWrapper {
+  @include d-flex;
+  &__content {
+    @include small-headers;
+  }
+}

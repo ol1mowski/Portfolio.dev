@@ -1,0 +1,25 @@
+@import "@/style/index.scss";
+
+.importantTextDecorate {
+  font-weight: 500;
+  color: $dark-blue;
+}
+
+.opinion {
+  box-shadow: $box-shadow;
+  padding: $big-padding;
+  border-radius: $border-med;
+  @include d-flex-column;
+  align-items: flex-start;
+  gap: 5vh;
+  @media screen and (min-width: $mobile) {
+    width: 27rem;
+  }
+  &__text {
+    @include textFont;
+  }
+  &__imgWrapper {
+    @include d-flex;
+    gap: 1rem;
+  }
+}
