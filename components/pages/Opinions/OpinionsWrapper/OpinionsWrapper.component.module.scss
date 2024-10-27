@@ -1,0 +1,10 @@
+@import "@/style/index.scss";
+
+.opinionsWrapper {
+  margin-top: 10vh;
+  @include d-flex-column;
+  gap: 10vh;
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+  }
+}

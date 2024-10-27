@@ -1,76 +1,18 @@
 import s from "./Opinions.page.module.scss";
 
-import Paragraph from "@/components/UI/Word/Paragraph.component";
-import Image from "next/image";
+import Opinion from "./Opinion/Opinion.component";
+import OpinionHeader from "./OpinionHeader/OpinionHeader.component";
+import SectionName from "./SectionName/SectionName.component";
+import OpinionsWrapper from "./OpinionsWrapper/OpinionsWrapper.component";
 
 function Opinions() {
   return (
     <section id="opinions" className={s.container}>
-      <div className={s.container__sectionInfoWrapper}>
-        <span className={s.container__sectionInfoWrapper__content}>Opinie</span>
-      </div>
-      <div className={s.container__headerWrapper}>
-        <h3 className={s.container__headerWrapper__header}>
-          <Paragraph
-            className={s.container__headerWrapper__header}
-            value="Opinie Moich Klientów"
-          />
-        </h3>
-      </div>
-      <div className={s.container__opinionsWrapper}>
-        <div className={s.container__opinionsWrapper__opinion}>
-          <p className={s.container__opinionsWrapper__opinion__text}>
-            Oliwier Markiewicz is a good lad and very hardworking. He make us
-            the company website as we instructed. We hope you do well in life.
-          </p>
-          <a
-            href="https://jumpshare.com/s/mNlcSWPwdNWRNFOaei2n"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className={s.container__importantTextDecorate}>
-              Zobacz Pełną Opinię
-            </span>
-          </a>
-          <div className={s.container__opinionsWrapper__opinion__imgWrapper}>
-            <Image
-              src={
-                "https://res.cloudinary.com/dbbuav0rj/image/upload/v1729496075/Portfolio/images/logo_infmovilweb_tafnul.webp"
-              }
-              alt="Company Logo"
-              width={40}
-              height={40}
-            />
-            <span>Infmovilweb</span>
-          </div>
-        </div>
-        {/* <div className={s.container__opinionsWrapper__opinion}>
-          <p className={s.container__opinionsWrapper__opinion__text}>
-            Oliwier Markiewicz is a good lad and very hardworking. He make us
-            the company website as we instructed. We hope you do well in life.
-          </p>
-          <a
-            href="https://jumpshare.com/s/mNlcSWPwdNWRNFOaei2n"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className={s.container__importantTextDecorate}>
-              Zobacz Pełną Opinię
-            </span>
-          </a>
-          <div className={s.container__opinionsWrapper__opinion__imgWrapper}>
-            <Image
-              src={
-                "https://res.cloudinary.com/dbbuav0rj/image/upload/v1729584212/Portfolio/Icons/apple-touch-icon_fezbnv.png"
-              }
-              alt="Company Logo"
-              width={40}
-              height={40}
-            />
-            <span>Troska</span>
-          </div>
-        </div> */}
-      </div>
+      <SectionName />
+      <OpinionHeader />
+      <OpinionsWrapper>
+        <Opinion />
+      </OpinionsWrapper>
     </section>
   );
 }
