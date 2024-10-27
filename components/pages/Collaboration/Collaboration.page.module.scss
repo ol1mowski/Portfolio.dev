@@ -1,0 +1,15 @@
+@import "@/style/index.scss";
+
+.container {
+  padding: 2rem;
+  @include d-flex-column;
+  &__stepWrapper {
+    @include d-flex-column;
+    gap: 5rem;
+    margin: 5rem 0;
+    @media screen and (min-width: $desktop) {
+      margin: 10rem 0;
+      gap: 10rem;
+    }
+  }
+}

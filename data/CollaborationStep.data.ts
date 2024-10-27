@@ -1,85 +1,44 @@
-import s from "./Colaboration.page.module.scss";
+import { type CollaborationStepType } from "@/types/CollaborationStep";
 
-import one from "@/assets/wsp_1.svg";
-import two from "@/assets/wsp_2.svg";
-import three from "@/assets/wsp_3.svg";
-import four from "@/assets/wsp_4.svg";
-import five from "@/assets/wsp_5.svg";
-
-import Step from "./Step/Step.component";
-
-const STEP = [
+export const COLLABORATION_STEP: CollaborationStepType[] = [
   {
     id: 1,
-    image: one,
+    image:
+      "https://res.cloudinary.com/dbbuav0rj/image/upload/v1730039259/Portfolio/Icons/wsp_1_rxxb8j.svg",
     title: "Konsultacja I Analiza Potrzeb",
     description: `Na początku naszej współpracy przeprowadzam szczegółową konsultację, aby zrozumieć Twoje potrzeby i cele biznesowe. Jako twórca stron internetowych analizuję rynek, Twoją konkurencję oraz grupę docelową, aby móc dostarczyć najlepiej dopasowane rozwiązania.`,
     reverse: false,
   },
   {
     id: 2,
-    image: two,
+    image:
+      "https://res.cloudinary.com/dbbuav0rj/image/upload/v1730039259/Portfolio/Icons/wsp_2_chfn9w.svg",
     title: "Projektowanie I Tworzenie Strony",
     description: `Następnie przystępuję do projektowania strony internetowej. Tworzę unikalne projekty graficzne, które są zarówno estetyczne, jak i funkcjonalne. Wykorzystuję najnowsze technologie, aby Twoja strona była nowoczesna i responsywna. Każda strona internetowa, którą tworzę, jest zoptymalizowana pod kątem SEO, co zwiększa jej widoczność w wynikach wyszukiwania.`,
     reverse: true,
   },
   {
     id: 3,
-    image: three,
+    image:
+      "https://res.cloudinary.com/dbbuav0rj/image/upload/v1730039259/Portfolio/Icons/wsp_3_n9axjy.svg",
     title: "Testowanie I Wdrożenie",
     description: `Zanim strona internetowa zostanie uruchomiona, przeprowadzam dokładne testy funkcjonalności na różnych urządzeniach i przeglądarkach. Upewniam się, że wszystko działa bez zarzutu, a następnie wdrażam stronę na hosting, dbając o każdy szczegół.`,
     reverse: false,
   },
   {
     id: 4,
-    image: four,
+    image:
+      "https://res.cloudinary.com/dbbuav0rj/image/upload/v1730039259/Portfolio/Icons/wsp_4_mivmnf.svg",
     title: "Pozycjonowanie Lokalne",
     description: `Oferuję profesjonalne usługi pozycjonowania wizytówki Google Moja Firma, które pomogą Twojej firmie wyróżnić się w lokalnych wynikach wyszukiwania. Dzięki optymalizacji profilu Google Moja Firma poprawisz widoczność swojego biznesu w Google Maps i wyszukiwarce, przyciągniesz więcej klientów oraz zwiększysz ruch na stronie internetowej.`,
     reverse: true,
   },
   {
     id: 5,
-    image: five,
+    image:
+      "https://res.cloudinary.com/dbbuav0rj/image/upload/v1730039259/Portfolio/Icons/wsp_5_ajamof.svg",
     title: "Szkolenie I Wsparcie",
     description: `Po uruchomieniu strony oferuję szkolenie z jej obsługi oraz zarządzania treściami. Zapewniam również ciągłe wsparcie techniczne. Jestem dostępny, aby odpowiadać na Twoje pytania i pomagać w dalszym rozwijaniu strony oraz działań marketingowych.`,
     reverse: false,
   },
 ];
-
-function Colaboration() {
-  return (
-    <section className={s.container}>
-      <section className={s.container__contentSection}>
-        <h3 className={s.container__contentSection__h3}>WSPÓŁPRACA</h3>
-        <h4 className={s.container__contentSection__h4}>
-          Zobacz Etapy Współpracy Ze Mną
-        </h4>
-      </section>
-      <section className={s.container__stepWrapper}>
-        {STEP.map((step) => (
-          <Step
-            reverse={step.reverse}
-            key={step.id}
-            title={step.title}
-            image={step.image}
-            description={step.description}
-          />
-        ))}
-      </section>
-      <section className={s.container__cta}>
-        <h3 className={s.container__cta__header}>
-          Umów Się na{" "}
-          <span className={s.container__cta__header__mark}>Darmową</span>{" "}
-          Konsultację
-        </h3>
-        <a href="tel:+48 693 851 878">
-          <button className={s.container__cta__btn}>
-            Zadzwoń: 693 851 878
-          </button>
-        </a>
-      </section>
-    </section>
-  );
-}
-
-export default Colaboration;
