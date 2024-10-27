@@ -1,0 +1,6 @@
+@import "@/style/index.scss";
+.header {
+  @include d-flex-column;
+  gap: 3vh;
+  align-items: flex-start;
+}

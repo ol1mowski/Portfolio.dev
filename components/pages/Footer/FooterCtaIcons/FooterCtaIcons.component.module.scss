@@ -1,0 +1,19 @@
+@import "@/style/index.scss";
+
+.icons {
+  @include d-flex;
+  gap: 1rem;
+  &__a {
+    color: #fff;
+    will-change: transform;
+  }
+  &__a:hover {
+    animation: hoop 1s linear;
+  }
+}
+
+@keyframes hoop {
+  50% {
+    transform: translateY(-0.5rem);
+  }
+}
