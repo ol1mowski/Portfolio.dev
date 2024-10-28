@@ -4,7 +4,7 @@ import { type ReactNode } from 'react'
 
 function OpinionsWrapper({ children } : { children: ReactNode }) {
   return (
-    <section className={s.container__opinionsWrapper}>
+    <section className={s.opinionsWrapper}>
         { children }
     </section>
   )
