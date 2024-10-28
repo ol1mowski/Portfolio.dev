@@ -1,7 +1,7 @@
 import s from "./SimilarPosts.component.module.scss";
 import { forwardRef, LegacyRef, RefObject } from "react";
 import Caption from "../Caption/Caption.component";
-import PostCardComponent from "@/components/UI/PostCardComponent/PostCardComponent.component";
+import PostCardComponent from "@/components/pages/Blog/Posts/PostCardComponent/PostCardComponent.component";
 import { PostsType } from "@/types/PostType.type";
 
 

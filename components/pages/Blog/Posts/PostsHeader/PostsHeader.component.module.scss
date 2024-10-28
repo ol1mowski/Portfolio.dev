@@ -1,0 +1,7 @@
+@import "@/style/index.scss";
+
+.header {
+  @include d-flex;
+  justify-content: flex-start;
+  width: 100%;
+}

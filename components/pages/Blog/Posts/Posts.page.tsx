@@ -1,17 +1,14 @@
 import s from "./Posts.page.module.scss";
 
-import Button from "@/components/UI/Button/Button.component";
-import PostCardComponent from "../../../UI/PostCardComponent/PostCardComponent.component";
-import Caption from "@/components/UI/Caption/Caption.component";
-import { PostsType } from "@/types/PostType.type";
+import PostCardComponent from "./PostCardComponent/PostCardComponent.component";
+import { type PostsType } from "@/types/PostType.type";
+import PostsHeader from "./PostsHeader/PostsHeader.component";
+import PostsButton from "./PostsButton/PostsButton.component";
 
 function PostsComponent({ posts }: { posts: PostsType[] }) {
   return (
     <section id="posts" className={s.container}>
-      <section className={s.container__header}>
-        <Caption type="sub" value="Ostatnie Posty" />
-      </section>
-
+      <PostsHeader />
       <section className={s.container__postsWrapper}>
         {posts.map((post) => (
           <PostCardComponent
@@ -27,9 +24,7 @@ function PostsComponent({ posts }: { posts: PostsType[] }) {
           />
         ))}
       </section>
-      <section className={s.container__button}>
-        <Button value="Więcej" type="normal" />
-      </section>
+      <PostsButton />
     </section>
   );
 }
