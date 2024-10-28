@@ -1,7 +1,7 @@
 import { getProjects } from "@/db/db_connect";
 
 import ProjectsComponent from "./Projects.page";
-import { ProjectType } from "@/types/PostType.type";
+import { type ProjectType } from "@/types/PostType.type";
 
 async function Projects() {
   try {

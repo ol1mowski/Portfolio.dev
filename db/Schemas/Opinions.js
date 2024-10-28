@@ -19,9 +19,9 @@ const opinionsSchema = new mongoose.Schema({
   ],
 });
 
-const opinions =
+const Opinions =
   mongoose.models.opinions || mongoose.model("opinions", opinionsSchema);
 
 module.exports = {
-  opinions: opinions,
+  Opinions: Opinions,
 };
