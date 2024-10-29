@@ -1,0 +1,14 @@
+@import "@/style/index.scss";
+
+.container {
+  @include d-flex-column;
+  align-items: flex-start;
+  padding: 5%;
+  gap: 5vh;
+  @media screen and (min-width: $small-desktop) {
+    padding-right: 15%;
+  }
+  &_reverse {
+    align-items: flex-end;
+  }
+}
