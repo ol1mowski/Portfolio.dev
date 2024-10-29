@@ -1,0 +1,16 @@
+@import "@/style/index.scss";
+
+.headerWrapper {
+  @include d-flex;
+  &__header {
+    @include headerFont;
+    font-weight: 700;
+    font-size: 3rem;
+    @media screen and (min-width: $mobile) {
+      font-size: 5rem;
+    }
+    @media screen and (min-width: $large-desktop) {
+      font-size: 7rem;
+    }
+  }
+}
