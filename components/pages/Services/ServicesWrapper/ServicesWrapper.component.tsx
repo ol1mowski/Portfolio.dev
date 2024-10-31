@@ -3,7 +3,7 @@ import s from './ServicesWrapper.component.module.scss';
 
 function ServicesWrapper({ children, reverse }: { children: ReactNode, reverse: boolean}) {
   return (
-     <section className={`${s.container} ${reverse && s.container_reverse}`}>
+     <section id='services' className={`${s.container} ${reverse && s.container_reverse}`}>
         { children }
      </section>
   )
