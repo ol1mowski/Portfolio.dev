@@ -4,7 +4,7 @@ import ShowMobileMenu from "../components/pages/Header/ShowMobileMenu/ShowMobile
 import HamburgerClickContext from "../store/HamburgerClickContext";
 
 
-jest.mock("../../components/pages/Header/MobileMenu/MobileMenuHeader.component", () => () => <div data-testid="mobile-menu-header">Mobile Menu Header</div>);
+jest.mock("../components/pages/Header/MobileMenu/MobileMenuHeader.component", () => () => <div data-testid="mobile-menu-header">Mobile Menu Header</div>);
 
 describe("ShowMobileMenu Component", () => {
   it("renders the hamburger icon", () => {
