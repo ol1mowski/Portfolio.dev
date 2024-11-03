@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import HeroCta from '../../components/pages/HomePage/HomePageInfo/HeroCta/HeroCta.component';
+import HeroCta from '../components/pages/HomePage/HomePageInfo/HeroCta/HeroCta.component';
 
 describe('HeroCta', () => {
   test('renders the correct text and button', () => {
