@@ -1,6 +1,6 @@
 import React from "react";
-import MobileMenuHeader from "../../components/pages/Header/MobileMenu/MobileMenuHeader.component";
-import HamburgerClickContext from "../../store/HamburgerClickContext";
+import MobileMenuHeader from "../components/pages/Header/MobileMenu/MobileMenuHeader.component";
+import HamburgerClickContext from "../store/HamburgerClickContext";
 import { render, screen, fireEvent } from "@testing-library/react";
 
 jest.mock("../../data/MenuItems.data.ts", () => ({
