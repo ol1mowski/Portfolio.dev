@@ -1,0 +1,12 @@
+@import "@/style/index.scss";
+
+.logoSection {
+  cursor: pointer;
+  &__img {
+    will-change: scale;
+    transition: scale 0.7s;
+  }
+  &__img:hover {
+    scale: $hover-med-scale;
+  }
+}

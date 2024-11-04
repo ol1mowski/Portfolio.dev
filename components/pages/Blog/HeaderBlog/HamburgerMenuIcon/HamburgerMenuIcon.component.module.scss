@@ -1,0 +1,8 @@
+@import "@/style/index.scss";
+
+.hamburgerMenu {
+  cursor: pointer;
+  @media screen and (min-width: $big-tablet) {
+    display: none;
+  }
+}

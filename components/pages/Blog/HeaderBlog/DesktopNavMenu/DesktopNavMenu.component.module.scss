@@ -1,0 +1,20 @@
+@import "@/style/index.scss";
+
+.menuList {
+  display: none;
+  @media screen and (min-width: $big-tablet) {
+    @include d-flex;
+    gap: 5vw;
+  }
+  &__linksWrapper {
+    @include d-flex;
+    &__links {
+      @include d-flex;
+      gap: 2.5rem;
+      list-style-type: none;
+    }
+  }
+  &__findJob {
+    @include d-flex;
+  }
+}
