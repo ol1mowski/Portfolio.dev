@@ -19,10 +19,10 @@ function Header({ type }: { type?: string }) {
 
   return (
     <header className={s.headerWrapper}>
-      <HeaderLogo />
+      <HeaderLogo type={type} />
       <HamburgerMenuIcon />
       <DesktopNavMenu type={type} />
-      {isOpen && <HamburgerMenuComponent closeMenuHandler={closeMenuHandler} />}
+      {isOpen && <HamburgerMenuComponent type={type} closeMenuHandler={closeMenuHandler} />}
     </header>
   );
 }

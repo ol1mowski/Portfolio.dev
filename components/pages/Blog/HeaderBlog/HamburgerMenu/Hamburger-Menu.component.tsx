@@ -3,11 +3,16 @@ import s from "./HamburgerMenu.module.scss";
 import Image from "next/image";
 
 import blogImage from "@/assets/logo_black.svg";
-import Link from "next/link";
+import { BlogITEMS, ITEMS } from "../StaticData";
+import Item from "../Item/Item.component";
 
-function HamburgerMenuComponent({ closeMenuHandler}: { closeMenuHandler: () => void}) {
-  
-
+function HamburgerMenuComponent({
+  closeMenuHandler,
+  type,
+}: {
+  closeMenuHandler: () => void;
+  type?: string;
+}) {
   return (
     <menu className={s.hamburgerMenu}>
       <section className={s.hamburgerMenu__close}>
@@ -22,30 +27,13 @@ function HamburgerMenuComponent({ closeMenuHandler}: { closeMenuHandler: () => v
       </section>
       <nav className={s.hamburgerMenu__nav}>
         <ul className={s.hamburgerMenu__nav__items}>
-          <Link href={"/Blog"}>
-            <li
-              onClick={closeMenuHandler}
-              className={s.hamburgerMenu__nav__items__item}
-            >
-              Home
-            </li>
-          </Link>
-          <a href="/#posts">
-            <li
-              onClick={closeMenuHandler}
-              className={s.hamburgerMenu__nav__items__item}
-            >
-              Posty
-            </li>
-          </a>
-          <Link href={"/"}>
-            <li
-              onClick={closeMenuHandler}
-              className={s.hamburgerMenu__nav__items__item}
-            >
-              Portfolio
-            </li>
-          </Link>{" "}
+          {type === "Blog"
+            ? BlogITEMS.map((item) => (
+                <Item key={item.id} value={item.value} href={item.href} />
+              ))
+            : ITEMS.map((item) => (
+                <Item key={item.id} value={item.value} href={item.href} />
+              ))}
         </ul>
       </nav>
       <section className={s.hamburgerMenu__logo}>

@@ -5,8 +5,6 @@ import s from "./PostSite.page.module.scss";
 import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
 
-import headerLogo from "@/assets/logo_black.svg";
-import hamburger from "@/assets/hamburger_black.svg";
 
 import useElementVisible from "@/hooks/useElementVisible.hook";
 
@@ -17,9 +15,10 @@ import SimilarPosts from "@/components/UI/SimilarPosts/SimilarPosts.component";
 import PostInfo from "./PostInfo/PostInfo.component";
 import NotFound from "../NotFound/NotFound.page";
 import PostVisibleContext from "@/store/PostVisible.context";
-import Header from "@/components/UI/HeaderBlog/Header.component.page";
+
 import Head from "next/head";
 import { PostsType } from "@/types/PostType.type";
+import Header from "../HeaderBlog/Header.component.page";
 
 function PostSiteComponent({ posts }: { posts: PostsType[] }) {
   const [isVisible1, reference] = useElementVisible();
@@ -42,7 +41,7 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
   if (correctPostArticle.length === 0) {
     return (
       <>
-        <Header type="Blog" logo={headerLogo} hamburger={hamburger} />
+        <Header type="Blog" />
         <NotFound link="/Blog" info="Nie znaleziono takiego postu" />
       </>
     );
@@ -58,7 +57,7 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
         />
       </Head>
       <section className={s.container}>
-        <Header type="Blog" logo={headerLogo} hamburger={hamburger} />
+        <Header type="Blog" />
         <section className={s.container__imageSection}>
           {correctPostArticle.map((item) => (
             <Image
