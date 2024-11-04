@@ -1,0 +1,24 @@
+@import "@/style/index.scss";
+
+
+.container {
+  @include d-flex-column;
+  justify-content: flex-start;
+  padding: 5vh 10vw;
+  gap: 10vh;
+  margin-bottom: 20vh;
+  @media screen and (min-width: $desktop) {
+    padding: 5vh 15vw;
+  }
+  &__content {
+    width: 100%;
+    font-weight: 300;
+    line-height: 24px;
+    font-size: $text-size;
+    &__ol {
+      padding-left: 5vw;
+      color: $dark-grey;
+    }
+  }
+}
+
