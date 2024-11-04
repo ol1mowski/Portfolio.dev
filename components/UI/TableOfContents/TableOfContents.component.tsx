@@ -3,7 +3,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import s from "./TableOfContents.component.module.scss";
 import PostVisibleContext from "@/store/PostVisible.context";
-import ScrollLink from "@/components/Utils/ScrollLink.component";
 
 function TableOfContents({
   content,
@@ -41,7 +40,7 @@ function TableOfContents({
       <h3 className={s.tableOfContents__caption}>Spis Treści</h3>
       <ul className={s.tableOfContents__listItems}>
         {content.map((item) => (
-          <ScrollLink key={item.id} link={`#${item.slug}`}>
+          <a key={item.id} href={`#${item.slug}`}>
             <li
               className={
                 sectionName === item.title && isVisible
@@ -51,7 +50,7 @@ function TableOfContents({
             >
               {item.title}
             </li>
-          </ScrollLink>
+          </a>
         ))}
       </ul>
     </section>
