@@ -7,13 +7,6 @@ import Posts from "@/components/pages/Blog/Posts/Posts.fetching";
 function page() {
   return (
     <>
-      <Head>
-        <title>Blog</title>
-        <meta
-          name="description"
-          content="Blog o Tworzeniu Stron Internetowych"
-        />
-      </Head>
       <HomePage />
       <Posts />
       <Footer />

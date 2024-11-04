@@ -6,19 +6,15 @@ import Description from "@/components/UI/Description/Description.component";
 import Button from "@/components/UI/Button/Button.component";
 import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
 
-import logo from "@/assets/logo.svg";
-import hamburger from "@/assets/hamburger.svg";
-
-
-import Header from "@/components/UI/HeaderBlog/Header.component.page";
-import { PostsType } from "@/types/PostType.type";
+import { type PostsType } from "@/types/PostType.type";
+import Header from "../HeaderBlog/Header.component.page";
 
 function HomePageComponent({ posts }: { posts: PostsType[] }) {
   const lastPost = posts[posts.length - 1];
 
   return (
     <section className={s.container}>
-      <Header logo={logo} hamburger={hamburger} />
+      <Header />
       <AnimationWrapper>
         <section className={s.container__content}>
           <section className={s.container__contentSection}>

@@ -1,21 +1,13 @@
 import s from "./HamburgerMenu.module.scss";
 
-
 import Image from "next/image";
 
 import blogImage from "@/assets/logo_black.svg";
-import ScrollLink from "@/components/Utils/ScrollLink.component";
 import Link from "next/link";
 
-type HamburgerMenuProps = {
-  type: string | undefined;
-  closeMenuHandler: () => void;
-};
+function HamburgerMenuComponent({ closeMenuHandler}: { closeMenuHandler: () => void}) {
+  
 
-function HamburgerMenuComponent({
-  type,
-  closeMenuHandler,
-}: HamburgerMenuProps) {
   return (
     <menu className={s.hamburgerMenu}>
       <section className={s.hamburgerMenu__close}>
@@ -38,27 +30,14 @@ function HamburgerMenuComponent({
               Home
             </li>
           </Link>
-          {type === "in" ? (
-            <>
-              <ScrollLink link={"#posts"}>
-                <li
-                  onClick={closeMenuHandler}
-                  className={s.hamburgerMenu__nav__items__item}
-                >
-                  Posty
-                </li>
-              </ScrollLink>
-            </>
-          ) : (
-            <a href="/#posts">
-              <li
-                onClick={closeMenuHandler}
-                className={s.hamburgerMenu__nav__items__item}
-              >
-                Posty
-              </li>
-            </a>
-          )}
+          <a href="/#posts">
+            <li
+              onClick={closeMenuHandler}
+              className={s.hamburgerMenu__nav__items__item}
+            >
+              Posty
+            </li>
+          </a>
           <Link href={"/"}>
             <li
               onClick={closeMenuHandler}
