@@ -14,7 +14,7 @@ function HamburgerMenuComponent({
   type?: string;
 }) {
   return (
-    <menu className={s.hamburgerMenu}>
+    <menu data-testid="hamburger-menu-component" className={s.hamburgerMenu}>
       <section className={s.hamburgerMenu__close}>
         <Image
           onClick={closeMenuHandler}

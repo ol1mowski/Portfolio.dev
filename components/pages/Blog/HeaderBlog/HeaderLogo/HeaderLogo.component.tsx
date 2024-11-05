@@ -3,7 +3,7 @@ import s from "./HeaderLogo.component.module.scss";
 
 const HeaderLogo = ({ type }: { type?: string }) => {
   return (
-    <section className={s.logoSection}>
+    <section data-testid="header-logo" className={s.logoSection}>
       <a href={"/Blog"}>
         {type === "Blog" ? (
           <Image
