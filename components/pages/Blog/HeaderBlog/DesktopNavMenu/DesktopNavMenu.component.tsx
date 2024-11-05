@@ -6,7 +6,7 @@ import Button from "@/components/UI/Button/Button.component";
 
 const DesktopNavMenu = ({ type }: { type?: string }) => {
   return (
-    <section className={s.menuList}>
+    <section data-testid="desktop-nav-menu" className={s.menuList}>
       <section className={s.menuList__linksWrapper}>
         <ul className={s.menuList__linksWrapper__links}>
           {type === "Blog"
