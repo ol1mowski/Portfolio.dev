@@ -1,12 +1,10 @@
 import s from "./SimilarPosts.component.module.scss";
-import { forwardRef, LegacyRef, RefObject } from "react";
-import Caption from "../Caption/Caption.component";
+import { forwardRef, LegacyRef } from "react";
 import PostCardComponent from "@/components/pages/Blog/Posts/PostCardComponent/PostCardComponent.component";
-import { PostsType } from "@/types/PostType.type";
-
+import { type PostsType } from "@/types/PostType.type";
+import Caption from "@/components/UI/Caption/Caption.component";
 
 interface SimilarPostsProps {
-  reference?: RefObject<HTMLDivElement> | boolean;
   posts: PostsType[];
 }
 
@@ -14,13 +12,13 @@ const SimilarPosts = forwardRef<HTMLDivElement, SimilarPostsProps>(
   (props, ref) => {
     const { posts } = props;
 
-    function getRandomIndexes(length: number, count: number): number[] {
+    const getRandomIndexes = (length: number, count: number): number[] => {
       const indexes = new Set<number>();
       while (indexes.size < count) {
         indexes.add(Math.floor(Math.random() * length));
       }
       return Array.from(indexes);
-    }
+    };
 
     const randomIndexes = getRandomIndexes(posts.length, 3);
 
@@ -32,21 +30,22 @@ const SimilarPosts = forwardRef<HTMLDivElement, SimilarPostsProps>(
       >
         <Caption type="sub" value={"Podobne Posty"} />
         <div className={s.similarPosts__posts}>
-          {posts.map((item, index) =>
-            randomIndexes.includes(index) ? (
+          {randomIndexes.map((index) => {
+            const { id, title, slug, description, author, image, authorImage, date } = posts[index];
+            return (
               <PostCardComponent
-                id={item.id}
-                key={item.id}
-                title={item.title}
-                slug={item.slug}
-                description={item.description}
-                author={item.author}
-                image={item.image}
-                authorImage={item.authorImage}
-                date={item.date}
+                id={id}
+                key={id}
+                title={title}
+                slug={slug}
+                description={description}
+                author={author}
+                image={image}
+                authorImage={authorImage}
+                date={date}
               />
-            ) : null
-          )}
+            );
+          })}
         </div>
       </section>
     );

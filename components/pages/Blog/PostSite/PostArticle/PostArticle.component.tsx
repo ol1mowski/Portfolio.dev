@@ -1,19 +1,23 @@
 "use client";
 
 import s from "./PostArticle.component.module.scss";
-import Caption from "../Caption/Caption.component";
 import { useContext, useEffect, useRef } from "react";
 import PostVisibleContext from "@/store/PostVisible.context";
+import Caption from "@/components/UI/Caption/Caption.component";
+
+interface PostArticleProps {
+  title: string;
+  slug: string;
+  description: string[];
+  id: number;
+}
 
 function PostArticle({
   title,
   description,
   slug,
-}: {
-  title: string;
-  slug: string;
-  description: string[];
-}) {
+  id,
+}: PostArticleProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   const { setSectionVisible } = useContext(PostVisibleContext);

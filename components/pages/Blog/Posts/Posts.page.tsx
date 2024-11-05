@@ -10,19 +10,22 @@ function PostsComponent({ posts }: { posts: PostsType[] }) {
     <section id="posts" className={s.container}>
       <PostsHeader />
       <section className={s.container__postsWrapper}>
-        {posts.map((post) => (
-          <PostCardComponent
-            id={post.id}
-            key={post.id}
-            title={post.title}
-            slug={post.slug}
-            description={post.description}
-            author={post.author}
-            image={post.image}
-            authorImage={post.authorImage}
-            date={post.date}
-          />
-        ))}
+        {posts.map((post) => {
+          const { id, title, slug, description, author, image, authorImage, date } = post;
+          return (
+            <PostCardComponent
+              id={id}
+              key={id}
+              title={title}
+              slug={slug}
+              description={description}
+              author={author}
+              image={image}
+              authorImage={authorImage}
+              date={date}
+            />
+          );
+        })}
       </section>
       <PostsButton />
     </section>

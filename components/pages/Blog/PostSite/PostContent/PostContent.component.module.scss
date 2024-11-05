@@ -1,0 +1,9 @@
+@import "@/style/index.scss";
+
+.content {
+  padding: 5vh 10vw;
+  position: relative;
+  @media screen and (min-width: $desktop) {
+    padding: 5vh 15vw;
+  }
+}
