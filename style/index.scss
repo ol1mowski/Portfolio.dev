@@ -111,18 +111,23 @@ $text-size: 1.1rem;
   }
 }
 
-@mixin btn() {
+@mixin btn($backgroundColor, $color) {
   @include d-flex;
   gap: $small-gap;
-  background-color: $dark-blue;
+  background-color: $backgroundColor;
   border: none;
   padding: $small-padding $standard-padding;
   font-size: $text-size;
-  color: $white;
+  color: $color;
   cursor: pointer;
   transition: scale, 0.7s;
   will-change: scale;
   border-radius: $border-med;
+  &:hover {
+    scale: 1.05;
+    background-color: $color;
+    color: $backgroundColor;
+  }
 }
 
 @mixin d-flex() {

@@ -1,7 +1,6 @@
 @import "@/style/index.scss";
 
 .description {
-  font-weight: 300;
-  line-height: 1.5rem;
-  font-size: $text-size;
+  @include textFont;
+  font-size: 1.2rem;
 }
