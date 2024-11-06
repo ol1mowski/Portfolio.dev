@@ -78,6 +78,22 @@ $btn-text-size: 1.4rem;
 
 //mixins
 
+@mixin large-header() {
+  font-size: 3rem;
+  color: $dark;
+  text-align: left;
+  @include headerFont();
+  font-weight: 700;
+  @media screen and (min-width: 700px) {
+    text-align: center;
+    font-size: 3.5rem;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 4.5rem;
+    text-align: center;
+  }
+}
+
 @mixin small-headers() {
   @include textFont();
   margin-top: $standard-margin;
