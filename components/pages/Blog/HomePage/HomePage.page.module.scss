@@ -7,7 +7,6 @@
   height: 100%;
   color: $white;
 
-
   &__content {
     padding: 0 10vw;
     @media screen and (min-width: $desktop) {
@@ -27,18 +26,6 @@
     }
     &__category {
       font-weight: 700;
-    }
-    &__btn {
-      margin-top: 1rem;
-      @include btn();
-      transition: scale, background-color, color, border, 0.7s;
-      will-change: scale, background-color, color, border;
-    }
-    &__btn:hover {
-      scale: $hover-med-scale;
-      background-color: transparent;
-      color: $light-blue;
-      border: 1px solid $light-blue;
     }
   }
 }

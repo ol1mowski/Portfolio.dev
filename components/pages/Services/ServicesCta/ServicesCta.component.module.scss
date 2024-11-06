@@ -23,21 +23,5 @@
   }
   &__buttonWrapper {
     @include d-flex;
-    &__btn {
-      @include btn;
-      padding: 3vh 8vw;
-      font-size: 1.3rem;
-      @media screen and (min-width: $small-desktop) {
-        padding: 3vh 4vw;
-        font-size: 1.5rem;
-      }
-      transition: background-color, color, border, 0.7s;
-      will-change: background-color, color, border;
-      &:hover {
-        background-color: $white;
-        color: $dark-blue;
-        border: 1px solid $dark-blue;
-      }
-    }
   }
 }

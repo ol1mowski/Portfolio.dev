@@ -1,12 +1,11 @@
+import Button from "@/components/UI/Button/Button.component";
 import s from "./EbookCtaButton.component.module.scss";
 
 function EbookCtaButton() {
   return (
     <section className={s.buttonWrapper}>
       <a href="/Ebook" target="_blank">
-        <button className={s.buttonWrapper__btn}>
-          Odbierz Bezpłatnie
-        </button>
+        <Button type="normal" value="Odbierz Bezpłatnie" />
       </a>
     </section>
   );

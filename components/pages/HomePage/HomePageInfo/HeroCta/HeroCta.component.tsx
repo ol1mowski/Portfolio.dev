@@ -1,5 +1,6 @@
-import Text from '@/components/Utils/Text-component/Text.component';
-import s from './HeroCta.component.module.scss';
+import Text from "@/components/Utils/Text-component/Text.component";
+import s from "./HeroCta.component.module.scss";
+import Button from "@/components/UI/Button/Button.component";
 
 function HeroCta() {
   return (
@@ -8,7 +9,7 @@ function HeroCta() {
         <Text textValue="Cześć! Nazywam się Oliwier Markiewicz, pomagam lokalnym firmom zwiększyć sprzedaż poprzez tworzenie nowoczesnych stron internetowych, które wyróżniają się na tle konkurencji 🏆" />
       </p>
       <a href="#services">
-        <button className={s.cta__btn}>Zwiększ Swoją Sprzedaż</button>
+        <Button type="normal" value="Zwiększ Swoją Sprzedaż" />
       </a>
     </section>
   );

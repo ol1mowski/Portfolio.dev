@@ -49,6 +49,9 @@ $hover-min-scale: 1.01;
 $hover-med-scale: 1.05;
 $hover-max-scale: 1.1;
 
+//transition time
+$transition-time: 0.7s;
+
 //border size
 
 $border-min: 0.3rem;
@@ -69,7 +72,9 @@ $small-gap: 0.5rem;
 $standard-gap: 1rem;
 $big-gap: 2rem;
 
+//text sizes
 $text-size: 1.1rem;
+$btn-text-size: 1.4rem;
 
 //mixins
 
@@ -116,17 +121,18 @@ $text-size: 1.1rem;
   gap: $small-gap;
   background-color: $backgroundColor;
   border: none;
-  padding: $small-padding $standard-padding;
-  font-size: $text-size;
+  padding: 1.5rem $big-padding;
+  font-size: $btn-text-size;
   color: $color;
   cursor: pointer;
-  transition: scale, 0.7s;
-  will-change: scale;
+  transition: scale, border, $transition-time;
+  will-change: scale, border;
   border-radius: $border-med;
   &:hover {
     scale: 1.05;
-    background-color: $color;
+    background-color: transparent;
     color: $backgroundColor;
+    border: 1px solid $backgroundColor;
   }
 }
 

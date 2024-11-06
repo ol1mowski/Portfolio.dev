@@ -1,5 +1,6 @@
 import { type ReactNode } from "react";
 import s from "./ServicesCta.component.module.scss";
+import Button from "@/components/UI/Button/Button.component";
 
 function ServicesCta({ des }: { des: ReactNode }) {
   return (
@@ -9,9 +10,7 @@ function ServicesCta({ des }: { des: ReactNode }) {
       </div>
       <div className={s.ctaWrapper__buttonWrapper}>
         <a href="#contact">
-          <button className={s.ctaWrapper__buttonWrapper__btn}>
-            Skontaktuj Się
-          </button>
+          <Button type="normal" value="Skontaktuj Się" />
         </a>
       </div>
     </section>
