@@ -24,7 +24,7 @@ const DesktopNavMenu = ({ type }: { type?: string }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button type="normal" value="Oferty Pracy" />
+          <Button type="small" value="Oferty Pracy" />
         </a>
       </section>
     </section>

@@ -1,10 +1,6 @@
 @import "@/style/index.scss";
 
 .item {
-  margin-top: 1.5rem;
-  font-weight: 500;
-  color: #2d2e2d;
-  font-size: 2rem;
   cursor: pointer;
   transition: color, scale, 0.7s;
   will-change: color, scale;

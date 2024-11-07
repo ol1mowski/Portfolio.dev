@@ -8,5 +8,6 @@
 }
 .btn_small {
   @include btn($dark-blue, $white);
-  padding: 1rem;
+  padding: .7rem 1rem;
+  font-size: 1.2rem;
 }

@@ -4,7 +4,7 @@ import s from './PostsButton.component.module.scss';
 function PostsButton() {
   return (
     <section className={s.buttonWrapper} aria-label="Load More">
-      <Button value="Więcej" type="normal" />
+      <Button value="Więcej" type="small" />
     </section>
   );
 }
