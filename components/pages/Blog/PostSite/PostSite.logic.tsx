@@ -4,12 +4,11 @@ import s from "./PostSite.page.module.scss";
 
 import { useContext, useEffect, useState } from "react";
 
-import TableOfContents from "@/components/pages/Blog/PostSite/TableOfContents/TableOfContents.component";
-
 import NotFound from "../NotFound/NotFound.page";
 import PostVisibleContext from "@/store/PostVisible.context";
 
 import { type PostsType } from "@/types/PostType.type";
+
 import Header from "../HeaderBlog/Header.component.page";
 import PostHeader from "./PostHeader/PostHeader.component";
 import PostImage from "./PostImage/PostImage.component.";
@@ -35,9 +34,6 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
     return <NotFound link="/Blog" info="Nie znaleziono takiego postu" />;
   }
 
-  { console.log(sectionName);
-   }
-
   return (
     <>
       <section className={s.container}>
@@ -45,10 +41,6 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
         <PostImage post={correctPostArticle[0]} />
         <article className={s.container__content}>
           <PostHeader post={correctPostArticle[0]} />
-
-          {/* {sectionName !== "Podsumowanie" && isVisible && (
-            <TableOfContents content={correctPostArticleContent} />
-          )} */}
 
           <PostContent
             content={correctPostArticleContent}

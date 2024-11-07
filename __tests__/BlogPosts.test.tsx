@@ -2,6 +2,12 @@ import { render, screen } from '@testing-library/react';
 import PostsComponent from '../components/pages/Blog/Posts/Posts.page';
 import React from 'react';
 
+jest.mock('next/image', () => ({
+  __esModule: true,
+  default: (props: any) => {
+    return <img {...props} />;
+  },
+}));
 
 describe('PostsComponent', () => {
   beforeAll(() => {

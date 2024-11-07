@@ -3,6 +3,13 @@ import MobileMenuHeader from "../components/pages/Header/MobileMenu/MobileMenuHe
 import HamburgerClickContext from "../store/HamburgerClickContext";
 import { render, screen, fireEvent } from "@testing-library/react";
 
+jest.mock("next/image", () => ({
+  __esModule: true,
+  default: (props: any) => {
+    return <img {...props} />;
+  },
+}));
+
 jest.mock("../data/MenuItems.data.ts", () => ({
   menuItems: [
     { to: "/home", label: "Home" },

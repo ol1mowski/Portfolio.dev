@@ -3,6 +3,12 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import ShowMobileMenu from "../components/pages/Header/ShowMobileMenu/ShowMobileMenu.component";
 import HamburgerClickContext from "../store/HamburgerClickContext";
 
+jest.mock("next/image", () => ({
+  __esModule: true,
+  default: (props: any) => {
+    return <img {...props} />;
+  },
+}));
 
 jest.mock("../components/pages/Header/MobileMenu/MobileMenuHeader.component", () => () => <div data-testid="mobile-menu-header">Mobile Menu Header</div>);
 
@@ -13,7 +19,6 @@ describe("ShowMobileMenu Component", () => {
         <ShowMobileMenu />
       </HamburgerClickContext.Provider>
     );
-
 
     const hamburgerIcon = screen.getByAltText("hamburger menu icon");
     expect(hamburgerIcon).toBeInTheDocument();
@@ -27,10 +32,8 @@ describe("ShowMobileMenu Component", () => {
       </HamburgerClickContext.Provider>
     );
 
-
     const hamburgerIcon = screen.getByAltText("hamburger menu icon");
     fireEvent.click(hamburgerIcon);
-
 
     expect(setOpenMock).toHaveBeenCalledWith(true);
   });
@@ -42,7 +45,6 @@ describe("ShowMobileMenu Component", () => {
       </HamburgerClickContext.Provider>
     );
 
-
     const mobileMenuHeader = screen.getByTestId("mobile-menu-header");
     expect(mobileMenuHeader).toBeInTheDocument();
   });
@@ -53,7 +55,6 @@ describe("ShowMobileMenu Component", () => {
         <ShowMobileMenu />
       </HamburgerClickContext.Provider>
     );
-
 
     expect(screen.queryByTestId("mobile-menu-header")).not.toBeInTheDocument();
   });

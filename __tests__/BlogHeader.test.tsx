@@ -3,6 +3,13 @@ import { render, screen } from "@testing-library/react";
 import HamburgerClickContext from "../store/HamburgerClickContext";
 import Header from "../components/pages/Blog/HeaderBlog/Header.component.page";
 
+jest.mock("next/image", () => ({
+  __esModule: true,
+  default: (props: any) => {
+    return <img {...props} />;
+  },
+}));
+
 describe("Header component", () => {
   const renderWithProvider = (isOpen = false) => {
     render(
@@ -26,7 +33,7 @@ describe("Header component", () => {
   it("does not show HamburgerMenuComponent when isOpen is false", () => {
     renderWithProvider();
     expect(
-      screen.queryByText(/HamburgerMenuComponent/i)
+      screen.queryByTestId("hamburger-menu-component")
     ).not.toBeInTheDocument();
   });
 });
