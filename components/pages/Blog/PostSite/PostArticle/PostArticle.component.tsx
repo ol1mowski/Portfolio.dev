@@ -1,68 +1,56 @@
-"use client";
+'use client';
 
-import s from "./PostArticle.component.module.scss";
-import { useContext, useEffect, useRef } from "react";
-import PostVisibleContext from "@/store/PostVisible.context";
-import Caption from "@/components/UI/Caption/Caption.component";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import s from './PostArticle.component.module.scss'; 
+import Caption from '@/components/UI/Caption/Caption.component';
+
 
 interface PostArticleProps {
-  title: string;
   slug: string;
+  title: string;
   description: string[];
-  id: number;
 }
 
-function PostArticle({
-  title,
-  description,
-  slug,
-  id,
-}: PostArticleProps) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const { setSectionVisible } = useContext(PostVisibleContext);
-
-  useEffect(() => {
-    const currentRef = ref.current;
-
-    if (currentRef) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setSectionVisible(title, true);
-            }
-          });
-        },
-        {
-          root: null,
-          rootMargin: "0px",
-          threshold: 0.1,
-        }
-      );
-
-      observer.observe(currentRef);
-
-      return () => {
-        if (currentRef) {
-          observer.unobserve(currentRef);
-        }
-      };
-    } else {
-      setSectionVisible(title, false);
-    }
-  }, []);
-
+const PostArticle: React.FC<PostArticleProps> = ({ slug, title, description }) => {
   return (
-    <section id={slug} ref={ref} className={s.postContentSection}>
+    <section id={slug} className={s.postContentSection}>
       <Caption type="sub" value={title} />
-      {description.map((desc) => (
-        <p key={desc} className={s.postContentSection__text}>
+      {description.map((desc, index) => (
+        <ReactMarkdown
+          key={index}
+          remarkPlugins={[remarkGfm]}
+          className={s.postContentSection__text}
+          components={{
+            h1: ({ node, ...props }) => <h1 className={s.customHeading} {...props} />,
+            h2: ({ node, ...props }) => <h2 className={s.customHeading} {...props} />,
+            p: ({ node, ...props }) => <p className={s.customParagraph} {...props} />,
+            code({ inline, className, children, ...props }: any) {
+              const match = /language-(\w+)/.exec(className || "");
+              return !inline && match ? (
+                <SyntaxHighlighter
+                  style={vscDarkPlus}
+                  language={match[1]}
+                  PreTag="div"
+                  {...props}
+                >
+                  {String(children).replace(/\n$/, "")}
+                </SyntaxHighlighter>
+              ) : (
+                <code className={s.inlineCode} {...props}>
+                  {children}
+                </code>
+              );
+            },
+          }}
+        >
           {desc}
-        </p>
+        </ReactMarkdown>
       ))}
     </section>
   );
-}
+};
 
 export default PostArticle;

@@ -1,5 +1,5 @@
-import Footer from "@/components/UI/FooterBlog/Footer.component.page";
 import PostSite from "@/components/pages/Blog/PostSite/PostSite.fetching";
+import Footer from "@/components/pages/Footer/Footer.page";
 
 
 function page() {
@@ -11,5 +11,7 @@ function page() {
     </>
   );
 }
+
+
 
 export default page;

@@ -4,7 +4,7 @@ import s from "./PostSite.page.module.scss";
 
 import { useContext, useEffect, useState } from "react";
 
-import TableOfContents from "@/components/UI/TableOfContents/TableOfContents.component";
+import TableOfContents from "@/components/pages/Blog/PostSite/TableOfContents/TableOfContents.component";
 
 import NotFound from "../NotFound/NotFound.page";
 import PostVisibleContext from "@/store/PostVisible.context";
