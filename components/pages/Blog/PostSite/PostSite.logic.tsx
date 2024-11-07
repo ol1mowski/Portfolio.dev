@@ -35,6 +35,9 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
     return <NotFound link="/Blog" info="Nie znaleziono takiego postu" />;
   }
 
+  { console.log(sectionName);
+   }
+
   return (
     <>
       <section className={s.container}>
