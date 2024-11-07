@@ -43,9 +43,9 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
         <article className={s.container__content}>
           <PostHeader post={correctPostArticle[0]} />
 
-          {sectionName !== "Podsumowanie" && isVisible && (
+          {/* {sectionName !== "Podsumowanie" && isVisible && (
             <TableOfContents content={correctPostArticleContent} />
-          )}
+          )} */}
 
           <PostContent
             content={correctPostArticleContent}

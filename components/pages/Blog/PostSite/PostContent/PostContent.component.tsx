@@ -14,9 +14,9 @@ interface PostContentProps {
 
 const PostContent: React.FC<PostContentProps> = ({ content, sectionName, isVisible }) => (
   <>
-    {sectionName !== "Podsumowanie" && isVisible && (
+    {/* {sectionName !== "Podsumowanie" && isVisible && (
       <TableOfContents content={content} />
-    )}
+    )} */}
     {content.map(({ id, slug, title, description }) => (
       <PostArticle key={id} slug={slug} title={title} description={description} />
     ))}

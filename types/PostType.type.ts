@@ -1,5 +1,3 @@
-import { type StaticImageData } from "next/image";
-
 export type ProjectType = {
   id: string;
   date: string;
@@ -42,8 +40,8 @@ export type PostCardType = {
   title: string;
   slug: string;
   description: string;
-  image: StaticImageData;
-  authorImage: StaticImageData;
+  image: string;
+  authorImage: string;
   author: string;
   date: string;
 };
