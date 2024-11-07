@@ -43,17 +43,5 @@
     @include description();
     font-size: 1rem;
   }
-  &__btn {
-    @include btn();
-    padding: 1.2rem;
-    font-size: 1.3rem;
-    transition: scale, background-color, color, border, 0.7s;
-    will-change: scale, background-color, color, border;
-  }
-  &__btn:hover {
-    scale: $hover-med-scale;
-    background-color: transparent;
-    color: $light-blue;
-    border: 1px solid $light-blue;
-  }
+
 }

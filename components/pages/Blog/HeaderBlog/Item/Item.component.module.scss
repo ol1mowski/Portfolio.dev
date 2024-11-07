@@ -1,12 +1,15 @@
 @import "@/style/index.scss";
 
 .item {
-  font-size: $text-size;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  color: #2d2e2d;
+  font-size: 2rem;
+  cursor: pointer;
   transition: color, scale, 0.7s;
   will-change: color, scale;
-}
-.item:hover {
-  color: $dark-blue;
-  cursor: pointer;
-  scale: $hover-med-scale;
+  &:hover {
+    color: $dark-blue;
+    scale: 1.1;
+  }
 }

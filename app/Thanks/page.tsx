@@ -7,34 +7,31 @@ import Head from "next/head";
 import Header from "@/components/pages/Header/Header.component";
 
 const page = async () => {
-  const result = await validateSession();
+  const { session } = await validateSession();
 
-  if (result.session?.session !== null) {
-    redirect("/");
-  } else {
-    return (
-      <>
-        <Head>
-          <title>Dziękuję</title>
-          <meta name="description" content="Zakładka Dziękuję" />
-        </Head>
-        <Header />
-        <section className={s.container}>
-          <h1 className={s.container__header}>Dziękuję</h1>
-          <p className={s.container__text}>
-            Twój E-Book jest dostępny do pobrania poniżej
-          </p>
-          <a
-            href="/Praktyczne%20Porady%20Na%20Co%20Zwrócić%20Uwagę%20Podczas%20Projektowania%20Strony%20Internetowej.pdf"
-            download
-          >
-            <Button type="normal" value="Pobierz E-Book" />
-          </a>
-        </section>
-        <Footer />
-      </>
-    );
+  if (!session) {
+    redirect("/Ebook");
   }
+
+  return (
+    <>
+      <Head>
+        <title>Dziękuję</title>
+        <meta name="description" content="Zakładka Dziękuję" />
+      </Head>
+      <Header />
+      <section className={s.container}>
+        <h1 className={s.container__header}>Dziękuję {session.name}!</h1>
+        <p className={s.container__text}>
+          Twój E-Book jest dostępny do pobrania poniżej
+        </p>
+        <a href="/ebook.pdf" download>
+          <Button type="normal" value="Pobierz E-Book" />
+        </a>
+      </section>
+      <Footer />
+    </>
+  );
 };
 
 export default page;

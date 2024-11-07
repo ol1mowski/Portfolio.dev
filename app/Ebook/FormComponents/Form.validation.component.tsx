@@ -23,7 +23,7 @@ function Form({ action }: { action: (formData: FormData) => Promise<void> }) {
 
     if (!nameValue) {
       newErrors.name = "*Imię jest wymagane";
-    } else if (nameValue.length <= 3) {
+    } else if (nameValue.length < 3) {
       newErrors.name = "*Imię musi zawierać co najmniej 3 litery";
     }
     if (!emailValue) {

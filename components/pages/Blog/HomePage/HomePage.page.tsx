@@ -24,7 +24,7 @@ function HomePageComponent({ posts }: { posts: PostsType[] }) {
             <Caption type="main" value={lastPost.title} />
             <Description value={lastPost.description} />
             <a href={`/Blog/posty/${lastPost.slug}`}>
-              <Button type="normal" value="Czytaj" />
+              <Button type="small" value="Czytaj" />
             </a>
           </section>
         </section>
