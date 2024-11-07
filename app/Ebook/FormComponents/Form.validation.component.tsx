@@ -53,14 +53,18 @@ function Form({ action }: { action: (formData: FormData) => Promise<void> }) {
     const formData = new FormData(event.currentTarget);
 
     try {
+      console.log('Submitting form data...');
       await action(formData);
+      console.log('Form submitted successfully');
+      
       if (name.current) name.current.value = "";
       if (email.current) email.current.value = "";
       if (privacy.current) privacy.current.checked = false;
-      setSuccess("Udało się ! wkrótce otrzymasz mojego E-booka !");
-      redirect("/");
+      
+      setSuccess("Udało się! Wkrótce otrzymasz mojego E-booka!");
     } catch (err) {
-      setError("[-] Coś Poszło Nie Tak, Spróbuj ponownie");
+      console.error('Form submission error:', err);
+      setError(err instanceof Error ? err.message : "[-] Coś Poszło Nie Tak, Spróbuj ponownie");
     } finally {
       setIsPending(false);
     }

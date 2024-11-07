@@ -1,20 +1,26 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const ClientsSchema = new mongoose.Schema({
+const CustomerSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    required: [true, 'Name is required'],
+    trim: true,
+    minlength: [3, 'Name must be at least 3 characters long']
   },
   email: {
     type: String,
-    required: true,
+    required: [true, 'Email is required'],
+    unique: true,
+    trim: true,
+    lowercase: true,
+    match: [/^\S+@\S+\.\S+$/, 'Please enter a valid email']
   },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
 });
 
-const Clients =
-  mongoose.models.Customers || mongoose.model("Customers", ClientsSchema);
+const Customers = mongoose.models.customers || mongoose.model('customers', CustomerSchema);
 
-
-module.exports = {
-  Clients: Clients,
-};
+module.exports = { Customers };

@@ -15,10 +15,6 @@ const page = async () => {
 
   return (
     <>
-      <Head>
-        <title>Dziękuję</title>
-        <meta name="description" content="Zakładka Dziękuję" />
-      </Head>
       <Header />
       <section className={s.container}>
         <h1 className={s.container__header}>Dziękuję {session.name}!</h1>
