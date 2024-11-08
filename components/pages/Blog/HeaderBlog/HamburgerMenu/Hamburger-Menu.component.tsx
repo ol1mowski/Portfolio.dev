@@ -2,7 +2,6 @@ import s from "./HamburgerMenu.module.scss";
 
 import Image from "next/image";
 
-import blogImage from "@/assets/logo_black.svg";
 import { BlogITEMS, ITEMS } from "../StaticData";
 import Item from "../Item/Item.component";
 
@@ -37,7 +36,7 @@ function HamburgerMenuComponent({
         </ul>
       </nav>
       <section className={s.hamburgerMenu__logo}>
-        <Image width={200} height={70} src={blogImage} alt="blog-image" />
+        <Image width={200} height={70} src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1730720445/Portfolio/Icons/logo_black_ev3ukd.svg" alt="blog-image" />
       </section>
     </menu>
   );

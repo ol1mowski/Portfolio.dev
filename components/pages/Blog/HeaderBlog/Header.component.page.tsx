@@ -10,7 +10,7 @@ import HeaderLogo from "./HeaderLogo/HeaderLogo.component";
 import HamburgerMenuIcon from "./HamburgerMenuIcon/HamburgerMenuIcon.component";
 import DesktopNavMenu from "./DesktopNavMenu/DesktopNavMenu.component";
 
-function Header({ type }: { type?: string }) {
+function Header({ type, post }: { type?: string, post?: boolean }) {
   const { isOpen, setOpen } = useContext(HamburgerClickContext);
 
   const closeMenuHandler = () => {
@@ -20,7 +20,7 @@ function Header({ type }: { type?: string }) {
   return (
     <header className={s.headerWrapper}>
       <HeaderLogo type={type} />
-      <HamburgerMenuIcon />
+      <HamburgerMenuIcon post={post} />
       <DesktopNavMenu type={type} />
       {isOpen && <HamburgerMenuComponent type={type} closeMenuHandler={closeMenuHandler} />}
     </header>

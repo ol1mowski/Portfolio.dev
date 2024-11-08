@@ -37,7 +37,7 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
   return (
     <>
       <section className={s.container}>
-        <Header type="Blog" />
+        <Header type="Blog" post/>
         <PostImage post={correctPostArticle[0]} />
         <article className={s.container__content}>
           <PostHeader post={correctPostArticle[0]} />
