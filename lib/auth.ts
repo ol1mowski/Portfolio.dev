@@ -1,20 +1,22 @@
-import { Lucia } from "lucia";
-import { MongodbAdapter } from "@lucia-auth/adapter-mongodb";
-import { Collection, MongoClient } from "mongodb";
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 
-interface SessionData {
-  email: string;
-  name: string;
+const JWT_SECRET = process.env.JWT_SECRET;
+
+if (!JWT_SECRET) {
+  throw new Error('JWT_SECRET must be defined in environment variables');
 }
 
 export async function createAuthSession(email: string, name: string) {
   try {
-    const sessionData: SessionData = { email, name };
-    const token = jwt.sign(sessionData, process.env.JWT_SECRET!, {
-      expiresIn: '24h'
-    });
+    console.log('Creating auth session for:', { email, name });
+    console.log('JWT_SECRET exists:', !!JWT_SECRET);
+
+    const token = jwt.sign(
+      { email, name },
+      JWT_SECRET as string,
+      { expiresIn: '24h' }
+    );
 
     cookies().set({
       name: 'session',
@@ -28,7 +30,7 @@ export async function createAuthSession(email: string, name: string) {
     return { success: true };
   } catch (error) {
     console.error('Error creating session:', error);
-    return { success: false, error: 'Failed to create session' };
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
   }
 }
 
@@ -40,9 +42,18 @@ export async function validateSession() {
       return { session: null, error: 'No session found' };
     }
 
-    const verified = jwt.verify(sessionCookie.value, process.env.JWT_SECRET!) as SessionData;
-    return { session: verified, error: null };
+    const verified = jwt.verify(sessionCookie.value, JWT_SECRET as string) as jwt.JwtPayload;
     
+    if (!verified.email || !verified.name) {
+      throw new Error('Invalid token payload');
+    }
+
+    const session = {
+      email: verified.email as string,
+      name: verified.name as string
+    };
+
+    return { session, error: null };
   } catch (error) {
     console.error('Session validation error:', error);
     return { session: null, error: 'Invalid session' };

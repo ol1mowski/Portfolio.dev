@@ -1,5 +1,4 @@
-import { getProjects } from "@/db/db_connect";
-
+import { getProjects } from "@/db/Utils/DataFetchingFunctions/DataFetchingFunctions";
 import ProjectsComponent from "./Projects.page";
 import { type ProjectType } from "@/types/PostType.type";
 
@@ -17,5 +16,5 @@ async function Projects() {
     return <p>Error loading Projects section.</p>;
   }
 }
-
 export default Projects;
+

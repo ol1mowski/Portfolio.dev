@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run check-env && next dev",
     "build": "next build",
     "test": "jest",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check-env": "node -r dotenv/config scripts/check-env.js",
+    "test:connection": "node -r dotenv/config db/testConnection.js"
   },
   "dependencies": {
     "@lucia-auth/adapter-mongodb": "^1.0.3",

@@ -1,25 +1,34 @@
-require('dotenv').config();
+require('dotenv').config({ 
+  path: process.env.NODE_ENV === 'test' ? '../.env.test' : '../.env'
+});
 const { dbConnect } = require('./db_connect');
 
 async function testConnection() {
   try {
-    console.log('Attempting to connect to MongoDB...');
-    console.log('MONGODB_URI:', process.env.DB_URL); 
-    
-    const conn = await dbConnect();
-    console.log('Database connected successfully');
-    console.log('Connection state:', conn.connection.readyState);
-    
-    const { saveClientToDB } = require('./db_connect');
-    const testClient = await saveClientToDB({
-      name: 'Test User',
-      email: 'test@example.com'
+    console.log('Environment check:', {
+      nodeEnv: process.env.NODE_ENV,
+      currentDir: process.cwd(),
+      envFiles: {
+        env: require('fs').existsSync('.env'),
+        envTest: require('fs').existsSync('.env.test')
+      }
     });
-    console.log('Test client saved:', testClient);
+
+    if (!process.env.DB_URL) {
+      throw new Error('DB_URL is not defined. Available env vars: ' + 
+        Object.keys(process.env).filter(key => !key.includes('=')).join(', '));
+    }
+
+    console.log('Attempting to connect with URL:', 
+      process.env.DB_URL.replace(/\/\/.*@/, '//*****@'));
+
+    const conn = await dbConnect();
+    console.log('Connection successful!');
+    console.log('Connection state:', conn.connection.readyState);
     
     process.exit(0);
   } catch (error) {
-    console.error('Database connection error:', error);
+    console.error('Connection error:', error);
     process.exit(1);
   }
 }

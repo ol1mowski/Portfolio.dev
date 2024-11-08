@@ -1,6 +1,6 @@
-import { saveClientToDB } from "@/db/db_connect";
-import { createAuthSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
+import { saveClientToDB } from "../db/Utils/DataFetchingFunctions/DataFetchingFunctions";
+import { createAuthSession } from "../lib/auth";
 
 export const saveClientData = async (formData: FormData) => {
   "use server";
@@ -28,7 +28,12 @@ export const saveClientData = async (formData: FormData) => {
   console.log("Saving email:", email.trim());
   console.log("Saving name:", name.trim());
 
+  console.log('Environment check:', {
+    hasJwtSecret: !!process.env.JWT_SECRET,
+    nodeEnv: process.env.NODE_ENV
+  });
+
   saveClientToDB({ name: name, email: email });
-  await createAuthSession(email);
+  await createAuthSession(email, name);
   redirect("/Thanks");
 };
