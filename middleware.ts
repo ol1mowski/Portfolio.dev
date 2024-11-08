@@ -2,15 +2,15 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const userEmail = request.cookies.get("userEmail");
+  const session = request.cookies.get("session");
 
-  if (!userEmail) {
-    console.log("No user email");
+  if (!session && request.nextUrl.pathname === "/Thanks") {
+    return NextResponse.redirect(new URL("/Ebook", request.url));
   }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: "/thanks/:path*",
+  matcher: "/Thanks",
 };

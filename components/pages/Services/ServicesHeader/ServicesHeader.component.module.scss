@@ -1,0 +1,8 @@
+@import "@/style/index.scss";
+
+.headerWrapper {
+  @include d-flex;
+  &__header {
+    @include large-header();
+  }
+}

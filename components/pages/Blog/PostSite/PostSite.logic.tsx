@@ -2,30 +2,22 @@
 
 import s from "./PostSite.page.module.scss";
 
-import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
 
-import headerLogo from "@/assets/logo_black.svg";
-import hamburger from "@/assets/hamburger_black.svg";
-
-import useElementVisible from "@/hooks/useElementVisible.hook";
-
-import TableOfContents from "@/components/UI/TableOfContents/TableOfContents.component";
-import PostArticle from "@/components/UI/PostArticle/PostArticle.component";
-import SimilarPosts from "@/components/UI/SimilarPosts/SimilarPosts.component";
-
-import PostInfo from "./PostInfo/PostInfo.component";
 import NotFound from "../NotFound/NotFound.page";
 import PostVisibleContext from "@/store/PostVisible.context";
-import { type PostsType } from "@/types/PostType";
-import Header from "@/components/UI/HeaderBlog/Header.component.page";
-import Head from "next/head";
+
+import { type PostsType } from "@/types/PostType.type";
+
+import Header from "../HeaderBlog/Header.component.page";
+import PostHeader from "./PostHeader/PostHeader.component";
+import PostImage from "./PostImage/PostImage.component.";
+import PostContent from "./PostContent/PostContent.component";
+import SimilarPosts from "./SimilarPosts/SimilarPosts.component";
 
 function PostSiteComponent({ posts }: { posts: PostsType[] }) {
-  const [isVisible1, reference] = useElementVisible();
   const [urlSlug, setUrlSlug] = useState("");
   const { sectionVisible } = useContext(PostVisibleContext);
-
   const { isVisible, sectionName } = sectionVisible;
 
   useEffect(() => {
@@ -35,69 +27,27 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
   }, []);
 
   const correctPostArticle = posts.filter((item) => item.slug === urlSlug);
-
   const correctPostArticleContent =
     correctPostArticle.length > 0 ? correctPostArticle[0].content : [];
 
   if (correctPostArticle.length === 0) {
-    return (
-      <>
-        <Header type="Blog" logo={headerLogo} hamburger={hamburger} />
-        <NotFound link="/Blog" info="Nie znaleziono takiego postu" />
-      </>
-    );
+    return <NotFound link="/Blog" info="Nie znaleziono takiego postu" />;
   }
 
   return (
     <>
-      <Head>
-        <title>{correctPostArticle[0].title}</title>
-        <meta
-          name="description"
-          content="Post o Tworzeniu Stron Internetowych"
-        />
-      </Head>
       <section className={s.container}>
-        <Header type="Blog" logo={headerLogo} hamburger={hamburger} />
-        <section className={s.container__imageSection}>
-          {correctPostArticle.map((item) => (
-            <Image
-              key={item.id}
-              className={s.container__imageSection__img}
-              src={item.image}
-              alt="post image"
-              height={450}
-              width={800}
-            />
-          ))}
-        </section>
+        <Header type="Blog" post/>
+        <PostImage post={correctPostArticle[0]} />
         <article className={s.container__content}>
-          <section className={s.container__headerSection}>
-            {correctPostArticle.map((item) => (
-              <PostInfo
-                key={item.id}
-                author={item.author}
-                authorImage={item.authorImage}
-                date={item.date}
-                readTime={item.readTime}
-                category={item.category}
-                title={item.title}
-              />
-            ))}
-          </section>
+          <PostHeader post={correctPostArticle[0]} />
 
-          {sectionName === "Podsumowanie" && isVisible ? null : (
-            <TableOfContents content={correctPostArticleContent} />
-          )}
-          {correctPostArticleContent.map((item) => (
-            <PostArticle
-              key={item.title}
-              slug={item.slug}
-              title={item.title}
-              description={item.description}
-            />
-          ))}
-          <SimilarPosts reference={reference} posts={posts} />
+          <PostContent
+            content={correctPostArticleContent}
+            sectionName={sectionName}
+            isVisible={isVisible}
+          />
+          <SimilarPosts posts={posts} />
         </article>
       </section>
     </>

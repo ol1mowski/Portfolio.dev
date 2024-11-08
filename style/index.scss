@@ -49,6 +49,9 @@ $hover-min-scale: 1.01;
 $hover-med-scale: 1.05;
 $hover-max-scale: 1.1;
 
+//transition time
+$transition-time: 0.7s;
+
 //border size
 
 $border-min: 0.3rem;
@@ -69,9 +72,27 @@ $small-gap: 0.5rem;
 $standard-gap: 1rem;
 $big-gap: 2rem;
 
+//text sizes
 $text-size: 1.1rem;
+$btn-text-size: 1.4rem;
 
 //mixins
+
+@mixin large-header() {
+  font-size: 3rem;
+  color: $dark;
+  text-align: left;
+  @include headerFont();
+  font-weight: 700;
+  @media screen and (min-width: 700px) {
+    text-align: center;
+    font-size: 3.5rem;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 4.5rem;
+    text-align: center;
+  }
+}
 
 @mixin small-headers() {
   @include textFont();
@@ -111,18 +132,24 @@ $text-size: 1.1rem;
   }
 }
 
-@mixin btn() {
+@mixin btn($backgroundColor, $color) {
   @include d-flex;
   gap: $small-gap;
-  background-color: $light-blue;
+  background-color: $backgroundColor;
   border: none;
-  padding: $small-padding $standard-padding;
-  font-size: $text-size;
-  color: $white;
+  padding: 1.3rem $standard-padding;
+  font-size: $btn-text-size;
+  color: $color;
   cursor: pointer;
-  transition: scale, 0.7s;
-  will-change: scale;
+  transition: scale, border, $transition-time;
+  will-change: scale, border;
   border-radius: $border-med;
+  &:hover {
+    scale: 1.05;
+    background-color: transparent;
+    color: $backgroundColor;
+    border: 1px solid $backgroundColor;
+  }
 }
 
 @mixin d-flex() {

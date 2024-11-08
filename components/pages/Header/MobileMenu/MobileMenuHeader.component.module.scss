@@ -1,0 +1,40 @@
+@import "@/style/index.scss";
+
+.menu {
+  transform: translateX(-20rem);
+  z-index: 300;
+  width: 100vw;
+  position: fixed;
+  background-color: #fff;
+  color: $dark;
+  top: 0;
+  height: 100vh;
+  animation: showMenu 0.7s linear forwards;
+
+  &__x {
+    height: 10%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+
+    &__icon {
+      cursor: pointer;
+      width: 2rem;
+      margin-right: 1.2rem;
+    }
+  }
+
+  &__nav {
+    @include d-flex-column;
+    height: 50%;
+  }
+}
+
+@keyframes showMenu {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

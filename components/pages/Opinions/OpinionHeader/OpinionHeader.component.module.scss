@@ -1,0 +1,9 @@
+@import "@/style/index.scss";
+
+.headerWrapper {
+  @include d-flex;
+  &__header {
+    font-weight: 700;
+    font-size: 1.7rem;
+  }
+}

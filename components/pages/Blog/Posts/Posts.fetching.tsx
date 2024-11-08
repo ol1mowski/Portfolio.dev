@@ -1,4 +1,4 @@
-import { getPosts } from "@/db/db_connect";
+import { getPosts } from "@/db/Utils/DataFetchingFunctions/DataFetchingFunctions";
 import PostsComponent from "./Posts.page";
 
 async function Posts() {

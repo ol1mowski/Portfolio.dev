@@ -25,7 +25,8 @@
       "@/*": [
         "./*"
       ]
-    }
+    },
+    "types": ["jest", "@testing-library/jest-dom"]
   },
   "include": [
     "next-env.d.ts",
@@ -33,8 +34,9 @@
     "**/*.tsx",
     "next/types/**/*.ts",
     ".next/types/**/*.ts"
-  ],
+, "types/PostType..typets"  ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+     "node_modules", "**/*.test.ts", "**/*.test.tsx",
   ]
 }

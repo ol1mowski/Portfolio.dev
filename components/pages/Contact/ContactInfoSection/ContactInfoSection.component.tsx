@@ -2,7 +2,6 @@ import s from "./ContactInfoSection.component.module.scss";
 
 import Image from "next/image";
 
-import telephone from "@/assets/telephone.png";
 
 function ContactInfoSection({
   title,
@@ -57,7 +56,7 @@ function ContactInfoSection({
             )}
             {title === "Telefon" && (
               <Image
-                src={telephone}
+                src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1731069185/Portfolio/Icons/telephone_zogykl.webp"
                 width={30}
                 height={30}
                 alt="Telephone Icon"

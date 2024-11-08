@@ -1,28 +1,30 @@
-import Header from "@/components/UI/Header/Header.component";
 import HomePage from "@/components/pages/HomePage/HomePage.page";
 
-import About from "@/components/pages/about/About.page";
 import SubscribersAmount from "@/components/pages/SubscribersAmount/SubscribersAmount.page";
 import Contact from "@/components/pages/Contact/Contact.page";
 import Footer from "@/components/pages/Footer/Footer.page";
 import Opinions from "@/components/pages/Opinions/Opinions.page";
 import Projects from "@/components/pages/Projects/Projects.fetching";
-import Help from "@/components/pages/Help/Help.page";
-import Colaboration from "@/components/pages/Colaboration/Colaboration.page";
-import GoodStart from "@/components/pages/GoodStart/GoodStart.page";
+import Ebook from "@/components/pages/EBook/Ebook.page";
+import AbourMe from "@/components/pages/AboutMe/AbouMe.page";
+import Services from "@/components/pages/Services/Services.page";
+import CursorShadow from "@/components/UI/CursorShadow/CursorShadow.component";
+import Header from "@/components/pages/Header/Header.component";
+import Collaboration from "@/components/pages/Collaboration/Collaboration.page";
 
 export default function Home() {
   return (
     <>
-      <Header type="in"/>
+      <CursorShadow />
+      <Header />
       <HomePage />
-      <GoodStart />
-      <Help />
-      <About />
+      <Ebook />
+      <AbourMe />
+      <Services />
       <SubscribersAmount />
       <Projects />
       <Opinions />
-      <Colaboration />
+      <Collaboration />
       <Contact />
       <Footer />
     </>

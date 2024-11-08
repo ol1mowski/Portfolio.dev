@@ -1,0 +1,28 @@
+@import "@/style/index.scss";
+
+.projectWrapper {
+  width: 90vw;
+  border-radius: 1.7rem;
+  margin-bottom: 5rem;
+  box-shadow: $box-shadow;
+  @include d-flex-column;
+  @media screen and (min-width: 650px) {
+    width: 30rem;
+  }
+  @media screen and (min-width: 1020px) {
+    @include d-flex;
+    width: 60rem;
+  }
+
+  &__descriSection {
+    @include d-flex-column;
+    @media screen and (min-width: 1020px) {
+      width: 40%;
+    }
+  }
+}
+
+#icon_img {
+  width: 1.5rem;
+  height: 1.5rem;
+}

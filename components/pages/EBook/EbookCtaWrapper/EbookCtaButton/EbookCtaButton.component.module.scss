@@ -1,0 +1,6 @@
+@import "@/style/index.scss";
+
+.buttonWrapper {
+  margin-top: 2vh;
+  @include d-flex;
+}

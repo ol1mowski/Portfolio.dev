@@ -1,0 +1,21 @@
+@import "@/style/index.scss";
+
+.importantTextDecorate {
+  font-weight: 500;
+  color: $dark-blue;
+}
+.importantTextYtDecorate {
+  font-weight: 500;
+  color: $red;
+}
+
+.desWrapper {
+  margin-top: 10vh;
+  @include d-flex-column;
+  gap: 5vh;
+  justify-content: flex-start;
+  &__des {
+    @include textFont;
+    font-size: 1.2rem;
+  }
+}

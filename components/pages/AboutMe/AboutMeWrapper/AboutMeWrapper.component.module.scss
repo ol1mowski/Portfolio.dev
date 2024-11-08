@@ -1,0 +1,15 @@
+@import "@/style/index.scss";
+
+.container {
+  position: relative;
+  z-index: 1;
+  @include d-flex-column;
+  gap: 10vh;
+  margin-block: 20vh;
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    width: 90vw;
+    margin: 20vh auto;
+    gap: 10vw;
+  }
+}

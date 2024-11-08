@@ -1,0 +1,29 @@
+@import "@/style/index.scss";
+
+.infoWrapper {
+  @include d-flex-column;
+  gap: 2vh;
+  width: 16rem;
+  align-items: flex-start;
+  background-color: $white;
+  box-shadow: $box-shadow;
+  border-radius: $border-med;
+  padding: $standard-padding;
+  transition: background-color 0.7s;
+  will-change: background-color;
+  @media screen and (min-width: $desktop) {
+    width: 15rem;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: #f9f9f9;
+  }
+  &__header {
+    font-weight: 500;
+    font-size: 1.7rem;
+  }
+  &__des {
+    @include textFont;
+    line-height: 1.3rem;
+  }
+}

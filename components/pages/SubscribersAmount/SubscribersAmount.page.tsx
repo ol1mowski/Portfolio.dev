@@ -9,7 +9,7 @@ function SubscribersAmount() {
       <article className={s.container__media}>
         <div>
           <span className={s.container__media__beforeNumber}>+</span>
-          <CounterAnimation duration={3000} target={7000} />
+          <CounterAnimation duration={3000} target={20000} />
         </div>
         <a
           href="https://www.youtube.com/channel/UCTNFKRALTZoSQS6mDOuDs2Q"

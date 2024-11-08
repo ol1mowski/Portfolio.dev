@@ -1,0 +1,27 @@
+@import "@/style/index.scss";
+
+.ctaWrapper {
+  @include d-flex-column;
+  gap: 5vh;
+  align-items: flex-end;
+  @media screen and (min-width: $mobile) {
+    gap: 7vh;
+  }
+  @media screen and (min-width: $small-desktop) {
+    margin-top: 5vh;
+  }
+  &__desWrapper {
+    @include d-flex;
+    &__des {
+      @include textFont;
+      font-size: 1.2rem;
+      @media screen and (min-width: $small-desktop) {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+      }
+    }
+  }
+  &__buttonWrapper {
+    @include d-flex;
+  }
+}

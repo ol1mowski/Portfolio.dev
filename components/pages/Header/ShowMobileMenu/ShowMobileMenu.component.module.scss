@@ -1,0 +1,10 @@
+@import "@/style/index.scss";
+
+.navSection {
+  @media screen and (min-width: $desktop) {
+    display: none;
+  }
+  &__icon {
+    cursor: pointer;
+  }
+}

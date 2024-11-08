@@ -1,5 +1,5 @@
 import HomePageComponent from "./HomePage.page";
-import { getPosts } from "@/db/db_connect";
+import { getPosts } from "@/db/Utils/DataFetchingFunctions/DataFetchingFunctions";
 
 async function HomePage() {
   try {

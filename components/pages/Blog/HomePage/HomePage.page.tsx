@@ -6,18 +6,15 @@ import Description from "@/components/UI/Description/Description.component";
 import Button from "@/components/UI/Button/Button.component";
 import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
 
-import logo from "@/assets/logo.svg";
-import hamburger from "@/assets/hamburger.svg";
-
-import { type PostsType } from "@/types/PostType";
-import Header from "@/components/UI/HeaderBlog/Header.component.page";
+import { type PostsType } from "@/types/PostType.type";
+import Header from "../HeaderBlog/Header.component.page";
 
 function HomePageComponent({ posts }: { posts: PostsType[] }) {
   const lastPost = posts[posts.length - 1];
 
   return (
     <section className={s.container}>
-      <Header logo={logo} hamburger={hamburger} />
+      <Header />
       <AnimationWrapper>
         <section className={s.container__content}>
           <section className={s.container__contentSection}>
@@ -27,7 +24,7 @@ function HomePageComponent({ posts }: { posts: PostsType[] }) {
             <Caption type="main" value={lastPost.title} />
             <Description value={lastPost.description} />
             <a href={`/Blog/posty/${lastPost.slug}`}>
-              <Button type="normal" value={"Czytaj"} />
+              <Button type="small" value="Czytaj" />
             </a>
           </section>
         </section>

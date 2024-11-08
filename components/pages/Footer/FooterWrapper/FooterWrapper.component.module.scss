@@ -1,0 +1,12 @@
+@import "@/style/index.scss";
+
+.wrapper {
+  width: 80%;
+  height: 20vh;
+  @include d-flex-column;
+  @media screen and (min-width: 530px) {
+    @include d-flex;
+    gap: calc(10vw + 3rem);
+  }
+  gap: 2rem;
+}

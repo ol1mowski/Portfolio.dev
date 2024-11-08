@@ -1,11 +1,7 @@
 import s from "./PostInfo.component.module.scss";
 
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
-import authorImage from "@/assets/ja.png";
-import categoryIcon from "@/assets/category.svg";
-import calenderIcon from "@/assets/calendar.svg";
-import readingTimeIcon from "@/assets/time.svg";
 import Caption from "@/components/UI/Caption/Caption.component";
 
 function PostInfo({
@@ -18,7 +14,7 @@ function PostInfo({
 }: {
   author: string;
   readTime: number;
-  authorImage: StaticImageData;
+  authorImage: string;
   date: string;
   title: string;
   category: string;
@@ -37,14 +33,14 @@ function PostInfo({
           className={s.postInfo__avatar}
         />
         <span className={s.postInfo__info}>{author}</span>
-        <Image src={calenderIcon} alt="date icon" width={25} height={25} />
+        <Image src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1731069185/Portfolio/Icons/calendar_dbxa0f.svg" alt="date icon" width={25} height={25} />
 
         <span className={s.postInfo__info}>{date}</span>
-        <Image src={categoryIcon} alt="category icon" width={25} height={25} />
+        <Image src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1731069185/Portfolio/Icons/category_frjgj3.svg" alt="category icon" width={25} height={25} />
 
         <span className={s.postInfo__info}>{category}</span>
         <Image
-          src={readingTimeIcon}
+          src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1731069185/Portfolio/Icons/time_vdkuso.svg"
           alt="reading time icon"
           width={25}
           height={25}

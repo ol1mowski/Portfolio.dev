@@ -1,5 +1,6 @@
-import React, { RefObject } from "react";
+import { type RefObject } from "react";
 import s from "./Form.component.module.scss";
+import Button from "@/components/UI/Button/Button.component";
 
 interface FormComponentProps {
   name: RefObject<HTMLInputElement>;
@@ -80,9 +81,10 @@ const FormComponent: React.FC<FormComponentProps> = ({
       )}
     </div>
 
-    <button type="submit" className={s.form__btn} disabled={isPending}>
-      {isPending ? "Wysyłanie..." : "Odbieram Bezpłatnie"}
-    </button>
+    <Button
+      value={isPending ? "Wysyłanie..." : "Odbieram Bezpłatnie"}
+      type="small"
+    />
   </form>
 );
 

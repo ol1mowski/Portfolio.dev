@@ -1,20 +1,19 @@
-import s from "./HomePage.page.module.scss";
-
-import TechStack from "../../UI/techStack/techStack.component";
-import HomePageInfo from "../../UI/HomePageInfo/HomePageInfoSection.component";
-
-import img from "@/assets/new_main.svg";
-import HomePageImageSection from "../../UI/HomePageImageSection/HomePageImageSection.component";
+import HomePageImageSection from "./HomePageImageSection/HomePageImageSection.component";
+import HeroSectionWrapper from "./HeroSectionWrapper/HeroSectionWrapper.component";
+import MainSectionWrapper from "./MainSectionWrapper/MainSectionWrapper.component";
+import HomePageInfoSection from "./HomePageInfo/HomePageInfoSection.component";
+import TechStack from "./TechStack/TechStack.component";
 
 function HomePage() {
   return (
-    <section id="home" className={s.homeContainer}>
-      <section className={s.homeContainer__infoSection}>
-        <HomePageImageSection img={img} />
-        <HomePageInfo />
-      </section>
+    <HeroSectionWrapper>
+      <MainSectionWrapper>
+        <HomePageImageSection />
+        <HomePageInfoSection />
+      </MainSectionWrapper>
+
       <TechStack />
-    </section>
+    </HeroSectionWrapper>
   );
 }
 

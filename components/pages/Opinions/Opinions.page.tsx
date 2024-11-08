@@ -1,26 +1,43 @@
 import s from "./Opinions.page.module.scss";
 
-import rec_1 from "@/assets/Rectangle_1.png";
-import companyLogo from "@/assets/Infmovilweb.jpeg";
+import Opinion from "./Opinion/Opinion.component";
+import OpinionHeader from "./OpinionHeader/OpinionHeader.component";
+import SectionName from "./SectionName/SectionName.component";
+import OpinionsWrapper from "./OpinionsWrapper/OpinionsWrapper.component";
 
-import Image from "next/image";
-import OpinionsBoxSection from "./OpinionsBoxSection/OpinionsBoxSection.component";
+import { getOpinions } from "@/db/Utils/DataFetchingFunctions/DataFetchingFunctions";
+import { type OpinionsType } from "@/types/Opinions.type";
 
-function Opinions() {
+export default async function Opinions() {
+  let opinionsData: OpinionsType[] | null = null;
+
+  try {
+    const fetchedItems = (await getOpinions()) as OpinionsType[];
+
+    if (!Array.isArray(fetchedItems) || !fetchedItems.length) {
+      throw new Error("No data received from the server.");
+    }
+
+    opinionsData = fetchedItems;
+  } catch (error) {
+    console.error("Error fetching Opinions data:", error);
+  }
+
+  if (!opinionsData) {
+    return <p>Error loading Opinions section.</p>;
+  }
+
+  const res = opinionsData[0].opinions;
+
   return (
     <section id="opinions" className={s.container}>
-      <Image
-        height={700}
-        width={600}
-        src={rec_1}
-        alt="Reactangel"
-        className={s.container__rec1}
-      />
-      <section className={s.container__boxWrapper}>
-       <OpinionsBoxSection companyLogo={companyLogo}/>
-      </section>
+      <SectionName />
+      <OpinionHeader />
+      <OpinionsWrapper>
+        {res.map((opinion, index) => (
+          <Opinion key={index} opinion={opinion} />
+        ))}
+      </OpinionsWrapper>
     </section>
   );
 }
-
-export default Opinions;

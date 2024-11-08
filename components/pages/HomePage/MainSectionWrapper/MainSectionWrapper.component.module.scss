@@ -1,0 +1,9 @@
+@import "@/style/index.scss";
+
+.infoSection {
+    @include d-flex-column;
+    @media screen and (min-width: $big-tablet) {
+      @include d-flex;
+      flex-direction: row-reverse;
+    }
+  }

@@ -1,0 +1,20 @@
+@import "@/style/index.scss";
+
+.cta {
+  @include d-flex-column;
+  gap: 10vh;
+  margin-bottom: 10vh;
+  &__header {
+    font-size: 2rem;
+    color: $dark;
+    @include headerFont();
+    font-weight: 600;
+    &__mark {
+      font-size: 2rem;
+      color: $dark;
+      @include headerFont();
+      font-weight: 600;
+      color: $light-blue;
+    }
+  }
+}

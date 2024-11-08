@@ -1,0 +1,13 @@
+@import "@/style/index.scss";
+
+.container {
+  margin-block: 20vh;
+  @include d-flex-column;
+  gap: 10vh;
+  height: 100%;
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    margin-top: 25vh;
+    align-items: flex-start;
+  }
+}

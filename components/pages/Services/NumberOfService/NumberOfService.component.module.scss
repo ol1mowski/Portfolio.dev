@@ -1,0 +1,12 @@
+@import "@/style/index.scss";
+
+.slideNumberWrapper {
+  @include d-flex;
+  &__number {
+    font-weight: 700;
+    font-size: 6rem;
+    @media screen and (min-width: $small-desktop) {
+      font-size: 7rem;
+    }
+  }
+}

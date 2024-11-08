@@ -1,0 +1,42 @@
+@import "@/style/index.scss";
+
+.techStackContainer {
+  @include d-flex-column;
+  margin-top: 5vh;
+  padding: 2rem;
+  width: 100vw;
+  @media screen and (min-width: $desktop) {
+    @include d-flex;
+    flex-direction: row;
+    gap: 7rem;
+    justify-content: flex-start;
+  }
+  &__title {
+    @media screen and (min-width: $desktop) {
+      @include d-flex;
+    }
+    &__p {
+      border-bottom: 2px solid rgba(45, 46, 50, 0.5);
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
+      color: $dark;
+
+      font-weight: 700;
+      font-size: 1.3rem;
+      @media screen and (min-width: $desktop) {
+        border-bottom: none;
+        border-right: 2px solid rgba(45, 46, 50, 0.5);
+        padding: 0 2rem;
+        margin: 0;
+      }
+    }
+  }
+
+  &__skillsWrapper {
+    @include d-flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-content: center;
+    
+  }
+}

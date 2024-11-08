@@ -1,75 +1,61 @@
-import { Lucia } from "lucia";
-import { MongodbAdapter } from "@lucia-auth/adapter-mongodb";
-import { Collection, MongoClient } from "mongodb";
 import { cookies } from "next/headers";
+import jwt from "jsonwebtoken";
 
-interface UserDoc {
-  _id: string;
+const JWT_SECRET = process.env.JWT_SECRET;
+
+if (!JWT_SECRET) {
+  throw new Error('JWT_SECRET must be defined in environment variables');
 }
 
-interface SessionDoc {
-  _id: string;
-  expires_at: Date;
-  user_id: string;
-}
+export async function createAuthSession(email: string, name: string) {
+  try {
+    console.log('Creating auth session for:', { email, name });
+    console.log('JWT_SECRET exists:', !!JWT_SECRET);
 
-const client = new MongoClient(process.env.DB_URL || "");
+    const token = jwt.sign(
+      { email, name },
+      JWT_SECRET as string,
+      { expiresIn: '24h' }
+    );
 
-async function connectDB() {
-  await client.connect();
-  return client.db();
-}
+    cookies().set({
+      name: 'session',
+      value: token,
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: 60 * 60 * 24 // 24 hours
+    });
 
-async function initializeLucia() {
-  const db = await connectDB();
-  const User = db.collection("Customers") as Collection<UserDoc>;
-  const Session = db.collection("sessions") as Collection<SessionDoc>;
-
-  const adapter = new MongodbAdapter(Session, User);
-
-  const lucia = new Lucia(adapter, {
-    sessionCookie: {
-      name: "session_id",
-      expires: false,
-    },
-  });
-
-  return lucia;
-}
-
-export async function createAuthSession(userId: string) {
-  const lucia = await initializeLucia();
-  const session = await lucia.createSession(userId, {});
-  const sessionCookie = lucia.createSessionCookie(session.id);
-  cookies().set(
-    sessionCookie.name,
-    sessionCookie.value,
-    sessionCookie.attributes
-  );
+    return { success: true };
+  } catch (error) {
+    console.error('Error creating session:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
+  }
 }
 
 export async function validateSession() {
-  const lucia = await initializeLucia();
-  const cookieStore = cookies();
-  const sessionCookie = cookieStore.get("session_id");
-
-  if (!sessionCookie) {
-    console.log("No session cookie found.");
-    return { valid: false, message: "No session cookie found." };
-  }
-
   try {
-    const sessionId = sessionCookie.value;
-    const result = await lucia.validateSession(sessionId);
-    console.log("Session validation result:", result);
-
-    if (result) {
-      return { valid: true, session: result };
-    } else {
-      return { valid: false, message: "Invalid session." };
+    const sessionCookie = cookies().get('session');
+    
+    if (!sessionCookie) {
+      return { session: null, error: 'No session found' };
     }
+
+    const verified = jwt.verify(sessionCookie.value, JWT_SECRET as string) as jwt.JwtPayload;
+    
+    if (!verified.email || !verified.name) {
+      throw new Error('Invalid token payload');
+    }
+
+    const session = {
+      email: verified.email as string,
+      name: verified.name as string
+    };
+
+    return { session, error: null };
   } catch (error) {
-    console.error("Error validating session:", error);
-    return { valid: false, message: "Error validating session." };
+    console.error('Session validation error:', error);
+    return { session: null, error: 'Invalid session' };
   }
 }

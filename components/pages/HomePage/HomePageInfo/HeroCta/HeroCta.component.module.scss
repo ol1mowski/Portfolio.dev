@@ -1,0 +1,16 @@
+@import "@/style/index.scss";
+
+.cta {
+  margin-top: 1.5rem;
+  @include d-flex-column;
+  gap: 3rem;
+  &__p {
+    margin-top: $standard-margin;
+    @include description();
+    text-align: left;
+    @media screen and (min-width: $small-desktop) {
+      width: 40rem;
+      padding: 0;
+    }
+  }
+}

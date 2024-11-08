@@ -6,36 +6,4 @@
   padding: 5rem 0;
   background-color: $dark-blue;
   color: #fff;
-  &__wrapper {
-    width: 80%;
-    height: 20vh;
-    @include d-flex-column;
-    @media screen and (min-width: 530px) {
-      @include d-flex;
-      gap: calc(10vw + 3rem);
-    }
-    gap: 2rem;
-    &__header {
-      @include d-flex-column;
-      gap: 3vh;
-      align-items: flex-start
-    }
-    &__icons {
-      @include d-flex;
-      gap: 1rem;
-      &__a {
-        color: #fff;
-        will-change: transform;
-      }
-      &__a:hover {
-        animation: hoop 1s linear;
-      }
-    }
-  }
-}
-
-@keyframes hoop {
-  50% {
-    transform: translateY(-0.5rem);
-  }
 }

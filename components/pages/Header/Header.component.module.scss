@@ -1,0 +1,14 @@
+@import "@/style/index.scss";
+
+.headerContainer {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+  background-color: #fff;
+  @include d-flex;
+  padding: 2rem 0;
+  justify-content: space-around;
+  gap: 30vw;
+  width: 90vw;
+  margin: 0 auto;
+  border-bottom-left-radius: 1.7rem;
+  border-bottom-right-radius: 1.7rem;
+}

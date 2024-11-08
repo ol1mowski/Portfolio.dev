@@ -1,0 +1,25 @@
+@import "@/style/index.scss";
+
+.infoAboutMeWrapper {
+  background-color: $white;
+  box-shadow: $box-shadow;
+  border-radius: $border-med;
+  width: 90%;
+  padding: 3rem $big-padding;
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  min-width: 19rem;
+  max-width: 35rem;
+  @media screen and (min-width: $desktop) {
+    width: 70rem;
+    justify-items: start;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  @media screen and (min-width: $large-desktop) {
+    max-width: 40rem;
+  }
+}
