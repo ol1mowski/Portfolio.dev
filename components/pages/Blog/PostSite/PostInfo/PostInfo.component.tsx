@@ -1,8 +1,8 @@
 import s from "./PostInfo.component.module.scss";
 
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
-import authorImage from "@/assets/ja.png";
+
 import categoryIcon from "@/assets/category.svg";
 import calenderIcon from "@/assets/calendar.svg";
 import readingTimeIcon from "@/assets/time.svg";
@@ -18,7 +18,7 @@ function PostInfo({
 }: {
   author: string;
   readTime: number;
-  authorImage: StaticImageData;
+  authorImage: string;
   date: string;
   title: string;
   category: string;
