@@ -28,11 +28,11 @@ function HamburgerMenuComponent({
       <nav className={s.hamburgerMenu__nav}>
         <ul className={s.hamburgerMenu__nav__items}>
           {type === "Blog"
-            ? BlogITEMS.map((item) => (
-                <Item key={item.id} value={item.value} href={item.href} />
+            ? BlogITEMS.map(({ id, value, href }) => (
+                <Item key={id} hamburger value={value} href={href} />
               ))
-            : ITEMS.map((item) => (
-                <Item key={item.id} value={item.value} href={item.href} />
+            : ITEMS.map(({ id, value, href }) => (
+                <Item key={id} hamburger value={value} href={href} />
               ))}
         </ul>
       </nav>

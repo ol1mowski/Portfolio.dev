@@ -1,11 +1,11 @@
 import Link from "next/link";
 import s from "./Item.component.module.scss";
 
-function Item({ href, value }: { href: string; value: string }) {
+function Item({ href, value, hamburger }: { href: string; value: string, hamburger?: boolean }) {
   return (
     <>
       <Link href={href}>
-        <li className={s.item}>{value}</li>
+        <li className={`${hamburger ? s.hamburger : s.item}`}>{value}</li>
       </Link>
     </>
   );
