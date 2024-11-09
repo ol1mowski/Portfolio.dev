@@ -1,18 +1,25 @@
-import NavBar from "./NavBar/NavBar.component";
+import { memo } from 'react';
+import dynamic from 'next/dynamic';
 import HeaderLogo from "./Logo/HeaderLogo.component";
-import ShowMobileMenu from "./ShowMobileMenu/ShowMobileMenu.component";
+import NavBar from "./NavBar/NavBar.component";
 import HeaderWrapper from "./HeaderWrapper/HeaderWrapper.component";
 
-const Header = () => {
+
+const ShowMobileMenu = dynamic(() => 
+  import("./ShowMobileMenu/ShowMobileMenu.component"), {
+  ssr: false
+});
+
+const Header = memo(() => {
   return (
-    <>
-      <HeaderWrapper>
-        <HeaderLogo />
-        <ShowMobileMenu />
-        <NavBar />
-      </HeaderWrapper>
-    </>
+    <HeaderWrapper>
+      <HeaderLogo />
+      <ShowMobileMenu />
+      <NavBar />
+    </HeaderWrapper>
   );
-};
+});
+
+Header.displayName = 'Header';
 
 export default Header;
