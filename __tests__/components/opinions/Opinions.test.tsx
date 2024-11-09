@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Opinion from "../components/pages/Opinions/Opinion/Opinion.component";
+import Opinion from "../../../components/pages/Opinions/Opinion/Opinion.component";
 import React from "react";
 
 

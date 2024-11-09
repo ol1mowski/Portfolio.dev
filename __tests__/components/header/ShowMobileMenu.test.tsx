@@ -1,16 +1,20 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import ShowMobileMenu from "../components/pages/Header/ShowMobileMenu/ShowMobileMenu.component";
-import HamburgerClickContext from "../store/HamburgerClickContext";
+import ShowMobileMenu from "../../../components/pages/Header/ShowMobileMenu/ShowMobileMenu.component";
+import HamburgerClickContext from "../../../store/HamburgerClickContext";
 
 jest.mock("next/image", () => ({
   __esModule: true,
   default: (props: any) => {
-    return <img {...props} />;
+    const imgProps = {
+      ...props,
+      unoptimized: props.unoptimized ? "true" : undefined
+    };
+    return <img {...imgProps} />;
   },
 }));
 
-jest.mock("../components/pages/Header/MobileMenu/MobileMenuHeader.component", () => () => <div data-testid="mobile-menu-header">Mobile Menu Header</div>);
+jest.mock("../../../components/pages/Header/MobileMenu/MobileMenuHeader.component", () => () => <div data-testid="mobile-menu-header">Mobile Menu Header</div>);
 
 describe("ShowMobileMenu Component", () => {
   it("renders the hamburger icon", () => {
@@ -20,11 +24,14 @@ describe("ShowMobileMenu Component", () => {
       </HamburgerClickContext.Provider>
     );
 
-    const hamburgerIcon = screen.getByAltText("hamburger menu icon");
+    const hamburgerButton = screen.getByTestId('hamburger-button');
+    const hamburgerIcon = screen.getByTestId('hamburger-icon');
+    
+    expect(hamburgerButton).toBeInTheDocument();
     expect(hamburgerIcon).toBeInTheDocument();
   });
 
-  it("calls setOpen(true) when the hamburger icon is clicked", () => {
+  it("calls setOpen(true) when the hamburger button is clicked", () => {
     const setOpenMock = jest.fn();
     render(
       <HamburgerClickContext.Provider value={{ isOpen: false, setOpen: setOpenMock }}>
@@ -32,9 +39,8 @@ describe("ShowMobileMenu Component", () => {
       </HamburgerClickContext.Provider>
     );
 
-    const hamburgerIcon = screen.getByAltText("hamburger menu icon");
-    fireEvent.click(hamburgerIcon);
-
+    const hamburgerButton = screen.getByTestId('hamburger-button');
+    fireEvent.click(hamburgerButton);
     expect(setOpenMock).toHaveBeenCalledWith(true);
   });
 
@@ -45,8 +51,7 @@ describe("ShowMobileMenu Component", () => {
       </HamburgerClickContext.Provider>
     );
 
-    const mobileMenuHeader = screen.getByTestId("mobile-menu-header");
-    expect(mobileMenuHeader).toBeInTheDocument();
+    expect(screen.getByTestId('mobile-nav')).toBeInTheDocument();
   });
 
   it("does not render MobileMenuHeader when isOpen is false", () => {
@@ -56,6 +61,7 @@ describe("ShowMobileMenu Component", () => {
       </HamburgerClickContext.Provider>
     );
 
-    expect(screen.queryByTestId("mobile-menu-header")).not.toBeInTheDocument();
+    const mobileMenu = screen.queryByTestId('mobile-menu');
+    expect(mobileMenu).not.toBeInTheDocument();
   });
 });

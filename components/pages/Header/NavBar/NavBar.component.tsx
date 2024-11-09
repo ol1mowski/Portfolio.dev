@@ -9,7 +9,7 @@ const NAV_ITEMS = [
   { href: '/Blog', label: 'Blog' },
   { href: '/#opinions', label: 'Opinie' },
   { href: '/#contact', label: 'Kontakt' }
-] as const;
+];
 
 const NavBar = memo(() => {
   return (

@@ -1,11 +1,11 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Projects from "../components/pages/Projects/Projects.page";
+import Projects from "../../../components/pages/Projects/Projects.page";
 
 
-jest.mock("../components/pages/Projects/ProjectHeader/ProjectHeader.component", () => () => <div>Project Header</div>);
-jest.mock("../components/pages/Projects/ProjectsWrapper/ProjectsWrapper.component", () => ({ children }) => <div>{children}</div>);
-jest.mock("../components/pages/Projects/ProjectContainer/ProjectContainer.component", () => ({ title }) => <div>{title}</div>);
+jest.mock("../../../components/pages/Projects/ProjectHeader/ProjectHeader.component", () => () => <div>Project Header</div>);
+jest.mock("../../../components/pages/Projects/ProjectsWrapper/ProjectsWrapper.component", () => ({ children }) => <div>{children}</div>);
+jest.mock("../../../components/pages/Projects/ProjectContainer/ProjectContainer.component", () => ({ title }) => <div>{title}</div>);
 
 
 describe("Projects Component", () => {
