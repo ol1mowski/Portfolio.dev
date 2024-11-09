@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import ServicesCta from '../components/pages/Services/ServicesCta/ServicesCta.component';
+import ServicesCta from '../../../components/pages/Services/ServicesCta/ServicesCta.component';
 
 describe('ServicesCta Component', () => {
   const mockDes = "Test description";
