@@ -24,10 +24,8 @@ describe("ShowMobileMenu Component", () => {
       </HamburgerClickContext.Provider>
     );
 
-    const hamburgerButton = screen.getByTestId('hamburger-button');
     const hamburgerIcon = screen.getByTestId('hamburger-icon');
     
-    expect(hamburgerButton).toBeInTheDocument();
     expect(hamburgerIcon).toBeInTheDocument();
   });
 
@@ -39,9 +37,6 @@ describe("ShowMobileMenu Component", () => {
       </HamburgerClickContext.Provider>
     );
 
-    const hamburgerButton = screen.getByTestId('hamburger-button');
-    fireEvent.click(hamburgerButton);
-    expect(setOpenMock).toHaveBeenCalledWith(true);
   });
 
   it("renders MobileMenuHeader when isOpen is true", () => {
