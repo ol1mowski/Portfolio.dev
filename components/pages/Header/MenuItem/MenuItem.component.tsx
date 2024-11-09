@@ -14,7 +14,7 @@ const MenuItem = memo(({ to, label, hideMenu }: MenuItemProps) => (
     href={to} 
     className={s.item}
     onClick={hideMenu}
-    scroll={!to.startsWith('#')}
+      scroll={!to.startsWith('/#')}
   >
     {label}
   </Link>
