@@ -14,7 +14,7 @@ const Services = memo(() => {
     <section aria-label="Nasze usługi">
       {SERVICES.map((service: ServiceType) => (
         <ServicesWrapper 
-          key={service.id} 
+          key={service.number} 
           reverse={service.reverse}
         >
           <Label ifFirst={service.ifFirst} />
