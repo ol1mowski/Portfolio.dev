@@ -1,13 +1,19 @@
-import EbookCtaHeader from "@/components/pages/EBook/EbookCtaWrapper/EbookCtaHeader/EbookCtaHeader.component";
-import EbookCtaOpinion from "@/components/pages/EBook/EbookCtaWrapper/EbookCtaOpinion/EbookCtaOpinion.component";
-import EbookCtaText from "@/components/pages/EBook/EbookCtaWrapper/EbookCtaText/EbookCtaText.component";
-import EbookCtaWrapper from "@/components/pages/EBook/EbookCtaWrapper/EbookCtaWrapper.component";
-
+import { memo } from 'react';
+import dynamic from 'next/dynamic';
 import EbookWrapper from "./EbookWrapper/EbookWrapper.component";
-import EbookImageSide from "./EbookImageSide/EbookImageSide.component";
-import EbookCtaButton from "./EbookCtaWrapper/EbookCtaButton/EbookCtaButton.component";
+import EbookCtaWrapper from "./EbookCtaWrapper/EbookCtaWrapper.component";
+import EbookCtaHeader from "./EbookCtaWrapper/EbookCtaHeader/EbookCtaHeader.component";
+import EbookCtaOpinion from "./EbookCtaWrapper/EbookCtaOpinion/EbookCtaOpinion.component";
+import EbookCtaText from "./EbookCtaWrapper/EbookCtaText/EbookCtaText.component";
 
-function Ebook() {
+// Lazy load image section
+const EbookImageSide = dynamic(() => import("./EbookImageSide/EbookImageSide.component"), {
+  loading: () => <div>Loading...</div>
+});
+
+const EbookCtaButton = dynamic(() => import("./EbookCtaWrapper/EbookCtaButton/EbookCtaButton.component"));
+
+const Ebook = memo(() => {
   return (
     <EbookWrapper>
       <EbookCtaWrapper>
@@ -16,10 +22,11 @@ function Ebook() {
         <EbookCtaText />
         <EbookCtaButton />
       </EbookCtaWrapper>
-
       <EbookImageSide />
     </EbookWrapper>
   );
-}
+});
+
+Ebook.displayName = 'Ebook';
 
 export default Ebook;
