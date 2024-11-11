@@ -1,21 +1,28 @@
-import Paragraph from "@/components/UI/Word/Paragraph.component";
 import s from './ServicesHeader.component.module.scss';
 
-function ServicesHeader({ typArr }: { typArr: string[] }) {
+import { memo } from 'react';
+import Paragraph from "@/components/UI/Word/Paragraph.component";
+
+interface ServicesHeaderProps {
+  typArr: string[];
+}
+
+const ServicesHeader = memo(({ typArr }: ServicesHeaderProps) => {
   return (
     <div className={s.headerWrapper}>
-      <h5 className={s.headerWrapper__header}>
-        <Paragraph
-          value={typArr[0]}
-          className={s.headerWrapper__header}
-        />
-        <Paragraph
-          value={typArr[1]}
-          className={s.headerWrapper__header}
-        />
-      </h5>
+      <h2 className={s.headerWrapper__header}>
+        {typArr.map((text, index) => (
+          <Paragraph
+            key={`${text}-${index}`}
+            value={text}
+            className={s.headerWrapper__header}
+          />
+        ))}
+      </h2>
     </div>
   );
-}
+});
+
+ServicesHeader.displayName = 'ServicesHeader';
 
 export default ServicesHeader;
