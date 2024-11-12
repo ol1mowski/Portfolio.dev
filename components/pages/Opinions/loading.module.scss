@@ -1,0 +1,41 @@
+@import "@/style/index.scss";
+
+.loadingContainer {
+  width: 100%;
+  padding: 2rem;
+  @include d-flex-column;
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.skeleton {
+  width: 100%;
+  height: 200px;
+  background: $white;
+  border-radius: $border-med;
+  position: relative;
+  overflow: hidden;
+  box-shadow: $box-shadow;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+      90deg,
+      transparent 0,
+      rgba($white, 0.2) 20%,
+      rgba($white, 0.5) 60%,
+      transparent
+    );
+    animation: shimmer 2s infinite;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
