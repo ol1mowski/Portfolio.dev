@@ -1,30 +1,38 @@
 import s from "./Collaboration.page.module.scss";
 
-import Step from "./Step/Step.component";
+import dynamic from 'next/dynamic';
+
 import CollaborationHeader from "./CollaborationHeader/CollaborationHeader.component";
-import ColaborationCta from "./CollaborationCta/CollaborationCta.component";
 import { COLLABORATION_STEP } from "@/data/CollaborationStep.data";
+import type { CollaborationStepType } from "@/types/CollaborationStep";
 
 
-function Collaboration() {
+const Step = dynamic(() => import("./Step/Step.component"));
+const CollaborationCta = dynamic(() => import("./CollaborationCta/CollaborationCta.component"));
+
+const Collaboration = () => {
   return (
-    <section className={s.container}>
+    <section 
+      className={s.container}
+      aria-label="Etapy współpracy"
+    >
       <CollaborationHeader />
-      <section className={s.container__stepWrapper}>
-        {COLLABORATION_STEP.map((step) => (
+      <section 
+        className={s.container__stepWrapper}
+        role="list"
+        aria-label="Lista etapów współpracy"
+      >
+        {COLLABORATION_STEP.map((step: CollaborationStepType) => (
           <Step
-            reverse={step.reverse}
             key={step.id}
-            id={step.id}
-            title={step.title}
-            image={step.image}
-            description={step.description}
+            {...step}
           />
         ))}
       </section>
-      <ColaborationCta />
+      <CollaborationCta />
     </section>
   );
-}
+};
+
 
 export default Collaboration;

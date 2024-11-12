@@ -1,14 +1,17 @@
+import { memo } from 'react';
 import s from './CollaborationHeader.component.module.scss';
 
-function CollaborationHeader() {
+const CollaborationHeader = memo(() => {
   return (
-    <section className={s.contentSection}>
-      <h3 className={s.contentSection__h3}>WSPÓŁPRACA</h3>
-      <h4 className={s.contentSection__h4}>
+    <header className={s.contentSection}>
+      <h2 className={s.contentSection__h3}>WSPÓŁPRACA</h2>
+      <p className={s.contentSection__h4}>
         Zobacz Etapy Współpracy Ze Mną
-      </h4>
-    </section>
+      </p>
+    </header>
   );
-}
+});
+
+CollaborationHeader.displayName = 'CollaborationHeader';
 
 export default CollaborationHeader;

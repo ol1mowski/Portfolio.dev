@@ -30,7 +30,12 @@ export default async function Opinions() {
   const res = opinionsData[0].opinions;
 
   return (
-    <section id="opinions" className={s.container}>
+    <section 
+      id="opinions" 
+      className={s.container}
+      role="contentinfo"
+      aria-label="Opinie klientów"
+    >
       <SectionName />
       <OpinionHeader />
       <OpinionsWrapper>

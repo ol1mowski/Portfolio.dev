@@ -1,46 +1,36 @@
+import { memo } from 'react';
 import Image from "next/image";
 import s from "./Step.component.module.scss";
 import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
-import { type CollaborationStepType } from "@/types/CollaborationStep";
+import type { CollaborationStepType } from "@/types/CollaborationStep";
 
-function Step({ image, title, reverse, description }: CollaborationStepType) {
+const Step = memo(({ image, title, reverse, description, id }: CollaborationStepType) => {
+  const stepClass = `${s.step} ${reverse ? s.stepR : ''}`;
+
   return (
-    <>
-      {reverse ? (
-        <AnimationWrapper>
-          <section className={`${s.step} ${s.stepR}`}>
-            <Image
-              className={s.step__img}
-              src={image}
-              width={300}
-              height={300}
-              alt="step icon"
-            />
-            <section className={s.step__content}>
-              <h5 className={s.step__content__title}>{title}</h5>
-              <p className={s.step__content__description}>{description}</p>
-            </section>
-          </section>
-        </AnimationWrapper>
-      ) : (
-        <AnimationWrapper>
-          <section className={s.step}>
-            <Image
-              className={s.step__img}
-              src={image}
-              width={300}
-              height={300}
-              alt="step icon"
-            />
-            <section className={s.step__content}>
-              <h5 className={s.step__content__title}>{title}</h5>
-              <p className={s.step__content__description}>{description}</p>
-            </section>
-          </section>
-        </AnimationWrapper>
-      )}
-    </>
+    <AnimationWrapper>
+      <article 
+        className={stepClass}
+        role="listitem"
+        aria-label={`Krok ${id}: ${title}`}
+      >
+        <Image
+          className={s.step__img}
+          src={image}
+          width={300}
+          height={300}
+          alt={`Ilustracja dla kroku ${id}: ${title}`}
+          loading="lazy"
+        />
+        <section className={s.step__content}>
+          <h3 className={s.step__content__title}>{title}</h3>
+          <p className={s.step__content__description}>{description}</p>
+        </section>
+      </article>
+    </AnimationWrapper>
   );
-}
+});
+
+Step.displayName = 'Step';
 
 export default Step;

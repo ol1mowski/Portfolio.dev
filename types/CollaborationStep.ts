@@ -1,7 +1,11 @@
-export type CollaborationStepType = {
+export interface CollaborationStepType {
   id: number;
-  image: string;
   title: string;
   description: string;
+  image: string;
   reverse: boolean;
+}
+
+export interface StepProps extends CollaborationStepType {
+  className?: string;
 }

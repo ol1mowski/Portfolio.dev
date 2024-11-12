@@ -1,6 +1,6 @@
 import HomePage from "@/components/pages/HomePage/HomePage.page";
 
-import SubscribersAmount from "@/components/pages/SubscribersAmount/SubscribersAmount.page";
+import SubscribersAmount from "@/components/pages/Stats/Stats.page";
 import Contact from "@/components/pages/Contact/Contact.page";
 import Footer from "@/components/pages/Footer/Footer.page";
 import Opinions from "@/components/pages/Opinions/Opinions.page";
