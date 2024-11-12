@@ -9,7 +9,7 @@ import ServicesCta from "./ServicesCta/ServicesCta.component";
 import NumberOfService from "./NumberOfService/NumberOfService.component";
 import ServicesWrapper from "./ServicesWrapper/ServicesWrapper.component";
 
-const Services = memo(() => {
+const Services = () => {
   return (
     <section aria-label="Nasze usługi">
       {SERVICES.map((service: ServiceType) => (
@@ -25,8 +25,7 @@ const Services = memo(() => {
       ))}
     </section>
   );
-});
-
-Services.displayName = 'Services';
+};
+  
 
 export default Services;

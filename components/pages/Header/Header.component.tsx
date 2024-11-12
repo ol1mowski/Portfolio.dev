@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import dynamic from 'next/dynamic';
 import HeaderLogo from "./Logo/HeaderLogo.component";
 import NavBar from "./NavBar/NavBar.component";
@@ -10,7 +9,7 @@ const ShowMobileMenu = dynamic(() =>
   ssr: false
 });
 
-const Header = memo(() => {
+const Header = () => {
   return (
     <HeaderWrapper>
       <HeaderLogo />
@@ -18,8 +17,6 @@ const Header = memo(() => {
       <NavBar />
     </HeaderWrapper>
   );
-});
-
-Header.displayName = 'Header';
+};
 
 export default Header;

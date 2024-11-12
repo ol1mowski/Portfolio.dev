@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import dynamic from 'next/dynamic';
 
 import HomePageImageSection from "./HomePageImageSection/HomePageImageSection.component";
@@ -12,7 +11,7 @@ const TechStack = dynamic(() => import("./TechStack/TechStack.component"), {
   loading: () => <div>Loading technologies...</div>
 });
 
-const HomePage = memo(() => {
+const HomePage = () => {
   return (
     <HeroSectionWrapper>
       <MainSectionWrapper>
@@ -22,8 +21,6 @@ const HomePage = memo(() => {
       <TechStack />
     </HeroSectionWrapper>
   );
-});
-
-HomePage.displayName = 'HomePage';
+};
 
 export default HomePage;

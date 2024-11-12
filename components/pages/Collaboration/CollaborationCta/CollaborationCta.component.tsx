@@ -1,18 +1,31 @@
-import Button from "@/components/UI/Button/Button.component";
 import s from "./CollaborationCta.component.module.scss";
 
-function ColaborationCta() {
+import { memo } from 'react';
+import Button from "@/components/UI/Button/Button.component";
+
+const CollaborationCta = memo(() => {
   return (
-    <section className={s.cta}>
-      <h3 className={s.cta__header}>
+    <section 
+      className={s.cta}
+      aria-label="Sekcja kontaktowa"
+    >
+      <h2 className={s.cta__header}>
         Umów Się na <span className={s.cta__header__mark}>Darmową</span>{" "}
         Konsultację
-      </h3>
-      <a href="tel:+48 693 851 878">
-        <Button type="normal" value="Zadzwoń: 693 851 878" />
+      </h2>
+      <a 
+        href="tel:+48693851878"
+        aria-label="Zadzwoń teraz: 693 851 878"
+      >
+        <Button 
+          type="normal" 
+          value="Zadzwoń: 693 851 878"
+        />
       </a>
     </section>
   );
-}
+});
 
-export default ColaborationCta;
+CollaborationCta.displayName = 'CollaborationCta';
+
+export default CollaborationCta;
