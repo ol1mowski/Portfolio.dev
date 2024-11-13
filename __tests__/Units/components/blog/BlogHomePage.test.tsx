@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import HomePageComponent from "../../../components/pages/Blog/HomePage/HomePage.page";
+import HomePageComponent from "../../../../components/pages/Blog/HomePage/HomePage.page";
 import React from "react";
 
 jest.mock("next/image", () => ({

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import PostsComponent from '../../../components/pages/Blog/Posts/Posts.page';
+import PostsComponent from '../../../../components/pages/Blog/Posts/Posts.page';
 import React from 'react';
 
 jest.mock('next/image', () => ({

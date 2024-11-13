@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import HamburgerClickContext from "../../../store/HamburgerClickContext";
-import Header from "../../../components/pages/Blog/HeaderBlog/Header.component.page";
+import HamburgerClickContext from "../../../../store/HamburgerClickContext";
+import Header from "../../../../components/pages/Blog/HeaderBlog/Header.component.page";
 
 jest.mock("next/image", () => ({
   __esModule: true,
