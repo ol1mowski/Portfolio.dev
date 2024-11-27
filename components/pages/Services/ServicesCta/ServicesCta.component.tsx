@@ -30,7 +30,6 @@ const ServicesCta = memo(({ des }: ServicesCtaProps) => {
       >
         <Link 
           href="#contact" 
-          scroll={false}
           aria-label="Przejdź do formularza kontaktowego"
         >
           <Button 
