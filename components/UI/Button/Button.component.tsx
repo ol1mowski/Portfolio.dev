@@ -1,12 +1,16 @@
 import s from "./Button.component.module.scss";
 
+interface ButtonProps {
+  type: "small" | "normal" | "yt";
+  value: string;
+  onClick?: () => void;
+  "aria-label"?: string;
+}
+
 function Button({
   type,
   value,
-}: {
-  type: "normal" | "yt" | "small";
-  value: string;
-}) {
+}: ButtonProps) {
   let btnClass;
 
   switch (type) {

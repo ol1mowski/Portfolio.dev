@@ -7,7 +7,7 @@ function OpinionHeader() {
       <h3 className={s.headerWrapper__header}>
         <Paragraph
           className={s.headerWrapper__header}
-          value="Opinie Moich Klientów"
+          value="Ostatnie Opinie Moich Klientów"
         />
       </h3>
     </div>

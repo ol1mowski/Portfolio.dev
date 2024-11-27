@@ -1,34 +1,34 @@
 import { render, screen } from '@testing-library/react';
-import Opinions from '../../../components/pages/Opinions/Opinions.page';
-import Opinion from '../../../components/pages/Opinions/Opinion/Opinion.component';
+import Opinions from '../../../../components/pages/Opinions/Opinions.page';
+import Opinion from '../../../../components/pages/Opinions/Opinion/Opinion.component';
 import React from 'react';
 
 
-jest.mock('../../../db/Utils/DataFetchingFunctions/DataFetchingFunctions', () => ({
+jest.mock('../../../../db/Utils/DataFetchingFunctions/DataFetchingFunctions', () => ({
   getOpinions: jest.fn()
 }));
 
 
-jest.mock('../../../components/pages/Opinions/OpinionHeader/OpinionHeader.component', () => {
+jest.mock('../../../../components/pages/Opinions/OpinionHeader/OpinionHeader.component', () => {
   return function MockOpinionHeader() {
     return <div data-testid="opinion-header">Opinie Moich Klientów</div>;
   };
 });
 
-jest.mock('../../../components/pages/Opinions/SectionName/SectionName.component', () => {
+jest.mock('../../../../components/pages/Opinions/SectionName/SectionName.component', () => {
   return function MockSectionName() {
     return <div data-testid="section-name">Opinie</div>;
   };
 });
 
-jest.mock('../../../components/pages/Opinions/OpinionsWrapper/OpinionsWrapper.component', () => {
+jest.mock('../../../../components/pages/Opinions/OpinionsWrapper/OpinionsWrapper.component', () => {
   return function MockOpinionsWrapper({ children }: { children: React.ReactNode }) {
     return <div data-testid="opinions-wrapper">{children}</div>;
   };
 });
 
 
-jest.mock('../../../components/pages/Opinions/Opinion/Opinion.component', () => {
+jest.mock('../../../../components/pages/Opinions/Opinion/Opinion.component', () => {
   return function MockOpinion({ opinion }: any) {
     return (
       <article data-testid="opinion-item">
@@ -63,12 +63,12 @@ const mockOpinionsData = [{
 describe('Opinions Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
-    const { getOpinions } = require('../../../db/Utils/DataFetchingFunctions/DataFetchingFunctions');
+    const { getOpinions } = require('../../../../db/Utils/DataFetchingFunctions/DataFetchingFunctions');
     (getOpinions as jest.Mock).mockReset();
   });
 
   it('renders all opinions components correctly', async () => {
-    const { getOpinions } = require('../../../db/Utils/DataFetchingFunctions/DataFetchingFunctions');
+    const { getOpinions } = require('../../../../db/Utils/DataFetchingFunctions/DataFetchingFunctions');
     (getOpinions as jest.Mock).mockResolvedValue(mockOpinionsData);
 
     render(await Opinions());
@@ -85,7 +85,7 @@ describe('Opinions Component', () => {
   });
 
   it('shows error message when fetching fails', async () => {
-    const { getOpinions } = require('../../../db/Utils/DataFetchingFunctions/DataFetchingFunctions');
+    const { getOpinions } = require('../../../../db/Utils/DataFetchingFunctions/DataFetchingFunctions');
     (getOpinions as jest.Mock).mockRejectedValue(new Error('Failed to fetch'));
 
     render(await Opinions());
@@ -94,7 +94,7 @@ describe('Opinions Component', () => {
   });
 
   it('shows error message when no opinions data is returned', async () => {
-    const { getOpinions } = require('../../../db/Utils/DataFetchingFunctions/DataFetchingFunctions');
+    const { getOpinions } = require('../../../../db/Utils/DataFetchingFunctions/DataFetchingFunctions');
     (getOpinions as jest.Mock).mockResolvedValue([]);
 
     render(await Opinions());
@@ -103,7 +103,7 @@ describe('Opinions Component', () => {
   });
 
   it('renders with correct section id', async () => {
-    const { getOpinions } = require('../../../db/Utils/DataFetchingFunctions/DataFetchingFunctions');
+    const { getOpinions } = require('../../../../db/Utils/DataFetchingFunctions/DataFetchingFunctions');
     (getOpinions as jest.Mock).mockResolvedValue(mockOpinionsData);
 
     render(await Opinions());

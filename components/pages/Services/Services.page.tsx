@@ -1,5 +1,3 @@
-import { memo } from 'react';
-
 import type { ServiceType } from '@/types/Services.type';
 import { SERVICES } from "@/data/Services.data";
 

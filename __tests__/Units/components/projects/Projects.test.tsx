@@ -1,14 +1,14 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import Projects from '../../../components/pages/Projects/Projects.page';
+import Projects from '../../../../components/pages/Projects/Projects.page';
 import React from 'react';
 
-jest.mock('../../../components/pages/Projects/ProjectHeader/ProjectHeader.component', () => {
+jest.mock('../../../../components/pages/Projects/ProjectHeader/ProjectHeader.component', () => {
   return function MockProjectHeader() {
     return <div data-testid="project-header">Projects Header</div>;
   };
 });
 
-jest.mock('../../../components/pages/Projects/ProjectContainer/ProjectContainer.component', () => {
+jest.mock('../../../../components/pages/Projects/ProjectContainer/ProjectContainer.component', () => {
   return function MockProjectContainer(props: any) {
     return (
       <div data-testid="project-container">
@@ -19,7 +19,7 @@ jest.mock('../../../components/pages/Projects/ProjectContainer/ProjectContainer.
   };
 });
 
-jest.mock('../../../components/pages/Projects/ProjectsWrapper/ProjectsWrapper.component', () => {
+jest.mock('../../../../components/pages/Projects/ProjectsWrapper/ProjectsWrapper.component', () => {
   return function MockProjectsWrapper({ children }: { children: React.ReactNode }) {
     return <div data-testid="projects-wrapper">{children}</div>;
   };

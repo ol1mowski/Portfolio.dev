@@ -1,6 +1,6 @@
 import React from "react";
-import MobileMenuHeader from "../../../components/pages/Header/MobileMenu/MobileMenuHeader.component";
-import HamburgerClickContext from "../../../store/HamburgerClickContext";
+import MobileMenuHeader from "../../../../components/pages/Header/MobileMenu/MobileMenuHeader.component";
+import HamburgerClickContext from "../../../../store/HamburgerClickContext";
 import { render, screen, fireEvent } from "@testing-library/react";
 
 jest.mock("next/image", () => ({
@@ -10,7 +10,7 @@ jest.mock("next/image", () => ({
   },
 }));
 
-jest.mock("../../../data/MenuItems.data.ts", () => ({
+jest.mock("../../../../data/MenuItems.data.ts", () => ({
   menuItems: [
     { to: "/home", label: "Home" },
     { to: "/about", label: "O mnie" },

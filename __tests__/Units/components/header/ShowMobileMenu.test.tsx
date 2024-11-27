@@ -1,7 +1,7 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
-import ShowMobileMenu from "../../../components/pages/Header/ShowMobileMenu/ShowMobileMenu.component";
-import HamburgerClickContext from "../../../store/HamburgerClickContext";
+import { render, screen } from "@testing-library/react";
+import ShowMobileMenu from "../../../../components/pages/Header/ShowMobileMenu/ShowMobileMenu.component";
+import HamburgerClickContext from "../../../../store/HamburgerClickContext";
 
 jest.mock("next/image", () => ({
   __esModule: true,
@@ -14,7 +14,7 @@ jest.mock("next/image", () => ({
   },
 }));
 
-jest.mock("../../../components/pages/Header/MobileMenu/MobileMenuHeader.component", () => () => <div data-testid="mobile-menu-header">Mobile Menu Header</div>);
+jest.mock("../../../../components/pages/Header/MobileMenu/MobileMenuHeader.component", () => () => <div data-testid="mobile-menu-header">Mobile Menu Header</div>);
 
 describe("ShowMobileMenu Component", () => {
   it("renders the hamburger icon", () => {
