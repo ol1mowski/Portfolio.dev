@@ -39,13 +39,13 @@ async function page() {
           </section>
         </section>
         <section className={s.container__image}>
-          {/* <Image
+          <Image
             src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1732810234/Portfolio/images/notakta_cbzgxr.webp"
             className={s.container__image__img}
             alt="bezpłatny ebook projektowanie stron internetowych"
             width={300}
-            height={400}
-          /> */}
+            height={420}
+          />
         </section>
       </section>
       <Footer />
