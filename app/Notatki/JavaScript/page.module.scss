@@ -79,5 +79,10 @@
   }
   &__image__img {
     box-shadow: $box-shadow;
+    border-radius: $border-med;
+    @media screen and (min-width: $desktop) {
+      width: 410px;
+      height: 520px;
+    }
   }
 }

@@ -43,8 +43,8 @@ async function page() {
             src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1732810234/Portfolio/images/notakta_cbzgxr.webp"
             className={s.container__image__img}
             alt="bezpłatne notatki z JavaScript"
-            width={335}
-            height={460}
+            width={300}
+            height={400}
           />
         </section>
       </section>
