@@ -35,7 +35,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
   const { session } = await validateSession();
   
   if (!session) {
-    redirect("/Ebook");
+    redirect("/");
   }
   
   const { name } = session;

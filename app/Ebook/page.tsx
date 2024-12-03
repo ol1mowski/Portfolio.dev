@@ -20,7 +20,7 @@ async function page() {
   const { session } = await validateSession();
 
   if (session) {
-    redirect("/Thanks?ebook");
+    redirect("/Thanks/ebook");
   }
 
   return (
