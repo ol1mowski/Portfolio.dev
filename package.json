@@ -6,7 +6,7 @@
     "dev": "npm run check-env && next dev",
     "build": "next build",
     "test-unit": "jest",
-    "test-e2e": "sudo npx playwright test --ui",
+    "test-e2e": "npx playwright test --ui",
     "start": "next start",
     "lint": "next lint",
     "check-env": "node -r dotenv/config scripts/check-env.js",
