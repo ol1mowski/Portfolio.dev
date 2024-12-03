@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react";
 import FormComponent from "./Form.component";
-import { redirect } from "next/navigation";
 import Success from "@/components/UI/Success/Success.component";
 
 function Form({ action }: { action: (formData: FormData) => Promise<void> }) {
