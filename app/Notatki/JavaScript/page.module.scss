@@ -13,9 +13,6 @@
     margin-left: 0;
     margin-top: 5vh;
   }
-  @media screen and (min-width: $large-desktop) {
-    margin-left: 25vw;
-  }
   &__form {
     margin-top: 5vh;
     width: 20rem;
@@ -23,6 +20,9 @@
       width: 100%;
       @include d-flex-column;
       align-items: flex-start;
+    }
+    @media screen and (min-width: $large-desktop) {
+      align-items: center;
     }
   }
   &__content {

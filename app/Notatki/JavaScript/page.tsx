@@ -30,7 +30,7 @@ async function page() {
         <section className={s.container__content}>
           <section className={s.container__content__header}>
             <h2 className={s.container__content__header__title}>
-              Jeszcze Tylko Jeden Krok
+              Jeszcze Tylko <br /> Jeden Krok
             </h2>
             <span className={s.container__content__header__line}></span>
           </section>
@@ -43,8 +43,8 @@ async function page() {
             src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1732810234/Portfolio/images/notakta_cbzgxr.webp"
             className={s.container__image__img}
             alt="bezpłatne notatki z JavaScript"
-            width={300}
-            height={420}
+            width={335}
+            height={460}
           />
         </section>
       </section>
