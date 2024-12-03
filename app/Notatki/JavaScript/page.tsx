@@ -42,7 +42,7 @@ async function page() {
           <Image
             src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1732810234/Portfolio/images/notakta_cbzgxr.webp"
             className={s.container__image__img}
-            alt="bezpłatny ebook projektowanie stron internetowych"
+            alt="bezpłatne notatki z JavaScript"
             width={300}
             height={420}
           />
