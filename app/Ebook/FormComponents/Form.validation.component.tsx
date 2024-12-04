@@ -3,9 +3,10 @@
 import { useRef, useState } from "react";
 import FormComponent from "./Form.component";
 import Success from "@/components/UI/Success/Success.component";
-import { redirect } from "next/navigation";
+import { useRouter } from 'next/navigation';
 
 function Form({ action, slug }: { action: (formData: FormData) => Promise<void>, slug: string }) {
+  const router = useRouter();
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
@@ -62,7 +63,8 @@ function Form({ action, slug }: { action: (formData: FormData) => Promise<void>,
       if (privacy.current) privacy.current.checked = false;
 
       setSuccess("Udało się! Wkrótce otrzymasz mojego E-booka!");
-      redirect(`/Thanks/${slug}`);
+      
+      router.push(`/Thanks/${slug}`);
     } catch (err) {
       console.error("Form submission error:", err);
       setError(
