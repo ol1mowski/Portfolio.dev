@@ -10,12 +10,7 @@ const MONGODB_OPTIONS = {
   maxPoolSize: process.env.NODE_ENV === 'production' ? 50 : 10,
   retryWrites: true,
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-  retryReads: true,
-  w: 'majority',
-  wtimeout: 2500,
-  keepAlive: true,
-  keepAliveInitialDelay: 300000
+  useUnifiedTopology: true
 };
 
 if (!MONGODB_URI) {
@@ -52,7 +47,7 @@ async function dbConnect() {
           throw error;
         }
         console.log(`Retrying connection... ${retries} attempts left`);
-        await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5s before retry
+        await new Promise(resolve => setTimeout(resolve, 5000));
       }
     }
   }
