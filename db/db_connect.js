@@ -1,8 +1,14 @@
-require("dotenv").config({
-  path: process.env.NODE_ENV === "test" ? "../.env.test" : "../.env",
-});
+require("dotenv").config();
 const mongoose = require("mongoose");
+
 const MONGODB_URI = process.env.DB_URL;
+const MONGODB_OPTIONS = {
+  serverSelectionTimeoutMS: 5000,
+  socketTimeoutMS: 45000,
+  connectTimeoutMS: 10000,
+  maxPoolSize: 10,
+  retryWrites: true,
+};
 
 if (!MONGODB_URI) {
   throw new Error("Please define the DB_URL environment variable");
@@ -21,29 +27,41 @@ async function dbConnect() {
 
   if (!cached.promise) {
     const opts = {
-      bufferCommands: true,
-      serverSelectionTimeoutMS: 30000,
-      socketTimeoutMS: 60000,
-      connectTimeoutMS: 30000,
-      maxPoolSize: 10,
-      retryWrites: true,
+      bufferCommands: false,
+      ...MONGODB_OPTIONS
     };
 
-    try {
-      cached.promise = mongoose.connect(MONGODB_URI, opts);
-      cached.conn = await cached.promise;
-      console.log("Successfully connected to MongoDB");
-      return cached.conn;
-    } catch (e) {
-      cached.promise = null;
-      console.error("Error connecting to MongoDB:", e);
-      throw e;
-    }
+    cached.promise = mongoose.connect(MONGODB_URI, opts)
+      .then((mongoose) => {
+        console.log("Connected to MongoDB");
+        return mongoose;
+      })
+      .catch((error) => {
+        console.error("Error connecting to MongoDB:", error);
+        cached.promise = null;
+        throw error;
+      });
   }
 
-  return cached.conn;
+  try {
+    cached.conn = await cached.promise;
+    return cached.conn;
+  } catch (error) {
+    cached.promise = null;
+    throw error;
+  }
 }
 
+process.on('SIGINT', async () => {
+  try {
+    await mongoose.connection.close();
+    console.log('MongoDB connection closed through app termination');
+    process.exit(0);
+  } catch (err) {
+    console.error('Error closing MongoDB connection:', err);
+    process.exit(1);
+  }
+});
 
 module.exports = {
   dbConnect,
