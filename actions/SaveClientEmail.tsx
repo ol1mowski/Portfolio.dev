@@ -35,5 +35,4 @@ export const saveClientData = async (formData: FormData) => {
 
   saveClientToDB({ name: name, email: email });
   await createAuthSession(email, name);
-  redirect("/Thanks");
 };

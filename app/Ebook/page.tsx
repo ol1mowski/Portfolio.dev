@@ -35,7 +35,7 @@ async function page() {
             <span className={s.container__content__header__line}></span>
           </section>
           <section className={s.container__form}>
-            <ClientForm action={saveClientData} />
+            <ClientForm action={saveClientData} slug="ebook" />
           </section>
         </section>
         <section className={s.container__image}>

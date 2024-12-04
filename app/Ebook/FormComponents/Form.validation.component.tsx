@@ -3,8 +3,9 @@
 import { useRef, useState } from "react";
 import FormComponent from "./Form.component";
 import Success from "@/components/UI/Success/Success.component";
+import { redirect } from "next/navigation";
 
-function Form({ action }: { action: (formData: FormData) => Promise<void> }) {
+function Form({ action, slug }: { action: (formData: FormData) => Promise<void>, slug: string }) {
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
@@ -52,18 +53,23 @@ function Form({ action }: { action: (formData: FormData) => Promise<void> }) {
     const formData = new FormData(event.currentTarget);
 
     try {
-      console.log('Submitting form data...');
+      console.log("Submitting form data...");
       await action(formData);
-      console.log('Form submitted successfully');
-      
+      console.log("Form submitted successfully");
+
       if (name.current) name.current.value = "";
       if (email.current) email.current.value = "";
       if (privacy.current) privacy.current.checked = false;
-      
+
       setSuccess("Udało się! Wkrótce otrzymasz mojego E-booka!");
+      redirect(`/Thanks/${slug}`);
     } catch (err) {
-      console.error('Form submission error:', err);
-      setError(err instanceof Error ? err.message : "[-] Coś Poszło Nie Tak, Spróbuj ponownie");
+      console.error("Form submission error:", err);
+      setError(
+        err instanceof Error
+          ? err.message
+          : "[-] Coś Poszło Nie Tak, Spróbuj ponownie"
+      );
     } finally {
       setIsPending(false);
     }
