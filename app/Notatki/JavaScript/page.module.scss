@@ -4,14 +4,13 @@
   @include d-flex-column;
   align-self: flex-start;
   gap: 3rem;
-  margin-top: 15vh;
   @media screen and (min-width: $desktop) {
     flex-direction: row;
     gap: 5rem;
     justify-content: center;
     width: 100%;
     margin-left: 0;
-    margin-top: 5vh;
+    margin-block: 15vh;
   }
   &__form {
     margin-top: 5vh;
@@ -78,11 +77,10 @@
     }
   }
   &__image__img {
-    box-shadow: $box-shadow;
     border-radius: $border-med;
     @media screen and (min-width: $desktop) {
-      width: 410px;
-      height: 520px;
+      width: 350px;
+      height: 600px;
     }
   }
 }

@@ -40,11 +40,11 @@ async function page() {
         </section>
         <section className={s.container__image}>
           <Image
-            src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1732810234/Portfolio/images/notakta_cbzgxr.webp"
+            src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1733296719/notakta_cbzgxr_1_fomxx6.svg"
             className={s.container__image__img}
             alt="bezpłatne notatki z JavaScript"
-            width={300}
-            height={400}
+            width={250}
+            height={370}
           />
         </section>
       </section>
