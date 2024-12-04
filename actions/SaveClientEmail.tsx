@@ -3,35 +3,43 @@ import { createAuthSession } from "../lib/auth";
 
 export const saveClientData = async (formData: FormData) => {
   "use server";
-  const email = formData.get("email") as string;
-  const name = formData.get("name") as string;
-  let errors: string[] = [];
+  
+  try {
+    const email = formData.get("email") as string;
+    const name = formData.get("name") as string;
 
-  if (!email || typeof email !== "string" || email.trim().length === 0) {
-    errors.push("Email is required.");
-  } else {
+    if (!email || !name) {
+      throw new Error("Missing required fields");
+    }
+
+    // Walidacja email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email.trim())) {
-      errors.push("Invalid email format.");
+      throw new Error("Invalid email format");
     }
+
+    // Zapisz do bazy danych
+    const savedClient = await saveClientToDB({ 
+      name: name.trim(), 
+      email: email.trim() 
+    });
+
+    if (!savedClient) {
+      throw new Error("Failed to save client data");
+    }
+
+    // Utwórz sesję
+    const sessionResult = await createAuthSession(email, name);
+    
+    if (!sessionResult.success) {
+      throw new Error("Failed to create session");
+    }
+
+    console.log("Client saved successfully:", { name, email });
+    return { success: true };
+
+  } catch (error) {
+    console.error("Error in saveClientData:", error);
+    throw error;
   }
-
-  if (!name || typeof name !== "string" || name.trim().length === 0) {
-    errors.push("Name is required.");
-  }
-
-  if (errors.length > 0) {
-    throw new Error("Error: " + JSON.stringify(errors));
-  }
-
-  console.log("Saving email:", email.trim());
-  console.log("Saving name:", name.trim());
-
-  console.log('Environment check:', {
-    hasJwtSecret: !!process.env.JWT_SECRET,
-    nodeEnv: process.env.NODE_ENV
-  });
-
-  saveClientToDB({ name: name, email: email });
-  await createAuthSession(email, name);
 };

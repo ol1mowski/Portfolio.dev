@@ -5,7 +5,7 @@ import FormComponent from "./Form.component";
 import Success from "@/components/UI/Success/Success.component";
 import { useRouter } from 'next/navigation';
 
-function Form({ action, slug }: { action: (formData: FormData) => Promise<void>, slug: string }) {
+function Form({ action, slug }: { action: (formData: FormData) => Promise<{ success: boolean } | void>, slug: string }) {
   const router = useRouter();
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -54,17 +54,18 @@ function Form({ action, slug }: { action: (formData: FormData) => Promise<void>,
     const formData = new FormData(event.currentTarget);
 
     try {
-      console.log("Submitting form data...");
-      await action(formData);
-      console.log("Form submitted successfully");
-
-      if (name.current) name.current.value = "";
-      if (email.current) email.current.value = "";
-      if (privacy.current) privacy.current.checked = false;
-
-      setSuccess("Udało się! Wkrótce otrzymasz mojego E-booka!");
+      const result = await action(formData);
       
-      router.push(`/Thanks/${slug}`);
+      if (result?.success) {
+        if (name.current) name.current.value = "";
+        if (email.current) email.current.value = "";
+        if (privacy.current) privacy.current.checked = false;
+
+        setSuccess("Udało się! Wkrótce otrzymasz mojego E-booka!");
+        router.push(`/Thanks/${slug}`);
+      } else {
+        throw new Error("Failed to save data");
+      }
     } catch (err) {
       console.error("Form submission error:", err);
       setError(

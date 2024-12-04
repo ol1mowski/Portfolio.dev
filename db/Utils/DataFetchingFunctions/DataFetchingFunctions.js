@@ -37,17 +37,29 @@ async function getOpinions() {
 }
 
 async function saveClientToDB({ name, email }) {
-  await dbConnect();
-  const { Customers } = require("../../Schemas/Clients");
-
   try {
+    await dbConnect();
+    const { Customers } = require("../../Schemas/Clients");
+
+    // Sprawdź czy klient już istnieje
+    const existingCustomer = await Customers.findOne({ email: email.trim() });
+    
+    if (existingCustomer) {
+      console.log("Customer already exists:", existingCustomer);
+      return existingCustomer;
+    }
+
+    // Utwórz nowego klienta
     const newCustomer = new Customers({
       name: name.trim(),
       email: email.trim(),
+      createdAt: new Date()
     });
 
+    // Zapisz do bazy
     const savedCustomer = await newCustomer.save();
-    console.log("Customer saved:", savedCustomer);
+    console.log("New customer saved:", savedCustomer);
+    
     return savedCustomer;
   } catch (error) {
     console.error("Error in saveClientToDB:", error);
