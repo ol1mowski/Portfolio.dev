@@ -1,4 +1,3 @@
-import { redirect } from "next/navigation";
 import { saveClientToDB } from "../db/Utils/DataFetchingFunctions/DataFetchingFunctions";
 import { createAuthSession } from "../lib/auth";
 
