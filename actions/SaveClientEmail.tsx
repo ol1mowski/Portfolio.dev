@@ -12,13 +12,11 @@ export const saveClientData = async (formData: FormData) => {
       throw new Error("Missing required fields");
     }
 
-    // Walidacja email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email.trim())) {
       throw new Error("Invalid email format");
     }
 
-    // Zapisz do bazy danych
     const savedClient = await saveClientToDB({ 
       name: name.trim(), 
       email: email.trim() 
@@ -28,7 +26,6 @@ export const saveClientData = async (formData: FormData) => {
       throw new Error("Failed to save client data");
     }
 
-    // Utwórz sesję
     const sessionResult = await createAuthSession(email, name);
     
     if (!sessionResult.success) {
