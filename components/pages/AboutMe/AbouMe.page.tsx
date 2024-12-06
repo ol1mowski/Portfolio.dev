@@ -1,6 +1,6 @@
 import AboutMeWrapper from "./AboutMeWrapper/AboutMeWrapper.component";
 import InfoAboutMe from "./InfoAboutMe/InfoAboutMe.component";
-import SecondSection from "./SecondSection/SecondSection.component";
+import SecondSection from "./StatsWrapperSection/SecondSection.component";
 
 function AbourMe() {
   return (

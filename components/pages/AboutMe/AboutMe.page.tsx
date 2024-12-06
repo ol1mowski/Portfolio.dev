@@ -3,7 +3,7 @@ import AboutMeWrapper from "./AboutMeWrapper/AboutMeWrapper.component";
 import InfoAboutMe from "./InfoAboutMe/InfoAboutMe.component";
 
 const SecondSection = dynamic(
-  () => import("./SecondSection/SecondSection.component"),
+  () => import("./StatsWrapperSection/SecondSection.component"),
   {
     loading: () => <div>Loading...</div>,
   }
