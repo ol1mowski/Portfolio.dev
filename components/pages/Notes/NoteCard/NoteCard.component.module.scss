@@ -1,0 +1,64 @@
+@import "@/style/index.scss";
+
+.noteCard {
+  @include d-flex-column;
+  gap: 3rem;
+  padding: 1rem;
+  border-radius: $border-med;
+  background-color: $white;
+  box-shadow: $box-shadow;
+  transition: transform 0.3s ease;
+  width: 300px;
+  margin: 0 auto;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &__imageWrapper {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__content {
+    @include d-flex-column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .noteCard {
+    width: 100%;
+    max-width: 400px;
+
+    &__imageWrapper {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4/3;
+    }
+  }
+} 

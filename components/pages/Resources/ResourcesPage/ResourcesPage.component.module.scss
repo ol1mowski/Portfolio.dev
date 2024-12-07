@@ -1,0 +1,22 @@
+@import "@/style/index.scss";
+
+.container {
+  @include d-flex-column;
+  padding: 2rem;
+  gap: 3rem;
+  
+  &__header {
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    font-weight: 600;
+    color: $dark-blue;
+  }
+}
+
+.resourcesGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+} 
