@@ -1,25 +1,37 @@
-import { saveClientToDB } from "../db/Utils/DataFetchingFunctions/DataFetchingFunctions";
-import { createAuthSession } from "../lib/auth";
+import { saveClientToDB } from "@/db/Utils/DataFetchingFunctions/DataFetchingFunctions";
+import { createAuthSession } from "@/lib/auth";
+import { validateEmail } from "@/utils/validation";
 
-export const saveClientData = async (formData: FormData) => {
+interface SaveClientDataResponse {
+  success: boolean;
+  error?: string;
+}
+
+export async function saveClientData(
+  formData: FormData
+): Promise<SaveClientDataResponse> {
   "use server";
-  
+
   try {
-    const email = formData.get("email") as string;
-    const name = formData.get("name") as string;
+    const email = formData.get("email")?.toString().trim();
+    const name = formData.get("name")?.toString().trim();
 
     if (!email || !name) {
-      throw new Error("Missing required fields");
+      return {
+        success: false,
+        error: "Missing required fields"
+      };
     }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.trim())) {
-      throw new Error("Invalid email format");
+    if (!validateEmail(email)) {
+      return {
+        success: false,
+        error: "Invalid email format"
+      };
     }
 
     const savedClient = await saveClientToDB({ 
-      name: name.trim(), 
-      email: email.trim() 
+      name, 
+      email 
     });
 
     if (!savedClient) {
@@ -32,11 +44,15 @@ export const saveClientData = async (formData: FormData) => {
       throw new Error("Failed to create session");
     }
 
-    console.log("Client saved successfully:", { name, email });
-    return { success: true };
+    return { 
+      success: true 
+    };
 
   } catch (error) {
     console.error("Error in saveClientData:", error);
-    throw error;
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "An unknown error occurred"
+    };
   }
-};
+}
