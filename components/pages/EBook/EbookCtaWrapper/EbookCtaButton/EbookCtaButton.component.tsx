@@ -9,7 +9,7 @@ const EbookCtaButton = memo(() => {
   return (
     <section className={s.buttonWrapper}>
       <Link 
-        href="/Ebook" 
+        href="/Ebooki/Praktyczne_Porady_Na_Co_Zwrocic_Uwage_Podczas_Projektowania_Strony_Internetowej" 
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Odbierz bezpłatny E-book"
