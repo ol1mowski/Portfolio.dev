@@ -18,12 +18,10 @@ describe('SaveClientEmail Action', () => {
   });
 
   it('should successfully save valid client data', async () => {
-
     const mockSavedClient = { id: '1', name: 'Test User', email: 'test@example.com' };
     vi.mocked(saveClientToDB).mockResolvedValue(mockSavedClient);
     vi.mocked(createAuthSession).mockResolvedValue({ success: true });
 
- 
     const formData = new FormData();
     formData.append('name', 'Test User');
     formData.append('email', 'test@example.com');
