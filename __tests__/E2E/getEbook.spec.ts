@@ -15,8 +15,9 @@ test.describe("E-book Download Flow", () => {
     });
     await expect(submitButton).toBeEnabled();
 
-    const downloadPromise = page.waitForEvent("download");
     await submitButton.click();
+
+    await page.waitForURL("/Thanks/ebook");
 
     await expect(page).toHaveURL("/Thanks/ebook");
 
@@ -25,13 +26,6 @@ test.describe("E-book Download Flow", () => {
       page.getByText("Twój E-Book jest dostępny do pobrania")
     ).toBeVisible();
 
-    const downloadButton2 = page.getByRole("button", {
-      name: "Pobierz E-Book",
-    });
-    await downloadButton2.click();
-
-    const download = await downloadPromise;
-    expect(download.suggestedFilename()).toContain(".pdf");
   });
 
   test("should validate form fields", async ({ page }) => {

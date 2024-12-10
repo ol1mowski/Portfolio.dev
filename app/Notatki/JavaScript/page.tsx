@@ -42,6 +42,7 @@ async function page() {
             alt="bezpłatne notatki z JavaScript"
             width={250}
             height={370}
+            priority
           />
         </section>
       </section>

@@ -42,6 +42,7 @@ async function page() {
             alt="bezpłatny ebook projektowanie stron internetowych"
             width={500}
             height={600}
+            priority
           />
         </section>
       </section>
