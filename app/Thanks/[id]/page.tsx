@@ -1,9 +1,7 @@
 import s from "./page.module.scss";
-
 import Footer from "@/components/pages/Footer/Footer.page";
 import Button from "@/components/UI/Button/Button.component";
 import Header from "@/components/pages/Header/Header.component";
-
 import { redirect } from "next/navigation";
 import { validateSession } from "@/lib/auth";
 
@@ -30,40 +28,47 @@ const getContentByType = (type: string): ContentType | null => {
   return content[type] || null;
 };
 
-const Page = async ({ params }: { params: { id: string } }) => {
-  const { id } = params;
-  const { session } = await validateSession();
-  
-  if (!session) {
+type Params = Promise<{ id: string }>
+
+export default async function Page({ params }: { params: Params }) {
+
+  const { id } = await params;
+
+  try {
+    const { session } = await validateSession();
+    
+    if (!session) {
+      redirect("/");
+    }
+
+    const contentType = id.toLowerCase();
+    const content = getContentByType(contentType);
+
+    if (!content) {
+      redirect("/404");
+    }
+
+    const { description, buttonText, downloadPath } = content;
+
+    return (
+      <>
+        <Header />
+        <section className={s.container}>
+          <h1 className={s.container__header}>
+            Dziękuję {session.name}!
+          </h1>
+          <p className={s.container__text}>
+            {description}
+          </p>
+          <a href={downloadPath} download>
+            <Button type="normal" value={buttonText} />
+          </a>
+        </section>
+        <Footer />
+      </>
+    );
+  } catch (error) {
+    console.error('Error in Thanks page:', error);
     redirect("/");
   }
-  
-  const { name } = session;
-  const content = getContentByType(id.toLowerCase());
-
-  if (!content) {
-    redirect("/404");
-  }
-
-  const { description, buttonText, downloadPath } = content;
-
-  return (
-    <>
-      <Header />
-      <section className={s.container}>
-        <h1 className={s.container__header}>
-          Dziękuję {name}!
-        </h1>
-        <p className={s.container__text}>
-          {description}
-        </p>
-        <a href={downloadPath} download>
-          <Button type="normal" value={buttonText} />
-        </a>
-      </section>
-      <Footer />
-    </>
-  );
-};
-
-export default Page;
+}

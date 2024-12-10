@@ -10,10 +10,7 @@ import { validateSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
 const ClientForm = dynamic(
-  () => import("../../../components/Utils/Text-component/FormComponents/Form.validation.component"),
-  {
-    ssr: false,
-  }
+  () => import("../../../components/Utils/FormComponents/Form.validation.component")
 );
 
 async function page() {
@@ -45,6 +42,7 @@ async function page() {
             alt="bezpłatny ebook projektowanie stron internetowych"
             width={500}
             height={600}
+            priority
           />
         </section>
       </section>

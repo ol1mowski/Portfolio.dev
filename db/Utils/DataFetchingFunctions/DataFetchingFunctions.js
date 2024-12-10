@@ -2,36 +2,36 @@ const { Projects } = require("../../Schemas/Projects");
 const { Opinions } = require("../../Schemas/Opinions");
 const { dbConnect } = require("../../db_connect");
 
-async function getProjects() {
-  await dbConnect();
+async function getOpinions() {
   try {
-    const data = await Projects.find();
+    await dbConnect();
+    const data = await Opinions.find().lean().exec();
     return data;
-  } catch (e) {
-    console.error("Error fetching projects:", e);
+  } catch (error) {
+    console.error("Error fetching opinions:", error);
+    return null;
+  }
+}
+
+async function getProjects() {
+  try {
+    await dbConnect();
+    const data = await Projects.find().lean().exec();
+    return data;
+  } catch (error) {
+    console.error("Error fetching projects:", error);
     return null;
   }
 }
 
 async function getPosts() {
-  await dbConnect();
-  const { Posts } = require("../../Schemas/Posts");
   try {
-    const data = await Posts.find();
+    await dbConnect();
+    const { Posts } = require("../../Schemas/Posts");
+    const data = await Posts.find().lean().exec();
     return data;
-  } catch (e) {
-    console.error("Error fetching posts:", e);
-    return null;
-  }
-}
-
-async function getOpinions() {
-  await dbConnect();
-  try {
-    const data = await Opinions.find();
-    return data;
-  } catch (e) {
-    console.error("Error fetching opinions:", e);
+  } catch (error) {
+    console.error("Error fetching posts:", error);
     return null;
   }
 }
@@ -41,25 +41,21 @@ async function saveClientToDB({ name, email }) {
     await dbConnect();
     const { Customers } = require("../../Schemas/Clients");
 
-    // Sprawdź czy klient już istnieje
-    const existingCustomer = await Customers.findOne({ email: email.trim() });
+    const existingCustomer = await Customers.findOne({ 
+      email: email.trim() 
+    }).lean();
     
     if (existingCustomer) {
-      console.log("Customer already exists:", existingCustomer);
       return existingCustomer;
     }
 
-    // Utwórz nowego klienta
     const newCustomer = new Customers({
       name: name.trim(),
       email: email.trim(),
       createdAt: new Date()
     });
 
-    // Zapisz do bazy
     const savedCustomer = await newCustomer.save();
-    console.log("New customer saved:", savedCustomer);
-    
     return savedCustomer;
   } catch (error) {
     console.error("Error in saveClientToDB:", error);
@@ -69,7 +65,7 @@ async function saveClientToDB({ name, email }) {
 
 module.exports = {
   getProjects,
-  saveClientToDB,
-  getPosts,
   getOpinions,
+  getPosts,
+  saveClientToDB,
 };

@@ -6,7 +6,7 @@ import HeaderWrapper from "./HeaderWrapper/HeaderWrapper.component";
 
 const ShowMobileMenu = dynamic(() => 
   import("./ShowMobileMenu/ShowMobileMenu.component"), {
-  ssr: false
+  ssr: true
 });
 
 const Header = () => {

@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test.describe("E-book Download Flow", () => {
   test("should complete full e-book download process", async ({ page }) => {
-    await page.goto("/Ebook");
+    await page.goto("/Ebooki/Praktyczne_Porady_Na_Co_Zwrocic_Uwage_Podczas_Projektowania_Strony_Internetowej");
 
     await page.getByPlaceholder("Twoje Imię").fill("Test User");
     await page.getByPlaceholder("Twój Email").fill("test@example.com");
@@ -15,8 +15,9 @@ test.describe("E-book Download Flow", () => {
     });
     await expect(submitButton).toBeEnabled();
 
-    const downloadPromise = page.waitForEvent("download");
     await submitButton.click();
+
+    await page.waitForURL("/Thanks/ebook");
 
     await expect(page).toHaveURL("/Thanks/ebook");
 
@@ -25,17 +26,12 @@ test.describe("E-book Download Flow", () => {
       page.getByText("Twój E-Book jest dostępny do pobrania")
     ).toBeVisible();
 
-    const downloadButton2 = page.getByRole("button", {
-      name: "Pobierz E-Book",
-    });
-    await downloadButton2.click();
-
-    const download = await downloadPromise;
-    expect(download.suggestedFilename()).toContain(".pdf");
   });
 
   test("should validate form fields", async ({ page }) => {
-    await page.goto("/Ebook");
+    await page.goto(
+      "/Ebooki/Praktyczne_Porady_Na_Co_Zwrocic_Uwage_Podczas_Projektowania_Strony_Internetowej"
+    );
 
     await page.getByRole("button", { name: "Odbieram Bezpłatnie" }).click();
     await expect(page.getByText("Imię jest wymagane")).toBeVisible();

@@ -1,9 +1,11 @@
 'use client'
 
-import { memo, useCallback } from 'react';
-import Image from "next/image";
 import s from "./MobileMenuHeader.component.module.scss";
-import { useContext } from "react";
+
+import { memo, useCallback, useContext } from 'react';
+
+import Image from "next/image";
+
 import HamburgerClickContext from "@/store/HamburgerClickContext";
 import MenuItem from "../MenuItem/MenuItem.component";
 import { menuItems } from "@/data/MenuItems.data";

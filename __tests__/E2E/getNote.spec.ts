@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("E-book Download Flow", () => {
-  test("should complete full e-book download process", async ({ page }) => {
+  test("should complete full note download process", async ({ page }) => {
     await page.goto("/Notatki/JavaScript");
 
     await page.getByPlaceholder("Twoje Imię").fill("Test User");

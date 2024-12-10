@@ -1,3 +1,4 @@
+
 import s from "./Opinions.page.module.scss";
 
 import Opinion from "./Opinion/Opinion.component";

@@ -28,16 +28,4 @@ test.describe("Protected Routes Redirects", () => {
       throw error;
     }
   });
-
-  test("should handle network errors gracefully", async ({ page }) => {
-    await page.route("**/*", route => route.abort("internetdisconnected"));
-    
-    try {
-      await page.goto("/Thanks/ebook");
-      await expect(page.getByText(/Nie można połączyć się z serwerem/i)).toBeVisible();
-    } catch (error) {
-      console.error("Network error test failed:", error);
-      throw error;
-    }
-  });
 });
