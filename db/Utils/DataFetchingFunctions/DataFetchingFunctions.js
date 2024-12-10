@@ -24,6 +24,18 @@ async function getProjects() {
   }
 }
 
+async function getPosts() {
+  try {
+    await dbConnect();
+    const { Posts } = require("../../Schemas/Posts");
+    const data = await Posts.find().lean().exec();
+    return data;
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    return null;
+  }
+}
+
 async function saveClientToDB({ name, email }) {
   try {
     await dbConnect();
@@ -54,5 +66,6 @@ async function saveClientToDB({ name, email }) {
 module.exports = {
   getProjects,
   getOpinions,
+  getPosts,
   saveClientToDB,
 };

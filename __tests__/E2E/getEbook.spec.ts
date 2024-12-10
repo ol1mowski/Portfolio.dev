@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test.describe("E-book Download Flow", () => {
   test("should complete full e-book download process", async ({ page }) => {
-    await page.goto("/Ebook");
+    await page.goto("/Ebooki/Praktyczne_Porady_Na_Co_Zwrocic_Uwage_Podczas_Projektowania_Strony_Internetowej");
 
     await page.getByPlaceholder("Twoje Imię").fill("Test User");
     await page.getByPlaceholder("Twój Email").fill("test@example.com");
@@ -35,7 +35,9 @@ test.describe("E-book Download Flow", () => {
   });
 
   test("should validate form fields", async ({ page }) => {
-    await page.goto("/Ebook");
+    await page.goto(
+      "/Ebooki/Praktyczne_Porady_Na_Co_Zwrocic_Uwage_Podczas_Projektowania_Strony_Internetowej"
+    );
 
     await page.getByRole("button", { name: "Odbieram Bezpłatnie" }).click();
     await expect(page.getByText("Imię jest wymagane")).toBeVisible();

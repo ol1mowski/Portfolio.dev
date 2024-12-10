@@ -10,10 +10,7 @@ import { validateSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
 const ClientForm = dynamic(
-  () => import("@/components/Utils/FormComponents/Form.validation.component"),
-  {
-    ssr: false,
-  }
+  () => import("@/components/Utils/FormComponents/Form.validation.component")
 );
 
 async function page() {

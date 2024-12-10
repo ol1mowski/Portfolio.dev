@@ -14,8 +14,8 @@ function PostsComponent({ posts }: { posts: PostsType[] }) {
           const { id, title, slug, description, author, image, authorImage, date } = post;
           return (
             <PostCardComponent
+              key={`post-${id}-${slug}`}
               id={id}
-              key={id}
               title={title}
               slug={slug}
               description={description}

@@ -27,7 +27,6 @@ async function dbConnect() {
 
   if (!cached.promise) {
     const opts = {
-      bufferCommands: false,
       ...MONGODB_OPTIONS
     };
 

@@ -1,4 +1,5 @@
 export type OpinionsType = {
+  _id: string;
   opinions: {
     content: string;
     link: string;
