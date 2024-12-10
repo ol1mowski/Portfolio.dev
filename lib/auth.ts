@@ -18,13 +18,12 @@ export async function createAuthSession(email: string, name: string) {
       { expiresIn: '24h' }
     );
 
-    cookies().set({
-      name: 'session',
-      value: token,
+    const cookieStore = await cookies();
+    cookieStore.set('session', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
-      maxAge: 60 * 60 * 24 // 24 hours
+      maxAge: 60 * 60 * 24
     });
 
     return { success: true };
@@ -36,7 +35,8 @@ export async function createAuthSession(email: string, name: string) {
 
 export async function validateSession() {
   try {
-    const sessionCookie = cookies().get('session');
+    const cookieStore = await cookies();
+    const sessionCookie = cookieStore.get('session');
     
     if (!sessionCookie) {
       return { session: null, error: 'No session found' };
