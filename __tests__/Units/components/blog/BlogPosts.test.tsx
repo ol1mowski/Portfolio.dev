@@ -1,8 +1,11 @@
 import { render, screen } from '@testing-library/react';
-import PostsComponent from '../../../../components/pages/Blog/Posts/Posts.page';
+import { vi } from 'vitest';
+
 import React from 'react';
 
-jest.mock('next/image', () => ({
+import PostsComponent from '../../../../components/pages/Blog/Posts/Posts.page';
+
+vi.mock('next/image', () => ({
   __esModule: true,
   default: (props: any) => {
     return <img {...props} />;
@@ -11,14 +14,14 @@ jest.mock('next/image', () => ({
 
 describe('PostsComponent', () => {
   beforeAll(() => {
-    global.IntersectionObserver = jest.fn(() => ({
-      observe: jest.fn(),
-      unobserve: jest.fn(),
-      disconnect: jest.fn(),
+    global.IntersectionObserver = vi.fn(() => ({
+      observe: vi.fn(),
+      unobserve: vi.fn(),
+      disconnect: vi.fn(),
       root: null,
       rootMargin: '',
       thresholds: [],
-      takeRecords: jest.fn(),
+      takeRecords: vi.fn(),
     }));
   });
 
