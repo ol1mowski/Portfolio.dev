@@ -2,6 +2,8 @@ import { getPosts } from "@/db/Utils/DataFetchingFunctions/DataFetchingFunctions
 import PostSiteComponent from "./PostSite.logic";
 import { type PostsType } from "@/types/PostType.type";
 import NotFound from "../NotFound/NotFound.page";
+import Header from "../HeaderBlog/Header.component.page";
+import Footer from "../../Footer/Footer.page";
 
 async function PostSite({ postId }: { postId: string }) {
   try {
@@ -15,7 +17,13 @@ async function PostSite({ postId }: { postId: string }) {
     const post = posts.find((post: PostsType) => post.slug === postId);
     
     if (!post) {
-      return <NotFound link="/blog" info="Nie znaleziono takiego postu" />;
+      return (
+        <>
+          <Header type="Blog" />
+          <NotFound link="/blog" info="Nie znaleziono takiego postu" />
+          <Footer />
+        </>
+      );
     }
 
     return <PostSiteComponent post={post} allPosts={posts} />;
