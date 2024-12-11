@@ -1,26 +1,23 @@
 import s from "./SimilarPosts.component.module.scss";
-import { forwardRef, LegacyRef } from "react";
-import PostCardComponent from "@/components/pages/Blog/Posts/PostCardComponent/PostCardComponent.component";
+
+import { forwardRef, LegacyRef, useMemo } from "react";
+
 import { type PostsType } from "@/types/PostType.type";
+
+import PostCardComponent from "@/components/pages/Blog/Posts/PostCardComponent/PostCardComponent.component";
 import Caption from "@/components/UI/Caption/Caption.component";
 
 interface SimilarPostsProps {
   posts: PostsType[];
+  currentPostId?: number;
 }
 
 const SimilarPosts = forwardRef<HTMLDivElement, SimilarPostsProps>(
-  (props, ref) => {
-    const { posts } = props;
-
-    const getRandomIndexes = (length: number, count: number): number[] => {
-      const indexes = new Set<number>();
-      while (indexes.size < count) {
-        indexes.add(Math.floor(Math.random() * length));
-      }
-      return Array.from(indexes);
-    };
-
-    const randomIndexes = getRandomIndexes(posts.length, 3);
+  ({ posts, currentPostId }, ref) => {
+    const similarPosts = useMemo(() => {
+      const otherPosts = posts.filter(post => currentPostId ? post.id !== currentPostId : true);
+      return otherPosts.slice(0, 3);
+    }, [posts, currentPostId]);
 
     return (
       <section
@@ -30,28 +27,18 @@ const SimilarPosts = forwardRef<HTMLDivElement, SimilarPostsProps>(
       >
         <Caption type="sub" value={"Podobne Posty"} />
         <div className={s.similarPosts__posts}>
-          {randomIndexes.map((index) => {
-            const { id, title, slug, description, author, image, authorImage, date } = posts[index];
-            return (
-              <PostCardComponent
-                id={id}
-                key={id}
-                title={title}
-                slug={slug}
-                description={description}
-                author={author}
-                image={image}
-                authorImage={authorImage}
-                date={date}
-              />
-            );
-          })}
+          {similarPosts.map((post) => (
+            <PostCardComponent
+              key={post.id}
+              {...post}
+            />
+          ))}
         </div>
       </section>
     );
   }
 );
 
-SimilarPosts.displayName = "SimilarPosts";
+SimilarPosts.displayName = 'SimilarPosts';
 
 export default SimilarPosts;

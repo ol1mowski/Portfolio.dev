@@ -10,13 +10,14 @@ async function PostSite({ postId }: { postId: string }) {
       throw new Error("No data received from the server.");
     }
 
-    const post = fetchedItems[0].posts.find((post: PostsType) => post.slug === postId);
+    const posts = fetchedItems[0].posts;
+    const post = posts.find((post: PostsType) => post.slug === postId);
     
     if (!post) {
       throw new Error("Post not found");
     }
 
-    return <PostSiteComponent post={post} />;
+    return <PostSiteComponent post={post} allPosts={posts} />;
   } catch (error) {
     console.error("Error fetching post data:", error);
     return <p>Error loading post.</p>;

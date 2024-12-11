@@ -17,9 +17,10 @@ import SimilarPosts from "./SimilarPosts/SimilarPosts.component";
 
 type PostSiteProps = {
   post: PostsType;
+  allPosts: PostsType[];
 }
 
-function PostSiteComponent({ post }: PostSiteProps) {
+function PostSiteComponent({ post, allPosts }: PostSiteProps) {
   const { sectionVisible } = useContext(PostVisibleContext);
   const { isVisible, sectionName } = sectionVisible;
 
@@ -39,7 +40,7 @@ function PostSiteComponent({ post }: PostSiteProps) {
             sectionName={sectionName}
             isVisible={isVisible}
           />
-          <SimilarPosts posts={[post]} />
+          <SimilarPosts posts={allPosts} currentPostId={post.id} />
         </article>
       </section>
     </>
