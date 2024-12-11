@@ -1,7 +1,8 @@
 import { getPosts } from "@/db/Utils/DataFetchingFunctions/DataFetchingFunctions";
 import PostSiteComponent from "./PostSite.logic";
+import { type PostsType } from "@/types/PostType.type";
 
-async function PostSite() {
+async function PostSite({ postId }: { postId: string }) {
   try {
     const fetchedItems = await getPosts();
 
@@ -9,10 +10,16 @@ async function PostSite() {
       throw new Error("No data received from the server.");
     }
 
-    return <PostSiteComponent posts={fetchedItems[0].posts} />;
+    const post = fetchedItems[0].posts.find((post: PostsType) => post.slug === postId);
+    
+    if (!post) {
+      throw new Error("Post not found");
+    }
+
+    return <PostSiteComponent post={post} />;
   } catch (error) {
-    console.error("Error fetching Projects data:", error);
-    return <p>Error loading Projects section.</p>;
+    console.error("Error fetching post data:", error);
+    return <p>Error loading post.</p>;
   }
 }
 

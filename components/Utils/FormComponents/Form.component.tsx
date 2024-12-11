@@ -2,7 +2,7 @@ import { type RefObject } from "react";
 import s from "./Form.component.module.scss";
 import Button from "@/components/UI/Button/Button.component";
 
-interface FormComponentProps {
+type FormComponentProps = {
   name: RefObject<HTMLInputElement>;
   email: RefObject<HTMLInputElement>;
   privacy: RefObject<HTMLInputElement>;
@@ -13,14 +13,14 @@ interface FormComponentProps {
   handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
-const FormComponent: React.FC<FormComponentProps> = ({
+const FormComponent = ({
   name,
   email,
   privacy,
   errors,
   isPending,
   handleSubmit,
-}) => (
+}: FormComponentProps) => (
   <form className={s.form} onSubmit={handleSubmit}>
     <div className={s.form__inpWrapper}>
       {errors.name ? (

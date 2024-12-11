@@ -4,7 +4,7 @@ import s from "./Tech.component.module.scss";
 
 interface TechProps {
   src: string;
-  href: string;
+  href?: string;
   alt: string;
 }
 

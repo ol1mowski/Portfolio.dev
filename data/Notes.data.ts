@@ -1,4 +1,6 @@
-export const NOTES = [
+import { type NoteType } from "@/types/Notes.type";
+
+export const NOTES: NoteType[] = [
   {
     id: 1,
     title: "Notatki JavaScript",
