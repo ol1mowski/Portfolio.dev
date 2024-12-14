@@ -1,9 +1,12 @@
-import React from "react";
+import { vi } from "vitest";
 import { render, screen } from "@testing-library/react";
+
+import React from "react";
+
 import HamburgerClickContext from "../../../../store/HamburgerClickContext";
 import Header from "../../../../components/pages/Blog/HeaderBlog/Header.component.page";
 
-jest.mock("next/image", () => ({
+vi.mock("next/image", () => ({
   __esModule: true,
   default: (props: any) => {
     return <img {...props} />;
@@ -13,7 +16,7 @@ jest.mock("next/image", () => ({
 describe("Header component", () => {
   const renderWithProvider = (isOpen = false) => {
     render(
-      <HamburgerClickContext.Provider value={{ isOpen, setOpen: jest.fn() }}>
+      <HamburgerClickContext.Provider value={{ isOpen, setOpen: vi.fn() }}>
         <Header type="testType" />
       </HamburgerClickContext.Provider>
     );

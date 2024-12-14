@@ -1,29 +1,27 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import Projects from '../../../../components/pages/Projects/Projects.page';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import React from 'react';
 
-jest.mock('../../../../components/pages/Projects/ProjectHeader/ProjectHeader.component', () => {
-  return function MockProjectHeader() {
-    return <div data-testid="project-header">Projects Header</div>;
-  };
-});
+import Projects from '../../../../components/pages/Projects/Projects.page';
 
-jest.mock('../../../../components/pages/Projects/ProjectContainer/ProjectContainer.component', () => {
-  return function MockProjectContainer(props: any) {
-    return (
-      <div data-testid="project-container">
-        <h3>{props.title}</h3>
-        <p>{props.description}</p>
-      </div>
-    );
-  };
-});
+vi.mock('../../../../components/pages/Projects/ProjectHeader/ProjectHeader.component', () => ({
+  default: () => <div data-testid="project-header">Projects Header</div>
+}));
 
-jest.mock('../../../../components/pages/Projects/ProjectsWrapper/ProjectsWrapper.component', () => {
-  return function MockProjectsWrapper({ children }: { children: React.ReactNode }) {
-    return <div data-testid="projects-wrapper">{children}</div>;
-  };
-});
+vi.mock('../../../../components/pages/Projects/ProjectContainer/ProjectContainer.component', () => ({
+  default: (props: any) => (
+    <div data-testid="project-container">
+      <h3>{props.title}</h3>
+      <p>{props.description}</p>
+    </div>
+  )
+}));
+
+vi.mock('../../../../components/pages/Projects/ProjectsWrapper/ProjectsWrapper.component', () => ({
+  default: ({ children }: { children: React.ReactNode }) => (
+    <div data-testid="projects-wrapper">{children}</div>
+  )
+}));
 
 const mockProjects = [{
   projects: [
@@ -52,21 +50,21 @@ const mockProjects = [{
 
 describe('Projects Component', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('renders projects section correctly', async () => {
     render(<Projects projects={mockProjects} />);
 
     await waitFor(() => {
-      expect(screen.getByTestId('project-header')).toBeInTheDocument();
-      expect(screen.getByTestId('projects-wrapper')).toBeInTheDocument();
+      expect(screen.getByTestId('project-header')).toBeDefined();
+      expect(screen.getByTestId('projects-wrapper')).toBeDefined();
       
       const projectContainers = screen.getAllByTestId('project-container');
       expect(projectContainers).toHaveLength(2);
       
-      expect(screen.getByText('Test Project 1')).toBeInTheDocument();
-      expect(screen.getByText('Test Project 2')).toBeInTheDocument();
+      expect(screen.getByText('Test Project 1')).toBeDefined();
+      expect(screen.getByText('Test Project 2')).toBeDefined();
     });
   });
 
@@ -74,16 +72,17 @@ describe('Projects Component', () => {
     render(<Projects projects={[]} />);
 
     await waitFor(() => {
-      expect(screen.getByRole('alert')).toHaveTextContent('No projects available');
+      const alert = screen.getByRole('alert');
+      expect(alert.textContent).toBe('No projects available');
     });
   });
 
   it('handles undefined projects gracefully', async () => {
-    // @ts-ignore - Testing invalid props
-    render(<Projects projects={undefined} />);
+    render(<Projects projects={undefined as any} />);
 
     await waitFor(() => {
-      expect(screen.getByRole('alert')).toHaveTextContent('No projects available');
+      const alert = screen.getByRole('alert');
+      expect(alert.textContent).toBe('No projects available');
     });
   });
 
@@ -92,8 +91,8 @@ describe('Projects Component', () => {
 
     await waitFor(() => {
       const section = screen.getByRole('region', { name: /portfolio projects section/i });
-      expect(section).toBeInTheDocument();
-      expect(section).toHaveAttribute('id', 'projects');
+      expect(section).toBeDefined();
+      expect(section.getAttribute('id')).toBe('projects');
     });
   });
 });

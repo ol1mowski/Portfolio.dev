@@ -7,9 +7,9 @@ import PostsButton from "./PostsButton/PostsButton.component";
 
 function PostsComponent({ posts }: { posts: PostsType[] }) {
   return (
-    <section id="posts" className={s.container}>
+    <section className={s.container} id="posts" data-testid="posts-section">
       <PostsHeader />
-      <section className={s.container__postsWrapper}>
+      <section className={s.container__postsWrapper} data-testid="posts-wrapper">
         {posts.map((post) => {
           const { id, title, slug, description, author, image, authorImage, date } = post;
           return (

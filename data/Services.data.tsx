@@ -1,6 +1,7 @@
 import s from "./Services.data.module.scss";
+import { type ServiceType } from "@/types/Services.type";
 
-export const SERVICES = [
+export const SERVICES: ServiceType[] = [
   {
     type: "Strony-Internetowe",
     reverse: false,

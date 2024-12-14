@@ -2,7 +2,7 @@
 
 import s from "./PostSite.page.module.scss";
 
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 import NotFound from "../NotFound/NotFound.page";
 import PostVisibleContext from "@/store/PostVisible.context";
@@ -15,22 +15,16 @@ import PostImage from "./PostImage/PostImage.component.";
 import PostContent from "./PostContent/PostContent.component";
 import SimilarPosts from "./SimilarPosts/SimilarPosts.component";
 
-function PostSiteComponent({ posts }: { posts: PostsType[] }) {
-  const [urlSlug, setUrlSlug] = useState("");
+type PostSiteProps = {
+  post: PostsType;
+  allPosts: PostsType[];
+}
+
+function PostSiteComponent({ post, allPosts }: PostSiteProps) {
   const { sectionVisible } = useContext(PostVisibleContext);
   const { isVisible, sectionName } = sectionVisible;
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setUrlSlug(location.href.split("/")[5]);
-    }
-  }, []);
-
-  const correctPostArticle = posts.filter((item) => item.slug === urlSlug);
-  const correctPostArticleContent =
-    correctPostArticle.length > 0 ? correctPostArticle[0].content : [];
-
-  if (correctPostArticle.length === 0) {
+  if (!post) {
     return <NotFound link="/Blog" info="Nie znaleziono takiego postu" />;
   }
 
@@ -38,16 +32,15 @@ function PostSiteComponent({ posts }: { posts: PostsType[] }) {
     <>
       <section className={s.container}>
         <Header type="Blog" post/>
-        <PostImage post={correctPostArticle[0]} />
+        <PostImage post={post} />
         <article className={s.container__content}>
-          <PostHeader post={correctPostArticle[0]} />
-
+          <PostHeader post={post} />
           <PostContent
-            content={correctPostArticleContent}
+            content={post.content}
             sectionName={sectionName}
             isVisible={isVisible}
           />
-          <SimilarPosts posts={posts} />
+          <SimilarPosts posts={allPosts} currentPostId={post.id} />
         </article>
       </section>
     </>

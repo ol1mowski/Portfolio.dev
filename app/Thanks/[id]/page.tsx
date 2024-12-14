@@ -4,6 +4,7 @@ import Button from "@/components/UI/Button/Button.component";
 import Header from "@/components/pages/Header/Header.component";
 import { redirect } from "next/navigation";
 import { validateSession } from "@/lib/auth";
+import { Params } from "@/types/Params.type";
 
 type ContentType = {
   description: string;
@@ -28,7 +29,6 @@ const getContentByType = (type: string): ContentType | null => {
   return content[type] || null;
 };
 
-type Params = Promise<{ id: string }>
 
 export default async function Page({ params }: { params: Params }) {
 
