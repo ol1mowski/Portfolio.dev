@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 
 import ProjectHeader from "./ProjectHeader/ProjectHeader.component";
 import type { ProjectsType, ProjectType } from "@/types/PostType.type";
+import { monthsMap } from "@/consts/Date";
 
 
 const ProjectComponent = dynamic(() => 
@@ -25,6 +26,17 @@ const Projects = memo(({ projects }: { projects: ProjectsType[] }) => {
   }
 
   const projectList = projects[0].projects;
+  
+
+  const sortedProjects = [...projectList].sort((a, b) => {
+    const [monthA, yearA] = a.date.toLowerCase().split(' ');
+    const [monthB, yearB] = b.date.toLowerCase().split(' ');
+    
+    const dateA = new Date(parseInt(yearA), monthsMap[monthA]);
+    const dateB = new Date(parseInt(yearB), monthsMap[monthB]);
+    
+    return dateB.getTime() - dateA.getTime();
+  });
 
   return (
     <section 
@@ -34,7 +46,7 @@ const Projects = memo(({ projects }: { projects: ProjectsType[] }) => {
     >
       <ProjectHeader />
       <ProjectsWrapper>
-        {projectList.map(({ id, technologies, githubLink, liveLink, image, title, description, date }: ProjectType) => (
+        {sortedProjects.map(({ id, technologies, githubLink, liveLink, image, title, description, date }: ProjectType) => (
           <ProjectComponent
             key={id}
             id={id}
