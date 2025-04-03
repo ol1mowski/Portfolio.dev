@@ -1,22 +1,24 @@
+import { FC, memo } from 'react';
 import s from "./ServicesCta.component.module.scss";
-
-import { memo } from 'react';
 import Link from 'next/link';
-
-import { type ReactNode } from "react";
-
 import Button from "@/components/UI/Button/Button.component";
+import { 
+  SERVICES_CTA_ARIA_LABEL, 
+  SERVICES_BUTTON_HREF, 
+  SERVICES_BUTTON_ARIA_LABEL, 
+  SERVICES_BUTTON_TEXT 
+} from '../constants/services.constants';
 
 interface ServicesCtaProps {
-  des: ReactNode;
+  des: React.ReactNode;
 }
 
-const ServicesCta = memo(({ des }: ServicesCtaProps) => {
+export const ServicesCta: FC<ServicesCtaProps> = memo(({ des }) => {
   return (
     <section 
       className={s.ctaWrapper} 
       data-testid="cta-wrapper"
-      aria-label="Opis usługi i przycisk kontaktowy"
+      aria-label={SERVICES_CTA_ARIA_LABEL}
     >
       <div 
         className={s.ctaWrapper__desWrapper} 
@@ -29,12 +31,12 @@ const ServicesCta = memo(({ des }: ServicesCtaProps) => {
         data-testid="button-wrapper"
       >
         <Link 
-          href="#contact" 
-          aria-label="Przejdź do formularza kontaktowego"
+          href={SERVICES_BUTTON_HREF}
+          aria-label={SERVICES_BUTTON_ARIA_LABEL}
         >
           <Button 
             type="normal" 
-            value="Skontaktuj Się" 
+            value={SERVICES_BUTTON_TEXT}
           />
         </Link>
       </div>

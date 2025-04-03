@@ -1,12 +1,14 @@
-import { type ReactNode } from 'react'
+import { FC } from 'react';
 import s from './ServicesWrapper.component.module.scss';
+import { ServicesWrapperProps } from '@/types/Services.type';
+import { SERVICES_SECTION_ID } from '../constants/services.constants';
 
-function ServicesWrapper({ children, reverse }: { children: ReactNode, reverse: boolean}) {
+export const ServicesWrapper: FC<ServicesWrapperProps> = ({ children, reverse }) => {
   return (
-     <section id='services' className={`${s.container} ${reverse && s.container_reverse}`}>
-        { children }
-     </section>
-  )
-}
+    <section id={SERVICES_SECTION_ID} className={`${s.container} ${reverse && s.container_reverse}`}>
+      {children}
+    </section>
+  );
+};
 
-export default ServicesWrapper
+export default ServicesWrapper;

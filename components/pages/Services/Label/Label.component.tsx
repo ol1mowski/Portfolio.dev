@@ -1,11 +1,9 @@
-import { memo } from 'react';
+import { FC, memo } from 'react';
 import s from './Label.component.module.scss';
+import { LabelProps } from '@/types/Services.type';
+import { SERVICES_LABEL_TEXT } from '../constants/services.constants';
 
-interface LabelProps {
-  ifFirst: boolean;
-}
-
-const Label = memo(({ ifFirst }: LabelProps) => {
+export const Label: FC<LabelProps> = memo(({ ifFirst }) => {
   if (!ifFirst) return null;
 
   return (
@@ -14,7 +12,7 @@ const Label = memo(({ ifFirst }: LabelProps) => {
       aria-label="Sekcja usług"
     >
       <span className={s.aboutSectionWrapper__content}>
-        Usługi
+        {SERVICES_LABEL_TEXT}
       </span>
     </div>
   );

@@ -1,13 +1,9 @@
+import { FC, memo } from 'react';
 import s from './ServicesHeader.component.module.scss';
-
-import { memo } from 'react';
 import Paragraph from "@/components/UI/Word/Paragraph.component";
+import { ServicesHeaderProps } from '@/types/Services.type';
 
-interface ServicesHeaderProps {
-  typArr: string[];
-}
-
-const ServicesHeader = memo(({ typArr }: ServicesHeaderProps) => {
+export const ServicesHeader: FC<ServicesHeaderProps> = memo(({ typArr }) => {
   return (
     <div className={s.headerWrapper}>
       <h2 className={s.headerWrapper__header}>
