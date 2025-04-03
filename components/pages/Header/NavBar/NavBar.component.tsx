@@ -1,20 +1,18 @@
 import { memo } from 'react';
-import Link from 'next/link';
 import s from "./NavBar.component.module.scss";
 import { menuItems } from '@/data/MenuItems.data';
+import MenuItem from '@/components/UI/MenuItem/MenuItem.component';
 
 const NavBar = memo(() => {
   return (
     <nav className={s.navSectionBig}>
-      {menuItems.map(({ to, label }) => (
-        <Link 
-          key={to}
-          href={to}
+      {menuItems.map((item) => (
+        <MenuItem 
+          key={item.to}
+          to={item.to}
+          label={item.label}
           className={s.navSectionBig__item}
-          scroll={!to.startsWith('/#')}
-        >
-          {label}
-        </Link>
+        />
       ))}
     </nav>
   );

@@ -11,10 +11,12 @@ const SecondSection = dynamic(
 
 const AboutMe = () => {
   return (
-    <AboutMeWrapper>
-      <InfoAboutMe />
-      <SecondSection />
-    </AboutMeWrapper>
+    <>
+      <AboutMeWrapper>
+        <InfoAboutMe />
+        <SecondSection />
+      </AboutMeWrapper>
+    </>
   );
 };
 

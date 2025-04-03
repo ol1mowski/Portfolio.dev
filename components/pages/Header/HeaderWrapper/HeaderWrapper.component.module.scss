@@ -1,17 +1,28 @@
 @import "@/style/index.scss";
 
 .headerContainer {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+  $border-radius: 1.7rem;
+  $shadow-color: rgba(0, 0, 0, 0.09);
+  
   position: sticky;
-  background-color: #fff;
-  @include d-flex;
-  padding: 2rem 0;
-  justify-content: space-around;
-  z-index: 100;
   top: 0;
-  gap: 30vw;
+  z-index: 100;
   width: 90vw;
   margin: 0 auto;
-  border-bottom-left-radius: 1.7rem;
-  border-bottom-right-radius: 1.7rem;
+  padding: 2rem 0;
+  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30vw;
+  
+  background-color: $white;
+  box-shadow: 0 0 10px $shadow-color;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  
+  @media screen and (max-width: $tablet) {
+    gap: 5vw;
+    padding: 1.5rem 0;
+  }
 }
