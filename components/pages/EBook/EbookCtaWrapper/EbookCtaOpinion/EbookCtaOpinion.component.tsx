@@ -1,28 +1,32 @@
+import { FC, memo } from 'react';
 import s from "./EbookCtaOpinion.component.module.scss";
-
-import { memo } from 'react';
 import Image from "next/image";
-
 import { STAR_IMAGES } from "@/data/EbookImages.data";
+import { 
+  EBOOK_RATING, 
+  EBOOK_RATING_ARIA_LABEL, 
+  EBOOK_SECTION_ARIA_LABEL, 
+  EBOOK_STARS_ARIA_LABEL 
+} from '../../constants/ebook.constants';
 
-const EbookCtaOpinion = memo(() => {
+export const EbookCtaOpinion: FC = memo(() => {
   return (
     <section 
       className={s.opinionWrapper}
-      aria-label="Ocena E-booka"
+      aria-label={EBOOK_SECTION_ARIA_LABEL}
     >
       <span 
         className={s.opinionWrapper__note}
-        aria-label="Ocena 5.0 na 5"
+        aria-label={EBOOK_RATING_ARIA_LABEL}
       >
-        5.0
+        {EBOOK_RATING}
       </span>
       <div 
         className={s.opinionWrapper__starsWrapper}
         role="img" 
-        aria-label="5 gwiazdek"
+        aria-label={EBOOK_STARS_ARIA_LABEL}
       >
-        {STAR_IMAGES.map(({ id, src, alt, width, height   }) => (
+        {STAR_IMAGES.map(({ id, src, alt, width, height }) => (
           <Image
             key={id}
             src={src}

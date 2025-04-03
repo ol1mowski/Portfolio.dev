@@ -1,12 +1,13 @@
-import { type ReactNode } from 'react';
+import { FC } from 'react';
 import s from './EbookWrapper.component.module.scss';
+import { WrapperProps } from '../types/ebook.types';
 
-function EbookWrapper({ children }: {children: ReactNode}) {
+export const EbookWrapper: FC<WrapperProps> = ({ children }) => {
   return (
     <section className={s.container}>
-        { children }
+      {children}
     </section>
-  )
-}
+  );
+};
 
-export default EbookWrapper
+export default EbookWrapper;

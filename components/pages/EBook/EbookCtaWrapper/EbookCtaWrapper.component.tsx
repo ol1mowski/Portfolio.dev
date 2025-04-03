@@ -1,12 +1,13 @@
-import { type ReactNode } from 'react';
+import { FC } from 'react';
 import s from './EbookCtaWrapper.component.module.scss';
+import { WrapperProps } from '../types/ebook.types';
 
-function EbookCtaWrapper({children}:{children: ReactNode}) {
+export const EbookCtaWrapper: FC<WrapperProps> = ({ children }) => {
   return (
     <section className={s.cta}>
-        {children}
+      {children}
     </section>
-  )
-}
+  );
+};
 
-export default EbookCtaWrapper
+export default EbookCtaWrapper;

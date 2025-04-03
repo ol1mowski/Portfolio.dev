@@ -1,36 +1,37 @@
+import { FC, memo } from 'react';
 import s from "./EbookImageSide.component.module.scss";
-
-import { memo } from 'react';
 import Image from "next/image";
-
 import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
+import { EBOOK_IMAGES, EBOOK_IMAGE_SIDE_ARIA_LABEL } from '../constants/ebook.constants';
 
-const EbookImageSide = memo(() => {
+export const EbookImageSide: FC = memo(() => {
+  const { mobileBackground, desktopBackground, ebookPreview } = EBOOK_IMAGES;
+  
   return (
-    <section className={s.imageSide} aria-label="E-book preview">
+    <section className={s.imageSide} aria-label={EBOOK_IMAGE_SIDE_ARIA_LABEL}>
       <Image
         className={s.imageSide__mobileBackgroundItemImg}
-        src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1728905822/Portfolio/images/mobile-background-item_leiajm.webp"
-        alt="Mobile background decoration"
-        width={331}
-        height={748}
+        src={mobileBackground.src}
+        alt={mobileBackground.alt}
+        width={mobileBackground.width}
+        height={mobileBackground.height}
         loading="lazy"
       />
       <Image
         className={s.imageSide__desktopBackgroundItemImg}
-        src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1728905074/Portfolio/images/background-item_iuezih.webp"
-        alt="Desktop background decoration"
-        width={904}
-        height={889}
+        src={desktopBackground.src}
+        alt={desktopBackground.alt}
+        width={desktopBackground.width}
+        height={desktopBackground.height}
         loading="lazy"
       />
       <AnimationWrapper>
         <Image
           className={s.imageSide__ebookImg}
-          src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1728905079/Portfolio/images/ebook_mockup_sotb2v.webp"
-          alt="E-Book Preview"
-          width={310}
-          height={500}
+          src={ebookPreview.src}
+          alt={ebookPreview.alt}
+          width={ebookPreview.width}
+          height={ebookPreview.height}
           priority
         />
       </AnimationWrapper>
