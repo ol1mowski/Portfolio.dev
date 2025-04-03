@@ -1,41 +1,31 @@
-
 import s from "./Opinions.page.module.scss";
-
 import Opinion from "./Opinion/Opinion.component";
 import OpinionHeader from "./OpinionHeader/OpinionHeader.component";
 import SectionName from "./SectionName/SectionName.component";
 import OpinionsWrapper from "./OpinionsWrapper/OpinionsWrapper.component";
+import { useOpinionsFetching } from './hooks/useOpinionsFetching.hook';
+import { 
+  OPINIONS_ARIA_LABEL, 
+  OPINIONS_FETCH_ERROR_MESSAGE, 
+  OPINIONS_SECTION_ID 
+} from './constants/opinions.constants';
+import { SectionContainer } from '@/components/UI/shared';
 
-import { getOpinions } from "@/db/Utils/DataFetchingFunctions/DataFetchingFunctions";
-import { type OpinionsType } from "@/types/Opinions.type";
-
-export default async function Opinions() {
-  let opinionsData: OpinionsType[] | null = null;
-
-  try {
-    const fetchedItems = (await getOpinions()) as unknown as OpinionsType[];
-
-    if (!Array.isArray(fetchedItems) || !fetchedItems.length) {
-      throw new Error("No data received from the server.");
-    }
-
-    opinionsData = fetchedItems;
-  } catch (error) {
-    console.error("Error fetching Opinions data:", error);
-  }
+export const Opinions = async () => {
+  const opinionsData = await useOpinionsFetching();
 
   if (!opinionsData) {
-    return <p>Error loading Opinions section.</p>;
+    return <p>{OPINIONS_FETCH_ERROR_MESSAGE}</p>;
   }
 
   const res = opinionsData[0].opinions;
 
   return (
-    <section 
-      id="opinions" 
+    <SectionContainer 
+      id={OPINIONS_SECTION_ID}
       className={s.container}
       role="contentinfo"
-      aria-label="Opinie klientów"
+      ariaLabel={OPINIONS_ARIA_LABEL}
     >
       <SectionName />
       <OpinionHeader />
@@ -44,6 +34,8 @@ export default async function Opinions() {
           <Opinion key={index} opinion={opinion} />
         ))}
       </OpinionsWrapper>
-    </section>
+    </SectionContainer>
   );
-}
+};
+
+export default Opinions;

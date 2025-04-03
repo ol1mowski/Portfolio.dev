@@ -1,9 +1,9 @@
-import React from 'react'
+import { FC } from 'react';
 
-function loading() {
+export const Loading: FC = () => {
   return (
     <p>loading</p>
-  )
-}
+  );
+};
 
-export default loading
+export default Loading;

@@ -1,48 +1,44 @@
+import { FC, memo } from 'react';
 import s from "./Projects.page.module.scss";
-
-import { memo } from 'react';
-import dynamic from 'next/dynamic';
-
+import { ProjectType } from "@/types/PostType.type";
+import { useDynamicImport } from './hooks/useDynamicImport.hook';
+import { useProjectsSorting } from './hooks/useProjectsSorting.hook';
+import { ProjectsComponentProps } from './types/projects.types';
+import { 
+  PROJECTS_ERROR_MESSAGE, 
+  PROJECTS_LOADING_MESSAGE, 
+  PROJECTS_SECTION_ARIA_LABEL, 
+  PROJECTS_SECTION_ID 
+} from './constants/projects.constants';
 import ProjectHeader from "./ProjectHeader/ProjectHeader.component";
-import type { ProjectsType, ProjectType } from "@/types/PostType.type";
-import { monthsMap } from "@/consts/Date";
+import { ErrorMessage, SectionContainer } from '@/components/UI/shared';
 
+export const Projects: FC<ProjectsComponentProps> = memo(({ projects }) => {
+  const { sortProjectsByDate } = useProjectsSorting();
+  
+  const ProjectComponent = useDynamicImport(
+    () => import("./ProjectContainer/ProjectContainer.component"), 
+    {
+      loading: () => <div>{PROJECTS_LOADING_MESSAGE}</div>
+    }
+  );
+  
+  const ProjectsWrapper = useDynamicImport(
+    () => import("./ProjectsWrapper/ProjectsWrapper.component")
+  );
 
-const ProjectComponent = dynamic(() => 
-  import("./ProjectContainer/ProjectContainer.component"), {
-  loading: () => <div>Loading project...</div>
-});
-
-const ProjectsWrapper = dynamic(() => 
-  import("./ProjectsWrapper/ProjectsWrapper.component"));
-
-const Projects = memo(({ projects }: { projects: ProjectsType[] }) => {
   if (!projects?.length) {
-    return (
-      <div role="alert" className={s.errorMessage}>
-        No projects available
-      </div>
-    );
+    return <ErrorMessage message={PROJECTS_ERROR_MESSAGE} className={s.errorMessage} />;
   }
 
   const projectList = projects[0].projects;
-  
-
-  const sortedProjects = [...projectList].sort((a, b) => {
-    const [monthA, yearA] = a.date.toLowerCase().split(' ');
-    const [monthB, yearB] = b.date.toLowerCase().split(' ');
-    
-    const dateA = new Date(parseInt(yearA), monthsMap[monthA]);
-    const dateB = new Date(parseInt(yearB), monthsMap[monthB]);
-    
-    return dateB.getTime() - dateA.getTime();
-  });
+  const sortedProjects = sortProjectsByDate(projectList);
 
   return (
-    <section 
-      id="projects" 
+    <SectionContainer 
+      id={PROJECTS_SECTION_ID}
       className={s.projectsContainer}
-      aria-label="Portfolio projects section"
+      ariaLabel={PROJECTS_SECTION_ARIA_LABEL}
     >
       <ProjectHeader />
       <ProjectsWrapper>
@@ -60,7 +56,7 @@ const Projects = memo(({ projects }: { projects: ProjectsType[] }) => {
           />
         ))}
       </ProjectsWrapper>
-    </section>
+    </SectionContainer>
   );
 });
 

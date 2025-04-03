@@ -1,8 +1,12 @@
 import { getProjects } from "@/db/Utils/DataFetchingFunctions/DataFetchingFunctions";
-import ProjectsComponent from "./Projects.page";
-import { type ProjectType } from "@/types/PostType.type";
+import { Projects } from "./Projects.page";
+import { ProjectType } from "@/types/PostType.type";
+import { 
+  PROJECTS_FETCH_ERROR_LOG, 
+  PROJECTS_FETCH_ERROR_MESSAGE 
+} from './constants/projects.constants';
 
-async function Projects() {
+export const ProjectsFetching = async () => {
   try {
     const fetchedItems = (await getProjects()) as unknown as ProjectType;
 
@@ -10,11 +14,12 @@ async function Projects() {
       throw new Error("No data received from the server.");
     }
 
-    return <ProjectsComponent projects={fetchedItems} />;
+    return <Projects projects={fetchedItems} />;
   } catch (error) {
-    console.error("Error fetching Projects data:", error);
-    return <p>Error loading Projects section.</p>;
+    console.error(PROJECTS_FETCH_ERROR_LOG, error);
+    return <p>{PROJECTS_FETCH_ERROR_MESSAGE}</p>;
   }
-}
-export default Projects;
+};
+
+export default ProjectsFetching;
 
