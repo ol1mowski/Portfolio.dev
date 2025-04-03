@@ -1,19 +1,19 @@
+import { FC, memo } from 'react';
+import Image from 'next/image';
 import s from './HomePageImageSection.component.module.scss';
+import { HOME_PAGE_IMAGE } from '../constants/homePageConstants';
 
-import { memo } from 'react';
-import Image from "next/image";
-
-const HomePageImageSection = memo(() => {
+export const HomePageImageSection: FC = memo(() => {
   return (
     <Image
-      src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1729942605/Portfolio/images/new_main_im3s4v.svg"
-      width={600}
-      height={600}
-      alt="Oliwier Markiewicz - Frontend Developer"
+      src={HOME_PAGE_IMAGE.src}
+      width={HOME_PAGE_IMAGE.width}
+      height={HOME_PAGE_IMAGE.height}
+      alt={HOME_PAGE_IMAGE.alt}
       className={s.img}
       priority
       loading="eager"
-      quality={90}
+      quality={HOME_PAGE_IMAGE.quality}
     />
   );
 });

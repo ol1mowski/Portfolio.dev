@@ -1,12 +1,13 @@
-import { type ReactNode } from 'react'
+import { FC } from 'react';
 import s from './HeroSectionWrapper.component.module.scss';
+import { WrapperProps } from '../types/homePage.types';
 
-function HeroSectionWrapper({ children }: { children: ReactNode }) {
+export const HeroSectionWrapper: FC<WrapperProps> = ({ children }) => {
   return (
     <section id="home" className={s.homeContainer}>
-        { children }
+      {children}
     </section>
-  )
-}
+  );
+};
 
-export default HeroSectionWrapper
+export default HeroSectionWrapper;
