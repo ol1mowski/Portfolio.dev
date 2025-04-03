@@ -52,7 +52,7 @@ const PostArticle: React.FC<PostArticleProps> = ({
     } else {
       setSectionVisible(title, false);
     }
-  }, []);
+  }, [setSectionVisible, title]);
 
   return (
     <section ref={ref} id={slug} className={s.postContentSection}>

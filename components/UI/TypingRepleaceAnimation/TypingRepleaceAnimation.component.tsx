@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 const TypingReplaceAnimation = ({ className }: { className: string }) => {
-  const texts = ["Stron Internetowych", "Sklepów Internetowych", "Projektów Graficznych"];
+  const texts = useMemo(() => ["Stron Internetowych", "Sklepów Internetowych", "Projektów Graficznych"], []);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,7 +28,7 @@ const TypingReplaceAnimation = ({ className }: { className: string }) => {
     typingInterval = setInterval(typeText, 100);
 
     return () => clearInterval(typingInterval);
-  }, [currentIndex]);
+  }, [currentIndex, texts]);
 
   useEffect(() => {
     if (isDeleting) {
@@ -49,7 +49,7 @@ const TypingReplaceAnimation = ({ className }: { className: string }) => {
 
       return () => clearInterval(deletingInterval);
     }
-  }, [isDeleting, displayText, currentIndex]);
+  }, [isDeleting, displayText, currentIndex, texts.length]);
 
   if (isFinished) {
     return (
