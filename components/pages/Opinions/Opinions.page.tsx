@@ -13,7 +13,7 @@ export default async function Opinions() {
   let opinionsData: OpinionsType[] | null = null;
 
   try {
-    const fetchedItems = (await getOpinions()) as OpinionsType[];
+    const fetchedItems = (await getOpinions()) as unknown as OpinionsType[];
 
     if (!Array.isArray(fetchedItems) || !fetchedItems.length) {
       throw new Error("No data received from the server.");
