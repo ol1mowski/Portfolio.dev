@@ -1,12 +1,14 @@
-import { type ReactNode } from 'react';
+import { FC } from 'react';
 import s from './AboutMeWrapper.component.module.scss';
+import { WrapperProps } from '../types/aboutMe.types';
+import { ABOUT_SECTION_ID } from '../constants/aboutMe.constants';
 
-function AboutMeWrapper({ children }: {children: ReactNode}) {
+export const AboutMeWrapper: FC<WrapperProps> = ({ children }) => {
   return (
-     <section id="about" className={s.container}>
-        { children }
-     </section>
-  )
-}
+    <section id={ABOUT_SECTION_ID} className={s.container}>
+      {children}
+    </section>
+  );
+};
 
-export default AboutMeWrapper
+export default AboutMeWrapper;
