@@ -6,8 +6,6 @@ import { EbookCtaWrapper } from './EbookCtaWrapper/EbookCtaWrapper.component';
 import { EbookCtaHeader } from './EbookCtaWrapper/EbookCtaHeader/EbookCtaHeader.component';
 import { EbookCtaOpinion } from './EbookCtaWrapper/EbookCtaOpinion/EbookCtaOpinion.component';
 import { EbookCtaText } from './EbookCtaWrapper/EbookCtaText/EbookCtaText.component';
-import { saveClientData } from '@/actions/client.actions';
-import { EbookForm } from '@/components/form/ebook-form/ebook-form.component';
 
 
 const Ebook: FC = () => {
@@ -24,10 +22,6 @@ const Ebook: FC = () => {
         <EbookCtaHeader />
         <EbookCtaOpinion />
         <EbookCtaText />
-        <EbookForm 
-          action={saveClientData} 
-          redirectPath="/Thanks/ebook"
-        />
       </EbookCtaWrapper>
       <EbookImageSide />
     </EbookWrapper>
