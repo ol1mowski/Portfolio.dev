@@ -46,7 +46,7 @@ export const useSinglePostFetching = async (slug: string): Promise<SinglePostRes
     }
 
     const posts = allPostsData[0].posts;
-    const post = posts.find(p => p.slug === slug) || null;
+    const post = posts.find((p: PostsType) => p.slug === slug) || null;
 
     return {
       post,
