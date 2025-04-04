@@ -2,21 +2,52 @@
 
 .container {
   @include d-flex-column;
-  padding: 2rem;
-  gap: 3rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  gap: 4rem;
+  
+  @media (min-width: 768px) {
+    padding: 4rem 2.5rem;
+  }
+  
+  @media (min-width: 1200px) {
+    padding: 5rem 3rem;
+  }
   
   &__header {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     text-align: center;
-    font-weight: 600;
+    font-weight: 700;
     color: $dark-blue;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    
+    &::after {
+      content: "";
+      display: block;
+      width: 6rem;
+      height: 4px;
+      background: linear-gradient(90deg, $dark-blue, lighten($dark-blue, 30%));
+      margin: 1.5rem auto 0;
+      border-radius: 2px;
+    }
   }
 }
 
 .resourcesGrid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
   width: 100%;
-  padding: 2rem;
+  
+  @media (min-width: 768px) {
+    gap: 2.5rem;
+  }
+  
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 3rem;
+  }
 } 
