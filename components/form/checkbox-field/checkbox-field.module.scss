@@ -1,0 +1,37 @@
+.fieldWrapper {
+  width: 100%;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.label {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.checkbox {
+  margin-top: 0.25rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.content {
+  font-size: 0.875rem;
+  color: #4b5563;
+
+  a {
+    color: #4f46e5;
+    text-decoration: underline;
+    
+    &:hover {
+      color: #3730a3;
+    }
+  }
+}
+
+.errorMessage {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+} 

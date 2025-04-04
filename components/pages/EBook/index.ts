@@ -5,4 +5,5 @@ export { EbookCtaHeader } from './EbookCtaWrapper/EbookCtaHeader/EbookCtaHeader.
 export { EbookCtaOpinion } from './EbookCtaWrapper/EbookCtaOpinion/EbookCtaOpinion.component';
 export { EbookCtaText } from './EbookCtaWrapper/EbookCtaText/EbookCtaText.component';
 export { EbookCtaButton } from './EbookCtaWrapper/EbookCtaButton/EbookCtaButton.component';
-export { EbookImageSide } from './EbookImageSide/EbookImageSide.component'; 
+export { EbookImageSide } from './EbookImageSide/EbookImageSide.component';
+export * from './hooks/useDynamicImport.hook'; 

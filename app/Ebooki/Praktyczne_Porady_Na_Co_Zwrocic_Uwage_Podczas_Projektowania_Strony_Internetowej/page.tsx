@@ -4,16 +4,17 @@ import s from "./page.module.scss";
 import Footer from "@/components/pages/Footer/Footer.page";
 import Header from "@/components/pages/Header/Header.component";
 
-import dynamic from "next/dynamic";
-import { saveClientData } from "@/actions/SaveClientEmail";
+import { saveClientData } from "@/actions/client.actions";
 import { validateSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
+import { EbookForm } from '@/components/form/ebook-form/ebook-form.component';
 
-const ClientForm = dynamic(
-  () => import("../../../components/Utils/FormComponents/Form.validation.component")
-);
+export const metadata = {
+  title: 'Bezpłatny E-book - Projektowanie Stron Internetowych',
+  description: 'Pobierz bezpłatny e-book o praktycznych poradach podczas projektowania stron internetowych'
+};
 
-async function page() {
+export default async function EbookDownloadPage() {
   const { session } = await validateSession();
 
   if (session) {
@@ -32,7 +33,10 @@ async function page() {
             <span className={s.container__content__header__line}></span>
           </section>
           <section className={s.container__form}>
-            <ClientForm action={saveClientData} slug="ebook" />
+            <EbookForm 
+              action={saveClientData} 
+              redirectPath="/Thanks/ebook"
+            />
           </section>
         </section>
         <section className={s.container__image}>
@@ -50,5 +54,3 @@ async function page() {
     </>
   );
 }
-
-export default page;

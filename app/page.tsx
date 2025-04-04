@@ -4,7 +4,7 @@ import SubscribersAmount from "@/components/pages/Stats/Stats.page";
 import Contact from "@/components/pages/Contact/Contact.page";
 import Footer from "@/components/pages/Footer/Footer.page";
 import Opinions from "@/components/pages/Opinions/Opinions.page";
-import Projects from "@/components/pages/Projects/Projects.fetching";
+import Projects from "@/components/pages/Projects/Projects.server";
 import Ebook from "@/components/pages/EBook/Ebook.page";
 import AbourMe from "@/components/pages/AboutMe/AbouMe.page";
 import Services from "@/components/pages/Services/Services.page";
