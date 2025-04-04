@@ -1,9 +1,14 @@
-import React from 'react'
+'use client';
 
-function loading() {
+import { type FC } from 'react';
+
+export const Loading: FC = () => {
   return (
-    <p>loading</p>
-  )
-}
+    <div className="loading-container">
+      <div className="loading-spinner" />
+      <p>Ładowanie...</p>
+    </div>
+  );
+};
 
-export default loading
+export default Loading;
