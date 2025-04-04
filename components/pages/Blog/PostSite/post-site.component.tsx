@@ -3,14 +3,14 @@
 import { type FC, useContext } from 'react';
 import { type PostsType } from '@/types/PostType.type';
 
-import PostVisibleContext from '@/store/PostVisible.context';
+import { PostVisibleContext } from '../post-provider';
 import Header from '../header/header.component';
 import NotFound from '../NotFound/NotFound.page';
 
-import PostHeader from './PostHeader/PostHeader.component';
-import PostImage from './PostImage/PostImage.component.';
-import PostContent from './PostContent/PostContent.component';
-import SimilarPosts from './SimilarPosts/SimilarPosts.component';
+import { PostHeader } from './post-header/post-header.component';
+import { PostImage } from './post-image/post-image.component';
+import { PostContent } from './post-content/post-content.component';
+import { SimilarPosts } from './similar-posts/similar-posts.component';
 
 import s from './post-site.module.scss';
 
