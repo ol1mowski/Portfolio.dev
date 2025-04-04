@@ -1,0 +1,28 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.emptyMessage {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--gray-100);
+  border-radius: 8px;
+  color: var(--gray-700);
+  font-weight: 500;
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+@media (max-width: 768px) {
+  .list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+} 
