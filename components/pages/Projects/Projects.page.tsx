@@ -1,21 +1,26 @@
-import { FC, memo } from 'react';
 import s from "./Projects.page.module.scss";
 import { ProjectType } from "@/types/PostType.type";
 import { useDynamicImport } from './hooks/useDynamicImport.hook';
 import { useProjectsSorting } from './hooks/useProjectsSorting.hook';
-import { ProjectsComponentProps } from './types/projects.types';
+import { useFetchData } from '@/hooks/useFetchData.hook';
 import { 
-  PROJECTS_ERROR_MESSAGE, 
+  PROJECTS_FETCH_ERROR_LOG,
+  PROJECTS_FETCH_ERROR_MESSAGE,
   PROJECTS_LOADING_MESSAGE, 
   PROJECTS_SECTION_ARIA_LABEL, 
   PROJECTS_SECTION_ID 
 } from './constants/projects.constants';
 import ProjectHeader from "./ProjectHeader/ProjectHeader.component";
-import { ErrorMessage, SectionContainer } from '@/components/UI/shared';
+import { SectionContainer } from '@/components/UI/shared';
 
-export const Projects: FC<ProjectsComponentProps> = memo(({ projects }) => {
+const Projects = async () => {
   const { sortProjectsByDate } = useProjectsSorting();
-  
+  const projectsData = await useFetchData('projects', PROJECTS_FETCH_ERROR_LOG);
+
+  if (!projectsData) {
+    return <p>{PROJECTS_FETCH_ERROR_MESSAGE}</p>;
+  }
+
   const ProjectComponent = useDynamicImport(
     () => import("./ProjectContainer/ProjectContainer.component"), 
     {
@@ -27,11 +32,7 @@ export const Projects: FC<ProjectsComponentProps> = memo(({ projects }) => {
     () => import("./ProjectsWrapper/ProjectsWrapper.component")
   );
 
-  if (!projects?.length) {
-    return <ErrorMessage message={PROJECTS_ERROR_MESSAGE} className={s.errorMessage} />;
-  }
-
-  const projectList = projects[0].projects;
+  const projectList = projectsData[0].projects;
   const sortedProjects = sortProjectsByDate(projectList);
 
   return (
@@ -58,8 +59,6 @@ export const Projects: FC<ProjectsComponentProps> = memo(({ projects }) => {
       </ProjectsWrapper>
     </SectionContainer>
   );
-});
-
-Projects.displayName = 'Projects';
+};
 
 export default Projects;

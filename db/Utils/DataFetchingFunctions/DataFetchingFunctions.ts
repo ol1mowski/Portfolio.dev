@@ -1,30 +1,44 @@
-const { Projects } = require("../../Schemas/Projects");
-const { Opinions } = require("../../Schemas/Opinions");
-const { dbConnect } = require("../../db_connect");
+import { Projects } from "../../Schemas/Projects";
+import { Opinions } from "../../Schemas/Opinions";
+import { dbConnect } from "../../db_connect";
+import { Document } from "mongoose";
+import { ProjectsType } from "@/types/PostType.type";
+import { OpinionsType } from "@/types/Opinions.type";
 
-async function getOpinions() {
+interface ClientData {
+  name: string;
+  email: string;
+}
+
+interface CustomerDocument extends Document {
+  name: string;
+  email: string;
+  createdAt: Date;
+}
+
+export async function getOpinions(): Promise<OpinionsType[] | null> {
   try {
     await dbConnect();
     const data = await Opinions.find().lean().exec();
-    return data;
+    return data as unknown as OpinionsType[];
   } catch (error) {
     console.error("Error fetching opinions:", error);
     return null;
   }
 }
 
-async function getProjects() {
+export async function getProjects(): Promise<ProjectsType[] | null> {
   try {
     await dbConnect();
     const data = await Projects.find().lean().exec();
-    return data;
+    return data as unknown as ProjectsType[];
   } catch (error) {
     console.error("Error fetching projects:", error);
     return null;
   }
 }
 
-async function getPosts() {
+export async function getPosts(): Promise<any[] | null> {
   try {
     await dbConnect();
     const { Posts } = require("../../Schemas/Posts");
@@ -36,7 +50,7 @@ async function getPosts() {
   }
 }
 
-async function saveClientToDB({ name, email }) {
+export async function saveClientToDB({ name, email }: ClientData): Promise<CustomerDocument> {
   try {
     await dbConnect();
     const { Customers } = require("../../Schemas/Clients");
@@ -46,7 +60,7 @@ async function saveClientToDB({ name, email }) {
     }).lean();
     
     if (existingCustomer) {
-      return existingCustomer;
+      return existingCustomer as CustomerDocument;
     }
 
     const newCustomer = new Customers({
@@ -56,16 +70,9 @@ async function saveClientToDB({ name, email }) {
     });
 
     const savedCustomer = await newCustomer.save();
-    return savedCustomer;
+    return savedCustomer as CustomerDocument;
   } catch (error) {
     console.error("Error in saveClientToDB:", error);
     throw error;
   }
 }
-
-module.exports = {
-  getProjects,
-  getOpinions,
-  getPosts,
-  saveClientToDB,
-};

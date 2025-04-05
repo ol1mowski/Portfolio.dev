@@ -18,6 +18,7 @@
     "dotenv": "^16.4.5",
     "framer-motion": "^11.18.2",
     "install": "^0.13.0",
+    "isomorphic-dompurify": "^2.23.0",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.7.0",
@@ -34,7 +35,8 @@
     "react-syntax-highlighter": "^15.6.1",
     "remark-gfm": "^4.0.0",
     "sass": "^1.77.4",
-    "sharp": "^0.33.4"
+    "sharp": "^0.33.4",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.0",
@@ -51,6 +53,7 @@
     "@types/react-dom": "^18.3.3",
     "@types/react-scroll": "^1.8.10",
     "@types/react-syntax-highlighter": "^15.5.13",
+    "@types/uuid": "^10.0.0",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",

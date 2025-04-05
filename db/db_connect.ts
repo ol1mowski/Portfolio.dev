@@ -1,9 +1,16 @@
-require("dotenv").config();
-const mongoose = require("mongoose");
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
+
+dotenv.config();
 
 const MONGODB_URI = process.env.DB_URL;
 
-const MONGODB_OPTIONS = {
+interface MongooseCache {
+  conn: typeof mongoose | null;
+  promise: Promise<typeof mongoose> | null;
+}
+
+const MONGODB_OPTIONS: mongoose.ConnectOptions = {
   serverSelectionTimeoutMS: process.env.NODE_ENV === 'production' ? 30000 : 5000,
   socketTimeoutMS: process.env.NODE_ENV === 'production' ? 60000 : 45000,
   connectTimeoutMS: process.env.NODE_ENV === 'production' ? 30000 : 10000,
@@ -14,13 +21,17 @@ if (!MONGODB_URI) {
   throw new Error("Please define the DB_URL environment variable");
 }
 
-let cached = global.mongoose;
+declare global {
+  var mongooseCache: MongooseCache | undefined;
+}
+      
+let cached: MongooseCache = global.mongooseCache || { conn: null, promise: null };
 
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
+if (!global.mongooseCache) {
+  global.mongooseCache = cached;
 }
 
-async function dbConnect() {
+export async function dbConnect(): Promise<typeof mongoose> {
   if (cached.conn) {
     return cached.conn;
   }
@@ -31,7 +42,7 @@ async function dbConnect() {
     };
 
     try {
-      cached.promise = await mongoose.connect(MONGODB_URI, opts);
+      cached.promise = mongoose.connect(MONGODB_URI as string, opts);
       console.log("Connected to MongoDB");
     } catch (error) {
       console.error("MongoDB connection error:", error);
@@ -49,7 +60,7 @@ async function dbConnect() {
   }
 }
 
-mongoose.connection.on('error', (err) => {
+mongoose.connection.on('error', (err: Error) => {
   console.error('MongoDB connection error:', err);
 });
 
@@ -66,7 +77,3 @@ process.on('SIGINT', async () => {
   }
   process.exit(0);
 });
-
-module.exports = {
-  dbConnect,
-};

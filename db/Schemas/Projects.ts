@@ -1,6 +1,11 @@
-const mongoose = require("mongoose");
+import mongoose, { Schema, Document, Model } from 'mongoose';
+import { ProjectType } from '@/types/PostType.type';
 
-const projectSchema = new mongoose.Schema({
+export interface ProjectDocument extends Document {
+  projects: ProjectType[];
+}
+
+const projectSchema = new Schema({
   projects: [
     {
       id: {
@@ -25,7 +30,7 @@ const projectSchema = new mongoose.Schema({
         type: Boolean,
       },
       technologies: {
-        type: [],
+        type: [String],
       },
       title: {
         type: String,
@@ -34,9 +39,5 @@ const projectSchema = new mongoose.Schema({
   ],
 });
 
-const Projects =
-  mongoose.models.Projects || mongoose.model("Projects", projectSchema);
-
-module.exports = {
-  Projects: Projects,
-};
+export const Projects: Model<ProjectDocument> = mongoose.models.Projects || 
+  mongoose.model<ProjectDocument>('Projects', projectSchema);
