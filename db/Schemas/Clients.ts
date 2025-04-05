@@ -1,4 +1,15 @@
-import mongoose from 'mongoose';
+import mongoose, { Document, Model } from 'mongoose';
+
+export interface ICustomer extends Document {
+  name: string;
+  email: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface ICustomerModel extends Model<ICustomer> {
+  findByEmail(email: string): Promise<ICustomer | null>;
+}
 
 const CustomerSchema = new mongoose.Schema({
   name: {
@@ -27,10 +38,17 @@ const CustomerSchema = new mongoose.Schema({
 CustomerSchema.index({ email: 1 }, { unique: true });
 
 CustomerSchema.pre('save', function(next: any) {
-  this.email = this.email.toLowerCase();
+  if (this.isModified('email')) {
+    this.email = this.email.toLowerCase();
+  }
   next();
 });
 
-const Customers = mongoose.models.customers || mongoose.model('customers', CustomerSchema);
+CustomerSchema.statics.findByEmail = function(email: string): Promise<ICustomer | null> {
+  return this.findOne({ email: email.toLowerCase() }).exec();
+};
+
+const Customers = (mongoose.models.customers || 
+  mongoose.model<ICustomer, ICustomerModel>('customers', CustomerSchema)) as ICustomerModel;
 
 export { Customers };

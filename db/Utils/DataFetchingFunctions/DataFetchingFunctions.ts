@@ -4,11 +4,8 @@ import { dbConnect } from "../../db_connect";
 import { Document } from "mongoose";
 import { ProjectsType } from "@/types/PostType.types";
 import { OpinionsType } from "@/types/Opinions.types";
-
-interface ClientData {
-  name: string;
-  email: string;
-}
+import { saveClient } from "@/lib/api/client/client.service";
+import { ClientData } from "@/lib/api/client/client.types";
 
 interface CustomerDocument extends Document {
   name: string;
@@ -50,27 +47,15 @@ export async function getPosts(): Promise<any[] | null> {
   }
 }
 
-export async function saveClientToDB({ name, email }: ClientData): Promise<CustomerDocument> {
+export async function saveClientToDB(clientData: ClientData): Promise<CustomerDocument | null> {
   try {
-    await dbConnect();
-    const { Customers } = require("../../Schemas/Clients");
-
-    const existingCustomer = await Customers.findOne({ 
-      email: email.trim() 
-    }).lean();
+    const result = await saveClient(clientData);
     
-    if (existingCustomer) {
-      return existingCustomer as CustomerDocument;
+    if (result.success && result.client) {
+      return result.client as unknown as CustomerDocument;
     }
-
-    const newCustomer = new Customers({
-      name: name.trim(),
-      email: email.trim(),
-      createdAt: new Date()
-    });
-
-    const savedCustomer = await newCustomer.save();
-    return savedCustomer as CustomerDocument;
+    
+    throw new Error(result.error || 'Failed to save client');
   } catch (error) {
     console.error("Error in saveClientToDB:", error);
     throw error;

@@ -28,7 +28,7 @@ export async function saveClientData(
 
     const savedClient = await saveClient({ name, email });
 
-    if (!savedClient) {
+    if (!savedClient.success || !savedClient.client) {
       throw new Error('Failed to save client data');
     }
 
@@ -41,9 +41,9 @@ export async function saveClientData(
     return { 
       success: true,
       client: {
-        id: savedClient._id?.toString() || savedClient.id?.toString(),
-        name: savedClient.name,
-        email: savedClient.email
+        id: savedClient.client._id?.toString() || savedClient.client.id?.toString() || '',
+        name: savedClient.client.name,
+        email: savedClient.client.email
       }
     };
   } catch (error) {
