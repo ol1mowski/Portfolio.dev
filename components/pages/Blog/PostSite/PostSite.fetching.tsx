@@ -1,6 +1,6 @@
 import { getPosts } from "@/db/Utils/DataFetchingFunctions/DataFetchingFunctions";
 import PostSiteComponent from "./PostSite.logic";
-import { type PostsType } from "@/types/PostType.type";
+import { type PostsType } from "@/types/PostType.types";
 import NotFound from "../NotFound/NotFound.page";
 import Header from "../HeaderBlog/Header.component.page";
 import Footer from "../../Footer/Footer.page";

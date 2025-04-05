@@ -1,7 +1,7 @@
 import s from "./Posts.page.module.scss";
 
 import PostCardComponent from "./PostCardComponent/PostCardComponent.component";
-import { type PostsType } from "@/types/PostType.type";
+import { type PostsType } from "@/types/PostType.types";
 import PostsHeader from "./PostsHeader/PostsHeader.component";
 import PostsButton from "./PostsButton/PostsButton.component";
 

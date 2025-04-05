@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { type PostsType } from '@/types/PostType.type';
+import { type PostsType } from '@/types/PostType.types';
 import s from './PostImage.component.module.scss';
 
 interface PostImageProps {

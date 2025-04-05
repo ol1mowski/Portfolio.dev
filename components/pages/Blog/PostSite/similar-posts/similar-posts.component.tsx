@@ -1,7 +1,7 @@
 'use client';
 
 import { type FC, useMemo, forwardRef, type LegacyRef } from 'react';
-import { type PostsType } from '@/types/PostType.type';
+import { type PostsType } from '@/types/PostType.types';
 import Caption from '@/components/UI/Caption/Caption.component';
 import { PostCard } from '../../ui/post-card/post-card.component';
 import s from './similar-posts.module.scss';

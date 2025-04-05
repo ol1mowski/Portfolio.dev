@@ -1,4 +1,4 @@
-import { type CollaborationStepType } from "@/types/CollaborationStep.type";
+import { type CollaborationStepType } from "@/types/CollaborationStep.types";
 
 export const COLLABORATION_STEP: CollaborationStepType[] = [
   {

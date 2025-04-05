@@ -2,7 +2,7 @@ import s from "./SimilarPosts.component.module.scss";
 
 import { forwardRef, LegacyRef, useMemo } from "react";
 
-import { type PostsType } from "@/types/PostType.type";
+import { type PostsType } from "@/types/PostType.types";
 
 import PostCardComponent from "@/components/pages/Blog/Posts/PostCardComponent/PostCardComponent.component";
 import Caption from "@/components/UI/Caption/Caption.component";

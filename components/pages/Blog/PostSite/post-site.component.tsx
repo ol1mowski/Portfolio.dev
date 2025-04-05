@@ -1,7 +1,7 @@
 'use client';
 
 import { type FC, useContext } from 'react';
-import { type PostsType } from '@/types/PostType.type';
+import { type PostsType } from '@/types/PostType.types';
 
 import { PostVisibleContext } from '../post-provider';
 import Header from '../header/header.component';

@@ -1,5 +1,5 @@
 import ProjectComponent from "../ProjectContainer/ProjectContainer.component";
-import { type ProjectType } from "@/types/PostType.type";
+import { type ProjectType } from "@/types/PostType.types";
 
 const Project = ({
   image,

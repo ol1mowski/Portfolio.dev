@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { type FC } from 'react';
-import { type PostsType } from '@/types/PostType.type';
+import { type PostsType } from '@/types/PostType.types';
 
 import s from './post-card.module.scss';
 

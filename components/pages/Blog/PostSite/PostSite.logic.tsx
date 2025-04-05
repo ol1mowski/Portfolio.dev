@@ -7,7 +7,7 @@ import { useContext } from "react";
 import NotFound from "../NotFound/NotFound.page";
 import PostVisibleContext from "@/store/PostVisible.context";
 
-import { type PostsType } from "@/types/PostType.type";
+import { type PostsType } from "@/types/PostType.types";
 
 import Header from "../HeaderBlog/Header.component.page";
 import PostHeader from "./PostHeader/PostHeader.component";

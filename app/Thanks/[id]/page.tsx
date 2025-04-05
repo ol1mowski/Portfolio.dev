@@ -4,7 +4,7 @@ import Button from "@/components/UI/Button/Button.component";
 import Header from "@/components/pages/Header/Header.component";
 import { redirect } from "next/navigation";
 import { validateSession } from "@/lib/auth";
-import { Params } from "@/types/Params.type";
+import { Params } from "@/types/Params.types";
 
 type ContentType = {
   description: string;

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import s from './NumberOfService.component.module.scss';
-import { NumberOfServiceProps } from '@/types/Services.type';
+import { NumberOfServiceProps } from '@/types/Services.types';
 
 export const NumberOfService: FC<NumberOfServiceProps> = ({ number }) => {
   return (

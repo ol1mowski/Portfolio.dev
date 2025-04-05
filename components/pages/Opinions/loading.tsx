@@ -1,7 +1,6 @@
 import { FC, memo } from 'react';
 import s from './loading.module.scss';
 import { OPINIONS_LOADING_ARIA_LABEL, OPINIONS_LOADING_TEXT } from './constants/opinions.constants';
-import { Loading as SharedLoading } from '@/components/UI/shared';
 
 export const Loading: FC = memo(() => {
   return (

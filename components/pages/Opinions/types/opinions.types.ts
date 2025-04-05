@@ -1,4 +1,4 @@
-import { OpinionsType } from "@/types/Opinions.type";
+import { OpinionsType } from "@/types/Opinions.types";
 
 export interface OpinionsData {
   opinions: OpinionsType[];

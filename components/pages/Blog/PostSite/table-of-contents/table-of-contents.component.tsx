@@ -1,6 +1,6 @@
 'use client';
 
-import { type FC, useContext, useEffect, useRef, useState } from 'react';
+import { type FC, useContext, useRef } from 'react';
 import { PostVisibleContext } from '../../post-provider';
 import { useSticky } from './use-sticky.hook';
 import s from './table-of-contents.module.scss';

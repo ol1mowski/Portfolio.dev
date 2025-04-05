@@ -33,4 +33,4 @@ CustomerSchema.pre('save', function(next: any) {
 
 const Customers = mongoose.models.customers || mongoose.model('customers', CustomerSchema);
 
-module.exports = { Customers };
+export { Customers };

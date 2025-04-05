@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import dynamic from 'next/dynamic';
-import type { ProjectType } from "@/types/PostType.type";
+import type { ProjectType } from "@/types/PostType.types";
 import s from "./ProjectContainer.component.module.scss";
 
 const AnimationWrapper = dynamic(() => 

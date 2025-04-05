@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ServiceType } from '@/types/Services.type';
+import { ServiceType } from '@/types/Services.types';
 import { SERVICES } from "@/data/Services.data";
 import { SERVICES_ARIA_LABEL } from './constants/services.constants';
 import { useServiceSplit } from './hooks/useServiceSplit.hook';

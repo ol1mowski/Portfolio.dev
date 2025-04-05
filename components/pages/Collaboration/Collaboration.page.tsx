@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 
 import CollaborationHeader from "./CollaborationHeader/CollaborationHeader.component";
 import { COLLABORATION_STEP } from "@/data/CollaborationStep.data";
-import type { CollaborationStepType } from "@/types/CollaborationStep.type";
+import type { CollaborationStepType } from "@/types/CollaborationStep.types";
 
 
 const Step = dynamic(() => import("./Step/Step.component"));

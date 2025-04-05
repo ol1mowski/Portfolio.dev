@@ -1,5 +1,5 @@
 import { getPosts } from "@/db/Utils/DataFetchingFunctions/DataFetchingFunctions";
-import { type PostsType } from "@/types/PostType.type";
+import { type PostsType } from "@/types/PostType.types";
 
 export interface PostsResponse {
   posts: PostsType[];

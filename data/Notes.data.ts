@@ -1,4 +1,4 @@
-import { type NoteType } from "@/types/Notes.type";
+import { type NoteType } from "@/types/Notes.types";
 
 export const NOTES: NoteType[] = [
   {

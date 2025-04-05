@@ -1,7 +1,7 @@
 import s from './ProjectCta.component.module.scss';
 
-function ProjectCta({  liveLink,
-  githubLink} : { liveLink: string, githubLink: string }) {
+const ProjectCta = ({  liveLink,
+  githubLink} : { liveLink: string, githubLink: string }) => {
   return (
     <section className={s.iconSection}>
       <a

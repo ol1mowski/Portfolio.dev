@@ -6,7 +6,7 @@ import Button from "@/components/UI/Button/Button.component";
 import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
 import Header from "../HeaderBlog/Header.component.page";
 
-import { type PostsType } from "@/types/PostType.type";
+import { type PostsType } from "@/types/PostType.types";
 
 interface HomePageComponentProps {
   posts: PostsType[];

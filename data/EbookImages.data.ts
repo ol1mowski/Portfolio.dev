@@ -1,4 +1,4 @@
-import { type StarIconType } from "@/types/StarIconType.type";
+import { type StarIconType } from "@/types/StarIconType.types";
 
 export const STAR_IMAGES: StarIconType[] = [
   {

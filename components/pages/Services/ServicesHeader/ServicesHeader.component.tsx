@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 import s from './ServicesHeader.component.module.scss';
 import Paragraph from "@/components/UI/Word/Paragraph.component";
-import { ServicesHeaderProps } from '@/types/Services.type';
+import { ServicesHeaderProps } from '@/types/Services.types';
 
 export const ServicesHeader: FC<ServicesHeaderProps> = memo(({ typArr }) => {
   return (

@@ -1,4 +1,4 @@
-import { type PostsType } from "@/types/PostType.type";
+import { type PostsType } from "@/types/PostType.types";
 import s from "./PostHeader.component.module.scss";
 import PostInfo from "../PostInfo/PostInfo.component";
 

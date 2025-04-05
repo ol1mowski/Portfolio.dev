@@ -1,5 +1,5 @@
 import s from "./Services.data.module.scss";
-import { type ServiceType } from "@/types/Services.type";
+import { type ServiceType } from "@/types/Services.types";
 
 export const SERVICES: ServiceType[] = [
   {

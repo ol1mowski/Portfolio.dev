@@ -1,6 +1,6 @@
 import s from "./Projects.page.module.scss";
 import { ProjectType } from "@/types/PostType.types";
-import { useDynamicImport } from './hooks/useDynamicImport.hook';
+import { createDynamicComponent } from './hooks/useDynamicImport.hook';
 import { useProjectsSorting } from './hooks/useProjectsSorting.hook';
 import { useFetchData } from '@/hooks/useFetchData.hook';
 import { 
@@ -13,6 +13,18 @@ import {
 import ProjectHeader from "./ProjectHeader/ProjectHeader.component";
 import { SectionContainer } from '@/components/UI/shared';
 
+// Utwórz dynamiczne komponenty poza komponentem funkcyjnym
+const ProjectComponent = createDynamicComponent(
+  () => import("./ProjectContainer/ProjectContainer.component"), 
+  {
+    loading: () => <div>{PROJECTS_LOADING_MESSAGE}</div>
+  }
+);
+
+const ProjectsWrapper = createDynamicComponent(
+  () => import("./ProjectsWrapper/ProjectsWrapper.component")
+);
+
 const Projects = async () => {
   const { sortProjectsByDate } = useProjectsSorting();
   const projectsData = await useFetchData('projects', PROJECTS_FETCH_ERROR_LOG);
@@ -20,17 +32,6 @@ const Projects = async () => {
   if (!projectsData) {
     return <p>{PROJECTS_FETCH_ERROR_MESSAGE}</p>;
   }
-
-  const ProjectComponent = useDynamicImport(
-    () => import("./ProjectContainer/ProjectContainer.component"), 
-    {
-      loading: () => <div>{PROJECTS_LOADING_MESSAGE}</div>
-    }
-  );
-  
-  const ProjectsWrapper = useDynamicImport(
-    () => import("./ProjectsWrapper/ProjectsWrapper.component")
-  );
 
   const projectList = projectsData[0].projects;
   const sortedProjects = sortProjectsByDate(projectList);

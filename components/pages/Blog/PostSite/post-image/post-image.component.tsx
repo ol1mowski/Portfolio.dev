@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import Image from 'next/image';
-import { type PostsType } from '@/types/PostType.type';
+import { type PostsType } from '@/types/PostType.types';
 import s from './post-image.module.scss';
 
 interface PostImageProps {

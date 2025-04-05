@@ -1,6 +1,6 @@
 import { FC, memo } from 'react';
 import s from './Label.component.module.scss';
-import { LabelProps } from '@/types/Services.type';
+import { LabelProps } from '@/types/Services.types';
 import { SERVICES_LABEL_TEXT } from '../constants/services.constants';
 
 export const Label: FC<LabelProps> = memo(({ ifFirst }) => {

@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import { type PostsType } from '@/types/PostType.type';
+import { type PostsType } from '@/types/PostType.types';
 
 import { PostsList } from '../ui/posts-list/posts-list.component';
 import s from './posts.module.scss';

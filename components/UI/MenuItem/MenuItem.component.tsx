@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { memo } from 'react';
-import { type MenuItemType } from '@/types/MenuItemType.type';
+import { type MenuItemType } from '@/types/MenuItemType.types';
 
 interface MenuItemProps extends MenuItemType {
   className: string;

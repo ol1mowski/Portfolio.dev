@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import Link from 'next/link';
-import { type PostsType } from '@/types/PostType.type';
+import { type PostsType } from '@/types/PostType.types';
 
 import Caption from '@/components/UI/Caption/Caption.component';
 import Description from '@/components/UI/Description/Description.component';
