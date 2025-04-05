@@ -4,7 +4,7 @@ import s from "./ShowMobileMenu.component.module.scss";
 import { memo } from "react";
 import Image from "next/image";
 import MobileMenuHeader from "../MobileMenu/MobileMenuHeader.component";
-import { useMenu } from "@/hooks/useMenu";
+import { useMenu } from "@/hooks/useMenu.hook";
 import { HEADER_ICONS, ICON_DIMENSIONS } from "../constants/constants";
 
 const ShowMobileMenu = memo(() => {

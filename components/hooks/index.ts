@@ -1,1 +1,1 @@
-export { useAsyncData } from './useAsyncData.hook'; 
+export { useAsyncData } from './useAsyncData'; 

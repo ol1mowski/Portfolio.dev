@@ -2,8 +2,8 @@ import { Projects } from "../../Schemas/Projects";
 import { Opinions } from "../../Schemas/Opinions";
 import { dbConnect } from "../../db_connect";
 import { Document } from "mongoose";
-import { ProjectsType } from "@/types/PostType.type";
-import { OpinionsType } from "@/types/Opinions.type";
+import { ProjectsType } from "@/types/PostType.types";
+import { OpinionsType } from "@/types/Opinions.types";
 
 interface ClientData {
   name: string;

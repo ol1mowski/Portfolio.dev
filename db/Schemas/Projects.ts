@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
-import { ProjectType } from '@/types/PostType.type';
+import { ProjectType } from '@/types/PostType.types';
 
 export interface ProjectDocument extends Document {
   projects: ProjectType[];

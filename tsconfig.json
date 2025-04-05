@@ -39,7 +39,7 @@
     "next/types/**/*.ts",
     ".next/types/**/*.ts",
     "types/PostType..typets"
-  ],
+, "hooks/useFetchData.hookts"  ],
   "exclude": [
     "node_modules",
     "node_modules",

@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
-import { OpinionsType } from '@/types/Opinions.type';
+import { OpinionsType } from '@/types/Opinions.types';
 
 export interface OpinionDocument extends Document {
   opinions: OpinionsType['opinions'];

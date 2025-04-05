@@ -1,14 +1,8 @@
 import Image from "next/image";
 import s from "./Opinion.component.module.scss";
+import { SingleOpinionType } from '@/types/Opinions.types';
 
-type OpinionsTypeProps = {
-  content: string;
-  link: string;
-  companyImage: string;
-  companyName: string;
-};
-
-function Opinion({ opinion }: { opinion: OpinionsTypeProps }) {
+function Opinion({ opinion }: { opinion: SingleOpinionType }) {
   const { content, link, companyImage, companyName } = opinion;
   return (
     <div className={s.opinion}>

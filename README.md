@@ -61,7 +61,7 @@ Check out the live version of my portfolio [here](your-live-demo-url).
 
 ## 🤝 Contributing
 
-I’m always open to contributions! Feel free to fork this project and submit pull requests. If you encounter any issues, please open an issue in this repository.
+I'm always open to contributions! Feel free to fork this project and submit pull requests. If you encounter any issues, please open an issue in this repository.
 
 ## 📫 Contact
 
@@ -69,4 +69,12 @@ Feel free to reach out if you have any questions or feedback. Connect with me on
 
 ## ⭐️ Show Your Support
 
-If you like this project, please give it a ⭐️ on GitHub—it means 
+If you like this project, please give it a ⭐️ on GitHub—it means a lot!
+
+## Konwencje Nazewnictwa
+
+Projekt korzysta z ustalonych konwencji nazewnictwa, które pomagają zachować spójność i czytelność kodu. Szczegółowe informacje znajdziesz w [dokumentacji konwencji nazewnictwa](docs/NAMING_CONVENTIONS.md).
+
+Aby przeprowadzić migrację na nowe konwencje, możesz użyć skryptów:
+- `scripts/migrate-to-conventions.ps1` - do zmiany nazw plików i katalogów
+- `scripts/update-imports.ps1` - do aktualizacji importów

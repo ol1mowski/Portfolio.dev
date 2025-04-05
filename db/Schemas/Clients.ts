@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const CustomerSchema = new mongoose.Schema({
   name: {
@@ -24,11 +24,9 @@ const CustomerSchema = new mongoose.Schema({
   collection: 'customers'
 });
 
-// Dodaj indeks dla email
 CustomerSchema.index({ email: 1 }, { unique: true });
 
-// Pre-save middleware
-CustomerSchema.pre('save', function(next) {
+CustomerSchema.pre('save', function(next: any) {
   this.email = this.email.toLowerCase();
   next();
 });

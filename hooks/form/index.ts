@@ -1,2 +1,2 @@
-export * from './use-form-validation.hook';
-export * from './use-form-errors.hook'; 
+export * from './use-form-validation';
+export * from './use-form-errors'; 

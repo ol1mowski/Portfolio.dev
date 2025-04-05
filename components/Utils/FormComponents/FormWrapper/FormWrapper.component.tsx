@@ -3,7 +3,7 @@ import { memo } from 'react';
 import Success from "@/components/UI/Success/Success.component";
 import FormComponent from "../Form.component";
 
-import type { FormState } from "@/hooks/useFormValidation";
+import type { FormState } from "@/hooks/useFormValidation.hook";
 
 interface FormWrapperProps {
   formState: FormState;

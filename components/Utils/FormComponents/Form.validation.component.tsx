@@ -1,6 +1,6 @@
 "use client";
 
-import { useFormValidation } from "@/hooks/useFormValidation";
+import { useFormValidation } from "@/hooks/useFormValidation.hook";
 import FormWrapper from "./FormWrapper/FormWrapper.component";
 
 interface FormProps {

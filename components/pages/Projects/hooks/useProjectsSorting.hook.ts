@@ -1,4 +1,4 @@
-import { ProjectType } from "@/types/PostType.type";
+import { ProjectType } from "@/types/PostType.types";
 import { monthsMap } from "@/consts/Date";
 
 export const useProjectsSorting = () => {

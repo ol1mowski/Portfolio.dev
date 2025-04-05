@@ -11,6 +11,7 @@ import {
   OPINIONS_SECTION_ID 
 } from './constants/opinions.constants';
 import { SectionContainer } from '@/components/UI/shared';
+import { SingleOpinionType } from '@/types/Opinions.types';
 
 export const Opinions = async () => {
   const opinionsData = await useFetchData('opinions', OPINIONS_FETCH_ERROR_LOG);
@@ -31,7 +32,7 @@ export const Opinions = async () => {
       <SectionName />
       <OpinionHeader />
       <OpinionsWrapper>
-        {res.map((opinion, index) => (
+        {res.map((opinion: SingleOpinionType, index: number) => (
           <Opinion key={index} opinion={opinion} />
         ))}
       </OpinionsWrapper>

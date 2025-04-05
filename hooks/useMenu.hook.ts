@@ -2,7 +2,7 @@
 
 import { useCallback, useContext } from 'react';
 import HamburgerClickContext from "@/store/HamburgerClickContext";
-import { MenuContextType } from '@/types/MenuContext.type';
+import { MenuContextType } from '@/types/MenuContext.types';
 
 export const useMenu = () => {
   const { isOpen, setOpen } = useContext(HamburgerClickContext) as MenuContextType;

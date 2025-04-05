@@ -1,5 +1,5 @@
 import s from "./Projects.page.module.scss";
-import { ProjectType } from "@/types/PostType.type";
+import { ProjectType } from "@/types/PostType.types";
 import { useDynamicImport } from './hooks/useDynamicImport.hook';
 import { useProjectsSorting } from './hooks/useProjectsSorting.hook';
 import { useFetchData } from '@/hooks/useFetchData.hook';
