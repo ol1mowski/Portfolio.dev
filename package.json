@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@lucia-auth/adapter-mongodb": "^1.0.3",
+    "@sendgrid/mail": "^8.1.4",
     "@types/jsonwebtoken": "^9.0.7",
     "dotenv": "^16.4.5",
     "framer-motion": "^11.18.2",

@@ -9,9 +9,6 @@ if (!JWT_SECRET) {
 
 export async function createAuthSession(email: string, name: string) {
   try {
-    console.log('Creating auth session for:', { email, name });
-    console.log('JWT_SECRET exists:', !!JWT_SECRET);
-
     const token = jwt.sign(
       { email, name },
       JWT_SECRET as string,
