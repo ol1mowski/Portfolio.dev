@@ -1,15 +1,12 @@
 import { memo } from 'react';
-import dynamic from 'next/dynamic';
 import type { ProjectType } from "@/types/PostType.types";
 import s from "./ProjectContainer.component.module.scss";
-
-const AnimationWrapper = dynamic(() => 
-  import("@/components/UI/AnimationWrapper/AnimationWrapper.component"));
-const ProjectImage = dynamic(() => import("./ProjectImage/ProjectImage.component"));
-const ProjectTitle = dynamic(() => import("./ProjectTitle/ProjectTitle.component"));
-const ProjectDescription = dynamic(() => import("./ProjectDescription/ProjectDescription.component"));
-const ProjectTools = dynamic(() => import("./ProjectTools/ProjectTools.component"));
-const ProjectCta = dynamic(() => import("./ProjectCta/ProjectCta.component"));
+import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
+import ProjectImage from "./ProjectImage/ProjectImage.component";
+import ProjectTitle from "./ProjectTitle/ProjectTitle.component";
+import ProjectDescription from "./ProjectDescription/ProjectDescription.component";
+import ProjectTools from "./ProjectTools/ProjectTools.component";
+import ProjectCta from "./ProjectCta/ProjectCta.component";
 
 const ProjectComponent = memo(({
   image,

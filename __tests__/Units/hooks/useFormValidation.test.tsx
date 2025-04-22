@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { useFormValidation } from '../../../hooks/useFormValidation';
+import { useFormValidation } from '../../../hooks/useFormValidation.hook';
 
 const mockRouter = { push: vi.fn() };
 

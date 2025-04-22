@@ -4,7 +4,7 @@ import SubscribersAmount from "@/components/pages/Stats/Stats.page";
 import Contact from "@/components/pages/Contact/Contact.page";
 import Footer from "@/components/pages/Footer/Footer.page";
 import Opinions from "@/components/pages/Opinions/Opinions.page";
-import Projects from "@/components/pages/Projects/Projects.page";
+import ProjectsDataProvider from "@/components/pages/Projects";
 import { Ebook } from "@/components/pages/EBook/Ebook.page";
 import AbourMe from "@/components/pages/AboutMe/AbouMe.page";
 import Services from "@/components/pages/Services/Services.page";
@@ -23,7 +23,7 @@ export default function Home() {
       <Services />
       <SubscribersAmount />
       {/* @ts-expect-error Async Server Component */}
-      <Projects />
+      <ProjectsDataProvider />
       {/* @ts-expect-error Async Server Component */}
       <Opinions />
       <Collaboration />

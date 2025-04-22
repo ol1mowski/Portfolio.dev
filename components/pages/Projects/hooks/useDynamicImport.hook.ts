@@ -14,5 +14,4 @@ export const createDynamicComponent = <T extends ComponentType<any>>(
   });
 };
 
-// Eksportujemy również starą nazwę dla wstecznej kompatybilności
 export const useDynamicImport = createDynamicComponent; 

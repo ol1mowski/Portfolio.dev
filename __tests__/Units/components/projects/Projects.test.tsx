@@ -4,6 +4,22 @@ import React from 'react';
 
 import Projects from '../../../../components/pages/Projects/Projects.page';
 
+vi.mock('../../../../components/pages/Projects/hooks/useDynamicImport.hook', () => ({
+  createDynamicComponent: (importFunc: any) => {
+    const Component = (props: any) => {
+      const MockedComponent = importFunc().default;
+      return <MockedComponent {...props} />;
+    };
+    return Component;
+  }
+}));
+
+vi.mock('@/components/UI/AnimationWrapper/AnimationWrapper.component', () => ({
+  default: ({ children }: { children: React.ReactNode }) => (
+    <div data-testid="animation-wrapper">{children}</div>
+  )
+}));
+
 vi.mock('../../../../components/pages/Projects/ProjectHeader/ProjectHeader.component', () => ({
   default: () => <div data-testid="project-header">Projects Header</div>
 }));
@@ -20,6 +36,34 @@ vi.mock('../../../../components/pages/Projects/ProjectContainer/ProjectContainer
 vi.mock('../../../../components/pages/Projects/ProjectsWrapper/ProjectsWrapper.component', () => ({
   default: ({ children }: { children: React.ReactNode }) => (
     <div data-testid="projects-wrapper">{children}</div>
+  )
+}));
+
+vi.mock('../../../../components/pages/Projects/ProjectContainer/ProjectImage/ProjectImage.component', () => ({
+  default: (props: any) => <div data-testid="project-image">Image: {props.image}</div>
+}));
+
+vi.mock('../../../../components/pages/Projects/ProjectContainer/ProjectTitle/ProjectTitle.component', () => ({
+  default: (props: any) => <div data-testid="project-title">Title: {props.title} ({props.date})</div>
+}));
+
+vi.mock('../../../../components/pages/Projects/ProjectContainer/ProjectDescription/ProjectDescription.component', () => ({
+  default: (props: any) => <div data-testid="project-description">Description: {props.description}</div>
+}));
+
+vi.mock('../../../../components/pages/Projects/ProjectContainer/ProjectTools/ProjectTools.component', () => ({
+  default: (props: any) => (
+    <div data-testid="project-tools">
+      Technologies: {props.technologies.join(', ')}
+    </div>
+  )
+}));
+
+vi.mock('../../../../components/pages/Projects/ProjectContainer/ProjectCta/ProjectCta.component', () => ({
+  default: (props: any) => (
+    <div data-testid="project-cta">
+      Links: {props.githubLink}, {props.liveLink}
+    </div>
   )
 }));
 
