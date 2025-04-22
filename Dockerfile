@@ -1,5 +1,3 @@
-# syntax=docker/dockerfile:1
-
 FROM node:20-alpine AS base
 WORKDIR /app
 ENV NODE_ENV=production
@@ -22,10 +20,13 @@ COPY ./style ./style/
 COPY . .
 
 ARG NEXT_PUBLIC_BASE_URL
-ARG DB_URL
-ARG JWT_SECRET
+ENV NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL}
 
-RUN npm run build
+RUN --mount=type=secret,id=db_url \
+    --mount=type=secret,id=jwt_secret \
+    DB_URL=$(cat /run/secrets/db_url) \
+    JWT_SECRET=$(cat /run/secrets/jwt_secret) \
+    npm run build
 
 FROM base AS runner
 WORKDIR /app
