@@ -1,14 +1,14 @@
 //fonts
 
 @mixin headerFont() {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
 }
 
 @mixin textFont() {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-style: normal;
   line-height: 1.7rem;
@@ -30,7 +30,9 @@ $dark-white-background-color: #f9f9f9;
 
 //box shadow
 $box-shadow-low: #e0e1e322 10px 5px 15px;
-$box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+$box-shadow:
+  rgba(0, 0, 0, 0.12) 0px 1px 3px,
+  rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
 //margin
 $standard-margin: 1rem;

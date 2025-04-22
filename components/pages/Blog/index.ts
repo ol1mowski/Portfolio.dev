@@ -13,4 +13,4 @@ export { usePosts } from './hooks/usePosts.hook';
 export { usePostsFetching, useSinglePostFetching } from './hooks/usePostsFetching.hook';
 
 // UI Components
-export { PostCard, PostsList } from './ui'; 
+export { PostCard, PostsList } from './ui';

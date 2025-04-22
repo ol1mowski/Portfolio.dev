@@ -1,15 +1,15 @@
-import { useSession } from 'next-auth/react'
+import { useSession } from 'next-auth/react';
 
 export function ProtectedComponent() {
-  const { data: session, status } = useSession()
-  
+  const { data: session, status } = useSession();
+
   if (status === 'loading') {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
-  
+
   if (!session) {
-    return <div>Access denied</div>
+    return <div>Access denied</div>;
   }
-  
-  return <div>Protected content</div>
-} 
+
+  return <div>Protected content</div>;
+}

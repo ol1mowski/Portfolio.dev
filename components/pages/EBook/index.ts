@@ -6,4 +6,4 @@ export { EbookCtaOpinion } from './EbookCtaWrapper/EbookCtaOpinion/EbookCtaOpini
 export { EbookCtaText } from './EbookCtaWrapper/EbookCtaText/EbookCtaText.component';
 export { EbookCtaButton } from './EbookCtaWrapper/EbookCtaButton/EbookCtaButton.component';
 export { EbookImageSide } from './EbookImageSide/EbookImageSide.component';
-export * from './hooks/useDynamicImport.hook'; 
+export * from './hooks/useDynamicImport.hook';

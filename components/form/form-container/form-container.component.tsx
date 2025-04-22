@@ -14,7 +14,7 @@ export const FormContainer: FC<FormContainerProps> = ({
   formState,
   children,
   title,
-  description
+  description,
 }) => {
   const { success, error } = formState;
 
@@ -30,10 +30,10 @@ export const FormContainer: FC<FormContainerProps> = ({
           {description && <span className={s.description}>{description}</span>}
         </h2>
       )}
-      
+
       {error && <div className={s.errorMessage}>{error}</div>}
-      
+
       {children}
     </div>
   );
-}; 
+};

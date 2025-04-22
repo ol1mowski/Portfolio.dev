@@ -1,5 +1,5 @@
-import Image from "next/image";
-import s from "./Opinion.component.module.scss";
+import Image from 'next/image';
+import s from './Opinion.component.module.scss';
 import { SingleOpinionType } from '@/types/Opinions.types';
 
 function Opinion({ opinion }: { opinion: SingleOpinionType }) {

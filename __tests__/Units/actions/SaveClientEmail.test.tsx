@@ -5,11 +5,11 @@ import { saveClientToDB } from '../../../db/Utils/DataFetchingFunctions/DataFetc
 import { createAuthSession } from '../../../lib/auth';
 
 vi.mock('../../../db/Utils/DataFetchingFunctions/DataFetchingFunctions', () => ({
-  saveClientToDB: vi.fn()
+  saveClientToDB: vi.fn(),
 }));
 
 vi.mock('../../../lib/auth', () => ({
-  createAuthSession: vi.fn()
+  createAuthSession: vi.fn(),
 }));
 
 describe('SaveClientEmail Action', () => {
@@ -31,7 +31,7 @@ describe('SaveClientEmail Action', () => {
     expect(result.success).toBe(true);
     expect(saveClientToDB).toHaveBeenCalledWith({
       name: 'Test User',
-      email: 'test@example.com'
+      email: 'test@example.com',
     });
     expect(createAuthSession).toHaveBeenCalledWith('test@example.com', 'Test User');
   });
@@ -74,7 +74,11 @@ describe('SaveClientEmail Action', () => {
   });
 
   it('should handle session creation failure', async () => {
-    vi.mocked(saveClientToDB).mockResolvedValue({ id: '1', name: 'Test User', email: 'test@example.com' });
+    vi.mocked(saveClientToDB).mockResolvedValue({
+      id: '1',
+      name: 'Test User',
+      email: 'test@example.com',
+    });
     vi.mocked(createAuthSession).mockResolvedValue({ success: false });
 
     const formData = new FormData();
@@ -88,7 +92,11 @@ describe('SaveClientEmail Action', () => {
   });
 
   it('should trim whitespace from input data', async () => {
-    vi.mocked(saveClientToDB).mockResolvedValue({ id: '1', name: 'Test User', email: 'test@example.com' });
+    vi.mocked(saveClientToDB).mockResolvedValue({
+      id: '1',
+      name: 'Test User',
+      email: 'test@example.com',
+    });
     vi.mocked(createAuthSession).mockResolvedValue({ success: true });
 
     const formData = new FormData();
@@ -99,7 +107,7 @@ describe('SaveClientEmail Action', () => {
 
     expect(saveClientToDB).toHaveBeenCalledWith({
       name: 'Test User',
-      email: 'test@example.com'
+      email: 'test@example.com',
     });
   });
-}); 
+});

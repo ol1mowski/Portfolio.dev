@@ -7,13 +7,8 @@ export const Label: FC<LabelProps> = memo(({ ifFirst }) => {
   if (!ifFirst) return null;
 
   return (
-    <div 
-      className={s.aboutSectionWrapper}
-      aria-label="Sekcja usług"
-    >
-      <span className={s.aboutSectionWrapper__content}>
-        {SERVICES_LABEL_TEXT}
-      </span>
+    <div className={s.aboutSectionWrapper} aria-label="Sekcja usług">
+      <span className={s.aboutSectionWrapper__content}>{SERVICES_LABEL_TEXT}</span>
     </div>
   );
 });

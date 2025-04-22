@@ -1,4 +1,4 @@
-@import "@/style/index.scss";
+@import '@/style/index.scss';
 
 .hamburgerMenu {
   background-color: $white;
@@ -10,7 +10,7 @@
   left: 0;
   transform: translateX(100vw);
   padding: $standard-padding;
-  animation: showMenu .5s linear forwards;
+  animation: showMenu 0.5s linear forwards;
   &__close {
     height: 15%;
     cursor: pointer;
@@ -20,7 +20,6 @@
     transition: transform 0.7s;
     margin-top: 2.5rem;
     will-change: transform;
-
   }
   &__close:hover {
     transform: translateY(-1rem);
@@ -57,7 +56,7 @@
         margin-bottom: 0.7rem;
         @include headerFont;
         cursor: pointer;
-        transition: color, scale, .7s;
+        transition: color, scale, 0.7s;
         will-change: color, scale;
       }
       &__item:hover {

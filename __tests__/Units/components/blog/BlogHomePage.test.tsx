@@ -1,25 +1,25 @@
-import { render, screen } from "@testing-library/react";
-import { vi } from "vitest";
+import { render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 
-import React from "react";
+import React from 'react';
 
-import HomePageComponent from "../../../../components/pages/Blog/HomePage/HomePage.page";
+import HomePageComponent from '../../../../components/pages/Blog/HomePage/HomePage.page';
 
-vi.mock("next/image", () => ({
+vi.mock('next/image', () => ({
   __esModule: true,
   default: (props: any) => {
     return <img {...props} />;
   },
 }));
 
-describe("HomePageComponent", () => {
+describe('HomePageComponent', () => {
   beforeAll(() => {
     global.IntersectionObserver = vi.fn(() => ({
       observe: vi.fn(),
       unobserve: vi.fn(),
       disconnect: vi.fn(),
       root: null,
-      rootMargin: "",
+      rootMargin: '',
       thresholds: [],
       takeRecords: vi.fn(),
     }));
@@ -27,28 +27,28 @@ describe("HomePageComponent", () => {
 
   const mockPosts = [
     {
-      category: "Tech",
-      title: "First Post",
-      description: "This is the first post",
-      slug: "first-post",
+      category: 'Tech',
+      title: 'First Post',
+      description: 'This is the first post',
+      slug: 'first-post',
     },
     {
-      category: "Lifestyle",
-      title: "Latest Post",
-      description: "This is the latest post",
-      slug: "latest-post",
+      category: 'Lifestyle',
+      title: 'Latest Post',
+      description: 'This is the latest post',
+      slug: 'latest-post',
     },
   ];
 
-  it("displays the last post correctly", () => {
+  it('displays the last post correctly', () => {
     render(<HomePageComponent posts={mockPosts} />);
 
-    expect(screen.getByText("Lifestyle")).toBeInTheDocument();
-    expect(screen.getByText("Latest Post")).toBeInTheDocument();
-    expect(screen.getByText("This is the latest post")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /Czytaj/i })).toHaveAttribute(
-      "href",
-      "/Blog/posty/latest-post"
+    expect(screen.getByText('Lifestyle')).toBeInTheDocument();
+    expect(screen.getByText('Latest Post')).toBeInTheDocument();
+    expect(screen.getByText('This is the latest post')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Czytaj/i })).toHaveAttribute(
+      'href',
+      '/Blog/posty/latest-post'
     );
   });
 });

@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
-import s from "./PostArticle.component.module.scss";
-import Caption from "@/components/UI/Caption/Caption.component";
-import PostVisibleContext from "@/store/PostVisible.context";
-import { useContext, useRef, useEffect } from "react";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import s from './PostArticle.component.module.scss';
+import Caption from '@/components/UI/Caption/Caption.component';
+import PostVisibleContext from '@/store/PostVisible.context';
+import { useContext, useRef, useEffect } from 'react';
 
 interface PostArticleProps {
   slug: string;
@@ -15,11 +15,7 @@ interface PostArticleProps {
   description: string[];
 }
 
-const PostArticle: React.FC<PostArticleProps> = ({
-  slug,
-  title,
-  description,
-}) => {
+const PostArticle: React.FC<PostArticleProps> = ({ slug, title, description }) => {
   const { setSectionVisible } = useContext(PostVisibleContext);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -28,8 +24,8 @@ const PostArticle: React.FC<PostArticleProps> = ({
 
     if (currentRef) {
       const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
+        entries => {
+          entries.forEach(entry => {
             if (entry.isIntersecting) {
               setSectionVisible(title, true);
             }
@@ -37,7 +33,7 @@ const PostArticle: React.FC<PostArticleProps> = ({
         },
         {
           root: null,
-          rootMargin: "0px",
+          rootMargin: '0px',
           threshold: 0.1,
         }
       );
@@ -63,25 +59,14 @@ const PostArticle: React.FC<PostArticleProps> = ({
           remarkPlugins={[remarkGfm]}
           className={s.postContentSection__text}
           components={{
-            h1: ({ node, ...props }) => (
-              <h1 className={s.customHeading} {...props} />
-            ),
-            h2: ({ node, ...props }) => (
-              <h2 className={s.customHeading} {...props} />
-            ),
-            p: ({ node, ...props }) => (
-              <p className={s.customParagraph} {...props} />
-            ),
+            h1: ({ node, ...props }) => <h1 className={s.customHeading} {...props} />,
+            h2: ({ node, ...props }) => <h2 className={s.customHeading} {...props} />,
+            p: ({ node, ...props }) => <p className={s.customParagraph} {...props} />,
             code({ inline, className, children, ...props }: any) {
-              const match = /language-(\w+)/.exec(className || "");
+              const match = /language-(\w+)/.exec(className || '');
               return !inline && match ? (
-                <SyntaxHighlighter
-                  style={vscDarkPlus}
-                  language={match[1]}
-                  PreTag="div"
-                  {...props}
-                >
-                  {String(children).replace(/\n$/, "")}
+                <SyntaxHighlighter style={vscDarkPlus} language={match[1]} PreTag="div" {...props}>
+                  {String(children).replace(/\n$/, '')}
                 </SyntaxHighlighter>
               ) : (
                 <code className={s.inlineCode} {...props}>

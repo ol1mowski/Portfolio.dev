@@ -1,4 +1,4 @@
-@import "@/style/index.scss";
+@import '@/style/index.scss';
 
 .form {
   @include d-flex;
@@ -9,7 +9,7 @@
     font-size: $text-size;
     border: 0.1rem solid $dark-blue;
     color: $dark;
-    font-family: "Lato", sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: 300;
     font-style: normal;
     letter-spacing: 2px;

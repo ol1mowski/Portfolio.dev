@@ -12,4 +12,4 @@ export interface EbookImageProps {
   className?: string;
   loading?: 'lazy' | 'eager';
   priority?: boolean;
-} 
+}

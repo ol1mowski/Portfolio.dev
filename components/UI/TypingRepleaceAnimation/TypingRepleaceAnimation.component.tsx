@@ -1,18 +1,20 @@
-"use client";
+'use client';
 
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from 'react';
 
 const TypingReplaceAnimation = ({ className }: { className: string }) => {
-  const texts = useMemo(() => ["Stron Internetowych", "Sklepów Internetowych", "Projektów Graficznych"], []);
-  const [displayText, setDisplayText] = useState("");
+  const texts = useMemo(
+    () => ['Stron Internetowych', 'Sklepów Internetowych', 'Projektów Graficznych'],
+    []
+  );
+  const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isFinished, setIsFinished] = useState(false); 
+  const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
     let index = 0;
-    let typingInterval: NodeJS.Timeout;
-
+    
     const typeText = () => {
       const fullText = texts[currentIndex];
 
@@ -24,8 +26,8 @@ const TypingReplaceAnimation = ({ className }: { className: string }) => {
         setTimeout(() => setIsDeleting(true), 1000);
       }
     };
-
-    typingInterval = setInterval(typeText, 100);
+    
+    const typingInterval = setInterval(typeText, 100);
 
     return () => clearInterval(typingInterval);
   }, [currentIndex, texts]);
@@ -34,7 +36,7 @@ const TypingReplaceAnimation = ({ className }: { className: string }) => {
     if (isDeleting) {
       const deletingInterval = setInterval(() => {
         if (displayText.length > 0) {
-          setDisplayText((prev) => prev.slice(0, -1));
+          setDisplayText(prev => prev.slice(0, -1));
         } else {
           clearInterval(deletingInterval);
           setIsDeleting(false);
@@ -42,7 +44,7 @@ const TypingReplaceAnimation = ({ className }: { className: string }) => {
           if (currentIndex + 1 === texts.length) {
             setIsFinished(true);
           } else {
-            setCurrentIndex((prevIndex) => prevIndex + 1); 
+            setCurrentIndex(prevIndex => prevIndex + 1);
           }
         }
       }, 100);
@@ -58,7 +60,6 @@ const TypingReplaceAnimation = ({ className }: { className: string }) => {
       </div>
     );
   }
-
   return (
     <div>
       <span className={className}>{displayText}</span>
@@ -67,3 +68,4 @@ const TypingReplaceAnimation = ({ className }: { className: string }) => {
 };
 
 export default TypingReplaceAnimation;
+

@@ -1,11 +1,11 @@
-import s from "./NoteCard.component.module.scss";
+import s from './NoteCard.component.module.scss';
 
 import { memo } from 'react';
 
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
-import Button from "@/components/UI/Button/Button.component";
+import Button from '@/components/UI/Button/Button.component';
 
 interface NoteCardProps {
   id: number;
@@ -16,26 +16,17 @@ interface NoteCardProps {
   className?: string;
 }
 
-const NoteCard = memo(({ 
-  title, 
-  image, 
-  slug,
-  type,
-  className 
-}: NoteCardProps) => {
+const NoteCard = memo(({ title, image, slug, type, className }: NoteCardProps) => {
   const resourceType = type === 'ebook' ? 'E-book' : 'Notatka';
   const basePath = type === 'ebook' ? '/Ebooki' : '/Notatki';
   const buttonText = type === 'ebook' ? 'Pobierz E-book' : 'Pobierz Notatkę';
 
   return (
-    <article 
+    <article
       className={`${s.noteCard} ${className || ''}`}
       aria-label={`${resourceType}: ${title}`}
     >
-      <div 
-        className={s.noteCard__imageWrapper}
-        aria-hidden="true"
-      >
+      <div className={s.noteCard__imageWrapper} aria-hidden="true">
         <Image
           src={image}
           alt={`${resourceType} ${title}`}
@@ -46,17 +37,14 @@ const NoteCard = memo(({
           quality={75}
         />
       </div>
-      
+
       <div className={s.noteCard__content}>
         <h2 className={s.noteCard__title}>{title}</h2>
-        <Link 
+        <Link
           href={`${basePath}/${slug}`}
           aria-label={`Pobierz ${type === 'ebook' ? 'e-book' : 'notatkę'}: ${title}`}
         >
-          <Button 
-            type="normal" 
-            value={buttonText}
-          />
+          <Button type="normal" value={buttonText} />
         </Link>
       </div>
     </article>
@@ -65,4 +53,4 @@ const NoteCard = memo(({
 
 NoteCard.displayName = 'NoteCard';
 
-export default NoteCard; 
+export default NoteCard;

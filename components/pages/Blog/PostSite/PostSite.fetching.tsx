@@ -1,21 +1,21 @@
-import { getPosts } from "@/db/Utils/DataFetchingFunctions/DataFetchingFunctions";
-import PostSiteComponent from "./PostSite.logic";
-import { type PostsType } from "@/types/PostType.types";
-import NotFound from "../NotFound/NotFound.page";
-import Header from "../HeaderBlog/Header.component.page";
-import Footer from "../../Footer/Footer.page";
+import { getPosts } from '@/db/Utils/DataFetchingFunctions/DataFetchingFunctions';
+import PostSiteComponent from './PostSite.logic';
+import { type PostsType } from '@/types/PostType.types';
+import NotFound from '../NotFound/NotFound.page';
+import Header from '../HeaderBlog/Header.component.page';
+import Footer from '../../Footer/Footer.page';
 
 async function PostSite({ postId }: { postId: string }) {
   try {
     const fetchedItems = await getPosts();
 
     if (!Array.isArray(fetchedItems) || !fetchedItems.length) {
-      throw new Error("No data received from the server.");
+      throw new Error('No data received from the server.');
     }
 
     const posts = fetchedItems[0].posts;
     const post = posts.find((post: PostsType) => post.slug === postId);
-    
+
     if (!post) {
       return (
         <>
@@ -28,7 +28,7 @@ async function PostSite({ postId }: { postId: string }) {
 
     return <PostSiteComponent post={post} allPosts={posts} />;
   } catch (error) {
-    console.error("Error fetching post data:", error);
+    console.error('Error fetching post data:', error);
     return <p>Error loading post.</p>;
   }
 }

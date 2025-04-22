@@ -1,7 +1,7 @@
-import { RefObject } from "react";
-import s from "./Form.component.module.scss";
-import Image from "next/image";
-import arrowIcon from "@/assets/arrow.png";
+import { RefObject } from 'react';
+import s from './Form.component.module.scss';
+import Image from 'next/image';
+import arrowIcon from '@/assets/arrow.png';
 
 function FormComponent({
   handleSubmit,

@@ -1,4 +1,4 @@
-import Caption from "@/components/UI/Caption/Caption.component";
+import Caption from '@/components/UI/Caption/Caption.component';
 import s from './PostsHeader.component.module.scss';
 
 function PostsHeader() {

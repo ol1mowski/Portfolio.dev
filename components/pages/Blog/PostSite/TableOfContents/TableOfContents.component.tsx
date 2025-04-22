@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useContext, useEffect, useRef, useState } from "react";
-import s from "./TableOfContents.component.module.scss";
-import PostVisibleContext from "@/store/PostVisible.context";
+import { useContext, useEffect, useRef, useState } from 'react';
+import s from './TableOfContents.component.module.scss';
+import PostVisibleContext from '@/store/PostVisible.context';
 
 interface TableOfContentsProps {
   content: Array<{ id: number; slug: string; title: string }>;
@@ -26,20 +26,17 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
-    <section
-      ref={header}
-      className={`${isSticky ? s.tableOfContents_sticky : s.tableOfContents}`}
-    >
+    <section ref={header} className={`${isSticky ? s.tableOfContents_sticky : s.tableOfContents}`}>
       <h3 className={s.tableOfContents__caption}>Spis Treści</h3>
       <ul className={s.tableOfContents__listItems}>
-        {content.map((item) => (
+        {content.map(item => (
           <a key={item.id} href={`#${item.slug}`}>
             <li
               className={

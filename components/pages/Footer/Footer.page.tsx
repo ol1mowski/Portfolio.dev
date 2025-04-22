@@ -1,9 +1,9 @@
-import s from "./Footer.page.module.scss";
+import s from './Footer.page.module.scss';
 
-import FooterCopyright from "./FooterCopyright/FooterCopyright.component";
-import FooterCtaIcons from "./FooterCtaIcons/FooterCtaIcons.component";
-import FooterPrivacy from "./FooterPrivacy/FooterPrivacy.component";
-import FooterWrapper from "./FooterWrapper/FooterWrapper.component";
+import FooterCopyright from './FooterCopyright/FooterCopyright.component';
+import FooterCtaIcons from './FooterCtaIcons/FooterCtaIcons.component';
+import FooterPrivacy from './FooterPrivacy/FooterPrivacy.component';
+import FooterWrapper from './FooterWrapper/FooterWrapper.component';
 
 const Footer = () => {
   return (

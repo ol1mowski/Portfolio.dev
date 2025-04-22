@@ -7,12 +7,12 @@ Welcome to my **React Front-End Developer Portfolio**! This project showcases my
 
 ![Portfolio](https://github.com/user-attachments/assets/34bd6439-d605-43dd-b2f7-e9b18ddfd56c)
 
-
 ## ✨ Overview
 
-I designed this portfolio **from scratch in Figma** and brought it to life using **Next.js** with **Server-Side Rendering (SSR)** for optimal performance. The project is styled using **Sass** to ensure a clean and maintainable codebase. 
+I designed this portfolio **from scratch in Figma** and brought it to life using **Next.js** with **Server-Side Rendering (SSR)** for optimal performance. The project is styled using **Sass** to ensure a clean and maintainable codebase.
 
 ### Key Features:
+
 - **🏡 Stunning Landing Page:** A captivating homepage that introduces who I am and what I do.
 - **📝 Blog Subpage:** Dedicated to web design topics, where I share insights and tips.
 - **📚 Ebook Get Page:** A special section where users can download my ebook, complete with a form and user authentication.
@@ -79,6 +79,7 @@ If you like this project, please give it a ⭐️ on GitHub—it means a lot!
 The project uses established naming conventions to help maintain consistency and code readability. Detailed information can be found in the [naming conventions documentation](docs/NAMING_CONVENTIONS.md).
 
 To perform migration to the new conventions, you can use the scripts:
+
 - `scripts/migrate-to-conventions.ps1` - for changing file and directory names
 - `scripts/update-imports.ps1` - for updating imports
 
@@ -96,12 +97,14 @@ The project is configured to run in a Docker environment. Below are instructions
 ### Running the Application
 
 1. Clone the repository:
+
    ```bash
    git clone [REPOSITORY_URL]
    cd Portfolio.dev
    ```
 
 2. Create a `.env` file in the main project directory with appropriate environment variables:
+
    ```
    DB_URL=mongodb://mongo:27017/portfolio
    JWT_SECRET=your_jwt_secret_key
@@ -109,6 +112,7 @@ The project is configured to run in a Docker environment. Below are instructions
    ```
 
 3. Build and run the containers:
+
    ```bash
    docker-compose up -d
    ```
@@ -130,6 +134,7 @@ docker-compose logs -f
 ### Useful Commands
 
 - Rebuilding the application:
+
   ```bash
   docker-compose build --no-cache
   ```
@@ -157,6 +162,7 @@ The project utilizes GitHub Actions to automate the testing, building, and deplo
 ### Available Workflows:
 
 1. **CI/CD Pipeline** - the main pipeline that:
+
    - Runs code linting
    - Performs unit tests
    - Runs end-to-end tests

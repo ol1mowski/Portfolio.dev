@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import s from "./ShowMobileMenu.component.module.scss";
-import { memo } from "react";
-import Image from "next/image";
-import MobileMenuHeader from "../MobileMenu/MobileMenuHeader.component";
-import { useMenu } from "@/hooks/useMenu.hook";
-import { HEADER_ICONS, ICON_DIMENSIONS } from "../constants/constants";
+import s from './ShowMobileMenu.component.module.scss';
+import { memo } from 'react';
+import Image from 'next/image';
+import MobileMenuHeader from '../MobileMenu/MobileMenuHeader.component';
+import { useMenu } from '@/hooks/useMenu.hook';
+import { HEADER_ICONS, ICON_DIMENSIONS } from '../constants/constants';
 
 const ShowMobileMenu = memo(() => {
   const { isOpen, openMenu } = useMenu();
@@ -29,6 +29,6 @@ const ShowMobileMenu = memo(() => {
   );
 });
 
-ShowMobileMenu.displayName = "ShowMobileMenu";
+ShowMobileMenu.displayName = 'ShowMobileMenu';
 
 export default ShowMobileMenu;

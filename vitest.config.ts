@@ -5,13 +5,13 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   test: {
-    environment: "jsdom",
+    environment: 'jsdom',
     globals: true,
-    include: ["__tests__/Units/**/*.{test,spec}.{js,jsx,ts,tsx}"],
-    exclude: ["__tests__/E2E/**/*", "node_modules"],
-    setupFiles: ["./vitest.setup.ts"],
+    include: ['__tests__/Units/**/*.{test,spec}.{js,jsx,ts,tsx}'],
+    exclude: ['__tests__/E2E/**/*', 'node_modules'],
+    setupFiles: ['./vitest.setup.ts'],
     alias: {
-      "@": path.resolve(__dirname, "./"),
+      '@': path.resolve(__dirname, './'),
     },
     coverage: {
       provider: 'v8',
@@ -21,8 +21,8 @@ export default defineConfig({
         '__tests__/',
         '**/*.d.ts',
         '**/*.test.{js,jsx,ts,tsx}',
-        '**/*.spec.{js,jsx,ts,tsx}'
-      ]
-    }
+        '**/*.spec.{js,jsx,ts,tsx}',
+      ],
+    },
   },
-}); 
+});

@@ -1,9 +1,9 @@
-import s from "./InfoDescription.component.module.scss";
+import s from './InfoDescription.component.module.scss';
 
 import { memo } from 'react';
-import Link from "next/link";
+import Link from 'next/link';
 
-import Paragraph from "@/components/UI/Word/Paragraph.component";
+import Paragraph from '@/components/UI/Word/Paragraph.component';
 
 const InfoDescription = memo(() => {
   return (
@@ -15,8 +15,8 @@ const InfoDescription = memo(() => {
             technologiach takich jak"
           className={s.desWrapper__des}
         />
-        <span className={s.importantTextDecorate}>Webflow</span>,{" "}
-        <span className={s.importantTextDecorate}>Next.js</span> czy{" "}
+        <span className={s.importantTextDecorate}>Webflow</span>,{' '}
+        <span className={s.importantTextDecorate}>Next.js</span> czy{' '}
         <span className={s.importantTextDecorate}>WordPress</span>
         <Paragraph
           value=", które spełniają indywidualne potrzeby klientów."

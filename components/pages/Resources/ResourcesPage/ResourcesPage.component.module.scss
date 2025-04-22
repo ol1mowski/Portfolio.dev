@@ -1,4 +1,4 @@
-@import "@/style/index.scss";
+@import '@/style/index.scss';
 
 .container {
   @include d-flex-column;
@@ -6,15 +6,15 @@
   margin: 0 auto;
   padding: 3rem 1.5rem;
   gap: 4rem;
-  
+
   @media (min-width: 768px) {
     padding: 4rem 2.5rem;
   }
-  
+
   @media (min-width: 1200px) {
     padding: 5rem 3rem;
   }
-  
+
   &__header {
     font-size: clamp(2rem, 5vw, 3.5rem);
     text-align: center;
@@ -23,9 +23,9 @@
     letter-spacing: -0.02em;
     line-height: 1.2;
     margin-bottom: 1rem;
-    
+
     &::after {
-      content: "";
+      content: '';
       display: block;
       width: 6rem;
       height: 4px;
@@ -41,13 +41,13 @@
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
   width: 100%;
-  
+
   @media (min-width: 768px) {
     gap: 2.5rem;
   }
-  
+
   @media (min-width: 1200px) {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 3rem;
   }
-} 
+}

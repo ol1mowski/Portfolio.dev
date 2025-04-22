@@ -4,17 +4,9 @@ import { OPINIONS_LOADING_ARIA_LABEL, OPINIONS_LOADING_TEXT } from './constants/
 
 export const Loading: FC = memo(() => {
   return (
-    <div 
-      className={s.loadingContainer} 
-      role="status"
-      aria-label={OPINIONS_LOADING_ARIA_LABEL}
-    >
-      {[1, 2, 3].map((index) => (
-        <div 
-          key={index} 
-          className={s.skeleton} 
-          aria-hidden="true"
-        />
+    <div className={s.loadingContainer} role="status" aria-label={OPINIONS_LOADING_ARIA_LABEL}>
+      {[1, 2, 3].map(index => (
+        <div key={index} className={s.skeleton} aria-hidden="true" />
       ))}
       <span className="sr-only">{OPINIONS_LOADING_TEXT}</span>
     </div>
@@ -23,4 +15,4 @@ export const Loading: FC = memo(() => {
 
 Loading.displayName = 'Loading';
 
-export default Loading; 
+export default Loading;

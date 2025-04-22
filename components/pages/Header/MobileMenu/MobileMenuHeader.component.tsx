@@ -1,14 +1,14 @@
-'use client'
+'use client';
 
-import s from "./MobileMenuHeader.component.module.scss";
+import s from './MobileMenuHeader.component.module.scss';
 
 import { memo, useCallback, useContext } from 'react';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-import HamburgerClickContext from "@/store/HamburgerClickContext";
-import MenuItem from "../MenuItem/MenuItem.component";
-import { menuItems } from "@/data/MenuItems.data";
+import HamburgerClickContext from '@/store/HamburgerClickContext';
+import MenuItem from '../MenuItem/MenuItem.component';
+import { menuItems } from '@/data/MenuItems.data';
 
 const MobileMenuHeader = memo(() => {
   const { isOpen, setOpen } = useContext(HamburgerClickContext);
@@ -31,12 +31,8 @@ const MobileMenuHeader = memo(() => {
         />
       </div>
       <section className={s.menu__nav}>
-        {menuItems.map((item) => (
-          <MenuItem
-            key={item.to}
-            {...item}
-            hideMenu={handleClose}
-          />
+        {menuItems.map(item => (
+          <MenuItem key={item.to} {...item} hideMenu={handleClose} />
         ))}
       </section>
     </nav>

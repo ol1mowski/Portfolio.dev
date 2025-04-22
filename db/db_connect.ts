@@ -18,13 +18,13 @@ const MONGODB_OPTIONS: mongoose.ConnectOptions = {
 };
 
 if (!MONGODB_URI) {
-  throw new Error("Please define the DB_URL environment variable");
+  throw new Error('Please define the DB_URL environment variable');
 }
 
 declare global {
   var mongooseCache: MongooseCache | undefined;
 }
-      
+
 let cached: MongooseCache = global.mongooseCache || { conn: null, promise: null };
 
 if (!global.mongooseCache) {
@@ -38,14 +38,14 @@ export async function dbConnect(): Promise<typeof mongoose> {
 
   if (!cached.promise) {
     const opts = {
-      ...MONGODB_OPTIONS
+      ...MONGODB_OPTIONS,
     };
 
     try {
       cached.promise = mongoose.connect(MONGODB_URI as string, opts);
-      console.log("Connected to MongoDB");
+      console.log('Connected to MongoDB');
     } catch (error) {
-      console.error("MongoDB connection error:", error);
+      console.error('MongoDB connection error:', error);
       cached.promise = null;
       throw error;
     }

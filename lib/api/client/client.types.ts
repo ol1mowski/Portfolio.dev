@@ -17,4 +17,4 @@ export interface SaveClientResponse {
   success: boolean;
   error?: string;
   client?: ClientResponse;
-} 
+}

@@ -1,5 +1,5 @@
 import s from './Social.component.module.scss';
-import IconElement from "../IconElement/IconElement.component";
+import IconElement from '../IconElement/IconElement.component';
 
 function Social() {
   return (

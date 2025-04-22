@@ -1,26 +1,23 @@
-import s from "./Button.component.module.scss";
+import s from './Button.component.module.scss';
 
 interface ButtonProps {
-  type: "small" | "normal" | "yt";
+  type: 'small' | 'normal' | 'yt';
   value: string;
   onClick?: () => void;
-  "aria-label"?: string;
+  'aria-label'?: string;
 }
 
-function Button({
-  type,
-  value,
-}: ButtonProps) {
+function Button({ type, value }: ButtonProps) {
   let btnClass;
 
   switch (type) {
-    case "normal":
+    case 'normal':
       btnClass = s.btn;
       break;
-    case "yt":
+    case 'yt':
       btnClass = s.btn_yt;
       break;
-    case "small":
+    case 'small':
       btnClass = s.btn_small;
       break;
   }

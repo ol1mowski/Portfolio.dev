@@ -12,4 +12,4 @@ export interface EbookWrapperProps {
 
 export interface EbookCtaWrapperProps {
   children: React.ReactNode;
-} 
+}

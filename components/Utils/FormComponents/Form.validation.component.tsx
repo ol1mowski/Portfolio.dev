@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useFormValidation } from "@/hooks/useFormValidation.hook";
-import FormWrapper from "./FormWrapper/FormWrapper.component";
+import { useFormValidation } from '@/hooks/useFormValidation.hook';
+import FormWrapper from './FormWrapper/FormWrapper.component';
 
 interface FormProps {
   action: (formData: FormData) => Promise<{ success: boolean } | void>;
@@ -9,18 +9,12 @@ interface FormProps {
 }
 
 function Form({ action, slug }: FormProps) {
-  const { formState, formRefs, handleSubmit } = useFormValidation({ 
-    action, 
-    slug 
+  const { formState, formRefs, handleSubmit } = useFormValidation({
+    action,
+    slug,
   });
 
-  return (
-    <FormWrapper
-      formState={formState}
-      formRefs={formRefs}
-      handleSubmit={handleSubmit}
-    />
-  );
+  return <FormWrapper formState={formState} formRefs={formRefs} handleSubmit={handleSubmit} />;
 }
 
 export default Form;

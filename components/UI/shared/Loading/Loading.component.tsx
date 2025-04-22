@@ -7,11 +7,8 @@ interface LoadingProps {
 
 export const Loading: FC<LoadingProps> = ({ message, className }) => {
   return (
-    <div 
-      role="status" 
-      className={className}
-    >
+    <div role="status" className={className}>
       {message}
     </div>
   );
-}; 
+};

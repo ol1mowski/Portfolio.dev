@@ -1,4 +1,4 @@
-@import "@/style/index.scss";
+@import '@/style/index.scss';
 
 .noteCard {
   @include d-flex-column;
@@ -10,7 +10,7 @@
   transition: transform 0.3s ease;
   width: 300px;
   margin: 0 auto;
-  
+
   &:hover {
     transform: translateY(-5px);
   }
@@ -30,7 +30,7 @@
     height: 100%;
     object-fit: contain;
     transition: transform 0.3s ease;
-    
+
     &:hover {
       transform: scale(1.05);
     }
@@ -61,4 +61,4 @@
       aspect-ratio: 4/3;
     }
   }
-} 
+}

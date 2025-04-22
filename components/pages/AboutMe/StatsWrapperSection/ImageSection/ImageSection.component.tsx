@@ -1,6 +1,6 @@
 import { memo } from 'react';
-import Image from "next/image";
-import s from "./ImageSection.component.module.scss";
+import Image from 'next/image';
+import s from './ImageSection.component.module.scss';
 
 const ImageSection = memo(() => {
   return (

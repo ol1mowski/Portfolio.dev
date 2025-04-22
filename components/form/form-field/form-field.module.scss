@@ -12,7 +12,7 @@
   font-size: 1rem;
   transition: border-color 0.2s;
   outline: none;
-  
+
   &:focus {
     border-color: #4f46e5;
     box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
@@ -21,7 +21,7 @@
 
 .inputError {
   border-color: #ef4444;
-  
+
   &:focus {
     border-color: #ef4444;
     box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
@@ -32,4 +32,4 @@
   color: #ef4444;
   font-size: 0.875rem;
   margin-top: 0.25rem;
-} 
+}

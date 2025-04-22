@@ -24,23 +24,19 @@ interface UseFormValidationProps {
   redirectPath?: string;
 }
 
-
-export const useFormValidation = ({ 
-  action, 
-  redirectPath 
-}: UseFormValidationProps) => {
+export const useFormValidation = ({ action, redirectPath }: UseFormValidationProps) => {
   const router = useRouter();
   const [formState, setFormState] = useState<FormState>({
     isPending: false,
     error: null,
     success: null,
-    errors: {}
+    errors: {},
   });
 
   const formRefs: FormRefs = {
     email: useRef<HTMLInputElement>(null),
     name: useRef<HTMLInputElement>(null),
-    privacy: useRef<HTMLInputElement>(null)
+    privacy: useRef<HTMLInputElement>(null),
   };
 
   const validateForm = useCallback((): boolean => {
@@ -69,61 +65,61 @@ export const useFormValidation = ({
     return Object.keys(newErrors).length === 0;
   }, [formRefs]);
 
-
   const resetForm = useCallback(() => {
     if (formRefs.name.current) formRefs.name.current.value = '';
     if (formRefs.email.current) formRefs.email.current.value = '';
     if (formRefs.privacy.current) formRefs.privacy.current.checked = false;
   }, [formRefs]);
 
-  const handleSubmit = useCallback(async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    
-    setFormState(prev => ({
-      ...prev,
-      isPending: true,
-      error: null,
-      success: null
-    }));
+  const handleSubmit = useCallback(
+    async (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
 
-    if (!validateForm()) {
-      setFormState(prev => ({ ...prev, isPending: false }));
-      return;
-    }
-
-    try {
-      const formData = new FormData(event.currentTarget);
-      const result = await action(formData);
-      
-      if (result?.success) {
-        resetForm();
-        setFormState(prev => ({
-          ...prev,
-          success: 'Udało się! Wkrótce otrzymasz mojego E-booka!'
-        }));
-        
-        if (redirectPath) {
-          router.push(redirectPath);
-        }
-      } else {
-        throw new Error('Failed to save data');
-      }
-    } catch (err) {
-      console.error('Form submission error:', err);
       setFormState(prev => ({
         ...prev,
-        error: err instanceof Error
-          ? err.message
-          : '[-] Coś Poszło Nie Tak, Spróbuj ponownie'
+        isPending: true,
+        error: null,
+        success: null,
       }));
-    } finally {
-      setFormState(prev => ({ ...prev, isPending: false }));
-    }
-  }, [action, validateForm, resetForm, router, redirectPath]);
+
+      if (!validateForm()) {
+        setFormState(prev => ({ ...prev, isPending: false }));
+        return;
+      }
+
+      try {
+        const formData = new FormData(event.currentTarget);
+        const result = await action(formData);
+
+        if (result?.success) {
+          resetForm();
+          setFormState(prev => ({
+            ...prev,
+            success: 'Udało się! Wkrótce otrzymasz mojego E-booka!',
+          }));
+
+          if (redirectPath) {
+            router.push(redirectPath);
+          }
+        } else {
+          throw new Error('Failed to save data');
+        }
+      } catch (err) {
+        console.error('Form submission error:', err);
+        setFormState(prev => ({
+          ...prev,
+          error: err instanceof Error ? err.message : '[-] Coś Poszło Nie Tak, Spróbuj ponownie',
+        }));
+      } finally {
+        setFormState(prev => ({ ...prev, isPending: false }));
+      }
+    },
+    [action, validateForm, resetForm, router, redirectPath]
+  );
 
   return {
     formState,
     formRefs,
-    handleSubmit
+    handleSubmit,
   };
-}; 
+};

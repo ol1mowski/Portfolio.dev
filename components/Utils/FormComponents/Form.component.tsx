@@ -1,6 +1,6 @@
-import { type RefObject } from "react";
-import s from "./Form.component.module.scss";
-import Button from "@/components/UI/Button/Button.component";
+import { type RefObject } from 'react';
+import s from './Form.component.module.scss';
+import Button from '@/components/UI/Button/Button.component';
 
 type FormComponentProps = {
   name: RefObject<HTMLInputElement>;
@@ -11,7 +11,7 @@ type FormComponentProps = {
   isPending: boolean;
   success: string | null;
   handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
-}
+};
 
 const FormComponent = ({
   name,
@@ -64,27 +64,18 @@ const FormComponent = ({
     </div>
     <div className={s.form__inpWrapper}>
       <div className={s.form__inpWrapper__privacyWrapper}>
-        <label
-          htmlFor="privacy"
-          className={s.form__inpWrapper__privacyWrapper__label}
-        >
+        <label htmlFor="privacy" className={s.form__inpWrapper__privacyWrapper__label}>
           <input type="checkbox" name="privacy" id="privacy" ref={privacy} />
           <span className={s.form__inpWrapper__privacyWrapper__content}>
-            *Akceptuję{" "}
-            <a href="/prywatnosc">Politykę Prywatności i pliki cookies</a>
+            *Akceptuję <a href="/prywatnosc">Politykę Prywatności i pliki cookies</a>
           </span>
         </label>
       </div>
 
-      {errors.privacy && (
-        <span className={s.form__error}>{errors.privacy}</span>
-      )}
+      {errors.privacy && <span className={s.form__error}>{errors.privacy}</span>}
     </div>
 
-    <Button
-      value={isPending ? "Wysyłanie..." : "Odbieram Bezpłatnie"}
-      type="small"
-    />
+    <Button value={isPending ? 'Wysyłanie...' : 'Odbieram Bezpłatnie'} type="small" />
   </form>
 );
 

@@ -1,6 +1,7 @@
 # Konfiguracja systemu wysyłania maili
 
 ## Wymagania
+
 - Konto SendGrid (można utworzyć darmowe konto na [sendgrid.com](https://sendgrid.com))
 - Zweryfikowana domena lub adres email w SendGrid
 
@@ -40,6 +41,7 @@ NEXT_PUBLIC_BASE_URL=http://domena.pl
 Po skonfigurowaniu zmiennych środowiskowych, system będzie automatycznie wysyłał maile dziękczynne po zapisaniu danych klienta przez formularz ebooka.
 
 Aby przetestować czy konfiguracja działa poprawnie:
+
 1. Wypełnij formularz na stronie ebooka używając testowego adresu email
 2. Sprawdź, czy mail dziękczynny dotarł na podany adres
 3. Jeśli mail nie dotarł, sprawdź logi aplikacji i panel SendGrid w sekcji **Activity** > **Email Activity**

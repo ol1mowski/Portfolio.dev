@@ -6,22 +6,24 @@ import PostsComponent from '../../../../components/pages/Blog/Posts/Posts.page';
 
 import type { PostsType } from '../../../../types/PostType.type';
 
-
-vi.mock('../../../../components/pages/Blog/Posts/PostCardComponent/PostCardComponent.component', () => ({
-  default: ({ title, author }: { title: string; author: string }) => (
-    <div data-testid="post-card" role="article">
-      <h3>{title}</h3>
-      <p>{author}</p>
-    </div>
-  )
-}));
+vi.mock(
+  '../../../../components/pages/Blog/Posts/PostCardComponent/PostCardComponent.component',
+  () => ({
+    default: ({ title, author }: { title: string; author: string }) => (
+      <div data-testid="post-card" role="article">
+        <h3>{title}</h3>
+        <p>{author}</p>
+      </div>
+    ),
+  })
+);
 
 vi.mock('../../../../components/pages/Blog/Posts/PostsHeader/PostsHeader.component', () => ({
-  default: () => <div data-testid="posts-header">Posts Header</div>
+  default: () => <div data-testid="posts-header">Posts Header</div>,
 }));
 
 vi.mock('../../../../components/pages/Blog/Posts/PostsButton/PostsButton.component', () => ({
-  default: () => <div data-testid="posts-button">View More</div>
+  default: () => <div data-testid="posts-button">View More</div>,
 }));
 
 describe('PostsComponent', () => {
@@ -37,7 +39,7 @@ describe('PostsComponent', () => {
       date: '2024-03-20',
       readTime: 5,
       category: 'Test',
-      content: []
+      content: [],
     },
     {
       id: 2,
@@ -50,8 +52,8 @@ describe('PostsComponent', () => {
       date: '2024-03-21',
       readTime: 3,
       category: 'Test',
-      content: []
-    }
+      content: [],
+    },
   ];
 
   it('renders all posts correctly', () => {
@@ -69,7 +71,7 @@ describe('PostsComponent', () => {
 
   it('renders posts in correct section', () => {
     render(<PostsComponent posts={mockPosts} />);
-    
+
     const postsSection = screen.getByTestId('posts-section');
     expect(postsSection).toBeDefined();
     expect(postsSection.getAttribute('id')).toBe('posts');
@@ -77,7 +79,7 @@ describe('PostsComponent', () => {
 
   it('handles empty posts array', () => {
     render(<PostsComponent posts={[]} />);
-    
+
     expect(screen.queryByTestId('post-card')).toBeNull();
     expect(screen.getByTestId('posts-header')).toBeDefined();
     expect(screen.getByTestId('posts-button')).toBeDefined();
@@ -85,9 +87,9 @@ describe('PostsComponent', () => {
 
   it('renders posts with correct structure', () => {
     render(<PostsComponent posts={mockPosts} />);
-    
+
     const postsWrapper = screen.getByTestId('posts-wrapper');
     expect(postsWrapper).toBeInTheDocument();
     expect(postsWrapper.children).toHaveLength(2);
   });
-}); 
+});

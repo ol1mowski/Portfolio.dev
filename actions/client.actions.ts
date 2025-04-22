@@ -6,9 +6,7 @@ import { SaveClientResponse } from '@/lib/api/client/client.types';
 import { validateEmail } from '@/utils/validation';
 // import { sendThankYouEmail } from '@/lib/email/email.service';
 
-export async function saveClientData(
-  formData: FormData
-): Promise<SaveClientResponse> {
+export async function saveClientData(formData: FormData): Promise<SaveClientResponse> {
   try {
     const email = formData.get('email')?.toString().trim();
     const name = formData.get('name')?.toString().trim();
@@ -16,14 +14,14 @@ export async function saveClientData(
     if (!email || !name) {
       return {
         success: false,
-        error: 'Missing required fields'
+        error: 'Missing required fields',
       };
     }
 
     if (!validateEmail(email)) {
       return {
         success: false,
-        error: 'Invalid email format'
+        error: 'Invalid email format',
       };
     }
 
@@ -34,7 +32,7 @@ export async function saveClientData(
     }
 
     const sessionResult = await createAuthSession(email, name);
-    
+
     if (!sessionResult.success) {
       throw new Error('Failed to create session');
     }
@@ -45,20 +43,20 @@ export async function saveClientData(
     //   console.error('Error sending thank you email:', emailError);
     // }
 
-    return { 
+    return {
       success: true,
       client: {
         id: savedClient.client._id?.toString() || savedClient.client.id?.toString() || '',
         name: savedClient.client.name,
-        email: savedClient.client.email
-      }
+        email: savedClient.client.email,
+      },
     };
   } catch (error) {
     console.error('Error in saveClientData:', error);
-    
+
     return {
       success: false,
-      error: error instanceof Error ? error.message : 'An unknown error occurred'
+      error: error instanceof Error ? error.message : 'An unknown error occurred',
     };
   }
-} 
+}

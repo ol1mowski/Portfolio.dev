@@ -1,11 +1,10 @@
-import PostSite from "@/components/pages/Blog/PostSite/PostSite.fetching";
-import Footer from "@/components/pages/Footer/Footer.page";
-import { Params } from "@/types/Params.types";
+import PostSite from '@/components/pages/Blog/PostSite/PostSite.fetching';
+import Footer from '@/components/pages/Footer/Footer.page';
+import { Params } from '@/types/Params.types';
 
 const page = async ({ params }: { params: Params }) => {
-  
-   const { id } = await params;
-  
+  const { id } = await params;
+
   return (
     <>
       {/* @ts-expect-error Async Server Component */}
@@ -13,6 +12,6 @@ const page = async ({ params }: { params: Params }) => {
       <Footer />
     </>
   );
-}
+};
 
 export default page;

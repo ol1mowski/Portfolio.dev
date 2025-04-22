@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import { type PostsType } from '@/types/PostType.types';
 
-import { PostsList } from '../ui/posts-list/posts-list.component';
+import { PostsList } from '../ui/postsList/postsList.component';
 import s from './posts.module.scss';
 
 interface PostsSectionProps {
@@ -17,9 +17,9 @@ export const PostsSection: FC<PostsSectionProps> = ({ posts }) => {
           Sprawdź najnowsze artykuły i porady z zakresu technologii i rozwoju
         </p>
       </div>
-      
+
       <PostsList posts={posts} className={s.postsWrapper} />
-      
+
       <div className={s.buttonContainer}>
         <a href="/Blog/posty" className={s.button}>
           Zobacz wszystkie posty
@@ -27,4 +27,4 @@ export const PostsSection: FC<PostsSectionProps> = ({ posts }) => {
       </div>
     </section>
   );
-}; 
+};

@@ -1,5 +1,5 @@
-import Link from "next/link";
-import s from "./HeaderLogo.component.module.scss";
+import Link from 'next/link';
+import s from './HeaderLogo.component.module.scss';
 
 export default function HeaderLogo() {
   return (

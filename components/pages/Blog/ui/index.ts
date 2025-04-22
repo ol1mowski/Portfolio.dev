@@ -1,2 +1,2 @@
-export { PostCard } from './post-card/post-card.component';
-export { PostsList } from './posts-list/posts-list.component'; 
+export { PostCard } from './postCard/postCard.component';
+export { PostsList } from './postsList/postsList.component';

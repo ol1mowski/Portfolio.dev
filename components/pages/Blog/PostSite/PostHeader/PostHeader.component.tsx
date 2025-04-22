@@ -1,6 +1,6 @@
-import { type PostsType } from "@/types/PostType.types";
-import s from "./PostHeader.component.module.scss";
-import PostInfo from "../PostInfo/PostInfo.component";
+import { type PostsType } from '@/types/PostType.types';
+import s from './PostHeader.component.module.scss';
+import PostInfo from '../PostInfo/PostInfo.component';
 
 interface PostHeaderProps {
   post: PostsType;

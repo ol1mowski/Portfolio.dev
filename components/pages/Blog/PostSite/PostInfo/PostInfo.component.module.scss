@@ -1,14 +1,13 @@
-@import "@/style/index.scss";
-
+@import '@/style/index.scss';
 
 .postInfo {
-      @include d-flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      color: $grey;
-      font-size: 0.8rem;
-      justify-content: flex-start;
-      &__avatar {
-        border-radius: 100%;
-      }
-    }
+  @include d-flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  color: $grey;
+  font-size: 0.8rem;
+  justify-content: flex-start;
+  &__avatar {
+    border-radius: 100%;
+  }
+}

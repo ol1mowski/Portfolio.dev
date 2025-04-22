@@ -1,7 +1,7 @@
-import style from "./Contact.page.module.scss";
+import style from './Contact.page.module.scss';
 
-import ContactInfoSection from "./ContactInfoSection/ContactInfoSection.component";
-import ContectHeaderSection from "./ContectHeaderSection/ContectHeaderSection.component";
+import ContactInfoSection from './ContactInfoSection/ContactInfoSection.component';
+import ContectHeaderSection from './ContectHeaderSection/ContectHeaderSection.component';
 
 const Contact = () => {
   return (

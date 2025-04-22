@@ -13,19 +13,12 @@ export const CheckboxField = forwardRef<HTMLInputElement, CheckboxFieldProps>(
   ({ name, children, error, className, innerRef }, ref) => {
     const inputRef = innerRef || ref;
     const hasError = Boolean(error);
-    
+
     return (
       <div className={s.fieldWrapper}>
         <label className={`${s.label} ${className || ''}`}>
-          <input 
-            type="checkbox" 
-            name={name} 
-            ref={inputRef}
-            className={s.checkbox} 
-          />
-          <span className={s.content}>
-            {children}
-          </span>
+          <input type="checkbox" name={name} ref={inputRef} className={s.checkbox} />
+          <span className={s.content}>{children}</span>
         </label>
         {hasError && <p className={s.errorMessage}>{error}</p>}
       </div>
@@ -33,4 +26,4 @@ export const CheckboxField = forwardRef<HTMLInputElement, CheckboxFieldProps>(
   }
 );
 
-CheckboxField.displayName = 'CheckboxField'; 
+CheckboxField.displayName = 'CheckboxField';

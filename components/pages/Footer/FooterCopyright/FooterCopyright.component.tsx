@@ -1,4 +1,4 @@
-import s from "./FooterCopyright,component.module.scss";
+import s from './FooterCopyright,component.module.scss';
 
 function FooterCopyright() {
   const date = new Date();

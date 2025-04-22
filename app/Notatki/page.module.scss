@@ -1,10 +1,10 @@
-@import "@/style/index.scss";
+@import '@/style/index.scss';
 
 .container {
   @include d-flex-column;
   padding: 2rem;
   gap: 3rem;
-  
+
   &__header {
     font-size: clamp(2rem, 5vw, 3rem);
     text-align: center;
@@ -29,7 +29,7 @@
   background-color: $white;
   box-shadow: $box-shadow;
   transition: transform 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-5px);
   }
@@ -43,7 +43,7 @@
 
   &__image {
     transition: transform 0.3s ease;
-    
+
     &:hover {
       transform: scale(1.05);
     }
@@ -62,4 +62,3 @@
     font-weight: 500;
   }
 }
-

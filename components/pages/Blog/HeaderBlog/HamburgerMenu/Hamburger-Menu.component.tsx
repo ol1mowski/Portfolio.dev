@@ -1,9 +1,9 @@
-import s from "./HamburgerMenu.module.scss";
+import s from './HamburgerMenu.module.scss';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-import { BlogITEMS, ITEMS } from "../StaticData";
-import Item from "../Item/Item.component";
+import { BlogITEMS, ITEMS } from '../StaticData';
+import Item from '../Item/Item.component';
 
 function HamburgerMenuComponent({
   closeMenuHandler,
@@ -26,7 +26,7 @@ function HamburgerMenuComponent({
       </section>
       <nav className={s.hamburgerMenu__nav}>
         <ul className={s.hamburgerMenu__nav__items}>
-          {type === "Blog"
+          {type === 'Blog'
             ? BlogITEMS.map(({ id, value, href }) => (
                 <Item key={id} hamburger value={value} href={href} />
               ))
@@ -36,7 +36,12 @@ function HamburgerMenuComponent({
         </ul>
       </nav>
       <section className={s.hamburgerMenu__logo}>
-        <Image width={200} height={70} src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1730720445/Portfolio/Icons/logo_black_ev3ukd.svg" alt="blog-image" />
+        <Image
+          width={200}
+          height={70}
+          src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1730720445/Portfolio/Icons/logo_black_ev3ukd.svg"
+          alt="blog-image"
+        />
       </section>
     </menu>
   );

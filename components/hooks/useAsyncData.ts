@@ -6,15 +6,15 @@ export const useAsyncData = <T, R = T>(
   transform?: (data: T) => R
 ): Promise<R | null> => {
   return fetchFn()
-    .then((data) => {
+    .then(data => {
       if (!data) {
         return null;
       }
-      
+
       return transform ? transform(data) : (data as unknown as R);
     })
-    .catch((error) => {
+    .catch(error => {
       errorHandler(error);
       return null;
     });
-}; 
+};

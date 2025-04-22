@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import s from "./Header.component.module.scss";
+import s from './Header.component.module.scss';
 
-import { useContext } from "react";
+import { useContext } from 'react';
 
-import HamburgerClickContext from "@/store/HamburgerClickContext";
-import HamburgerMenuComponent from "./HamburgerMenu/Hamburger-Menu.component";
-import HeaderLogo from "./HeaderLogo/HeaderLogo.component";
-import HamburgerMenuIcon from "./HamburgerMenuIcon/HamburgerMenuIcon.component";
-import DesktopNavMenu from "./DesktopNavMenu/DesktopNavMenu.component";
+import HamburgerClickContext from '@/store/HamburgerClickContext';
+import HamburgerMenuComponent from './HamburgerMenu/Hamburger-Menu.component';
+import HeaderLogo from './HeaderLogo/HeaderLogo.component';
+import HamburgerMenuIcon from './HamburgerMenuIcon/HamburgerMenuIcon.component';
+import DesktopNavMenu from './DesktopNavMenu/DesktopNavMenu.component';
 
-function Header({ type, post }: { type?: string, post?: boolean }) {
+function Header({ type, post }: { type?: string; post?: boolean }) {
   const { isOpen, setOpen } = useContext(HamburgerClickContext);
 
   const closeMenuHandler = () => {

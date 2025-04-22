@@ -14,4 +14,4 @@ export const useDynamicImport = <T extends ComponentType<any>>(
     ssr: options.ssr,
     loading: options.loading || (() => null),
   });
-}; 
+};

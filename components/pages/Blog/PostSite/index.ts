@@ -12,4 +12,4 @@ export { SimilarPosts } from './similar-posts/similar-posts.component';
 export { TableOfContents } from './table-of-contents/table-of-contents.component';
 
 // Utils
-export { CodeRenderer } from './post-utils/code-renderer.component'; 
+export { CodeRenderer } from './post-utils/code-renderer.component';

@@ -1,9 +1,9 @@
-import s from "./PostCardComponent.component.module.scss";
+import s from './PostCardComponent.component.module.scss';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-import AnimationWrapper from "@/components/UI/AnimationWrapper/AnimationWrapper.component";
-import { type PostCardType } from "@/types/PostType.types";
+import AnimationWrapper from '@/components/UI/AnimationWrapper/AnimationWrapper.component';
+import { type PostCardType } from '@/types/PostType.types';
 
 function PostCardComponent({
   title,
@@ -29,9 +29,7 @@ function PostCardComponent({
           </div>
           <div className={s.postCard__contentSection}>
             <h3 className={s.postCard__contentSection__title}>{title}</h3>
-            <p className={s.postCard__contentSection__description}>
-              {description}
-            </p>
+            <p className={s.postCard__contentSection__description}>{description}</p>
           </div>
 
           <div className={s.postCard__authorSection}>

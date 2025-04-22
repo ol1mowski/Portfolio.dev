@@ -5,7 +5,7 @@ export const initSendGrid = (): void => {
     console.error('Brak klucza API SendGrid w zmiennych środowiskowych');
     return;
   }
-  
+
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 };
 
@@ -26,4 +26,4 @@ export const sendEmail = async (message: EmailMessage): Promise<boolean> => {
     console.error('Błąd podczas wysyłania emaila:', error);
     return false;
   }
-}; 
+};

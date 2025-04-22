@@ -1,7 +1,7 @@
-import Footer from "@/components/pages/Footer/Footer.page";
-import Header from "@/components/pages/Header/Header.component";
-import Head from "next/head";
-import Privacy from "./Privacy/Privacy.page";
+import Footer from '@/components/pages/Footer/Footer.page';
+import Header from '@/components/pages/Header/Header.component';
+import Head from 'next/head';
+import Privacy from './Privacy/Privacy.page';
 
 function page() {
   return (

@@ -19,4 +19,4 @@ const PostImage: React.FC<PostImageProps> = ({ post }) => (
   </section>
 );
 
-export default PostImage; 
+export default PostImage;

@@ -32,4 +32,4 @@ export const Header: FC<HeaderProps> = ({ type, post }) => {
   );
 };
 
-export default Header; 
+export default Header;

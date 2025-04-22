@@ -1,5 +1,5 @@
-import TableOfContents from "@/components/pages/Blog/PostSite/TableOfContents/TableOfContents.component";
-import PostArticle from "../PostArticle/PostArticle.component";
+import TableOfContents from '@/components/pages/Blog/PostSite/TableOfContents/TableOfContents.component';
+import PostArticle from '../PostArticle/PostArticle.component';
 
 interface PostContentProps {
   content: Array<{
@@ -14,9 +14,7 @@ interface PostContentProps {
 
 const PostContent: React.FC<PostContentProps> = ({ content, sectionName, isVisible }) => (
   <>
-    {sectionName !== "Podsumowanie" && isVisible && (
-      <TableOfContents content={content} />
-    )}
+    {sectionName !== 'Podsumowanie' && isVisible && <TableOfContents content={content} />}
     {content.map(({ id, slug, title, description }) => (
       <PostArticle key={id} slug={slug} title={title} description={description} />
     ))}
@@ -24,4 +22,3 @@ const PostContent: React.FC<PostContentProps> = ({ content, sectionName, isVisib
 );
 
 export default PostContent;
-

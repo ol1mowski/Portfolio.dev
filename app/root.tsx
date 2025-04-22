@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import HamburgerClickContext from "@/store/HamburgerClickContext";
-import PostVisibleContext from "@/store/PostVisible.context";
-import React, { useState } from "react";
+import HamburgerClickContext from '@/store/HamburgerClickContext';
+import PostVisibleContext from '@/store/PostVisible.context';
+import React, { useState } from 'react';
 
 function Root({
   children,
@@ -13,7 +13,7 @@ function Root({
   const [sectionVisible, setSectionVisible] = useState<{
     sectionName: string;
     isVisible: boolean;
-  }>({ sectionName: "", isVisible: false });
+  }>({ sectionName: '', isVisible: false });
 
   return (
     <html lang="pl-PL">
@@ -21,29 +21,28 @@ function Root({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body>
-          <HamburgerClickContext.Provider
+        <HamburgerClickContext.Provider
+          value={{
+            isOpen: open,
+            setOpen: (open: boolean) => setOpen(open),
+          }}
+        >
+          <PostVisibleContext.Provider
             value={{
-              isOpen: open,
-              setOpen: (open: boolean) => setOpen(open),
+              sectionVisible: sectionVisible,
+              setSectionVisible(sectionName, isVisible) {
+                setSectionVisible({
+                  sectionName: sectionName,
+                  isVisible: isVisible,
+                });
+              },
             }}
           >
-            <PostVisibleContext.Provider
-              value={{
-                sectionVisible: sectionVisible,
-                setSectionVisible(sectionName, isVisible) {
-                  setSectionVisible({
-                    sectionName: sectionName,
-                    isVisible: isVisible,
-                  });
-                },
-              }}
-            >
-              {children}
-            </PostVisibleContext.Provider>
-          </HamburgerClickContext.Provider>
+            {children}
+          </PostVisibleContext.Provider>
+        </HamburgerClickContext.Provider>
       </body>
     </html>
   );
 }
 export default Root;
-

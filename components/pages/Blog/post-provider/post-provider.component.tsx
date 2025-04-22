@@ -14,7 +14,7 @@ interface PostVisibleContextType {
 
 export const PostVisibleContext = createContext<PostVisibleContextType>({
   sectionVisible: { isVisible: false, sectionName: '' },
-  setSectionVisible: () => {}
+  setSectionVisible: () => {},
 });
 
 interface PostProviderProps {
@@ -24,17 +24,13 @@ interface PostProviderProps {
 export const PostProvider: FC<PostProviderProps> = ({ children }) => {
   const [sectionVisible, setSectionVisible] = useState<PostVisibility>({
     isVisible: false,
-    sectionName: ''
+    sectionName: '',
   });
 
   const contextValue = {
     sectionVisible,
-    setSectionVisible
+    setSectionVisible,
   };
 
-  return (
-    <PostVisibleContext.Provider value={contextValue}>
-      {children}
-    </PostVisibleContext.Provider>
-  );
-}; 
+  return <PostVisibleContext.Provider value={contextValue}>{children}</PostVisibleContext.Provider>;
+};

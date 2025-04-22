@@ -14,7 +14,7 @@ export const FormField = forwardRef<HTMLInputElement, FormFieldProps>(
   ({ name, placeholder, type = 'text', error, className, innerRef }, ref) => {
     const inputRef = innerRef || ref;
     const hasError = Boolean(error);
-    
+
     return (
       <div className={s.fieldWrapper}>
         <input
@@ -30,4 +30,4 @@ export const FormField = forwardRef<HTMLInputElement, FormFieldProps>(
   }
 );
 
-FormField.displayName = 'FormField'; 
+FormField.displayName = 'FormField';

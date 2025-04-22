@@ -1,7 +1,6 @@
-import s from "./ContactInfoSection.component.module.scss";
+import s from './ContactInfoSection.component.module.scss';
 
-import Image from "next/image";
-
+import Image from 'next/image';
 
 function ContactInfoSection({
   title,
@@ -17,7 +16,7 @@ function ContactInfoSection({
       <div className={s.icon}>
         <div className={s.icon}>
           <span className={s.icon__span}>
-            {title === "Lokalizacja" && (
+            {title === 'Lokalizacja' && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
@@ -37,7 +36,7 @@ function ContactInfoSection({
                 <path d="M20.2 20.2l1.8 1.8" />
               </svg>
             )}
-            {title === "e-mail" && (
+            {title === 'e-mail' && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
@@ -54,7 +53,7 @@ function ContactInfoSection({
                 <path d="M3 7l9 6l9 -6"></path>
               </svg>
             )}
-            {title === "Telefon" && (
+            {title === 'Telefon' && (
               <Image
                 src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1731069185/Portfolio/Icons/telephone_zogykl.webp"
                 width={30}
@@ -65,12 +64,7 @@ function ContactInfoSection({
           </span>
           <div className={s.icon__info}>
             <h3 className={s.icon__info__h3}>{title}</h3>
-            <a
-              href={link}
-              target="_blank"
-              rel="noreferrer"
-              className={s.icon__info__a}
-            >
+            <a href={link} target="_blank" rel="noreferrer" className={s.icon__info__a}>
               <p className={s.icon__info__p}>{content}</p>
             </a>
           </div>

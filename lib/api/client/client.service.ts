@@ -7,52 +7,52 @@ export const saveClient = async (clientData: ClientData): Promise<SaveClientResp
     if (!validationResult.isValid) {
       return {
         success: false,
-        error: validationResult.error
+        error: validationResult.error,
       };
     }
 
     const sanitizedData = {
       name: clientData.name.trim(),
-      email: clientData.email.toLowerCase().trim()
+      email: clientData.email.toLowerCase().trim(),
     };
 
     const { dbConnect } = await import('@/db/db_connect');
     await dbConnect();
-    
+
     const { Customers } = await import('@/db/Schemas/Clients');
 
     const existingCustomer = await Customers.findByEmail(sanitizedData.email);
-    
+
     if (existingCustomer) {
       return {
         success: true,
-        client: existingCustomer.toObject() as ClientResponse
+        client: existingCustomer.toObject() as ClientResponse,
       };
     }
 
     const newCustomer = new Customers({
       name: sanitizedData.name,
-      email: sanitizedData.email
+      email: sanitizedData.email,
     });
 
     const savedCustomer = await newCustomer.save();
-    
+
     return {
       success: true,
-      client: savedCustomer.toObject() as ClientResponse
+      client: savedCustomer.toObject() as ClientResponse,
     };
   } catch (error) {
     if (error instanceof Error && error.message.includes('duplicate key error')) {
       return {
         success: false,
-        error: 'Email already exists'
+        error: 'Email already exists',
       };
     }
-    
-    console.error("Error in saveClient:", error);
+
+    console.error('Error in saveClient:', error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : 'Unexpected error occurred'
+      error: error instanceof Error ? error.message : 'Unexpected error occurred',
     };
   }
-}; 
+};

@@ -10,4 +10,4 @@ export interface HomePageImageProps {
   height: number;
   alt: string;
   quality: number;
-} 
+}

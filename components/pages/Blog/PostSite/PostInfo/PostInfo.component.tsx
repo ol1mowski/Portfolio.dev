@@ -1,8 +1,8 @@
-import s from "./PostInfo.component.module.scss";
+import s from './PostInfo.component.module.scss';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-import Caption from "@/components/UI/Caption/Caption.component";
+import Caption from '@/components/UI/Caption/Caption.component';
 
 function PostInfo({
   author,
@@ -33,10 +33,20 @@ function PostInfo({
           className={s.postInfo__avatar}
         />
         <span className={s.postInfo__info}>{author}</span>
-        <Image src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1731069185/Portfolio/Icons/calendar_dbxa0f.svg" alt="date icon" width={25} height={25} />
+        <Image
+          src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1731069185/Portfolio/Icons/calendar_dbxa0f.svg"
+          alt="date icon"
+          width={25}
+          height={25}
+        />
 
         <span className={s.postInfo__info}>{date}</span>
-        <Image src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1731069185/Portfolio/Icons/category_frjgj3.svg" alt="category icon" width={25} height={25} />
+        <Image
+          src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1731069185/Portfolio/Icons/category_frjgj3.svg"
+          alt="category icon"
+          width={25}
+          height={25}
+        />
 
         <span className={s.postInfo__info}>{category}</span>
         <Image

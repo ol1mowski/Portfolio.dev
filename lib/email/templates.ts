@@ -94,4 +94,4 @@ Twój Autor
 
 © ${new Date().getFullYear()} Portfolio.dev. Wszelkie prawa zastrzeżone.
   `;
-}; 
+};

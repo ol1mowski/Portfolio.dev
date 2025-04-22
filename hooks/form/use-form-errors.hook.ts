@@ -12,27 +12,27 @@ export interface FormErrorsState {
 export const useFormErrors = () => {
   const [errorState, setErrorState] = useState<FormErrorsState>({
     fieldErrors: {},
-    errorMessage: null
+    errorMessage: null,
   });
 
   const setFieldErrors = useCallback((fieldErrors: FieldErrors) => {
     setErrorState(prev => ({
       ...prev,
-      fieldErrors
+      fieldErrors,
     }));
   }, []);
 
   const setError = useCallback((errorMessage: string | null) => {
     setErrorState(prev => ({
       ...prev,
-      errorMessage
+      errorMessage,
     }));
   }, []);
 
   const clearErrors = useCallback(() => {
     setErrorState({
       fieldErrors: {},
-      errorMessage: null
+      errorMessage: null,
     });
   }, []);
 
@@ -41,6 +41,6 @@ export const useFormErrors = () => {
     errorMessage: errorState.errorMessage,
     setFieldErrors,
     setError,
-    clearErrors
+    clearErrors,
   };
-}; 
+};

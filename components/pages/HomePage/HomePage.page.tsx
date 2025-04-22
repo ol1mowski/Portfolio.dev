@@ -6,13 +6,10 @@ import HomePageInfoSection from './HomePageInfo/HomePageInfoSection.component';
 import { useDynamicImport } from './hooks/useDynamicImport.hook';
 
 export const HomePage: FC = () => {
-  const TechStack = useDynamicImport(
-    () => import('./TechStack/TechStack.component'),
-    {
-      ssr: true,
-      loading: () => <div>Loading technologies...</div>
-    }
-  );
+  const TechStack = useDynamicImport(() => import('./TechStack/TechStack.component'), {
+    ssr: true,
+    loading: () => <div>Loading technologies...</div>,
+  });
 
   return (
     <HeroSectionWrapper>

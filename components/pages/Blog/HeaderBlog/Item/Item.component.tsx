@@ -1,7 +1,7 @@
-import Link from "next/link";
-import s from "./Item.component.module.scss";
+import Link from 'next/link';
+import s from './Item.component.module.scss';
 
-function Item({ href, value, hamburger }: { href: string; value: string, hamburger?: boolean }) {
+function Item({ href, value, hamburger }: { href: string; value: string; hamburger?: boolean }) {
   return (
     <>
       <Link href={href}>

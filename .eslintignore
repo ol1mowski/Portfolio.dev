@@ -1,0 +1,36 @@
+# Pliki budowania
+.next/
+_next/
+dist/
+build/
+out/
+public/
+
+# Zależności
+node_modules/
+
+# Pliki wygenerowane
+**/*.generated.*
+**/*.md
+**/*.css
+**/*.scss.d.ts
+**/*.typegen.ts
+**/*.js.map
+
+# Pliki konfiguracyjne
+next.config.mjs
+next-env.d.ts
+postcss.config.js
+tailwind.config.js
+
+# Pliki testowe
+coverage/
+jest.config.js
+vitest.config.js
+**/tests/**/*
+**/*.test.*
+**/*.spec.*
+
+# Inne
+.turbo
+.vercel 

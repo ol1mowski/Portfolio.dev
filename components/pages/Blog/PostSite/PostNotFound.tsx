@@ -12,4 +12,4 @@ const PostNotFound: React.FC<PostNotFoundProps> = ({ link }) => (
   </>
 );
 
-export default PostNotFound; 
+export default PostNotFound;

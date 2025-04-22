@@ -1,4 +1,4 @@
-@import "@/style/index.scss";
+@import '@/style/index.scss';
 
 .container {
   @include d-flex-column;
@@ -8,7 +8,7 @@
   line-height: 2rem;
   gap: clamp(2rem, 10vh, 4rem);
   padding: clamp(3rem, 5rem, 6rem) 0;
-  
+
   @media screen and (min-width: $big-tablet) {
     flex-direction: row;
     gap: clamp(2rem, 10vw, 6rem);
@@ -17,11 +17,11 @@
   &__media {
     @include d-flex-column;
     gap: 3vh;
-    
+
     &__beforeNumber {
       font-size: clamp(2rem, 3rem, 4rem);
       margin-right: 0.2rem;
-      
+
       @media screen and (min-width: $big-tablet) {
         font-size: 4rem;
       }
@@ -30,7 +30,7 @@
     &__description {
       font-size: 1.1rem;
       transition: font-size 0.3s ease;
-      
+
       &:hover {
         font-size: 1.2rem;
       }
@@ -39,7 +39,7 @@
     &__link {
       text-decoration: none;
       color: inherit;
-      
+
       &:hover {
         text-decoration: underline;
       }

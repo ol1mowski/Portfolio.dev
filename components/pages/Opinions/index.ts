@@ -1,2 +1,2 @@
 export { Opinions } from './Opinions.page';
-export { Loading } from './loading'; 
+export { Loading } from './loading';

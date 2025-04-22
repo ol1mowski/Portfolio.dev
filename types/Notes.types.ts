@@ -7,4 +7,4 @@ export interface NoteType {
 
 export interface NoteCardProps extends NoteType {
   className?: string;
-} 
+}

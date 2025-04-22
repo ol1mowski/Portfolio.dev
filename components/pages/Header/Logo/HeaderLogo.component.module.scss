@@ -1,13 +1,13 @@
-@import "@/style/index.scss";
+@import '@/style/index.scss';
 
 .logoSection {
-    &__content {
-      font-size: 1.5rem;
-      color: $dark;
+  &__content {
+    font-size: 1.5rem;
+    color: $dark;
+    font-weight: 800;
+    &__name {
+      color: $dark-blue;
       font-weight: 800;
-      &__name {
-        color: $dark-blue;
-        font-weight: 800;
-      }
     }
   }
+}

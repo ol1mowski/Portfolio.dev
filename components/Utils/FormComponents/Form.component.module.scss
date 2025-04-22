@@ -1,4 +1,4 @@
-@import "@/style/index.scss";
+@import '@/style/index.scss';
 
 .form {
   @include d-flex-column;
@@ -16,12 +16,12 @@
       @include d-flex;
       gap: 0.5vw;
       &__content {
-        margin-left: .2rem;
+        margin-left: 0.2rem;
         @include description();
         color: #2e2d2e;
         font-size: 0.7rem;
         @media screen and (min-width: $desktop) {
-          font-size: .8rem;
+          font-size: 0.8rem;
         }
       }
     }
@@ -43,5 +43,4 @@
     @include description();
     font-size: 1rem;
   }
-
 }

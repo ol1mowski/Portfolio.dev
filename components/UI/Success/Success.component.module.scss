@@ -1,4 +1,4 @@
-@import "@/style/index.scss";
+@import '@/style/index.scss';
 
 .success {
   border-radius: $border-med;
@@ -6,7 +6,7 @@
   padding: $big-padding $standard-padding;
   @include d-flex-column;
   gap: 2vh;
-  animation: showUp .5s linear;
+  animation: showUp 0.5s linear;
   &__header {
     @include headerFont();
     font-size: 2rem;
@@ -14,7 +14,7 @@
   }
   &__text {
     color: $dark;
-  } 
+  }
 }
 
 @keyframes showUp {

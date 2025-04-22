@@ -16,4 +16,4 @@ console.log('All required environment variables are set!');
 console.log('Environment variables found:');
 requiredEnvVars.forEach(envVar => {
   console.log(`- ${envVar}: ${process.env[envVar] ? '✓' : '✗'}`);
-}); 
+});

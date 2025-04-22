@@ -1,19 +1,11 @@
 import s from './ProjectCta.component.module.scss';
 
-const ProjectCta = ({  liveLink,
-  githubLink} : { liveLink: string, githubLink: string }) => {
+const ProjectCta = ({ liveLink, githubLink }: { liveLink: string; githubLink: string }) => {
   return (
     <section className={s.iconSection}>
-      <a
-        href={githubLink}
-        target="_blank"
-        rel="noreferrer"
-        className={s.iconSection__a}
-      >
+      <a href={githubLink} target="_blank" rel="noreferrer" className={s.iconSection__a}>
         <div className={s.iconSection__icon}>
-          <span className={s.iconSection__icon__span}>
-            Kod
-          </span>
+          <span className={s.iconSection__icon__span}>Kod</span>
           <svg
             id={s.icon_img}
             xmlns="http://www.w3.org/2000/svg"
@@ -31,16 +23,9 @@ const ProjectCta = ({  liveLink,
           </svg>
         </div>
       </a>
-      <a
-        href={liveLink}
-        target="_blank"
-        rel="noreferrer"
-        className={s.iconSection__a}
-      >
+      <a href={liveLink} target="_blank" rel="noreferrer" className={s.iconSection__a}>
         <section className={s.iconSection__icon}>
-          <span className={s.iconSection__icon__span}>
-            Zobacz
-          </span>
+          <span className={s.iconSection__icon__span}>Zobacz</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -61,6 +46,6 @@ const ProjectCta = ({  liveLink,
       </a>
     </section>
   );
-}
+};
 
 export default ProjectCta;

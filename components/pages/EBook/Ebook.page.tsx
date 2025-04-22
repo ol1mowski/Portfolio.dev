@@ -7,12 +7,11 @@ import { EbookCtaHeader } from './EbookCtaWrapper/EbookCtaHeader/EbookCtaHeader.
 import { EbookCtaOpinion } from './EbookCtaWrapper/EbookCtaOpinion/EbookCtaOpinion.component';
 import { EbookCtaText } from './EbookCtaWrapper/EbookCtaText/EbookCtaText.component';
 
-
 const Ebook: FC = () => {
   const EbookImageSide = useDynamicImport(
     () => import('./EbookImageSide/EbookImageSide.component'),
     {
-      loading: () => <div>{EBOOK_LOADING_TEXT}</div>
+      loading: () => <div>{EBOOK_LOADING_TEXT}</div>,
     }
   );
 

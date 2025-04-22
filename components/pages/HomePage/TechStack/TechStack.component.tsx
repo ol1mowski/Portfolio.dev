@@ -6,22 +6,13 @@ import Tech from './Tech/Tech.component';
 
 export const TechStack: FC = memo(() => {
   return (
-    <section 
-      className={s.techStackContainer}
-      aria-label="Technologie i narzędzia"
-    >
+    <section className={s.techStackContainer} aria-label="Technologie i narzędzia">
       <div className={s.techStackContainer__title}>
         <p className={s.techStackContainer__title__p}>{TECH_STACK_TITLE}</p>
       </div>
-      <div 
-        className={s.techStackContainer__skillsWrapper}
-        role="list"
-      >
-        {SKILLS.map((skill) => (
-          <Tech
-            key={skill.id}
-            {...skill}
-          />
+      <div className={s.techStackContainer__skillsWrapper} role="list">
+        {SKILLS.map(skill => (
+          <Tech key={skill.id} {...skill} />
         ))}
       </div>
     </section>

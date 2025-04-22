@@ -56,8 +56,8 @@ describe('PostsComponent', () => {
 
   it('renders all PostCardComponent components', () => {
     render(<PostsComponent posts={mockPosts} />);
-    
-    mockPosts.forEach((post) => {
+
+    mockPosts.forEach(post => {
       expect(screen.getByText(post.title)).toBeInTheDocument();
       expect(screen.getByText(post.description)).toBeInTheDocument();
       expect(screen.getByText(post.author)).toBeInTheDocument();

@@ -3,6 +3,7 @@
 ## Struktura i Nazewnictwo Katalogów
 
 1. **Katalogi główne**: używaj kebab-case
+
    ```
    ✅ components/
    ✅ hooks/
@@ -13,6 +14,7 @@
    ```
 
 2. **Katalogi w app router**: używaj kebab-case
+
    ```
    ✅ app/blog/
    ✅ app/ebook/
@@ -31,8 +33,10 @@
 ## Nazewnictwo Plików
 
 1. **Komponenty React**:
+
    - Używaj PascalCase dla plików komponentów
    - Końcówka .tsx dla komponentów z TypeScript
+
    ```
    ✅ Button.tsx
    ✅ FormInput.tsx
@@ -40,8 +44,10 @@
    ```
 
 2. **Hooki**:
+
    - Używaj camelCase z prefiksem `use`
    - Bez dodatkowych sufiksów w nazwie pliku
+
    ```
    ✅ useFormValidation.ts
    ✅ useMenu.ts
@@ -49,8 +55,10 @@
    ```
 
 3. **Typy**:
+
    - Używaj PascalCase
    - Końcówka .types.ts
+
    ```
    ✅ User.types.ts
    ✅ Post.types.ts
@@ -58,9 +66,11 @@
    ```
 
 4. **Serwisy i Funkcje Pomocnicze**:
+
    - Używaj kebab-case
    - Końcówka .service.ts dla serwisów
    - Końcówka .utils.ts dla narzędzi
+
    ```
    ✅ api.service.ts
    ✅ auth.service.ts
@@ -101,4 +111,4 @@ import { Button } from '../../../components/ui/Button';
 
 ## Implementacja
 
-Te konwencje nazewnictwa powinny być stosowane we wszystkich nowych plikach i komponentach. Dla istniejących plików, stopniowo dostosowuj je do tych konwencji podczas refaktoryzacji. 
+Te konwencje nazewnictwa powinny być stosowane we wszystkich nowych plikach i komponentach. Dla istniejących plików, stopniowo dostosowuj je do tych konwencji podczas refaktoryzacji.

@@ -13,16 +13,11 @@ export const SectionContainer: FC<SectionContainerProps> = ({
   ariaLabel,
   className,
   role,
-  children
+  children,
 }) => {
   return (
-    <section 
-      id={id}
-      className={className}
-      role={role || 'region'}
-      aria-label={ariaLabel}
-    >
+    <section id={id} className={className} role={role || 'region'} aria-label={ariaLabel}>
       {children}
     </section>
   );
-}; 
+};

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useState, useEffect, useRef } from 'react';
 
@@ -7,7 +7,7 @@ function useElementVisible() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       const entry = entries[0];
       setIsVisible(entry.isIntersecting);
     });
@@ -27,5 +27,3 @@ function useElementVisible() {
 }
 
 export default useElementVisible;
-
-

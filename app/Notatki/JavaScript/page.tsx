@@ -1,23 +1,23 @@
-import Image from "next/image";
-import s from "./page.module.scss";
+import Image from 'next/image';
+import s from './page.module.scss';
 
-import Footer from "@/components/pages/Footer/Footer.page";
-import Header from "@/components/pages/Header/Header.component";
+import Footer from '@/components/pages/Footer/Footer.page';
+import Header from '@/components/pages/Header/Header.component';
 
-import dynamic from "next/dynamic";
-import { saveClientData } from "@/actions/SaveClientEmail";
-import { validateSession } from "@/lib/auth";
-import { redirect } from "next/navigation";
+import dynamic from 'next/dynamic';
+import { saveClientData } from '@/actions/SaveClientEmail';
+import { validateSession } from '@/lib/auth';
+import { redirect } from 'next/navigation';
 
 const ClientForm = dynamic(
-  () => import("@/components/Utils/FormComponents/Form.validation.component")
+  () => import('@/components/Utils/FormComponents/Form.validation.component')
 );
 
 async function page() {
   const { session } = await validateSession();
 
   if (session) {
-    redirect("/Thanks/note");
+    redirect('/Thanks/note');
   }
 
   return (

@@ -1,26 +1,26 @@
-@import "@/style/index.scss";
+@import '@/style/index.scss';
 
 .headerContainer {
   $border-radius: 1.7rem;
   $shadow-color: rgba(0, 0, 0, 0.09);
-  
+
   position: sticky;
   top: 0;
   z-index: 100;
   width: 90vw;
   margin: 0 auto;
   padding: 2rem 0;
-  
+
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 30vw;
-  
+
   background-color: $white;
   box-shadow: 0 0 10px $shadow-color;
   border-bottom-left-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
-  
+
   @media screen and (max-width: $tablet) {
     gap: 5vw;
     padding: 1.5rem 0;

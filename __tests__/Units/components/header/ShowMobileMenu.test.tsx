@@ -1,27 +1,27 @@
-import { vi } from "vitest";
-import { render, screen } from "@testing-library/react";
-import React from "react";
+import { vi } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import React from 'react';
 
-import ShowMobileMenu from "../../../../components/pages/Header/ShowMobileMenu/ShowMobileMenu.component";
-import HamburgerClickContext from "../../../../store/HamburgerClickContext";
+import ShowMobileMenu from '../../../../components/pages/Header/ShowMobileMenu/ShowMobileMenu.component';
+import HamburgerClickContext from '../../../../store/HamburgerClickContext';
 
-vi.mock("next/image", () => ({
+vi.mock('next/image', () => ({
   __esModule: true,
   default: (props: any) => {
     const imgProps = {
       ...props,
-      unoptimized: props.unoptimized ? "true" : undefined
+      unoptimized: props.unoptimized ? 'true' : undefined,
     };
     return <img {...imgProps} />;
   },
 }));
 
-vi.mock("../../../../components/pages/Header/MobileMenu/MobileMenuHeader.component", () => ({
-  default: () => <div data-testid="mobile-menu-header">Mobile Menu Header</div>
+vi.mock('../../../../components/pages/Header/MobileMenu/MobileMenuHeader.component', () => ({
+  default: () => <div data-testid="mobile-menu-header">Mobile Menu Header</div>,
 }));
 
-describe("ShowMobileMenu Component", () => {
-  it("renders the hamburger icon", () => {
+describe('ShowMobileMenu Component', () => {
+  it('renders the hamburger icon', () => {
     render(
       <HamburgerClickContext.Provider value={{ isOpen: false, setOpen: vi.fn() }}>
         <ShowMobileMenu />
@@ -32,7 +32,7 @@ describe("ShowMobileMenu Component", () => {
     expect(hamburgerIcon).toBeDefined();
   });
 
-  it("calls setOpen(true) when the hamburger button is clicked", () => {
+  it('calls setOpen(true) when the hamburger button is clicked', () => {
     const setOpenMock = vi.fn();
     render(
       <HamburgerClickContext.Provider value={{ isOpen: false, setOpen: setOpenMock }}>
@@ -41,7 +41,7 @@ describe("ShowMobileMenu Component", () => {
     );
   });
 
-  it("renders MobileMenuHeader when isOpen is true", () => {
+  it('renders MobileMenuHeader when isOpen is true', () => {
     render(
       <HamburgerClickContext.Provider value={{ isOpen: true, setOpen: vi.fn() }}>
         <ShowMobileMenu />
@@ -51,7 +51,7 @@ describe("ShowMobileMenu Component", () => {
     expect(screen.getByTestId('mobile-nav')).toBeDefined();
   });
 
-  it("does not render MobileMenuHeader when isOpen is false", () => {
+  it('does not render MobileMenuHeader when isOpen is false', () => {
     render(
       <HamburgerClickContext.Provider value={{ isOpen: false, setOpen: vi.fn() }}>
         <ShowMobileMenu />

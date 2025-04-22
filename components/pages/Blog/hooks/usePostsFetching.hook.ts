@@ -25,14 +25,14 @@ export const usePostsFetching = async (): Promise<PostsResponse> => {
     return {
       posts: fetchedItems[0].posts,
       isLoading: false,
-      error: null
+      error: null,
     };
   } catch (error) {
     console.error('Error fetching posts data:', error);
     return {
       posts: [],
       isLoading: false,
-      error: error instanceof Error ? error : new Error('Unknown error occurred')
+      error: error instanceof Error ? error : new Error('Unknown error occurred'),
     };
   }
 };
@@ -52,7 +52,7 @@ export const useSinglePostFetching = async (slug: string): Promise<SinglePostRes
       post,
       allPosts: posts,
       isLoading: false,
-      error: null
+      error: null,
     };
   } catch (error) {
     console.error('Error fetching post data:', error);
@@ -60,7 +60,7 @@ export const useSinglePostFetching = async (slug: string): Promise<SinglePostRes
       post: null,
       allPosts: [],
       isLoading: false,
-      error: error instanceof Error ? error : new Error('Unknown error occurred')
+      error: error instanceof Error ? error : new Error('Unknown error occurred'),
     };
   }
-}; 
+};

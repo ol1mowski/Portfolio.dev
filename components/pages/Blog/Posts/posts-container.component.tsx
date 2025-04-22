@@ -23,4 +23,4 @@ export const PostsContainer: FC<PostsContainerProps> = ({ postsData }) => {
   }
 
   return <PostsSection posts={posts} />;
-}; 
+};

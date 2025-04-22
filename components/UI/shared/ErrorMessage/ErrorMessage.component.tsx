@@ -7,11 +7,8 @@ interface ErrorMessageProps {
 
 export const ErrorMessage: FC<ErrorMessageProps> = ({ message, className }) => {
   return (
-    <div 
-      role="alert" 
-      className={className}
-    >
+    <div role="alert" className={className}>
       {message}
     </div>
   );
-}; 
+};

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useRef, useState } from "react";
-import FormComponent from "./Form.component";
+import { useRef, useState } from 'react';
+import FormComponent from './Form.component';
 
 function Form({ action }: { action: (formData: FormData) => Promise<void> }) {
   const [isPending, setIsPending] = useState(false);
@@ -20,12 +20,12 @@ function Form({ action }: { action: (formData: FormData) => Promise<void> }) {
 
     try {
       await action(formData);
-      setSuccess("Newsletter wkrótce będzie dostępny ;)");
+      setSuccess('Newsletter wkrótce będzie dostępny ;)');
       if (inp.current) {
-        inp.current.value = "";
+        inp.current.value = '';
       }
     } catch (err) {
-      setError("[-] Błędny adres email, Sprobuj ponownie");
+      setError('[-] Błędny adres email, Sprobuj ponownie');
     } finally {
       setIsPending(false);
     }

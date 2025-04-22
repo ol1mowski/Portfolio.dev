@@ -1,16 +1,19 @@
-'use client'
+'use client';
 
 import { useMousePosition } from '@/hooks/useCursorPosition.hook';
 import s from './CursorShadow.component.module.scss';
 
 function CursorShadow() {
-    const { x, y } = useMousePosition();
+  const { x, y } = useMousePosition();
   return (
-    <div className={s.shadow} style={{
+    <div
+      className={s.shadow}
+      style={{
         left: x,
-        top: y
-    }}></div>
-  )
+        top: y,
+      }}
+    ></div>
+  );
 }
 
-export default CursorShadow
+export default CursorShadow;

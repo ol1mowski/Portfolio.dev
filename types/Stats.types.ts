@@ -11,4 +11,4 @@ export interface CounterAnimationProps {
   duration: number;
   target: number;
   'aria-label'?: string;
-} 
+}

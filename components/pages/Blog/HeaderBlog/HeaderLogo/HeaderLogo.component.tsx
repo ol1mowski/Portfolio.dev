@@ -1,11 +1,11 @@
-import Image from "next/image";
-import s from "./HeaderLogo.component.module.scss";
+import Image from 'next/image';
+import s from './HeaderLogo.component.module.scss';
 
 const HeaderLogo = ({ type }: { type?: string }) => {
   return (
     <section data-testid="header-logo" className={s.logoSection}>
-      <a href={"/Blog"}>
-        {type === "Blog" ? (
+      <a href={'/Blog'}>
+        {type === 'Blog' ? (
           <Image
             className={s.logoSection__img}
             src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1730720445/Portfolio/Icons/logo_black_ev3ukd.svg"

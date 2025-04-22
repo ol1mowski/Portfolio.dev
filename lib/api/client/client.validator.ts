@@ -24,4 +24,4 @@ export const validateClientData = (data: ClientData): ValidationResult => {
   }
 
   return { isValid: true };
-}; 
+};

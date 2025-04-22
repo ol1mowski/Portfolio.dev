@@ -12,4 +12,4 @@ export interface IconElementProps {
 
 export interface AboutWrapperProps {
   children: React.ReactNode;
-} 
+}

@@ -1,4 +1,4 @@
-import type { StatItemType } from "@/types/Stats.types";
+import type { StatItemType } from '@/types/Stats.types';
 
 export const STATS_DATA: StatItemType[] = [
   {
@@ -7,7 +7,7 @@ export const STATS_DATA: StatItemType[] = [
     count: 20000,
     description: 'Wyświetleń na YouTube',
     link: 'https://www.youtube.com/channel/UCTNFKRALTZoSQS6mDOuDs2Q',
-    isExternal: true
+    isExternal: true,
   },
   {
     id: 'youtube-videos',
@@ -15,7 +15,7 @@ export const STATS_DATA: StatItemType[] = [
     count: 35,
     description: 'Darmowych Filmów',
     link: 'https://www.youtube.com/channel/UCTNFKRALTZoSQS6mDOuDs2Q',
-    isExternal: true
+    isExternal: true,
   },
   {
     id: 'blog-posts',
@@ -23,6 +23,6 @@ export const STATS_DATA: StatItemType[] = [
     count: 7,
     description: 'Darmowych Wpisów Na Blogu',
     link: '/',
-    isExternal: false
-  }
+    isExternal: false,
+  },
 ];

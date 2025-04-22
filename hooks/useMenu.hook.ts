@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
 import { useCallback, useContext } from 'react';
-import HamburgerClickContext from "@/store/HamburgerClickContext";
+import HamburgerClickContext from '@/store/HamburgerClickContext';
 import { MenuContextType } from '@/types/MenuContext.types';
 
 export const useMenu = () => {
@@ -23,6 +23,6 @@ export const useMenu = () => {
     isOpen,
     openMenu,
     closeMenu,
-    toggleMenu
+    toggleMenu,
   };
-}; 
+};

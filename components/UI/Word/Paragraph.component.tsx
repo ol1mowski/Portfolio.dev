@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
-import { type ReactNode, useRef } from "react";
+import { MotionValue, motion, useScroll, useTransform } from 'framer-motion';
+import { type ReactNode, useRef } from 'react';
 
 function Paragraph({ value, className }: { value: string; className: string }) {
   const element = useRef<HTMLParagraphElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: element,
-    offset: ["start 0.9", "start 0.25"],
+    offset: ['start 0.9', 'start 0.25'],
   });
 
-  const words = value.split(" ");
+  const words = value.split(' ');
 
   const paragraphOpacity = useTransform(scrollYProgress, [0, 1], [0.2, 1]);
 
@@ -21,13 +21,8 @@ function Paragraph({ value, className }: { value: string; className: string }) {
         const start = i / words.length;
         const end = start + 1 / words.length;
         return (
-          <Word
-            className={className}
-            key={i}
-            range={[start, end]}
-            progress={scrollYProgress}
-          >
-            {word + " "}
+          <Word className={className} key={i} range={[start, end]} progress={scrollYProgress}>
+            {word + ' '}
           </Word>
         );
       })}

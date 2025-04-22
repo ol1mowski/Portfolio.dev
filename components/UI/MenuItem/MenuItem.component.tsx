@@ -8,11 +8,7 @@ interface MenuItemProps extends MenuItemType {
 
 const MenuItem = memo(({ to, label, className }: MenuItemProps) => {
   return (
-    <Link 
-      href={to}
-      className={className}
-      scroll={!to.startsWith('/#')}
-    >
+    <Link href={to} className={className} scroll={!to.startsWith('/#')}>
       {label}
     </Link>
   );
@@ -20,4 +16,4 @@ const MenuItem = memo(({ to, label, className }: MenuItemProps) => {
 
 MenuItem.displayName = 'MenuItem';
 
-export default MenuItem; 
+export default MenuItem;

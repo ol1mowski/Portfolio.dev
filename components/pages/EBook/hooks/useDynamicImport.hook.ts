@@ -12,4 +12,4 @@ export const useDynamicImport = <T extends ComponentType<any>>(
   return dynamic(importFunc, {
     loading: options.loading,
   });
-}; 
+};

@@ -1,4 +1,4 @@
-import { type ReactNode } from "react";
+import { type ReactNode } from 'react';
 import s from './ProjectsWrapper.component.module.scss';
 
 function ProjectsWrapper({ children }: { children: ReactNode }) {

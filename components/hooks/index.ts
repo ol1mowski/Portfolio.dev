@@ -1,1 +1,1 @@
-export { useAsyncData } from './useAsyncData'; 
+export { useAsyncData } from './useAsyncData';

@@ -1,3 +1,86 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "ignorePatterns": [
+    "node_modules/",
+    ".next/",
+    "out/",
+    "public/",
+    "**/*.d.ts"
+  ],
+  "overrides": [
+    {
+      "files": ["**/hooks/*.ts", "**/hooks/**/*.ts"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    },
+    {
+      "files": ["**/types/**/*.ts", "**/lib/**/*.ts"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    },
+    {
+      "files": ["**/components/pages/**/*.tsx"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": ["warn", { 
+          "argsIgnorePattern": "^(_|node)",
+          "varsIgnorePattern": "^_" 
+        }]
+      }
+    },
+    {
+      "files": [
+        "**/components/pages/Blog/PostSite/post-utils/code-renderer.component.tsx",
+        "**/components/pages/Blog/PostSite/PostArticle/PostArticle.component.tsx"
+      ],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    },
+    {
+      "files": [
+        "**/components/pages/Opinions/Opinions.page.tsx",
+        "**/components/UI/TypingRepleaceAnimation/TypingRepleaceAnimation.component.tsx",
+        "**/components/pages/Projects/ProjectsDataProvider.tsx"
+      ],
+      "rules": {
+        "prettier/prettier": "off"
+      }
+    }
+  ]
 }

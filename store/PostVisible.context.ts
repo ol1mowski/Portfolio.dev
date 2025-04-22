@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { createContext } from "react";
+import { createContext } from 'react';
 
 type PostVisibleContextType = {
   sectionVisible: { sectionName: string; isVisible: boolean };
@@ -8,7 +8,7 @@ type PostVisibleContextType = {
 };
 
 const PostVisibleContext = createContext<PostVisibleContextType>({
-  sectionVisible: { sectionName: "", isVisible: false },
+  sectionVisible: { sectionName: '', isVisible: false },
   setSectionVisible: (sectionName: string, isVisible: boolean) => {},
 });
 

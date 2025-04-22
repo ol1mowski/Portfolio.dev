@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Polityka Prywatności",
+  title: 'Polityka Prywatności',
   description:
-    "Oliwier Markiewicz - Twórca Stron Internetowych oferujący profesjonalne usługi projektowania i tworzenia stron WWW. Specjalizuje się w nowoczesnych, responsywnych i przyjaznych użytkownikowi stronach internetowych, dostosowanych do indywidualnych potrzeb klientów. Skontaktuj się, aby zrealizować swoją wizję online!",
+    'Oliwier Markiewicz - Twórca Stron Internetowych oferujący profesjonalne usługi projektowania i tworzenia stron WWW. Specjalizuje się w nowoczesnych, responsywnych i przyjaznych użytkownikowi stronach internetowych, dostosowanych do indywidualnych potrzeb klientów. Skontaktuj się, aby zrealizować swoją wizję online!',
 };
 
 function RootLayout({
@@ -11,7 +11,6 @@ function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="pl-PL">
       <head>
