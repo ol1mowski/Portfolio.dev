@@ -6,6 +6,7 @@ import { ProjectsType } from '@/types/PostType.types';
 import { OpinionsType } from '@/types/Opinions.types';
 import { saveClient } from '@/lib/api/client/client.service';
 import { ClientData } from '@/lib/api/client/client.types';
+import Posts from '../../Schemas/Posts';
 
 interface CustomerDocument extends Document {
   name: string;
@@ -38,7 +39,6 @@ export async function getProjects(): Promise<ProjectsType[] | null> {
 export async function getPosts(): Promise<any[] | null> {
   try {
     await dbConnect();
-    const { Posts } = require('../../Schemas/Posts');
     const data = await Posts.find().lean().exec();
     return data;
   } catch (error) {
