@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Check if commit message follows the required format
+# At least one of these prefixes is required: feat, fix, docs, style, refactor, test, chore
+# The prefix should be followed by: (optional scope): commit message
+
+commit_msg_file=$1
+commit_msg=$(cat "$commit_msg_file")
+
+# Regular expression pattern checking for correct format
+# feat(scope): add new feature
+# fix: resolve issue
+# docs: update readme
+pattern="^(feat|fix|docs|style|refactor|test|chore)(\([a-z]+\))?!?: .+"
+
+if ! echo "$commit_msg" | grep -E "$pattern" > /dev/null; then
+  echo "❌ Invalid commit message format."
+  echo "Correct format: feat(scope): message or fix: message"
+  echo "Allowed prefixes: feat, fix, docs, style, refactor, test, chore"
+  exit 1
+fi 

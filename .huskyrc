@@ -1,0 +1,8 @@
+# Husky configuration for different environments
+# This file is loaded by Husky before running hooks
+
+# Set HUSKY_DEBUG=1 to enable debugging
+# export HUSKY_DEBUG=1
+
+# Set HUSKY=0 to completely disable hooks (e.g. in CI/CD)
+# export HUSKY=0 
