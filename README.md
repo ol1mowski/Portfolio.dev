@@ -1,5 +1,8 @@
 # 🚀 My React Front-End Developer Portfolio
 
+[![CI/CD Status](https://github.com/{username}/Portfolio.dev/actions/workflows/ci.yml/badge.svg)](https://github.com/{username}/Portfolio.dev/actions/workflows/ci.yml)
+[![Docker Build](https://github.com/{username}/Portfolio.dev/actions/workflows/docker-build.yml/badge.svg)](https://github.com/{username}/Portfolio.dev/actions/workflows/docker-build.yml)
+
 Welcome to my **React Front-End Developer Portfolio**! This project showcases my skills as a front-end developer, featuring a beautifully crafted portfolio site built with the latest web technologies.
 
 ![Portfolio](https://github.com/user-attachments/assets/34bd6439-d605-43dd-b2f7-e9b18ddfd56c)
@@ -71,78 +74,109 @@ Feel free to reach out if you have any questions or feedback. Connect with me on
 
 If you like this project, please give it a ⭐️ on GitHub—it means a lot!
 
-## Konwencje Nazewnictwa
+## Naming Conventions
 
-Projekt korzysta z ustalonych konwencji nazewnictwa, które pomagają zachować spójność i czytelność kodu. Szczegółowe informacje znajdziesz w [dokumentacji konwencji nazewnictwa](docs/NAMING_CONVENTIONS.md).
+The project uses established naming conventions to help maintain consistency and code readability. Detailed information can be found in the [naming conventions documentation](docs/NAMING_CONVENTIONS.md).
 
-Aby przeprowadzić migrację na nowe konwencje, możesz użyć skryptów:
-- `scripts/migrate-to-conventions.ps1` - do zmiany nazw plików i katalogów
-- `scripts/update-imports.ps1` - do aktualizacji importów
+To perform migration to the new conventions, you can use the scripts:
+- `scripts/migrate-to-conventions.ps1` - for changing file and directory names
+- `scripts/update-imports.ps1` - for updating imports
 
 # Portfolio.dev
 
-## Konfiguracja Dockera
+## Docker Configuration
 
-Projekt jest skonfigurowany do uruchomienia w środowisku Docker. Poniżej znajdują się instrukcje dotyczące uruchomienia aplikacji w kontenerach.
+The project is configured to run in a Docker environment. Below are instructions for running the application in containers.
 
-### Wymagania
+### Requirements
 
 - Docker
 - Docker Compose
 
-### Uruchomienie aplikacji
+### Running the Application
 
-1. Sklonuj repozytorium:
+1. Clone the repository:
    ```bash
-   git clone [URL_REPOZYTORIUM]
+   git clone [REPOSITORY_URL]
    cd Portfolio.dev
    ```
 
-2. Utwórz plik `.env` w głównym katalogu projektu z odpowiednimi zmiennymi środowiskowymi:
+2. Create a `.env` file in the main project directory with appropriate environment variables:
    ```
    DB_URL=mongodb://mongo:27017/portfolio
-   JWT_SECRET=twoj_sekretny_klucz_jwt
+   JWT_SECRET=your_jwt_secret_key
    NEXT_PUBLIC_BASE_URL=http://localhost:3000
    ```
 
-3. Zbuduj i uruchom kontenery:
+3. Build and run the containers:
    ```bash
    docker-compose up -d
    ```
 
-4. Aplikacja będzie dostępna pod adresem: http://localhost:3000
+4. The application will be available at: http://localhost:3000
 
-### Zatrzymanie aplikacji
+### Stopping the Application
 
 ```bash
 docker-compose down
 ```
 
-### Wyświetlanie logów
+### Viewing Logs
 
 ```bash
 docker-compose logs -f
 ```
 
-### Przydatne komendy
+### Useful Commands
 
-- Przebudowanie aplikacji:
+- Rebuilding the application:
   ```bash
   docker-compose build --no-cache
   ```
 
-- Usunięcie wszystkich danych (wolumenów):
+- Removing all data (volumes):
   ```bash
   docker-compose down -v
   ```
 
-### Struktura Dockera
+### Docker Structure
 
-Projekt wykorzystuje wieloetapowy proces budowania:
+The project uses a multi-stage build process:
 
-1. **base** - obraz bazowy z Node.js
-2. **deps** - instalacja zależności
-3. **builder** - budowanie aplikacji Next.js
-4. **runner** - finalny obraz zawierający tylko niezbędne pliki
+1. **base** - base image with Node.js
+2. **deps** - dependency installation
+3. **builder** - building the Next.js application
+4. **runner** - final image containing only necessary files
 
-Ta struktura zapewnia minimalny rozmiar obrazu końcowego i zwiększa bezpieczeństwo poprzez użycie nieprivilegowanego użytkownika.
+This structure provides minimal final image size and enhances security by using an unprivileged user.
+
+## Continuous Integration and Deployment (CI/CD)
+
+The project utilizes GitHub Actions to automate the testing, building, and deployment processes.
+
+### Available Workflows:
+
+1. **CI/CD Pipeline** - the main pipeline that:
+   - Runs code linting
+   - Performs unit tests
+   - Runs end-to-end tests
+   - Builds and publishes a Docker image
+   - Deploys the application to the production server (only for main/master branches)
+
+2. **Docker Build** - builds and publishes a Docker image when Docker-related files change
+
+3. **Preview Deployment** - creates a preview environment for pull requests
+
+### GitHub Secrets
+
+For the workflows to function properly, the following secrets need to be configured in the GitHub repository:
+
+- `DOCKER_USERNAME` - Docker Hub username
+- `DOCKER_PASSWORD` - Docker Hub password/token
+- `SSH_HOST` - production server IP address
+- `SSH_USERNAME` - server username
+- `SSH_PRIVATE_KEY` - SSH private key for connecting to the server
+- `DB_URL` - MongoDB database URL
+- `JWT_SECRET` - secret key for signing JWT tokens
+- `NEXT_PUBLIC_BASE_URL` - public URL of the application
+- `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` - needed for Vercel deployments
