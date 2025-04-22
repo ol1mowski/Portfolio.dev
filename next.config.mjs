@@ -24,6 +24,14 @@ const nextConfig = {
       bodySizeLimit: "2mb",
     },
   },
+  // Konfiguracja dla Dockera - generuje standalone server
+  output: 'standalone',
+  // Dodajemy basePath jeśli istnieje w środowisku
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  // Upewniamy się, że SASS moduły są poprawnie importowane
+  sassOptions: {
+    includePaths: ['./style', './'],
+  },
 };
 
 export default nextConfig;

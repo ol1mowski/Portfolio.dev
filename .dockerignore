@@ -1,0 +1,53 @@
+# Pliki node
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Pliki next.js
+.next
+out
+
+# Pliki środowiskowe
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Repozytoria Git
+.git
+.gitignore
+
+# Pliki konfiguracyjne edytorów
+.idea
+.vscode
+*.swp
+*.swo
+
+# Pliki tymczasowe
+.DS_Store
+*.log
+tmp
+coverage
+.coverage
+
+# Pliki testowe
+__tests__
+*.test.*
+*.spec.*
+jest.*
+playwright.*
+vitest.*
+
+# Dokumentacja
+README.md
+*.md
+LICENSE
+
+# Inne niepotrzebne pliki
+.github
+docs
+examples
+Dockerfile
+.dockerignore 

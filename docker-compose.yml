@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL:-http://localhost:3000}
+        - DB_URL=${DB_URL:-mongodb://mongo:27017/portfolio}
+        - JWT_SECRET=${JWT_SECRET:-changeme_in_production}
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DB_URL=${DB_URL:-mongodb://mongo:27017/portfolio}
+      - JWT_SECRET=${JWT_SECRET:-changeme_in_production}
+      - NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL:-http://localhost:3000}
+      - NEXT_PUBLIC_BASE_PATH=${NEXT_PUBLIC_BASE_PATH:-}
+    restart: unless-stopped
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge 

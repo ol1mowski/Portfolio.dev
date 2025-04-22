@@ -78,3 +78,71 @@ Projekt korzysta z ustalonych konwencji nazewnictwa, które pomagają zachować 
 Aby przeprowadzić migrację na nowe konwencje, możesz użyć skryptów:
 - `scripts/migrate-to-conventions.ps1` - do zmiany nazw plików i katalogów
 - `scripts/update-imports.ps1` - do aktualizacji importów
+
+# Portfolio.dev
+
+## Konfiguracja Dockera
+
+Projekt jest skonfigurowany do uruchomienia w środowisku Docker. Poniżej znajdują się instrukcje dotyczące uruchomienia aplikacji w kontenerach.
+
+### Wymagania
+
+- Docker
+- Docker Compose
+
+### Uruchomienie aplikacji
+
+1. Sklonuj repozytorium:
+   ```bash
+   git clone [URL_REPOZYTORIUM]
+   cd Portfolio.dev
+   ```
+
+2. Utwórz plik `.env` w głównym katalogu projektu z odpowiednimi zmiennymi środowiskowymi:
+   ```
+   DB_URL=mongodb://mongo:27017/portfolio
+   JWT_SECRET=twoj_sekretny_klucz_jwt
+   NEXT_PUBLIC_BASE_URL=http://localhost:3000
+   ```
+
+3. Zbuduj i uruchom kontenery:
+   ```bash
+   docker-compose up -d
+   ```
+
+4. Aplikacja będzie dostępna pod adresem: http://localhost:3000
+
+### Zatrzymanie aplikacji
+
+```bash
+docker-compose down
+```
+
+### Wyświetlanie logów
+
+```bash
+docker-compose logs -f
+```
+
+### Przydatne komendy
+
+- Przebudowanie aplikacji:
+  ```bash
+  docker-compose build --no-cache
+  ```
+
+- Usunięcie wszystkich danych (wolumenów):
+  ```bash
+  docker-compose down -v
+  ```
+
+### Struktura Dockera
+
+Projekt wykorzystuje wieloetapowy proces budowania:
+
+1. **base** - obraz bazowy z Node.js
+2. **deps** - instalacja zależności
+3. **builder** - budowanie aplikacji Next.js
+4. **runner** - finalny obraz zawierający tylko niezbędne pliki
+
+Ta struktura zapewnia minimalny rozmiar obrazu końcowego i zwiększa bezpieczeństwo poprzez użycie nieprivilegowanego użytkownika.
