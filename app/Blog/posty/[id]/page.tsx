@@ -7,7 +7,6 @@ const page = async ({ params }: { params: Params }) => {
 
   return (
     <>
-      {/* @ts-expect-error Async Server Component */}
       <PostSite postId={id} />
       <Footer />
     </>

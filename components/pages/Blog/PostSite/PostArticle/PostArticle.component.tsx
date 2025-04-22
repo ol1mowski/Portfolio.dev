@@ -2,8 +2,6 @@
 
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import s from './PostArticle.component.module.scss';
 import Caption from '@/components/UI/Caption/Caption.component';
 import PostVisibleContext from '@/store/PostVisible.context';
@@ -65,9 +63,9 @@ const PostArticle: React.FC<PostArticleProps> = ({ slug, title, description }) =
             code({ inline, className, children, ...props }: any) {
               const match = /language-(\w+)/.exec(className || '');
               return !inline && match ? (
-                <SyntaxHighlighter style={vscDarkPlus} language={match[1]} PreTag="div" {...props}>
-                  {String(children).replace(/\n$/, '')}
-                </SyntaxHighlighter>
+                <pre className={`${s.codeBlock} ${match ? `language-${match[1]}` : ''}`} {...props}>
+                  <code>{String(children).replace(/\n$/, '')}</code>
+                </pre>
               ) : (
                 <code className={s.inlineCode} {...props}>
                   {children}

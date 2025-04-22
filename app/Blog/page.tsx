@@ -5,9 +5,7 @@ import Footer from '@/components/pages/Footer/Footer.page';
 export default async function BlogPage() {
   return (
     <>
-      {/* @ts-expect-error Async Server Component */}
       <HomePage />
-      {/* @ts-expect-error Async Server Component */}
       <Posts />
       <Footer />
     </>

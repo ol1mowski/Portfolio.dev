@@ -22,9 +22,7 @@ export default function Home() {
       <AbourMe />
       <Services />
       <SubscribersAmount />
-      {/* @ts-expect-error Async Server Component */}
       <ProjectsDataProvider />
-      {/* @ts-expect-error Async Server Component */}
       <Opinions />
       <Collaboration />
       <Contact />
