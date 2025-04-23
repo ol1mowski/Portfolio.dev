@@ -15,8 +15,8 @@ const InfoDescription = memo(() => {
             technologiach takich jak"
           className={s.desWrapper__des}
         />
-        <span className={s.importantTextDecorate}>Webflow</span>,{' '}
-        <span className={s.importantTextDecorate}>Next.js</span> czy{' '}
+        <span className={s.importantTextDecorate}>Node.js</span>,{' '}
+        <span className={s.importantTextDecorate}>React</span> czy{' '}
         <span className={s.importantTextDecorate}>WordPress</span>
         <Paragraph
           value=", które spełniają indywidualne potrzeby klientów."
