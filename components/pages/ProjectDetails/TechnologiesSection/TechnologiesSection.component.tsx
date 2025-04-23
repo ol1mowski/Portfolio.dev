@@ -1,4 +1,5 @@
 import s from './TechnologiesSection.component.module.scss';
+import { getTechIcon } from '@/utils/techIcons';
 
 interface TechnologiesSectionProps {
   technologies: string[];
@@ -10,7 +11,8 @@ const TechnologiesSection: React.FC<TechnologiesSectionProps> = ({ technologies 
       <ul className={s.technologiesList}>
         {technologies.map((tech, index) => (
           <li key={index} className={s.technologyItem}>
-            {tech}
+            <div className={s.technologyIcon}>{getTechIcon(tech)}</div>
+            <span className={s.technologyName}>{tech}</span>
           </li>
         ))}
       </ul>

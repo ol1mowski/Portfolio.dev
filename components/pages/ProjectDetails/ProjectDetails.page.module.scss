@@ -53,8 +53,9 @@
 .sectionTitle {
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
-  color: $dark-grey;
+  color: $dark;
   position: relative;
+  font-weight: 600;
 
   &::after {
     content: '';

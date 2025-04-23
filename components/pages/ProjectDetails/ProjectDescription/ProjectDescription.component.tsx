@@ -5,8 +5,6 @@ interface ProjectDescriptionProps {
 }
 
 const ProjectDescription: React.FC<ProjectDescriptionProps> = ({ description }) => {
-  // Konwersja zwykłego opisu na paragraf lub obsługa HTML/Markdown jeśli jest potrzebna
-  // W przyszłości można rozważyć użycie biblioteki do renderowania Markdown
   const paragraphs = description.split('\n\n').filter(Boolean);
 
   return (
