@@ -3,6 +3,15 @@ import ProjectDetails from '@/components/pages/ProjectDetails/ProjectDetails.pag
 import { getProjects } from '@/db/Utils/DataFetchingFunctions/DataFetchingFunctions';
 import { ProjectType } from '@/types/PostType.types';
 
+// Funkcja generująca slug - identyczna jak w komponencie ProjectCta
+const generateSlug = (title: string): string => {
+  return title
+    .toLowerCase()
+    .replace(/\|/g, '') // usuwanie znaku |
+    .replace(/[^a-z0-9]+/g, '-') // zamiana znaków specjalnych na -
+    .replace(/^-+|-+$/g, ''); // usuwanie myślników z początku i końca
+};
+
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const projectsData = await getProjects();
 
@@ -20,9 +29,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     }
   });
 
-  const currentProject = allProjects.find(
-    project => project.title.toLowerCase().replace(/\s+/g, '-') === params.slug
-  );
+  const currentProject = allProjects.find(project => generateSlug(project.title) === params.slug);
 
   if (!currentProject) {
     return {
@@ -54,9 +61,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
     }
   });
 
-  const currentProject = allProjects.find(
-    project => project.title.toLowerCase().replace(/\s+/g, '-') === params.slug
-  );
+  const currentProject = allProjects.find(project => generateSlug(project.title) === params.slug);
 
   if (!currentProject) {
     return notFound();

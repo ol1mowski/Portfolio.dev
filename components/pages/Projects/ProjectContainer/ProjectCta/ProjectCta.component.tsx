@@ -8,7 +8,13 @@ interface ProjectCtaProps {
 }
 
 const ProjectCta = ({ liveLink, githubLink, title }: ProjectCtaProps) => {
-  const projectSlug = title ? title.toLowerCase().replace(/\s+/g, '-') : '';
+  const projectSlug = title
+    ? title
+        .toLowerCase()
+        .replace(/\|/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+    : '';
 
   return (
     <section className={s.iconSection}>
