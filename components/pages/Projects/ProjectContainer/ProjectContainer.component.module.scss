@@ -1,23 +1,54 @@
 @import '@/style/index.scss';
 
 .projectWrapper {
-  width: 90vw;
-  border-radius: 1.7rem;
-  margin-bottom: 5rem;
+  width: 100%;
+  max-width: 90vw;
+  border-radius: 1.2rem;
+  margin-bottom: 4rem;
   box-shadow: $box-shadow;
-  @include d-flex-column;
-  @media screen and (min-width: 650px) {
-    width: 30rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: white;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   }
-  @media screen and (min-width: 1020px) {
-    @include d-flex;
-    width: 60rem;
+
+  @media screen and (min-width: $mobile) {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    max-width: 1000px;
+    align-items: flex-start;
   }
 
   &__descriSection {
-    @include d-flex-column;
-    @media screen and (min-width: 1020px) {
-      width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1.5rem 1.5rem;
+    gap: 1rem;
+
+    @media screen and (min-width: $tablet) {
+      padding: 1rem 2rem 2rem;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 50%;
+      padding: 2rem 2.5rem;
+      justify-content: space-between;
     }
   }
 }

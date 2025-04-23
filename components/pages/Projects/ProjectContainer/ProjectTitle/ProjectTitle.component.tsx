@@ -1,13 +1,19 @@
 import s from './ProjectTitle.component.module.scss';
+import { formatDate } from '@/utils/dateFormatters';
 
-const ProjectTitle = ({ title, date }: { title: string; date: string }) => {
+interface ProjectTitleProps {
+  title: string;
+  date: string;
+}
+
+const ProjectTitle = ({ title, date }: ProjectTitleProps) => {
+  const formattedDate = formatDate(date);
+
   return (
-    <section className={s.titleSection}>
-      <div className={s.titleSection__wrapper}>
-        <h3 className={s.titleSection__wrapper__h3}>{title}</h3>
-        <p className={s.titleSection__wrapper__p}>({date})</p>
-      </div>
-    </section>
+    <div className={s.titleSection}>
+      <h3 className={s.titleSection__title}>{title}</h3>
+      <time className={s.titleSection__date}>{formattedDate}</time>
+    </div>
   );
 };
 

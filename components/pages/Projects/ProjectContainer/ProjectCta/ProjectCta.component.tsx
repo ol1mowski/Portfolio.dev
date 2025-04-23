@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import s from './ProjectCta.component.module.scss';
+import { FaGithub, FaExternalLinkAlt, FaInfoCircle } from 'react-icons/fa';
 
 interface ProjectCtaProps {
   liveLink: string;
@@ -17,31 +18,50 @@ const ProjectCta = ({ liveLink, githubLink, title }: ProjectCtaProps) => {
     : '';
 
   return (
-    <section className={s.iconSection}>
-      {title && (
-        <Link href={`/projekt/${projectSlug}`} className={s.detailsLink}>
-          <section className={s.iconSection__icon}>
-            <span className={s.iconSection__icon__span}>Więcej</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="tabler-icon tabler-icon-info-circle"
-            >
-              <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
-              <path d="M12 9h.01"></path>
-              <path d="M11 12h1v4h1"></path>
-            </svg>
-          </section>
+    <div className={s.iconSection}>
+      {githubLink && (
+        <Link
+          href={githubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={s.ctaLink}
+          aria-label="Zobacz kod źródłowy na GitHub"
+        >
+          <div className={s.ctaButton}>
+            <FaGithub />
+            <span>Kod źródłowy</span>
+          </div>
         </Link>
       )}
-    </section>
+
+      {liveLink && (
+        <Link
+          href={liveLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={s.ctaLink}
+          aria-label="Zobacz wersję na żywo"
+        >
+          <div className={`${s.ctaButton} ${s.liveButton}`}>
+            <FaExternalLinkAlt />
+            <span>Wersja na żywo</span>
+          </div>
+        </Link>
+      )}
+
+      {title && (
+        <Link
+          href={`/projekt/${projectSlug}`}
+          className={s.ctaLink}
+          aria-label="Zobacz więcej szczegółów"
+        >
+          <div className={`${s.ctaButton} ${s.moreButton}`}>
+            <FaInfoCircle />
+            <span>Więcej</span>
+          </div>
+        </Link>
+      )}
+    </div>
   );
 };
 

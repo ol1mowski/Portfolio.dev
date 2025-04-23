@@ -1,21 +1,22 @@
 @import '@/style/index.scss';
 
 .titleSection {
-  margin: 2rem 0;
+  margin-bottom: 1rem;
 
-  &__wrapper {
-    text-align: center;
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $dark;
+    margin-bottom: 0.5rem;
 
-    &__h3 {
-      @include headerFont();
-      color: $dark-blue;
-      font-weight: 500;
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
+    @media screen and (min-width: $tablet) {
+      font-size: 1.75rem;
     }
+  }
 
-    &__p {
-      @include description();
-    }
+  &__date {
+    font-size: 0.9rem;
+    color: $grey;
+    font-weight: 500;
   }
 }

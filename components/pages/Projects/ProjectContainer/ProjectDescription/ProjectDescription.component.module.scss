@@ -13,3 +13,23 @@
     }
   }
 }
+
+.descriptionContainer {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $dark-grey;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 1.05rem;
+    -webkit-line-clamp: 4;
+  }
+}

@@ -1,14 +1,20 @@
 import s from './ProjectTools.component.module.scss';
 
-const ProjectTools = ({ technologies }: { technologies: string[] }) => {
+interface ProjectToolsProps {
+  technologies: string[];
+}
+
+const ProjectTools = ({ technologies }: ProjectToolsProps) => {
   return (
-    <section className={s.toolsSection}>
-      {technologies.map((tech, index) => (
-        <div key={index} className={s.toolsSection__tool}>
-          {tech}
-        </div>
-      ))}
-    </section>
+    <div className={s.toolsSection}>
+      <div className={s.toolsContainer}>
+        {technologies.map((tech, index) => (
+          <span key={index} className={s.tool}>
+            {tech}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 };
 

@@ -1,13 +1,31 @@
 @import '@/style/index.scss';
 
 .toolsSection {
-  @include d-flex;
-  margin-top: 1rem;
-  gap: 1rem;
-  &__tool {
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
-    font-weight: 600;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.toolsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tool {
+  padding: 0.4rem 0.8rem;
+  background-color: rgba($dark-blue, 0.08);
+  color: $dark-blue;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba($dark-blue, 0.15);
+    transform: translateY(-2px);
+  }
+
+  @media screen and (min-width: $mobile) {
+    font-size: 0.9rem;
   }
 }
