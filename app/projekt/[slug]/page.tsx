@@ -3,16 +3,17 @@ import ProjectDetails from '@/components/pages/ProjectDetails/ProjectDetails.pag
 import { getProjects } from '@/db/Utils/DataFetchingFunctions/DataFetchingFunctions';
 import { ProjectType } from '@/types/PostType.types';
 
-// Funkcja generująca slug - identyczna jak w komponencie ProjectCta
 const generateSlug = (title: string): string => {
   return title
     .toLowerCase()
-    .replace(/\|/g, '') // usuwanie znaku |
-    .replace(/[^a-z0-9]+/g, '-') // zamiana znaków specjalnych na -
-    .replace(/^-+|-+$/g, ''); // usuwanie myślników z początku i końca
+    .replace(/\|/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 };
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+// @ts-expect-error - Next.js wymaga specyficznych typów
+export async function generateMetadata({ params }) {
+  const { slug } = params;
   const projectsData = await getProjects();
 
   if (!projectsData || !projectsData.length) {
@@ -29,7 +30,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     }
   });
 
-  const currentProject = allProjects.find(project => generateSlug(project.title) === params.slug);
+  const currentProject = allProjects.find(project => generateSlug(project.title) === slug);
 
   if (!currentProject) {
     return {
@@ -47,7 +48,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function ProjectPage({ params }: { params: { slug: string } }) {
+// @ts-expect-error - Next.js wymaga specyficznych typów
+export default async function ProjectPage({ params }) {
+  const { slug } = params;
   const projectsData = await getProjects();
 
   if (!projectsData || !projectsData.length) {
@@ -61,7 +64,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
     }
   });
 
-  const currentProject = allProjects.find(project => generateSlug(project.title) === params.slug);
+  const currentProject = allProjects.find(project => generateSlug(project.title) === slug);
 
   if (!currentProject) {
     return notFound();

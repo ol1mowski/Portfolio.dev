@@ -16,8 +16,6 @@ interface ProjectDetailsProps {
 const ProjectDetails = ({ project }: ProjectDetailsProps) => {
   const { title, image, description, technologies, githubLink, liveLink, date } = project;
 
-  // Przykładowa tablica z dodatkowymi zdjęciami projektu
-  // W rzeczywistej implementacji powinna pochodzić z bazy danych
   const galleryImages = [
     { id: 1, src: image, alt: `${title} - widok główny` },
     { id: 2, src: image, alt: `${title} - podstrona` },
@@ -26,7 +24,6 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
 
   return (
     <div className={s.projectDetailsContainer}>
-      {/* Przycisk powrotu */}
       <div className={s.backButtonWrapper}>
         <Link href="/#projekty" className={s.backButton}>
           <GoArrowLeft size={20} />
@@ -34,20 +31,16 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         </Link>
       </div>
 
-      {/* Główny nagłówek projektu */}
       <ProjectHeader title={title} date={date} githubLink={githubLink} liveLink={liveLink} />
 
-      {/* Hero image */}
       <div className={s.heroImageContainer}>
         <Image src={image} alt={title} width={1200} height={600} className={s.heroImage} priority />
       </div>
 
-      {/* Szczegółowy opis projektu */}
       <SectionContainer className={s.descriptionSection} id="projektOpis" ariaLabel="Opis projektu">
         <ProjectDescription description={description} />
       </SectionContainer>
 
-      {/* Sekcja technologii */}
       <SectionContainer
         className={s.technologiesSection}
         id="projektTechnologie"
@@ -57,7 +50,6 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         <TechnologiesSection technologies={technologies} />
       </SectionContainer>
 
-      {/* Galeria projektu */}
       <SectionContainer
         className={s.gallerySection}
         id="projektGaleria"
