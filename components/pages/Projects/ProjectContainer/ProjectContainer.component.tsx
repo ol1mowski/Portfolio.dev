@@ -18,7 +18,7 @@ const ProjectComponent = memo(
             <ProjectTitle title={title} date={date} />
             <ProjectDescription description={description} />
             <ProjectTools technologies={technologies} />
-            <ProjectCta liveLink={liveLink} githubLink={githubLink} />
+            <ProjectCta liveLink={liveLink} githubLink={githubLink} title={title} />
           </div>
         </article>
       </AnimationWrapper>

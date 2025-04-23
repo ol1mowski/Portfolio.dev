@@ -1,28 +1,53 @@
 @import '@/style/index.scss';
 
 .iconSection {
-  @include d-flex;
-  margin-top: 2rem;
-  padding-bottom: 2rem;
-  gap: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+
   &__a {
-    transition: color 0.3s;
-    will-change: transition;
+    text-decoration: none;
   }
-  &__a:hover {
-    color: $dark-blue;
-  }
+
   &__icon {
-    @include d-flex;
-    gap: 0.5rem;
-    &__span {
-      font-size: 1.2rem;
-      color: $dark;
-      transition: color 0.3s;
-      will-change: transition;
+    background-color: #f5f5f5;
+    padding: 0.5rem 1.5rem;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 0.15rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(#f5f5f5, 5%);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
     }
-    &__span:hover {
-      color: $dark-blue;
+
+    &__span {
+      margin-right: 0.5rem;
+      font-weight: 500;
+    }
+  }
+}
+
+#icon_img {
+  font-size: 1rem;
+}
+
+.detailsLink {
+  text-decoration: none;
+
+  .iconSection__icon {
+    background-color: $dark-blue;
+    color: white;
+
+    &:hover {
+      background-color: darken($dark-blue, 10%);
     }
   }
 }

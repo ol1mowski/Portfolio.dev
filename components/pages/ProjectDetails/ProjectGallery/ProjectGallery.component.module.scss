@@ -1,0 +1,81 @@
+@import '@/style/index.scss';
+
+.galleryContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mainImageContainer {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  @media (min-width: $tablet) {
+    height: 400px;
+  }
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnailsContainer {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $grey;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $dark-grey;
+  }
+}
+
+.thumbnailButton {
+  width: 120px;
+  height: 80px;
+  border: none;
+  padding: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  outline: none;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &.active {
+    box-shadow: 0 0 0 3px $dark-blue;
+  }
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

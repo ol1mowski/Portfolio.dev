@@ -1,0 +1,62 @@
+@import '@/style/index.scss';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @media (min-width: $tablet) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $dark-grey;
+  line-height: 1.2;
+}
+
+.date {
+  font-size: 1rem;
+  color: $grey;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: #f5f5f5;
+  color: $dark-grey;
+
+  &:hover {
+    background-color: #ebebeb;
+  }
+}
+
+.liveLink {
+  background-color: $dark-blue;
+  color: white;
+
+  &:hover {
+    background-color: darken($dark-blue, 10%);
+  }
+}
