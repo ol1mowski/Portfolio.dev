@@ -30,24 +30,19 @@
 .heroImageContainer {
   width: 100%;
   position: relative;
-  height: 300px;
+  height: auto;
   margin: 3rem 0;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-
-  @media (min-width: $tablet) {
-    height: 400px;
-  }
-
-  @media (min-width: $desktop) {
-    height: 500px;
-  }
 }
 
 .heroImage {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .sectionTitle {

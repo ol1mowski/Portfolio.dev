@@ -33,6 +33,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ images }) => {
             width={1200}
             height={600}
             className={s.mainImage}
+            priority
           />
         )}
       </div>
