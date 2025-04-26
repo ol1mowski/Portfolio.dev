@@ -2,9 +2,21 @@
 
 .opinionsWrapper {
   margin-top: 10vh;
-  @include d-flex-column;
-  gap: 10vh;
-  @media screen and (min-width: $desktop) {
-    flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5vh;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  place-items: stretch;
+
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7vh;
+  }
+
+  @media screen and (min-width: 1440px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10vh;
   }
 }
