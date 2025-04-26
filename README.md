@@ -1,8 +1,5 @@
 # 🚀 My React Front-End Developer Portfolio
 
-[![CI/CD Status](https://github.com/{username}/Portfolio.dev/actions/workflows/ci.yml/badge.svg)](https://github.com/{username}/Portfolio.dev/actions/workflows/ci.yml)
-[![Docker Build](https://github.com/{username}/Portfolio.dev/actions/workflows/docker-build.yml/badge.svg)](https://github.com/{username}/Portfolio.dev/actions/workflows/docker-build.yml)
-
 Welcome to my **React Front-End Developer Portfolio**! This project showcases my skills as a front-end developer, featuring a beautifully crafted portfolio site built with the latest web technologies.
 
 ![Portfolio](https://github.com/user-attachments/assets/34bd6439-d605-43dd-b2f7-e9b18ddfd56c)
@@ -30,8 +27,8 @@ I designed this portfolio **from scratch in Figma** and brought it to life using
 1. **Clone this repository:**
 
    ```bash
-   git clone https://github.com/ol1mowski/portfolio.dev.git
-   cd portfolio.dev
+   git clone https://github.com/ol1mowski/Portfolio.dev.git
+   cd Portfolio.dev
    ```
 
 2. **Install dependencies:**
@@ -99,7 +96,7 @@ The project is configured to run in a Docker environment. Below are instructions
 1. Clone the repository:
 
    ```bash
-   git clone [REPOSITORY_URL]
+   git clone https://github.com/ol1mowski/Portfolio.dev.git
    cd Portfolio.dev
    ```
 
