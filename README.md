@@ -30,8 +30,8 @@ I designed this portfolio **from scratch in Figma** and brought it to life using
 1. **Clone this repository:**
 
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/ol1mowski/portfolio.dev.git
+   cd portfolio.dev
    ```
 
 2. **Install dependencies:**
@@ -60,7 +60,7 @@ The **Blog** subpage offers valuable content on web design, keeping you updated 
 
 ## 🌍 Live Demo
 
-Check out the live version of my portfolio [here](your-live-demo-url).
+Check out the live version of my portfolio [here](www.oliwiermarkiewicz.pl/).
 
 ## 🤝 Contributing
 
@@ -68,7 +68,7 @@ I'm always open to contributions! Feel free to fork this project and submit pull
 
 ## 📫 Contact
 
-Feel free to reach out if you have any questions or feedback. Connect with me on [LinkedIn](your-linkedin-url) or [Twitter](your-twitter-url).
+Feel free to reach out if you have any questions or feedback. Connect with me on [LinkedIn](https://www.linkedin.com/in/oliwier-markiewicz-47857228a/).
 
 ## ⭐️ Show Your Support
 
