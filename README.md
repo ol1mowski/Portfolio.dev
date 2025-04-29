@@ -36,14 +36,15 @@ I designed this portfolio **from scratch in Figma** and brought it to life using
    ```bash
    npm install
    ```
+3. **Add env file like .env.example**
 
-3. **Run the development server:**
+4. **Run the development server:**
 
    ```bash
    npm run dev
    ```
 
-4. **Open in your browser:**
+5. **Open in your browser:**
 
    Visit `http://localhost:3000` to see the portfolio in action.
 
