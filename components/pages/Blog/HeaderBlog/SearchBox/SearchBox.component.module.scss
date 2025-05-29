@@ -1,0 +1,331 @@
+@import '@/style/index.scss';
+
+.searchWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+  min-width: 320px;
+  height: 44px;
+
+  &:focus-within {
+    border-color: #d1d5db;
+    box-shadow: 0 0 0 3px rgba(229, 231, 235, 0.1);
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+
+    &:hover {
+      color: #6b7280;
+    }
+
+    &__spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid #e5e7eb;
+      border-top: 2px solid #9ca3af;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+
+  &__input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 0;
+    font-size: 0.95rem;
+    color: #374151;
+
+    &::placeholder {
+      color: #9ca3af;
+      font-weight: 400;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    min-width: 280px;
+  }
+}
+
+// Suggestions Dropdown
+.suggestionsDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  margin-top: 0.5rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  &__list {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+}
+
+.suggestionItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-align: left;
+  border-bottom: 1px solid #f3f4f6;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover,
+  &__active {
+    background: #f8fafc;
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+
+    &__title {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #374151;
+      margin-bottom: 0.25rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      .highlight {
+        background: #fef3c7;
+        color: #92400e;
+        font-weight: 600;
+        border-radius: 2px;
+        padding: 0 2px;
+      }
+    }
+
+    &__category {
+      font-size: 0.8rem;
+      color: #6b7280;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__icon {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    flex-shrink: 0;
+  }
+}
+
+// Loading message w dropdown
+.loadingMessage {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 0.75rem;
+  color: #6b7280;
+
+  &__spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #e5e7eb;
+    border-top: 2px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    flex-shrink: 0;
+  }
+
+  &__text {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+}
+
+// No results message
+.noResultsMessage {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 0.75rem;
+  border-bottom: none;
+  background: #f8fafc;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #f1f5f9;
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    opacity: 0.7;
+    flex-shrink: 0;
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+
+    &__title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.25rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__subtitle {
+      font-size: 0.8rem;
+      color: #6b7280;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__button {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+
+    &:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Loading state dla highlightowania
+.highlight {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 1px 3px;
+}
+
+// Animacja spinner
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Responsive adjustments
+@media screen and (max-width: $tablet) {
+  .searchWrapper {
+    width: 100%;
+  }
+
+  .searchBox {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .suggestionsDropdown {
+    position: fixed;
+    top: auto;
+    left: 1rem;
+    right: 1rem;
+    margin-top: 0.25rem;
+  }
+
+  .suggestionItem {
+    padding: 1rem;
+
+    &__content {
+      &__title {
+        font-size: 1rem;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+      }
+
+      &__category {
+        font-size: 0.9rem;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+      }
+    }
+  }
+
+  .loadingMessage {
+    padding: 1.25rem 1rem;
+
+    &__text {
+      font-size: 1rem;
+    }
+  }
+
+  .noResultsMessage {
+    padding: 1.25rem 1rem;
+
+    &__content {
+      &__title {
+        font-size: 1rem;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+      }
+
+      &__subtitle {
+        font-size: 0.9rem;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+      }
+    }
+
+    &__button {
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+}

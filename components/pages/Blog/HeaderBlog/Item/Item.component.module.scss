@@ -2,13 +2,21 @@
 
 .item {
   cursor: pointer;
-  transition: color, scale, 0.7s;
-  will-change: color, scale;
+  color: #374151;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
   &:hover {
-    color: $dark-blue;
-    scale: 1.1;
+    color: #3b82f6;
+    background: #eff6ff;
+    transform: translateY(-1px);
   }
 }
+
 .hamburger {
   color: #2d2e2d;
   margin-top: 1.5rem;

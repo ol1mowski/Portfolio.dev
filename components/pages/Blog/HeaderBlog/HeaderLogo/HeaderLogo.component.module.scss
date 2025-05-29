@@ -1,12 +1,26 @@
 @import '@/style/index.scss';
 
 .logoSection {
-  cursor: pointer;
-  &__img {
-    will-change: scale;
-    transition: scale 0.7s;
+  @include d-flex;
+
+  a {
+    text-decoration: none;
   }
-  &__img:hover {
-    scale: $hover-med-scale;
+
+  &__text {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #3b82f6;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #1d4ed8;
+    }
+  }
+
+  &__img {
+    object-fit: contain;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
   }
 }

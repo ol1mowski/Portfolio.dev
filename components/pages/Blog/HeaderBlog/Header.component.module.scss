@@ -3,13 +3,61 @@
 .headerWrapper {
   @include d-flex;
   justify-content: space-between;
-  padding: 0 10vw;
-  width: 90vw;
-  margin: 0 auto;
-  border-bottom-left-radius: 1.7rem;
-  border-bottom-right-radius: 1.7rem;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  gap: 2rem;
+  position: relative;
 
   @media screen and (min-width: $desktop) {
-    padding: 0 15vw;
+    padding: 1.5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__searchSection {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media screen and (max-width: $big-tablet) {
+      display: none;
+    }
+  }
+
+  &__rightSection {
+    @include d-flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    &__jobsButton {
+      display: none;
+      text-decoration: none;
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+
+      @media screen and (min-width: $big-tablet) {
+        display: inline-block;
+      }
+    }
   }
 }

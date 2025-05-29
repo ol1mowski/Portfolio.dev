@@ -34,6 +34,18 @@ function HamburgerMenuComponent({
                 <Item key={id} hamburger value={value} href={href} />
               ))}
         </ul>
+        {type === 'Blog' && (
+          <div className={s.hamburgerMenu__nav__jobsButton}>
+            <a
+              href="https://justjoin.it/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={s.hamburgerMenu__nav__jobsButton__link}
+            >
+              Oferty pracy
+            </a>
+          </div>
+        )}
       </nav>
       <section className={s.hamburgerMenu__logo}>
         <Image

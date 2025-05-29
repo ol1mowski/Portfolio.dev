@@ -64,6 +64,32 @@
         color: $dark;
       }
     }
+
+    &__jobsButton {
+      margin-top: 2rem;
+
+      &__link {
+        display: inline-block;
+        text-decoration: none;
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+          background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
   }
   &__logo {
     @include d-flex;

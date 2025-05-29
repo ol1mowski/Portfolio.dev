@@ -2,4 +2,39 @@
 
 .buttonWrapper {
   @include d-flex;
+  justify-content: center;
+  margin-top: 3rem;
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 4rem;
+  }
+}
+
+.loadMoreButton {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+  }
 }

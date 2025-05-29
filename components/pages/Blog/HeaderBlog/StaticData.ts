@@ -22,14 +22,7 @@ export const ITEMS = [
 export const BlogITEMS = [
   {
     id: 1,
-    value: 'Home',
-    href: '/Blog',
-    type: 'outpage',
-  },
-
-  {
-    id: 2,
-    value: 'Portfolio',
+    value: 'O nas',
     href: '/',
     type: 'outpage',
   },

@@ -9,6 +9,7 @@ import HamburgerMenuComponent from './HamburgerMenu/Hamburger-Menu.component';
 import HeaderLogo from './HeaderLogo/HeaderLogo.component';
 import HamburgerMenuIcon from './HamburgerMenuIcon/HamburgerMenuIcon.component';
 import DesktopNavMenu from './DesktopNavMenu/DesktopNavMenu.component';
+import SearchBox from './SearchBox/SearchBox.component';
 
 function Header({ type, post }: { type?: string; post?: boolean }) {
   const { isOpen, setOpen } = useContext(HamburgerClickContext);
@@ -20,8 +21,25 @@ function Header({ type, post }: { type?: string; post?: boolean }) {
   return (
     <header className={s.headerWrapper}>
       <HeaderLogo type={type} />
-      <HamburgerMenuIcon post={post} />
-      <DesktopNavMenu type={type} />
+      {type === 'Blog' && (
+        <div className={s.headerWrapper__searchSection}>
+          <SearchBox />
+        </div>
+      )}
+      <div className={s.headerWrapper__rightSection}>
+        <DesktopNavMenu type={type} />
+        {type === 'Blog' && (
+          <a
+            href="https://justjoin.it/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={s.headerWrapper__rightSection__jobsButton}
+          >
+            Oferty pracy
+          </a>
+        )}
+        <HamburgerMenuIcon post={post} />
+      </div>
       {isOpen && <HamburgerMenuComponent type={type} closeMenuHandler={closeMenuHandler} />}
     </header>
   );

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import s from './HeaderLogo.component.module.scss';
 
 export default function HeaderLogo() {

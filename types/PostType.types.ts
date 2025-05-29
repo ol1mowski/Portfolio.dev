@@ -44,4 +44,5 @@ export type PostCardType = {
   authorImage: string;
   author: string;
   date: string;
+  category?: string;
 };

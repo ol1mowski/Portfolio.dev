@@ -1,6 +1,5 @@
 import { FC, memo } from 'react';
 import s from './ServicesCta.component.module.scss';
-import Link from 'next/link';
 import Button from '@/components/UI/Button/Button.component';
 import {
   SERVICES_CTA_ARIA_LABEL,

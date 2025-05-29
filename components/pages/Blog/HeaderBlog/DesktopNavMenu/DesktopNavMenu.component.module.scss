@@ -2,19 +2,22 @@
 
 .menuList {
   display: none;
+
   @media screen and (min-width: $big-tablet) {
     @include d-flex;
-    gap: 5vw;
+    align-items: center;
   }
+
   &__linksWrapper {
     @include d-flex;
+    align-items: center;
+
     &__links {
       @include d-flex;
-      gap: 2.5rem;
+      gap: 2rem;
       list-style-type: none;
+      margin: 0;
+      padding: 0;
     }
-  }
-  &__findJob {
-    @include d-flex;
   }
 }

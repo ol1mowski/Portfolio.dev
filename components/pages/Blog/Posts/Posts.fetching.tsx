@@ -11,8 +11,8 @@ async function Posts() {
 
     return <PostsComponent posts={fetchedItems[0].posts} />;
   } catch (error) {
-    console.error('Error fetching Projects data:', error);
-    return <p>Error loading Projects section.</p>;
+    console.error('Error fetching Posts data:', error);
+    return <p>Error loading Posts section.</p>;
   }
 }
 
