@@ -12,6 +12,7 @@ import Header from '@/components/pages/Header/Header.component';
 import Collaboration from '@/components/pages/Collaboration/Collaboration.page';
 import { AboutMe } from '@/components/pages/AboutMe';
 import { BusinessImpact } from '@/components/pages/BusinessImpact';
+import ProfitabilitySection from '@/components/pages/ProfitabilitySection/ProfitabilitySection.component';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <HomePage />
       <Ebook />
       <BusinessImpact />
+      <ProfitabilitySection />
       <AboutMe />
       <Services />
       <SubscribersAmount />

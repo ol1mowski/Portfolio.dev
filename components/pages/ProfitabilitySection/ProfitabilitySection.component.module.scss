@@ -1,0 +1,374 @@
+@import '@/style/index.scss';
+
+.profitabilitySection {
+  background: white;
+  padding: 8rem 0;
+  min-height: 100vh;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 4rem 0;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 3;
+
+  @media (max-width: 768px) {
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    @include headerFont();
+    font-size: 4rem;
+    font-weight: 700;
+    color: $dark;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+
+    @media (max-width: 1024px) {
+      font-size: 3.5rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__highlight {
+    color: $dark-blue;
+    font-weight: 800;
+  }
+
+  &__subtitle {
+    @include textFont();
+    font-size: 1.3rem;
+    color: $grey;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+/* Progress Line */
+.progressLine {
+  position: absolute;
+  left: 50%;
+  top: 200px;
+  transform: translateX(-50%);
+  width: 8px;
+  height: calc(100% - 200px);
+  background: #e5e7eb;
+  border-radius: 4px;
+  z-index: 1;
+
+  @media (max-width: 1024px) {
+    top: 180px;
+    height: calc(100% - 180px);
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  &__fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(180deg, $dark-blue 0%, $light-blue 100%);
+    border-radius: 4px;
+    transition: height 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 122, 204, 0.3);
+  }
+}
+
+/* Content - Alternating Layout */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+  }
+}
+
+.contentItem {
+  max-width: 100%;
+
+  &--left {
+    align-self: flex-start;
+    max-width: 45%;
+    margin-left: 0;
+    margin-right: auto;
+
+    @media (max-width: 768px) {
+      align-self: center;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &--right {
+    align-self: flex-end;
+    max-width: 45%;
+    margin-right: 0;
+    margin-left: auto;
+
+    @media (max-width: 768px) {
+      align-self: center;
+      max-width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+}
+
+/* Objection Cards */
+.objectionCard {
+  background: white;
+  border-radius: $border-med;
+  padding: 2rem;
+  box-shadow: $box-shadow;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+
+  &__header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.8rem;
+    }
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    @media (max-width: 768px) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &--red &__icon {
+    background: #fef2f2;
+  }
+
+  &--orange &__icon {
+    background: #fff7ed;
+  }
+
+  &--blue &__icon {
+    background: #eff6ff;
+  }
+
+  &__title {
+    flex: 1;
+
+    h3 {
+      @include headerFont();
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: $dark-blue;
+      margin-bottom: 0.3rem;
+
+      @media (max-width: 768px) {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  &__subtitle {
+    @include textFont();
+    font-size: 0.9rem;
+    color: $grey;
+    margin: 0;
+  }
+
+  &__benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  &__benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    @include textFont();
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: $dark-blue;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__checkIcon {
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+}
+
+/* Stat Cards */
+.statCard {
+  border-radius: $border-med;
+  padding: 2.5rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 350px;
+
+  @media (max-width: 1024px) {
+    padding: 2rem;
+    min-height: 250px;
+    max-width: 320px;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 220px;
+    padding: 1.8rem;
+    max-width: 100%;
+  }
+
+  &--blue {
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  }
+
+  &--orange {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  }
+
+  &--green {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  }
+
+  &--purple {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__number {
+    @include headerFont();
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+
+    @media (max-width: 1024px) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+    }
+  }
+
+  &__label {
+    @include textFont();
+    font-size: 1.1rem;
+    opacity: 0.9;
+    line-height: 1.4;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 3rem;
+    opacity: 0.3;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+      bottom: 1rem;
+      right: 1rem;
+    }
+  }
+}
+
+/* Important Text Styling */
+.importantText {
+  font-weight: 600;
+  color: $dark-blue;
+}
+
+/* Additional responsive tweaks */
+@media (max-width: 480px) {
+  .objectionCard {
+    &__header {
+      margin-bottom: 1rem;
+    }
+
+    &__benefit {
+      gap: 0.6rem;
+    }
+  }
+
+  .statCard {
+    &__number {
+      font-size: 2rem;
+    }
+
+    &__label {
+      font-size: 0.9rem;
+    }
+  }
+}
