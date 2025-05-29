@@ -2,13 +2,13 @@ import { Suspense } from 'react';
 import CategoryPage from '@/components/pages/Blog/CategoryPage/CategoryPage.page';
 
 interface CategoryPageProps {
-  params: {
+  params: Promise<{
     category: string;
-  };
+  }>;
 }
 
-export default function Category({ params }: CategoryPageProps) {
-  const { category } = params;
+export default async function Category({ params }: CategoryPageProps) {
+  const { category } = await params;
 
   return (
     <Suspense fallback={<div>Ładowanie kategorii...</div>}>

@@ -1,0 +1,577 @@
+@import '@/style/index.scss';
+
+.container {
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 2rem 1rem;
+  @include d-flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: $tablet) {
+    padding: 1rem 0.5rem;
+  }
+}
+
+.wizard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 3rem;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+  border: 1px solid rgba(102, 126, 234, 0.1);
+
+  @media screen and (max-width: $tablet) {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+  }
+}
+
+// Progress Bar
+.progress {
+  margin-bottom: 3rem;
+
+  &__bar {
+    height: 8px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+
+    @media screen and (max-width: $mobile) {
+      height: 6px;
+    }
+  }
+
+  &__fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #3b82f6 100%);
+    border-radius: 10px;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20px;
+      height: 100%;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 100%);
+      animation: shine 2s infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        transform: translateX(-20px);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(20px);
+        opacity: 0;
+      }
+    }
+  }
+
+  &__text {
+    text-align: center;
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.9rem;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+// Step Content
+.step {
+  animation: slideIn 0.6s ease-out;
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.stepContent {
+  margin-bottom: 3rem;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+
+    @media screen and (max-width: $tablet) {
+      font-size: 1.6rem;
+    }
+
+    @media screen and (max-width: $mobile) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+// Options Grid
+.options {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  @media screen and (max-width: $mobile) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.optionCard {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(248, 250, 252, 0.8) 100%);
+  border: 2px solid rgba(102, 126, 234, 0.1);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #3b82f6 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(102, 126, 234, 0.15);
+    border-color: rgba(102, 126, 234, 0.3);
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+
+  &__selected {
+    background: linear-gradient(135deg, #667eea 0%, #3b82f6 100%);
+    border-color: #3b82f6;
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(102, 126, 234, 0.25);
+
+    &::before {
+      transform: scaleX(1);
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .optionCard__title,
+    .optionCard__desc {
+      color: white;
+    }
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__desc {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 0.85rem;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 1.5rem 1rem;
+  }
+}
+
+// Features
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+
+  @media screen and (max-width: $mobile) {
+    gap: 0.8rem;
+  }
+}
+
+.featureTag {
+  background: rgba(102, 126, 234, 0.1);
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  color: #667eea;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(102, 126, 234, 0.15);
+    border-color: rgba(102, 126, 234, 0.4);
+    transform: translateY(-2px);
+  }
+
+  &__selected {
+    background: linear-gradient(135deg, #667eea 0%, #3b82f6 100%);
+    border-color: #3b82f6;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+// Navigation
+.navigation {
+  @include d-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  &__back {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(102, 126, 234, 0.15);
+      transform: translateY(-2px);
+    }
+
+    @media screen and (max-width: $mobile) {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__next {
+    background: linear-gradient(135deg, #667eea 0%, #3b82f6 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: auto;
+
+    &:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    @media screen and (max-width: $mobile) {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Result Page
+.result {
+  animation: slideIn 0.8s ease-out;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite;
+
+    @keyframes bounce {
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      font-size: 3rem;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+
+    @media screen and (max-width: $tablet) {
+      font-size: 2rem;
+    }
+
+    @media screen and (max-width: $mobile) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.6;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 1rem;
+    }
+  }
+
+  &__card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.9) 100%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.1);
+
+    @media screen and (max-width: $mobile) {
+      padding: 1.5rem;
+      border-radius: 16px;
+    }
+
+    &__header {
+      margin-bottom: 2rem;
+      text-align: center;
+
+      h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 0.5rem;
+
+        @media screen and (max-width: $mobile) {
+          font-size: 1.5rem;
+        }
+      }
+
+      p {
+        color: #64748b;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    }
+
+    &__pricing {
+      background: linear-gradient(135deg, #667eea 0%, #3b82f6 100%);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: white;
+
+      &__price {
+        @include d-flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      &__currency {
+        font-size: 1.2rem;
+        font-weight: 500;
+        opacity: 0.9;
+      }
+
+      &__amount {
+        font-size: 2.5rem;
+        font-weight: 700;
+
+        @media screen and (max-width: $mobile) {
+          font-size: 2rem;
+        }
+      }
+
+      &__timeline {
+        font-size: 1rem;
+        opacity: 0.9;
+      }
+
+      @media screen and (max-width: $mobile) {
+        padding: 1.5rem;
+        border-radius: 12px;
+      }
+    }
+
+    &__features {
+      margin-bottom: 2rem;
+
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        list-style: none;
+        @include d-flex-column;
+        gap: 0.8rem;
+      }
+
+      li {
+        @include d-flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-size: 0.95rem;
+        color: #374151;
+
+        @media screen and (max-width: $mobile) {
+          font-size: 0.9rem;
+        }
+      }
+
+      &__icon {
+        color: #22c55e;
+        font-weight: bold;
+        font-size: 1rem;
+        background: rgba(34, 197, 94, 0.1);
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        @include d-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+    }
+
+    &__actions {
+      @include d-flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+
+      &__primary {
+        flex: 1;
+        background: linear-gradient(135deg, #667eea 0%, #3b82f6 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        @media screen and (max-width: $mobile) {
+          padding: 0.8rem 1.5rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      &__secondary {
+        flex: 1;
+        background: rgba(102, 126, 234, 0.1);
+        color: #667eea;
+        border: 2px solid rgba(102, 126, 234, 0.2);
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+
+        &:hover {
+          background: rgba(102, 126, 234, 0.15);
+          transform: translateY(-2px);
+        }
+
+        @media screen and (max-width: $mobile) {
+          padding: 0.8rem 1.5rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      @media screen and (max-width: $mobile) {
+        flex-direction: column;
+      }
+    }
+  }
+}

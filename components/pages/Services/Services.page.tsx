@@ -109,6 +109,24 @@ export const Services: FC = () => {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Baner konfiguratora */}
+        <motion.div className={styles.configuratorBanner} variants={cardVariants}>
+          <div className={styles.bannerContent}>
+            <div className={styles.bannerText}>
+              <h3 className={styles.bannerTitle}>Nie możesz się zdecydować? 🤔</h3>
+              <p className={styles.bannerSubtitle}>
+                Badź nie wiesz, czego dokładnie potrzebujesz? Skorzystaj z naszego bezpłatnego
+                konfiguratora!
+              </p>
+            </div>
+            <a href="/konfigurator" className={styles.bannerButton}>
+              <span className={styles.buttonIcon}>⚙️</span>
+              Sprawdź Konfigurator
+              <span className={styles.buttonArrow}>→</span>
+            </a>
+          </div>
+        </motion.div>
       </div>
     </motion.section>
   );

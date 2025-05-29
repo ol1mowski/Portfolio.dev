@@ -2,6 +2,13 @@ import { type Skill } from '@/types/Skills.types';
 
 export const KEY_TECHNOLOGIES: Skill[] = [
   {
+    id: 'java',
+    alt: 'java icon',
+    src: 'https://res.cloudinary.com/dbbuav0rj/image/upload/v1748532770/Portfolio/Icons/java-svgrepo-com_jlal6l.svg',
+    width: 50,
+    height: 50,
+  },
+  {
     id: 'react',
     alt: 'react icon',
     src: 'https://res.cloudinary.com/dbbuav0rj/image/upload/v1729949256/Portfolio/Icons/react_kedjpd.svg',
@@ -33,6 +40,12 @@ export const KEY_TECHNOLOGIES: Skill[] = [
 ];
 
 export const SKILLS: Skill[] = [
+  {
+    id: 'java',
+    alt: 'java icon',
+    src: 'https://res.cloudinary.com/dbbuav0rj/image/upload/v1748532770/Portfolio/Icons/java-svgrepo-com_jlal6l.svg',
+    href: '#',
+  },
   {
     id: 'react',
     alt: 'react icon',

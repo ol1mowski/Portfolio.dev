@@ -2,13 +2,13 @@ import { Suspense } from 'react';
 import TagPage from '@/components/pages/Blog/TagPage/TagPage.page';
 
 interface TagPageProps {
-  params: {
+  params: Promise<{
     tag: string;
-  };
+  }>;
 }
 
-export default function Tag({ params }: TagPageProps) {
-  const { tag } = params;
+export default async function Tag({ params }: TagPageProps) {
+  const { tag } = await params;
 
   return (
     <Suspense fallback={<div>Ładowanie tagów...</div>}>

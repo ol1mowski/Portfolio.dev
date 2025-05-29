@@ -250,3 +250,165 @@
   background: rgba(139, 92, 246, 0.1);
   color: #8b5cf6;
 }
+
+// Baner konfiguratora
+.configuratorBanner {
+  margin-top: 4rem;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #3b82f6 100%);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.15);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 3rem;
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 2rem;
+    padding: 1.5rem 1rem;
+  }
+}
+
+.bannerContent {
+  @include d-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+}
+
+.bannerText {
+  flex: 1;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+}
+
+.bannerTitle {
+  @include headerFont();
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.3rem;
+  }
+}
+
+.bannerSubtitle {
+  @include textFont();
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
+}
+
+.bannerButton {
+  @include d-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+    &::before {
+      left: 100%;
+    }
+
+    .buttonArrow {
+      transform: translateX(4px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+    gap: 0.6rem;
+  }
+}
+
+.buttonIcon {
+  font-size: 1.2rem;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
+}
+
+.buttonArrow {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
+}
