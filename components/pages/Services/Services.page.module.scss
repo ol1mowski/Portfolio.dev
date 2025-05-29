@@ -1,0 +1,252 @@
+@import '@/style/index.scss';
+
+.servicesSection {
+  background: white;
+  padding: 8rem 0;
+
+  @media (max-width: 768px) {
+    padding: 4rem 0;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 3rem;
+  }
+}
+
+.title {
+  @include headerFont();
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: $dark;
+  line-height: 1.2;
+  margin: 0;
+
+  @media (max-width: 1024px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
+}
+
+.highlight {
+  background: linear-gradient(135deg, $dark-blue 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    gap: 1.5rem;
+  }
+}
+
+.serviceCard {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+
+  &:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.cardHeader {
+  position: relative;
+  padding: 2rem 2rem 1rem;
+
+  @media (max-width: 480px) {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+}
+
+.topLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 20px 20px 0 0;
+}
+
+.serviceCard--blue .topLine {
+  background: $dark-blue;
+}
+
+.serviceCard--green .topLine {
+  background: #10b981;
+}
+
+.serviceCard--purple .topLine {
+  background: #8b5cf6;
+}
+
+.iconContainer {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 480px) {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+  }
+}
+
+.serviceCard--blue .iconContainer {
+  background: rgba(0, 122, 204, 0.1);
+}
+
+.serviceCard--green .iconContainer {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.serviceCard--purple .iconContainer {
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.icon {
+  font-size: 1.8rem;
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+}
+
+.cardTitle {
+  @include headerFont();
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $dark;
+  margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 1.3rem;
+  }
+}
+
+.cardContent {
+  padding: 0 2rem 2rem;
+
+  @media (max-width: 480px) {
+    padding: 0 1.5rem 1.5rem;
+  }
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  @include textFont();
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $dark;
+  margin-bottom: 0.8rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    gap: 0.6rem;
+  }
+}
+
+.bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.6rem;
+
+  @media (max-width: 480px) {
+    margin-top: 0.5rem;
+  }
+}
+
+.bullet--blue {
+  background: $dark-blue;
+}
+
+.bullet--green {
+  background: #10b981;
+}
+
+.bullet--purple {
+  background: #8b5cf6;
+}
+
+.highlightBox {
+  @include textFont();
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+    padding: 0.8rem 1rem;
+  }
+}
+
+.highlightBox--blue {
+  background: rgba(0, 122, 204, 0.1);
+  color: $dark-blue;
+}
+
+.highlightBox--green {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.highlightBox--purple {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
