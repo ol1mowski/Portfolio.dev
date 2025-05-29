@@ -1,15 +1,454 @@
 @import '@/style/index.scss';
 
+.aboutMeSection {
+  background: white;
+  padding: 8rem 0;
+  min-height: 100vh;
+
+  @media (max-width: 768px) {
+    padding: 4rem 0;
+  }
+}
+
 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.leftColumn {
   position: relative;
-  z-index: 1;
-  @include d-flex-column;
-  gap: 10vh;
-  margin-block: 20vh;
-  @media screen and (min-width: $desktop) {
-    flex-direction: row;
-    width: 90vw;
-    margin: 20vh auto;
-    gap: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.decorativeElements {
+  position: relative;
+  width: 600px;
+  height: 600px;
+
+  @media (max-width: 1200px) {
+    width: 500px;
+    height: 500px;
+  }
+
+  @media (max-width: 968px) {
+    width: 400px;
+    height: 400px;
+  }
+
+  @media (max-width: 480px) {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+.yellowSquare {
+  position: absolute;
+  top: 80px;
+  left: 30px;
+  width: 120px;
+  height: 120px;
+  background: $dark-blue;
+  border-radius: 25px;
+  transform: rotate(15deg);
+
+  @media (max-width: 1200px) {
+    width: 100px;
+    height: 100px;
+    top: 70px;
+    left: 25px;
+  }
+
+  @media (max-width: 968px) {
+    width: 80px;
+    height: 80px;
+    top: 60px;
+    left: 20px;
+  }
+
+  @media (max-width: 480px) {
+    width: 60px;
+    height: 60px;
+    top: 40px;
+    left: 15px;
+  }
+}
+
+.grayShape1 {
+  position: absolute;
+  top: 40px;
+  right: 100px;
+  width: 180px;
+  height: 90px;
+  background: rgba(0, 122, 204, 0.1);
+  border-radius: 45px;
+
+  @media (max-width: 1200px) {
+    width: 150px;
+    height: 75px;
+    top: 35px;
+    right: 85px;
+  }
+
+  @media (max-width: 968px) {
+    width: 120px;
+    height: 60px;
+    top: 20px;
+    right: 80px;
+  }
+
+  @media (max-width: 480px) {
+    width: 90px;
+    height: 45px;
+    top: 15px;
+    right: 60px;
+  }
+}
+
+.grayShape2 {
+  position: absolute;
+  bottom: 120px;
+  left: 60px;
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 122, 204, 0.15);
+  border-radius: 30px;
+
+  @media (max-width: 1200px) {
+    width: 125px;
+    height: 125px;
+    bottom: 100px;
+    left: 50px;
+  }
+
+  @media (max-width: 968px) {
+    width: 100px;
+    height: 100px;
+    bottom: 80px;
+    left: 40px;
+  }
+
+  @media (max-width: 480px) {
+    width: 75px;
+    height: 75px;
+    bottom: 60px;
+    left: 30px;
+  }
+}
+
+.pinkCircle {
+  position: absolute;
+  bottom: 60px;
+  right: 80px;
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 122, 204, 0.2);
+  border-radius: 50%;
+
+  @media (max-width: 1200px) {
+    width: 125px;
+    height: 125px;
+    bottom: 50px;
+    right: 70px;
+  }
+
+  @media (max-width: 968px) {
+    width: 100px;
+    height: 100px;
+    bottom: 40px;
+    right: 60px;
+  }
+
+  @media (max-width: 480px) {
+    width: 75px;
+    height: 75px;
+    bottom: 30px;
+    right: 45px;
+  }
+}
+
+.photoContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 30px;
+  border: 4px solid white;
+  box-shadow: 0 15px 40px rgba(0, 122, 204, 0.25);
+  overflow: hidden;
+
+  @media (max-width: 1200px) {
+    width: 250px;
+    height: 250px;
+    border-radius: 25px;
+  }
+
+  @media (max-width: 968px) {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+  }
+
+  @media (max-width: 480px) {
+    width: 160px;
+    height: 160px;
+    border-radius: 18px;
+    border: 3px solid white;
+  }
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 26px;
+
+  @media (max-width: 1200px) {
+    border-radius: 21px;
+  }
+
+  @media (max-width: 968px) {
+    border-radius: 17px;
+  }
+
+  @media (max-width: 480px) {
+    border-radius: 15px;
+  }
+}
+
+.statsLeft {
+  display: flex;
+  gap: 1rem;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.statCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 120px;
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+    min-width: 100px;
+  }
+}
+
+.statCardBlue {
+  background: $dark-blue;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 122, 204, 0.3);
+  text-align: center;
+  min-width: 120px;
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+    min-width: 100px;
+  }
+}
+
+.statNumber {
+  display: block;
+  @include headerFont();
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+}
+
+.statLabel {
+  display: block;
+  @include textFont();
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.title {
+  @include headerFont();
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: $dark;
+  line-height: 1.1;
+  margin: 0;
+
+  @media (max-width: 1024px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
+}
+
+.highlight {
+  color: $dark-blue;
+  font-weight: 800;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  p {
+    @include textFont();
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: $dark;
+    margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.9rem;
+    }
+
+    strong {
+      color: $dark-blue;
+      font-weight: 600;
+    }
+  }
+}
+
+.bottomStats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.bottomStatCardBlue {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 122, 204, 0.15);
+  text-align: center;
+  border: 2px solid rgba(0, 122, 204, 0.1);
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+  }
+
+  .bottomStatNumber {
+    display: block;
+    @include headerFont();
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $dark-blue;
+    line-height: 1;
+
+    @media (max-width: 480px) {
+      font-size: 2rem;
+    }
+  }
+
+  .bottomStatLabel {
+    display: block;
+    @include textFont();
+    font-size: 1rem;
+    color: $dark-blue;
+    margin-top: 0.5rem;
+
+    @media (max-width: 480px) {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.bottomStatCardPurple {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+  text-align: center;
+  border: 2px solid rgba(139, 92, 246, 0.1);
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+  }
+
+  .bottomStatNumber {
+    display: block;
+    @include headerFont();
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #8b5cf6;
+    line-height: 1;
+
+    @media (max-width: 480px) {
+      font-size: 2rem;
+    }
+  }
+
+  .bottomStatLabel {
+    display: block;
+    @include textFont();
+    font-size: 1rem;
+    color: #8b5cf6;
+    margin-top: 0.5rem;
+
+    @media (max-width: 480px) {
+      font-size: 0.9rem;
+    }
   }
 }
