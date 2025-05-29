@@ -22,7 +22,6 @@
   }
 }
 
-/* Header */
 .header {
   text-align: center;
   margin-bottom: 4rem;
@@ -70,7 +69,6 @@
   }
 }
 
-/* Progress Line */
 .progressLine {
   position: absolute;
   left: 50%;
@@ -104,7 +102,6 @@
   }
 }
 
-/* Content - Alternating Layout */
 .content {
   display: flex;
   flex-direction: column;
@@ -149,7 +146,6 @@
   }
 }
 
-/* Objection Cards */
 .objectionCard {
   background: white;
   border-radius: $border-med;
@@ -255,7 +251,6 @@
   }
 }
 
-/* Stat Cards */
 .statCard {
   border-radius: $border-med;
   padding: 2.5rem;
@@ -344,13 +339,11 @@
   }
 }
 
-/* Important Text Styling */
 .importantText {
   font-weight: 600;
   color: $dark-blue;
 }
 
-/* Additional responsive tweaks */
 @media (max-width: 480px) {
   .objectionCard {
     &__header {

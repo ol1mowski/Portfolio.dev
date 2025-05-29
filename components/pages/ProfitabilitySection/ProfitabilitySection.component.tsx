@@ -72,19 +72,16 @@ const ProfitabilitySection: React.FC = () => {
       variants={containerVariants}
     >
       <div className={styles.container}>
-        {/* Header Section */}
         <ProfitabilityHeader
           title={data.header.title}
           subtitle={data.header.subtitle}
           itemVariants={itemVariants}
         />
 
-        {/* Progress Line */}
         <div className={styles.progressLine}>
           <motion.div className={styles.progressLine__fill} style={{ height: progressHeight }} />
         </div>
 
-        {/* Content Section - Alternating Layout */}
         <motion.div className={styles.content} variants={containerVariants}>
           {data.content.map((item, index) => renderContentItem(item, index))}
         </motion.div>
