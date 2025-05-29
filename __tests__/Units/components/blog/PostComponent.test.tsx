@@ -18,10 +18,6 @@ vi.mock(
   })
 );
 
-vi.mock('../../../../components/pages/Blog/Posts/PostsHeader/PostsHeader.component', () => ({
-  default: () => <div data-testid="posts-header">Posts Header</div>,
-}));
-
 vi.mock('../../../../components/pages/Blog/Posts/PostsButton/PostsButton.component', () => ({
   default: () => <div data-testid="posts-button">View More</div>,
 }));
@@ -59,14 +55,16 @@ describe('PostsComponent', () => {
   it('renders all posts correctly', () => {
     render(<PostsComponent posts={mockPosts} />);
 
-    expect(screen.getByTestId('posts-header')).toBeDefined();
+    expect(screen.getByText('Najnowsze artykuły')).toBeDefined();
     expect(screen.getAllByTestId('post-card')).toHaveLength(2);
     expect(screen.getByTestId('posts-button')).toBeDefined();
 
-    expect(screen.getByText('Test Post 1')).toBeDefined();
-    expect(screen.getByText('Test Author 1')).toBeDefined();
-    expect(screen.getByText('Test Post 2')).toBeDefined();
-    expect(screen.getByText('Test Author 2')).toBeDefined();
+    // Sprawdzam posty w głównej sekcji (mocked post-card components)
+    const postCards = screen.getAllByTestId('post-card');
+    expect(postCards[0]).toContainHTML('Test Post 1');
+    expect(postCards[0]).toContainHTML('Test Author 1');
+    expect(postCards[1]).toContainHTML('Test Post 2');
+    expect(postCards[1]).toContainHTML('Test Author 2');
   });
 
   it('renders posts in correct section', () => {
@@ -81,15 +79,15 @@ describe('PostsComponent', () => {
     render(<PostsComponent posts={[]} />);
 
     expect(screen.queryByTestId('post-card')).toBeNull();
-    expect(screen.getByTestId('posts-header')).toBeDefined();
+    expect(screen.getByText('Najnowsze artykuły')).toBeDefined();
     expect(screen.getByTestId('posts-button')).toBeDefined();
   });
 
   it('renders posts with correct structure', () => {
     render(<PostsComponent posts={mockPosts} />);
 
-    const postsWrapper = screen.getByTestId('posts-wrapper');
-    expect(postsWrapper).toBeInTheDocument();
-    expect(postsWrapper.children).toHaveLength(2);
+    const postsSection = screen.getByTestId('posts-section');
+    expect(postsSection).toBeInTheDocument();
+    expect(screen.getAllByTestId('post-card')).toHaveLength(2);
   });
 });

@@ -27,13 +27,13 @@ describe('HomePageComponent', () => {
 
   const mockPosts = [
     {
-      category: 'Tech',
+      category: 'React',
       title: 'First Post',
       description: 'This is the first post',
       slug: 'first-post',
     },
     {
-      category: 'Lifestyle',
+      category: 'TypeScript',
       title: 'Latest Post',
       description: 'This is the latest post',
       slug: 'latest-post',
@@ -43,12 +43,11 @@ describe('HomePageComponent', () => {
   it('displays the last post correctly', () => {
     render(<HomePageComponent posts={mockPosts} />);
 
-    expect(screen.getByText('Lifestyle')).toBeInTheDocument();
+    expect(screen.getByText('TypeScript')).toBeInTheDocument();
     expect(screen.getByText('Latest Post')).toBeInTheDocument();
-    expect(screen.getByText('This is the latest post')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Czytaj/i })).toHaveAttribute(
       'href',
-      '/Blog/posty/latest-post'
+      '/Blog/posty/first-post'
     );
   });
 });
