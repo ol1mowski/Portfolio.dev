@@ -11,6 +11,7 @@ import CursorShadow from '@/components/UI/CursorShadow/CursorShadow.component';
 import Header from '@/components/pages/Header/Header.component';
 import Collaboration from '@/components/pages/Collaboration/Collaboration.page';
 import { AboutMe } from '@/components/pages/AboutMe';
+import { BusinessImpact } from '@/components/pages/BusinessImpact';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Header />
       <HomePage />
       <Ebook />
+      <BusinessImpact />
       <AboutMe />
       <Services />
       <SubscribersAmount />

@@ -1,0 +1,384 @@
+@import '@/style/index.scss';
+
+.businessImpact {
+  padding: 8rem 0;
+  background-color: $white;
+  scroll-margin-top: 10rem;
+
+  @media screen and (max-width: $tablet) {
+    padding: 4rem 0;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 3rem 0;
+  }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+
+  @media screen and (max-width: $tablet) {
+    padding: 0 1rem;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 6rem;
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 4rem;
+  }
+
+  @media screen and (max-width: $mobile) {
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    @include headerFont();
+    font-size: 5rem;
+    font-weight: 800;
+    color: $dark;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+
+    @media screen and (max-width: $big-tablet) {
+      font-size: 4rem;
+    }
+
+    @media screen and (max-width: $tablet) {
+      font-size: 3rem;
+    }
+
+    @media screen and (max-width: $mobile) {
+      font-size: 2.2rem;
+    }
+  }
+
+  &__highlight {
+    color: #4285f4;
+    position: relative;
+    font-weight: 800;
+  }
+
+  &__subtitle {
+    @include textFont();
+    font-size: 2rem;
+    color: #64748b;
+    font-weight: 400;
+    margin: 0;
+
+    @media screen and (max-width: $tablet) {
+      font-size: 1.6rem;
+    }
+
+    @media screen and (max-width: $mobile) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 4rem;
+  align-items: start;
+
+  @media screen and (max-width: $big-tablet) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: 2rem;
+  }
+}
+
+.mainOffer {
+  background: linear-gradient(135deg, #4285f4 0%, #1e40af 100%);
+  padding: 4rem;
+  border-radius: 2rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  height: fit-content;
+
+  @media screen and (max-width: $tablet) {
+    padding: 3rem;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 2rem;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  &__badge {
+    background: rgba(34, 197, 94, 0.95);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 3rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
+
+    @media screen and (max-width: $mobile) {
+      font-size: 1rem;
+      padding: 0.6rem 1.2rem;
+    }
+  }
+
+  &__title {
+    @include headerFont();
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+
+    @media screen and (max-width: $tablet) {
+      font-size: 2.8rem;
+    }
+
+    @media screen and (max-width: $mobile) {
+      font-size: 2.2rem;
+    }
+  }
+
+  &__description {
+    @include textFont();
+    font-size: 1.3rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      @include textFont();
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+
+      @media screen and (max-width: $mobile) {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.checkIcon {
+  color: #22c55e;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.importantText {
+  font-weight: 700;
+  color: inherit;
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+  @media screen and (max-width: $tablet) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.benefitCard {
+  background: white;
+  padding: 1.3rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  aspect-ratio: 1;
+
+  @media screen and (max-width: $mobile) {
+    padding: 1rem;
+    aspect-ratio: auto;
+    min-height: 140px;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  &__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.8rem;
+    @include d-flex;
+    margin-bottom: 1rem;
+
+    @media screen and (max-width: $mobile) {
+      width: 3rem;
+      height: 3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .clockIcon {
+      background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+      width: 100%;
+      height: 100%;
+      border-radius: 0.8rem;
+      @include d-flex;
+      color: white;
+
+      svg {
+        width: 1.8rem;
+        height: 1.8rem;
+
+        @media screen and (max-width: $mobile) {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+
+    .shieldIcon {
+      background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+      width: 100%;
+      height: 100%;
+      border-radius: 0.8rem;
+      @include d-flex;
+      color: white;
+
+      svg {
+        width: 1.8rem;
+        height: 1.8rem;
+
+        @media screen and (max-width: $mobile) {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__number {
+    @include headerFont();
+    font-size: 3rem;
+    font-weight: 800;
+    color: $dark;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__label {
+    @include textFont();
+    font-size: 1rem;
+    color: #64748b;
+    font-weight: 500;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__header {
+    @include d-flex-column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  &__title {
+    @include headerFont();
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $dark;
+    margin: 0;
+    line-height: 1.2;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 1rem;
+    }
+  }
+
+  &__text {
+    @include textFont();
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.4;
+    margin: 0;
+    text-align: center;
+
+    @media screen and (max-width: $mobile) {
+      font-size: 0.85rem;
+    }
+
+    .importantText {
+      color: $dark;
+      font-weight: 700;
+    }
+  }
+}
+
+// Reset specific card layouts for 1:1 ratio
+.benefitCard:nth-child(1),
+.benefitCard:nth-child(3) {
+  @include d-flex-column;
+  justify-content: center;
+  align-items: center;
+
+  .benefitCard__icon {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.benefitCard:nth-child(2),
+.benefitCard:nth-child(4) {
+  @include d-flex-column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
