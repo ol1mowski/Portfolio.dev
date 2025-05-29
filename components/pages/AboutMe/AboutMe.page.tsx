@@ -8,6 +8,7 @@ import styles from './AboutMe.page.module.scss';
 export const AboutMe: FC = () => {
   return (
     <motion.section
+      id="about"
       className={styles.aboutMeSection}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}

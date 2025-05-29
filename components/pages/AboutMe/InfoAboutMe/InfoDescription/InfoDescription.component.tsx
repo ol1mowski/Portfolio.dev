@@ -31,9 +31,9 @@ const InfoDescription = memo(() => {
       />
       <p className={s.desWrapper__des}>
         <Paragraph value="Prowadzę również " className={s.desWrapper__des} />
-        <Link href="/Blog" aria-label="Przejdź do bloga">
+        <a href="/Blog" aria-label="Przejdź do bloga">
           <span className={s.importantTextDecorate}>Bloga</span>
-        </Link>
+        </a>
         <Paragraph value=" oraz kanał na " className={s.desWrapper__des} />
         <a
           href="https://www.youtube.com/channel/UCTNFKRALTZoSQS6mDOuDs2Q"

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { memo } from 'react';
 import { type MenuItemType } from '@/types/MenuItemType.types';
 
@@ -8,9 +7,9 @@ interface MenuItemProps extends MenuItemType {
 
 const MenuItem = memo(({ to, label, className }: MenuItemProps) => {
   return (
-    <Link href={to} className={className} scroll={!to.startsWith('/#')}>
+    <a href={to} className={className} aria-label={label}>
       {label}
-    </Link>
+    </a>
   );
 });
 

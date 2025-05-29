@@ -44,15 +44,24 @@
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
     border: none;
     cursor: pointer;
+    outline: none;
 
     &:hover {
       transform: translateY(-3px);
       box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
       background: linear-gradient(135deg, #5a67d8 0%, #2563eb 100%);
+      color: white;
+      border: none;
+    }
+
+    &:focus {
+      outline: none;
+      border: none;
     }
 
     &:active {
       transform: translateY(-1px);
+      color: white;
     }
   }
 

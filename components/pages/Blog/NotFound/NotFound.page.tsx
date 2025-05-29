@@ -8,9 +8,9 @@ function NotFound({ link, info }: { link: string; info?: string }) {
   return (
     <section className={s.container}>
       <Caption type="sub" value={message} /> <br />
-      <Link href={link} className={s.container__link}>
+      <a href={link} className={s.container__link}>
         Przejdź do strony głównej
-      </Link>
+      </a>
     </section>
   );
 }

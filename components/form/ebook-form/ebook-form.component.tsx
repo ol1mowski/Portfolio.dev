@@ -18,11 +18,12 @@ export const EbookForm: FC<EbookFormProps> = ({ action, redirectPath = '/Thanks/
     redirectPath,
   });
 
-  const { isPending, errors, error } = formState;
+  const { isPending, errors, error, success } = formState;
 
   return (
     <form className={s.form} onSubmit={handleSubmit}>
       {error && <div className={s.formError}>{error}</div>}
+      {success && <div className={s.formSuccess}>{success}</div>}
 
       <FormField
         name="name"

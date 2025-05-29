@@ -1,7 +1,6 @@
 import s from './MenuItem.component.module.scss';
 
 import { memo } from 'react';
-import Link from 'next/link';
 
 interface MenuItemProps {
   to: string;
@@ -10,9 +9,9 @@ interface MenuItemProps {
 }
 
 const MenuItem = memo(({ to, label, hideMenu }: MenuItemProps) => (
-  <Link href={to} className={s.item} onClick={hideMenu} scroll={!to.startsWith('/#')}>
+  <a href={to} className={s.item} onClick={hideMenu} aria-label={label}>
     {label}
-  </Link>
+  </a>
 ));
 
 MenuItem.displayName = 'MenuItem';

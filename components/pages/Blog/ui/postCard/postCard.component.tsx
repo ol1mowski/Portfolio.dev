@@ -22,7 +22,7 @@ export const PostCard: FC<PostCardProps> = ({
 }) => {
   return (
     <article className={s.card} key={`post-${id}-${slug}`}>
-      <Link href={`/Blog/posty/${slug}`} className={s.card__link}>
+      <a href={`/Blog/posty/${slug}`} className={s.card__link}>
         <div className={s.card__imageContainer}>
           {image && (
             <Image
@@ -54,7 +54,7 @@ export const PostCard: FC<PostCardProps> = ({
             </div>
           </div>
         </div>
-      </Link>
+      </a>
     </article>
   );
 };

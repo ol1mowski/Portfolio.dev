@@ -8,24 +8,44 @@
   display: flex;
   align-items: flex-start;
   cursor: pointer;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(102, 126, 234, 0.05);
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(102, 126, 234, 0.08);
+    border-color: rgba(102, 126, 234, 0.2);
+  }
 }
 
 .checkbox {
-  margin-top: 0.25rem;
-  margin-right: 0.5rem;
+  margin-top: 0.125rem;
+  margin-right: 0.75rem;
   cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #667eea;
+  border-radius: 4px;
 }
 
 .content {
   font-size: 0.875rem;
   color: #4b5563;
+  font-weight: 500;
+  line-height: 1.5;
 
   a {
-    color: #4f46e5;
-    text-decoration: underline;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
 
     &:hover {
-      color: #3730a3;
+      color: #5a67d8;
+      border-bottom-color: #5a67d8;
     }
   }
 }
@@ -33,5 +53,9 @@
 .errorMessage {
   color: #ef4444;
   font-size: 0.875rem;
-  margin-top: 0.25rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }

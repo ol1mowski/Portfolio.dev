@@ -11,14 +11,14 @@ import {
 export const EbookCtaButton: FC = memo(() => {
   return (
     <section className={s.buttonWrapper}>
-      <Link
+      <a
         href={EBOOK_BUTTON_LINK}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={EBOOK_BUTTON_ARIA_LABEL}
       >
         <Button type="normal" value={EBOOK_BUTTON_TEXT} />
-      </Link>
+      </a>
     </section>
   );
 });

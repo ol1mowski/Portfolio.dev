@@ -93,13 +93,25 @@ export const useFormValidation = ({ action, redirectPath }: UseFormValidationPro
 
         if (result?.success) {
           resetForm();
+
+          // Najpierw pokaż sukces
           setFormState(prev => ({
             ...prev,
-            success: 'Udało się! Wkrótce otrzymasz mojego E-booka!',
+            success: 'Sukces! Dane zostały wysłane! ✓',
           }));
 
+          // Po 1 sekundzie dodaj informację o przekierowaniu
+          setTimeout(() => {
+            setFormState(prev => ({
+              ...prev,
+              success: 'Sukces! Za chwilę zostaniesz przekierowany na stronę z podziękowianiami...',
+            }));
+          }, 1000);
+
           if (redirectPath) {
-            router.push(redirectPath);
+            setTimeout(() => {
+              router.push(redirectPath);
+            }, 3000); // 3 sekundy delay
           }
         } else {
           throw new Error('Failed to save data');

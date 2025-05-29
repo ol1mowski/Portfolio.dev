@@ -6,30 +6,58 @@
 
 .input {
   width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.375rem;
+  padding: 1rem 1.5rem;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  border-radius: 16px;
   font-size: 1rem;
-  transition: border-color 0.2s;
+  font-weight: 500;
+  background: white;
+  transition: all 0.3s ease;
   outline: none;
+  color: #374151;
+
+  &::placeholder {
+    color: #9ca3af;
+    font-weight: 400;
+  }
 
   &:focus {
-    border-color: #4f46e5;
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    border-color: #667eea;
+    background: white;
+    box-shadow:
+      0 0 0 4px rgba(102, 126, 234, 0.1),
+      0 8px 25px rgba(102, 126, 234, 0.15);
+    transform: translateY(-2px);
+  }
+
+  &:hover {
+    border-color: rgba(102, 126, 234, 0.4);
+    background: #f8faff;
   }
 }
 
 .inputError {
   border-color: #ef4444;
+  background: #fef2f2;
 
   &:focus {
     border-color: #ef4444;
-    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+    box-shadow:
+      0 0 0 4px rgba(239, 68, 68, 0.1),
+      0 8px 25px rgba(239, 68, 68, 0.15);
+  }
+
+  &:hover {
+    border-color: #f87171;
   }
 }
 
 .errorMessage {
   color: #ef4444;
   font-size: 0.875rem;
-  margin-top: 0.25rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }

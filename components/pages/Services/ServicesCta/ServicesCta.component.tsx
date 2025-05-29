@@ -24,9 +24,9 @@ export const ServicesCta: FC<ServicesCtaProps> = memo(({ des }) => {
         <p className={s.ctaWrapper__desWrapper__des}>{des}</p>
       </div>
       <div className={s.ctaWrapper__buttonWrapper} data-testid="button-wrapper">
-        <Link href={SERVICES_BUTTON_HREF} aria-label={SERVICES_BUTTON_ARIA_LABEL}>
+        <a href={SERVICES_BUTTON_HREF} aria-label={SERVICES_BUTTON_ARIA_LABEL}>
           <Button type="normal" value={SERVICES_BUTTON_TEXT} />
-        </Link>
+        </a>
       </div>
     </section>
   );

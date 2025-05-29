@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { ProjectType } from '@/types/PostType.types';
 import s from './ProjectDetails.page.module.scss';
 import TechnologiesSection from './TechnologiesSection/TechnologiesSection.component';
@@ -25,10 +24,10 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
   return (
     <div className={s.projectDetailsContainer}>
       <div className={s.backButtonWrapper}>
-        <Link href="/#projekty" className={s.backButton}>
+        <a href="/#projekty" className={s.backButton}>
           <GoArrowLeft size={20} />
           <span>Powrót do projektów</span>
-        </Link>
+        </a>
       </div>
 
       <ProjectHeader title={title} date={date} githubLink={githubLink} liveLink={liveLink} />

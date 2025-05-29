@@ -31,14 +31,8 @@ const getContentByType = (type: string): ContentType | null => {
 };
 
 export default async function Page({ params }: { params: Params }) {
-  const { id } = await params;
-
   try {
-    const { session } = await validateSession();
-
-    if (!session) {
-      redirect('/');
-    }
+    const { id } = await params;
 
     const contentType = id.toLowerCase();
     const content = getContentByType(contentType);
@@ -49,11 +43,22 @@ export default async function Page({ params }: { params: Params }) {
 
     const { description, buttonText, downloadPath } = content;
 
+    // Próbuj pobrać sesję, ale nie wymagaj jej
+    let userName = 'za pobranie';
+    try {
+      const { session } = await validateSession();
+      if (session?.name) {
+        userName = session.name;
+      }
+    } catch (error) {
+      console.log('No session available, using default name');
+    }
+
     return (
       <>
         <Header />
         <section className={s.container}>
-          <h1 className={s.container__header}>Dziękuję {session.name}!</h1>
+          <h1 className={s.container__header}>Dziękuję {userName}!</h1>
           <p className={s.container__text}>{description}</p>
           <a href={downloadPath} download>
             <Button type="normal" value={buttonText} />
@@ -64,6 +69,23 @@ export default async function Page({ params }: { params: Params }) {
     );
   } catch (error) {
     console.error('Error in Thanks page:', error);
-    redirect('/');
+
+    // Fallback content
+    return (
+      <>
+        <Header />
+        <section className={s.container}>
+          <h1 className={s.container__header}>Dziękuję!</h1>
+          <p className={s.container__text}>Twój E-Book jest dostępny do pobrania poniżej</p>
+          <a
+            href="/Praktyczne_Porady_Na_Co_Zwrócić_Uwagę_Podczas_Projektowania_Strony_Internetowej.pdf"
+            download
+          >
+            <Button type="normal" value="Pobierz E-Book" />
+          </a>
+        </section>
+        <Footer />
+      </>
+    );
   }
 }

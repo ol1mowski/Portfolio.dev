@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import s from './ProjectCta.component.module.scss';
 import { FaGithub, FaExternalLinkAlt, FaInfoCircle } from 'react-icons/fa';
 
@@ -20,7 +19,7 @@ const ProjectCta = ({ liveLink, githubLink, title }: ProjectCtaProps) => {
   return (
     <div className={s.iconSection}>
       {githubLink && (
-        <Link
+        <a
           href={githubLink}
           target="_blank"
           rel="noopener noreferrer"
@@ -31,11 +30,11 @@ const ProjectCta = ({ liveLink, githubLink, title }: ProjectCtaProps) => {
             <FaGithub />
             <span>Kod źródłowy</span>
           </div>
-        </Link>
+        </a>
       )}
 
       {liveLink && (
-        <Link
+        <a
           href={liveLink}
           target="_blank"
           rel="noopener noreferrer"
@@ -46,11 +45,11 @@ const ProjectCta = ({ liveLink, githubLink, title }: ProjectCtaProps) => {
             <FaExternalLinkAlt />
             <span>Wersja na żywo</span>
           </div>
-        </Link>
+        </a>
       )}
 
       {title && (
-        <Link
+        <a
           href={`/projekt/${projectSlug}`}
           className={s.ctaLink}
           aria-label="Zobacz więcej szczegółów"
@@ -59,7 +58,7 @@ const ProjectCta = ({ liveLink, githubLink, title }: ProjectCtaProps) => {
             <FaInfoCircle />
             <span>Więcej</span>
           </div>
-        </Link>
+        </a>
       )}
     </div>
   );

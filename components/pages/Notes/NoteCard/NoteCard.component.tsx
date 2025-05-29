@@ -3,7 +3,6 @@ import s from './NoteCard.component.module.scss';
 import { memo } from 'react';
 
 import Image from 'next/image';
-import Link from 'next/link';
 
 import Button from '@/components/UI/Button/Button.component';
 
@@ -40,12 +39,12 @@ const NoteCard = memo(({ title, image, slug, type, className }: NoteCardProps) =
 
       <div className={s.noteCard__content}>
         <h2 className={s.noteCard__title}>{title}</h2>
-        <Link
+        <a
           href={`${basePath}/${slug}`}
           aria-label={`Pobierz ${type === 'ebook' ? 'e-book' : 'notatkę'}: ${title}`}
         >
           <Button type="normal" value={buttonText} />
-        </Link>
+        </a>
       </div>
     </article>
   );

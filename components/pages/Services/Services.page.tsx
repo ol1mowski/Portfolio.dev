@@ -58,6 +58,7 @@ export const Services: FC = () => {
     <motion.section
       className={styles.servicesSection}
       initial="hidden"
+      id="services"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={containerVariants}

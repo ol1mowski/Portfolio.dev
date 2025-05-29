@@ -6,6 +6,7 @@ import { EbookCtaWrapper } from './EbookCtaWrapper/EbookCtaWrapper.component';
 import { EbookCtaHeader } from './EbookCtaWrapper/EbookCtaHeader/EbookCtaHeader.component';
 import { EbookCtaOpinion } from './EbookCtaWrapper/EbookCtaOpinion/EbookCtaOpinion.component';
 import { EbookCtaText } from './EbookCtaWrapper/EbookCtaText/EbookCtaText.component';
+import { EbookCtaButton } from './EbookCtaWrapper/EbookCtaButton/EbookCtaButton.component';
 
 const Ebook: FC = () => {
   const EbookImageSide = useDynamicImport(
@@ -21,6 +22,7 @@ const Ebook: FC = () => {
         <EbookCtaHeader />
         <EbookCtaOpinion />
         <EbookCtaText />
+        <EbookCtaButton />
       </EbookCtaWrapper>
       <EbookImageSide />
     </EbookWrapper>

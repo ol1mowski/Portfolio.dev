@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import s from './ProjectHeader.component.module.scss';
 import { formatDate } from '@/utils/dateFormatters';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
@@ -21,7 +20,7 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ title, date, githubLink, 
       </div>
       <div className={s.links}>
         {githubLink && (
-          <Link
+          <a
             href={githubLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -30,10 +29,10 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ title, date, githubLink, 
           >
             <FaGithub size={20} />
             <span>Kod źródłowy</span>
-          </Link>
+          </a>
         )}
         {liveLink && (
-          <Link
+          <a
             href={liveLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -42,7 +41,7 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ title, date, githubLink, 
           >
             <FaExternalLinkAlt size={18} />
             <span>Wersja na żywo</span>
-          </Link>
+          </a>
         )}
       </div>
     </header>
