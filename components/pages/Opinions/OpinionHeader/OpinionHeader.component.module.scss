@@ -1,9 +1,40 @@
 @import '@/style/index.scss';
 
 .headerWrapper {
-  @include d-flex;
+  @include d-flex-column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+
   &__header {
+    color: #1e293b;
+    font-size: clamp(2rem, 4vw, 3.5rem);
     font-weight: 700;
-    font-size: 1.7rem;
+    line-height: 1.2;
+    margin: 0;
+
+    span {
+      background: linear-gradient(135deg, #667eea 0%, #3b82f6 50%, #1d4ed8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  &::after {
+    content: 'Sprawdź co mówią o mnie moi klienci';
+    color: #64748b;
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: 0.8rem;
+
+    &::after {
+      font-size: 1rem;
+    }
   }
 }

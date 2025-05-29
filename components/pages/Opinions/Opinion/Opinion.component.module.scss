@@ -1,41 +1,182 @@
 @import '@/style/index.scss';
 
 .importantTextDecorate {
-  font-weight: 500;
-  color: $dark-blue;
+  color: #667eea;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #3b82f6;
+    text-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
+  }
 }
 
 .opinion {
-  box-shadow: $box-shadow;
-  padding: $big-padding;
-  border-radius: $border-med;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(102, 126, 234, 0.15);
+  border-radius: 20px;
+  padding: 2rem;
   @include d-flex-column;
-  align-items: flex-start;
-  gap: 5vh;
+  gap: 1.5rem;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.08);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #3b82f6 50%, #1d4ed8 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s ease;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+    background: rgba(255, 255, 255, 1);
+    border-color: rgba(102, 126, 234, 0.25);
+
+    &::before {
+      transform: scaleX(1);
+    }
+
+    .opinion__text {
+      color: #1e293b;
+    }
+  }
 
   &__text {
-    @include textFont;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin: 0;
+    flex: 1;
+    position: relative;
+    transition: color 0.3s ease;
     word-wrap: break-word;
     overflow-wrap: break-word;
+
+    &::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: -15px;
+      font-size: 3rem;
+      color: #667eea;
+      opacity: 0.2;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    &::after {
+      content: '"';
+      position: absolute;
+      bottom: -20px;
+      right: -10px;
+      font-size: 3rem;
+      color: #667eea;
+      opacity: 0.2;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+  }
+
+  > a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #667eea;
+    border: 2px solid #667eea;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-align: center;
+    background: linear-gradient(135deg, transparent 0%, rgba(102, 126, 234, 0.03) 100%);
+
+    &:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.25);
+
+      span {
+        color: white;
+      }
+    }
+
+    span {
+      color: inherit;
+      transition: color 0.3s ease;
+    }
   }
 
   &__imgWrapper {
     @include d-flex;
+    align-items: center;
     gap: 1rem;
-    max-width: 100%;
+    padding: 1rem;
+    background: linear-gradient(
+      135deg,
+      rgba(102, 126, 234, 0.03) 0%,
+      rgba(59, 130, 246, 0.02) 100%
+    );
+    border-radius: 15px;
+    border: 1px solid rgba(102, 126, 234, 0.08);
 
     img {
       object-fit: contain;
+      border-radius: 8px;
+      padding: 8px;
+      background: white;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.08);
+      flex-shrink: 0;
     }
 
     span {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      font-weight: 600;
+      color: #1e293b;
+      font-size: 1rem;
+      flex: 1;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
+      line-height: 1.4;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    padding: 1.5rem;
+    gap: 1.2rem;
+    border-radius: 15px;
+
+    &__text {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    > a {
+      padding: 0.7rem 1.2rem;
+      font-size: 0.85rem;
+    }
+
+    &__imgWrapper {
+      padding: 0.8rem;
+      gap: 0.8rem;
+
+      span {
+        font-size: 0.9rem;
+        line-height: 1.3;
+      }
     }
   }
 }

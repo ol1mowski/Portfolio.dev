@@ -1,11 +1,35 @@
 @import '@/style/index.scss';
 
 .container {
-  background-color: #fff;
+  background: linear-gradient(135deg, #f8faff 0%, #ffffff 50%, #f0f4ff 100%);
+  position: relative;
   @include d-flex-column;
-  gap: 5vh;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding-inline: 5%;
-  padding-block: 15%;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 5% 8rem 5%;
+  min-height: 100vh;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  @media screen and (max-width: $tablet) {
+    padding: 6rem 4% 6rem 4%;
+    gap: 3rem;
+  }
 }

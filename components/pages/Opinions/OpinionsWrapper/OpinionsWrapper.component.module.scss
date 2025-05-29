@@ -1,22 +1,22 @@
 @import '@/style/index.scss';
 
 .opinionsWrapper {
-  margin-top: 10vh;
+  margin-top: 3rem;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 5vh;
+  gap: 2rem;
   width: 100%;
-  max-width: 100%;
+  max-width: 1200px;
   box-sizing: border-box;
   place-items: stretch;
 
   @media screen and (min-width: $tablet) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 7vh;
+    gap: 2.5rem;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
-    gap: 10vh;
+    gap: 3rem;
   }
 }
