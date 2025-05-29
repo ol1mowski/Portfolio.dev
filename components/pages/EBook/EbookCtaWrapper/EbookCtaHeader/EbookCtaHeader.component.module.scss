@@ -2,9 +2,37 @@
 
 .headerWrapper {
   width: 100%;
+  text-align: center;
+
   &__header {
-    @include headerFont();
-    font-weight: 700;
-    font-size: 2.5rem;
+    color: #1e293b;
+    font-weight: 800;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin: 0;
+
+    &:first-child {
+      background: linear-gradient(135deg, #667eea 0%, #3b82f6 50%, #1d4ed8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+    }
+
+    &:last-child {
+      color: #1e293b;
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      margin-top: 0.2rem;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    &__header {
+      font-size: clamp(2rem, 6vw, 2.5rem);
+
+      &:last-child {
+        font-size: clamp(1.8rem, 5.5vw, 2.2rem);
+      }
+    }
   }
 }

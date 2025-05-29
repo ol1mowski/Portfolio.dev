@@ -1,24 +1,65 @@
 @import '@/style/index.scss';
 
 .importantTextDecorate {
-  font-weight: 500;
-  color: $dark-blue;
+  font-weight: 700;
+  color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.1em;
 }
 
 .pWrapper {
   @include d-flex-column;
-  @media screen and (min-width: $mobile) {
-    width: 30rem;
-  }
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  width: 100%;
+
   &__p {
-    @include textFont();
     font-size: 1.2rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin: 0;
+    max-width: 500px;
+    font-weight: 400;
   }
 }
 
 .buttonWrapper {
-  margin-top: 1rem;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
+
+  a {
+    text-decoration: none;
+    background: linear-gradient(135deg, #667eea 0%, #3b82f6 100%);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+      background: linear-gradient(135deg, #5a67d8 0%, #2563eb 100%);
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    a {
+      padding: 0.9rem 2rem;
+      font-size: 1rem;
+    }
+  }
 }
