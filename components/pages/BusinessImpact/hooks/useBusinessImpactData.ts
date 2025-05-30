@@ -24,7 +24,7 @@ export const useBusinessImpactData = (): BusinessImpactData => {
           id: 'timeline',
           type: 'stat',
           icon: 'clock',
-          number: '7-14',
+          number: '3-14',
           label: 'dni realizacji',
         },
         {

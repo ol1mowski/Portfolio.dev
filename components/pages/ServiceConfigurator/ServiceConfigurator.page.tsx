@@ -3,15 +3,12 @@
 import React from 'react';
 import s from './ServiceConfigurator.page.module.scss';
 
-// Hook
 import { useServiceConfigurator } from './hooks/useServiceConfigurator';
 
-// Components
 import ProgressBar from './components/ProgressBar/ProgressBar.component';
 import Navigation from './components/Navigation/Navigation.component';
 import ResultCard from './components/ResultCard/ResultCard.component';
 
-// Step Components
 import ProjectTypeStep from './components/Steps/ProjectTypeStep.component';
 import SolutionTypeStep from './components/Steps/SolutionTypeStep.component';
 import FeaturesStep from './components/Steps/FeaturesStep.component';
@@ -34,7 +31,6 @@ const ServiceConfigurator: React.FC = () => {
     isStepValid,
   } = useServiceConfigurator();
 
-  // Jeśli mamy rekomendację, pokaż rezultat
   if (recommendation) {
     return <ResultCard recommendation={recommendation} onReset={resetConfigurator} />;
   }

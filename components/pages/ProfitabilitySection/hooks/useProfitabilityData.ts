@@ -71,7 +71,6 @@ export const useProfitabilityData = (): ProfitabilitySectionData => {
           title: 'Nie mam budżetu',
           subtitle: 'Myślisz krótkookresowo',
           benefits: [
-            'Koszt braku strony to 50k+ miesięcznie',
             'Tracisz klientów każdego dnia',
             'Konkurencja cię wyprzedza',
             'Inwestycja zwraca się w 2 miesiące',

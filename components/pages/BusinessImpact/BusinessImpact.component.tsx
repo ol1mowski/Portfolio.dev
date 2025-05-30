@@ -31,16 +31,13 @@ const BusinessImpact: React.FC = () => {
       variants={containerVariants}
     >
       <div className={styles.container}>
-        {/* Header Section */}
         <BusinessImpactHeader
           title={data.header.title}
           subtitle={data.header.subtitle}
           itemVariants={itemVariants}
         />
 
-        {/* Content Section */}
         <div className={styles.content}>
-          {/* Main Offer */}
           <MainOffer
             data={data.mainOffer}
             cardVariants={cardVariants}
@@ -50,7 +47,6 @@ const BusinessImpact: React.FC = () => {
             hoverEffects={hoverEffects}
           />
 
-          {/* Benefits Grid */}
           <BenefitsGrid
             benefits={data.benefits}
             containerVariants={containerVariants}
