@@ -40,7 +40,7 @@ const CustomerSchema = new mongoose.Schema(
 
 CustomerSchema.index({ email: 1 }, { unique: true });
 
-CustomerSchema.pre('save', function (next: any) {
+CustomerSchema.pre('save', function (next: () => void) {
   if (this.isModified('email')) {
     this.email = this.email.toLowerCase();
   }
@@ -51,7 +51,7 @@ CustomerSchema.statics.findByEmail = function (email: string): Promise<ICustomer
   return this.findOne({ email: email.toLowerCase() }).exec();
 };
 
-const Customers = (mongoose.models.customers ||
+const Customers = ((mongoose.models && mongoose.models.customers) ||
   mongoose.model<ICustomer, ICustomerModel>('customers', CustomerSchema)) as ICustomerModel;
 
 export { Customers };

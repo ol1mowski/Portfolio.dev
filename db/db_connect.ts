@@ -22,10 +22,11 @@ if (!MONGODB_URI) {
 }
 
 declare global {
+  // eslint-disable-next-line no-var
   var mongooseCache: MongooseCache | undefined;
 }
 
-let cached: MongooseCache = global.mongooseCache || { conn: null, promise: null };
+const cached: MongooseCache = global.mongooseCache || { conn: null, promise: null };
 
 if (!global.mongooseCache) {
   global.mongooseCache = cached;
@@ -43,8 +44,10 @@ export async function dbConnect(): Promise<typeof mongoose> {
 
     try {
       cached.promise = mongoose.connect(MONGODB_URI as string, opts);
+      // eslint-disable-next-line no-console
       console.log('Connected to MongoDB');
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('MongoDB connection error:', error);
       cached.promise = null;
       throw error;
@@ -60,19 +63,25 @@ export async function dbConnect(): Promise<typeof mongoose> {
   }
 }
 
-mongoose.connection.on('error', (err: Error) => {
-  console.error('MongoDB connection error:', err);
-});
+// Sprawdzenie czy mongoose i connection są dostępne przed dodaniem listenerów
+if (mongoose && mongoose.connection) {
+  mongoose.connection.on('error', (err: Error) => {
+    // eslint-disable-next-line no-console
+    console.error('MongoDB connection error:', err);
+  });
 
-mongoose.connection.on('disconnected', () => {
-  console.log('MongoDB disconnected');
-  cached.conn = null;
-  cached.promise = null;
-});
+  mongoose.connection.on('disconnected', () => {
+    // eslint-disable-next-line no-console
+    console.log('MongoDB disconnected');
+    cached.conn = null;
+    cached.promise = null;
+  });
+}
 
 process.on('SIGINT', async () => {
-  if (mongoose.connection.readyState === 1) {
+  if (mongoose && mongoose.connection && mongoose.connection.readyState === 1) {
     await mongoose.connection.close();
+    // eslint-disable-next-line no-console
     console.log('MongoDB connection closed through app termination');
   }
   process.exit(0);

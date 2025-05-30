@@ -25,4 +25,6 @@ const opinionsSchema = new Schema({
 });
 
 export const Opinions: Model<OpinionDocument> =
-  mongoose.models.opinions || mongoose.model<OpinionDocument>('opinions', opinionsSchema);
+  mongoose.models && mongoose.models.opinions
+    ? (mongoose.models.opinions as Model<OpinionDocument>)
+    : mongoose.model<OpinionDocument>('opinions', opinionsSchema);

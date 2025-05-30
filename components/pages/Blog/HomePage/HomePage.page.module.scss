@@ -411,3 +411,65 @@
     }
   }
 }
+
+// Loading spinner
+.loadingSpinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 2rem;
+  color: #6b7280;
+  text-align: center;
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #f3f4f6;
+    border-top: 3px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  span {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: #9ca3af;
+  }
+
+  // Dla białego tła w statystykach bloga
+  .blogStats & {
+    color: rgba(255, 255, 255, 0.9);
+
+    &__icon {
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top: 3px solid white;
+    }
+
+    span {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// No data message
+.noData {
+  padding: 1.5rem;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  font-style: italic;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px dashed #d1d5db;
+}

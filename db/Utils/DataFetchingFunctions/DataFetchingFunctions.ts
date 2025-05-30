@@ -1,4 +1,4 @@
-import { Projects } from '../../Schemas/Projects';
+import { getProjectsModel } from '../../Schemas/Projects';
 import { Opinions } from '../../Schemas/Opinions';
 import { dbConnect } from '../../db_connect';
 import { Document } from 'mongoose';
@@ -27,7 +27,7 @@ export async function getOpinions(): Promise<OpinionsType[] | null> {
 
 export async function getProjects(): Promise<ProjectsType[] | null> {
   try {
-    await dbConnect();
+    const Projects = await getProjectsModel();
     const data = await Projects.find().lean().exec();
     return data as unknown as ProjectsType[];
   } catch (error) {
@@ -36,10 +36,13 @@ export async function getProjects(): Promise<ProjectsType[] | null> {
   }
 }
 
-export async function getPosts(): Promise<any[] | null> {
+export async function getPosts(): Promise<unknown[] | null> {
   try {
     await dbConnect();
-    const data = await Posts.find().lean().exec();
+    const data = await (Posts as { find: () => { lean: () => { exec: () => Promise<unknown[]> } } })
+      .find()
+      .lean()
+      .exec();
     return data;
   } catch (error) {
     console.error('Error fetching posts:', error);

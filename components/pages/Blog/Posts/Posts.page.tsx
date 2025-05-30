@@ -1,38 +1,52 @@
+'use client';
+
 import s from './Posts.page.module.scss';
 
 import PostCardComponent from './PostCardComponent/PostCardComponent.component';
 import PostsButton from './PostsButton/PostsButton.component';
 import { type PostsType } from '@/types/PostType.types';
+import { useState, useEffect } from 'react';
+
+interface CategoryData {
+  name: string;
+  count: number;
+  icon?: string;
+}
 
 function PostsComponent({ posts }: { posts: PostsType[] }) {
-  // Mock data dla sidebar (w rzeczywistej aplikacji byłoby z API)
-  const categories = [
-    { name: 'React', count: 24 },
-    { name: 'TypeScript', count: 18 },
-    { name: 'Next.js', count: 15 },
-    { name: 'Node.js', count: 12 },
-    { name: 'DevOps', count: 10 },
-    { name: 'CSS', count: 8 },
-  ];
-
-  const popularTags = [
-    '#JavaScript',
-    '#React',
-    '#TypeScript',
-    '#Next.js',
-    '#Node.js',
-    '#HTML',
-    '#Docker',
-    '#MongoDB',
-    '#PostgreSQL',
-    '#Git',
-  ];
+  const [categories, setCategories] = useState<CategoryData[]>([]);
+  const [isLoadingCategories, setIsLoadingCategories] = useState(true);
 
   const latestPosts = posts.slice(0, 3);
 
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        setIsLoadingCategories(true);
+        const response = await fetch('/api/blog/categories');
+        if (response.ok) {
+          const categoriesData: CategoryData[] = await response.json();
+
+          const formattedCategories = categoriesData.map(category => ({
+            name: category.name,
+            count: category.count,
+          }));
+
+          setCategories(formattedCategories);
+        }
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+        setCategories([]);
+      } finally {
+        setIsLoadingCategories(false);
+      }
+    };
+
+    fetchCategories();
+  }, []);
+
   return (
     <section className={s.container} id="posts" data-testid="posts-section">
-      {/* Header */}
       <div className={s.container__header}>
         <h2 className={s.container__header__title}>Najnowsze artykuły</h2>
         <p className={s.container__header__subtitle}>
@@ -41,7 +55,6 @@ function PostsComponent({ posts }: { posts: PostsType[] }) {
       </div>
 
       <div className={s.container__content}>
-        {/* Main Posts Section */}
         <div className={s.container__content__main}>
           <div className={s.container__content__main__grid}>
             {posts.map(post => {
@@ -64,46 +77,37 @@ function PostsComponent({ posts }: { posts: PostsType[] }) {
             })}
           </div>
 
-          {/* Load More Button */}
           <PostsButton />
         </div>
 
-        {/* Sidebar */}
         <aside className={s.container__content__sidebar}>
-          {/* Categories */}
           <div className={s.sidebarWidget}>
             <h3 className={s.sidebarWidget__title}>📂 Kategorie</h3>
-            <div className={s.categoriesList}>
-              {categories.map((category, index) => (
-                <a
-                  key={index}
-                  href={`/Blog/kategorie/${encodeURIComponent(category.name)}`}
-                  className={s.categoriesList__item}
-                >
-                  <span className={s.categoriesList__item__name}>{category.name}</span>
-                  <span className={s.categoriesList__item__count}>{category.count}</span>
-                </a>
-              ))}
-            </div>
+            {isLoadingCategories ? (
+              <div className={s.loadingSpinner}>
+                <div className={s.loadingSpinner__icon}></div>
+                <span>Ładowanie kategorii...</span>
+              </div>
+            ) : (
+              <div className={s.categoriesList}>
+                {categories.length > 0 ? (
+                  categories.map((category, index) => (
+                    <a
+                      key={index}
+                      href={`/Blog/kategorie/${encodeURIComponent(category.name)}`}
+                      className={s.categoriesList__item}
+                    >
+                      <span className={s.categoriesList__item__name}>{category.name}</span>
+                      <span className={s.categoriesList__item__count}>{category.count}</span>
+                    </a>
+                  ))
+                ) : (
+                  <div className={s.noData}>Brak kategorii do wyświetlenia</div>
+                )}
+              </div>
+            )}
           </div>
 
-          {/* Popular Tags */}
-          <div className={s.sidebarWidget}>
-            <h3 className={s.sidebarWidget__title}>🏷️ Popularne tagi</h3>
-            <div className={s.tagsList}>
-              {popularTags.map((tag, index) => (
-                <a
-                  key={index}
-                  href={`/Blog/tagi/${encodeURIComponent(tag.replace('#', ''))}`}
-                  className={s.tagsList__tag}
-                >
-                  {tag}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Latest Posts */}
           <div className={s.sidebarWidget}>
             <h3 className={s.sidebarWidget__title}>📰 Najnowsze posty</h3>
             <div className={s.latestPosts}>
