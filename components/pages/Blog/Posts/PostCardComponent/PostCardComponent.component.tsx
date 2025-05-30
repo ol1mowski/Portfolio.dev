@@ -14,7 +14,6 @@ function PostCardComponent({
   slug,
   category = 'React',
 }: PostCardType) {
-  // Mock hashtags based on category
   const getHashtags = (cat: string) => {
     switch (cat.toLowerCase()) {
       case 'react':

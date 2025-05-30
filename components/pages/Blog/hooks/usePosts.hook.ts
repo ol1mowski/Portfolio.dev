@@ -15,8 +15,9 @@ export const usePosts = async (): Promise<PostsResponse> => {
       throw new Error('No data received from the server.');
     }
 
+    const firstItem = fetchedItems[0] as { posts: PostsType[] };
     return {
-      posts: fetchedItems[0].posts,
+      posts: firstItem.posts,
       isLoading: false,
       error: null,
     };

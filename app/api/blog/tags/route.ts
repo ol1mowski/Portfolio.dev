@@ -13,7 +13,8 @@ export async function GET() {
       return NextResponse.json([]);
     }
 
-    const posts = postsData[0].posts as PostsType[];
+    const firstPost = postsData[0] as { posts: PostsType[] };
+    const posts = firstPost.posts;
 
     const tagMap = new Map<string, { count: number; categories: Set<string> }>();
 

@@ -22,8 +22,9 @@ export const usePostsFetching = async (): Promise<PostsResponse> => {
       throw new Error('No data received from the server.');
     }
 
+    const firstItem = fetchedItems[0] as { posts: PostsType[] };
     return {
-      posts: fetchedItems[0].posts,
+      posts: firstItem.posts,
       isLoading: false,
       error: null,
     };
@@ -45,7 +46,8 @@ export const useSinglePostFetching = async (slug: string): Promise<SinglePostRes
       throw new Error('Failed to fetch posts data');
     }
 
-    const posts = allPostsData[0].posts;
+    const firstItem = allPostsData[0] as { posts: PostsType[] };
+    const posts = firstItem.posts;
     const post = posts.find((p: PostsType) => p.slug === slug) || null;
 
     return {

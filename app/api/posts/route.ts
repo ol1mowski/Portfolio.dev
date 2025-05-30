@@ -24,19 +24,17 @@ export async function GET(request: NextRequest) {
       });
     }
 
-    let posts = postsData[0].posts as PostsType[];
+    const firstPost = postsData[0] as { posts: PostsType[] };
+    let posts = firstPost.posts;
 
-    // Filtrowanie po kategorii
     if (category) {
       posts = posts.filter(
         (post: PostsType) => post.category.toLowerCase() === category.toLowerCase()
       );
     }
 
-    // Filtrowanie po tagu (dodamy logikę gdy będą tagi w bazie)
     if (tag) {
       posts = posts.filter((post: PostsType) => {
-        // Mock tagów na podstawie kategorii (później zastąpić prawdziwymi tagami)
         const mockTags = getMockTags(post.category);
         return mockTags.some(mockTag =>
           mockTag.toLowerCase().includes(tag.toLowerCase().replace('#', ''))
@@ -65,7 +63,6 @@ export async function GET(request: NextRequest) {
   }
 }
 
-// Funkcja pomocnicza do mock tagów (później usunąć gdy będą prawdziwe tagi)
 function getMockTags(category: string): string[] {
   switch (category.toLowerCase()) {
     case 'react':

@@ -20,38 +20,31 @@ export async function GET() {
       });
     }
 
-    const posts = postsData[0].posts as PostsType[];
+    const firstPost = postsData[0] as { posts: PostsType[] };
+    const posts = firstPost.posts;
 
-    // Obliczanie statystyk
     const totalArticles = posts.length;
 
-    // Unikalne kategorie
     const uniqueCategories = [...new Set(posts.map(post => post.category))];
     const totalCategories = uniqueCategories.length;
 
-    // Generowanie tagów na podstawie kategorii (tymczasowo)
     const allTags = posts.flatMap(post => generateTagsFromCategory(post.category));
     const uniqueTags = [...new Set(allTags)];
     const totalTags = uniqueTags.length;
 
-    // Unikalni autorzy
     const uniqueAuthors = [...new Set(posts.map(post => post.author))];
     const totalAuthors = uniqueAuthors.length;
 
-    // Średni czas czytania
     const avgReadTime = posts.reduce((sum, post) => sum + (post.readTime || 5), 0) / posts.length;
 
-    // Symulowane wyświetlenia (w prawdziwej aplikacji pobierałbyś z analytics)
     const totalViews = posts.length * Math.floor(Math.random() * 100) + 1000;
 
-    // Statystyki wzrostu (symulowane)
     const monthlyGrowth = {
       articles: '+23%',
       views: '+45%',
       readers: '+67%',
     };
 
-    // Top kategorie z liczbą postów
     const categoryStats = uniqueCategories
       .map(category => ({
         name: category,
@@ -62,11 +55,10 @@ export async function GET() {
       }))
       .sort((a, b) => b.count - a.count);
 
-    // Top tagi z popularnością
     const tagStats = uniqueTags
       .map(tag => ({
         name: tag,
-        count: Math.floor(Math.random() * 50) + 5, // Symulowane
+        count: Math.floor(Math.random() * 50) + 5,
         trending: Math.random() > 0.7,
       }))
       .sort((a, b) => b.count - a.count);
@@ -82,7 +74,7 @@ export async function GET() {
       },
       growth: monthlyGrowth,
       categories: categoryStats,
-      tags: tagStats.slice(0, 20), // Top 20 tagów
+      tags: tagStats.slice(0, 20),
       recentActivity: {
         lastPostDate: posts[0]?.date || new Date().toISOString(),
         postsThisMonth: posts.filter(post => {
@@ -101,7 +93,6 @@ export async function GET() {
   }
 }
 
-// Funkcja pomocnicza do generowania tagów z kategorii
 function generateTagsFromCategory(category: string): string[] {
   const categoryToTags: Record<string, string[]> = {
     React: ['React', 'JavaScript', 'Frontend', 'Hooks', 'Components', 'State Management', 'JSX'],

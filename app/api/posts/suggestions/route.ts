@@ -21,31 +21,27 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ suggestions: [] });
     }
 
-    const posts = postsData[0].posts as PostsType[];
+    const firstPost = postsData[0] as { posts: PostsType[] };
+    const posts = firstPost.posts;
     const searchTerm = query.toLowerCase().trim();
 
-    // Znajdź pasujące posty
     const matchingPosts = posts.filter((post: PostsType) => {
       return post.title.toLowerCase().includes(searchTerm);
     });
 
-    // Sortuj według relevance (najbardziej podobne tytuły na górze)
     const sortedPosts = matchingPosts.sort((a, b) => {
       const aTitle = a.title.toLowerCase();
       const bTitle = b.title.toLowerCase();
 
-      // Preferuj te które zaczynają się od wyszukiwanego tekstu
       const aStartsWith = aTitle.startsWith(searchTerm);
       const bStartsWith = bTitle.startsWith(searchTerm);
 
       if (aStartsWith && !bStartsWith) return -1;
       if (!aStartsWith && bStartsWith) return 1;
 
-      // Jeśli oba lub żaden nie zaczyna się od tekstu, sortuj według długości
       return aTitle.length - bTitle.length;
     });
 
-    // Ograniczenie wyników i mapowanie do prostego formatu
     const suggestions = sortedPosts.slice(0, limit).map(post => ({
       id: post.id,
       title: post.title,
@@ -53,7 +49,6 @@ export async function GET(request: NextRequest) {
       category: post.category,
     }));
 
-    // Dodaj również sugestie kategorii
     const categories = [...new Set(posts.map(post => post.category))];
     const matchingCategories = categories
       .filter(category => category.toLowerCase().includes(searchTerm))

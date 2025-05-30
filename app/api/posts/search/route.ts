@@ -28,10 +28,10 @@ export async function GET(request: NextRequest) {
       });
     }
 
-    const posts = postsData[0].posts as PostsType[];
+    const firstPost = postsData[0] as { posts: PostsType[] };
+    const posts = firstPost.posts;
     const searchTerm = query.toLowerCase().trim();
 
-    // Wyszukiwanie w tytule, opisie i kategorii
     const filteredPosts = posts.filter((post: PostsType) => {
       const titleMatch = post.title.toLowerCase().includes(searchTerm);
       const descriptionMatch = post.description.toLowerCase().includes(searchTerm);
@@ -41,7 +41,6 @@ export async function GET(request: NextRequest) {
       return titleMatch || descriptionMatch || categoryMatch || authorMatch;
     });
 
-    // Sortowanie wyników - najpierw dokładne dopasowania w tytule
     const sortedResults = filteredPosts.sort((a, b) => {
       const aTitle = a.title.toLowerCase();
       const bTitle = b.title.toLowerCase();

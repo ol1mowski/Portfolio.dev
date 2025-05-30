@@ -13,7 +13,8 @@ async function PostSite({ postId }: { postId: string }) {
       throw new Error('No data received from the server.');
     }
 
-    const posts = fetchedItems[0].posts;
+    const firstItem = fetchedItems[0] as { posts: PostsType[] };
+    const posts = firstItem.posts;
     const post = posts.find((post: PostsType) => post.slug === postId);
 
     if (!post) {

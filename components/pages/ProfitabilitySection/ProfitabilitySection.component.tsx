@@ -33,7 +33,7 @@ const ProfitabilitySection: React.FC = () => {
     checkmarkVariants,
   } = animations;
 
-  const renderContentItem = (item: ContentItem, index: number) => {
+  const renderContentItem = (item: ContentItem, _index: number) => {
     return (
       <motion.div
         key={item.id}
