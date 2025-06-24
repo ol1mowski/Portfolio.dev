@@ -1,0 +1,439 @@
+@import '@/style/index.scss';
+
+.emailGateContainer {
+  height: 100vh;
+  max-height: 100vh;
+  @include d-flex-column;
+  background: linear-gradient(135deg, $white 0%, $dark-white-background-color 50%, $white 100%);
+  position: relative;
+  overflow: hidden;
+  padding: $standard-padding;
+
+  @media (max-width: $mobile) {
+    padding: $small-padding;
+  }
+}
+
+.backgroundElements {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.circle1,
+.circle2,
+.circle3 {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 122, 204, 0.1), rgba(0, 191, 209, 0.05));
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle1 {
+  width: 300px;
+  height: 300px;
+  top: -150px;
+  right: -150px;
+  animation-delay: 0s;
+}
+
+.circle2 {
+  width: 200px;
+  height: 200px;
+  bottom: -100px;
+  left: -100px;
+  animation-delay: 2s;
+}
+
+.circle3 {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: -75px;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+.contentWrapper {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  @include d-flex-column;
+  gap: $standard-gap;
+  justify-content: center;
+  flex: 1;
+  overflow-y: auto;
+
+  @media (max-width: $tablet) {
+    gap: $small-gap;
+  }
+}
+
+.header {
+  text-align: center;
+  @include d-flex-column;
+  gap: $standard-gap;
+}
+
+.lockIcon {
+  font-size: 2.5rem;
+  margin-bottom: $small-margin;
+  animation: lockPulse 2s ease-in-out infinite;
+
+  @media (max-width: $mobile) {
+    font-size: 2rem;
+  }
+}
+
+@keyframes lockPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.title {
+  @include large-header();
+  margin: 0;
+  font-size: 2.2rem;
+
+  @media (max-width: $tablet) {
+    font-size: 1.8rem;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 1.5rem;
+  }
+}
+
+.gradient {
+  background: linear-gradient(135deg, $dark-blue, $light-blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  @include description();
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+
+  @media (max-width: $mobile) {
+    font-size: 1rem;
+  }
+}
+
+.benefitsSection {
+  @include d-flex-column;
+  gap: $standard-gap;
+}
+
+.benefitsTitle {
+  @include below-headers();
+  text-align: center;
+  margin: 0;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $small-gap;
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+    gap: $small-gap;
+  }
+}
+
+.benefitCard {
+  background: $white;
+  border: 2px solid rgba(0, 122, 204, 0.1);
+  border-radius: $border-max;
+  padding: $standard-padding;
+  @include d-flex;
+  gap: $small-gap;
+  transition: all $transition-time ease;
+  box-shadow: $box-shadow-low;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 122, 204, 0.3);
+    box-shadow: $box-shadow;
+  }
+
+  @media (max-width: $mobile) {
+    padding: $small-padding;
+  }
+}
+
+.benefitIcon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+
+  @media (max-width: $mobile) {
+    font-size: 1.5rem;
+  }
+}
+
+.benefitContent {
+  @include d-flex-column;
+  gap: $small-gap;
+  align-items: flex-start;
+}
+
+.benefitTitle {
+  @include headerFont();
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $dark-blue;
+  margin: 0;
+
+  @media (max-width: $mobile) {
+    font-size: 1rem;
+  }
+}
+
+.benefitDescription {
+  @include textFont();
+  color: $grey;
+  margin: 0;
+  line-height: 1.5;
+
+  @media (max-width: $mobile) {
+    font-size: 0.9rem;
+  }
+}
+
+.emailForm {
+  background: $white;
+  border: 3px solid rgba(0, 122, 204, 0.15);
+  border-radius: $border-max;
+  padding: $big-padding;
+  @include d-flex-column;
+  gap: $standard-gap;
+  box-shadow: $box-shadow;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, $dark-blue, $light-blue);
+  }
+
+  @media (max-width: $mobile) {
+    padding: $standard-padding;
+    gap: $small-gap;
+  }
+}
+
+.formHeader {
+  text-align: center;
+  @include d-flex-column;
+  gap: $small-gap;
+}
+
+.formTitle {
+  @include headerFont();
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: $dark-blue;
+  margin: 0;
+
+  @media (max-width: $mobile) {
+    font-size: 1.5rem;
+  }
+}
+
+.formSubtitle {
+  @include textFont();
+  color: $light-blue;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+
+  @media (max-width: $mobile) {
+    font-size: 1rem;
+  }
+}
+
+.inputWrapper {
+  @include d-flex;
+  gap: $standard-gap;
+
+  @media (max-width: $tablet) {
+    @include d-flex-column;
+  }
+}
+
+.inputGroup {
+  flex: 1;
+  @include d-flex-column;
+  gap: $small-gap;
+}
+
+.inputLabel {
+  @include textFont();
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $dark-blue;
+  margin: 0;
+
+  @media (max-width: $mobile) {
+    font-size: 1rem;
+  }
+}
+
+.inputContainer {
+  position: relative;
+  @include d-flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: $standard-padding;
+  font-size: 1.2rem;
+  z-index: 2;
+}
+
+.emailInput {
+  width: 100%;
+  padding: $standard-padding $standard-padding $standard-padding 3.5rem;
+  border: 2px solid rgba(0, 122, 204, 0.2);
+  border-radius: $border-med;
+  font-size: 1rem;
+  @include textFont();
+  transition: all $transition-time ease;
+  background: $white;
+
+  &:focus {
+    outline: none;
+    border-color: $dark-blue;
+    box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.1);
+  }
+
+  &::placeholder {
+    color: $grey;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.submitButton {
+  @include btn($dark-blue, $white);
+  white-space: nowrap;
+  min-width: 200px;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+
+    &:hover {
+      scale: 1;
+      background-color: $dark-blue;
+      color: $white;
+      border: none;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+.formFooter {
+  @include d-flex-column;
+  gap: $small-gap;
+  text-align: center;
+}
+
+.privacy,
+.guarantee {
+  @include textFont();
+  color: $grey;
+  margin: 0;
+  font-size: 0.9rem;
+
+  @media (max-width: $mobile) {
+    font-size: 0.8rem;
+  }
+}
+
+.guarantee {
+  color: $light-blue;
+  font-weight: 600;
+}
+
+.socialProof {
+  background: rgba(0, 122, 204, 0.05);
+  border-radius: $border-med;
+  padding: $standard-padding;
+
+  @media (max-width: $mobile) {
+    padding: $small-padding;
+  }
+}
+
+.statsRow {
+  @include d-flex;
+  justify-content: space-around;
+  gap: $standard-gap;
+
+  @media (max-width: $mobile) {
+    @include d-flex-column;
+    gap: $small-gap;
+  }
+}
+
+.stat {
+  text-align: center;
+  @include d-flex-column;
+  gap: $small-gap;
+}
+
+.statNumber {
+  @include headerFont();
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $dark-blue;
+
+  @media (max-width: $mobile) {
+    font-size: 1.2rem;
+  }
+}
+
+.statLabel {
+  @include textFont();
+  color: $grey;
+  font-size: 0.9rem;
+
+  @media (max-width: $mobile) {
+    font-size: 0.8rem;
+  }
+}
