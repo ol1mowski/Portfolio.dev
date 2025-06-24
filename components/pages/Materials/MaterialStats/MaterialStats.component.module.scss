@@ -1,0 +1,69 @@
+@import '@/style/index.scss';
+
+.materialStats {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1.5rem;
+  box-shadow: $box-shadow-low;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 122, 204, 0.1);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+  }
+}
+
+.statItem {
+  @include d-flex-column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(0, 122, 204, 0.02);
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 122, 204, 0.05);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    background: rgba(0, 122, 204, 0.05);
+    border-color: rgba(0, 122, 204, 0.2);
+    box-shadow: $box-shadow;
+  }
+}
+
+.statNumber {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: $dark-blue;
+  line-height: 1;
+  background: linear-gradient(135deg, $dark-blue, $light-blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media (min-width: 768px) {
+    font-size: 2.2rem;
+  }
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $dark-grey;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+
+  @media (min-width: 768px) {
+    font-size: 0.9rem;
+  }
+}

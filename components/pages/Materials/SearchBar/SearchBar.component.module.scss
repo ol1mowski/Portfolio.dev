@@ -1,0 +1,239 @@
+@import '@/style/index.scss';
+
+.searchBar {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.searchWrapper {
+  position: relative;
+  @include d-flex;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+  border: 3px solid transparent;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 8px 32px rgba(0, 122, 204, 0.12),
+    0 2px 16px rgba(0, 122, 204, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 122, 204, 0.1), transparent);
+    transition: left 0.6s ease;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 3px;
+    background: linear-gradient(135deg, $dark-blue, $light-blue, #4fc3f7, $dark-blue);
+    border-radius: inherit;
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  &:focus-within {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow:
+      0 20px 60px rgba(0, 122, 204, 0.25),
+      0 8px 32px rgba(0, 122, 204, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 1);
+
+    &::before {
+      left: 100%;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 12px 40px rgba(0, 122, 204, 0.18),
+      0 4px 24px rgba(0, 122, 204, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+    &::after {
+      opacity: 0.7;
+    }
+  }
+}
+
+.searchIcon {
+  font-size: 1.4rem;
+  margin-right: 1rem;
+  background: linear-gradient(135deg, $dark-blue, $light-blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 122, 204, 0.3));
+  animation: searchPulse 3s infinite ease-in-out;
+}
+
+@keyframes searchPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 2px 4px rgba(0, 122, 204, 0.3));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 8px rgba(0, 122, 204, 0.5));
+  }
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $dark;
+  background: transparent;
+  letter-spacing: 0.5px;
+  z-index: 2;
+
+  &::placeholder {
+    color: rgba(0, 122, 204, 0.6);
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  &:focus {
+    &::placeholder {
+      color: rgba(0, 122, 204, 0.4);
+    }
+  }
+}
+
+.clearButton {
+  background: linear-gradient(135deg, rgba(255, 61, 0, 0.1), rgba(255, 61, 0, 0.05));
+  border: 2px solid rgba(255, 61, 0, 0.2);
+  color: $red;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.4rem;
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-left: 0.75rem;
+  flex-shrink: 0;
+  width: 2.2rem;
+  height: 2.2rem;
+  @include d-flex;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, $red, #ff6b35);
+    border-radius: inherit;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: scale(1.15) rotate(90deg);
+    border-color: $red;
+    color: $white;
+
+    &::before {
+      transform: scale(1);
+    }
+  }
+
+  &:active {
+    transform: scale(0.95) rotate(90deg);
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.shortcut {
+  margin-left: 1.25rem;
+  font-size: 0.85rem;
+  color: rgba(0, 122, 204, 0.7);
+  @include d-flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+
+  .searchWrapper:focus-within & {
+    opacity: 1;
+  }
+
+  kbd {
+    background: linear-gradient(135deg, rgba(0, 122, 204, 0.08), rgba(0, 191, 209, 0.08));
+    border: 2px solid rgba(0, 122, 204, 0.15);
+    border-radius: 0.4rem;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: $dark-blue;
+    font-family: 'Fira Code', monospace;
+    box-shadow:
+      0 2px 4px rgba(0, 122, 204, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow:
+        0 4px 8px rgba(0, 122, 204, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
+    }
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 767px) {
+  .searchWrapper {
+    padding: 0.9rem 1.5rem;
+  }
+
+  .searchIcon {
+    font-size: 1.2rem;
+    margin-right: 0.75rem;
+  }
+
+  .searchInput {
+    font-size: 1rem;
+  }
+
+  .clearButton {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,435 @@
+@import '@/style/index.scss';
+
+@mixin card-hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 20px 40px rgba(0, 122, 204, 0.2),
+    0 8px 16px rgba(0, 122, 204, 0.1);
+}
+
+.materialCard {
+  position: relative;
+  background: $white;
+  border-radius: $border-max;
+  box-shadow: $box-shadow;
+  overflow: hidden;
+  transition: all $transition-time cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  border: 1px solid rgba(0, 122, 204, 0.08);
+
+  &:hover {
+    @include card-hover;
+
+    .image {
+      transform: scale($hover-med-scale);
+    }
+
+    .overlay {
+      opacity: 1;
+    }
+
+    .title {
+      color: $dark-blue;
+    }
+  }
+
+  // Mobile
+  @media (max-width: $mobile) {
+    border-radius: $border-med;
+    margin: 0 $small-margin;
+  }
+
+  // Tablet
+  @media (min-width: #{$mobile + 1px}) and (max-width: $tablet) {
+    border-radius: $border-med;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: linear-gradient(135deg, $light-blue 0%, $dark-blue 100%);
+
+  @media (max-width: $mobile) {
+    height: 200px;
+  }
+
+  @media (min-width: #{$mobile + 1px}) and (max-width: $tablet) {
+    height: 220px;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform $transition-time cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.noteBackground {
+  width: 100%;
+  height: 100%;
+  @include d-flex;
+  background: linear-gradient(135deg, $light-blue 0%, $dark-blue 100%);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+      repeat;
+    opacity: 0.1;
+  }
+
+  .text {
+    @include headerFont();
+    font-size: 32px;
+    font-weight: 900;
+    color: $white;
+    letter-spacing: 4px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: $mobile) {
+      font-size: 24px;
+      letter-spacing: 3px;
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: $big-padding $standard-padding $standard-padding;
+  opacity: 0;
+  transition: opacity $transition-time ease;
+
+  @media (max-width: $mobile) {
+    padding: $standard-padding $small-padding $small-padding;
+  }
+}
+
+.stats {
+  @include d-flex;
+  gap: $standard-gap;
+  justify-content: flex-start;
+
+  .downloads,
+  .size {
+    color: $white;
+    font-size: 14px;
+    font-weight: 600;
+    @include d-flex;
+    gap: 4px;
+
+    @media (max-width: $mobile) {
+      font-size: 12px;
+    }
+  }
+}
+
+.content {
+  padding: $big-padding;
+
+  @media (max-width: $mobile) {
+    padding: $standard-padding;
+  }
+
+  @media (min-width: #{$mobile + 1px}) and (max-width: $tablet) {
+    padding: $standard-padding $big-padding;
+  }
+}
+
+.header {
+  margin-bottom: $standard-margin;
+}
+
+.meta {
+  @include d-flex;
+  gap: $standard-gap;
+  margin-bottom: $standard-margin;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @media (max-width: $mobile) {
+    gap: $small-gap;
+    margin-bottom: $small-margin;
+  }
+}
+
+.typeTag {
+  padding: 4px 12px;
+  border-radius: $border-max;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  @include textFont();
+
+  &.ebook {
+    background: linear-gradient(135deg, $light-blue, $dark-blue);
+    color: $white;
+  }
+
+  &.note {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: $white;
+  }
+
+  &.material {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: $white;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+}
+
+.category {
+  color: $grey;
+  font-size: 12px;
+  font-weight: 500;
+  background: $dark-white-background-color;
+  padding: 4px 8px;
+  border-radius: $border-min;
+  @include textFont();
+
+  @media (max-width: $mobile) {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+}
+
+// Title
+.title {
+  @include title($white);
+  margin-bottom: $small-margin;
+  transition: color $transition-time ease;
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+    margin-bottom: 0.3rem;
+  }
+
+  @media (min-width: #{$mobile + 1px}) and (max-width: $tablet) {
+    font-size: 17px;
+  }
+}
+
+// Category Type
+.categoryType {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: $border-med;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  @include textFont();
+
+  &.techniczne {
+    background: rgba(0, 122, 204, 0.1);
+    color: $dark-blue;
+    border: 1px solid rgba(0, 122, 204, 0.2);
+  }
+
+  &.rozwojowe {
+    background: rgba(0, 191, 209, 0.1);
+    color: $light-blue;
+    border: 1px solid rgba(0, 191, 209, 0.2);
+  }
+
+  @media (max-width: $mobile) {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+}
+
+// Description
+.description {
+  @include description();
+  color: $white;
+  margin-bottom: $standard-margin;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  @media (max-width: $mobile) {
+    font-size: 13px;
+    margin-bottom: $small-margin;
+    -webkit-line-clamp: 2;
+  }
+}
+
+// Tags
+.tags {
+  @include d-flex;
+  flex-wrap: wrap;
+  gap: $small-gap;
+  margin-bottom: $big-margin;
+  justify-content: flex-start;
+
+  @media (max-width: $mobile) {
+    margin-bottom: $standard-margin;
+  }
+}
+
+.tag {
+  background: rgba(0, 122, 204, 0.08);
+  color: $dark-blue;
+  padding: 4px 8px;
+  border-radius: $border-min;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  @include textFont();
+
+  &:hover {
+    background: rgba(0, 122, 204, 0.15);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: $mobile) {
+    padding: 3px 6px;
+    font-size: 11px;
+  }
+}
+
+// Footer
+.footer {
+  @include d-flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: $standard-gap;
+
+  @media (max-width: 640px) {
+    @include d-flex-column;
+    align-items: stretch;
+    gap: $standard-gap;
+  }
+}
+
+// Additional info
+.additionalInfo {
+  @include d-flex-column;
+  gap: 4px;
+  align-items: flex-start;
+
+  @media (max-width: 640px) {
+    @include d-flex;
+    justify-content: space-between;
+  }
+}
+
+.format,
+.date {
+  color: $grey;
+  font-size: 12px;
+  font-weight: 500;
+  @include textFont();
+
+  @media (max-width: $mobile) {
+    font-size: 11px;
+  }
+}
+
+.format {
+  background: $dark-white-background-color;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+}
+
+// Button wrapper - using local class to target buttons
+.buttonWrapper {
+  button {
+    transition: all $transition-time cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 122, 204, 0.3);
+    }
+  }
+}
+
+// Loading animation
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.materialCard.loading {
+  .imageWrapper {
+    background: linear-gradient(
+      90deg,
+      $dark-white-background-color 25%,
+      $grey 50%,
+      $dark-white-background-color 75%
+    );
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .title,
+  .description {
+    background: linear-gradient(
+      90deg,
+      $dark-white-background-color 25%,
+      $grey 50%,
+      $dark-white-background-color 75%
+    );
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+    color: transparent;
+  }
+}
+
+// Accessibility improvements
+.materialCard:focus-within {
+  outline: 2px solid $dark-blue;
+  outline-offset: 4px;
+}
+
+// Dark mode support - now using white as primary
+@media (prefers-color-scheme: dark) {
+  .materialCard {
+    background: $white;
+    border-color: rgba(0, 122, 204, 0.2);
+
+    .title {
+      color: $dark-blue;
+    }
+
+    .description {
+      color: $grey;
+    }
+
+    .category {
+      background: $dark-white-background-color;
+      color: $dark-grey;
+    }
+  }
+}
+
+// Print styles
+@media print {
+  .materialCard {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid $grey;
+  }
+}
