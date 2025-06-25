@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import MaterialsHub from '@/components/pages/Materials/MaterialsHub/MaterialsHub.component';
-import EmailGateForm from '@/components/pages/Materials/EmailGateForm/EmailGateForm.component';
+import MaterialsHub from '@/components/pages/Materials/components/MaterialsHub/MaterialsHub.component';
+import EmailGateForm from '@/components/pages/Materials/components/EmailGateForm/EmailGateForm.component';
 import { MATERIALS } from '@/data/Materials.data';
 
 export default function MaterialsPage() {

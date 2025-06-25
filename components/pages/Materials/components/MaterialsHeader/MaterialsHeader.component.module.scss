@@ -1,0 +1,127 @@
+@import '@/style/index.scss';
+
+.materialsHeader {
+  padding: 1rem 0 1rem;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 122, 204, 0.08) 0%,
+    rgba(0, 191, 209, 0.08) 50%,
+    rgba(79, 195, 247, 0.06) 100%
+  );
+  border-radius: 2.5rem;
+  margin: 2rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(0, 122, 204, 0.1);
+  backdrop-filter: blur(10px);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(0, 122, 204, 0.05) 50%,
+      transparent 70%
+    );
+    animation: materialsHeader-shine 8s infinite ease-in-out;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, $dark-blue, $light-blue, #4fc3f7, $dark-blue);
+    animation: materialsHeader-topLine 4s infinite ease-in-out;
+  }
+
+  @media (min-width: 768px) {
+    border-radius: 3rem;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    color: $dark;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  &__gradient {
+    background: linear-gradient(135deg, $dark-blue, $light-blue, #4fc3f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    filter: drop-shadow(0 2px 4px rgba(0, 122, 204, 0.2));
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, $dark-blue, $light-blue, #4fc3f7);
+      border-radius: 2px;
+      opacity: 0.4;
+      animation: materialsHeader-gradientPulse 3s infinite ease-in-out;
+    }
+  }
+
+  &__subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    color: $dark-grey;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+    @include textFont();
+  }
+}
+
+@keyframes materialsHeader-shine {
+  0%,
+  100% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  50% {
+    transform: translateX(100%) skewX(-15deg);
+  }
+}
+
+@keyframes materialsHeader-topLine {
+  0%,
+  100% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes materialsHeader-gradientPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scaleX(1.05);
+  }
+}

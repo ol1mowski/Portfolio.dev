@@ -4,7 +4,7 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  min-height: 100vh;
+  min-height: calc(100vh - 92px - 210px);
   background: linear-gradient(
     135deg,
     rgba(0, 122, 204, 0.03) 0%,
@@ -38,9 +38,12 @@
   @media (min-width: 1200px) {
     padding: 0 3rem;
   }
+
+  @media screen and (max-width: $tablet) {
+    min-height: calc(100vh - 80px - 210px);
+  }
 }
 
-// Hero Section
 .heroSection {
   padding: 1rem 0 1rem;
   text-align: center;
@@ -167,7 +170,6 @@
   @include textFont();
 }
 
-// Controls Section - New Layout
 .controlsSection {
   margin-bottom: 3rem;
   @include d-flex-column;
@@ -352,7 +354,6 @@
   }
 }
 
-// Materials Grid
 .materialsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -368,7 +369,6 @@
   }
 }
 
-// No Results
 .noResults {
   @include d-flex-column;
   gap: 2rem;
@@ -403,7 +403,6 @@
   }
 }
 
-// Loading
 .cardLoading {
   @include d-flex;
   padding: 2rem;

@@ -1,0 +1,112 @@
+@import '@/style/index.scss';
+
+.materialsControls {
+  margin-bottom: 3rem;
+  @include d-flex-column;
+  gap: 1.5rem;
+
+  &__searchWrapper {
+    width: 100%;
+    @include d-flex;
+    margin-bottom: 1rem;
+  }
+
+  &__filtersWrapper {
+    @include d-flex-column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 1.5rem;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 122, 204, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 122, 204, 0.08);
+
+    @media (min-width: 968px) {
+      @include d-flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__filtersSection {
+    @include d-flex;
+    flex: 1;
+
+    @media (max-width: 967px) {
+      width: 100%;
+    }
+  }
+
+  &__optionsSection {
+    @include d-flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media (max-width: 967px) {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+    }
+  }
+
+  &__sortControls {
+    @include d-flex;
+    gap: 0.75rem;
+    align-items: center;
+    white-space: nowrap;
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+  }
+
+  &__sortLabel {
+    font-weight: 700;
+    background: linear-gradient(135deg, $dark-blue, $light-blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+    font-size: 0.95rem;
+  }
+
+  &__sortSelect {
+    padding: 0.6rem 1rem;
+    border: 2px solid rgba(0, 122, 204, 0.2);
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8));
+    color: $dark;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 122, 204, 0.1);
+    font-size: 0.9rem;
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $dark-blue;
+      box-shadow:
+        0 0 0 4px rgba(0, 122, 204, 0.15),
+        0 8px 25px rgba(0, 122, 204, 0.2);
+      transform: translateY(-2px);
+    }
+
+    &:hover {
+      border-color: $dark-blue;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(0, 122, 204, 0.15);
+    }
+  }
+}
