@@ -42,7 +42,7 @@
 
 // Hero Section
 .heroSection {
-  padding: 4rem 0 6rem;
+  padding: 1rem 0 1rem;
   text-align: center;
   background: linear-gradient(
     135deg,
@@ -86,7 +86,6 @@
   }
 
   @media (min-width: 768px) {
-    padding: 6rem 0 8rem;
     border-radius: 3rem;
   }
 }
@@ -280,7 +279,6 @@
   }
 }
 
-// Results Section
 .resultsSection {
   margin-bottom: 4rem;
 }

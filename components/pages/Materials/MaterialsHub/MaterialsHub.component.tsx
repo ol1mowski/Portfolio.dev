@@ -9,7 +9,6 @@ import Header from '@/components/pages/Header/Header.component';
 import Footer from '@/components/pages/Footer/Footer.page';
 import SearchBar from '../SearchBar/SearchBar.component';
 import FilterPanel from '../FilterPanel/FilterPanel.component';
-import MaterialStats from '../MaterialStats/MaterialStats.component';
 
 import { MaterialType, SearchFilters } from '@/types/Materials.types';
 import { MATERIALS } from '@/data/Materials.data';
@@ -122,7 +121,6 @@ const MaterialsHub = memo(({ initialMaterials = MATERIALS }: MaterialsHubProps) 
               Odkryj najlepsze materiały edukacyjne - e-booki, notatki i zasoby dodatkowe. Wszystko
               w jednym miejscu, z zaawansowanym filtrowaniem.
             </p>
-            <MaterialStats materials={initialMaterials} />
           </div>
         </section>
 

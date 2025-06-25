@@ -33,13 +33,11 @@
     }
   }
 
-  // Mobile
   @media (max-width: $mobile) {
     border-radius: $border-med;
     margin: 0 $small-margin;
   }
 
-  // Tablet
   @media (min-width: #{$mobile + 1px}) and (max-width: $tablet) {
     border-radius: $border-med;
   }
@@ -208,7 +206,6 @@
   }
 }
 
-// Title
 .title {
   @include title($white);
   margin-bottom: $small-margin;
@@ -253,13 +250,12 @@
   }
 }
 
-// Description
 .description {
   @include description();
   color: $white;
   margin-bottom: $standard-margin;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 
@@ -270,7 +266,6 @@
   }
 }
 
-// Tags
 .tags {
   @include d-flex;
   flex-wrap: wrap;
@@ -304,7 +299,6 @@
   }
 }
 
-// Footer
 .footer {
   @include d-flex;
   justify-content: space-between;
@@ -318,7 +312,6 @@
   }
 }
 
-// Additional info
 .additionalInfo {
   @include d-flex-column;
   gap: 4px;
@@ -350,7 +343,6 @@
   width: fit-content;
 }
 
-// Button wrapper - using local class to target buttons
 .buttonWrapper {
   button {
     transition: all $transition-time cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -362,7 +354,6 @@
   }
 }
 
-// Loading animation
 @keyframes shimmer {
   0% {
     background-position: -200px 0;
@@ -398,13 +389,11 @@
   }
 }
 
-// Accessibility improvements
 .materialCard:focus-within {
   outline: 2px solid $dark-blue;
   outline-offset: 4px;
 }
 
-// Dark mode support - now using white as primary
 @media (prefers-color-scheme: dark) {
   .materialCard {
     background: $white;
@@ -425,7 +414,6 @@
   }
 }
 
-// Print styles
 @media print {
   .materialCard {
     break-inside: avoid;

@@ -13,26 +13,39 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const benefits = [
+  const leftSideBenefits = [
     {
       icon: '📚',
-      title: 'Dostęp do wszystkich materiałów',
-      description: 'Pobieraj e-booki, notatki i zasoby bez ograniczeń',
+      title: 'Biblioteka wiedzy',
+      description: 'Dostęp do 50+ e-booków, notatek i praktycznych przewodników',
     },
     {
       icon: '🚀',
       title: 'Ekskluzywne treści',
-      description: 'Otrzymuj najnowsze materiały jako pierwszy',
+      description: 'Pierwsze spojrzenie na nowe materiały i beta wersje',
     },
     {
+      icon: '💎',
+      title: 'Premium zasoby',
+      description: 'Szablony, checklist i gotowe rozwiązania do projektów',
+    },
+  ];
+
+  const rightSideBenefits = [
+    {
       icon: '💡',
-      title: 'Praktyczne porady',
-      description: 'Cotygodniowe wskazówki i najlepsze praktyki',
+      title: 'Cotygodniowe wskazówki',
+      description: 'Najlepsze praktyki programowania prosto na email',
     },
     {
       icon: '🎯',
-      title: 'Spersonalizowane rekomendacje',
-      description: 'Materiały dostosowane do Twojego poziomu',
+      title: 'Spersonalizowane ścieżki',
+      description: 'Materiały dostosowane do Twojego poziomu zaawansowania',
+    },
+    {
+      icon: '🔥',
+      title: 'Aktualne trendy',
+      description: 'Najnowsze technologie, narzędzia i trendy w branży IT',
     },
   ];
 
@@ -72,19 +85,26 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
           </p>
         </div>
 
-        <div className={s.benefitsSection}>
-          <h2 className={s.benefitsTitle}>Co otrzymasz?</h2>
-          <div className={s.benefitsGrid}>
-            {benefits.map((benefit, index) => (
-              <div key={index} className={s.benefitCard}>
-                <div className={s.benefitIcon}>{benefit.icon}</div>
-                <div className={s.benefitContent}>
-                  <h3 className={s.benefitTitle}>{benefit.title}</h3>
-                  <p className={s.benefitDescription}>{benefit.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Left Side Benefits */}
+        <div className={s.leftBenefits}>
+          {leftSideBenefits.map((benefit, index) => (
+            <div key={index} className={s.sideBenefitCard}>
+              <div className={s.sideBenefitIcon}>{benefit.icon}</div>
+              <h3 className={s.sideBenefitTitle}>{benefit.title}</h3>
+              <p className={s.sideBenefitDescription}>{benefit.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Right Side Benefits */}
+        <div className={s.rightBenefits}>
+          {rightSideBenefits.map((benefit, index) => (
+            <div key={index} className={s.sideBenefitCard}>
+              <div className={s.sideBenefitIcon}>{benefit.icon}</div>
+              <h3 className={s.sideBenefitTitle}>{benefit.title}</h3>
+              <p className={s.sideBenefitDescription}>{benefit.description}</p>
+            </div>
+          ))}
         </div>
 
         <form onSubmit={handleSubmit} className={s.emailForm}>
@@ -120,24 +140,12 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
               {isSubmitting ? 'Odblokowuję...' : 'Odblokuj dostęp'}
             </button>
           </div>
-        </form>
 
-        <div className={s.socialProof}>
-          <div className={s.statsRow}>
-            <div className={s.stat}>
-              <span className={s.statNumber}>2.5K+</span>
-              <span className={s.statLabel}>Aktywnych użytkowników</span>
-            </div>
-            <div className={s.stat}>
-              <span className={s.statNumber}>15+</span>
-              <span className={s.statLabel}>Materiałów premium</span>
-            </div>
-            <div className={s.stat}>
-              <span className={s.statNumber}>4.9/5</span>
-              <span className={s.statLabel}>Średnia ocena</span>
-            </div>
+          <div className={s.formFooter}>
+            <p className={s.privacy}>🔒 Twoje dane są bezpieczne. Nie wysyłamy spamu.</p>
+            <p className={s.guarantee}>✅ 100% bezpłatne.</p>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
