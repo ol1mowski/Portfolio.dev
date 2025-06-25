@@ -10,18 +10,15 @@ import MaterialsHeader from '../MaterialsHeader/MaterialsHeader.component';
 import MaterialsControls from '../MaterialsControls/MaterialsControls.component';
 import MaterialsGrid from '../MaterialsGrid/MaterialsGrid.component';
 
-import { MaterialType } from '@/types/Materials.types';
-import { MATERIALS } from '@/data/Materials.data';
-
 import { useMaterialsSearch } from './hooks/useMaterialsSearch.hook';
-import { useMaterialsFiltering } from '../MaterialsControls/hooks/useMaterialsFiltering.hook';
 import { useMaterialsSorting } from '../MaterialsControls/hooks/useMaterialsSorting.hook';
+import { useMaterialsFetching } from './hooks/useMaterialsFetching.hook';
 
 interface MaterialsHubProps {
-  initialMaterials?: MaterialType[];
+  initialMaterials?: any[];
 }
 
-const MaterialsHub = memo(({ initialMaterials = MATERIALS }: MaterialsHubProps) => {
+const MaterialsHub = memo(({ initialMaterials = [] }: MaterialsHubProps) => {
   const { searchTerm, selectedFilters, handleSearchChange, handleFilterChange, clearAllFilters } =
     useMaterialsSearch();
 
@@ -29,15 +26,33 @@ const MaterialsHub = memo(({ initialMaterials = MATERIALS }: MaterialsHubProps) 
     materials: initialMaterials,
   });
 
-  const { filteredMaterials, hasActiveFilters } = useMaterialsFiltering({
-    materials: initialMaterials,
-    selectedFilters,
+  const { materials, loading, error, pagination, refetch, loadMore } = useMaterialsFetching({
     searchTerm,
+    selectedFilters,
   });
 
   const { sortedMaterials } = useMaterialsSorting({
-    materials: filteredMaterials,
+    materials: materials,
   });
+
+  if (error) {
+    return (
+      <>
+        <Header />
+        <main className={s.container} aria-label="Centrum materiałów edukacyjnych">
+          <MaterialsHeader />
+          <div className={s.errorContainer}>
+            <h2>Błąd podczas ładowania materiałów</h2>
+            <p>{error}</p>
+            <button onClick={refetch} className={s.retryButton}>
+              Spróbuj ponownie
+            </button>
+          </div>
+        </main>
+        <Footer />
+      </>
+    );
+  }
 
   return (
     <>
@@ -57,9 +72,12 @@ const MaterialsHub = memo(({ initialMaterials = MATERIALS }: MaterialsHubProps) 
 
         <MaterialsGrid
           materials={sortedMaterials}
-          resultsCount={filteredMaterials.length}
-          hasActiveFilters={hasActiveFilters}
+          resultsCount={materials.length}
+          hasActiveFilters={Object.values(selectedFilters).some(filters => filters.length > 0)}
           onClearFilters={clearAllFilters}
+          loading={loading}
+          onLoadMore={loadMore}
+          hasMore={pagination.page < pagination.pages}
         />
       </main>
       <Footer />

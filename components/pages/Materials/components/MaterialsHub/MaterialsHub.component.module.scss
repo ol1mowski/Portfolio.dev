@@ -427,3 +427,43 @@
     transform: scale(1.02);
   }
 }
+
+// Error Container
+.errorContainer {
+  @include d-flex-column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  gap: 2rem;
+  min-height: 400px;
+
+  h2 {
+    font-size: 2rem;
+    color: $dark;
+    margin: 0;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: $dark-grey;
+    max-width: 500px;
+    line-height: 1.6;
+  }
+}
+
+.retryButton {
+  @include btn($dark-blue, $white);
+  background: linear-gradient(135deg, $dark-blue, $light-blue);
+  color: $white;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  transition: all $transition-time ease;
+  box-shadow: 0 4px 15px rgba(0, 122, 204, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 122, 204, 0.4);
+  }
+}

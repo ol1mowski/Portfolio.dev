@@ -180,11 +180,6 @@
     color: $white;
   }
 
-  &.material {
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-    color: $white;
-  }
-
   @media (max-width: $mobile) {
     padding: 3px 8px;
     font-size: 10px;

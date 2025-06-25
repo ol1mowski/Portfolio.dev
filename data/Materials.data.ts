@@ -56,24 +56,6 @@ export const MATERIALS: MaterialType[] = [
     isPremium: true,
   },
   {
-    id: 4,
-    title: 'CSS Grid i Flexbox - Kompletny Przewodnik',
-    image:
-      'https://res.cloudinary.com/dbbuav0rj/image/upload/v1731069228/Portfolio/images/bezplatny_ebook_z6eetq.webp',
-    slug: 'css-grid-flexbox-przewodnik',
-    type: 'material',
-    category: 'Frontend',
-    categoryType: 'techniczne',
-    tags: ['CSS', 'Grid', 'Flexbox', 'Layout'],
-    description:
-      'Wszystko co musisz wiedzieć o CSS Grid i Flexbox. Praktyczne przykłady, porównania i najlepsze przypadki użycia.',
-    downloadCount: 1156,
-    size: '4.2 MB',
-    format: 'PDF',
-    publishDate: '2024-02-10',
-    isPremium: false,
-  },
-  {
     id: 5,
     title: 'Node.js i Express - Backend Development',
     image:
@@ -107,24 +89,6 @@ export const MATERIALS: MaterialType[] = [
     size: '2.8 MB',
     format: 'PDF',
     publishDate: '2024-02-05',
-    isPremium: false,
-  },
-  {
-    id: 7,
-    title: 'Responsive Web Design - Nowoczesne Podejście',
-    image:
-      'https://res.cloudinary.com/dbbuav0rj/image/upload/v1733310585/Portfolio/images/notatka_jyerzd.svg',
-    slug: 'responsive-web-design-nowoczesne',
-    type: 'material',
-    category: 'Design',
-    categoryType: 'rozwojowe',
-    tags: ['RWD', 'Mobile First', 'CSS', 'Media Queries'],
-    description:
-      'Nowoczesne techniki tworzenia responsywnych stron internetowych. Mobile-first approach, breakpoints i optymalizacja.',
-    downloadCount: 578,
-    size: '3.5 MB',
-    format: 'PDF',
-    publishDate: '2024-02-12',
     isPremium: false,
   },
   {
@@ -163,24 +127,6 @@ export const MATERIALS: MaterialType[] = [
     publishDate: '2024-02-08',
     isPremium: false,
   },
-  {
-    id: 10,
-    title: 'Next.js - Full-Stack React Framework',
-    image:
-      'https://res.cloudinary.com/dbbuav0rj/image/upload/v1731069228/Portfolio/images/bezplatny_ebook_z6eetq.webp',
-    slug: 'nextjs-fullstack-framework',
-    type: 'material',
-    category: 'Full-Stack',
-    categoryType: 'techniczne',
-    tags: ['Next.js', 'React', 'SSR', 'Full-Stack'],
-    description:
-      'Kompletny przewodnik po Next.js - od podstaw po zaawansowane techniki. SSR, SSG, API Routes i optymalizacja wydajności.',
-    downloadCount: 823,
-    size: '7.2 MB',
-    format: 'PDF',
-    publishDate: '2024-02-15',
-    isPremium: true,
-  },
 ];
 
 export const CATEGORIES = [
@@ -194,4 +140,4 @@ export const CATEGORIES = [
 
 export const CATEGORY_TYPES = ['techniczne', 'rozwojowe'];
 
-export const MATERIAL_TYPES = ['note', 'ebook', 'material'];
+export const MATERIAL_TYPES = ['note', 'ebook'];

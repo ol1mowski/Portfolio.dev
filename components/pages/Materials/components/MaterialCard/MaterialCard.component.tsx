@@ -31,7 +31,6 @@ const MaterialCard = memo(({ material }: MaterialCardProps) => {
   const typeLabels = {
     ebook: 'E-book',
     note: 'Notatka',
-    material: 'Materiał',
   };
 
   const categoryTypeLabels = {
@@ -39,9 +38,8 @@ const MaterialCard = memo(({ material }: MaterialCardProps) => {
     rozwojowe: 'Rozwojowe',
   };
 
-  const basePath = type === 'ebook' ? '/Ebooki' : type === 'note' ? '/Notatki' : '/materialy';
-  const downloadText =
-    type === 'ebook' ? 'Pobierz E-book' : type === 'note' ? 'Pobierz Notatkę' : 'Pobierz Materiał';
+  const basePath = type === 'ebook' ? '/Ebooki' : '/Notatki';
+  const downloadText = type === 'ebook' ? 'Pobierz E-book' : 'Pobierz Notatkę';
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('pl-PL', {
@@ -114,7 +112,7 @@ const MaterialCard = memo(({ material }: MaterialCardProps) => {
           </div>
           <div className={s.buttonWrapper}>
             <Link href={`${basePath}/${slug}`}>
-              <Button type="normal" value={type === 'note' ? 'Pobierz Notatkę' : downloadText} />
+              <Button type="normal" value={downloadText} />
             </Link>
           </div>
         </div>

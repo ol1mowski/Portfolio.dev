@@ -8,7 +8,7 @@ export { default as SearchBar } from './components/SearchBar/SearchBar.component
 export { default as FilterPanel } from './components/FilterPanel/FilterPanel.component';
 export { default as EmailGateForm } from './components/EmailGateForm/EmailGateForm.component';
 
-export { useMaterialsSearch } from './components/MaterialsHub/hooks';
+export { useMaterialsSearch, useMaterialsFetching } from './components/MaterialsHub/hooks';
 export {
   useMaterialsFiltering,
   useMaterialsSorting,

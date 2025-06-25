@@ -13,14 +13,27 @@ interface MaterialsGridProps {
   resultsCount: number;
   hasActiveFilters: boolean;
   onClearFilters: () => void;
+  loading?: boolean;
+  onLoadMore?: () => void;
+  hasMore?: boolean;
 }
 
 const MaterialsGrid = memo(
-  ({ materials, resultsCount, hasActiveFilters, onClearFilters }: MaterialsGridProps) => {
+  ({
+    materials,
+    resultsCount,
+    hasActiveFilters,
+    onClearFilters,
+    loading = false,
+    onLoadMore,
+    hasMore = false,
+  }: MaterialsGridProps) => {
     return (
       <section className={s.materialsGrid}>
         <div className={s.materialsGrid__header}>
-          <h2 className={s.materialsGrid__title}>Znaleziono {resultsCount} materiałów</h2>
+          <h2 className={s.materialsGrid__title}>
+            {loading ? 'Ładowanie...' : `Znaleziono ${resultsCount} materiałów`}
+          </h2>
           {hasActiveFilters && (
             <button onClick={onClearFilters} className={s.materialsGrid__clearBtn}>
               <span>Wyczyść filtry</span>
@@ -28,12 +41,31 @@ const MaterialsGrid = memo(
           )}
         </div>
 
-        {materials.length > 0 ? (
-          <div className={s.materialsGrid__items}>
-            {materials.map(material => (
-              <DynamicMaterialCard key={material.id} material={material} />
-            ))}
+        {loading && materials.length === 0 ? (
+          <div className={s.materialsGrid__loading}>
+            <div className={s.materialsGrid__loadingSpinner}></div>
+            <p>Ładowanie materiałów...</p>
           </div>
+        ) : materials.length > 0 ? (
+          <>
+            <div className={s.materialsGrid__items}>
+              {materials.map(material => (
+                <DynamicMaterialCard key={material.id} material={material} />
+              ))}
+            </div>
+
+            {hasMore && onLoadMore && (
+              <div className={s.materialsGrid__loadMore}>
+                <button
+                  onClick={onLoadMore}
+                  className={s.materialsGrid__loadMoreBtn}
+                  disabled={loading}
+                >
+                  {loading ? 'Ładowanie...' : 'Załaduj więcej'}
+                </button>
+              </div>
+            )}
+          </>
         ) : (
           <div className={s.materialsGrid__noResults}>
             <div className={s.materialsGrid__noResultsIcon}>🔍</div>

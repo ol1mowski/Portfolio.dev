@@ -3,7 +3,7 @@ export interface MaterialType {
   title: string;
   image: string;
   slug: string;
-  type: 'ebook' | 'note' | 'material';
+  type: 'ebook' | 'note';
   category: string;
   categoryType: 'techniczne' | 'rozwojowe';
   tags: string[];
