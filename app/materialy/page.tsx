@@ -1,21 +1,8 @@
-'use client';
+import { validateSession } from '@/lib/auth';
+import MaterialsPageClient from './MaterialsPageClient';
 
-import { useState } from 'react';
-import MaterialsHub from '@/components/pages/Materials/components/MaterialsHub/MaterialsHub.component';
-import EmailGateForm from '@/components/pages/Materials/components/EmailGateForm/EmailGateForm.component';
-import { MATERIALS } from '@/data/Materials.data';
+export default async function MaterialsPage() {
+  const { session } = await validateSession();
 
-export default function MaterialsPage() {
-  const [hasEmailAccess, setHasEmailAccess] = useState(false);
-
-  const handleEmailSubmit = (email: string) => {
-    console.log('Email submitted:', email);
-    setHasEmailAccess(true);
-  };
-
-  if (!hasEmailAccess) {
-    return <EmailGateForm onEmailSubmit={handleEmailSubmit} />;
-  }
-
-  return <MaterialsHub initialMaterials={MATERIALS} />;
+  return <MaterialsPageClient hasSession={!!session} />;
 }

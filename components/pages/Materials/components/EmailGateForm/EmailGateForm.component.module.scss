@@ -480,6 +480,56 @@
   }
 }
 
+.nameInput {
+  width: 100%;
+  padding: $standard-padding $standard-padding $standard-padding 3.5rem;
+  border: 2px solid rgba(0, 122, 204, 0.2);
+  border-radius: $border-med;
+  font-size: 1rem;
+  @include textFont();
+  transition: all $transition-time ease;
+  background: $white;
+
+  &:focus {
+    outline: none;
+    border-color: $dark-blue;
+    box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.1);
+  }
+
+  &::placeholder {
+    color: $grey;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.formError {
+  background: rgba(255, 61, 0, 0.1);
+  border: 1px solid rgba(255, 61, 0, 0.3);
+  border-radius: $border-med;
+  padding: $standard-padding;
+  color: $red;
+  font-size: 0.9rem;
+  @include textFont();
+  text-align: center;
+  margin-bottom: $standard-margin;
+}
+
+.formSuccess {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: $border-med;
+  padding: $standard-padding;
+  color: #10b981;
+  font-size: 0.9rem;
+  @include textFont();
+  text-align: center;
+  margin-bottom: $standard-margin;
+}
+
 .submitButton {
   @include btn($dark-blue, $white);
   white-space: nowrap;

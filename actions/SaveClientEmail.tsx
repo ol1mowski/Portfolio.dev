@@ -1,3 +1,5 @@
+'use server';
+
 import { saveClientToDB } from '@/db/Utils/DataFetchingFunctions/DataFetchingFunctions';
 import { createAuthSession } from '@/lib/auth';
 import { validateEmail } from '@/utils/validation';
@@ -8,8 +10,6 @@ interface SaveClientDataResponse {
 }
 
 export async function saveClientData(formData: FormData): Promise<SaveClientDataResponse> {
-  'use server';
-
   try {
     const email = formData.get('email')?.toString().trim();
     const name = formData.get('name')?.toString().trim();

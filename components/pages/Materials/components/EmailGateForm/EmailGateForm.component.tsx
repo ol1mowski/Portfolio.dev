@@ -4,6 +4,7 @@ import s from './EmailGateForm.component.module.scss';
 
 import { memo, useState } from 'react';
 import Button from '@/components/UI/Button/Button.component';
+import { saveClientData } from '@/actions/SaveClientEmail';
 
 interface EmailGateFormProps {
   onEmailSubmit: (email: string) => void;
@@ -11,7 +12,10 @@ interface EmailGateFormProps {
 
 const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
 
   const leftSideBenefits = [
     {
@@ -52,17 +56,34 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!email || !email.includes('@')) {
+    if (!email || !email.includes('@') || !name.trim()) {
+      setError('Proszę wypełnić wszystkie pola');
       return;
     }
 
     setIsSubmitting(true);
+    setError(null);
+    setSuccess(null);
 
-    // Symulacja wysyłania
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const formData = new FormData();
+      formData.append('email', email);
+      formData.append('name', name);
 
-    onEmailSubmit(email);
-    setIsSubmitting(false);
+      const result = await saveClientData(formData);
+
+      if (result.success) {
+        setSuccess('Dostęp odblokowany! Przekierowuję...');
+        onEmailSubmit(email);
+      } else {
+        setError(result.error || 'Wystąpił błąd podczas zapisywania');
+      }
+    } catch (err) {
+      setError('Wystąpił błąd podczas zapisywania');
+      console.error('Error saving email:', err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -113,7 +134,29 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
             <p className={s.formSubtitle}>Bezpłatny dostęp na zawsze</p>
           </div>
 
+          {error && <div className={s.formError}>{error}</div>}
+          {success && <div className={s.formSuccess}>{success}</div>}
+
           <div className={s.inputWrapper}>
+            <div className={s.inputGroup}>
+              <label htmlFor="name-input" className={s.inputLabel}>
+                Twoje imię
+              </label>
+              <div className={s.inputContainer}>
+                <span className={s.inputIcon}>👤</span>
+                <input
+                  id="name-input"
+                  type="text"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                  placeholder="np. Jan Kowalski"
+                  className={s.nameInput}
+                  required
+                  disabled={isSubmitting}
+                />
+              </div>
+            </div>
+
             <div className={s.inputGroup}>
               <label htmlFor="email-input" className={s.inputLabel}>
                 Podaj swój adres email
@@ -132,10 +175,11 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
                 />
               </div>
             </div>
+
             <button
               type="submit"
               className={s.submitButton}
-              disabled={isSubmitting || !email.includes('@')}
+              disabled={isSubmitting || !email.includes('@') || !name.trim()}
             >
               {isSubmitting ? 'Odblokowuję...' : 'Odblokuj dostęp'}
             </button>
