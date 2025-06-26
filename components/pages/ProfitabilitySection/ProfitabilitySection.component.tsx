@@ -65,6 +65,7 @@ const ProfitabilitySection: React.FC = () => {
   return (
     <motion.section
       ref={sectionRef}
+      id="profitability"
       className={styles.profitabilitySection}
       initial="hidden"
       whileInView="visible"

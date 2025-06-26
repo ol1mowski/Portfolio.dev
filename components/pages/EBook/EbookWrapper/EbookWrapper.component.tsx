@@ -3,7 +3,11 @@ import s from './EbookWrapper.component.module.scss';
 import { WrapperProps } from '../types/ebook.types';
 
 export const EbookWrapper: FC<WrapperProps> = ({ children }) => {
-  return <section className={s.container}>{children}</section>;
+  return (
+    <section id="ebook" className={s.container}>
+      {children}
+    </section>
+  );
 };
 
 export default EbookWrapper;

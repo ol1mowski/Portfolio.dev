@@ -8,7 +8,7 @@ import FooterWrapper from './FooterWrapper/FooterWrapper.component';
 const Footer = () => {
   return (
     <>
-      <footer className={s.footerContainer}>
+      <footer id="footer" className={s.footerContainer}>
         <FooterWrapper>
           <FooterPrivacy />
           <FooterCopyright />

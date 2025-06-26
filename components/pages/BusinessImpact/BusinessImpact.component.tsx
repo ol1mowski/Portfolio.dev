@@ -24,6 +24,7 @@ const BusinessImpact: React.FC = () => {
 
   return (
     <motion.section
+      id="business-impact"
       className={styles.businessImpact}
       initial="hidden"
       whileInView="visible"

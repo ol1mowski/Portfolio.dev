@@ -11,7 +11,7 @@ const CollaborationCta = dynamic(() => import('./CollaborationCta/CollaborationC
 
 const Collaboration = () => {
   return (
-    <section className={s.container} aria-label="Etapy współpracy">
+    <section id="collaboration" className={s.container} aria-label="Etapy współpracy">
       <CollaborationHeader />
       <section
         className={s.container__stepWrapper}

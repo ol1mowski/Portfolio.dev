@@ -41,7 +41,7 @@ StatItem.displayName = 'StatItem';
 
 const Stats = memo(() => {
   return (
-    <section className={s.container} aria-label="Statystyki i osiągnięcia">
+    <section id="stats" className={s.container} aria-label="Statystyki i osiągnięcia">
       {STATS_DATA.map(stat => (
         <StatItem key={stat.id} {...stat} />
       ))}

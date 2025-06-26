@@ -1,4 +1,7 @@
+'use client';
+
 import HomePage from '@/components/pages/HomePage/HomePage.page';
+import { useAnchorScroll } from '@/hooks/useAnchorScroll';
 
 import SubscribersAmount from '@/components/pages/Stats/Stats.page';
 import Contact from '@/components/pages/Contact/Contact.page';
@@ -14,6 +17,8 @@ import { BusinessImpact } from '@/components/pages/BusinessImpact';
 import ProfitabilitySection from '@/components/pages/ProfitabilitySection/ProfitabilitySection.component';
 
 export default function Home() {
+  useAnchorScroll();
+
   return (
     <>
       <Header />
