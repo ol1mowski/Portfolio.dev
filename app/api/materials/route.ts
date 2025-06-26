@@ -40,13 +40,26 @@ export async function GET(request: NextRequest) {
     }
 
     if (search) {
-      filter.$text = { $search: search };
+      filter.$or = [
+        { title: { $regex: search, $options: 'i' } },
+        { description: { $regex: search, $options: 'i' } },
+        { tags: { $in: [new RegExp(search, 'i')] } },
+        { category: { $regex: search, $options: 'i' } },
+      ];
     }
 
     const skip = (page - 1) * limit;
 
+    let sortOptions: any = { publishDate: -1 };
+
+    if (search) {
+      sortOptions = {
+        publishDate: -1,
+      };
+    }
+
     const materials = await Materials.find(filter)
-      .sort({ publishDate: -1 })
+      .sort(sortOptions)
       .skip(skip)
       .limit(limit)
       .lean()
@@ -65,8 +78,14 @@ export async function GET(request: NextRequest) {
       },
     });
   } catch (error) {
-    console.error('Error fetching materials:', error);
-    return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 });
+    return NextResponse.json(
+      {
+        success: false,
+        error: 'Internal server error',
+        details: error instanceof Error ? error.message : 'Unknown error',
+      },
+      { status: 500 }
+    );
   }
 }
 
@@ -115,7 +134,6 @@ export async function POST(request: NextRequest) {
       { status: 201 }
     );
   } catch (error) {
-    console.error('Error creating material:', error);
     return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 });
   }
 }

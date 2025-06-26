@@ -10,6 +10,7 @@ interface MaterialsControlsProps {
   searchTerm: string;
   selectedFilters: FilterOptions;
   sortBy: SortOption;
+  loading?: boolean;
   onSearchChange: (term: string) => void;
   onFilterChange: (filters: FilterOptions) => void;
   onSortChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
@@ -21,6 +22,7 @@ const MaterialsControls = memo(
     searchTerm,
     selectedFilters,
     sortBy,
+    loading = false,
     onSearchChange,
     onFilterChange,
     onSortChange,
@@ -33,6 +35,7 @@ const MaterialsControls = memo(
             value={searchTerm}
             onChange={onSearchChange}
             placeholder="Szukaj materiałów, kategorii, tagów..."
+            loading={loading}
           />
         </div>
 
@@ -64,6 +67,14 @@ const MaterialsControls = memo(
           </div>
         </div>
       </section>
+    );
+  },
+  (prevProps, nextProps) => {
+    return (
+      prevProps.searchTerm === nextProps.searchTerm &&
+      prevProps.loading === nextProps.loading &&
+      prevProps.sortBy === nextProps.sortBy &&
+      JSON.stringify(prevProps.selectedFilters) === JSON.stringify(nextProps.selectedFilters)
     );
   }
 );

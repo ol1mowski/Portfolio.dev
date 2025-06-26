@@ -2,7 +2,7 @@
 
 import s from './MaterialsHub.component.module.scss';
 
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 
 import Header from '@/components/pages/Header/Header.component';
 import Footer from '@/components/pages/Footer/Footer.page';
@@ -19,21 +19,32 @@ interface MaterialsHubProps {
 }
 
 const MaterialsHub = memo(({ initialMaterials = [] }: MaterialsHubProps) => {
-  const { searchTerm, selectedFilters, handleSearchChange, handleFilterChange, clearAllFilters } =
-    useMaterialsSearch();
+  const {
+    searchTerm,
+    debouncedSearchTerm,
+    selectedFilters,
+    handleSearchChange,
+    handleFilterChange,
+    clearAllFilters,
+  } = useMaterialsSearch();
 
   const { sortBy, handleSortChange } = useMaterialsSorting({
     materials: initialMaterials,
   });
 
   const { materials, loading, error, pagination, refetch, loadMore } = useMaterialsFetching({
-    searchTerm,
+    searchTerm: debouncedSearchTerm,
     selectedFilters,
   });
 
   const { sortedMaterials } = useMaterialsSorting({
     materials: materials,
   });
+
+  const handleSearchChangeStable = useCallback(handleSearchChange, [handleSearchChange]);
+  const handleFilterChangeStable = useCallback(handleFilterChange, [handleFilterChange]);
+  const handleSortChangeStable = useCallback(handleSortChange, [handleSortChange]);
+  const clearAllFiltersStable = useCallback(clearAllFilters, [clearAllFilters]);
 
   if (error) {
     return (
@@ -64,17 +75,18 @@ const MaterialsHub = memo(({ initialMaterials = [] }: MaterialsHubProps) => {
           searchTerm={searchTerm}
           selectedFilters={selectedFilters}
           sortBy={sortBy}
-          onSearchChange={handleSearchChange}
-          onFilterChange={handleFilterChange}
-          onSortChange={handleSortChange}
-          onClearFilters={clearAllFilters}
+          loading={loading}
+          onSearchChange={handleSearchChangeStable}
+          onFilterChange={handleFilterChangeStable}
+          onSortChange={handleSortChangeStable}
+          onClearFilters={clearAllFiltersStable}
         />
 
         <MaterialsGrid
           materials={sortedMaterials}
           resultsCount={materials.length}
           hasActiveFilters={Object.values(selectedFilters).some(filters => filters.length > 0)}
-          onClearFilters={clearAllFilters}
+          onClearFilters={clearAllFiltersStable}
           loading={loading}
           onLoadMore={loadMore}
           hasMore={pagination.page < pagination.pages}

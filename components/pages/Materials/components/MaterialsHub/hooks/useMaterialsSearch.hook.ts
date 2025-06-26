@@ -1,8 +1,9 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { FilterOptions } from '@/types/Materials.types';
 
 interface UseMaterialsSearchReturn {
   searchTerm: string;
+  debouncedSearchTerm: string;
   selectedFilters: FilterOptions;
   setSearchTerm: (term: string) => void;
   setSelectedFilters: (filters: FilterOptions) => void;
@@ -20,7 +21,16 @@ const initialFilters: FilterOptions = {
 
 export const useMaterialsSearch = (): UseMaterialsSearchReturn => {
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>('');
   const [selectedFilters, setSelectedFilters] = useState<FilterOptions>(initialFilters);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearchTerm(searchTerm);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [searchTerm]);
 
   const handleSearchChange = useCallback((term: string) => {
     setSearchTerm(term);
@@ -35,13 +45,26 @@ export const useMaterialsSearch = (): UseMaterialsSearchReturn => {
     setSelectedFilters(initialFilters);
   }, []);
 
-  return {
-    searchTerm,
-    selectedFilters,
-    setSearchTerm,
-    setSelectedFilters,
-    handleSearchChange,
-    handleFilterChange,
-    clearAllFilters,
-  };
+  const result = useMemo(
+    () => ({
+      searchTerm,
+      debouncedSearchTerm,
+      selectedFilters,
+      setSearchTerm,
+      setSelectedFilters,
+      handleSearchChange,
+      handleFilterChange,
+      clearAllFilters,
+    }),
+    [
+      searchTerm,
+      debouncedSearchTerm,
+      selectedFilters,
+      handleSearchChange,
+      handleFilterChange,
+      clearAllFilters,
+    ]
+  );
+
+  return result;
 };

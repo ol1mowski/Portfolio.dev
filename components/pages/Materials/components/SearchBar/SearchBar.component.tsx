@@ -1,58 +1,54 @@
 import s from './SearchBar.component.module.scss';
 
-import { memo, useRef, useEffect } from 'react';
+import { memo, useRef, useEffect, useState } from 'react';
 
 interface SearchBarProps {
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
+  loading?: boolean;
 }
 
-const SearchBar = memo(({ value, onChange, placeholder = 'Szukaj...' }: SearchBarProps) => {
-  const inputRef = useRef<HTMLInputElement>(null);
+const SearchBar = memo(
+  ({ value, onChange, placeholder = 'Szukaj...', loading = false }: SearchBarProps) => {
+    const inputRef = useRef<HTMLInputElement>(null);
+    const [isFocused, setIsFocused] = useState(false);
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-        e.preventDefault();
-        inputRef.current?.focus();
+    useEffect(() => {
+      if (isFocused && inputRef.current) {
+        inputRef.current.focus();
       }
+    }, [isFocused, loading]);
+
+    const handleFocus = () => {
+      setIsFocused(true);
     };
 
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, []);
+    const handleBlur = () => {
+      setIsFocused(false);
+    };
 
-  const handleClear = () => {
-    onChange('');
-    inputRef.current?.focus();
-  };
-
-  return (
-    <div className={s.searchBar}>
-      <div className={s.searchWrapper}>
-        <div className={s.searchIcon}>🔍</div>
-        <input
-          ref={inputRef}
-          type="text"
-          value={value}
-          onChange={e => onChange(e.target.value)}
-          placeholder={placeholder}
-          className={s.searchInput}
-          aria-label="Wyszukaj materiały"
-        />
-        {value && (
-          <button onClick={handleClear} className={s.clearButton} aria-label="Wyczyść wyszukiwanie">
-            <span>✕</span>
-          </button>
-        )}
-        <div className={s.shortcut}>
-          <kbd>Ctrl</kbd> + <kbd>K</kbd>
+    return (
+      <div className={s.searchBar}>
+        <div className={s.searchWrapper}>
+          <div className={s.searchIcon}>{loading ? '⏳' : '🔍'}</div>
+          <input
+            ref={inputRef}
+            type="text"
+            value={value}
+            onChange={e => onChange(e.target.value)}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            placeholder={placeholder}
+            className={s.searchInput}
+            aria-label="Wyszukaj materiały"
+            disabled={loading}
+          />
         </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
 
 SearchBar.displayName = 'SearchBar';
 

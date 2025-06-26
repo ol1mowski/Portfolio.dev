@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { MaterialType } from '@/types/Materials.types';
 
 interface UseMaterialsFetchingProps {
@@ -102,12 +102,17 @@ export const useMaterialsFetching = ({
     }
   };
 
-  return {
-    materials,
-    loading,
-    error,
-    pagination,
-    refetch: () => fetchMaterials(1),
-    loadMore,
-  };
+  const result = useMemo(
+    () => ({
+      materials,
+      loading,
+      error,
+      pagination,
+      refetch: () => fetchMaterials(1),
+      loadMore,
+    }),
+    [materials, loading, error, pagination, loadMore]
+  );
+
+  return result;
 };
