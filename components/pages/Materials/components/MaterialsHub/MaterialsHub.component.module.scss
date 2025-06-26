@@ -2,6 +2,7 @@
 
 .container {
   max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 1.5rem;
   min-height: calc(100vh - 92px - 210px);
@@ -12,6 +13,7 @@
     rgba(79, 195, 247, 0.02) 100%
   );
   position: relative;
+  box-sizing: border-box;
 
   &::before {
     content: '';
@@ -428,7 +430,6 @@
   }
 }
 
-// Error Container
 .errorContainer {
   @include d-flex-column;
   align-items: center;

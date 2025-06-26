@@ -2,6 +2,8 @@
 
 .materialsGrid {
   margin-bottom: 4rem;
+  width: 100%;
+  min-height: 400px;
 
   &__header {
     @include d-flex;
@@ -74,8 +76,14 @@
 
   &__items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    width: 100%;
+    min-height: 300px;
+
+    @media (max-width: 1023px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     @media (max-width: 767px) {
       grid-template-columns: 1fr;
@@ -94,10 +102,15 @@
     border-radius: 1rem;
     color: $dark-blue;
     font-weight: 600;
-    min-height: 200px;
+    min-height: 400px;
+    height: 100%;
     border: 2px dashed rgba(0, 122, 204, 0.3);
     backdrop-filter: blur(10px);
     animation: materialsGrid-loadingPulse 2s infinite ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   &__noResults {
@@ -147,7 +160,6 @@
   }
 }
 
-// Loading
 .materialsGrid__loading {
   @include d-flex-column;
   align-items: center;
@@ -173,7 +185,6 @@
   }
 }
 
-// Load More
 .materialsGrid__loadMore {
   @include d-flex;
   justify-content: center;
