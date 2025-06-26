@@ -109,7 +109,7 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
         {/* Left Side Benefits */}
         <div className={s.leftBenefits}>
           {leftSideBenefits.map((benefit, index) => (
-            <div key={index} className={s.sideBenefitCard}>
+            <div key={`left-benefit-${benefit.title}-${index}`} className={s.sideBenefitCard}>
               <div className={s.sideBenefitIcon}>{benefit.icon}</div>
               <h3 className={s.sideBenefitTitle}>{benefit.title}</h3>
               <p className={s.sideBenefitDescription}>{benefit.description}</p>
@@ -120,7 +120,7 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
         {/* Right Side Benefits */}
         <div className={s.rightBenefits}>
           {rightSideBenefits.map((benefit, index) => (
-            <div key={index} className={s.sideBenefitCard}>
+            <div key={`right-benefit-${benefit.title}-${index}`} className={s.sideBenefitCard}>
               <div className={s.sideBenefitIcon}>{benefit.icon}</div>
               <h3 className={s.sideBenefitTitle}>{benefit.title}</h3>
               <p className={s.sideBenefitDescription}>{benefit.description}</p>

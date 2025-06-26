@@ -2,7 +2,7 @@
 
 import s from './FilterPanel.component.module.scss';
 
-import { memo, useState } from 'react';
+import { memo, useState, useRef, useEffect } from 'react';
 import { FilterOptions } from '@/types/Materials.types';
 import { CATEGORIES, CATEGORY_TYPES, MATERIAL_TYPES } from '@/data/Materials.data';
 
@@ -14,6 +14,7 @@ interface FilterPanelProps {
 
 const FilterPanel = memo(({ selectedFilters, onFilterChange, onClearAll }: FilterPanelProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const filterPanelRef = useRef<HTMLDivElement>(null);
 
   const typeLabels = {
     ebook: 'E-booki',
@@ -25,6 +26,23 @@ const FilterPanel = memo(({ selectedFilters, onFilterChange, onClearAll }: Filte
     techniczne: 'Techniczne',
     rozwojowe: 'Rozwojowe',
   };
+
+  // Obsługa kliknięć poza komponentem
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (filterPanelRef.current && !filterPanelRef.current.contains(event.target as Node)) {
+        setIsExpanded(false);
+      }
+    };
+
+    if (isExpanded) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isExpanded]);
 
   const handleFilterToggle = (filterType: keyof FilterOptions, value: string) => {
     const currentFilters = selectedFilters[filterType];
@@ -45,7 +63,7 @@ const FilterPanel = memo(({ selectedFilters, onFilterChange, onClearAll }: Filte
   const activeCount = getActiveFiltersCount();
 
   return (
-    <div className={s.filterPanel}>
+    <div className={s.filterPanel} ref={filterPanelRef}>
       <button
         className={s.filterToggle}
         onClick={() => setIsExpanded(!isExpanded)}

@@ -50,7 +50,7 @@ const MaterialsGrid = memo(
           <>
             <div className={s.materialsGrid__items}>
               {materials.map(material => (
-                <DynamicMaterialCard key={material.id} material={material} />
+                <DynamicMaterialCard key={material.description} material={material} />
               ))}
             </div>
 
