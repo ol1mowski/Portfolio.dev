@@ -16,6 +16,7 @@ interface MaterialsGridProps {
   loading?: boolean;
   onLoadMore?: () => void;
   hasMore?: boolean;
+  onDownload?: (materialId: string) => void;
 }
 
 const MaterialsGrid = memo(
@@ -27,6 +28,7 @@ const MaterialsGrid = memo(
     loading = false,
     onLoadMore,
     hasMore = false,
+    onDownload,
   }: MaterialsGridProps) => {
     return (
       <section className={s.materialsGrid}>
@@ -50,7 +52,11 @@ const MaterialsGrid = memo(
           <>
             <div className={s.materialsGrid__items}>
               {materials.map(material => (
-                <DynamicMaterialCard key={material.description} material={material} />
+                <DynamicMaterialCard
+                  key={material.description}
+                  material={material}
+                  onDownload={onDownload}
+                />
               ))}
             </div>
 

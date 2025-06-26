@@ -1,6 +1,8 @@
+'use client';
+
 import s from './MaterialCard.component.module.scss';
 
-import { memo } from 'react';
+import { memo, useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -9,10 +11,19 @@ import { MaterialType } from '@/types/Materials.types';
 
 interface MaterialCardProps {
   material: MaterialType;
+  onDownload?: (materialId: string) => void;
 }
 
-const MaterialCard = memo(({ material }: MaterialCardProps) => {
+const MaterialCard = memo(({ material, onDownload }: MaterialCardProps) => {
+  const [localDownloadCount, setLocalDownloadCount] = useState(material.downloadCount);
+  const [isUpdating, setIsUpdating] = useState(false);
+
+  useEffect(() => {
+    setLocalDownloadCount(material.downloadCount);
+  }, [material.downloadCount]);
+
   const {
+    id,
     title,
     image,
     slug,
@@ -21,11 +32,9 @@ const MaterialCard = memo(({ material }: MaterialCardProps) => {
     categoryType,
     tags,
     description,
-    downloadCount,
     size,
     format,
     publishDate,
-    isPremium,
   } = material;
 
   const typeLabels = {
@@ -38,7 +47,6 @@ const MaterialCard = memo(({ material }: MaterialCardProps) => {
     rozwojowe: 'Rozwojowe',
   };
 
-  const basePath = type === 'ebook' ? '/Ebooki' : '/Notatki';
   const downloadText = type === 'ebook' ? 'Pobierz E-book' : 'Pobierz Notatkę';
 
   const formatDate = (dateString: string) => {
@@ -54,6 +62,38 @@ const MaterialCard = memo(({ material }: MaterialCardProps) => {
       return `${(count / 1000).toFixed(1)}k`;
     }
     return count.toString();
+  };
+
+  const handleDownload = async () => {
+    if (isUpdating) return;
+
+    setIsUpdating(true);
+
+    setLocalDownloadCount(prev => prev + 1);
+
+    try {
+      if (onDownload) {
+        await onDownload(id);
+      } else {
+        const response = await fetch('/api/materials', {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ materialId: id }),
+        });
+
+        if (!response.ok) {
+          console.error('Failed to update download count');
+          setLocalDownloadCount(prev => prev - 1);
+        }
+      }
+    } catch (error) {
+      console.error('Error updating download count:', error);
+      setLocalDownloadCount(prev => prev - 1);
+    } finally {
+      setIsUpdating(false);
+    }
   };
 
   return (
@@ -81,7 +121,7 @@ const MaterialCard = memo(({ material }: MaterialCardProps) => {
 
         <div className={s.overlay}>
           <div className={s.stats}>
-            <span className={s.downloads}>⬇ {formatDownloadCount(downloadCount)}</span>
+            <span className={s.downloads}>⬇ {formatDownloadCount(localDownloadCount)}</span>
             <span className={s.size}>{size}</span>
           </div>
         </div>
@@ -115,8 +155,14 @@ const MaterialCard = memo(({ material }: MaterialCardProps) => {
             <span className={s.date}>{formatDate(publishDate)}</span>
           </div>
           <div className={s.buttonWrapper}>
-            <Link target="_blank" download href={`/${slug}.pdf`}>
-              <Button type="normal" value={downloadText} />
+            <Link
+              target="_blank"
+              download
+              href={`/${slug}.pdf`}
+              onClick={handleDownload}
+              style={{ pointerEvents: isUpdating ? 'none' : 'auto' }}
+            >
+              <Button type="normal" value={isUpdating ? 'Pobieranie...' : downloadText} />
             </Link>
           </div>
         </div>

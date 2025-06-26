@@ -67,9 +67,14 @@ export async function GET(request: NextRequest) {
 
     const total = await Materials.countDocuments(filter).exec();
 
+    const mappedMaterials = materials.map(material => ({
+      ...material,
+      id: material._id,
+    }));
+
     return NextResponse.json({
       success: true,
-      data: materials,
+      data: mappedMaterials,
       pagination: {
         page,
         limit,
@@ -135,5 +140,49 @@ export async function POST(request: NextRequest) {
     );
   } catch (error) {
     return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 });
+  }
+}
+
+export async function PATCH(request: NextRequest) {
+  try {
+    await dbConnect();
+
+    const body = await request.json();
+    const { materialId } = body;
+
+    if (!materialId) {
+      return NextResponse.json({ success: false, error: 'Missing materialId' }, { status: 400 });
+    }
+
+    const material = await Materials.findByIdAndUpdate(
+      materialId,
+      { $inc: { downloadCount: 1 } },
+      { new: true }
+    )
+      .lean()
+      .exec();
+
+    if (!material) {
+      return NextResponse.json({ success: false, error: 'Material not found' }, { status: 404 });
+    }
+
+    const mappedMaterial = {
+      ...material,
+      id: material._id,
+    };
+
+    return NextResponse.json({
+      success: true,
+      data: mappedMaterial,
+    });
+  } catch (error) {
+    return NextResponse.json(
+      {
+        success: false,
+        error: 'Internal server error',
+        details: error instanceof Error ? error.message : 'Unknown error',
+      },
+      { status: 500 }
+    );
   }
 }

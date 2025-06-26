@@ -2,7 +2,7 @@
 
 import s from './MaterialsHub.component.module.scss';
 
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 
 import Header from '@/components/pages/Header/Header.component';
 import Footer from '@/components/pages/Footer/Footer.page';
@@ -13,6 +13,7 @@ import MaterialsGrid from '../MaterialsGrid/MaterialsGrid.component';
 import { useMaterialsSearch } from './hooks/useMaterialsSearch.hook';
 import { useMaterialsSorting } from '../MaterialsControls/hooks/useMaterialsSorting.hook';
 import { useMaterialsFetching } from './hooks/useMaterialsFetching.hook';
+import { useDownloadCount } from './hooks/useDownloadCount.hook';
 
 interface MaterialsHubProps {
   initialMaterials?: any[];
@@ -32,10 +33,25 @@ const MaterialsHub = memo(({ initialMaterials = [] }: MaterialsHubProps) => {
     materials: initialMaterials,
   });
 
-  const { materials, loading, error, pagination, refetch, loadMore } = useMaterialsFetching({
+  const {
+    materials: fetchedMaterials,
+    loading,
+    error,
+    pagination,
+    refetch,
+    loadMore,
+  } = useMaterialsFetching({
     searchTerm: debouncedSearchTerm,
     selectedFilters,
   });
+
+  const { materials, updateDownloadCount, updateMaterials } = useDownloadCount({
+    initialMaterials: fetchedMaterials,
+  });
+
+  useEffect(() => {
+    updateMaterials(fetchedMaterials);
+  }, [fetchedMaterials, updateMaterials]);
 
   const { sortedMaterials } = useMaterialsSorting({
     materials: materials,
@@ -90,6 +106,7 @@ const MaterialsHub = memo(({ initialMaterials = [] }: MaterialsHubProps) => {
           loading={loading}
           onLoadMore={loadMore}
           hasMore={pagination.page < pagination.pages}
+          onDownload={updateDownloadCount}
         />
       </main>
       <Footer />

@@ -1,5 +1,5 @@
 export interface MaterialType {
-  id: number;
+  id: string;
   title: string;
   image: string;
   slug: string;
