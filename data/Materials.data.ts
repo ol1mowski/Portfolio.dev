@@ -2,7 +2,7 @@ import { type MaterialType } from '@/types/Materials.types';
 
 export const MATERIALS: MaterialType[] = [
   {
-    id: 1,
+    id: '1',
     title: 'Notatki JavaScript - Od podstaw do zaawansowanych',
     image:
       'https://res.cloudinary.com/dbbuav0rj/image/upload/v1733310585/Portfolio/images/notatka_jyerzd.svg',
@@ -20,7 +20,7 @@ export const MATERIALS: MaterialType[] = [
     isPremium: false,
   },
   {
-    id: 2,
+    id: '2',
     title: 'Projektowanie Stron Internetowych - Praktyczne Porady',
     image:
       'https://res.cloudinary.com/dbbuav0rj/image/upload/v1731069228/Portfolio/images/bezplatny_ebook_z6eetq.webp',
@@ -38,7 +38,7 @@ export const MATERIALS: MaterialType[] = [
     isPremium: false,
   },
   {
-    id: 3,
+    id: '3',
     title: 'React.js - Zaawansowane Wzorce',
     image:
       'https://res.cloudinary.com/dbbuav0rj/image/upload/v1733310585/Portfolio/images/notatka_jyerzd.svg',
@@ -56,7 +56,7 @@ export const MATERIALS: MaterialType[] = [
     isPremium: true,
   },
   {
-    id: 5,
+    id: '5',
     title: 'Node.js i Express - Backend Development',
     image:
       'https://res.cloudinary.com/dbbuav0rj/image/upload/v1733310585/Portfolio/images/notatka_jyerzd.svg',
@@ -74,7 +74,7 @@ export const MATERIALS: MaterialType[] = [
     isPremium: true,
   },
   {
-    id: 6,
+    id: '6',
     title: 'TypeScript dla Początkujących',
     image:
       'https://res.cloudinary.com/dbbuav0rj/image/upload/v1731069228/Portfolio/images/bezplatny_ebook_z6eetq.webp',
@@ -92,7 +92,7 @@ export const MATERIALS: MaterialType[] = [
     isPremium: false,
   },
   {
-    id: 8,
+    id: '8',
     title: 'MongoDB i Mongoose - Bazy Danych NoSQL',
     image:
       'https://res.cloudinary.com/dbbuav0rj/image/upload/v1731069228/Portfolio/images/bezplatny_ebook_z6eetq.webp',
@@ -110,7 +110,7 @@ export const MATERIALS: MaterialType[] = [
     isPremium: true,
   },
   {
-    id: 9,
+    id: '9',
     title: 'Git i GitHub - Współpraca w Projektach',
     image:
       'https://res.cloudinary.com/dbbuav0rj/image/upload/v1733310585/Portfolio/images/notatka_jyerzd.svg',

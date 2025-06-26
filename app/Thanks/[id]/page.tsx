@@ -1,5 +1,3 @@
-'use client';
-
 import s from './page.module.scss';
 import Footer from '@/components/pages/Footer/Footer.page';
 import Button from '@/components/UI/Button/Button.component';
@@ -7,7 +5,10 @@ import Header from '@/components/pages/Header/Header.component';
 import { redirect } from 'next/navigation';
 import { validateSession } from '@/lib/auth';
 import { Params } from '@/types/Params.types';
-import { useEffect, useState } from 'react';
+import {
+  getMaterialBySlug,
+  updateMaterialDownloadCount,
+} from '@/db/Utils/DataFetchingFunctions/DataFetchingFunctions';
 
 type ContentType = {
   description: string;
@@ -39,111 +40,37 @@ const getContentByType = (type: string): ContentType | null => {
 
 const increaseDownloadCount = async (materialSlug: string) => {
   try {
-    const materialResponse = await fetch(`/api/materials/${materialSlug}`);
-    if (!materialResponse.ok) {
-      console.error('Failed to fetch material');
-      return;
-    }
-
-    const materialData = await materialResponse.json();
-    if (!materialData.success || !materialData.data) {
+    const material = await getMaterialBySlug(materialSlug);
+    if (!material) {
       console.error('Material not found');
       return;
     }
 
-    const updateResponse = await fetch('/api/materials', {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ materialId: materialData.data.id }),
-    });
-
-    if (!updateResponse.ok) {
-      console.error('Failed to update download count');
-    }
+    await updateMaterialDownloadCount(material._id.toString());
   } catch (error) {
     console.error('Error updating download count:', error);
   }
 };
 
-export default function Page({ params }: { params: Params }) {
-  useEffect(() => {
-    const loadPage = async () => {
-      try {
-        const { id } = await params;
-        const contentType = id.toLowerCase();
-        const content = getContentByType(contentType);
-
-        if (content) {
-          await increaseDownloadCount(content.materialSlug);
-        }
-      } catch (error) {
-        console.error('Error in Thanks page:', error);
-      }
-    };
-
-    loadPage();
-  }, [params]);
-
-  const [content, setContent] = useState<ContentType | null>(null);
-  const [userName, setUserName] = useState('za pobranie');
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const initializePage = async () => {
-      try {
-        const { id } = await params;
-        const contentType = id.toLowerCase();
-        const pageContent = getContentByType(contentType);
-
-        if (!pageContent) {
-          redirect('/404');
-        }
-
-        setContent(pageContent);
-
-        try {
-          const { session } = await validateSession();
-          if (session?.name) {
-            setUserName(session.name);
-          }
-        } catch (error) {
-          console.log('No session available, using default name', error);
-        }
-      } catch (error) {
-        console.error('Error in Thanks page:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    initializePage();
-  }, [params]);
-
-  if (loading) {
-    return (
-      <>
-        <Header />
-        <section className={s.container}>
-          <h1 className={s.container__header}>Ładowanie...</h1>
-        </section>
-        <Footer />
-      </>
-    );
-  }
+export default async function Page({ params }: { params: Params }) {
+  const { id } = await params;
+  const contentType = id.toLowerCase();
+  const content = getContentByType(contentType);
 
   if (!content) {
-    return (
-      <>
-        <Header />
-        <section className={s.container}>
-          <h1 className={s.container__header}>Błąd</h1>
-          <p className={s.container__text}>Nie udało się załadować strony</p>
-        </section>
-        <Footer />
-      </>
-    );
+    redirect('/404');
+  }
+
+  await increaseDownloadCount(content.materialSlug);
+
+  let userName = 'za pobranie';
+  try {
+    const { session } = await validateSession();
+    if (session?.name) {
+      userName = session.name;
+    }
+  } catch (error) {
+    console.log('No session available, using default name', error);
   }
 
   const { description, buttonText, downloadPath } = content;

@@ -1,8 +1,4 @@
-'use client';
-
 import HomePage from '@/components/pages/HomePage/HomePage.page';
-import { useAnchorScroll } from '@/hooks/useAnchorScroll';
-
 import SubscribersAmount from '@/components/pages/Stats/Stats.page';
 import Contact from '@/components/pages/Contact/Contact.page';
 import Footer from '@/components/pages/Footer/Footer.page';
@@ -15,12 +11,11 @@ import Collaboration from '@/components/pages/Collaboration/Collaboration.page';
 import { AboutMe } from '@/components/pages/AboutMe';
 import { BusinessImpact } from '@/components/pages/BusinessImpact';
 import ProfitabilitySection from '@/components/pages/ProfitabilitySection/ProfitabilitySection.component';
+import AnchorScrollProvider from '@/components/AnchorScrollProvider';
 
 export default function Home() {
-  useAnchorScroll();
-
   return (
-    <>
+    <AnchorScrollProvider>
       <Header />
       <HomePage />
       <Ebook />
@@ -34,6 +29,6 @@ export default function Home() {
       <Collaboration />
       <Contact />
       <Footer />
-    </>
+    </AnchorScrollProvider>
   );
 }
