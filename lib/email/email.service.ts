@@ -1,7 +1,7 @@
-import { sendEmail, EmailMessage } from './sendgrid';
+import { sendEmail, EmailMessage } from './resend';
 import { getThankYouEmailTemplate, getPlainTextEmailTemplate } from './templates';
 
-const FROM_EMAIL = process.env.SENDGRID_FROM_EMAIL || 'noreply@oliwiermarkiewicz.pl';
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'noreply@oliwiermarkiewicz.pl';
 
 export interface EmailClientData {
   name: string;
@@ -10,20 +10,53 @@ export interface EmailClientData {
 
 export const sendThankYouEmail = async (client: EmailClientData): Promise<boolean> => {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://oliwiermarkiewicz.pl';
-    const downloadLink = `${baseUrl}/Praktyczne_Porady_Na_Co_Zwrócić_Uwagę_Podczas_Projektowania_Strony_Internetowej.pdf`;
-
     const emailMessage: EmailMessage = {
       to: client.email,
       from: FROM_EMAIL,
-      subject: 'Dziękujemy za pobranie ebooka!',
-      html: getThankYouEmailTemplate(client.name, downloadLink),
-      text: getPlainTextEmailTemplate(client.name, downloadLink),
+      subject: 'Dziękujemy za dołączenie do Centrum Materiałów!',
+      html: getThankYouEmailTemplate(client.name),
+      text: getPlainTextEmailTemplate(client.name),
     };
 
     return await sendEmail(emailMessage);
   } catch (error) {
     console.error('Błąd podczas wysyłania maila z podziękowaniem:', error);
+    return false;
+  }
+};
+
+export const sendContactEmail = async (
+  client: EmailClientData,
+  message: string
+): Promise<boolean> => {
+  try {
+    const emailMessage: EmailMessage = {
+      to: client.email,
+      from: FROM_EMAIL,
+      subject: 'Potwierdzenie wiadomości kontaktowej',
+      html: `
+        <h2>Dziękujemy za wiadomość, ${client.name}!</h2>
+        <p>Otrzymaliśmy Twoją wiadomość i odpowiemy najszybciej jak to możliwe.</p>
+        <p><strong>Twoja wiadomość:</strong></p>
+        <p>${message}</p>
+        <p>Pozdrawiamy,<br>Zespół Portfolio.dev</p>
+      `,
+      text: `
+        Dziękujemy za wiadomość, ${client.name}!
+        
+        Otrzymaliśmy Twoją wiadomość i odpowiemy najszybciej jak to możliwe.
+        
+        Twoja wiadomość:
+        ${message}
+        
+        Pozdrawiamy,
+        Zespół Portfolio.dev
+      `,
+    };
+
+    return await sendEmail(emailMessage);
+  } catch (error) {
+    console.error('Błąd podczas wysyłania maila kontaktowego:', error);
     return false;
   }
 };

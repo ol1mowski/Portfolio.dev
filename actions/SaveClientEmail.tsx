@@ -3,6 +3,7 @@
 import { saveClientToDB } from '@/db/Utils/DataFetchingFunctions/DataFetchingFunctions';
 import { createAuthSession } from '@/lib/auth';
 import { validateEmail } from '@/utils/validation';
+import { sendThankYouEmail } from '@/lib/email/email.service';
 
 interface SaveClientDataResponse {
   success: boolean;
@@ -34,6 +35,12 @@ export async function saveClientData(formData: FormData): Promise<SaveClientData
 
     if (!savedClient) {
       throw new Error('Failed to save client data');
+    }
+
+    try {
+      await sendThankYouEmail({ name, email });
+    } catch (emailError) {
+      console.error('Error sending thank you email:', emailError);
     }
 
     const sessionResult = await createAuthSession(email, name);

@@ -1,11 +1,11 @@
-export const getThankYouEmailTemplate = (name: string, downloadLink: string): string => {
+export const getThankYouEmailTemplate = (name: string): string => {
   return `
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dziękujemy za pobranie ebooka</title>
+  <title>Dziękujemy za dołączenie do Centrum Materiałów</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -54,20 +54,17 @@ export const getThankYouEmailTemplate = (name: string, downloadLink: string): st
 <body>
   <div class="container">
     <div class="header">
-      <h1>Dziękujemy, ${name}!</h1>
+      <h1>Witaj, ${name}!</h1>
     </div>
     <div class="content">
-      <p>Dzięki za zainteresowanie moim ebookiem "Praktyczne Porady Na Co Zwrócić Uwagę Podczas Projektowania Strony Internetowej".</p>
-      <p>Mam nadzieję, że zawarte w nim informacje okażą się dla Ciebie wartościowe i pomogą Ci w tworzeniu lepszych stron internetowych.</p>
-      <p>Jeśli jeszcze nie pobrałeś/aś ebooka, możesz to zrobić klikając poniższy przycisk:</p>
-      <div style="text-align: center;">
-        <a href="${downloadLink}" class="button">Pobierz E-book</a>
-      </div>
-      <p>Jeśli masz jakiekolwiek pytania lub sugestie, nie wahaj się skontaktować ze mną odpowiadając na tego maila.</p>
-      <p>Pozdrawiam serdecznie,<br>Twój Autor</p>
+      <p>Dziękujemy za dołączenie do <strong>Centrum Materiałów</strong>!</p>
+      <p>Od teraz masz dostęp do wszystkich materiałów edukacyjnych, e-booków, notatek i zasobów dla programistów.</p>
+      <p>Wkrótce otrzymasz od nas kolejne wartościowe treści, inspiracje i praktyczne wskazówki na podany adres email.</p>
+      <p>Jeśli masz pytania lub sugestie, po prostu odpowiedz na tego maila.</p>
+      <p>Pozdrawiam serdecznie,<br>Oliwier</p>
     </div>
     <div class="footer">
-      <p>© ${new Date().getFullYear()} Portfolio.dev. Wszelkie prawa zastrzeżone.</p>
+      <p>© ${new Date().getFullYear()} oliwiermarkiewicz.pl. Wszelkie prawa zastrzeżone.</p>
       <p>Nie chcesz otrzymywać więcej takich wiadomości? <a href="#">Wypisz się</a>.</p>
     </div>
   </div>
@@ -76,22 +73,21 @@ export const getThankYouEmailTemplate = (name: string, downloadLink: string): st
   `;
 };
 
-export const getPlainTextEmailTemplate = (name: string, downloadLink: string): string => {
+export const getPlainTextEmailTemplate = (name: string): string => {
   return `
-Dziękujemy, ${name}!
+Witaj, ${name}!
 
-Dzięki za zainteresowanie moim ebookiem "Praktyczne Porady Na Co Zwrócić Uwagę Podczas Projektowania Strony Internetowej".
+Dziękujemy za dołączenie do Centrum Materiałów!
 
-Mam nadzieję, że zawarte w nim informacje okażą się dla Ciebie wartościowe i pomogą Ci w tworzeniu lepszych stron internetowych.
+Od teraz masz dostęp do wszystkich materiałów edukacyjnych, e-booków, notatek i zasobów dla programistów.
 
-Jeśli jeszcze nie pobrałeś/aś ebooka, możesz to zrobić korzystając z poniższego linku:
-${downloadLink}
+Wkrótce otrzymasz od nas kolejne wartościowe treści, inspiracje i praktyczne wskazówki na podany adres email.
 
-Jeśli masz jakiekolwiek pytania lub sugestie, nie wahaj się skontaktować ze mną odpowiadając na tego maila.
+Jeśli masz pytania lub sugestie, po prostu odpowiedz na tego maila.
 
 Pozdrawiam serdecznie,
-Twój Autor
+Oliwier
 
-© ${new Date().getFullYear()} Portfolio.dev. Wszelkie prawa zastrzeżone.
+© ${new Date().getFullYear()} oliwiermarkiewicz.pl. Wszelkie prawa zastrzeżone.
   `;
 };
