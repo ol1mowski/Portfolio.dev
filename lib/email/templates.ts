@@ -1,4 +1,17 @@
-export const getThankYouEmailTemplate = (name: string): string => {
+import { createHash } from 'crypto';
+
+const getUnsubscribeLink = (email: string) => {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+
+  const secret = process.env.UNSUBSCRIBE_SECRET || 'default-secret-key';
+  const token = createHash('sha256').update(`${email}${secret}`).digest('hex').substring(0, 16);
+
+  return `${baseUrl}/unsubscribe?token=${token}`;
+};
+
+export const getThankYouEmailTemplate = (name: string, email?: string): string => {
+  const unsubscribeLink = email ? getUnsubscribeLink(email) : '#';
+
   return `
 <!DOCTYPE html>
 <html>
@@ -65,7 +78,7 @@ export const getThankYouEmailTemplate = (name: string): string => {
     </div>
     <div class="footer">
       <p>© ${new Date().getFullYear()} oliwiermarkiewicz.pl. Wszelkie prawa zastrzeżone.</p>
-      <p>Nie chcesz otrzymywać więcej takich wiadomości? <a href="#">Wypisz się</a>.</p>
+      <p>Nie chcesz otrzymywać więcej takich wiadomości? <a href="${unsubscribeLink}" style="color: #0066cc;">Wypisz się</a>.</p>
     </div>
   </div>
 </body>
@@ -73,7 +86,9 @@ export const getThankYouEmailTemplate = (name: string): string => {
   `;
 };
 
-export const getPlainTextEmailTemplate = (name: string): string => {
+export const getPlainTextEmailTemplate = (name: string, email?: string): string => {
+  const unsubscribeLink = email ? getUnsubscribeLink(email) : '#';
+
   return `
 Witaj, ${name}!
 
@@ -89,5 +104,7 @@ Pozdrawiam serdecznie,
 Oliwier
 
 © ${new Date().getFullYear()} oliwiermarkiewicz.pl. Wszelkie prawa zastrzeżone.
+
+Aby zrezygnować z otrzymywania wiadomości, odwiedź: ${unsubscribeLink}
   `;
 };

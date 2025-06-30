@@ -56,3 +56,44 @@ export const saveClient = async (clientData: ClientData): Promise<SaveClientResp
     };
   }
 };
+
+export const deleteClient = async (
+  email: string
+): Promise<{ success: boolean; error?: string }> => {
+  try {
+    if (!email || typeof email !== 'string') {
+      return {
+        success: false,
+        error: 'Nieprawidłowy adres email',
+      };
+    }
+
+    const sanitizedEmail = email.toLowerCase().trim();
+
+    const { dbConnect } = await import('@/db/db_connect');
+    await dbConnect();
+
+    const { Customers } = await import('@/db/Schemas/Clients');
+
+    const existingCustomer = await Customers.findByEmail(sanitizedEmail);
+
+    if (!existingCustomer) {
+      return {
+        success: false,
+        error: 'Nie znaleziono użytkownika o podanym adresie email',
+      };
+    }
+
+    await Customers.deleteOne({ email: sanitizedEmail });
+
+    return {
+      success: true,
+    };
+  } catch (error) {
+    console.error('Error in deleteClient:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Wystąpił nieoczekiwany błąd',
+    };
+  }
+};

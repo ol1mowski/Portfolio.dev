@@ -1,12 +1,21 @@
 import { sendEmail, EmailMessage } from './resend';
 import { getThankYouEmailTemplate, getPlainTextEmailTemplate } from './templates';
+import { createHash } from 'crypto';
 
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'Oliwer@oliwiermarkiewicz.pl';
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'Oliwier@oliwiermarkiewicz.pl';
 
 export interface EmailClientData {
   name: string;
   email: string;
 }
+
+const getUnsubscribeLink = (email: string) => {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+  const secret = process.env.UNSUBSCRIBE_SECRET || 'default-secret-key';
+  const token = createHash('sha256').update(`${email}${secret}`).digest('hex').substring(0, 16);
+
+  return `${baseUrl}/unsubscribe?token=${token}`;
+};
 
 export const sendThankYouEmail = async (client: EmailClientData): Promise<boolean> => {
   try {
@@ -14,8 +23,8 @@ export const sendThankYouEmail = async (client: EmailClientData): Promise<boolea
       to: client.email,
       from: FROM_EMAIL,
       subject: 'Dziękujemy za dołączenie do Centrum Materiałów!',
-      html: getThankYouEmailTemplate(client.name),
-      text: getPlainTextEmailTemplate(client.name),
+      html: getThankYouEmailTemplate(client.name, client.email),
+      text: getPlainTextEmailTemplate(client.name, client.email),
     };
 
     return await sendEmail(emailMessage);
@@ -27,6 +36,7 @@ export const sendThankYouEmail = async (client: EmailClientData): Promise<boolea
 
 export const sendJavaScriptNotesEmail = async (client: EmailClientData): Promise<boolean> => {
   try {
+    const unsubscribeLink = getUnsubscribeLink(client.email);
     const emailMessage: EmailMessage = {
       to: client.email,
       from: FROM_EMAIL,
@@ -51,7 +61,7 @@ export const sendJavaScriptNotesEmail = async (client: EmailClientData): Promise
           </div>
           <div style="background-color: #f8f9fa; padding: 15px; text-align: center; font-size: 12px; color: #666; border-radius: 0 0 5px 5px;">
             <p>© ${new Date().getFullYear()} oliwiermarkiewicz.pl. Wszelkie prawa zastrzeżone.</p>
-            <p>Nie chcesz otrzymywać więcej takich wiadomości? <a href="#">Wypisz się</a>.</p>
+            <p>Nie chcesz otrzymywać więcej takich wiadomości? <a href="${unsubscribeLink}" style="color: #0066cc;">Wypisz się</a>.</p>
           </div>
         </div>
       `,
@@ -74,6 +84,8 @@ Pozdrawiam serdecznie,
 Oliwier
 
 © ${new Date().getFullYear()} oliwiermarkiewicz.pl. Wszelkie prawa zastrzeżone.
+
+Aby zrezygnować z otrzymywania wiadomości, odwiedź: ${unsubscribeLink}
       `,
     };
 
@@ -86,6 +98,7 @@ Oliwier
 
 export const sendEbookEmail = async (client: EmailClientData): Promise<boolean> => {
   try {
+    const unsubscribeLink = getUnsubscribeLink(client.email);
     const emailMessage: EmailMessage = {
       to: client.email,
       from: FROM_EMAIL,
@@ -110,7 +123,7 @@ export const sendEbookEmail = async (client: EmailClientData): Promise<boolean> 
           </div>
           <div style="background-color: #f8f9fa; padding: 15px; text-align: center; font-size: 12px; color: #666; border-radius: 0 0 5px 5px;">
             <p>© ${new Date().getFullYear()} oliwiermarkiewicz.pl. Wszelkie prawa zastrzeżone.</p>
-            <p>Nie chcesz otrzymywać więcej takich wiadomości? <a href="#">Wypisz się</a>.</p>
+            <p>Nie chcesz otrzymywać więcej takich wiadomości? <a href="${unsubscribeLink}" style="color: #0066cc;">Wypisz się</a>.</p>
           </div>
         </div>
       `,
@@ -133,6 +146,8 @@ Pozdrawiam serdecznie,
 Oliwier
 
 © ${new Date().getFullYear()} oliwiermarkiewicz.pl. Wszelkie prawa zastrzeżone.
+
+Aby zrezygnować z otrzymywania wiadomości, odwiedź: ${unsubscribeLink}
       `,
     };
 
@@ -157,7 +172,7 @@ export const sendContactEmail = async (
         <p>Otrzymaliśmy Twoją wiadomość i odpowiemy najszybciej jak to możliwe.</p>
         <p><strong>Twoja wiadomość:</strong></p>
         <p>${message}</p>
-        <p>Pozdrawiamy,<br>Zespół Portfolio.dev</p>
+        <p>Pozdrawiam,<br>Oliwier</p>
       `,
       text: `
         Dziękujemy za wiadomość, ${client.name}!
