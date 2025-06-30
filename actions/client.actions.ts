@@ -4,7 +4,7 @@ import { createAuthSession } from '@/lib/auth';
 import { saveClient } from '@/lib/api/client/client.service';
 import { SaveClientResponse } from '@/lib/api/client/client.types';
 import { validateEmail } from '@/utils/validation';
-// import { sendThankYouEmail } from '@/lib/email/email.service';
+import { sendEbookEmail } from '@/lib/email/email.service';
 
 export async function saveClientData(formData: FormData): Promise<SaveClientResponse> {
   try {
@@ -37,11 +37,11 @@ export async function saveClientData(formData: FormData): Promise<SaveClientResp
       throw new Error('Failed to create session');
     }
 
-    // try {
-    //   await sendThankYouEmail({ name, email });
-    // } catch (emailError) {
-    //   console.error('Error sending thank you email:', emailError);
-    // }
+    try {
+      await sendEbookEmail({ name, email });
+    } catch (emailError) {
+      console.error('Error sending ebook email:', emailError);
+    }
 
     return {
       success: true,

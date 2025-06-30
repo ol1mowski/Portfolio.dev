@@ -1,16 +1,12 @@
 'use server';
 
-import { saveClientToDB } from '@/db/Utils/DataFetchingFunctions/DataFetchingFunctions';
 import { createAuthSession } from '@/lib/auth';
+import { saveClient } from '@/lib/api/client/client.service';
+import { SaveClientResponse } from '@/lib/api/client/client.types';
 import { validateEmail } from '@/utils/validation';
-import { sendThankYouEmail } from '@/lib/email/email.service';
+import { sendJavaScriptNotesEmail } from '@/lib/email/email.service';
 
-interface SaveClientDataResponse {
-  success: boolean;
-  error?: string;
-}
-
-export async function saveClientData(formData: FormData): Promise<SaveClientDataResponse> {
+export async function saveClientData(formData: FormData): Promise<SaveClientResponse> {
   try {
     const email = formData.get('email')?.toString().trim();
     const name = formData.get('name')?.toString().trim();
@@ -21,6 +17,7 @@ export async function saveClientData(formData: FormData): Promise<SaveClientData
         error: 'Missing required fields',
       };
     }
+
     if (!validateEmail(email)) {
       return {
         success: false,
@@ -28,19 +25,10 @@ export async function saveClientData(formData: FormData): Promise<SaveClientData
       };
     }
 
-    const savedClient = await saveClientToDB({
-      name,
-      email,
-    });
+    const savedClient = await saveClient({ name, email });
 
-    if (!savedClient) {
+    if (!savedClient.success || !savedClient.client) {
       throw new Error('Failed to save client data');
-    }
-
-    try {
-      await sendThankYouEmail({ name, email });
-    } catch (emailError) {
-      console.error('Error sending thank you email:', emailError);
     }
 
     const sessionResult = await createAuthSession(email, name);
@@ -49,11 +37,23 @@ export async function saveClientData(formData: FormData): Promise<SaveClientData
       throw new Error('Failed to create session');
     }
 
+    try {
+      await sendJavaScriptNotesEmail({ name, email });
+    } catch (emailError) {
+      console.error('Error sending JavaScript notes email:', emailError);
+    }
+
     return {
       success: true,
+      client: {
+        id: savedClient.client._id?.toString() || savedClient.client.id?.toString() || '',
+        name: savedClient.client.name,
+        email: savedClient.client.email,
+      },
     };
   } catch (error) {
     console.error('Error in saveClientData:', error);
+
     return {
       success: false,
       error: error instanceof Error ? error.message : 'An unknown error occurred',
