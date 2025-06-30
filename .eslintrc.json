@@ -7,11 +7,7 @@
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint",
-    "react",
-    "prettier"
-  ],
+  "plugins": ["@typescript-eslint", "react", "prettier"],
   "rules": {
     "prettier/prettier": "warn",
     "react/react-in-jsx-scope": "off",
@@ -34,13 +30,7 @@
       "version": "detect"
     }
   },
-  "ignorePatterns": [
-    "node_modules/",
-    ".next/",
-    "out/",
-    "public/",
-    "**/*.d.ts"
-  ],
+  "ignorePatterns": ["node_modules/", ".next/", "out/", "public/", "**/*.d.ts"],
   "overrides": [
     {
       "files": ["**/hooks/*.ts", "**/hooks/**/*.ts"],
@@ -57,10 +47,13 @@
     {
       "files": ["**/components/pages/**/*.tsx"],
       "rules": {
-        "@typescript-eslint/no-unused-vars": ["warn", { 
-          "argsIgnorePattern": "^(_|node)",
-          "varsIgnorePattern": "^_" 
-        }]
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "argsIgnorePattern": "^(_|node)",
+            "varsIgnorePattern": "^_"
+          }
+        ]
       }
     },
     {
@@ -80,6 +73,20 @@
       ],
       "rules": {
         "prettier/prettier": "off"
+      }
+    },
+    {
+      "files": ["**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "**/*.spec.tsx"],
+      "parserOptions": {
+        "jsx": true
+      },
+      "globals": {
+        "describe": "readonly",
+        "it": "readonly",
+        "expect": "readonly",
+        "vi": "readonly",
+        "beforeEach": "readonly",
+        "afterEach": "readonly"
       }
     }
   ]

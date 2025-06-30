@@ -1,11 +1,12 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
+//@ts-ignore
 import { saveClientData } from '../../../actions/SaveClientEmail';
-import { saveClientToDB } from '../../../db/Utils/DataFetchingFunctions/DataFetchingFunctions';
+import { saveClient } from '../../../lib/api/client/client.service';
 import { createAuthSession } from '../../../lib/auth';
 
-vi.mock('../../../db/Utils/DataFetchingFunctions/DataFetchingFunctions', () => ({
-  saveClientToDB: vi.fn(),
+vi.mock('../../../lib/api/client/client.service', () => ({
+  saveClient: vi.fn(),
 }));
 
 vi.mock('../../../lib/auth', () => ({
@@ -18,8 +19,15 @@ describe('SaveClientEmail Action', () => {
   });
 
   it('should successfully save valid client data', async () => {
-    const mockSavedClient = { id: '1', name: 'Test User', email: 'test@example.com' };
-    vi.mocked(saveClientToDB).mockResolvedValue(mockSavedClient);
+    const mockSavedClient = {
+      success: true,
+      client: {
+        _id: '1',
+        name: 'Test User',
+        email: 'test@example.com',
+      },
+    };
+    vi.mocked(saveClient).mockResolvedValue(mockSavedClient);
     vi.mocked(createAuthSession).mockResolvedValue({ success: true });
 
     const formData = new FormData();
@@ -29,7 +37,7 @@ describe('SaveClientEmail Action', () => {
     const result = await saveClientData(formData);
 
     expect(result.success).toBe(true);
-    expect(saveClientToDB).toHaveBeenCalledWith({
+    expect(saveClient).toHaveBeenCalledWith({
       name: 'Test User',
       email: 'test@example.com',
     });
@@ -42,7 +50,7 @@ describe('SaveClientEmail Action', () => {
 
     expect(result.success).toBe(false);
     expect(result.error).toBe('Missing required fields');
-    expect(saveClientToDB).not.toHaveBeenCalled();
+    expect(saveClient).not.toHaveBeenCalled();
     expect(createAuthSession).not.toHaveBeenCalled();
   });
 
@@ -55,12 +63,15 @@ describe('SaveClientEmail Action', () => {
 
     expect(result.success).toBe(false);
     expect(result.error).toBe('Invalid email format');
-    expect(saveClientToDB).not.toHaveBeenCalled();
+    expect(saveClient).not.toHaveBeenCalled();
     expect(createAuthSession).not.toHaveBeenCalled();
   });
 
   it('should handle database save failure', async () => {
-    vi.mocked(saveClientToDB).mockRejectedValue(new Error('Database error'));
+    vi.mocked(saveClient).mockResolvedValue({
+      success: false,
+      error: 'Database error',
+    });
 
     const formData = new FormData();
     formData.append('name', 'Test User');
@@ -69,15 +80,18 @@ describe('SaveClientEmail Action', () => {
     const result = await saveClientData(formData);
 
     expect(result.success).toBe(false);
-    expect(result.error).toBe('Database error');
+    expect(result.error).toBe('Failed to save client data');
     expect(createAuthSession).not.toHaveBeenCalled();
   });
 
   it('should handle session creation failure', async () => {
-    vi.mocked(saveClientToDB).mockResolvedValue({
-      id: '1',
-      name: 'Test User',
-      email: 'test@example.com',
+    vi.mocked(saveClient).mockResolvedValue({
+      success: true,
+      client: {
+        _id: '1',
+        name: 'Test User',
+        email: 'test@example.com',
+      },
     });
     vi.mocked(createAuthSession).mockResolvedValue({ success: false });
 
@@ -92,10 +106,13 @@ describe('SaveClientEmail Action', () => {
   });
 
   it('should trim whitespace from input data', async () => {
-    vi.mocked(saveClientToDB).mockResolvedValue({
-      id: '1',
-      name: 'Test User',
-      email: 'test@example.com',
+    vi.mocked(saveClient).mockResolvedValue({
+      success: true,
+      client: {
+        _id: '1',
+        name: 'Test User',
+        email: 'test@example.com',
+      },
     });
     vi.mocked(createAuthSession).mockResolvedValue({ success: true });
 
@@ -105,7 +122,7 @@ describe('SaveClientEmail Action', () => {
 
     await saveClientData(formData);
 
-    expect(saveClientToDB).toHaveBeenCalledWith({
+    expect(saveClient).toHaveBeenCalledWith({
       name: 'Test User',
       email: 'test@example.com',
     });
