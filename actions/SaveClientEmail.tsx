@@ -4,7 +4,7 @@ import { createAuthSession } from '@/lib/auth';
 import { saveClient } from '@/lib/api/client/client.service';
 import { SaveClientResponse } from '@/lib/api/client/client.types';
 import { validateEmail } from '@/utils/validation';
-import { sendJavaScriptNotesEmail } from '@/lib/email/email.service';
+import { sendThankYouEmail } from '@/lib/email/email.service';
 
 export async function saveClientData(formData: FormData): Promise<SaveClientResponse> {
   try {
@@ -38,9 +38,9 @@ export async function saveClientData(formData: FormData): Promise<SaveClientResp
     }
 
     try {
-      await sendJavaScriptNotesEmail({ name, email });
+      await sendThankYouEmail({ name, email });
     } catch (emailError) {
-      console.error('Error sending JavaScript notes email:', emailError);
+      console.error('Error sending thank you email:', emailError);
     }
 
     return {
