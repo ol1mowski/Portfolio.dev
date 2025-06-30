@@ -1,7 +1,7 @@
 import { sendEmail, EmailMessage } from './resend';
 import { getThankYouEmailTemplate, getPlainTextEmailTemplate } from './templates';
 
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'noreply@oliwiermarkiewicz.pl';
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'Oliwer@oliwiermarkiewicz.pl';
 
 export interface EmailClientData {
   name: string;
