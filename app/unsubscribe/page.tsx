@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import s from './page.module.scss';
 import Footer from '@/components/pages/Footer/Footer.page';
 import Header from '@/components/pages/Header/Header.component';
 
-export default function UnsubscribePage() {
+function UnsubscribeContent() {
   const [token, setToken] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
@@ -58,83 +58,99 @@ export default function UnsubscribePage() {
 
   if (!isValidToken) {
     return (
-      <>
-        <Header />
-        <main className={s.container}>
-          <div className={s.content}>
-            <div className={s.header}>
-              <h1 className={s.title}>Rezygnacja z bazy danych</h1>
-              <p className={s.subtitle}>
-                Aby zrezygnować z otrzymywania wiadomości, użyj linku z ostatniego maila lub
-                skontaktuj się z nami.
-              </p>
-            </div>
-            <div className={s.info}>
-              <h3>Jak zrezygnować?</h3>
-              <ul>
-                <li>Kliknij link &quotWypisz się&quot w ostatnim otrzymanym mailu</li>
-                <li>Lub odpowiedz na dowolny mail z prośbą o rezygnację</li>
-                <li>Lub skontaktuj się z nami bezpośrednio</li>
-              </ul>
-            </div>
-          </div>
-        </main>
-        <Footer />
-      </>
-    );
-  }
-
-  return (
-    <>
-      <Header />
       <main className={s.container}>
         <div className={s.content}>
           <div className={s.header}>
             <h1 className={s.title}>Rezygnacja z bazy danych</h1>
-            <p className={s.subtitle}>Potwierdź rezygnację z otrzymywania wiadomości</p>
+            <p className={s.subtitle}>
+              Aby zrezygnować z otrzymywania wiadomości, użyj linku z ostatniego maila lub
+              skontaktuj się z nami.
+            </p>
           </div>
-
-          <form onSubmit={handleSubmit} className={s.form}>
-            <div className={s.formGroup}>
-              <label htmlFor="token" className={s.label}>
-                Token bezpieczeństwa:
-              </label>
-              <input
-                type="text"
-                id="token"
-                value={token}
-                onChange={e => setToken(e.target.value)}
-                className={s.input}
-                placeholder="Token z linku"
-                required
-                disabled={isLoading}
-              />
-            </div>
-
-            <button
-              type="submit"
-              className={`${s.button} ${isLoading ? s.loading : ''}`}
-              disabled={isLoading || !token.trim()}
-            >
-              {isLoading ? 'Przetwarzanie...' : 'Zrezygnuj z bazy danych'}
-            </button>
-          </form>
-
-          {message && (
-            <div className={`${s.message} ${isSuccess ? s.success : s.error}`}>{message}</div>
-          )}
-
           <div className={s.info}>
-            <h3>Co się stanie po rezygnacji?</h3>
+            <h3>Jak zrezygnować?</h3>
             <ul>
-              <li>Twój adres email zostanie usunięty z naszej bazy danych</li>
-              <li>Przestaniesz otrzymywać nasze wiadomości</li>
-              <li>Nie będziesz już otrzymywać powiadomień o nowych materiałach</li>
-              <li>Możesz w każdej chwili ponownie dołączyć do bazy danych</li>
+              <li>Kliknij link &quotWypisz się&quot w ostatnim otrzymanym mailu</li>
+              <li>Lub odpowiedz na dowolny mail z prośbą o rezygnację</li>
+              <li>Lub skontaktuj się z nami bezpośrednio</li>
             </ul>
           </div>
         </div>
       </main>
+    );
+  }
+
+  return (
+    <main className={s.container}>
+      <div className={s.content}>
+        <div className={s.header}>
+          <h1 className={s.title}>Rezygnacja z bazy danych</h1>
+          <p className={s.subtitle}>Potwierdź rezygnację z otrzymywania wiadomości</p>
+        </div>
+
+        <form onSubmit={handleSubmit} className={s.form}>
+          <div className={s.formGroup}>
+            <label htmlFor="token" className={s.label}>
+              Token bezpieczeństwa:
+            </label>
+            <input
+              type="text"
+              id="token"
+              value={token}
+              onChange={e => setToken(e.target.value)}
+              className={s.input}
+              placeholder="Token z linku"
+              required
+              disabled={isLoading}
+            />
+          </div>
+
+          <button
+            type="submit"
+            className={`${s.button} ${isLoading ? s.loading : ''}`}
+            disabled={isLoading || !token.trim()}
+          >
+            {isLoading ? 'Przetwarzanie...' : 'Zrezygnuj z bazy danych'}
+          </button>
+        </form>
+
+        {message && (
+          <div className={`${s.message} ${isSuccess ? s.success : s.error}`}>{message}</div>
+        )}
+
+        <div className={s.info}>
+          <h3>Co się stanie po rezygnacji?</h3>
+          <ul>
+            <li>Twój adres email zostanie usunięty z naszej bazy danych</li>
+            <li>Przestaniesz otrzymywać nasze wiadomości</li>
+            <li>Nie będziesz już otrzymywać powiadomień o nowych materiałach</li>
+            <li>Możesz w każdej chwili ponownie dołączyć do bazy danych</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  );
+}
+
+function LoadingFallback() {
+  return (
+    <main className={s.container}>
+      <div className={s.content}>
+        <div className={s.header}>
+          <h1 className={s.title}>Ładowanie...</h1>
+        </div>
+      </div>
+    </main>
+  );
+}
+
+export default function UnsubscribePage() {
+  return (
+    <>
+      <Header />
+      <Suspense fallback={<LoadingFallback />}>
+        <UnsubscribeContent />
+      </Suspense>
       <Footer />
     </>
   );
