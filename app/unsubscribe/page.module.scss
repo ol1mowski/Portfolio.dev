@@ -1,45 +1,44 @@
+@import '@/style/index.scss';
+
 .container {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: $big-padding;
+  background-color: $white;
 }
 
 .content {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background: $white;
+  border-radius: $border-med;
+  box-shadow: $box-shadow;
   padding: 3rem;
   max-width: 600px;
   width: 100%;
+  border: 2px solid $dark-blue;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: $big-margin;
 }
 
 .title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #333;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: $dark-blue;
+  margin-bottom: $standard-margin;
 }
 
 .subtitle {
   font-size: 1.1rem;
-  color: #666;
+  color: $dark-grey;
   line-height: 1.6;
 }
 
 .form {
-  margin-bottom: 2rem;
+  margin-bottom: $big-margin;
 }
 
 .formGroup {
@@ -49,50 +48,52 @@
 .label {
   display: block;
   font-weight: 600;
-  color: #333;
+  color: $dark-blue;
   margin-bottom: 0.5rem;
   font-size: 1rem;
 }
 
 .input {
   width: 100%;
-  padding: 1rem;
-  border: 2px solid #e1e5e9;
-  border-radius: 8px;
+  padding: $standard-padding;
+  border: 2px solid $light-blue;
+  border-radius: $border-med;
   font-size: 1rem;
   transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    border-color $transition-time ease,
+    box-shadow $transition-time ease;
 
   &:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: $dark-blue;
+    box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.1);
   }
 
   &:disabled {
-    background-color: #f8f9fa;
+    background-color: $dark-white-background-color;
     cursor: not-allowed;
   }
 }
 
 .button {
   width: 100%;
-  padding: 1rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  padding: $standard-padding $big-padding;
+  background: $dark-blue;
+  color: $white;
   border: none;
-  border-radius: 8px;
+  border-radius: $border-med;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    background-color $transition-time ease;
 
   &:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 122, 204, 0.3);
+    background-color: $light-blue;
   }
 
   &:disabled {
@@ -114,7 +115,7 @@
       width: 20px;
       height: 20px;
       border: 2px solid transparent;
-      border-top: 2px solid white;
+      border-top: 2px solid $white;
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
@@ -131,8 +132,8 @@
 }
 
 .message {
-  padding: 1rem;
-  border-radius: 8px;
+  padding: $standard-padding;
+  border-radius: $border-med;
   margin-bottom: 1.5rem;
   font-weight: 500;
 
@@ -150,14 +151,14 @@
 }
 
 .info {
-  background-color: #f8f9fa;
+  background-color: $dark-white-background-color;
   padding: 1.5rem;
-  border-radius: 8px;
-  border-left: 4px solid #667eea;
+  border-radius: $border-med;
+  border-left: 4px solid $dark-blue;
 
   h3 {
-    color: #333;
-    margin-bottom: 1rem;
+    color: $dark-blue;
+    margin-bottom: $standard-margin;
     font-size: 1.2rem;
     font-weight: 600;
   }
@@ -171,14 +172,14 @@
       position: relative;
       padding-left: 1.5rem;
       margin-bottom: 0.5rem;
-      color: #555;
+      color: $dark-grey;
       line-height: 1.5;
 
       &::before {
         content: '✓';
         position: absolute;
         left: 0;
-        color: #667eea;
+        color: $dark-blue;
         font-weight: bold;
       }
 
@@ -189,20 +190,16 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $tablet) {
   .container {
-    padding: 1rem;
+    padding: $standard-padding;
   }
 
   .content {
-    padding: 2rem;
+    padding: $big-padding;
   }
 
   .title {
     font-size: 2rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
   }
 }
