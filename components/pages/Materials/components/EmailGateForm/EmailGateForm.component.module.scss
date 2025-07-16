@@ -519,18 +519,14 @@
 }
 
 .inputWrapper {
-  @include d-flex-column;
-  gap: $big-gap;
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    gap: $standard-gap;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: $standard-gap;
+  width: 100%;
 }
 
 .inputGroup {
-  flex: 1;
-  @include d-flex-column;
-  gap: $small-gap;
+  width: 100%;
 }
 
 .inputLabel {
@@ -550,83 +546,37 @@
 }
 
 .inputContainer {
-  position: relative;
-  @include d-flex;
+  display: flex;
   align-items: center;
+  width: 100%;
+  background: $white;
+  border-radius: $border-med;
+  border: 1px solid #e0e0e0;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  transition: border-color $transition-time;
+
+  &:focus-within {
+    border-color: $dark-blue;
+  }
 }
 
 .inputIcon {
-  position: absolute;
-  left: $standard-padding;
+  margin-right: 0.5rem;
   font-size: 1.2rem;
-  z-index: 2;
-
-  // Breakpoint dla laptopów
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    font-size: 1.1rem;
-  }
+  color: $dark-grey;
 }
 
+.nameInput,
 .emailInput {
   width: 100%;
-  padding: $standard-padding $standard-padding $standard-padding 3.5rem;
-  border: 2px solid rgba(0, 122, 204, 0.2);
-  border-radius: $border-med;
+  border: none;
+  outline: none;
   font-size: 1rem;
-  @include textFont();
-  transition: all $transition-time ease;
-  background: $white;
-
-  &:focus {
-    outline: none;
-    border-color: $dark-blue;
-    box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.1);
-  }
-
-  &::placeholder {
-    color: $grey;
-  }
-
-  &:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    padding: $small-padding $small-padding $small-padding 3rem;
-    font-size: 0.95rem;
-  }
-}
-
-.nameInput {
-  width: 100%;
-  padding: $standard-padding $standard-padding $standard-padding 3.5rem;
-  border: 2px solid rgba(0, 122, 204, 0.2);
-  border-radius: $border-med;
-  font-size: 1rem;
-  @include textFont();
-  transition: all $transition-time ease;
-  background: $white;
-
-  &:focus {
-    outline: none;
-    border-color: $dark-blue;
-    box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.1);
-  }
-
-  &::placeholder {
-    color: $grey;
-  }
-
-  &:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    padding: $small-padding $small-padding $small-padding 3rem;
-    font-size: 0.95rem;
-  }
+  background: transparent;
+  color: $dark-blue;
+  padding: 0.7rem 0;
+  box-sizing: border-box;
 }
 
 .formError {
@@ -683,6 +633,101 @@
   @media (min-width: $tablet) and (max-width: $desktop) {
     padding: 1.1rem $standard-padding;
     font-size: 1.3rem;
+  }
+}
+
+.checkboxGroup {
+  width: 100%;
+  margin-bottom: $standard-gap;
+}
+
+.checkboxLabel {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: $small-gap;
+  cursor: pointer;
+  @include textFont();
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: $dark-grey;
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 0.8rem;
+  }
+}
+
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(0, 122, 204, 0.3);
+  border-radius: 4px;
+  background: $white;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all $transition-time ease;
+
+  &:checked {
+    background: $dark-blue;
+    border-color: $dark-blue;
+
+    &::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $white;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $dark-blue;
+    box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.1);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:hover:not(:disabled) {
+    border-color: $dark-blue;
+  }
+}
+
+.checkboxText {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.policyLink {
+  color: $dark-blue;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color $transition-time ease;
+
+  &:hover {
+    color: $light-blue;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 2px solid $dark-blue;
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 }
 

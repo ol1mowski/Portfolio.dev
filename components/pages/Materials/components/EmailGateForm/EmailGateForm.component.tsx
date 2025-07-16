@@ -5,6 +5,7 @@ import s from './EmailGateForm.component.module.scss';
 import { memo, useState } from 'react';
 import Button from '@/components/UI/Button/Button.component';
 import { saveClientData } from '@/actions/SaveClientEmail';
+import { MATERIALS_CONSTANTS } from '../../constants/materials.constants';
 
 interface EmailGateFormProps {
   onEmailSubmit: (email: string) => void;
@@ -13,51 +14,23 @@ interface EmailGateFormProps {
 const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
+  const [acceptPolicy, setAcceptPolicy] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
-  const leftSideBenefits = [
-    {
-      icon: '📚',
-      title: 'Biblioteka wiedzy',
-      description: 'Dostęp do 50+ e-booków, notatek i praktycznych przewodników',
-    },
-    {
-      icon: '🚀',
-      title: 'Ekskluzywne treści',
-      description: 'Pierwsze spojrzenie na nowe materiały i beta wersje',
-    },
-    {
-      icon: '💎',
-      title: 'Premium zasoby',
-      description: 'Szablony, checklist i gotowe rozwiązania do projektów',
-    },
-  ];
-
-  const rightSideBenefits = [
-    {
-      icon: '💡',
-      title: 'Cotygodniowe wskazówki',
-      description: 'Najlepsze praktyki programowania prosto na email',
-    },
-    {
-      icon: '🎯',
-      title: 'Spersonalizowane ścieżki',
-      description: 'Materiały dostosowane do Twojego poziomu zaawansowania',
-    },
-    {
-      icon: '🔥',
-      title: 'Aktualne trendy',
-      description: 'Najnowsze technologie, narzędzia i trendy w branży IT',
-    },
-  ];
+  const { EMAIL_GATE, BENEFITS } = MATERIALS_CONSTANTS;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!email || !email.includes('@') || !name.trim()) {
-      setError('Proszę wypełnić wszystkie pola');
+      setError(EMAIL_GATE.ERRORS.FILL_FIELDS);
+      return;
+    }
+
+    if (!acceptPolicy) {
+      setError(EMAIL_GATE.POLICY.ERROR);
       return;
     }
 
@@ -73,13 +46,13 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
       const result = await saveClientData(formData);
 
       if (result.success) {
-        setSuccess('Dostęp odblokowany! Przekierowuję...');
+        setSuccess(EMAIL_GATE.SUCCESS);
         onEmailSubmit(email);
       } else {
-        setError(result.error || 'Wystąpił błąd podczas zapisywania');
+        setError(result.error || EMAIL_GATE.ERRORS.SAVE_ERROR);
       }
     } catch (err) {
-      setError('Wystąpił błąd podczas zapisywania');
+      setError(EMAIL_GATE.ERRORS.CONNECTION_ERROR);
       console.error('Error saving email:', err);
     } finally {
       setIsSubmitting(false);
@@ -98,17 +71,15 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
         <div className={s.header}>
           <div className={s.lockIcon}>🔐</div>
           <h1 className={s.title}>
-            Odblokuj <span className={s.gradient}>Centrum Materiałów</span>
+            {EMAIL_GATE.TITLE.split(' ')[0]}{' '}
+            <span className={s.gradient}>{EMAIL_GATE.TITLE.split(' ').slice(1).join(' ')}</span>
           </h1>
-          <p className={s.subtitle}>
-            Podaj swój adres email i uzyskaj natychmiastowy dostęp do wszystkich materiałów
-            edukacyjnych, e-booków i zasobów dla programistów.
-          </p>
+          <p className={s.subtitle}>{EMAIL_GATE.SUBTITLE}</p>
         </div>
 
         {/* Left Side Benefits */}
         <div className={s.leftBenefits}>
-          {leftSideBenefits.map((benefit, index) => (
+          {BENEFITS.LEFT.map((benefit, index) => (
             <div key={`left-benefit-${benefit.title}-${index}`} className={s.sideBenefitCard}>
               <div className={s.sideBenefitIcon}>{benefit.icon}</div>
               <h3 className={s.sideBenefitTitle}>{benefit.title}</h3>
@@ -119,7 +90,7 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
 
         {/* Right Side Benefits */}
         <div className={s.rightBenefits}>
-          {rightSideBenefits.map((benefit, index) => (
+          {BENEFITS.RIGHT.map((benefit, index) => (
             <div key={`right-benefit-${benefit.title}-${index}`} className={s.sideBenefitCard}>
               <div className={s.sideBenefitIcon}>{benefit.icon}</div>
               <h3 className={s.sideBenefitTitle}>{benefit.title}</h3>
@@ -130,8 +101,8 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
 
         <form onSubmit={handleSubmit} className={s.emailForm}>
           <div className={s.formHeader}>
-            <h3 className={s.formTitle}>Zacznij już teraz!</h3>
-            <p className={s.formSubtitle}>Bezpłatny dostęp na zawsze</p>
+            <h3 className={s.formTitle}>{EMAIL_GATE.FORM.TITLE}</h3>
+            <p className={s.formSubtitle}>{EMAIL_GATE.FORM.SUBTITLE}</p>
           </div>
 
           {error && <div className={s.formError}>{error}</div>}
@@ -140,7 +111,7 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
           <div className={s.inputWrapper}>
             <div className={s.inputGroup}>
               <label htmlFor="name-input" className={s.inputLabel}>
-                Twoje imię
+                {EMAIL_GATE.FORM.NAME_LABEL}
               </label>
               <div className={s.inputContainer}>
                 <span className={s.inputIcon}>👤</span>
@@ -149,7 +120,7 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
                   type="text"
                   value={name}
                   onChange={e => setName(e.target.value)}
-                  placeholder="np. Jan Kowalski"
+                  placeholder={EMAIL_GATE.FORM.NAME_PLACEHOLDER}
                   className={s.nameInput}
                   required
                   disabled={isSubmitting}
@@ -159,7 +130,7 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
 
             <div className={s.inputGroup}>
               <label htmlFor="email-input" className={s.inputLabel}>
-                Podaj swój adres email
+                {EMAIL_GATE.FORM.EMAIL_LABEL}
               </label>
               <div className={s.inputContainer}>
                 <span className={s.inputIcon}>📧</span>
@@ -168,7 +139,7 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
                   type="email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
-                  placeholder="np. jan.kowalski@gmail.com"
+                  placeholder={EMAIL_GATE.FORM.EMAIL_PLACEHOLDER}
                   className={s.emailInput}
                   required
                   disabled={isSubmitting}
@@ -176,18 +147,50 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
               </div>
             </div>
 
+            <div className={s.checkboxGroup}>
+              <label className={s.checkboxLabel}>
+                <input
+                  type="checkbox"
+                  checked={acceptPolicy}
+                  onChange={e => setAcceptPolicy(e.target.checked)}
+                  className={s.checkbox}
+                  disabled={isSubmitting}
+                />
+                <span className={s.checkboxText}>
+                  {EMAIL_GATE.POLICY.CHECKBOX_TEXT}{' '}
+                  <a
+                    href="/prywatnosc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={s.policyLink}
+                  >
+                    {EMAIL_GATE.POLICY.PRIVACY_POLICY}
+                  </a>{' '}
+                  {EMAIL_GATE.POLICY.AND}{' '}
+                  <a
+                    href="/prywatnosc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={s.policyLink}
+                  >
+                    {EMAIL_GATE.POLICY.COOKIES}
+                  </a>
+                </span>
+              </label>
+            </div>
+
             <button
               type="submit"
               className={s.submitButton}
-              disabled={isSubmitting || !email.includes('@') || !name.trim()}
+              disabled={isSubmitting || !email.includes('@') || !name.trim() || !acceptPolicy}
             >
-              {isSubmitting ? 'Odblokowuję...' : 'Odblokuj dostęp'}
+              {isSubmitting ? EMAIL_GATE.FORM.LOADING_BUTTON : EMAIL_GATE.FORM.SUBMIT_BUTTON}
             </button>
           </div>
 
           <div className={s.formFooter}>
-            <p className={s.privacy}>🔒 Twoje dane są bezpieczne. Nie wysyłamy spamu.</p>
-            <p className={s.guarantee}>✅ 100% bezpłatne.</p>
+            <p className={s.privacy}>{EMAIL_GATE.FOOTER.PRIVACY}</p>
+            <p className={s.guarantee}>{EMAIL_GATE.FOOTER.GUARANTEE}</p>
           </div>
         </form>
       </div>

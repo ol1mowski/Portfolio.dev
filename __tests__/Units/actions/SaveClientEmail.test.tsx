@@ -127,4 +127,56 @@ describe('SaveClientEmail Action', () => {
       email: 'test@example.com',
     });
   });
+
+  it('should handle empty name field', async () => {
+    const formData = new FormData();
+    formData.append('name', '');
+    formData.append('email', 'test@example.com');
+
+    const result = await saveClientData(formData);
+
+    expect(result.success).toBe(false);
+    expect(result.error).toBe('Missing required fields');
+    expect(saveClient).not.toHaveBeenCalled();
+    expect(createAuthSession).not.toHaveBeenCalled();
+  });
+
+  it('should handle empty email field', async () => {
+    const formData = new FormData();
+    formData.append('name', 'Test User');
+    formData.append('email', '');
+
+    const result = await saveClientData(formData);
+
+    expect(result.success).toBe(false);
+    expect(result.error).toBe('Missing required fields');
+    expect(saveClient).not.toHaveBeenCalled();
+    expect(createAuthSession).not.toHaveBeenCalled();
+  });
+
+  it('should handle whitespace-only name field', async () => {
+    const formData = new FormData();
+    formData.append('name', '   ');
+    formData.append('email', 'test@example.com');
+
+    const result = await saveClientData(formData);
+
+    expect(result.success).toBe(false);
+    expect(result.error).toBe('Missing required fields');
+    expect(saveClient).not.toHaveBeenCalled();
+    expect(createAuthSession).not.toHaveBeenCalled();
+  });
+
+  it('should handle whitespace-only email field', async () => {
+    const formData = new FormData();
+    formData.append('name', 'Test User');
+    formData.append('email', '   ');
+
+    const result = await saveClientData(formData);
+
+    expect(result.success).toBe(false);
+    expect(result.error).toBe('Missing required fields');
+    expect(saveClient).not.toHaveBeenCalled();
+    expect(createAuthSession).not.toHaveBeenCalled();
+  });
 });

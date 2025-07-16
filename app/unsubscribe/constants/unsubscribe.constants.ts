@@ -32,4 +32,11 @@ export const UNSUBSCRIBE_CONSTANTS = {
   PLACEHOLDERS: {
     token: 'Token z linku',
   },
+  POLICY: {
+    checkbox: 'Akceptuję',
+    privacyPolicy: 'politykę prywatności',
+    and: 'i',
+    cookies: 'cookies',
+    error: 'Musisz zaakceptować politykę prywatności i cookies',
+  },
 } as const;
