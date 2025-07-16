@@ -1,8 +1,8 @@
 @import '@/style/index.scss';
 
 .emailGateContainer {
-  height: 100vh;
-  max-height: 100vh;
+  min-height: 100vh;
+  height: auto;
   @include d-flex-column;
   background: linear-gradient(135deg, $white 0%, $dark-white-background-color 50%, $white 100%);
   position: relative;
@@ -11,6 +11,12 @@
 
   @media (max-width: $mobile) {
     padding: $small-padding;
+  }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    padding: $big-padding;
+    min-height: auto;
+    height: auto;
   }
 }
 
@@ -36,6 +42,13 @@
   top: -150px;
   right: -150px;
   animation-delay: 0s;
+
+  @media (max-width: $desktop) {
+    width: 200px;
+    height: 200px;
+    top: -100px;
+    right: -100px;
+  }
 }
 
 .circle2 {
@@ -44,6 +57,13 @@
   bottom: -100px;
   left: -100px;
   animation-delay: 2s;
+
+  @media (max-width: $desktop) {
+    width: 150px;
+    height: 150px;
+    bottom: -75px;
+    left: -75px;
+  }
 }
 
 .circle3 {
@@ -52,6 +72,12 @@
   top: 50%;
   left: -75px;
   animation-delay: 4s;
+
+  @media (max-width: $desktop) {
+    width: 100px;
+    height: 100px;
+    left: -50px;
+  }
 }
 
 @keyframes float {
@@ -77,12 +103,20 @@
   justify-content: center;
   flex: 1;
   align-items: start;
+  padding: $standard-padding 0;
 
   @media (max-width: $tablet) {
     display: flex;
     flex-direction: column;
     gap: $small-gap;
     max-width: 1000px;
+    padding: $small-padding 0;
+  }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    grid-template-columns: 1fr 350px 1fr;
+    gap: $standard-gap;
+    padding: $standard-padding 0;
   }
 }
 
@@ -96,6 +130,10 @@
   @media (max-width: $tablet) {
     margin-bottom: $small-margin;
   }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    margin-bottom: $standard-margin;
+  }
 }
 
 .lockIcon {
@@ -105,6 +143,11 @@
 
   @media (max-width: $mobile) {
     font-size: 2rem;
+  }
+
+  // Breakpoint dla laptopów
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    font-size: 2.2rem;
   }
 }
 
@@ -130,6 +173,10 @@
   @media (max-width: $mobile) {
     font-size: 1.4rem;
   }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    font-size: 1.7rem;
+  }
 }
 
 .gradient {
@@ -148,6 +195,11 @@
 
   @media (max-width: $mobile) {
     font-size: 1rem;
+  }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    font-size: 1.1rem;
+    max-width: 500px;
   }
 }
 
@@ -176,6 +228,12 @@
   @media (max-width: $tablet) {
     display: none;
   }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    padding-right: $standard-padding;
+    padding-left: $small-padding;
+    gap: $small-gap;
+  }
 }
 
 .rightBenefits {
@@ -191,6 +249,12 @@
 
   @media (max-width: $tablet) {
     display: none;
+  }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    padding-left: $standard-padding;
+    padding-right: $small-padding;
+    gap: $small-gap;
   }
 }
 
@@ -266,6 +330,11 @@
       opacity: 1;
     }
   }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    padding: $small-padding;
+    gap: $small-gap;
+  }
 }
 
 .leftBenefits .sideBenefitCard:hover {
@@ -282,6 +351,10 @@
   .sideBenefitCard:hover & {
     transform: scale(1.1);
   }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    font-size: 1.8rem;
+  }
 }
 
 .sideBenefitTitle {
@@ -292,6 +365,10 @@
   margin: 0;
   text-align: center;
   line-height: 1.3;
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    font-size: 0.9rem;
+  }
 }
 
 .sideBenefitDescription {
@@ -306,6 +383,10 @@
   .sideBenefitCard:hover & {
     opacity: 1;
     color: darken($grey, 10%);
+  }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    font-size: 0.8rem;
   }
 }
 
@@ -385,6 +466,12 @@
     padding: $standard-padding;
     gap: $small-gap;
   }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    padding: $standard-padding;
+    gap: $standard-gap;
+    min-height: 450px;
+  }
 }
 
 .formHeader {
@@ -392,6 +479,11 @@
   @include d-flex-column;
   gap: $standard-gap;
   margin-bottom: $big-margin;
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    margin-bottom: $standard-margin;
+    gap: $small-gap;
+  }
 }
 
 .formTitle {
@@ -403,6 +495,10 @@
 
   @media (max-width: $mobile) {
     font-size: 1.5rem;
+  }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    font-size: 1.6rem;
   }
 }
 
@@ -416,11 +512,19 @@
   @media (max-width: $mobile) {
     font-size: 1rem;
   }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    font-size: 1rem;
+  }
 }
 
 .inputWrapper {
   @include d-flex-column;
   gap: $big-gap;
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    gap: $standard-gap;
+  }
 }
 
 .inputGroup {
@@ -439,6 +543,10 @@
   @media (max-width: $mobile) {
     font-size: 1rem;
   }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    font-size: 1rem;
+  }
 }
 
 .inputContainer {
@@ -452,6 +560,11 @@
   left: $standard-padding;
   font-size: 1.2rem;
   z-index: 2;
+
+  // Breakpoint dla laptopów
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    font-size: 1.1rem;
+  }
 }
 
 .emailInput {
@@ -477,6 +590,11 @@
   &:disabled {
     opacity: 0.7;
     cursor: not-allowed;
+  }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    padding: $small-padding $small-padding $small-padding 3rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -504,6 +622,11 @@
     opacity: 0.7;
     cursor: not-allowed;
   }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    padding: $small-padding $small-padding $small-padding 3rem;
+    font-size: 0.95rem;
+  }
 }
 
 .formError {
@@ -516,6 +639,11 @@
   @include textFont();
   text-align: center;
   margin-bottom: $standard-margin;
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    font-size: 0.85rem;
+    padding: $small-padding;
+  }
 }
 
 .formSuccess {
@@ -528,6 +656,11 @@
   @include textFont();
   text-align: center;
   margin-bottom: $standard-margin;
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    font-size: 0.85rem;
+    padding: $small-padding;
+  }
 }
 
 .submitButton {
@@ -546,6 +679,11 @@
       border: none;
     }
   }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    padding: 1.1rem $standard-padding;
+    font-size: 1.3rem;
+  }
 }
 
 .formFooter {
@@ -553,6 +691,12 @@
   gap: $standard-gap;
   text-align: center;
   margin-top: $big-margin;
+
+  // Breakpoint dla laptopów
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    margin-top: $standard-margin;
+    gap: $small-gap;
+  }
 }
 
 .privacy,
@@ -564,6 +708,10 @@
 
   @media (max-width: $mobile) {
     font-size: 0.8rem;
+  }
+
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    font-size: 0.85rem;
   }
 }
 

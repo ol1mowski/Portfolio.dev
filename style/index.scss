@@ -68,6 +68,7 @@ $big-tablet: 900px;
 $small-desktop: 1024px;
 $desktop: 1200px;
 $large-desktop: 1700px;
+$laptop: 1024px; // Dodatkowy breakpoint dla laptopów
 
 //gaps
 $small-gap: 0.5rem;
@@ -166,4 +167,18 @@ $btn-text-size: 1.4rem;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+// Mixin dla responsywności laptopów
+@mixin laptop() {
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    @content;
+  }
+}
+
+// Mixin dla responsywności laptopów i mniejszych ekranów
+@mixin laptop-and-down() {
+  @media (max-width: $desktop) {
+    @content;
+  }
 }

@@ -44,6 +44,12 @@
   @media screen and (max-width: $tablet) {
     min-height: calc(100vh - 80px - 210px);
   }
+
+  // Breakpoint dla laptopów
+  @media (min-width: $tablet) and (max-width: $desktop) {
+    min-height: auto;
+    padding: 0 2rem;
+  }
 }
 
 .heroSection {
