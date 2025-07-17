@@ -218,14 +218,19 @@
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.3;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 
   @media (max-width: $mobile) {
     font-size: 16px;
     margin-bottom: 0.3rem;
+    -webkit-line-clamp: 2;
   }
 
   @media (min-width: #{$mobile + 1px}) and (max-width: $tablet) {
     font-size: 17px;
+    -webkit-line-clamp: 2;
   }
 }
 
