@@ -3,8 +3,7 @@
 import s from './EmailGateForm.component.module.scss';
 
 import { memo, useState } from 'react';
-import Button from '@/components/UI/Button/Button.component';
-import { saveClientData } from '@/actions/SaveClientEmail';
+import { saveClientData } from '@/actions/client.actions';
 import { MATERIALS_CONSTANTS } from '../../constants/materials.constants';
 
 interface EmailGateFormProps {
@@ -77,7 +76,6 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
           <p className={s.subtitle}>{EMAIL_GATE.SUBTITLE}</p>
         </div>
 
-        {/* Left Side Benefits */}
         <div className={s.leftBenefits}>
           {BENEFITS.LEFT.map((benefit, index) => (
             <div key={`left-benefit-${benefit.title}-${index}`} className={s.sideBenefitCard}>
@@ -88,7 +86,6 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
           ))}
         </div>
 
-        {/* Right Side Benefits */}
         <div className={s.rightBenefits}>
           {BENEFITS.RIGHT.map((benefit, index) => (
             <div key={`right-benefit-${benefit.title}-${index}`} className={s.sideBenefitCard}>

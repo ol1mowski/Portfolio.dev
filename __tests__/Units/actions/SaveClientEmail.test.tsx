@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 //@ts-ignore
-import { saveClientData } from '../../../actions/SaveClientEmail';
+import { saveClientData } from '../../../actions/client.actions';
 import { saveClient } from '../../../lib/api/client/client.service';
 import { createAuthSession } from '../../../lib/auth';
 

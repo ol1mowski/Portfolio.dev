@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react';
 import FormComponent from './Form.component';
+import { subscribeToNewsletter } from '@/actions/client.actions';
 
 function Form({ action }: { action: (formData: FormData) => Promise<void> }) {
   const [isPending, setIsPending] = useState(false);
@@ -19,13 +20,18 @@ function Form({ action }: { action: (formData: FormData) => Promise<void> }) {
     const formData = new FormData(event.currentTarget);
 
     try {
-      await action(formData);
-      setSuccess('Newsletter wkrótce będzie dostępny ;)');
-      if (inp.current) {
-        inp.current.value = '';
+      const result = await subscribeToNewsletter(formData);
+
+      if (result.success) {
+        setSuccess(result.message || 'Newsletter wkrótce będzie dostępny ;)');
+        if (inp.current) {
+          inp.current.value = '';
+        }
+      } else {
+        setError(result.error || '[-] Błędny adres email, Spróbuj ponownie');
       }
     } catch (err) {
-      setError('[-] Błędny adres email, Sprobuj ponownie');
+      setError('[-] Błędny adres email, Spróbuj ponownie');
     } finally {
       setIsPending(false);
     }

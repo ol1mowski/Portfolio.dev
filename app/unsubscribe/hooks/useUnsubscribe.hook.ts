@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { unsubscribeClient } from '@/actions/client.actions';
 
 interface UnsubscribeState {
   token: string;
@@ -37,24 +38,14 @@ export const useUnsubscribe = (): UnsubscribeState & UnsubscribeActions => {
     setMessage('');
 
     try {
-      const response = await fetch('/api/clients/unsubscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          token: token.trim(),
-        }),
-      });
+      const result = await unsubscribeClient(token.trim());
 
-      const data = await response.json();
-
-      if (data.success) {
-        setMessage(data.message);
+      if (result.success) {
+        setMessage(result.message || 'Pomyślnie zrezygnowano z subskrypcji');
         setIsSuccess(true);
         setToken('');
       } else {
-        setMessage(data.error || 'Wystąpił błąd podczas rezygnacji');
+        setMessage(result.error || 'Wystąpił błąd podczas rezygnacji');
         setIsSuccess(false);
       }
     } catch (error) {

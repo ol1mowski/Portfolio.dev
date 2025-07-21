@@ -5,7 +5,7 @@ import Footer from '@/components/pages/Footer/Footer.page';
 import Header from '@/components/pages/Header/Header.component';
 
 import dynamic from 'next/dynamic';
-import { saveClientData } from '@/actions/SaveClientEmail';
+import { saveClientData } from '@/actions/client.actions';
 import { validateSession } from '@/lib/auth';
 import { redirect } from 'next/navigation';
 
