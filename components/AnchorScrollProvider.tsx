@@ -1,7 +1,7 @@
 'use client';
 
 import { Suspense } from 'react';
-import { useAnchorScroll } from '@/hooks/useAnchorScroll';
+import { useAnchorScroll } from '@/hooks/useAnchorScroll.hook';
 
 function AnchorScrollWrapper({ children }: { children: React.ReactNode }) {
   useAnchorScroll();

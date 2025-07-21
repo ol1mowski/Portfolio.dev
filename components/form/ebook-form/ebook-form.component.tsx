@@ -4,7 +4,7 @@ import { type FC } from 'react';
 import Button from '@/components/UI/Button/Button.component';
 import { FormField } from '../form-field/form-field.component';
 import { CheckboxField } from '../checkbox-field/checkbox-field.component';
-import { useFormValidation } from '@/hooks/form/use-form-validation.hook';
+import { useFormValidation } from '@/hooks/form/useFormValidation.hook';
 import s from './ebook-form.module.scss';
 
 interface EbookFormProps {

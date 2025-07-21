@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react';
 import FormComponent from './Form.component';
-import { subscribeToNewsletter } from '@/actions/client.actions';
+import { subscribeToNewsletter } from '@/actions/newsletter.actions';
 
 function Form({ action }: { action: (formData: FormData) => Promise<void> }) {
   const [isPending, setIsPending] = useState(false);

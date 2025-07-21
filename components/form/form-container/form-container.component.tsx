@@ -1,6 +1,6 @@
 import { type FC, type ReactNode } from 'react';
 import Success from '@/components/UI/Success/Success.component';
-import { type FormState } from '@/hooks/form/use-form-validation.hook';
+import { type FormState } from '@/hooks/form/useFormValidation.hook';
 import s from './form-container.module.scss';
 
 interface FormContainerProps {

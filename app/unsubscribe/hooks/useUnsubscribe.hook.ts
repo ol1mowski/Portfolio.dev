@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { unsubscribeClient } from '@/actions/client.actions';
+import { unsubscribeClient } from '@/actions/unsubscribe.actions';
 
 interface UnsubscribeState {
   token: string;
