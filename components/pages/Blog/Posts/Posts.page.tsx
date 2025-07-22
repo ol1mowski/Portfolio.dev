@@ -1,11 +1,12 @@
 'use client';
 
+import { useEffect } from 'react';
 import s from './Posts.page.module.scss';
 
 import PostCardComponent from './PostCardComponent/PostCardComponent.component';
 import PostsButton from './PostsButton/PostsButton.component';
 import { type PostsType } from '@/types/PostType.types';
-import { useState, useEffect } from 'react';
+import { useBlogData } from '../hooks/useBlogData.hook';
 
 interface CategoryData {
   name: string;
@@ -14,36 +15,22 @@ interface CategoryData {
 }
 
 function PostsComponent({ posts }: { posts: PostsType[] }) {
-  const [categories, setCategories] = useState<CategoryData[]>([]);
-  const [isLoadingCategories, setIsLoadingCategories] = useState(true);
+  const { categories, loading, error, fetchCategories } = useBlogData();
 
   const latestPosts = posts.slice(0, 3);
 
   useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        setIsLoadingCategories(true);
-        const response = await fetch('/api/blog/categories');
-        if (response.ok) {
-          const categoriesData: CategoryData[] = await response.json();
-
-          const formattedCategories = categoriesData.map(category => ({
-            name: category.name,
-            count: category.count,
-          }));
-
-          setCategories(formattedCategories);
-        }
-      } catch (error) {
-        console.error('Error fetching categories:', error);
-        setCategories([]);
-      } finally {
-        setIsLoadingCategories(false);
-      }
-    };
-
     fetchCategories();
-  }, []);
+  }, [fetchCategories]);
+
+  const formattedCategories: CategoryData[] = categories.map(category => ({
+    name: category.name,
+    count: category.count,
+  }));
+
+  if (error) {
+    return <div role="alert">Błąd: {error}</div>;
+  }
 
   return (
     <section className={s.container} id="posts" data-testid="posts-section">
@@ -83,26 +70,26 @@ function PostsComponent({ posts }: { posts: PostsType[] }) {
         <aside className={s.container__content__sidebar}>
           <div className={s.sidebarWidget}>
             <h3 className={s.sidebarWidget__title}>📂 Kategorie</h3>
-            {isLoadingCategories ? (
+            {loading ? (
               <div className={s.loadingSpinner}>
                 <div className={s.loadingSpinner__icon}></div>
                 <span>Ładowanie kategorii...</span>
               </div>
             ) : (
               <div className={s.categoriesList}>
-                {categories.length > 0 ? (
-                  categories.map((category, index) => (
+                {formattedCategories.length > 0 ? (
+                  formattedCategories.map((category, index) => (
                     <a
                       key={index}
                       href={`/Blog/kategorie/${encodeURIComponent(category.name)}`}
                       className={s.categoriesList__item}
                     >
                       <span className={s.categoriesList__item__name}>{category.name}</span>
-                      <span className={s.categoriesList__item__count}>{category.count}</span>
+                      <span className={s.categoriesList__item__count}>({category.count})</span>
                     </a>
                   ))
                 ) : (
-                  <div className={s.noData}>Brak kategorii do wyświetlenia</div>
+                  <p className={s.categoriesList__empty}>Brak kategorii</p>
                 )}
               </div>
             )}

@@ -1,10 +1,11 @@
 'use client';
 
+import { useEffect } from 'react';
 import s from './HomePage.page.module.scss';
 
 import Header from '../HeaderBlog/Header.component.page';
 import { type PostsType } from '@/types/PostType.types';
-import { useBlogData } from './hooks/useBlogData.hook';
+import { useBlogData } from '../hooks/useBlogData.hook';
 import { MainArticle, SmallPosts, TrendingTopics, BlogStats } from './components';
 
 interface HomePageComponentProps {
@@ -12,7 +13,11 @@ interface HomePageComponentProps {
 }
 
 function HomePageComponent({ posts }: HomePageComponentProps) {
-  const { blogStats, trendingTopics, isLoadingTrending } = useBlogData();
+  const { stats, tags, loading, error, initialize } = useBlogData();
+
+  useEffect(() => {
+    initialize();
+  }, [initialize]);
 
   if (!posts || !posts.length) {
     return <div role="alert">Nie znaleziono postów.</div>;
@@ -20,6 +25,14 @@ function HomePageComponent({ posts }: HomePageComponentProps) {
 
   const featuredPost = posts[0];
   const smallPosts = posts.slice(1, 3);
+
+  const trendingTopics = tags
+    .filter(tag => tag.trending)
+    .slice(0, 4)
+    .map(tag => ({
+      name: tag.name,
+      growth: `+${tag.count}`,
+    }));
 
   const handleCategoryClick = (category: string) => {
     window.location.href = `/Blog/kategorie/${encodeURIComponent(category)}`;
@@ -29,6 +42,10 @@ function HomePageComponent({ posts }: HomePageComponentProps) {
     const cleanTag = tag.startsWith('#') ? tag.slice(1) : tag;
     window.location.href = `/Blog/tagi/${encodeURIComponent(cleanTag)}`;
   };
+
+  if (error) {
+    return <div role="alert">Błąd: {error}</div>;
+  }
 
   return (
     <section className={s.container}>
@@ -54,11 +71,18 @@ function HomePageComponent({ posts }: HomePageComponentProps) {
           <aside className={s.sidebar}>
             <TrendingTopics
               topics={trendingTopics}
-              isLoading={isLoadingTrending}
+              isLoading={loading}
               onTagClick={handleTagClick}
             />
 
-            <BlogStats stats={blogStats} />
+            <BlogStats
+              stats={{
+                articles: stats?.general?.articles?.toString() || '0',
+                readers: stats?.general?.totalViews?.toString() || '0',
+                authors: stats?.general?.authors?.toString() || '0',
+                categories: stats?.general?.categories?.toString() || '0',
+              }}
+            />
           </aside>
         </div>
       </section>

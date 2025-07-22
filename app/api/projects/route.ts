@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getProjects } from '@/db/Utils/DataFetchingFunctions/DataFetchingFunctions';
+import { getProjects } from '@/actions/projects.actions';
 import { dbConnect } from '@/db/db_connect';
 
 export async function GET() {

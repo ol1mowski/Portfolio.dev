@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import ProjectDetails from '@/components/pages/ProjectDetails/ProjectDetails.page';
-import { getProjects } from '@/db/Utils/DataFetchingFunctions/DataFetchingFunctions';
+import { getProjects } from '@/actions/projects.actions';
 import { ProjectType } from '@/types/PostType.types';
 
 const generateSlug = (title: string): string => {

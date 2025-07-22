@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getOpinions } from '@/db/Utils/DataFetchingFunctions/DataFetchingFunctions';
+import { getOpinions } from '@/actions/opinions.actions';
 import { dbConnect } from '@/db/db_connect';
 
 export async function GET() {

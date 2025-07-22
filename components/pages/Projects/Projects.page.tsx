@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import s from './Projects.page.module.scss';
 import { ProjectType } from '@/types/PostType.types';
 import { PROJECTS_SECTION_ARIA_LABEL, PROJECTS_SECTION_ID } from './constants/projects.constants';
@@ -8,6 +9,7 @@ import ProjectContainer from './ProjectContainer/ProjectContainer.component';
 import ProjectsWrapper from './ProjectsWrapper/ProjectsWrapper.component';
 import { SectionContainer } from '@/components/UI/shared';
 import { monthsMap } from '@/consts/Date';
+import { useProjectsData } from './hooks/useProjectsData.hook';
 
 export type ProjectsData = {
   projects: ProjectType[];
@@ -30,7 +32,17 @@ const sortProjectsByDate = (projects: ProjectType[]): ProjectType[] => {
 };
 
 const Projects = ({ projects = [] }: ProjectsProps) => {
-  if (!projects || !projects.length || !projects[0]?.projects) {
+  const { projects: fetchedProjects, loading, error, fetchProjects } = useProjectsData();
+
+  useEffect(() => {
+    if (!projects || !projects.length || !projects[0]?.projects) {
+      fetchProjects();
+    }
+  }, [projects, fetchProjects]);
+
+  const projectList = projects?.[0]?.projects || fetchedProjects;
+
+  if (!projectList || !projectList.length) {
     return (
       <SectionContainer
         id={PROJECTS_SECTION_ID}
@@ -38,12 +50,17 @@ const Projects = ({ projects = [] }: ProjectsProps) => {
         ariaLabel={PROJECTS_SECTION_ARIA_LABEL}
       >
         <ProjectHeader />
-        <div role="alert">No projects available</div>
+        {loading ? (
+          <div>Ładowanie projektów...</div>
+        ) : error ? (
+          <div role="alert">Błąd: {error}</div>
+        ) : (
+          <div role="alert">Brak dostępnych projektów</div>
+        )}
       </SectionContainer>
     );
   }
 
-  const projectList = projects[0].projects;
   const sortedProjects = sortProjectsByDate(projectList);
 
   return (

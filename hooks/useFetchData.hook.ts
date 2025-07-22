@@ -1,4 +1,5 @@
-import { getOpinions, getProjects } from '@/db/Utils/DataFetchingFunctions/DataFetchingFunctions';
+import { getOpinions } from '@/actions/opinions.actions';
+import { getProjects } from '@/actions/projects.actions';
 import { OpinionsType } from '@/types/Opinions.types';
 import { ProjectsType } from '@/types/PostType.types';
 export type DataType = 'projects' | 'opinions';
