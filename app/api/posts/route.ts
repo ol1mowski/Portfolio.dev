@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getFilteredPosts } from '@/actions/blog.actions';
+import { getFilteredPosts } from '@/actions/blog';
 
 export async function GET(request: NextRequest) {
   try {

@@ -1,4 +1,4 @@
-import { getBlogPosts } from '@/actions/blog.actions';
+import { getBlogPosts } from '@/actions/blog';
 import PostSiteComponent from './PostSite.logic';
 import { type PostsType } from '@/types/PostType.types';
 import NotFound from '../NotFound/NotFound.page';

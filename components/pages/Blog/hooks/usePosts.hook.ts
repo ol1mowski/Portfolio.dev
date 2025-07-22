@@ -1,4 +1,4 @@
-import { getBlogPosts } from '@/actions/blog.actions';
+import { getBlogPosts } from '@/actions/blog';
 import { type PostsType } from '@/types/PostType.types';
 
 export interface PostsResponse {
