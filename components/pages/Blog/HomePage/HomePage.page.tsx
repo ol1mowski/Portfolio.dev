@@ -5,7 +5,7 @@ import s from './HomePage.page.module.scss';
 
 import Header from '../HeaderBlog/Header.component.page';
 import { type PostsType } from '@/types/PostType.types';
-import { useBlogData } from '../hooks/useBlogData.hook';
+import { useBlogStats, useBlogTags } from '../hooks';
 import { MainArticle, SmallPosts, TrendingTopics, BlogStats } from './components';
 
 interface HomePageComponentProps {
@@ -13,11 +13,13 @@ interface HomePageComponentProps {
 }
 
 function HomePageComponent({ posts }: HomePageComponentProps) {
-  const { stats, tags, loading, error, initialize } = useBlogData();
+  const { stats, loading: statsLoading, error: statsError, fetchStats } = useBlogStats();
+  const { tags, loading: tagsLoading, error: tagsError, fetchTags } = useBlogTags();
 
   useEffect(() => {
-    initialize();
-  }, [initialize]);
+    fetchStats();
+    fetchTags();
+  }, [fetchStats, fetchTags]);
 
   if (!posts || !posts.length) {
     return <div role="alert">Nie znaleziono postów.</div>;
@@ -43,8 +45,8 @@ function HomePageComponent({ posts }: HomePageComponentProps) {
     window.location.href = `/Blog/tagi/${encodeURIComponent(cleanTag)}`;
   };
 
-  if (error) {
-    return <div role="alert">Błąd: {error}</div>;
+  if (statsError || tagsError) {
+    return <div role="alert">Błąd: {statsError || tagsError}</div>;
   }
 
   return (
@@ -71,7 +73,7 @@ function HomePageComponent({ posts }: HomePageComponentProps) {
           <aside className={s.sidebar}>
             <TrendingTopics
               topics={trendingTopics}
-              isLoading={loading}
+              isLoading={tagsLoading}
               onTagClick={handleTagClick}
             />
 

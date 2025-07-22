@@ -6,7 +6,7 @@ import s from './Posts.page.module.scss';
 import PostCardComponent from './PostCardComponent/PostCardComponent.component';
 import PostsButton from './PostsButton/PostsButton.component';
 import { type PostsType } from '@/types/PostType.types';
-import { useBlogData } from '../hooks/useBlogData.hook';
+import { useBlogCategories } from '../hooks';
 
 interface CategoryData {
   name: string;
@@ -15,7 +15,7 @@ interface CategoryData {
 }
 
 function PostsComponent({ posts }: { posts: PostsType[] }) {
-  const { categories, loading, error, fetchCategories } = useBlogData();
+  const { categories, loading, error, fetchCategories } = useBlogCategories();
 
   const latestPosts = posts.slice(0, 3);
 
