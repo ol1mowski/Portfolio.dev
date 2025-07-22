@@ -1,11 +1,11 @@
 import { memo } from 'react';
 import dynamic from 'next/dynamic';
 import s from './MaterialsGrid.component.module.scss';
-
 import { MaterialType } from '@/types/Materials.types';
+import { Loading } from '@/components/UI/shared';
 
 const DynamicMaterialCard = dynamic(() => import('../MaterialCard/MaterialCard.component'), {
-  loading: () => <div className={s.materialsGrid__cardLoading}>Ładowanie...</div>,
+  loading: () => <Loading message="Ładowanie karty..." size="small" />,
 });
 
 interface MaterialsGridProps {
@@ -44,10 +44,7 @@ const MaterialsGrid = memo(
         </div>
 
         {loading && materials.length === 0 ? (
-          <div className={s.materialsGrid__loading}>
-            <div className={s.materialsGrid__loadingSpinner}></div>
-            <p>Ładowanie materiałów...</p>
-          </div>
+          <Loading message="Ładowanie materiałów..." />
         ) : materials.length > 0 ? (
           <>
             <div className={s.materialsGrid__items}>

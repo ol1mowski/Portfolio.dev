@@ -7,6 +7,7 @@ import PostCardComponent from './PostCardComponent/PostCardComponent.component';
 import PostsButton from './PostsButton/PostsButton.component';
 import { type PostsType } from '@/types/PostType.types';
 import { useBlogCategories } from '../hooks';
+import { Loading } from '@/components/UI/shared';
 
 interface CategoryData {
   name: string;
@@ -71,10 +72,7 @@ function PostsComponent({ posts }: { posts: PostsType[] }) {
           <div className={s.sidebarWidget}>
             <h3 className={s.sidebarWidget__title}>📂 Kategorie</h3>
             {loading ? (
-              <div className={s.loadingSpinner}>
-                <div className={s.loadingSpinner__icon}></div>
-                <span>Ładowanie kategorii...</span>
-              </div>
+              <Loading message="Ładowanie kategorii..." size="small" />
             ) : (
               <div className={s.categoriesList}>
                 {formattedCategories.length > 0 ? (

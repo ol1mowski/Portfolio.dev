@@ -1,6 +1,6 @@
 import s from './SearchBar.component.module.scss';
-
 import { memo, useRef, useEffect, useState } from 'react';
+import { Loading } from '@/components/UI/shared';
 
 interface SearchBarProps {
   value: string;
@@ -31,7 +31,9 @@ const SearchBar = memo(
     return (
       <div className={s.searchBar}>
         <div className={s.searchWrapper}>
-          <div className={s.searchIcon}>{loading ? '⏳' : '🔍'}</div>
+          <div className={s.searchIcon}>
+            {loading ? <Loading size="small" variant="dots" /> : '🔍'}
+          </div>
           <input
             ref={inputRef}
             type="text"

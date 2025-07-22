@@ -1,4 +1,5 @@
 import s from '../../HomePage.page.module.scss';
+import { Loading } from '@/components/UI/shared';
 
 interface TrendingTopicsProps {
   topics: Array<{ name: string; growth: string }>;
@@ -11,10 +12,7 @@ export default function TrendingTopics({ topics, isLoading, onTagClick }: Trendi
     <div className={s.trendingTopics}>
       <h3 className={s.trendingTopics__title}>📈 Trending Topics</h3>
       {isLoading ? (
-        <div className={s.loadingSpinner}>
-          <div className={s.loadingSpinner__icon}></div>
-          <span>Ładowanie trendów...</span>
-        </div>
+        <Loading message="Ładowanie trendów..." size="small" />
       ) : (
         <div className={s.trendingTopics__list}>
           {topics.length > 0 ? (

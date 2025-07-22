@@ -5,6 +5,7 @@ import s from './TagPage.page.module.scss';
 import Header from '../HeaderBlog/Header.component.page';
 import PostCardComponent from '../Posts/PostCardComponent/PostCardComponent.component';
 import { PostsType } from '@/types/PostType.types';
+import { Loading } from '@/components/UI/shared';
 
 interface TagPageProps {
   tag: string;
@@ -27,7 +28,6 @@ const TagPage = ({ tag }: TagPageProps) => {
   const [loadingMore, setLoadingMore] = useState(false);
   const [hasMore, setHasMore] = useState(false);
 
-  // Usuń # z początku tagu jeśli istnieje
   const cleanTag = tag.startsWith('#') ? tag.slice(1) : tag;
 
   const fetchPosts = useCallback(
@@ -84,10 +84,7 @@ const TagPage = ({ tag }: TagPageProps) => {
       <>
         <Header type="Blog" />
         <div className={s.container}>
-          <div className={s.loading}>
-            <div className={s.loading__spinner}></div>
-            <p className={s.loading__text}>Ładowanie postów z tagiem #{cleanTag}...</p>
-          </div>
+          <Loading message={`Ładowanie postów z tagiem #${cleanTag}...`} />
         </div>
       </>
     );
@@ -115,7 +112,6 @@ const TagPage = ({ tag }: TagPageProps) => {
     <>
       <Header type="Blog" />
       <div className={s.container}>
-        {/* Header sekcji */}
         <div className={s.header}>
           <div className={s.header__breadcrumb}>
             <a href="/Blog" className={s.header__breadcrumb__link}>
@@ -134,7 +130,6 @@ const TagPage = ({ tag }: TagPageProps) => {
           </p>
         </div>
 
-        {/* Grid postów */}
         {posts.length > 0 ? (
           <>
             <div className={s.postsGrid}>
@@ -154,7 +149,6 @@ const TagPage = ({ tag }: TagPageProps) => {
               ))}
             </div>
 
-            {/* Load More Button */}
             {hasMore && (
               <div className={s.loadMore}>
                 <button

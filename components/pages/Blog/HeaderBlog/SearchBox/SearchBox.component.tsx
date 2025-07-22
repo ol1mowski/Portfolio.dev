@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import s from './SearchBox.component.module.scss';
+import { Loading } from '@/components/UI/shared';
 
 interface Suggestion {
   id: string;
@@ -23,7 +24,6 @@ const SearchBox = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout>();
 
-  // Debounced fetch suggestions
   const fetchSuggestions = async (query: string) => {
     if (query.trim().length < 2) {
       setSuggestions([]);
@@ -50,7 +50,6 @@ const SearchBox = () => {
     }
   };
 
-  // Debounce hook
   useEffect(() => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -67,7 +66,6 @@ const SearchBox = () => {
     };
   }, [searchTerm]);
 
-  // Close suggestions when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
@@ -106,7 +104,6 @@ const SearchBox = () => {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (!showSuggestions) return;
 
-    // Jeśli są sugestie, obsługuj nawigację
     if (suggestions.length > 0) {
       switch (e.key) {
         case 'ArrowDown':
@@ -130,7 +127,6 @@ const SearchBox = () => {
           break;
       }
     } else {
-      // Jeśli brak sugestii, tylko Escape
       if (e.key === 'Escape') {
         setShowSuggestions(false);
         setActiveSuggestion(-1);
@@ -197,19 +193,11 @@ const SearchBox = () => {
         />
       </form>
 
-      {/* Suggestions Dropdown */}
       {showSuggestions && searchTerm.length >= 2 && (
         <div className={s.suggestionsDropdown}>
           <div className={s.suggestionsDropdown__list}>
-            {/* Loading state */}
-            {isLoading && (
-              <div className={s.loadingMessage}>
-                <div className={s.loadingMessage__spinner}></div>
-                <span className={s.loadingMessage__text}>Wyszukiwanie...</span>
-              </div>
-            )}
+            {isLoading && <Loading message="Wyszukiwanie..." size="small" variant="dots" />}
 
-            {/* Results */}
             {!isLoading &&
               suggestions.length > 0 &&
               suggestions.map((suggestion, index) => (
@@ -233,7 +221,6 @@ const SearchBox = () => {
                 </button>
               ))}
 
-            {/* No results message */}
             {!isLoading && hasSearched && suggestions.length === 0 && (
               <div className={s.noResultsMessage}>
                 <div className={s.noResultsMessage__icon}>🔍</div>

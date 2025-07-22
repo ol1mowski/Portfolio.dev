@@ -7,7 +7,7 @@ import { PROJECTS_SECTION_ARIA_LABEL, PROJECTS_SECTION_ID } from './constants/pr
 import ProjectHeader from './ProjectHeader/ProjectHeader.component';
 import ProjectContainer from './ProjectContainer/ProjectContainer.component';
 import ProjectsWrapper from './ProjectsWrapper/ProjectsWrapper.component';
-import { SectionContainer } from '@/components/UI/shared';
+import { SectionContainer, Loading } from '@/components/UI/shared';
 import { monthsMap } from '@/consts/Date';
 import { useProjectsData } from './hooks/useProjectsData.hook';
 
@@ -51,7 +51,7 @@ const Projects = ({ projects = [] }: ProjectsProps) => {
       >
         <ProjectHeader />
         {loading ? (
-          <div>Ładowanie projektów...</div>
+          <Loading message="Ładowanie projektów..." />
         ) : error ? (
           <div role="alert">Błąd: {error}</div>
         ) : (

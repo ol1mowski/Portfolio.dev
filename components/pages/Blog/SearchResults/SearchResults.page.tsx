@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import s from './SearchResults.page.module.scss';
 import PostCardComponent from '../Posts/PostCardComponent/PostCardComponent.component';
 import { PostsType } from '@/types/PostType.types';
+import { Loading } from '@/components/UI/shared';
 
 interface SearchResponse {
   results: PostsType[];
@@ -66,7 +67,6 @@ function SearchResults() {
 
   return (
     <section className={s.container}>
-      {/* Header z wynikami */}
       <div className={s.header}>
         <h1 className={s.header__title}>
           Wyniki wyszukiwania dla:{' '}
@@ -78,15 +78,8 @@ function SearchResults() {
         )}
       </div>
 
-      {/* Loading State */}
-      {isLoading && (
-        <div className={s.loadingState}>
-          <div className={s.loadingState__spinner}></div>
-          <p className={s.loadingState__text}>Wyszukiwanie...</p>
-        </div>
-      )}
+      {isLoading && <Loading message="Wyszukiwanie..." />}
 
-      {/* Error State */}
       {error && (
         <div className={s.errorState}>
           <h2 className={s.errorState__title}>Ups! Coś poszło nie tak</h2>
@@ -97,7 +90,6 @@ function SearchResults() {
         </div>
       )}
 
-      {/* Results */}
       {searchResults && !isLoading && !error && (
         <div className={s.results}>
           {searchResults.results.length > 0 ? (
@@ -139,7 +131,6 @@ function SearchResults() {
         </div>
       )}
 
-      {/* Popular searches */}
       {!isLoading && (
         <div className={s.popularSearches}>
           <h3 className={s.popularSearches__title}>Popularne wyszukiwania</h3>

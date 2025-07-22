@@ -7,7 +7,7 @@ import OpinionHeader from './OpinionHeader/OpinionHeader.component';
 import SectionName from './SectionName/SectionName.component';
 import OpinionsWrapper from './OpinionsWrapper/OpinionsWrapper.component';
 import { OPINIONS_ARIA_LABEL, OPINIONS_SECTION_ID } from './constants/opinions.constants';
-import { SectionContainer } from '@/components/UI/shared';
+import { SectionContainer, Loading } from '@/components/UI/shared';
 import { OpinionsType, SingleOpinionType } from '@/types/Opinions.types';
 import { useOpinionsData } from './hooks/useOpinionsData.hook';
 
@@ -37,7 +37,7 @@ const Opinions = ({ opinions }: OpinionsProps) => {
         <SectionName />
         <OpinionHeader />
         {loading ? (
-          <div>Ładowanie opinii...</div>
+          <Loading message="Ładowanie opinii..." />
         ) : error ? (
           <div role="alert">Błąd: {error}</div>
         ) : (
