@@ -1,5 +1,6 @@
 import { forwardRef, type RefObject } from 'react';
-import s from './form-field.module.scss';
+import s from './formField.module.scss';
+import { ErrorMessage } from '@/components/UI/shared';
 
 interface FormFieldProps {
   name: string;
@@ -24,7 +25,7 @@ export const FormField = forwardRef<HTMLInputElement, FormFieldProps>(
           ref={inputRef}
           className={`${s.input} ${hasError ? s.inputError : ''} ${className || ''}`}
         />
-        {hasError && <p className={s.errorMessage}>{error}</p>}
+        {hasError && error && <ErrorMessage message={error} variant="inline" showIcon={false} />}
       </div>
     );
   }

@@ -2,6 +2,7 @@ import { RefObject } from 'react';
 import s from './Form.component.module.scss';
 import Image from 'next/image';
 import arrowIcon from '@/assets/arrow.png';
+import { ErrorMessage } from '@/components/UI/shared';
 
 function FormComponent({
   handleSubmit,
@@ -32,7 +33,7 @@ function FormComponent({
       </form>
       {isPending ? <p className={s.form__sending}>Wysyłanie...</p> : null}
       {success ? <p className={s.form__success}>{success}</p> : null}
-      {error ? <p className={s.form__error}>{error}</p> : null}
+      {error ? <ErrorMessage message={error} variant="inline" showIcon={false} /> : null}
     </>
   );
 }

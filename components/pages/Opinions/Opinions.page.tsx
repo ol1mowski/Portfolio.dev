@@ -7,7 +7,7 @@ import OpinionHeader from './OpinionHeader/OpinionHeader.component';
 import SectionName from './SectionName/SectionName.component';
 import OpinionsWrapper from './OpinionsWrapper/OpinionsWrapper.component';
 import { OPINIONS_ARIA_LABEL, OPINIONS_SECTION_ID } from './constants/opinions.constants';
-import { SectionContainer, Loading } from '@/components/UI/shared';
+import { SectionContainer, Loading, ErrorMessage } from '@/components/UI/shared';
 import { OpinionsType, SingleOpinionType } from '@/types/Opinions.types';
 import { useOpinionsData } from './hooks/useOpinionsData.hook';
 
@@ -39,7 +39,7 @@ const Opinions = ({ opinions }: OpinionsProps) => {
         {loading ? (
           <Loading message="Ładowanie opinii..." />
         ) : error ? (
-          <div role="alert">Błąd: {error}</div>
+          <ErrorMessage message={error} variant="page" showRetry onRetry={fetchOpinions} />
         ) : (
           <div role="alert">Brak dostępnych opinii</div>
         )}

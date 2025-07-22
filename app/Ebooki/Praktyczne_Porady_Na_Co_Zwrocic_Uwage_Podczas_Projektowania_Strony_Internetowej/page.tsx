@@ -7,7 +7,7 @@ import Header from '@/components/pages/Header/Header.component';
 import { saveClientData } from '@/actions/client.actions';
 import { validateSession } from '@/lib/auth';
 import { redirect } from 'next/navigation';
-import { EbookForm } from '@/components/form/ebook-form/ebook-form.component';
+import { EbookForm } from '@/components/form/ebookForm/ebookForm.component';
 
 export const metadata = {
   title: 'Bezpłatny E-book - Projektowanie Stron Internetowych',

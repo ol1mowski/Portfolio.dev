@@ -2,6 +2,7 @@ import { type FC, type ReactNode } from 'react';
 import Success from '@/components/UI/Success/Success.component';
 import { type FormState } from '@/hooks/form/useFormValidation.hook';
 import s from './form-container.module.scss';
+import { ErrorMessage } from '@/components/UI/shared';
 
 interface FormContainerProps {
   formState: FormState;
@@ -31,7 +32,7 @@ export const FormContainer: FC<FormContainerProps> = ({
         </h2>
       )}
 
-      {error && <div className={s.errorMessage}>{error}</div>}
+      {error && <ErrorMessage message={error} variant="alert" />}
 
       {children}
     </div>

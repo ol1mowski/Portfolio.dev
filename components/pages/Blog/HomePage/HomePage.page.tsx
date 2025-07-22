@@ -6,6 +6,7 @@ import s from './HomePage.page.module.scss';
 import Header from '../HeaderBlog/Header.component.page';
 import { type PostsType } from '@/types/PostType.types';
 import { useBlogStats, useBlogTags } from '../hooks';
+import { ErrorMessage } from '@/components/UI/shared';
 import { MainArticle, SmallPosts, TrendingTopics, BlogStats } from './components';
 
 interface HomePageComponentProps {
@@ -46,7 +47,17 @@ function HomePageComponent({ posts }: HomePageComponentProps) {
   };
 
   if (statsError || tagsError) {
-    return <div role="alert">Błąd: {statsError || tagsError}</div>;
+    return (
+      <ErrorMessage
+        message={statsError || tagsError || 'Wystąpił nieznany błąd'}
+        variant="page"
+        showRetry
+        onRetry={() => {
+          fetchStats();
+          fetchTags();
+        }}
+      />
+    );
   }
 
   return (

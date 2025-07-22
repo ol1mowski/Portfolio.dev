@@ -1,5 +1,6 @@
 import { forwardRef, type RefObject, type ReactNode } from 'react';
-import s from './checkbox-field.module.scss';
+import s from './checkboxField.module.scss';
+import { ErrorMessage } from '@/components/UI/shared';
 
 interface CheckboxFieldProps {
   name: string;
@@ -20,7 +21,7 @@ export const CheckboxField = forwardRef<HTMLInputElement, CheckboxFieldProps>(
           <input type="checkbox" name={name} ref={inputRef} className={s.checkbox} />
           <span className={s.content}>{children}</span>
         </label>
-        {hasError && <p className={s.errorMessage}>{error}</p>}
+        {hasError && error && <ErrorMessage message={error} variant="inline" showIcon={false} />}
       </div>
     );
   }

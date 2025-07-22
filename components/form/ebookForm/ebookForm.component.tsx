@@ -2,10 +2,11 @@
 
 import { type FC } from 'react';
 import Button from '@/components/UI/Button/Button.component';
-import { FormField } from '../form-field/form-field.component';
-import { CheckboxField } from '../checkbox-field/checkbox-field.component';
+import { FormField } from '../formField/formField.component';
+import { CheckboxField } from '../checkboxField/checkboxField.component';
 import { useFormValidation } from '@/hooks/form/useFormValidation.hook';
-import s from './ebook-form.module.scss';
+import s from './ebookForm.module.scss';
+import { ErrorMessage } from '@/components/UI/shared';
 
 interface EbookFormProps {
   action: (formData: FormData) => Promise<{ success: boolean } | void>;
@@ -22,7 +23,7 @@ export const EbookForm: FC<EbookFormProps> = ({ action, redirectPath = '/Thanks/
 
   return (
     <form className={s.form} onSubmit={handleSubmit}>
-      {error && <div className={s.formError}>{error}</div>}
+      {error && <ErrorMessage message={error} variant="alert" />}
       {success && <div className={s.formSuccess}>{success}</div>}
 
       <FormField

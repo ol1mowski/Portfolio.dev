@@ -5,7 +5,7 @@ import s from './TagPage.page.module.scss';
 import Header from '../HeaderBlog/Header.component.page';
 import PostCardComponent from '../Posts/PostCardComponent/PostCardComponent.component';
 import { PostsType } from '@/types/PostType.types';
-import { Loading } from '@/components/UI/shared';
+import { Loading, ErrorMessage } from '@/components/UI/shared';
 
 interface TagPageProps {
   tag: string;
@@ -95,14 +95,7 @@ const TagPage = ({ tag }: TagPageProps) => {
       <>
         <Header type="Blog" />
         <div className={s.container}>
-          <div className={s.error}>
-            <div className={s.error__icon}>⚠️</div>
-            <h2 className={s.error__title}>Wystąpił błąd</h2>
-            <p className={s.error__message}>{error}</p>
-            <button onClick={() => fetchPosts(true)} className={s.error__button}>
-              Spróbuj ponownie
-            </button>
-          </div>
+          <ErrorMessage message={error} variant="page" showRetry onRetry={() => fetchPosts(true)} />
         </div>
       </>
     );

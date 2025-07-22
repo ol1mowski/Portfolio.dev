@@ -1,8 +1,8 @@
 'use client';
 
 import s from './EmailGateForm.component.module.scss';
-
 import { memo, useState } from 'react';
+import { ErrorMessage } from '@/components/UI/shared';
 import { saveClientData } from '@/actions/client.actions';
 import { MATERIALS_CONSTANTS } from '../../constants/materials.constants';
 
@@ -102,7 +102,7 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
             <p className={s.formSubtitle}>{EMAIL_GATE.FORM.SUBTITLE}</p>
           </div>
 
-          {error && <div className={s.formError}>{error}</div>}
+          {error && <ErrorMessage message={error} variant="alert" />}
           {success && <div className={s.formSuccess}>{success}</div>}
 
           <div className={s.inputWrapper}>

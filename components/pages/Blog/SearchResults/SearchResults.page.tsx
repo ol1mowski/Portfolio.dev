@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import s from './SearchResults.page.module.scss';
 import PostCardComponent from '../Posts/PostCardComponent/PostCardComponent.component';
 import { PostsType } from '@/types/PostType.types';
-import { Loading } from '@/components/UI/shared';
+import { Loading, ErrorMessage } from '@/components/UI/shared';
 
 interface SearchResponse {
   results: PostsType[];
@@ -81,13 +81,12 @@ function SearchResults() {
       {isLoading && <Loading message="Wyszukiwanie..." />}
 
       {error && (
-        <div className={s.errorState}>
-          <h2 className={s.errorState__title}>Ups! Coś poszło nie tak</h2>
-          <p className={s.errorState__message}>{error}</p>
-          <button className={s.errorState__retry} onClick={() => window.location.reload()}>
-            Spróbuj ponownie
-          </button>
-        </div>
+        <ErrorMessage
+          message={error}
+          variant="page"
+          showRetry
+          onRetry={() => window.location.reload()}
+        />
       )}
 
       {searchResults && !isLoading && !error && (

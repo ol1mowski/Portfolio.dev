@@ -1,6 +1,7 @@
 import { type RefObject } from 'react';
 import s from './Form.component.module.scss';
 import Button from '@/components/UI/Button/Button.component';
+import { ErrorMessage } from '@/components/UI/shared';
 
 type FormComponentProps = {
   name: RefObject<HTMLInputElement>;
@@ -40,7 +41,7 @@ const FormComponent = ({
           className={s.form__inp}
         />
       )}
-      {errors.name && <p className={s.form__error}>{errors.name}</p>}
+      {errors.name && <ErrorMessage message={errors.name} variant="inline" showIcon={false} />}
     </div>
     <div className={s.form__inpWrapper}>
       {errors.email ? (
@@ -60,7 +61,7 @@ const FormComponent = ({
           className={s.form__inp}
         />
       )}
-      {errors.email && <p className={s.form__error}>{errors.email}</p>}
+      {errors.email && <ErrorMessage message={errors.email} variant="inline" showIcon={false} />}
     </div>
     <div className={s.form__inpWrapper}>
       <div className={s.form__inpWrapper__privacyWrapper}>
@@ -72,7 +73,9 @@ const FormComponent = ({
         </label>
       </div>
 
-      {errors.privacy && <span className={s.form__error}>{errors.privacy}</span>}
+      {errors.privacy && (
+        <ErrorMessage message={errors.privacy} variant="inline" showIcon={false} />
+      )}
     </div>
 
     <Button value={isPending ? 'Wysyłanie...' : 'Odbieram Bezpłatnie'} type="small" />

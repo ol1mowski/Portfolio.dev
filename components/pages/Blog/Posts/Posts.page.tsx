@@ -7,7 +7,7 @@ import PostCardComponent from './PostCardComponent/PostCardComponent.component';
 import PostsButton from './PostsButton/PostsButton.component';
 import { type PostsType } from '@/types/PostType.types';
 import { useBlogCategories } from '../hooks';
-import { Loading } from '@/components/UI/shared';
+import { Loading, ErrorMessage } from '@/components/UI/shared';
 
 interface CategoryData {
   name: string;
@@ -30,7 +30,7 @@ function PostsComponent({ posts }: { posts: PostsType[] }) {
   }));
 
   if (error) {
-    return <div role="alert">Błąd: {error}</div>;
+    return <ErrorMessage message={error} variant="page" showRetry onRetry={fetchCategories} />;
   }
 
   return (
