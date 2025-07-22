@@ -1,6 +1,7 @@
 @import '@/style/index.scss';
 
 .step {
+  position: relative;
   @include d-flex-column;
   gap: 2rem;
   @media screen and (min-width: $desktop) {
@@ -11,6 +12,7 @@
     width: 60%;
     @media screen and (min-width: $desktop) {
       width: auto;
+      height: auto;
     }
   }
   &__content {

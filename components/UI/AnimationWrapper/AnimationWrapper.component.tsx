@@ -13,6 +13,8 @@ function AnimationWrapper({ children, className }: AnimationWrapperProps) {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.5,
+    rootMargin: '0px 0px -50px 0px',
+    fallbackInView: true,
   });
 
   const animationVariants = {
@@ -24,15 +26,16 @@ function AnimationWrapper({ children, className }: AnimationWrapperProps) {
     },
   };
   return (
-    <motion.section
+    <motion.div
       ref={ref}
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={animationVariants}
       className={className}
+      style={{ position: 'relative', display: 'block' }}
     >
       {children}
-    </motion.section>
+    </motion.div>
   );
 }
 
