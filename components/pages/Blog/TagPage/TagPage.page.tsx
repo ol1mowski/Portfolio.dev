@@ -1,83 +1,19 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
 import s from './TagPage.page.module.scss';
 import Header from '../HeaderBlog/Header.component.page';
-import PostCardComponent from '../Posts/PostCardComponent/PostCardComponent.component';
-import { PostsType } from '@/types/PostType.types';
 import { Loading, ErrorMessage } from '@/components/UI/shared';
+import { TagPageHeader } from './components/TagPageHeader/TagPageHeader.component';
+import { TagPageContent } from './components/TagPageContent/TagPageContent.component';
+import { useTagPageData } from './hooks/useTagPageData.hook';
 
 interface TagPageProps {
   tag: string;
 }
 
-interface ApiResponse {
-  posts: PostsType[];
-  total: number;
-  hasMore: boolean;
-  filters: {
-    category: string | null;
-    tag: string | null;
-  };
-}
-
 const TagPage = ({ tag }: TagPageProps) => {
-  const [posts, setPosts] = useState<PostsType[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [loadingMore, setLoadingMore] = useState(false);
-  const [hasMore, setHasMore] = useState(false);
-
-  const cleanTag = tag.startsWith('#') ? tag.slice(1) : tag;
-
-  const fetchPosts = useCallback(
-    async (reset = false) => {
-      try {
-        if (reset) {
-          setLoading(true);
-          setError(null);
-        } else {
-          setLoadingMore(true);
-        }
-
-        const offset = reset ? 0 : posts.length;
-        const response = await fetch(
-          `/api/posts?tag=${encodeURIComponent(cleanTag)}&limit=12&offset=${offset}`
-        );
-
-        if (!response.ok) {
-          throw new Error('Błąd podczas pobierania postów');
-        }
-
-        const data: ApiResponse = await response.json();
-
-        if (reset) {
-          setPosts(data.posts);
-        } else {
-          setPosts(prev => [...prev, ...data.posts]);
-        }
-
-        setHasMore(data.hasMore);
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-        setError('Nie udało się załadować postów. Spróbuj ponownie.');
-      } finally {
-        setLoading(false);
-        setLoadingMore(false);
-      }
-    },
-    [cleanTag, posts.length]
-  );
-
-  useEffect(() => {
-    fetchPosts(true);
-  }, [fetchPosts]);
-
-  const handleLoadMore = () => {
-    if (!loadingMore && hasMore) {
-      fetchPosts(false);
-    }
-  };
+  const { posts, loading, error, loadingMore, hasMore, cleanTag, fetchPosts, handleLoadMore } =
+    useTagPageData(tag);
 
   if (loading) {
     return (
@@ -105,74 +41,14 @@ const TagPage = ({ tag }: TagPageProps) => {
     <>
       <Header type="Blog" />
       <div className={s.container}>
-        <div className={s.header}>
-          <div className={s.header__breadcrumb}>
-            <a href="/Blog" className={s.header__breadcrumb__link}>
-              Blog
-            </a>
-            <span className={s.header__breadcrumb__separator}>›</span>
-            <span className={s.header__breadcrumb__current}>Tag: #{cleanTag}</span>
-          </div>
-          <h1 className={s.header__title}>
-            Posty z tagiem: <span className={s.header__title__highlight}>#{cleanTag}</span>
-          </h1>
-          <p className={s.header__subtitle}>
-            {posts.length > 0
-              ? `Znaleziono ${posts.length} ${posts.length === 1 ? 'artykuł' : 'artykułów'} z tym tagiem`
-              : 'Brak artykułów z tym tagiem'}
-          </p>
-        </div>
-
-        {posts.length > 0 ? (
-          <>
-            <div className={s.postsGrid}>
-              {posts.map(post => (
-                <PostCardComponent
-                  key={`tag-post-${post.id}-${post.slug}`}
-                  id={post.id}
-                  title={post.title}
-                  slug={post.slug}
-                  description={post.description}
-                  author={post.author}
-                  image={post.image}
-                  authorImage={post.authorImage}
-                  date={post.date}
-                  category={post.category}
-                />
-              ))}
-            </div>
-
-            {hasMore && (
-              <div className={s.loadMore}>
-                <button
-                  onClick={handleLoadMore}
-                  disabled={loadingMore}
-                  className={s.loadMore__button}
-                >
-                  {loadingMore ? (
-                    <>
-                      <div className={s.loadMore__button__spinner}></div>
-                      Ładowanie...
-                    </>
-                  ) : (
-                    'Załaduj więcej artykułów'
-                  )}
-                </button>
-              </div>
-            )}
-          </>
-        ) : (
-          <div className={s.noResults}>
-            <div className={s.noResults__icon}>🏷️</div>
-            <h2 className={s.noResults__title}>Brak artykułów</h2>
-            <p className={s.noResults__subtitle}>
-              Nie ma jeszcze artykułów z tagiem <strong>#{cleanTag}</strong>.
-            </p>
-            <a href="/Blog" className={s.noResults__button}>
-              Wróć do bloga
-            </a>
-          </div>
-        )}
+        <TagPageHeader cleanTag={cleanTag} postsCount={posts.length} />
+        <TagPageContent
+          posts={posts}
+          hasMore={hasMore}
+          loadingMore={loadingMore}
+          onLoadMore={handleLoadMore}
+          cleanTag={cleanTag}
+        />
       </div>
     </>
   );

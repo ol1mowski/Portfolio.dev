@@ -1,0 +1,45 @@
+.header {
+  margin-bottom: 2rem;
+}
+
+.header__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.header__breadcrumb__link {
+  color: #3b82f6;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.header__breadcrumb__separator {
+  color: #9ca3af;
+}
+
+.header__breadcrumb__current {
+  color: #6b7280;
+}
+
+.header__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.header__title__highlight {
+  color: #3b82f6;
+}
+
+.header__subtitle {
+  color: #6b7280;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
