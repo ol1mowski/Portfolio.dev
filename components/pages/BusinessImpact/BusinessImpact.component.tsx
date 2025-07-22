@@ -32,11 +32,7 @@ const BusinessImpact: React.FC = () => {
       variants={containerVariants}
     >
       <div className={styles.container}>
-        <BusinessImpactHeader
-          title={data.header.title}
-          subtitle={data.header.subtitle}
-          itemVariants={itemVariants}
-        />
+        <BusinessImpactHeader subtitle={data.header.subtitle} itemVariants={itemVariants} />
 
         <div className={styles.content}>
           <MainOffer
