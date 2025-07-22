@@ -1,4 +1,4 @@
-import { getPosts } from '@/db/Utils/DataFetchingFunctions/DataFetchingFunctions';
+import { getBlogPosts } from '@/actions/blog.actions';
 import PostSiteComponent from './PostSite.logic';
 import { type PostsType } from '@/types/PostType.types';
 import NotFound from '../NotFound/NotFound.page';
@@ -7,14 +7,12 @@ import Footer from '../../Footer/Footer.page';
 
 async function PostSite({ postId }: { postId: string }) {
   try {
-    const fetchedItems = await getPosts();
+    const posts = await getBlogPosts();
 
-    if (!Array.isArray(fetchedItems) || !fetchedItems.length) {
+    if (!posts || !posts.length) {
       throw new Error('No data received from the server.');
     }
 
-    const firstItem = fetchedItems[0] as { posts: PostsType[] };
-    const posts = firstItem.posts;
     const post = posts.find((post: PostsType) => post.slug === postId);
 
     if (!post) {

@@ -1,4 +1,4 @@
-import { getPosts } from '@/db/Utils/DataFetchingFunctions/DataFetchingFunctions';
+import { getBlogPosts } from '@/actions/blog.actions';
 import { type PostsType } from '@/types/PostType.types';
 
 export interface PostsResponse {
@@ -9,15 +9,14 @@ export interface PostsResponse {
 
 export const usePosts = async (): Promise<PostsResponse> => {
   try {
-    const fetchedItems = await getPosts();
+    const posts = await getBlogPosts();
 
-    if (!Array.isArray(fetchedItems) || !fetchedItems.length) {
+    if (!posts || !posts.length) {
       throw new Error('No data received from the server.');
     }
 
-    const firstItem = fetchedItems[0] as { posts: PostsType[] };
     return {
-      posts: firstItem.posts,
+      posts,
       isLoading: false,
       error: null,
     };

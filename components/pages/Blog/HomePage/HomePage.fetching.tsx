@@ -1,20 +1,19 @@
 import HomePageComponent from './HomePage.page';
-import { getPosts } from '@/db/Utils/DataFetchingFunctions/DataFetchingFunctions';
+import { getBlogPosts } from '@/actions/blog.actions';
 import { type PostsType } from '@/types/PostType.types';
 
 async function HomePage() {
   try {
-    const fetchedItems = await getPosts();
+    const posts = await getBlogPosts();
 
-    if (!Array.isArray(fetchedItems) || !fetchedItems.length) {
+    if (!posts || !posts.length) {
       throw new Error('No data received from the server.');
     }
 
-    const firstItem = fetchedItems[0] as { posts: PostsType[] };
-    return <HomePageComponent posts={firstItem.posts} />;
+    return <HomePageComponent posts={posts} />;
   } catch (error) {
-    console.error('Error fetching Projects data:', error);
-    return <p>Error loading Projects section.</p>;
+    console.error('Error fetching Blog data:', error);
+    return <p>Error loading Blog section.</p>;
   }
 }
 

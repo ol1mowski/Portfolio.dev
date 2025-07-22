@@ -6,7 +6,6 @@ import { ProjectsType } from '@/types/PostType.types';
 import { OpinionsType } from '@/types/Opinions.types';
 import { saveClient } from '@/lib/api/client/client.service';
 import { ClientData } from '@/lib/api/client/client.types';
-import Posts from '../../Schemas/Posts';
 import { Materials } from '../../Schemas/Materials';
 
 interface CustomerDocument extends Document {
@@ -37,19 +36,7 @@ export async function getProjects(): Promise<ProjectsType[] | null> {
   }
 }
 
-export async function getPosts(): Promise<unknown[] | null> {
-  try {
-    await dbConnect();
-    const data = await (Posts as { find: () => { lean: () => { exec: () => Promise<unknown[]> } } })
-      .find()
-      .lean()
-      .exec();
-    return data;
-  } catch (error) {
-    console.error('Error fetching posts:', error);
-    return null;
-  }
-}
+// getPosts function moved to actions/blog.actions.ts
 
 export async function saveClientToDB(clientData: ClientData): Promise<CustomerDocument | null> {
   try {

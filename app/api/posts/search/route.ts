@@ -1,12 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getPosts } from '@/db/Utils/DataFetchingFunctions/DataFetchingFunctions';
-import { dbConnect } from '@/db/db_connect';
-import { PostsType } from '@/types/PostType.types';
+import { searchPosts } from '@/actions/blog.actions';
 
 export async function GET(request: NextRequest) {
   try {
-    await dbConnect();
-
     const searchParams = request.nextUrl.searchParams;
     const query = searchParams.get('q');
 
@@ -18,50 +14,17 @@ export async function GET(request: NextRequest) {
       });
     }
 
-    const postsData = await getPosts();
+    const searchResult = await searchPosts(query);
 
-    if (!postsData || !Array.isArray(postsData) || !postsData.length) {
+    if (!searchResult) {
       return NextResponse.json({
         results: [],
         total: 0,
-        message: 'Brak danych',
+        message: 'Błąd podczas wyszukiwania',
       });
     }
 
-    const firstPost = postsData[0] as { posts: PostsType[] };
-    const posts = firstPost.posts;
-    const searchTerm = query.toLowerCase().trim();
-
-    const filteredPosts = posts.filter((post: PostsType) => {
-      const titleMatch = post.title.toLowerCase().includes(searchTerm);
-      const descriptionMatch = post.description.toLowerCase().includes(searchTerm);
-      const categoryMatch = post.category.toLowerCase().includes(searchTerm);
-      const authorMatch = post.author.toLowerCase().includes(searchTerm);
-
-      return titleMatch || descriptionMatch || categoryMatch || authorMatch;
-    });
-
-    const sortedResults = filteredPosts.sort((a, b) => {
-      const aTitle = a.title.toLowerCase();
-      const bTitle = b.title.toLowerCase();
-      const aExactMatch = aTitle.includes(searchTerm);
-      const bExactMatch = bTitle.includes(searchTerm);
-
-      if (aExactMatch && !bExactMatch) return -1;
-      if (!aExactMatch && bExactMatch) return 1;
-
-      return new Date(b.date).getTime() - new Date(a.date).getTime();
-    });
-
-    return NextResponse.json({
-      results: sortedResults,
-      total: sortedResults.length,
-      query: query,
-      message:
-        sortedResults.length > 0
-          ? `Znaleziono ${sortedResults.length} artykułów`
-          : 'Nie znaleziono żadnych artykułów',
-    });
+    return NextResponse.json(searchResult);
   } catch (error) {
     console.error('Search API Error:', error);
     return NextResponse.json({ message: 'Błąd wewnętrzny serwera' }, { status: 500 });

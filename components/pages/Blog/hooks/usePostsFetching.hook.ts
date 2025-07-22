@@ -1,4 +1,4 @@
-import { getPosts } from '@/db/Utils/DataFetchingFunctions/DataFetchingFunctions';
+import { getBlogPosts } from '@/actions/blog.actions';
 import { type PostsType } from '@/types/PostType.types';
 
 export interface PostsResponse {
@@ -16,15 +16,14 @@ export interface SinglePostResponse {
 
 export const usePostsFetching = async (): Promise<PostsResponse> => {
   try {
-    const fetchedItems = await getPosts();
+    const posts = await getBlogPosts();
 
-    if (!Array.isArray(fetchedItems) || !fetchedItems.length) {
+    if (!posts || !posts.length) {
       throw new Error('No data received from the server.');
     }
 
-    const firstItem = fetchedItems[0] as { posts: PostsType[] };
     return {
-      posts: firstItem.posts,
+      posts,
       isLoading: false,
       error: null,
     };
@@ -40,14 +39,12 @@ export const usePostsFetching = async (): Promise<PostsResponse> => {
 
 export const useSinglePostFetching = async (slug: string): Promise<SinglePostResponse> => {
   try {
-    const allPostsData = await getPosts();
+    const posts = await getBlogPosts();
 
-    if (!allPostsData || !Array.isArray(allPostsData) || !allPostsData.length) {
+    if (!posts || !posts.length) {
       throw new Error('Failed to fetch posts data');
     }
 
-    const firstItem = allPostsData[0] as { posts: PostsType[] };
-    const posts = firstItem.posts;
     const post = posts.find((p: PostsType) => p.slug === slug) || null;
 
     return {
