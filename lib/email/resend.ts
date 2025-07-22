@@ -11,10 +11,6 @@ export interface EmailMessage {
 let resendInstance: Resend | null = null;
 
 export const initResend = (): Resend => {
-  if (!process.env.RESEND_API_KEY) {
-    throw new Error('Brak klucza API Resend w zmiennych środowiskowych');
-  }
-
   if (!resendInstance) {
     resendInstance = new Resend(process.env.RESEND_API_KEY);
   }

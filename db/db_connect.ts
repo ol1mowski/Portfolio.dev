@@ -17,10 +17,6 @@ const MONGODB_OPTIONS: mongoose.ConnectOptions = {
   maxPoolSize: process.env.NODE_ENV === 'production' ? 50 : 10,
 };
 
-if (!MONGODB_URI) {
-  throw new Error('Please define the DB_URL environment variable');
-}
-
 declare global {
   // eslint-disable-next-line no-var
   var mongooseCache: MongooseCache | undefined;
