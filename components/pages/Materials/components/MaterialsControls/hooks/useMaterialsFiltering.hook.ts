@@ -1,4 +1,4 @@
-import { useMemo, useCallback } from 'react';
+import { useMemo } from 'react';
 import { MaterialType, FilterOptions } from '@/types/Materials.types';
 
 interface UseMaterialsFilteringProps {

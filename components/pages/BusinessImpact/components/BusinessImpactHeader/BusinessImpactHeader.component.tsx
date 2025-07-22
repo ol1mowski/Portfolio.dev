@@ -3,13 +3,12 @@ import { motion } from 'framer-motion';
 import styles from '../../BusinessImpact.component.module.scss';
 
 interface BusinessImpactHeaderProps {
-  title: string;
   subtitle: string;
   itemVariants: any;
 }
 
 export const BusinessImpactHeader = memo<BusinessImpactHeaderProps>(
-  ({ title, subtitle, itemVariants }) => {
+  ({ subtitle, itemVariants }) => {
     return (
       <motion.div className={styles.header} variants={itemVariants}>
         <motion.h2 className={styles.header__title} variants={itemVariants}>

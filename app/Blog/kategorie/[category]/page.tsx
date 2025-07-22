@@ -18,7 +18,6 @@ export default async function Category({ params }: CategoryPageProps) {
 }
 
 export async function generateStaticParams() {
-  // Podstawowe kategorie - później można pobrać z API
   return [
     { category: 'React' },
     { category: 'TypeScript' },

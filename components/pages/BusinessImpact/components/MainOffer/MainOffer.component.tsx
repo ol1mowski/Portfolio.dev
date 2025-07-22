@@ -41,7 +41,7 @@ export const MainOffer = memo<MainOfferProps>(
         </motion.p>
 
         <motion.ul className={styles.mainOffer__features} variants={containerVariants}>
-          {data.features.map((feature, index) => (
+          {data.features.map(feature => (
             <motion.li
               key={feature}
               variants={itemVariants}

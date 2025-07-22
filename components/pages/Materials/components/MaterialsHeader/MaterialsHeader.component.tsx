@@ -2,13 +2,11 @@ import { memo } from 'react';
 import s from './MaterialsHeader.component.module.scss';
 
 interface MaterialsHeaderProps {
-  title?: string;
   subtitle?: string;
 }
 
 const MaterialsHeader = memo(
   ({
-    title = 'Centrum Materiałów',
     subtitle = 'Odkryj najlepsze materiały edukacyjne - e-booki, notatki i zasoby dodatkowe. Wszystko w jednym miejscu, z zaawansowanym filtrowaniem.',
   }: MaterialsHeaderProps) => {
     return (

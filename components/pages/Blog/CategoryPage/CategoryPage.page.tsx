@@ -112,7 +112,6 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
     <>
       <Header type="Blog" />
       <div className={s.container}>
-        {/* Header sekcji */}
         <div className={s.header}>
           <div className={s.header__breadcrumb}>
             <a href="/Blog" className={s.header__breadcrumb__link}>
@@ -131,7 +130,6 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
           </p>
         </div>
 
-        {/* Grid postów */}
         {posts.length > 0 ? (
           <>
             <div className={s.postsGrid}>
@@ -151,7 +149,6 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
               ))}
             </div>
 
-            {/* Load More Button */}
             {hasMore && (
               <div className={s.loadMore}>
                 <button

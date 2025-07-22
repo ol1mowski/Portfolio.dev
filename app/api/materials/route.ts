@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { dbConnect } from '@/db/db_connect';
-import Materials from '@/db/Schemas/Materials';
+import { Materials } from '@/db/Schemas/Materials';
 
 export async function GET(request: NextRequest) {
   try {
