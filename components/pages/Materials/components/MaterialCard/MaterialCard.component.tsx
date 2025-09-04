@@ -47,8 +47,6 @@ const MaterialCard = memo(({ material, onDownload }: MaterialCardProps) => {
     rozwojowe: 'Rozwojowe',
   };
 
-  const downloadText = type === 'ebook' ? 'Zobacz E-book' : 'Zobacz Notatkę';
-
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('pl-PL', {
       year: 'numeric',
