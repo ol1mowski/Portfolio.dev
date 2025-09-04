@@ -1,814 +1,333 @@
 @import '@/style/index.scss';
 
-.emailGateContainer {
+.materialsGate {
   min-height: 100vh;
-  height: auto;
-  @include d-flex-column;
-  background: linear-gradient(135deg, $white 0%, $dark-white-background-color 50%, $white 100%);
+  height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
   position: relative;
   overflow: hidden;
-  padding: $standard-padding;
-
-  @media (max-width: $mobile) {
-    padding: $small-padding;
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    padding: $big-padding;
-    min-height: auto;
-    height: auto;
-  }
-}
-
-.backgroundElements {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.circle1,
-.circle2,
-.circle3 {
-  position: absolute;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(0, 122, 204, 0.1), rgba(0, 191, 209, 0.05));
-  animation: float 6s ease-in-out infinite;
-}
-
-.circle1 {
-  width: 300px;
-  height: 300px;
-  top: -150px;
-  right: -150px;
-  animation-delay: 0s;
-
-  @media (max-width: $desktop) {
-    width: 200px;
-    height: 200px;
-    top: -100px;
-    right: -100px;
-  }
-}
-
-.circle2 {
-  width: 200px;
-  height: 200px;
-  bottom: -100px;
-  left: -100px;
-  animation-delay: 2s;
-
-  @media (max-width: $desktop) {
-    width: 150px;
-    height: 150px;
-    bottom: -75px;
-    left: -75px;
-  }
-}
-
-.circle3 {
-  width: 150px;
-  height: 150px;
-  top: 50%;
-  left: -75px;
-  animation-delay: 4s;
-
-  @media (max-width: $desktop) {
-    width: 100px;
-    height: 100px;
-    left: -50px;
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(180deg);
-  }
-}
-
-.contentWrapper {
-  max-width: 1400px;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 400px 1fr;
-  grid-template-rows: auto 1fr auto;
-  gap: $big-gap;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  flex: 1;
-  align-items: start;
-  padding: $standard-padding 0;
 
   @media (max-width: $tablet) {
-    display: flex;
-    flex-direction: column;
-    gap: $small-gap;
-    max-width: 1000px;
-    padding: $small-padding 0;
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    grid-template-columns: 1fr 350px 1fr;
-    gap: $standard-gap;
+    height: auto;
+    min-height: 100vh;
     padding: $standard-padding 0;
   }
 }
 
-.header {
-  text-align: center;
-  @include d-flex-column;
-  gap: $standard-gap;
-  grid-column: 1 / -1;
-  margin-bottom: $small-margin;
-
-  @media (max-width: $tablet) {
-    margin-bottom: $small-margin;
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    margin-bottom: $standard-margin;
-  }
+// Floating icons scattered across the screen
+.floatingIcons {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-.lockIcon {
+.floatingIcon {
+  position: absolute;
   font-size: 2.5rem;
-  margin-bottom: $small-margin;
-  animation: lockPulse 2s ease-in-out infinite;
+  color: rgba(59, 130, 246, 0.4);
+  user-select: none;
+  animation: floatMove 12s ease-in-out infinite;
+  filter: drop-shadow(0 3px 10px rgba(59, 130, 246, 0.2));
 
-  @media (max-width: $mobile) {
+  @media (max-width: $tablet) {
     font-size: 2rem;
   }
 
-  // Breakpoint dla laptopów
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    font-size: 2.2rem;
-  }
-}
-
-@keyframes lockPulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-.title {
-  @include large-header();
-  margin: 0;
-  font-size: 1.8rem;
-
-  @media (max-width: $tablet) {
-    font-size: 1.6rem;
-  }
-
   @media (max-width: $mobile) {
-    font-size: 1.4rem;
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    font-size: 1.7rem;
-  }
-}
-
-.gradient {
-  background: linear-gradient(135deg, $dark-blue, $light-blue);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.subtitle {
-  @include description();
-  font-size: 1.2rem;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto;
-
-  @media (max-width: $mobile) {
-    font-size: 1rem;
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    font-size: 1.1rem;
-    max-width: 500px;
-  }
-}
-
-.benefitsSection {
-  @include d-flex-column;
-  gap: $standard-gap;
-  grid-column: 1 / -1;
-  grid-row: 3;
-
-  @media (max-width: $tablet) {
-    gap: $small-gap;
-  }
-}
-
-.leftBenefits {
-  grid-column: 1;
-  grid-row: 2;
-  cursor: pointer;
-  @include d-flex-column;
-  gap: $standard-gap;
-  padding-right: $big-padding;
-  padding-left: $standard-padding;
-  align-self: center;
-  justify-content: center;
-
-  @media (max-width: $tablet) {
-    display: none;
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    padding-right: $standard-padding;
-    padding-left: $small-padding;
-    gap: $small-gap;
-  }
-}
-
-.rightBenefits {
-  grid-column: 3;
-  grid-row: 2;
-  cursor: pointer;
-  @include d-flex-column;
-  gap: $standard-gap;
-  padding-left: $big-padding;
-  padding-right: $standard-padding;
-  align-self: center;
-  justify-content: center;
-
-  @media (max-width: $tablet) {
-    display: none;
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    padding-left: $standard-padding;
-    padding-right: $small-padding;
-    gap: $small-gap;
-  }
-}
-
-.benefitsTitle {
-  @include below-headers();
-  text-align: center;
-  margin: 0;
-}
-
-.benefitsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: $small-gap;
-
-  @media (max-width: $mobile) {
-    grid-template-columns: 1fr;
-    gap: $small-gap;
-  }
-}
-
-.benefitCard {
-  background: $white;
-  border: 2px solid rgba(0, 122, 204, 0.1);
-  border-radius: $border-max;
-  padding: $standard-padding;
-  @include d-flex;
-  gap: $small-gap;
-  transition: all $transition-time ease;
-  box-shadow: $box-shadow-low;
-
-  &:hover {
-    transform: translateY(-4px);
-    border-color: rgba(0, 122, 204, 0.3);
-    box-shadow: $box-shadow;
-  }
-
-  @media (max-width: $mobile) {
-    padding: $small-padding;
-  }
-}
-
-.sideBenefitCard {
-  background: rgba(255, 255, 255, 0.95);
-  border: 2px solid rgba(0, 122, 204, 0.15);
-  border-radius: $border-max;
-  padding: $standard-padding;
-  @include d-flex-column;
-  gap: $small-gap;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 122, 204, 0.1);
-  backdrop-filter: blur(15px);
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, $dark-blue, $light-blue);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  &:hover {
-    transform: translateX(8px) translateY(-4px);
-    border-color: rgba(0, 122, 204, 0.4);
-    box-shadow: 0 8px 25px rgba(0, 122, 204, 0.2);
-
-    &::before {
-      opacity: 1;
-    }
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    padding: $small-padding;
-    gap: $small-gap;
-  }
-}
-
-.leftBenefits .sideBenefitCard:hover {
-  transform: translateX(-8px) translateY(-4px);
-}
-
-.sideBenefitIcon {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: $small-gap;
-  filter: drop-shadow(0 2px 4px rgba(0, 122, 204, 0.2));
-  transition: transform 0.3s ease;
-
-  .sideBenefitCard:hover & {
-    transform: scale(1.1);
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
     font-size: 1.8rem;
   }
 }
 
-.sideBenefitTitle {
-  @include headerFont();
-  font-size: 1rem;
-  font-weight: 700;
-  color: $dark-blue;
-  margin: 0;
-  text-align: center;
-  line-height: 1.3;
+// Icon positions
+.icon1 {
+  top: 8%;
+  left: 5%;
+  animation-delay: 0s;
+}
+.icon2 {
+  top: 15%;
+  right: 8%;
+  animation-delay: 1.5s;
+}
+.icon3 {
+  top: 35%;
+  left: 3%;
+  animation-delay: 3s;
+}
+.icon4 {
+  top: 55%;
+  right: 5%;
+  animation-delay: 4.5s;
+}
+.icon5 {
+  bottom: 25%;
+  left: 8%;
+  animation-delay: 6s;
+}
+.icon6 {
+  bottom: 8%;
+  right: 15%;
+  animation-delay: 7.5s;
+}
+.icon7 {
+  top: 25%;
+  right: 25%;
+  animation-delay: 9s;
+}
+.icon8 {
+  bottom: 35%;
+  left: 25%;
+  animation-delay: 10.5s;
+}
+.icon9 {
+  top: 65%;
+  left: 15%;
+  animation-delay: 2.5s;
+}
+.icon10 {
+  top: 45%;
+  right: 35%;
+  animation-delay: 8s;
+}
+.icon11 {
+  top: 12%;
+  left: 20%;
+  animation-delay: 1s;
+}
+.icon12 {
+  top: 72%;
+  right: 12%;
+  animation-delay: 5.5s;
+}
+.icon13 {
+  bottom: 15%;
+  left: 35%;
+  animation-delay: 7s;
+}
+.icon14 {
+  top: 28%;
+  left: 12%;
+  animation-delay: 3.5s;
+}
+.icon15 {
+  bottom: 40%;
+  right: 8%;
+  animation-delay: 9.5s;
+}
+.icon16 {
+  top: 82%;
+  right: 28%;
+  animation-delay: 2s;
+}
+.icon17 {
+  top: 50%;
+  left: 18%;
+  animation-delay: 6.5s;
+}
+.icon18 {
+  bottom: 60%;
+  right: 20%;
+  animation-delay: 4s;
+}
+.icon19 {
+  top: 18%;
+  right: 45%;
+  animation-delay: 8.5s;
+}
+.icon20 {
+  bottom: 12%;
+  left: 50%;
+  animation-delay: 11s;
+}
 
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    font-size: 0.9rem;
+@keyframes floatMove {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translateY(-15px) rotate(90deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-8px) rotate(180deg);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateY(-20px) rotate(270deg);
+    opacity: 0.7;
   }
 }
 
-.sideBenefitDescription {
-  @include textFont();
-  color: $grey;
-  margin: 0;
-  line-height: 1.5;
-  font-size: 0.85rem;
-  text-align: center;
-  opacity: 0.9;
-
-  .sideBenefitCard:hover & {
-    opacity: 1;
-    color: darken($grey, 10%);
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    font-size: 0.8rem;
-  }
-}
-
-.benefitIcon {
-  font-size: 1.8rem;
-  flex-shrink: 0;
-
-  @media (max-width: $mobile) {
-    font-size: 1.5rem;
-  }
-}
-
-.benefitContent {
-  @include d-flex-column;
-  gap: $small-gap;
-  align-items: flex-start;
-}
-
-.benefitTitle {
-  @include headerFont();
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: $dark-blue;
-  margin: 0;
-
-  @media (max-width: $mobile) {
-    font-size: 1rem;
-  }
-}
-
-.benefitDescription {
-  @include textFont();
-  color: $grey;
-  margin: 0;
-  line-height: 1.5;
-
-  @media (max-width: $mobile) {
-    font-size: 0.9rem;
-  }
-}
-
-.emailForm {
-  background: $white;
-  border: 3px solid rgba(0, 122, 204, 0.15);
-  border-radius: $border-max;
-  padding: $big-padding;
-  @include d-flex-column;
-  gap: $big-gap;
-  box-shadow: $box-shadow;
+// Main layout - left content, right form
+.mainLayout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 2rem;
   position: relative;
-  overflow: visible;
-  grid-column: 2;
-  grid-row: 2;
-  align-self: center;
-  justify-content: center;
-  min-height: 500px;
+  z-index: 2;
+  align-items: center;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, $dark-blue, $light-blue);
+  @media (max-width: $desktop) {
+    max-width: 1000px;
+    gap: 3rem;
+    grid-template-columns: 1fr 350px;
   }
 
   @media (max-width: $tablet) {
-    grid-column: unset;
-    grid-row: unset;
-    padding: $standard-padding;
-    gap: $standard-gap;
-    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+    padding: 0 1rem;
   }
 
   @media (max-width: $mobile) {
-    padding: $standard-padding;
-    gap: $small-gap;
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    padding: $standard-padding;
-    gap: $standard-gap;
-    min-height: 450px;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
   }
 }
 
-.formHeader {
-  text-align: center;
-  @include d-flex-column;
-  gap: $standard-gap;
-  margin-bottom: $big-margin;
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    margin-bottom: $standard-margin;
-    gap: $small-gap;
-  }
-}
-
-.formTitle {
-  @include headerFont();
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: $dark-blue;
-  margin: 0;
-
-  @media (max-width: $mobile) {
-    font-size: 1.5rem;
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    font-size: 1.6rem;
-  }
-}
-
-.formSubtitle {
-  @include textFont();
-  color: $light-blue;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 0;
-
-  @media (max-width: $mobile) {
-    font-size: 1rem;
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    font-size: 1rem;
-  }
-}
-
-.inputWrapper {
+// Left side content
+.leftContent {
   display: flex;
   flex-direction: column;
-  gap: $standard-gap;
-  width: 100%;
+  gap: 3rem;
+
+  @media (max-width: $tablet) {
+    gap: 2rem;
+  }
 }
 
-.inputGroup {
-  width: 100%;
+.contentHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.inputLabel {
-  @include textFont();
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: $dark-blue;
+.mainTitle {
+  @include headerFont();
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.1;
   margin: 0;
+
+  @media (max-width: $desktop) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: $tablet) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 2rem;
+  }
+}
+
+.highlight {
+  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mainSubtitle {
+  @include textFont();
+  font-size: 1.25rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+
+  @media (max-width: $tablet) {
+    font-size: 1.1rem;
+  }
 
   @media (max-width: $mobile) {
     font-size: 1rem;
   }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    font-size: 1rem;
-  }
 }
 
-.inputContainer {
+// Knowledge library section
+.knowledgeLibrary {
   display: flex;
   align-items: center;
-  width: 100%;
-  background: $white;
-  border-radius: $border-med;
-  border: 1px solid #e0e0e0;
-  padding: 0.5rem 1rem;
-  box-sizing: border-box;
-  transition: border-color $transition-time;
+  gap: 1.5rem;
+  background: rgba(59, 130, 246, 0.05);
+  border: 2px solid rgba(59, 130, 246, 0.1);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
 
-  &:focus-within {
-    border-color: $dark-blue;
+  @media (max-width: $tablet) {
+    justify-content: center;
+    text-align: center;
+  }
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
   }
 }
 
-.inputIcon {
-  margin-right: 0.5rem;
-  font-size: 1.2rem;
-  color: $dark-grey;
-}
+.libraryIcon {
+  font-size: 3rem;
+  flex-shrink: 0;
 
-.nameInput,
-.emailInput {
-  width: 100%;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  background: transparent;
-  color: $dark-blue;
-  padding: 0.7rem 0;
-  box-sizing: border-box;
-}
-
-.formError {
-  background: rgba(255, 61, 0, 0.1);
-  border: 1px solid rgba(255, 61, 0, 0.3);
-  border-radius: $border-med;
-  padding: $standard-padding;
-  color: $red;
-  font-size: 0.9rem;
-  @include textFont();
-  text-align: center;
-  margin-bottom: $standard-margin;
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    font-size: 0.85rem;
-    padding: $small-padding;
+  @media (max-width: $mobile) {
+    font-size: 2.5rem;
   }
 }
 
-.formSuccess {
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  border-radius: $border-med;
-  padding: $standard-padding;
-  color: #10b981;
-  font-size: 0.9rem;
-  @include textFont();
-  text-align: center;
-  margin-bottom: $standard-margin;
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    font-size: 0.85rem;
-    padding: $small-padding;
-  }
+.libraryContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.submitButton {
-  @include btn($dark-blue, $white);
-  white-space: nowrap;
-  width: 100%;
+.libraryTitle {
+  @include headerFont();
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin: 0;
 
-  &:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-
-    &:hover {
-      scale: 1;
-      background-color: $dark-blue;
-      color: $white;
-      border: none;
-    }
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    padding: 1.1rem $standard-padding;
+  @media (max-width: $mobile) {
     font-size: 1.3rem;
   }
 }
 
-.checkboxGroup {
-  width: 100%;
-  margin-bottom: $standard-gap;
-}
-
-.checkboxLabel {
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  gap: $small-gap;
-  cursor: pointer;
+.libraryDescription {
   @include textFont();
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: $dark-grey;
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    font-size: 0.85rem;
-  }
-
-  @media (max-width: $mobile) {
-    font-size: 0.8rem;
-  }
-}
-
-.checkbox {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 18px;
-  height: 18px;
-  border: 2px solid rgba(0, 122, 204, 0.3);
-  border-radius: 4px;
-  background: $white;
-  cursor: pointer;
-  position: relative;
-  flex-shrink: 0;
-  margin-top: 2px;
-  transition: all $transition-time ease;
-
-  &:checked {
-    background: $dark-blue;
-    border-color: $dark-blue;
-
-    &::after {
-      content: '✓';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: $white;
-      font-size: 12px;
-      font-weight: bold;
-    }
-  }
-
-  &:focus {
-    outline: none;
-    border-color: $dark-blue;
-    box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.1);
-  }
-
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-
-  &:hover:not(:disabled) {
-    border-color: $dark-blue;
-  }
-}
-
-.checkboxText {
-  flex: 1;
-  line-height: 1.4;
-}
-
-.policyLink {
-  color: $dark-blue;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color $transition-time ease;
-
-  &:hover {
-    color: $light-blue;
-    text-decoration: underline;
-  }
-
-  &:focus {
-    outline: 2px solid $dark-blue;
-    outline-offset: 2px;
-    border-radius: 2px;
-  }
-}
-
-.formFooter {
-  @include d-flex-column;
-  gap: $standard-gap;
-  text-align: center;
-  margin-top: $big-margin;
-
-  // Breakpoint dla laptopów
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    margin-top: $standard-margin;
-    gap: $small-gap;
-  }
-}
-
-.privacy,
-.guarantee {
-  @include textFont();
-  color: $grey;
+  font-size: 1rem;
+  color: #64748b;
   margin: 0;
-  font-size: 0.9rem;
+  line-height: 1.5;
 
   @media (max-width: $mobile) {
-    font-size: 0.8rem;
-  }
-
-  @media (min-width: $tablet) and (max-width: $desktop) {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 }
 
-.guarantee {
-  color: $light-blue;
-  font-weight: 600;
-}
+// Right side form
+.rightForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-.socialProof {
-  background: rgba(0, 122, 204, 0.05);
-  border-radius: $border-med;
-  padding: $standard-padding;
-
-  @media (max-width: $mobile) {
-    padding: $small-padding;
-  }
-}
-
-.statsRow {
-  @include d-flex;
-  justify-content: space-around;
-  gap: $standard-gap;
-
-  @media (max-width: $mobile) {
-    @include d-flex-column;
-    gap: $small-gap;
-  }
-}
-
-.stat {
-  text-align: center;
-  @include d-flex-column;
-  gap: $small-gap;
-}
-
-.statNumber {
-  @include headerFont();
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: $dark-blue;
-
-  @media (max-width: $mobile) {
-    font-size: 1.2rem;
-  }
-}
-
-.statLabel {
-  @include textFont();
-  color: $grey;
-  font-size: 0.9rem;
-
-  @media (max-width: $mobile) {
-    font-size: 0.8rem;
+  @media (max-width: $tablet) {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
   }
 }
