@@ -10,8 +10,7 @@ export const EBOOK_TEXT_CONTENT =
   'Aby nasza znajomość zaczęła się naprawdę dobrze, chciałbym podzielić się z Tobą moim najnowszym e-bookiem, który otrzymasz zupełnie';
 export const EBOOK_TEXT_HIGHLIGHT = 'za darmo !';
 export const EBOOK_BUTTON_TEXT = 'Odbierz Bezpłatnie';
-export const EBOOK_BUTTON_LINK =
-  '/Ebooki/Praktyczne_Porady_Na_Co_Zwrocic_Uwage_Podczas_Projektowania_Strony_Internetowej';
+export const EBOOK_BUTTON_LINK = '/materialy ';
 export const EBOOK_BUTTON_ARIA_LABEL = 'Odbierz bezpłatny E-book';
 
 export const EBOOK_IMAGES = {

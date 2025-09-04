@@ -47,7 +47,7 @@ const MaterialCard = memo(({ material, onDownload }: MaterialCardProps) => {
     rozwojowe: 'Rozwojowe',
   };
 
-  const downloadText = type === 'ebook' ? 'Pobierz E-book' : 'Pobierz Notatkę';
+  const downloadText = type === 'ebook' ? 'Zobacz E-book' : 'Zobacz Notatkę';
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('pl-PL', {
@@ -156,13 +156,11 @@ const MaterialCard = memo(({ material, onDownload }: MaterialCardProps) => {
           </div>
           <div className={s.buttonWrapper}>
             <Link
-              target="_blank"
-              download
-              href={`/${slug}.pdf`}
+              href="/materialy"
               onClick={handleDownload}
               style={{ pointerEvents: isUpdating ? 'none' : 'auto' }}
             >
-              <Button type="normal" value={isUpdating ? 'Pobieranie...' : downloadText} />
+              <Button type="normal" value={isUpdating ? 'Ładowanie...' : 'Zobacz Materiał'} />
             </Link>
           </div>
         </div>

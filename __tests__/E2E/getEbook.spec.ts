@@ -17,12 +17,12 @@ test.describe('E-book Download Flow', () => {
 
     await submitButton.click();
 
-    await page.waitForURL('/Thanks/ebook');
+    await page.waitForURL('/materialy');
 
-    await expect(page).toHaveURL('/Thanks/ebook');
+    await expect(page).toHaveURL('/materialy');
 
-    await expect(page.getByText('Dziękuję')).toBeVisible();
-    await expect(page.getByText('Twój E-Book jest dostępny do pobrania')).toBeVisible();
+    // User should be redirected to materials page after successful submission
+    await expect(page.getByText('Materiały')).toBeVisible();
   });
 
   test('should validate form fields', async ({ page }) => {

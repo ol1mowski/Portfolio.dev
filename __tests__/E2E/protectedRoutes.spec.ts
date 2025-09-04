@@ -24,4 +24,24 @@ test.describe('Protected Routes Redirects', () => {
       throw error;
     }
   });
+
+  test('should redirect from /Thanks/ebook to /materialy when authenticated', async ({ page }) => {
+    // Mock authentication by setting session cookie
+    await page.context().addCookies([
+      {
+        name: 'next-auth.session-token',
+        value: 'mock-session-token',
+        domain: 'localhost',
+        path: '/',
+      },
+    ]);
+
+    try {
+      await page.goto('/Thanks/ebook');
+      await expect(page).toHaveURL('/materialy');
+    } catch (error) {
+      console.error('Test failed:', error);
+      throw error;
+    }
+  });
 });

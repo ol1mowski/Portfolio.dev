@@ -13,7 +13,7 @@ interface EbookFormProps {
   redirectPath?: string;
 }
 
-export const EbookForm: FC<EbookFormProps> = ({ action, redirectPath = '/Thanks/ebook' }) => {
+export const EbookForm: FC<EbookFormProps> = ({ action, redirectPath = '/materialy' }) => {
   const { formState, formRefs, handleSubmit } = useFormValidation({
     action,
     redirectPath,
