@@ -1,8 +1,13 @@
 import { FC } from 'react';
 import Image from 'next/image';
 import styles from '../../AboutMe.page.module.scss';
+import { SiteStats } from '@/actions/stats.actions';
 
-export const LeftColumn: FC = () => {
+interface LeftColumnProps {
+  stats: SiteStats;
+}
+
+export const LeftColumn: FC<LeftColumnProps> = ({ stats }) => {
   return (
     <div className={styles.leftColumn}>
       <div className={styles.decorativeElements}>
@@ -24,11 +29,11 @@ export const LeftColumn: FC = () => {
 
       <div className={styles.statsLeft}>
         <div className={styles.statCard}>
-          <span className={styles.statNumber}>2+</span>
+          <span className={styles.statNumber}>{stats.experienceYears}+</span>
           <span className={styles.statLabel}>lat doświadczenia</span>
         </div>
         <div className={styles.statCardBlue}>
-          <span className={styles.statNumber}>240+</span>
+          <span className={styles.statNumber}>{stats.youtubeSubscribers}</span>
           <span className={styles.statLabel}>subskrybentów YT</span>
         </div>
       </div>

@@ -4,17 +4,16 @@ import { memo } from 'react';
 import Link from 'next/link';
 
 import CounterAnimation from '@/components/UI/CounterAnimation/CounterAnimation.component';
-import { STATS_DATA } from '@/data/Stats.data';
+import { SiteStats } from '@/actions/stats.actions';
 
 interface StatItemProps {
-  prefix: string;
   count: number;
   description: string;
   link: string;
   isExternal: boolean;
 }
 
-const StatItem = memo(({ prefix, count, description, link, isExternal }: StatItemProps) => {
+const StatItem = memo(({ count, description, link, isExternal }: StatItemProps) => {
   const LinkWrapper = isExternal ? 'a' : Link;
   const linkProps = isExternal
     ? {
@@ -27,7 +26,6 @@ const StatItem = memo(({ prefix, count, description, link, isExternal }: StatIte
   return (
     <article className={s.container__media} aria-label={`${description}: ${count}`}>
       <div>
-        <span className={s.container__media__beforeNumber}>{prefix}</span>
         <CounterAnimation duration={3000} target={count} aria-label={`Licznik: ${count}`} />
       </div>
       <LinkWrapper {...linkProps} className={s.container__media__link}>
@@ -39,7 +37,35 @@ const StatItem = memo(({ prefix, count, description, link, isExternal }: StatIte
 
 StatItem.displayName = 'StatItem';
 
-const Stats = memo(() => {
+interface StatsProps {
+  stats: SiteStats;
+}
+
+const Stats = memo(({ stats }: StatsProps) => {
+  const STATS_DATA = [
+    {
+      id: 'youtube-views',
+      count: stats.youtubeViews,
+      description: 'Wyświetleń na YouTube',
+      link: 'https://www.youtube.com/@oliwier.markiewicz',
+      isExternal: true,
+    },
+    {
+      id: 'youtube-videos',
+      count: stats.youtubeVideos,
+      description: 'Darmowych Filmów',
+      link: 'https://www.youtube.com/@oliwier.markiewicz',
+      isExternal: true,
+    },
+    {
+      id: 'blog-posts',
+      count: stats.blogPosts,
+      description: 'Darmowych Wpisów Na Blogu',
+      link: '/Blog',
+      isExternal: false,
+    },
+  ];
+
   return (
     <section id="stats" className={s.container} aria-label="Statystyki i osiągnięcia">
       {STATS_DATA.map(stat => (

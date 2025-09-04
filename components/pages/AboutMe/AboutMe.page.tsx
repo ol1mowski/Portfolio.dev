@@ -4,8 +4,13 @@ import { FC } from 'react';
 import { motion } from 'framer-motion';
 import styles from './AboutMe.page.module.scss';
 import { LeftColumn, RightColumn } from './components';
+import { SiteStats } from '@/actions/stats.actions';
 
-export const AboutMe: FC = () => {
+interface AboutMeProps {
+  stats: SiteStats;
+}
+
+export const AboutMe: FC<AboutMeProps> = ({ stats }) => {
   return (
     <motion.section
       id="about"
@@ -17,7 +22,7 @@ export const AboutMe: FC = () => {
     >
       <div className={styles.container}>
         <div className={styles.content}>
-          <LeftColumn />
+          <LeftColumn stats={stats} />
           <RightColumn />
         </div>
       </div>

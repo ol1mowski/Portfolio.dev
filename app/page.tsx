@@ -14,10 +14,15 @@ import ProfitabilitySection from '@/components/pages/ProfitabilitySection/Profit
 import AnchorScrollProvider from '@/components/AnchorScrollProvider';
 import { getProjects } from '@/actions/projects.actions';
 import { getOpinions } from '@/actions/opinions.actions';
+import { getSiteStats } from '@/actions/stats.actions';
 
 export default async function Home() {
   try {
-    const [projectsArr, opinionsArr] = await Promise.all([getProjects(), getOpinions()]);
+    const [projectsArr, opinionsArr, siteStats] = await Promise.all([
+      getProjects(),
+      getOpinions(),
+      getSiteStats(),
+    ]);
 
     const projects =
       projectsArr && projectsArr.length > 0 ? [{ projects: projectsArr[0].projects }] : [];
@@ -30,9 +35,9 @@ export default async function Home() {
         <Ebook />
         <BusinessImpact />
         <ProfitabilitySection />
-        <AboutMe />
+        <AboutMe stats={siteStats} />
         <Services />
-        <SubscribersAmount />
+        <SubscribersAmount stats={siteStats} />
         <Projects projects={projects} />
         <Opinions opinions={opinions} />
         <Collaboration />
@@ -50,9 +55,27 @@ export default async function Home() {
         <Ebook />
         <BusinessImpact />
         <ProfitabilitySection />
-        <AboutMe />
+        <AboutMe
+          stats={{
+            youtubeSubscribers: 270,
+            youtubeViews: 20000,
+            youtubeVideos: 35,
+            blogPosts: 7,
+            experienceYears: 2,
+            completedProjects: 7,
+          }}
+        />
         <Services />
-        <SubscribersAmount />
+        <SubscribersAmount
+          stats={{
+            youtubeSubscribers: 270,
+            youtubeViews: 20000,
+            youtubeVideos: 35,
+            blogPosts: 7,
+            experienceYears: 2,
+            completedProjects: 7,
+          }}
+        />
         <Projects projects={[]} />
         <Opinions opinions={[]} />
         <Collaboration />

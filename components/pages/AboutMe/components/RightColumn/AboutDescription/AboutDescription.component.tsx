@@ -13,18 +13,18 @@ export const AboutDescription: FC = () => {
     >
       <p>
         <strong>Web Developer</strong> z pasją do tworzenia rozwiązań, które rzeczywiście pomagają
-        biznesom rosnąć. Od 2 lat pomagam przedsiębiorcom zamieniać pomysły w zyskowne strony
+        biznesom rosnąć. Pomagam przedsiębiorcom zamieniać pomysły w zyskowne strony oraz aplikacje
         internetowe.
       </p>
 
       <p>
-        Prowadzę kanał YouTube <strong>Oliwier Markiewicz</strong> (240+ subskrybentów), gdzie
-        dzielę się wiedzą o programowaniu i biznesie online. Regularnie publikuję też artykuły na
-        moim blogu o najnowszych trendach w web developmencie.
+        Prowadzę kanał YouTube <strong>Oliwier Markiewicz</strong> gdzie dzielę się wiedzą o
+        programowaniu i biznesie online. Regularnie publikuję też artykuły na moim blogu o
+        najnowszych trendach w web developmencie.
       </p>
 
       <p>
-        Wierzę, że <strong>dobra strona to nie tylko kod</strong> - to strategia biznesowa,
+        Wierzę, że <strong>dobra aplikacja to nie tylko kod</strong> - to strategia biznesowa,
         psychologia użytkownika i perfekcyjne wykonanie w jednym. Dlatego moi klienci nie tylko
         dostają piękne strony, ale przede wszystkim narzędzia do zarabiania pieniędzy.
       </p>
