@@ -1,12 +1,12 @@
 'use client';
 
 import { useEffect, useState, useMemo } from 'react';
+import { useTranslations } from 'next-intl';
 
 const TypingReplaceAnimation = ({ className }: { className: string }) => {
-  const texts = useMemo(
-    () => ['Stron Internetowych', 'Sklepów Internetowych', 'Projektów Graficznych'],
-    []
-  );
+  const t = useTranslations('hero.animatedTexts');
+
+  const texts = useMemo(() => [t('websites'), t('shops'), t('graphics')], [t]);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -14,7 +14,7 @@ const TypingReplaceAnimation = ({ className }: { className: string }) => {
 
   useEffect(() => {
     let index = 0;
-    
+
     const typeText = () => {
       const fullText = texts[currentIndex];
 
@@ -26,7 +26,7 @@ const TypingReplaceAnimation = ({ className }: { className: string }) => {
         setTimeout(() => setIsDeleting(true), 1000);
       }
     };
-    
+
     const typingInterval = setInterval(typeText, 100);
 
     return () => clearInterval(typingInterval);
@@ -56,7 +56,7 @@ const TypingReplaceAnimation = ({ className }: { className: string }) => {
   if (isFinished) {
     return (
       <div>
-        <span className={className}>Stron Internetowych</span>
+        <span className={className}>{t('websites')}</span>
       </div>
     );
   }
@@ -68,4 +68,3 @@ const TypingReplaceAnimation = ({ className }: { className: string }) => {
 };
 
 export default TypingReplaceAnimation;
-

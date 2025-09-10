@@ -1,0 +1,13 @@
+{
+  "hero": {
+    "title": "Twórca Nowoczesnych",
+    "animatedTexts": {
+      "websites": "Stron Internetowych",
+      "shops": "Sklepów Internetowych",
+      "graphics": "Projektów Graficznych"
+    },
+    "description": "Cześć! Nazywam się Oliwier Markiewicz, pomagam lokalnym firmom zwiększyć sprzedaż poprzez tworzenie nowoczesnych stron internetowych, które wyróżniają się na tle konkurencji 🏆",
+    "cta": "Zwiększ Swoją Sprzedaż",
+    "ctaAriaLabel": "Przejdź do sekcji usług"
+  }
+}
