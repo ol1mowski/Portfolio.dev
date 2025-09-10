@@ -8,11 +8,12 @@ import Image from 'next/image';
 
 import HamburgerClickContext from '@/store/HamburgerClickContext';
 import MenuItem from '../MenuItem/MenuItem.component';
-import { menuItems } from '@/data/MenuItems.data';
+import { useTranslatedMenuItems } from '@/hooks/useTranslatedMenuItems.hook';
 import LanguageSwitch from '@/components/UI/LanguageSwitch/LanguageSwitch.component';
 
 const MobileMenuHeader = memo(() => {
   const { isOpen, setOpen } = useContext(HamburgerClickContext);
+  const menuItems = useTranslatedMenuItems();
 
   const handleClose = useCallback(() => {
     setOpen(false);
