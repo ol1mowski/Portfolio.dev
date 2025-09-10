@@ -9,5 +9,102 @@
     "description": "Cześć! Nazywam się Oliwier Markiewicz, pomagam lokalnym firmom zwiększyć sprzedaż poprzez tworzenie nowoczesnych stron internetowych, które wyróżniają się na tle konkurencji 🏆",
     "cta": "Zwiększ Swoją Sprzedaż",
     "ctaAriaLabel": "Przejdź do sekcji usług"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "O mnie",
+    "projects": "Projekty",
+    "blog": "Blog",
+    "opinions": "Opinie",
+    "contact": "Kontakt"
+  },
+  "ebook": {
+    "title": "Pobierz Darmowy E-book",
+    "subtitle": "10-krotnie szybsza i skuteczniejsza nauka",
+    "description": "Odkryj sekrety efektywnej nauki programowania i zdobądź umiejętności, które pomogą Ci w karierze developera.",
+    "cta": "Pobierz Za Darmo",
+    "benefits": {
+      "benefit1": "Sprawdzone metody nauki",
+      "benefit2": "Praktyczne wskazówki",
+      "benefit3": "Szybsze osiągnięcie celów"
+    }
+  },
+  "services": {
+    "title": "Usługi",
+    "subtitle": "Co mogę dla Ciebie zrobić?",
+    "website": {
+      "title": "Strony Internetowe",
+      "description": "Tworzę nowoczesne, responsywne strony internetowe"
+    },
+    "ecommerce": {
+      "title": "Sklepy Online",
+      "description": "Kompleksowe rozwiązania e-commerce"
+    },
+    "seo": {
+      "title": "Pozycjonowanie SEO",
+      "description": "Optymalizacja dla wyszukiwarek internetowych"
+    }
+  },
+  "about": {
+    "title": "O mnie",
+    "description": "Jestem frontend developerem z pasją do tworzenia nowoczesnych aplikacji internetowych.",
+    "stats": {
+      "experience": "Lat doświadczenia",
+      "projects": "Zrealizowanych projektów",
+      "clients": "Zadowolonych klientów"
+    }
+  },
+  "projects": {
+    "title": "Moje Projekty",
+    "subtitle": "Zobacz co już stworzyłem",
+    "viewProject": "Zobacz projekt",
+    "viewCode": "Zobacz kod"
+  },
+  "opinions": {
+    "title": "Opinie Klientów",
+    "subtitle": "Co mówią o mojej pracy"
+  },
+  "collaboration": {
+    "title": "Jak Wygląda Współpraca?",
+    "steps": {
+      "consultation": {
+        "title": "Konsultacja I Analiza Potrzeb",
+        "description": "Na początku naszej współpracy przeprowadzam szczegółową konsultację, aby zrozumieć Twoje potrzeby i cele biznesowe."
+      },
+      "design": {
+        "title": "Projektowanie I Tworzenie Strony",
+        "description": "Następnie przystępuję do projektowania strony internetowej. Tworzę unikalne projekty graficzne, które są zarówno estetyczne, jak i funkcjonalne."
+      },
+      "testing": {
+        "title": "Testowanie I Wdrożenie",
+        "description": "Zanim strona internetowa zostanie uruchomiona, przeprowadzam dokładne testy funkcjonalności na różnych urządzeniach i przeglądarkach."
+      },
+      "seo": {
+        "title": "Pozycjonowanie Lokalne",
+        "description": "Oferuję profesjonalne usługi pozycjonowania wizytówki Google Moja Firma, które pomogą Twojej firmie wyróżnić się w lokalnych wynikach wyszukiwania."
+      },
+      "support": {
+        "title": "Szkolenie I Wsparcie",
+        "description": "Po uruchomieniu strony oferuję szkolenie z jej obsługi oraz zarządzania treściami. Zapewniam również ciągłe wsparcie techniczne."
+      }
+    },
+    "cta": {
+      "title": "Umów Się na Darmową Konsultację",
+      "button": "Zadzwoń: 693 851 878"
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Skontaktuj się ze mną",
+    "form": {
+      "name": "Imię",
+      "email": "Email",
+      "message": "Wiadomość",
+      "send": "Wyślij wiadomość"
+    }
+  },
+  "footer": {
+    "copyright": "Wszelkie prawa zastrzeżone",
+    "privacy": "Polityka Prywatności"
   }
 }

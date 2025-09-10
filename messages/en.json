@@ -9,5 +9,102 @@
     "description": "Hi! My name is Oliwier Markiewicz, I help local businesses increase sales by creating modern websites that stand out from the competition 🏆",
     "cta": "Boost Your Sales",
     "ctaAriaLabel": "Go to services section"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "blog": "Blog",
+    "opinions": "Reviews",
+    "contact": "Contact"
+  },
+  "ebook": {
+    "title": "Download Free E-book",
+    "subtitle": "10x faster and more effective learning",
+    "description": "Discover the secrets of effective programming learning and gain skills that will help you in your developer career.",
+    "cta": "Download Free",
+    "benefits": {
+      "benefit1": "Proven learning methods",
+      "benefit2": "Practical tips",
+      "benefit3": "Faster goal achievement"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "What can I do for you?",
+    "website": {
+      "title": "Websites",
+      "description": "I create modern, responsive websites"
+    },
+    "ecommerce": {
+      "title": "Online Stores",
+      "description": "Comprehensive e-commerce solutions"
+    },
+    "seo": {
+      "title": "SEO Optimization",
+      "description": "Search engine optimization"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a frontend developer with a passion for creating modern web applications.",
+    "stats": {
+      "experience": "Years of experience",
+      "projects": "Completed projects",
+      "clients": "Satisfied clients"
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "See what I've created",
+    "viewProject": "View project",
+    "viewCode": "View code"
+  },
+  "opinions": {
+    "title": "Client Reviews",
+    "subtitle": "What they say about my work"
+  },
+  "collaboration": {
+    "title": "How Does Collaboration Work?",
+    "steps": {
+      "consultation": {
+        "title": "Consultation & Needs Analysis",
+        "description": "At the beginning of our collaboration, I conduct a detailed consultation to understand your needs and business goals."
+      },
+      "design": {
+        "title": "Design & Website Development",
+        "description": "Then I proceed to design the website. I create unique graphic designs that are both aesthetic and functional."
+      },
+      "testing": {
+        "title": "Testing & Implementation",
+        "description": "Before the website goes live, I conduct thorough functionality tests on various devices and browsers."
+      },
+      "seo": {
+        "title": "Local SEO",
+        "description": "I offer professional Google My Business optimization services that will help your company stand out in local search results."
+      },
+      "support": {
+        "title": "Training & Support",
+        "description": "After launching the site, I offer training on its operation and content management. I also provide ongoing technical support."
+      }
+    },
+    "cta": {
+      "title": "Schedule a Free Consultation",
+      "button": "Call: 693 851 878"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in touch with me",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send message"
+    }
+  },
+  "footer": {
+    "copyright": "All rights reserved",
+    "privacy": "Privacy Policy"
   }
 }

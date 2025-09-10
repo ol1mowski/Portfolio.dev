@@ -9,5 +9,102 @@
     "description": "Hallo! Mein Name ist Oliwier Markiewicz, ich helfe lokalen Unternehmen, den Umsatz zu steigern, indem ich moderne Websites erstelle, die sich von der Konkurrenz abheben 🏆",
     "cta": "Steigern Sie Ihren Umsatz",
     "ctaAriaLabel": "Zur Services-Sektion gehen"
+  },
+  "navigation": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "projects": "Projekte",
+    "blog": "Blog",
+    "opinions": "Bewertungen",
+    "contact": "Kontakt"
+  },
+  "ebook": {
+    "title": "Kostenloses E-Book herunterladen",
+    "subtitle": "10x schneller und effektiver lernen",
+    "description": "Entdecken Sie die Geheimnisse des effektiven Programmierenlernens und erlangen Sie Fähigkeiten, die Ihnen in Ihrer Entwicklerkarriere helfen.",
+    "cta": "Kostenlos herunterladen",
+    "benefits": {
+      "benefit1": "Bewährte Lernmethoden",
+      "benefit2": "Praktische Tipps",
+      "benefit3": "Schnellere Zielerreichung"
+    }
+  },
+  "services": {
+    "title": "Dienstleistungen",
+    "subtitle": "Was kann ich für Sie tun?",
+    "website": {
+      "title": "Webseiten",
+      "description": "Ich erstelle moderne, responsive Websites"
+    },
+    "ecommerce": {
+      "title": "Online-Shops",
+      "description": "Umfassende E-Commerce-Lösungen"
+    },
+    "seo": {
+      "title": "SEO-Optimierung",
+      "description": "Suchmaschinenoptimierung"
+    }
+  },
+  "about": {
+    "title": "Über mich",
+    "description": "Ich bin ein Frontend-Entwickler mit einer Leidenschaft für die Erstellung moderner Webanwendungen.",
+    "stats": {
+      "experience": "Jahre Erfahrung",
+      "projects": "Abgeschlossene Projekte",
+      "clients": "Zufriedene Kunden"
+    }
+  },
+  "projects": {
+    "title": "Meine Projekte",
+    "subtitle": "Sehen Sie, was ich erstellt habe",
+    "viewProject": "Projekt ansehen",
+    "viewCode": "Code ansehen"
+  },
+  "opinions": {
+    "title": "Kundenbewertungen",
+    "subtitle": "Was sie über meine Arbeit sagen"
+  },
+  "collaboration": {
+    "title": "Wie funktioniert die Zusammenarbeit?",
+    "steps": {
+      "consultation": {
+        "title": "Beratung & Bedarfsanalyse",
+        "description": "Zu Beginn unserer Zusammenarbeit führe ich eine detaillierte Beratung durch, um Ihre Bedürfnisse und Geschäftsziele zu verstehen."
+      },
+      "design": {
+        "title": "Design & Website-Entwicklung",
+        "description": "Dann gehe ich zum Design der Website über. Ich erstelle einzigartige grafische Designs, die sowohl ästhetisch als auch funktional sind."
+      },
+      "testing": {
+        "title": "Testen & Implementierung",
+        "description": "Bevor die Website live geht, führe ich gründliche Funktionalitätstests auf verschiedenen Geräten und Browsern durch."
+      },
+      "seo": {
+        "title": "Lokale SEO",
+        "description": "Ich biete professionelle Google My Business-Optimierungsdienstleistungen an, die Ihrem Unternehmen helfen, sich in lokalen Suchergebnissen hervorzuheben."
+      },
+      "support": {
+        "title": "Schulung & Support",
+        "description": "Nach dem Launch der Website biete ich Schulungen zu deren Bedienung und Content-Management an. Ich biete auch laufenden technischen Support."
+      }
+    },
+    "cta": {
+      "title": "Kostenloses Beratungsgespräch vereinbaren",
+      "button": "Anrufen: 693 851 878"
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Nehmen Sie Kontakt mit mir auf",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "message": "Nachricht",
+      "send": "Nachricht senden"
+    }
+  },
+  "footer": {
+    "copyright": "Alle Rechte vorbehalten",
+    "privacy": "Datenschutzrichtlinie"
   }
 }
