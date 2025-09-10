@@ -9,6 +9,7 @@ import Image from 'next/image';
 import HamburgerClickContext from '@/store/HamburgerClickContext';
 import MenuItem from '../MenuItem/MenuItem.component';
 import { menuItems } from '@/data/MenuItems.data';
+import LanguageSwitch from '@/components/UI/LanguageSwitch/LanguageSwitch.component';
 
 const MobileMenuHeader = memo(() => {
   const { isOpen, setOpen } = useContext(HamburgerClickContext);
@@ -34,6 +35,9 @@ const MobileMenuHeader = memo(() => {
         {menuItems.map(item => (
           <MenuItem key={item.to} {...item} hideMenu={handleClose} />
         ))}
+        <div className={s.menu__language}>
+          <LanguageSwitch variant="mobile" />
+        </div>
       </section>
     </nav>
   );

@@ -1,0 +1,157 @@
+@import '@/style/index.scss';
+
+.languageSwitch {
+  position: relative;
+  z-index: 1000;
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: transparent;
+    border: 2px solid $dark;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: $dark-blue;
+    font-weight: 500;
+
+    &:hover {
+      color: white;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba($dark-blue, 0.3);
+    }
+  }
+
+  &__flag {
+    border-radius: 2px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  &__code {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $dark;
+  }
+
+  &__arrow {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+    color: $dark;
+
+    &.open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid $dark-blue;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 0.25rem;
+    overflow: hidden;
+    z-index: 1001;
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.75rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: $dark;
+
+    &:hover:not(.active) {
+      background: rgba($dark-blue, 0.1);
+    }
+
+    &.active {
+      background: $dark-blue;
+      color: white;
+      cursor: default;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba($dark-blue, 0.2);
+    }
+  }
+
+  &__name {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  // Mobile variant
+  &__mobile {
+    @extend .languageSwitch;
+
+    .languageSwitch__trigger {
+      width: 100%;
+      justify-content: space-between;
+      padding: 1rem;
+      border: none;
+      border-bottom: 1px solid rgba($dark-blue, 0.2);
+      border-radius: 0;
+      background: transparent;
+      color: $dark;
+
+      &:hover {
+        background: rgba($dark-blue, 0.05);
+        color: $dark-blue;
+      }
+    }
+
+    .languageSwitch__dropdown {
+      position: static;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+      background: rgba($dark-blue, 0.02);
+    }
+
+    .languageSwitch__option {
+      padding: 1rem 1.5rem;
+
+      &:hover:not(.active) {
+        background: rgba($dark-blue, 0.1);
+      }
+
+      &.active {
+        background: $dark-blue;
+        color: white;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .languageSwitch:not(.languageSwitch__mobile) {
+    .languageSwitch__trigger {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.875rem;
+    }
+
+    .languageSwitch__flag {
+      width: 16px !important;
+      height: 12px !important;
+    }
+
+    .languageSwitch__code {
+      font-size: 0.75rem;
+    }
+  }
+}

@@ -28,6 +28,12 @@
     @include d-flex-column;
     height: 50%;
   }
+
+  &__language {
+    margin-top: auto;
+    padding: 1rem;
+    border-top: 1px solid rgba($dark-blue, 0.1);
+  }
 }
 
 @keyframes showMenu {
