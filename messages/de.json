@@ -47,11 +47,37 @@
   },
   "about": {
     "title": "Über mich",
-    "description": "Ich bin ein Frontend-Entwickler mit einer Leidenschaft für die Erstellung moderner Webanwendungen.",
+    "description": "Web Developer mit einer Leidenschaft für die Entwicklung von Lösungen, die Unternehmen wirklich beim Wachstum helfen. Ich helfe Unternehmern dabei, Ideen in profitable Websites und Webanwendungen umzuwandeln.",
+    "detailedDescription": "Ich betreibe den YouTube-Kanal Oliwier Markiewicz, wo ich Wissen über Programmierung und Online-Business teile. Regelmäßig veröffentliche ich auch Artikel in meinem Blog über die neuesten Trends in der Webentwicklung.",
+    "philosophy": "Ich glaube, dass eine gute Anwendung nicht nur Code ist - es ist Geschäftsstrategie, Benutzerpsychologie und perfekte Ausführung in einem. Deshalb erhalten meine Kunden nicht nur schöne Websites, sondern vor allem Werkzeuge zum Geldverdienen.",
+    "highlightedDescription": {
+      "part1": "Web Developer",
+      "part2": "Oliwier Markiewicz",
+      "part3": "eine gute Anwendung ist nicht nur Code"
+    },
     "stats": {
       "experience": "Jahre Erfahrung",
+      "experienceYears": "Jahre Erfahrung",
       "projects": "Abgeschlossene Projekte",
-      "clients": "Zufriedene Kunden"
+      "clients": "Zufriedene Kunden",
+      "youtubeSubscribers": "YouTube-Abonnenten",
+      "youtubeViews": "YouTube-Aufrufe",
+      "youtubeVideos": "YouTube-Videos",
+      "blogPosts": "Blog-Beiträge",
+      "completedProjects": "abgeschlossene Projekte"
+    },
+    "skills": {
+      "title": "Meine Fähigkeiten",
+      "frontend": "Frontend-Entwicklung",
+      "react": "React & Next.js",
+      "typescript": "TypeScript",
+      "design": "UI/UX Design",
+      "responsive": "Responsive Design",
+      "performance": "Performance-Optimierung"
+    },
+    "journey": {
+      "title": "Mein Weg",
+      "description": "Von der ersten Codezeile zum professionellen Entwickler - lernen Sie meine Geschichte und was mich motiviert, kontinuierlich zu wachsen."
     }
   },
   "projects": {
@@ -102,6 +128,126 @@
       "message": "Nachricht",
       "send": "Nachricht senden"
     }
+  },
+  "businessImpact": {
+    "header": {
+      "title": "Ich programmiere nicht nur",
+      "subtitle": "Ich baue Ihr Geschäftsimperium auf"
+    },
+    "mainOffer": {
+      "badge": "+40% ROI",
+      "title": "Ich steigere Ihre Gewinne um 40%",
+      "description": "Ich erstelle keine \"hübschen Websites\". Ich schaffe Geld-verdienende Maschinen. Meine Kunden verzeichnen in den ersten 3 Monaten durchschnittlich 40% Umsatzsteigerung.",
+      "features": {
+        "feature1": "Datengetriebene Conversion-Optimierung",
+        "feature2": "A/B-Testing jedes Elements",
+        "feature3": "Verkaufspsychologie in jedem Pixel"
+      }
+    },
+    "benefits": {
+      "timeline": {
+        "number": "3-14",
+        "label": "Tage Lieferzeit"
+      },
+      "express": {
+        "title": "Express ohne Kompromisse",
+        "description": "Während andere \"nächsten Monat\" versprechen, liefere ich eine fertige Website in maximal 2 Wochen. Ohne Qualitätseinbußen."
+      },
+      "guarantee": {
+        "number": "100%",
+        "label": "Garantie"
+      },
+      "zeroRisk": {
+        "title": "Null Risiko",
+        "description": "6 Monate Support + 30 Tage Geld-zurück-Garantie. Sie zahlen erst, wenn Sie 100% zufrieden sind."
+      }
+    }
+  },
+  "profitability": {
+    "header": {
+      "title": "Aber lohnt es sich?",
+      "subtitle": "Ich verstehe Ihre Zweifel. Hier ist die brutale Wahrheit:"
+    },
+    "objections": {
+      "expensive": {
+        "title": "Es ist zu teuer",
+        "subtitle": "Häufigster Einwand",
+        "benefits": {
+          "benefit1": "ROI in 2-3 Monaten",
+          "benefit2": "Professionelle Website ist Investition, kein Kostenfaktor",
+          "benefit3": "Sie sparen 100+ Stunden",
+          "benefit4": "Ihre Zeit ist mehr wert als Sie denken",
+          "benefit5": "Vermeiden Sie kostspielige Fehler",
+          "benefit6": "Ein Fehler kann mehr kosten als die ganze Website"
+        }
+      },
+      "noTime": {
+        "title": "Ich habe keine Zeit",
+        "subtitle": "Genau deshalb sollten Sie anfangen",
+        "benefits": {
+          "benefit1": "Jeder Tag = verlorene Kunden",
+          "benefit2": "Ihre Konkurrenz schläft nicht",
+          "benefit3": "Ich mache alles für Sie",
+          "benefit4": "Sie genehmigen nur fertige Lösungen",
+          "benefit5": "Maximal 30 Minuten wöchentlich",
+          "benefit6": "Weniger als eine TV-Folge"
+        }
+      },
+      "noBudget": {
+        "title": "Ich habe kein Budget",
+        "subtitle": "Sie denken kurzfristig",
+        "benefits": {
+          "benefit1": "Sie verlieren täglich Kunden",
+          "benefit2": "Konkurrenz überholt Sie",
+          "benefit3": "Investition zahlt sich in 2 Monaten aus",
+          "benefit4": "Ratenzahlung möglich",
+          "benefit5": "Besser heute anfangen als nächstes Jahr"
+        }
+      },
+      "tooRisky": {
+        "title": "Es ist zu riskant",
+        "subtitle": "Null Risiko für Sie",
+        "benefits": {
+          "benefit1": "30 Tage Geld-zurück-Garantie",
+          "benefit2": "6 Monate kostenlosen Support",
+          "benefit3": "Hosting und Domain für ein Jahr inklusive",
+          "benefit4": "Tägliche Backups",
+          "benefit5": "SSL und Sicherheit",
+          "benefit6": "Sie zahlen nicht, bis Sie zufrieden sind"
+        }
+      }
+    },
+    "stats": {
+      "roiTime": {
+        "number": "2-3 Mo.",
+        "label": "ROI-Zeit",
+        "description": "Durchschnittliche Zeit, nach der Kunden ROI sehen"
+      },
+      "timeWeekly": {
+        "number": "30 Min",
+        "label": "wöchentlich Ihrer Zeit",
+        "description": "Maximale Zeit, die ich während des Projekts von Ihnen brauche"
+      },
+      "satisfaction": {
+        "number": "100%",
+        "label": "Zufriedenheitsgarantie",
+        "description": "30 Tage Geld zurück, wenn Sie nicht zufrieden sind"
+      },
+      "conversion": {
+        "number": "400%",
+        "label": "Conversion-Steigerung",
+        "description": "Durchschnittliches Umsatzwachstum nach neuer Website"
+      }
+    }
+  },
+  "stats": {
+    "title": "Statistiken",
+    "youtubeViews": "YouTube-Aufrufe",
+    "youtubeVideos": "Kostenlose Videos",
+    "blogPosts": "Kostenlose Blog-Beiträge",
+    "youtubeSubscribers": "YouTube-Abonnenten",
+    "experienceYears": "Jahre Erfahrung",
+    "completedProjects": "Abgeschlossene Projekte"
   },
   "footer": {
     "copyright": "Alle Rechte vorbehalten",

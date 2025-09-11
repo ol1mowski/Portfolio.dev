@@ -47,11 +47,37 @@
   },
   "about": {
     "title": "O mnie",
-    "description": "Jestem frontend developerem z pasją do tworzenia nowoczesnych aplikacji internetowych.",
+    "description": "Web Developer z pasją do tworzenia rozwiązań, które rzeczywiście pomagają biznesom rosnąć. Pomagam przedsiębiorcom zamieniać pomysły w zyskowne strony oraz aplikacje internetowe.",
+    "detailedDescription": "Prowadzę kanał YouTube Oliwier Markiewicz gdzie dzielę się wiedzą o programowaniu i biznesie online. Regularnie publikuję też artykuły na moim blogu o najnowszych trendach w web developmencie.",
+    "philosophy": "Wierzę, że dobra aplikacja to nie tylko kod - to strategia biznesowa, psychologia użytkownika i perfekcyjne wykonanie w jednym. Dlatego moi klienci nie tylko dostają piękne strony, ale przede wszystkim narzędzia do zarabiania pieniędzy.",
+    "highlightedDescription": {
+      "part1": "Web Developer",
+      "part2": "Oliwier Markiewicz",
+      "part3": "dobra aplikacja to nie tylko kod"
+    },
     "stats": {
       "experience": "Lat doświadczenia",
+      "experienceYears": "lat doświadczenia",
       "projects": "Zrealizowanych projektów",
-      "clients": "Zadowolonych klientów"
+      "clients": "Zadowolonych klientów",
+      "youtubeSubscribers": "subskrybentów YT",
+      "youtubeViews": "wyświetleń YouTube",
+      "youtubeVideos": "filmów na YouTube",
+      "blogPosts": "wpisów na blogu",
+      "completedProjects": "ukończonych projektów"
+    },
+    "skills": {
+      "title": "Moje umiejętności",
+      "frontend": "Frontend Development",
+      "react": "React & Next.js",
+      "typescript": "TypeScript",
+      "design": "UI/UX Design",
+      "responsive": "Responsive Design",
+      "performance": "Optymalizacja wydajności"
+    },
+    "journey": {
+      "title": "Moja droga",
+      "description": "Od pierwszej linii kodu do profesjonalnego developera - poznaj moją historię i to, co mnie motywuje do ciągłego rozwoju."
     }
   },
   "projects": {
@@ -102,6 +128,126 @@
       "message": "Wiadomość",
       "send": "Wyślij wiadomość"
     }
+  },
+  "businessImpact": {
+    "header": {
+      "title": "Nie tylko koduję",
+      "subtitle": "Buduję imperium Twojego biznesu"
+    },
+    "mainOffer": {
+      "badge": "+40% ROI",
+      "title": "Zwiększam Twoje zyski o 40%",
+      "description": "Nie robię \"ładnych stron\". Tworzę maszynę do zarabiania pieniędzy. Moi klienci w ciągu pierwszych 3 miesięcy odnotowują średnio 40% wzrost sprzedaży.",
+      "features": {
+        "feature1": "Optymalizacja konwersji oparta na danych",
+        "feature2": "A/B testing każdego elementu",
+        "feature3": "Psychologia sprzedaży w każdym pikselu"
+      }
+    },
+    "benefits": {
+      "timeline": {
+        "number": "3-14",
+        "label": "dni realizacji"
+      },
+      "express": {
+        "title": "Express bez kompromisów",
+        "description": "Podczas gdy inni obiecują \"za miesiąc\", ja dostarczam gotową stronę w maksymalnie 2 tygodnie. Bez uszczerbku na jakości."
+      },
+      "guarantee": {
+        "number": "100%",
+        "label": "gwarancji"
+      },
+      "zeroRisk": {
+        "title": "Zero ryzyka",
+        "description": "6 miesięcy wsparcia + 30 dni na zwrot pieniędzy. Płacisz dopiero gdy jesteś w 100% zadowolony."
+      }
+    }
+  },
+  "profitability": {
+    "header": {
+      "title": "Ale czy to się opłaci?",
+      "subtitle": "Rozumiem Twoje wątpliwości. Oto brutalna prawda:"
+    },
+    "objections": {
+      "expensive": {
+        "title": "To za drogie",
+        "subtitle": "Najczęstsza obiekcja",
+        "benefits": {
+          "benefit1": "Zwrot w 2-3 miesiące",
+          "benefit2": "Profesjonalna strona to inwestycja, nie koszt",
+          "benefit3": "Oszczędzasz 100+ godzin",
+          "benefit4": "Twój czas jest wart więcej niż myślisz",
+          "benefit5": "Unikasz kosztownych błędów",
+          "benefit6": "Jeden błąd może kosztować więcej niż cała strona"
+        }
+      },
+      "noTime": {
+        "title": "Nie mam czasu",
+        "subtitle": "Właśnie dlatego powinieneś zacząć",
+        "benefits": {
+          "benefit1": "Każdy dzień = straceni klienci",
+          "benefit2": "Twoja konkurencja nie śpi",
+          "benefit3": "Ja robię wszystko za Ciebie",
+          "benefit4": "Ty tylko akceptujesz gotowe rozwiązania",
+          "benefit5": "Maksymalnie 30 minut tygodniowo",
+          "benefit6": "Mniej niż jeden odcinek serialu"
+        }
+      },
+      "noBudget": {
+        "title": "Nie mam budżetu",
+        "subtitle": "Myślisz krótkookresowo",
+        "benefits": {
+          "benefit1": "Tracisz klientów każdego dnia",
+          "benefit2": "Konkurencja cię wyprzedza",
+          "benefit3": "Inwestycja zwraca się w 2 miesiące",
+          "benefit4": "Możliwość rozłożenia płatności",
+          "benefit5": "Lepiej zacząć dziś niż za rok"
+        }
+      },
+      "tooRisky": {
+        "title": "To zbyt ryzykowne",
+        "subtitle": "Zero ryzyka dla Ciebie",
+        "benefits": {
+          "benefit1": "30 dni gwarancji zwrotu pieniędzy",
+          "benefit2": "6 miesięcy bezpłatnego wsparcia",
+          "benefit3": "Hosting i domena w cenie na rok",
+          "benefit4": "Backup codziennie",
+          "benefit5": "SSL i zabezpieczenia",
+          "benefit6": "Nie płacisz dopóki nie jesteś zadowolony"
+        }
+      }
+    },
+    "stats": {
+      "roiTime": {
+        "number": "2-3 mies.",
+        "label": "czas zwrotu inwestycji",
+        "description": "Średni czas, po którym klienci odnotowują zwrot inwestycji"
+      },
+      "timeWeekly": {
+        "number": "30 min",
+        "label": "tygodniowo Twojego czasu",
+        "description": "Maksymalny czas, jakiego potrzebuję od Ciebie w trakcie projektu"
+      },
+      "satisfaction": {
+        "number": "100%",
+        "label": "gwarancji zadowolenia",
+        "description": "30 dni na zwrot pieniędzy jeśli nie jesteś zadowolony"
+      },
+      "conversion": {
+        "number": "400%",
+        "label": "wzrost konwersji",
+        "description": "Średni wzrost sprzedaży po wdrożeniu nowej strony"
+      }
+    }
+  },
+  "stats": {
+    "title": "Statystyki",
+    "youtubeViews": "Wyświetleń na YouTube",
+    "youtubeVideos": "Darmowych Filmów",
+    "blogPosts": "Darmowych Wpisów Na Blogu",
+    "youtubeSubscribers": "Subskrybentów YouTube",
+    "experienceYears": "Lat doświadczenia",
+    "completedProjects": "Zrealizowanych projektów"
   },
   "footer": {
     "copyright": "Wszelkie prawa zastrzeżone",

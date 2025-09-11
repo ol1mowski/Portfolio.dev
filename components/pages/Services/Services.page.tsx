@@ -2,13 +2,16 @@
 
 import { FC } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import styles from './Services.page.module.scss';
 
 export const Services: FC = () => {
+  const t = useTranslations('services');
+
   const services = [
     {
       id: 'websites',
-      title: 'Strony Internetowe',
+      title: t('website.title'),
       icon: '💻',
       color: 'blue',
       features: ['Strony wizytówkowe firm', "Landing page'y sprzedażowe", 'Portale internetowe'],
@@ -16,7 +19,7 @@ export const Services: FC = () => {
     },
     {
       id: 'ecommerce',
-      title: 'Sklepy Online',
+      title: t('ecommerce.title'),
       icon: '🛒',
       color: 'green',
       features: ['Sklepy e-commerce', 'Integracje płatności', 'Zarządzanie produktami'],
@@ -65,10 +68,8 @@ export const Services: FC = () => {
     >
       <div className={styles.container}>
         <motion.div className={styles.header} variants={cardVariants}>
-          <h2 className={styles.title}>
-            Tworzę projekty, które{' '}
-            <span className={styles.highlight}>przynoszą konkretne zyski</span>
-          </h2>
+          <h2 className={styles.title}>{t('title')}</h2>
+          <p className={styles.subtitle}>{t('subtitle')}</p>
         </motion.div>
 
         <motion.div className={styles.servicesGrid} variants={containerVariants}>

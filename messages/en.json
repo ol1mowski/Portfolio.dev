@@ -47,11 +47,37 @@
   },
   "about": {
     "title": "About Me",
-    "description": "I'm a frontend developer with a passion for creating modern web applications.",
+    "description": "Web Developer with a passion for creating solutions that truly help businesses grow. I help entrepreneurs turn ideas into profitable websites and web applications.",
+    "detailedDescription": "I run the YouTube channel Oliwier Markiewicz where I share knowledge about programming and online business. I also regularly publish articles on my blog about the latest trends in web development.",
+    "philosophy": "I believe that a good application is not just code - it's business strategy, user psychology and perfect execution in one. That's why my clients don't just get beautiful websites, but above all tools for making money.",
+    "highlightedDescription": {
+      "part1": "Web Developer",
+      "part2": "Oliwier Markiewicz",
+      "part3": "a good application is not just code"
+    },
     "stats": {
       "experience": "Years of experience",
+      "experienceYears": "years of experience",
       "projects": "Completed projects",
-      "clients": "Satisfied clients"
+      "clients": "Satisfied clients",
+      "youtubeSubscribers": "YouTube subscribers",
+      "youtubeViews": "YouTube views",
+      "youtubeVideos": "YouTube videos",
+      "blogPosts": "blog posts",
+      "completedProjects": "completed projects"
+    },
+    "skills": {
+      "title": "My Skills",
+      "frontend": "Frontend Development",
+      "react": "React & Next.js",
+      "typescript": "TypeScript",
+      "design": "UI/UX Design",
+      "responsive": "Responsive Design",
+      "performance": "Performance Optimization"
+    },
+    "journey": {
+      "title": "My Journey",
+      "description": "From the first line of code to professional developer - learn my story and what motivates me to continuously grow."
     }
   },
   "projects": {
@@ -102,6 +128,126 @@
       "message": "Message",
       "send": "Send message"
     }
+  },
+  "businessImpact": {
+    "header": {
+      "title": "I don't just code",
+      "subtitle": "I build your business empire"
+    },
+    "mainOffer": {
+      "badge": "+40% ROI",
+      "title": "I increase your profits by 40%",
+      "description": "I don't make \"pretty websites\". I create money-making machines. My clients see an average 40% increase in sales within the first 3 months.",
+      "features": {
+        "feature1": "Data-driven conversion optimization",
+        "feature2": "A/B testing every element",
+        "feature3": "Sales psychology in every pixel"
+      }
+    },
+    "benefits": {
+      "timeline": {
+        "number": "3-14",
+        "label": "days delivery"
+      },
+      "express": {
+        "title": "Express without compromise",
+        "description": "While others promise \"next month\", I deliver a ready website in maximum 2 weeks. Without compromising quality."
+      },
+      "guarantee": {
+        "number": "100%",
+        "label": "guarantee"
+      },
+      "zeroRisk": {
+        "title": "Zero risk",
+        "description": "6 months support + 30 days money-back guarantee. You pay only when you're 100% satisfied."
+      }
+    }
+  },
+  "profitability": {
+    "header": {
+      "title": "But is it worth it?",
+      "subtitle": "I understand your doubts. Here's the brutal truth:"
+    },
+    "objections": {
+      "expensive": {
+        "title": "It's too expensive",
+        "subtitle": "Most common objection",
+        "benefits": {
+          "benefit1": "ROI in 2-3 months",
+          "benefit2": "Professional website is an investment, not a cost",
+          "benefit3": "You save 100+ hours",
+          "benefit4": "Your time is worth more than you think",
+          "benefit5": "Avoid costly mistakes",
+          "benefit6": "One mistake can cost more than the entire website"
+        }
+      },
+      "noTime": {
+        "title": "I don't have time",
+        "subtitle": "That's exactly why you should start",
+        "benefits": {
+          "benefit1": "Every day = lost clients",
+          "benefit2": "Your competition doesn't sleep",
+          "benefit3": "I do everything for you",
+          "benefit4": "You only approve ready solutions",
+          "benefit5": "Maximum 30 minutes weekly",
+          "benefit6": "Less than one TV episode"
+        }
+      },
+      "noBudget": {
+        "title": "I don't have budget",
+        "subtitle": "You're thinking short-term",
+        "benefits": {
+          "benefit1": "You lose clients every day",
+          "benefit2": "Competition is getting ahead",
+          "benefit3": "Investment pays back in 2 months",
+          "benefit4": "Payment plan available",
+          "benefit5": "Better start today than next year"
+        }
+      },
+      "tooRisky": {
+        "title": "It's too risky",
+        "subtitle": "Zero risk for you",
+        "benefits": {
+          "benefit1": "30 days money-back guarantee",
+          "benefit2": "6 months free support",
+          "benefit3": "Hosting and domain included for a year",
+          "benefit4": "Daily backups",
+          "benefit5": "SSL and security",
+          "benefit6": "You don't pay until you're satisfied"
+        }
+      }
+    },
+    "stats": {
+      "roiTime": {
+        "number": "2-3 mo.",
+        "label": "ROI time",
+        "description": "Average time after which clients see return on investment"
+      },
+      "timeWeekly": {
+        "number": "30 min",
+        "label": "weekly of your time",
+        "description": "Maximum time I need from you during the project"
+      },
+      "satisfaction": {
+        "number": "100%",
+        "label": "satisfaction guarantee",
+        "description": "30 days money-back if you're not satisfied"
+      },
+      "conversion": {
+        "number": "400%",
+        "label": "conversion increase",
+        "description": "Average sales growth after implementing new website"
+      }
+    }
+  },
+  "stats": {
+    "title": "Statistics",
+    "youtubeViews": "YouTube Views",
+    "youtubeVideos": "Free Videos",
+    "blogPosts": "Free Blog Posts",
+    "youtubeSubscribers": "YouTube Subscribers",
+    "experienceYears": "Years of Experience",
+    "completedProjects": "Completed Projects"
   },
   "footer": {
     "copyright": "All rights reserved",

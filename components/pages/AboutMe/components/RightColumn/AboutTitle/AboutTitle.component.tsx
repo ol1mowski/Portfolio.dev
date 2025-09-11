@@ -1,8 +1,11 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import styles from '../../../AboutMe.page.module.scss';
 
 export const AboutTitle: FC = () => {
+  const t = useTranslations('about');
+
   return (
     <motion.h1
       className={styles.title}
@@ -11,7 +14,7 @@ export const AboutTitle: FC = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: 0.2 }}
     >
-      Cześć! Jestem <span className={styles.highlight}>Oliwier Markiewicz</span>
+      {t('title')}
     </motion.h1>
   );
 };

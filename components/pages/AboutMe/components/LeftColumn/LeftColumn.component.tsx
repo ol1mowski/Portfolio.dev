@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import styles from '../../AboutMe.page.module.scss';
 import { SiteStats } from '@/actions/stats.actions';
 
@@ -8,6 +9,8 @@ interface LeftColumnProps {
 }
 
 export const LeftColumn: FC<LeftColumnProps> = ({ stats }) => {
+  const t = useTranslations('about.stats');
+
   return (
     <div className={styles.leftColumn}>
       <div className={styles.decorativeElements}>
@@ -30,11 +33,11 @@ export const LeftColumn: FC<LeftColumnProps> = ({ stats }) => {
       <div className={styles.statsLeft}>
         <div className={styles.statCard}>
           <span className={styles.statNumber}>{stats.experienceYears}+</span>
-          <span className={styles.statLabel}>lat doświadczenia</span>
+          <span className={styles.statLabel}>{t('experienceYears')}</span>
         </div>
         <div className={styles.statCardBlue}>
           <span className={styles.statNumber}>{stats.youtubeSubscribers}</span>
-          <span className={styles.statLabel}>subskrybentów YT</span>
+          <span className={styles.statLabel}>{t('youtubeSubscribers')}</span>
         </div>
       </div>
     </div>

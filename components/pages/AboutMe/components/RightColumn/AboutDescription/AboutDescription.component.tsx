@@ -1,8 +1,11 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import styles from '../../../AboutMe.page.module.scss';
 
 export const AboutDescription: FC = () => {
+  const t = useTranslations('about');
+
   return (
     <motion.div
       className={styles.description}
@@ -12,21 +15,36 @@ export const AboutDescription: FC = () => {
       transition={{ duration: 0.6, delay: 0.4 }}
     >
       <p>
-        <strong>Web Developer</strong> z pasją do tworzenia rozwiązań, które rzeczywiście pomagają
-        biznesom rosnąć. Pomagam przedsiębiorcom zamieniać pomysły w zyskowne strony oraz aplikacje
-        internetowe.
+        <span className={styles.highlight}>Web Developer</span>{' '}
+        {t('description').replace('Web Developer', '').trim()}
       </p>
-
       <p>
-        Prowadzę kanał YouTube <strong>Oliwier Markiewicz</strong> gdzie dzielę się wiedzą o
-        programowaniu i biznesie online. Regularnie publikuję też artykuły na moim blogu o
-        najnowszych trendach w web developmencie.
+        {t('detailedDescription')
+          .split('Oliwier Markiewicz')
+          .map((part, index) =>
+            index === 0 ? (
+              <span key={index}>{part}</span>
+            ) : (
+              <span key={index}>
+                <span className={styles.highlight}>Oliwier Markiewicz</span>
+                {part}
+              </span>
+            )
+          )}
       </p>
-
       <p>
-        Wierzę, że <strong>dobra aplikacja to nie tylko kod</strong> - to strategia biznesowa,
-        psychologia użytkownika i perfekcyjne wykonanie w jednym. Dlatego moi klienci nie tylko
-        dostają piękne strony, ale przede wszystkim narzędzia do zarabiania pieniędzy.
+        {t('philosophy')
+          .split(t('highlightedDescription.part3'))
+          .map((part, index) =>
+            index === 0 ? (
+              <span key={index}>{part}</span>
+            ) : (
+              <span key={index}>
+                <span className={styles.highlight}>{t('highlightedDescription.part3')}</span>
+                {part}
+              </span>
+            )
+          )}
       </p>
     </motion.div>
   );
