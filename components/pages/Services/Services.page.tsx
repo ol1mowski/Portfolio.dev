@@ -14,24 +14,36 @@ export const Services: FC = () => {
       title: t('website.title'),
       icon: '💻',
       color: 'blue',
-      features: ['Strony wizytówkowe firm', "Landing page'y sprzedażowe", 'Portale internetowe'],
-      highlight: '100% responsywne',
+      features: [
+        t('website.features.feature1'),
+        t('website.features.feature2'),
+        t('website.features.feature3'),
+      ],
+      highlight: t('website.highlight'),
     },
     {
       id: 'ecommerce',
       title: t('ecommerce.title'),
       icon: '🛒',
       color: 'green',
-      features: ['Sklepy e-commerce', 'Integracje płatności', 'Zarządzanie produktami'],
-      highlight: 'Optymalizacja konwersji',
+      features: [
+        t('ecommerce.features.feature1'),
+        t('ecommerce.features.feature2'),
+        t('ecommerce.features.feature3'),
+      ],
+      highlight: t('ecommerce.highlight'),
     },
     {
       id: 'graphics',
-      title: 'Projekty Graficzne',
+      title: t('graphics.title'),
       icon: '🎨',
       color: 'purple',
-      features: ['Identyfikacja wizualna', 'Projekty UI/UX', 'Materiały marketingowe'],
-      highlight: 'Spójny branding',
+      features: [
+        t('graphics.features.feature1'),
+        t('graphics.features.feature2'),
+        t('graphics.features.feature3'),
+      ],
+      highlight: t('graphics.highlight'),
     },
   ];
 
@@ -114,15 +126,12 @@ export const Services: FC = () => {
         <motion.div className={styles.configuratorBanner} variants={cardVariants}>
           <div className={styles.bannerContent}>
             <div className={styles.bannerText}>
-              <h3 className={styles.bannerTitle}>Nie możesz się zdecydować? 🤔</h3>
-              <p className={styles.bannerSubtitle}>
-                Badź nie wiesz, czego dokładnie potrzebujesz? Skorzystaj z naszego bezpłatnego
-                konfiguratora!
-              </p>
+              <h3 className={styles.bannerTitle}>{t('undecided.title')}</h3>
+              <p className={styles.bannerSubtitle}>{t('undecided.subtitle')}</p>
             </div>
             <a href="/konfigurator" className={styles.bannerButton}>
               <span className={styles.buttonIcon}>⚙️</span>
-              Sprawdź Konfigurator
+              {t('undecided.button')}
               <span className={styles.buttonArrow}>→</span>
             </a>
           </div>

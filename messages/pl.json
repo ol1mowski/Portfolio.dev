@@ -4,7 +4,8 @@
     "animatedTexts": {
       "websites": "Stron Internetowych",
       "shops": "Sklepów Internetowych",
-      "graphics": "Projektów Graficznych"
+      "graphics": "Projektów Graficznych",
+      "tools": "Narzędzi"
     },
     "description": "Cześć! Nazywam się Oliwier Markiewicz, pomagam lokalnym firmom zwiększyć sprzedaż poprzez tworzenie nowoczesnych stron internetowych, które wyróżniają się na tle konkurencji 🏆",
     "cta": "Zwiększ Swoją Sprzedaż",
@@ -23,6 +24,12 @@
     "subtitle": "10-krotnie szybsza i skuteczniejsza nauka",
     "description": "Odkryj sekrety efektywnej nauki programowania i zdobądź umiejętności, które pomogą Ci w karierze developera.",
     "cta": "Pobierz Za Darmo",
+    "ctaButton": "Odbierz Bezpłatnie",
+    "myTitle": "Mój",
+    "freeTitle": "Bezpłatny",
+    "ebookTitle": "E-Book",
+    "rating": "5.0",
+    "introText": "Aby nasza znajomość zaczęła się naprawdę dobrze, chciałbym podzielić się z Tobą moim najnowszym e-bookiem, który otrzymasz zupełnie za darmo!",
     "benefits": {
       "benefit1": "Sprawdzone metody nauki",
       "benefit2": "Praktyczne wskazówki",
@@ -34,15 +41,41 @@
     "subtitle": "Co mogę dla Ciebie zrobić?",
     "website": {
       "title": "Strony Internetowe",
-      "description": "Tworzę nowoczesne, responsywne strony internetowe"
+      "description": "Tworzę nowoczesne, responsywne strony internetowe",
+      "features": {
+        "feature1": "Strony wizytówkowe firm",
+        "feature2": "Landing page'y sprzedażowe",
+        "feature3": "Portale internetowe"
+      },
+      "highlight": "100% responsywne"
     },
     "ecommerce": {
       "title": "Sklepy Online",
-      "description": "Kompleksowe rozwiązania e-commerce"
+      "description": "Kompleksowe rozwiązania e-commerce",
+      "features": {
+        "feature1": "Sklepy e-commerce",
+        "feature2": "Integracje płatności",
+        "feature3": "Zarządzanie produktami"
+      },
+      "highlight": "Optymalizacja konwersji"
     },
     "seo": {
       "title": "Pozycjonowanie SEO",
       "description": "Optymalizacja dla wyszukiwarek internetowych"
+    },
+    "graphics": {
+      "title": "Projekty Graficzne",
+      "features": {
+        "feature1": "Identyfikacja wizualna",
+        "feature2": "Projekty UI/UX",
+        "feature3": "Materiały marketingowe"
+      },
+      "highlight": "Spójny branding"
+    },
+    "undecided": {
+      "title": "Nie możesz się zdecydować? 🤔",
+      "subtitle": "Badź nie wiesz, czego dokładnie potrzebujesz? Skorzystaj z naszego bezpłatnego konfiguratora!",
+      "button": "Sprawdź Konfigurator"
     }
   },
   "about": {
@@ -78,6 +111,9 @@
     "journey": {
       "title": "Moja droga",
       "description": "Od pierwszej linii kodu do profesjonalnego developera - poznaj moją historię i to, co mnie motywuje do ciągłego rozwoju."
+    },
+    "socialMedia": {
+      "title": "Znajdź mnie w social media"
     }
   },
   "projects": {
@@ -92,6 +128,7 @@
   },
   "collaboration": {
     "title": "Jak Wygląda Współpraca?",
+    "seeSteps": "Zobacz Etapy Współpracy Ze Mną",
     "steps": {
       "consultation": {
         "title": "Konsultacja I Analiza Potrzeb",
@@ -338,6 +375,39 @@
     "youtubeText": "oraz kanał na",
     "youtubeLabel": "Przejdź do kanału YouTube",
     "finalDescription": "gdzie dzielę się wiedzą z zakresu programowania oraz tworzenia stron internetowych."
+  },
+  "materials": {
+    "emailGate": {
+      "title": "Odblokuj Centrum Materiałów",
+      "subtitle": "Podaj swój adres email i uzyskaj natychmiastowy dostęp do wszystkich materiałów edukacyjnych, e-booków i zasobów dla programistów.",
+      "form": {
+        "title": "Zacznij już teraz!",
+        "subtitle": "Bezpłatny dostęp na zawsze",
+        "nameLabel": "Twoje imię",
+        "namePlaceholder": "np. Jan Kowalski",
+        "emailLabel": "Podaj swój adres email",
+        "emailPlaceholder": "np. jan.kowalski@gmail.com",
+        "submitButton": "Odblokuj dostęp",
+        "loadingButton": "Odblokowuję..."
+      },
+      "policy": {
+        "checkboxText": "Akceptuję",
+        "privacyPolicy": "politykę prywatności",
+        "and": "i",
+        "cookies": "cookies",
+        "error": "Musisz zaakceptować politykę prywatności i cookies"
+      },
+      "footer": {
+        "privacy": "🔒 Twoje dane są bezpieczne. Nie wysyłamy spamu.",
+        "guarantee": "✅ 100% bezpłatne."
+      },
+      "errors": {
+        "fillFields": "Proszę wypełnić wszystkie pola",
+        "saveError": "Wystąpił błąd podczas zapisywania",
+        "connectionError": "Wystąpił błąd połączenia. Spróbuj ponownie."
+      },
+      "success": "Dostęp odblokowany! Przekierowuję..."
+    }
   },
   "chat": {
     "preview": {

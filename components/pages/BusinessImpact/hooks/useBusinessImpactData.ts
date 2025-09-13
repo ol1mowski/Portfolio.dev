@@ -1,22 +1,24 @@
 import { useMemo } from 'react';
+import { useTranslations } from 'next-intl';
 import type { BusinessImpactData } from '../types/BusinessImpact.types';
 
 export const useBusinessImpactData = (): BusinessImpactData => {
+  const t = useTranslations('businessImpact');
+
   const data = useMemo(
     (): BusinessImpactData => ({
       header: {
-        title: 'Nie tylko koduję',
-        subtitle: 'Buduję imperium Twojego biznesu',
+        title: t('header.title'),
+        subtitle: t('header.subtitle'),
       },
       mainOffer: {
-        badge: '+40% ROI',
-        title: 'Zwiększam Twoje zyski o 40%',
-        description:
-          'Nie robię "tadnych stron". Tworzę maszynę do zarabiania pieniędzy. Moi klienci w ciągu pierwszych 3 miesięcy odnotowują średnio 40% wzrost sprzedaży.',
+        badge: t('mainOffer.badge'),
+        title: t('mainOffer.title'),
+        description: t('mainOffer.description'),
         features: [
-          'Optymalizacja konwersji oparta na danych',
-          'A/B testing każdego elementu',
-          'Psychologia sprzedaży w każdym pikselu',
+          t('mainOffer.features.feature1'),
+          t('mainOffer.features.feature2'),
+          t('mainOffer.features.feature3'),
         ],
       },
       benefits: [
@@ -24,35 +26,33 @@ export const useBusinessImpactData = (): BusinessImpactData => {
           id: 'timeline',
           type: 'stat',
           icon: 'clock',
-          number: '3-14',
-          label: 'dni realizacji',
+          number: t('benefits.timeline.number'),
+          label: t('benefits.timeline.label'),
         },
         {
           id: 'express',
           type: 'description',
           icon: 'clock',
-          title: 'Express bez kompromisów',
-          description:
-            'Podczas gdy inni obiecują "za miesiąc", ja dostarczam gotową stronę w maksymalnie 2 tygodnie. Bez uszczerbku na jakości.',
+          title: t('benefits.express.title'),
+          description: t('benefits.express.description'),
         },
         {
           id: 'guarantee',
           type: 'stat',
           icon: 'shield',
-          number: '100%',
-          label: 'gwarancji',
+          number: t('benefits.guarantee.number'),
+          label: t('benefits.guarantee.label'),
         },
         {
           id: 'zero-risk',
           type: 'description',
           icon: 'shield',
-          title: 'Zero ryzyka',
-          description:
-            '6 miesięcy wsparcia + 30 dni na zwrot pieniędzy. Płacisz dopiero gdy jesteś w 100% zadowolony.',
+          title: t('benefits.zeroRisk.title'),
+          description: t('benefits.zeroRisk.description'),
         },
       ],
     }),
-    []
+    [t]
   );
 
   return data;

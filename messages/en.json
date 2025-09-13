@@ -4,7 +4,8 @@
     "animatedTexts": {
       "websites": "Websites",
       "shops": "Online Stores",
-      "graphics": "Graphic Projects"
+      "graphics": "Graphic Projects",
+      "tools": "Tools"
     },
     "description": "Hi! My name is Oliwier Markiewicz, I help local businesses increase sales by creating modern websites that stand out from the competition 🏆",
     "cta": "Boost Your Sales",
@@ -23,6 +24,12 @@
     "subtitle": "10x faster and more effective learning",
     "description": "Discover the secrets of effective programming learning and gain skills that will help you in your developer career.",
     "cta": "Download Free",
+    "ctaButton": "Get It Free",
+    "myTitle": "My",
+    "freeTitle": "Free",
+    "ebookTitle": "E-Book",
+    "rating": "5.0",
+    "introText": "To start our relationship really well, I'd like to share with you my latest e-book, which you'll get completely free!",
     "benefits": {
       "benefit1": "Proven learning methods",
       "benefit2": "Practical tips",
@@ -34,15 +41,41 @@
     "subtitle": "What can I do for you?",
     "website": {
       "title": "Websites",
-      "description": "I create modern, responsive websites"
+      "description": "I create modern, responsive websites",
+      "features": {
+        "feature1": "Business websites",
+        "feature2": "Sales landing pages",
+        "feature3": "Web portals"
+      },
+      "highlight": "100% responsive"
     },
     "ecommerce": {
       "title": "Online Stores",
-      "description": "Comprehensive e-commerce solutions"
+      "description": "Comprehensive e-commerce solutions",
+      "features": {
+        "feature1": "E-commerce stores",
+        "feature2": "Payment integrations",
+        "feature3": "Product management"
+      },
+      "highlight": "Conversion optimization"
     },
     "seo": {
       "title": "SEO Optimization",
       "description": "Search engine optimization"
+    },
+    "graphics": {
+      "title": "Graphic Projects",
+      "features": {
+        "feature1": "Visual identity",
+        "feature2": "UI/UX projects",
+        "feature3": "Marketing materials"
+      },
+      "highlight": "Consistent branding"
+    },
+    "undecided": {
+      "title": "Can't decide? 🤔",
+      "subtitle": "Or don't know exactly what you need? Use our free configurator!",
+      "button": "Check Configurator"
     }
   },
   "about": {
@@ -78,6 +111,9 @@
     "journey": {
       "title": "My Journey",
       "description": "From the first line of code to professional developer - learn my story and what motivates me to continuously grow."
+    },
+    "socialMedia": {
+      "title": "Find me on social media"
     }
   },
   "projects": {
@@ -92,6 +128,7 @@
   },
   "collaboration": {
     "title": "How Does Collaboration Work?",
+    "seeSteps": "See Collaboration Steps With Me",
     "steps": {
       "consultation": {
         "title": "Consultation & Needs Analysis",
@@ -334,6 +371,39 @@
     "youtubeText": "and a channel on",
     "youtubeLabel": "Go to YouTube channel",
     "finalDescription": "where I share knowledge about programming and web development."
+  },
+  "materials": {
+    "emailGate": {
+      "title": "Unlock Materials Center",
+      "subtitle": "Enter your email address and get instant access to all educational materials, e-books and resources for programmers.",
+      "form": {
+        "title": "Start now!",
+        "subtitle": "Free access forever",
+        "nameLabel": "Your name",
+        "namePlaceholder": "e.g. John Smith",
+        "emailLabel": "Enter your email address",
+        "emailPlaceholder": "e.g. john.smith@gmail.com",
+        "submitButton": "Unlock access",
+        "loadingButton": "Unlocking..."
+      },
+      "policy": {
+        "checkboxText": "I accept",
+        "privacyPolicy": "privacy policy",
+        "and": "and",
+        "cookies": "cookies",
+        "error": "You must accept privacy policy and cookies"
+      },
+      "footer": {
+        "privacy": "🔒 Your data is safe. We don't send spam.",
+        "guarantee": "✅ 100% free."
+      },
+      "errors": {
+        "fillFields": "Please fill in all fields",
+        "saveError": "An error occurred while saving",
+        "connectionError": "A connection error occurred. Please try again."
+      },
+      "success": "Access unlocked! Redirecting..."
+    }
   },
   "chat": {
     "preview": {

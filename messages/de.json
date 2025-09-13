@@ -4,7 +4,8 @@
     "animatedTexts": {
       "websites": "Webseiten",
       "shops": "Online-Shops",
-      "graphics": "Grafikprojekte"
+      "graphics": "Grafikprojekte",
+      "tools": "Werkzeuge"
     },
     "description": "Hallo! Mein Name ist Oliwier Markiewicz, ich helfe lokalen Unternehmen, den Umsatz zu steigern, indem ich moderne Websites erstelle, die sich von der Konkurrenz abheben 🏆",
     "cta": "Steigern Sie Ihren Umsatz",
@@ -23,6 +24,12 @@
     "subtitle": "10x schneller und effektiver lernen",
     "description": "Entdecken Sie die Geheimnisse des effektiven Programmierenlernens und erlangen Sie Fähigkeiten, die Ihnen in Ihrer Entwicklerkarriere helfen.",
     "cta": "Kostenlos herunterladen",
+    "ctaButton": "Kostenlos erhalten",
+    "myTitle": "Mein",
+    "freeTitle": "Kostenloses",
+    "ebookTitle": "E-Book",
+    "rating": "5.0",
+    "introText": "Damit unsere Bekanntschaft richtig gut beginnt, möchte ich mein neuestes E-Book mit Ihnen teilen, das Sie völlig kostenlos erhalten!",
     "benefits": {
       "benefit1": "Bewährte Lernmethoden",
       "benefit2": "Praktische Tipps",
@@ -34,15 +41,41 @@
     "subtitle": "Was kann ich für Sie tun?",
     "website": {
       "title": "Webseiten",
-      "description": "Ich erstelle moderne, responsive Websites"
+      "description": "Ich erstelle moderne, responsive Websites",
+      "features": {
+        "feature1": "Firmen-Visitenkarten-Websites",
+        "feature2": "Verkaufs-Landing-Pages",
+        "feature3": "Webportale"
+      },
+      "highlight": "100% responsiv"
     },
     "ecommerce": {
       "title": "Online-Shops",
-      "description": "Umfassende E-Commerce-Lösungen"
+      "description": "Umfassende E-Commerce-Lösungen",
+      "features": {
+        "feature1": "E-Commerce-Shops",
+        "feature2": "Zahlungsintegrationen",
+        "feature3": "Produktverwaltung"
+      },
+      "highlight": "Conversion-Optimierung"
     },
     "seo": {
       "title": "SEO-Optimierung",
       "description": "Suchmaschinenoptimierung"
+    },
+    "graphics": {
+      "title": "Grafikprojekte",
+      "features": {
+        "feature1": "Visuelle Identität",
+        "feature2": "UI/UX-Projekte",
+        "feature3": "Marketing-Materialien"
+      },
+      "highlight": "Konsistentes Branding"
+    },
+    "undecided": {
+      "title": "Können Sie sich nicht entscheiden? 🤔",
+      "subtitle": "Oder wissen Sie nicht genau, was Sie brauchen? Nutzen Sie unseren kostenlosen Konfigurator!",
+      "button": "Konfigurator prüfen"
     }
   },
   "about": {
@@ -78,6 +111,9 @@
     "journey": {
       "title": "Mein Weg",
       "description": "Von der ersten Codezeile zum professionellen Entwickler - lernen Sie meine Geschichte und was mich motiviert, kontinuierlich zu wachsen."
+    },
+    "socialMedia": {
+      "title": "Finden Sie mich in sozialen Medien"
     }
   },
   "projects": {
@@ -92,6 +128,7 @@
   },
   "collaboration": {
     "title": "Wie funktioniert die Zusammenarbeit?",
+    "seeSteps": "Sehen Sie die Zusammenarbeitsschritte mit mir",
     "steps": {
       "consultation": {
         "title": "Beratung & Bedarfsanalyse",
@@ -338,6 +375,39 @@
     "youtubeText": "und einen Kanal auf",
     "youtubeLabel": "Zum YouTube-Kanal gehen",
     "finalDescription": "wo ich Wissen über Programmierung und Webentwicklung teile."
+  },
+  "materials": {
+    "emailGate": {
+      "title": "Materialzentrum freischalten",
+      "subtitle": "Geben Sie Ihre E-Mail-Adresse ein und erhalten Sie sofortigen Zugang zu allen Bildungsmaterialien, E-Books und Ressourcen für Programmierer.",
+      "form": {
+        "title": "Jetzt starten!",
+        "subtitle": "Kostenloser Zugang für immer",
+        "nameLabel": "Ihr Name",
+        "namePlaceholder": "z.B. Hans Müller",
+        "emailLabel": "Geben Sie Ihre E-Mail-Adresse ein",
+        "emailPlaceholder": "z.B. hans.mueller@gmail.com",
+        "submitButton": "Zugang freischalten",
+        "loadingButton": "Freischalten..."
+      },
+      "policy": {
+        "checkboxText": "Ich akzeptiere",
+        "privacyPolicy": "Datenschutzrichtlinie",
+        "and": "und",
+        "cookies": "Cookies",
+        "error": "Sie müssen die Datenschutzrichtlinie und Cookies akzeptieren"
+      },
+      "footer": {
+        "privacy": "🔒 Ihre Daten sind sicher. Wir senden keinen Spam.",
+        "guarantee": "✅ 100% kostenlos."
+      },
+      "errors": {
+        "fillFields": "Bitte füllen Sie alle Felder aus",
+        "saveError": "Beim Speichern ist ein Fehler aufgetreten",
+        "connectionError": "Ein Verbindungsfehler ist aufgetreten. Bitte versuchen Sie es erneut."
+      },
+      "success": "Zugang freigeschaltet! Weiterleitung..."
+    }
   },
   "chat": {
     "preview": {

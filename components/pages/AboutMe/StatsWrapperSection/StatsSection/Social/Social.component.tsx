@@ -1,7 +1,10 @@
 import s from './Social.component.module.scss';
 import IconElement from '../IconElement/IconElement.component';
+import { useTranslations } from 'next-intl';
 
 function Social() {
+  const t = useTranslations('about.socialMedia');
+
   return (
     <div className={s.infoWrapper}>
       <div className={s.infoWrapper__iconsWrapper}>
@@ -22,7 +25,7 @@ function Social() {
           href="https://github.com/ol1mowski"
         />
       </div>
-      <span className={s.infoWrapper__des}>Znajdź Mnie</span>
+      <span className={s.infoWrapper__des}>{t('title')}</span>
     </div>
   );
 }

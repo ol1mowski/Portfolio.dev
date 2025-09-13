@@ -1,9 +1,12 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import styles from '../../../AboutMe.page.module.scss';
 
 export const SocialMedia: FC = () => {
+  const t = useTranslations('about.socialMedia');
+
   const socialLinks = [
     {
       href: 'https://github.com/ol1mowski',
@@ -39,7 +42,7 @@ export const SocialMedia: FC = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: 0.6 }}
     >
-      <h3 className={styles.socialTitle}>Znajdź mnie w social media</h3>
+      <h3 className={styles.socialTitle}>{t('title')}</h3>
       <div className={styles.socialLinks}>
         {socialLinks.map(social => (
           <a

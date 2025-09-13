@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 const TypingReplaceAnimation = ({ className }: { className: string }) => {
   const t = useTranslations('hero.animatedTexts');
 
-  const texts = useMemo(() => [t('websites'), t('shops'), t('graphics')], [t]);
+  const texts = useMemo(() => [t('websites'), t('shops'), t('graphics'), t('tools')], [t]);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
