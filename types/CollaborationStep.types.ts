@@ -1,7 +1,7 @@
 export interface CollaborationStepType {
   id: number;
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   image: string;
   reverse: boolean;
 }

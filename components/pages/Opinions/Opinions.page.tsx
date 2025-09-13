@@ -10,12 +10,14 @@ import { OPINIONS_ARIA_LABEL, OPINIONS_SECTION_ID } from './constants/opinions.c
 import { SectionContainer, Loading, ErrorMessage } from '@/components/UI/shared';
 import { OpinionsType, SingleOpinionType } from '@/types/Opinions.types';
 import { useOpinionsData } from './hooks/useOpinionsData.hook';
+import { useTranslations } from 'next-intl';
 
 interface OpinionsProps {
   opinions: OpinionsType[];
 }
 
 const Opinions = ({ opinions }: OpinionsProps) => {
+  const t = useTranslations('opinions');
   const { opinions: fetchedOpinions, loading, error, fetchOpinions } = useOpinionsData();
 
   useEffect(() => {
@@ -37,11 +39,11 @@ const Opinions = ({ opinions }: OpinionsProps) => {
         <SectionName />
         <OpinionHeader />
         {loading ? (
-          <Loading message="Ładowanie opinii..." />
+          <Loading message={t('loadingOpinions')} />
         ) : error ? (
           <ErrorMessage message={error} variant="page" showRetry onRetry={fetchOpinions} />
         ) : (
-          <div role="alert">Brak dostępnych opinii</div>
+          <div role="alert">{t('noOpinionsAvailable')}</div>
         )}
       </SectionContainer>
     );

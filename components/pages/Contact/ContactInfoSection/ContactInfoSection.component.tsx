@@ -1,6 +1,7 @@
 import s from './ContactInfoSection.component.module.scss';
 
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 function ContactInfoSection({
   title,
@@ -11,12 +12,14 @@ function ContactInfoSection({
   content: string;
   link: string;
 }) {
+  const t = useTranslations('contact');
+
   return (
     <div className={s.icon}>
       <div className={s.icon}>
         <div className={s.icon}>
           <span className={s.icon__span}>
-            {title === 'Lokalizacja' && (
+            {title === t('location') && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
@@ -36,7 +39,7 @@ function ContactInfoSection({
                 <path d="M20.2 20.2l1.8 1.8" />
               </svg>
             )}
-            {title === 'e-mail' && (
+            {title === t('email') && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
@@ -53,7 +56,7 @@ function ContactInfoSection({
                 <path d="M3 7l9 6l9 -6"></path>
               </svg>
             )}
-            {title === 'Telefon' && (
+            {title === t('phone') && (
               <Image
                 src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1731069185/Portfolio/Icons/telephone_zogykl.webp"
                 width={30}

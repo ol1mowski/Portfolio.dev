@@ -29,7 +29,8 @@
     "freeTitle": "Kostenloses",
     "ebookTitle": "E-Book",
     "rating": "5.0",
-    "introText": "Damit unsere Bekanntschaft richtig gut beginnt, möchte ich mein neuestes E-Book mit Ihnen teilen, das Sie völlig kostenlos erhalten!",
+    "introText": "Damit unsere Bekanntschaft richtig gut beginnt, möchte ich mein neuestes E-Book mit Ihnen teilen, das Sie völlig",
+    "freeHighlight": "kostenlos erhalten!",
     "benefits": {
       "benefit1": "Bewährte Lernmethoden",
       "benefit2": "Praktische Tipps",
@@ -120,35 +121,51 @@
     "title": "Meine Projekte",
     "subtitle": "Sehen Sie, was ich erstellt habe",
     "viewProject": "Projekt ansehen",
-    "viewCode": "Code ansehen"
+    "viewCode": "Code ansehen",
+    "sourceCode": "Quellcode",
+    "liveVersion": "Live-Version",
+    "more": "Mehr",
+    "sourceCodeAriaLabel": "Quellcode auf GitHub ansehen",
+    "liveVersionAriaLabel": "Live-Version ansehen",
+    "moreAriaLabel": "Weitere Details ansehen",
+    "backToProjects": "Zurück zu Projekten",
+    "technologies": "Technologien",
+    "projectGallery": "Projekt-Galerie",
+    "projectDescription": "Projektbeschreibung",
+    "mainView": "Hauptansicht",
+    "subpage": "Unterseite",
+    "responsive": "responsiv"
   },
   "opinions": {
     "title": "Kundenbewertungen",
-    "subtitle": "Was sie über meine Arbeit sagen"
+    "subtitle": "Was sie über meine Arbeit sagen",
+    "viewFullOpinion": "Vollständige Bewertung ansehen",
+    "loadingOpinions": "Bewertungen werden geladen...",
+    "noOpinionsAvailable": "Keine Bewertungen verfügbar"
   },
   "collaboration": {
     "title": "Wie funktioniert die Zusammenarbeit?",
     "seeSteps": "Sehen Sie die Zusammenarbeitsschritte mit mir",
     "steps": {
-      "consultation": {
+      "step1": {
         "title": "Beratung & Bedarfsanalyse",
-        "description": "Zu Beginn unserer Zusammenarbeit führe ich eine detaillierte Beratung durch, um Ihre Bedürfnisse und Geschäftsziele zu verstehen."
+        "description": "Zu Beginn unserer Zusammenarbeit führe ich eine detaillierte Beratung durch, um Ihre Bedürfnisse und Geschäftsziele zu verstehen. Als Website-Ersteller analysiere ich den Markt, Ihre Konkurrenz und Zielgruppe, um die bestmöglich angepassten Lösungen zu liefern."
       },
-      "design": {
+      "step2": {
         "title": "Design & Website-Entwicklung",
-        "description": "Dann gehe ich zum Design der Website über. Ich erstelle einzigartige grafische Designs, die sowohl ästhetisch als auch funktional sind."
+        "description": "Dann gehe ich zum Design der Website über. Ich erstelle einzigartige grafische Designs, die sowohl ästhetisch als auch funktional sind. Ich verwende die neuesten Technologien, um Ihre Website modern und responsive zu gestalten. Jede Website, die ich erstelle, ist für SEO optimiert, was ihre Sichtbarkeit in Suchergebnissen erhöht."
       },
-      "testing": {
+      "step3": {
         "title": "Testen & Implementierung",
-        "description": "Bevor die Website live geht, führe ich gründliche Funktionalitätstests auf verschiedenen Geräten und Browsern durch."
+        "description": "Bevor die Website live geht, führe ich gründliche Funktionalitätstests auf verschiedenen Geräten und Browsern durch. Ich stelle sicher, dass alles einwandfrei funktioniert und implementiere dann die Website auf dem Hosting, wobei ich auf jedes Detail achte."
       },
-      "seo": {
+      "step4": {
         "title": "Lokale SEO",
-        "description": "Ich biete professionelle Google My Business-Optimierungsdienstleistungen an, die Ihrem Unternehmen helfen, sich in lokalen Suchergebnissen hervorzuheben."
+        "description": "Ich biete professionelle Google My Business-Optimierungsdienstleistungen an, die Ihrem Unternehmen helfen, sich in lokalen Suchergebnissen hervorzuheben. Durch die Optimierung des Google My Business Profils verbessern Sie die Sichtbarkeit Ihres Unternehmens in Google Maps und der Suchmaschine, ziehen mehr Kunden an und steigern den Website-Traffic."
       },
-      "support": {
+      "step5": {
         "title": "Schulung & Support",
-        "description": "Nach dem Launch der Website biete ich Schulungen zu deren Bedienung und Content-Management an. Ich biete auch laufenden technischen Support."
+        "description": "Nach dem Launch der Website biete ich Schulungen zu deren Bedienung und Content-Management an. Ich biete auch laufenden technischen Support. Ich stehe zur Verfügung, um Ihre Fragen zu beantworten und bei der weiteren Website-Entwicklung und Marketingaktivitäten zu helfen."
       }
     },
     "cta": {
@@ -159,6 +176,11 @@
   "contact": {
     "title": "Kontakt",
     "subtitle": "Nehmen Sie Kontakt mit mir auf",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "location": "Standort",
+    "locationValue": "Sieradz, Polen",
+    "callNowAriaLabel": "Jetzt anrufen: 693 851 878",
     "form": {
       "name": "Name",
       "email": "E-Mail",

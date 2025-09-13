@@ -1,5 +1,6 @@
 import s from './ProjectCta.component.module.scss';
 import { FaGithub, FaExternalLinkAlt, FaInfoCircle } from 'react-icons/fa';
+import { useTranslations } from 'next-intl';
 
 interface ProjectCtaProps {
   liveLink: string;
@@ -8,6 +9,8 @@ interface ProjectCtaProps {
 }
 
 const ProjectCta = ({ liveLink, githubLink, title }: ProjectCtaProps) => {
+  const t = useTranslations('projects');
+
   const projectSlug = title
     ? title
         .toLowerCase()
@@ -24,11 +27,11 @@ const ProjectCta = ({ liveLink, githubLink, title }: ProjectCtaProps) => {
           target="_blank"
           rel="noopener noreferrer"
           className={s.ctaLink}
-          aria-label="Zobacz kod źródłowy na GitHub"
+          aria-label={t('sourceCodeAriaLabel')}
         >
           <div className={s.ctaButton}>
             <FaGithub />
-            <span>Kod źródłowy</span>
+            <span>{t('sourceCode')}</span>
           </div>
         </a>
       )}
@@ -39,24 +42,20 @@ const ProjectCta = ({ liveLink, githubLink, title }: ProjectCtaProps) => {
           target="_blank"
           rel="noopener noreferrer"
           className={s.ctaLink}
-          aria-label="Zobacz wersję na żywo"
+          aria-label={t('liveVersionAriaLabel')}
         >
           <div className={`${s.ctaButton} ${s.liveButton}`}>
             <FaExternalLinkAlt />
-            <span>Wersja na żywo</span>
+            <span>{t('liveVersion')}</span>
           </div>
         </a>
       )}
 
       {title && (
-        <a
-          href={`/projekt/${projectSlug}`}
-          className={s.ctaLink}
-          aria-label="Zobacz więcej szczegółów"
-        >
+        <a href={`/projekt/${projectSlug}`} className={s.ctaLink} aria-label={t('moreAriaLabel')}>
           <div className={`${s.ctaButton} ${s.moreButton}`}>
             <FaInfoCircle />
-            <span>Więcej</span>
+            <span>{t('more')}</span>
           </div>
         </a>
       )}

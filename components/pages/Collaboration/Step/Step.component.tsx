@@ -3,9 +3,14 @@ import Image from 'next/image';
 import s from './Step.component.module.scss';
 import AnimationWrapper from '@/components/UI/AnimationWrapper/AnimationWrapper.component';
 import type { CollaborationStepType } from '@/types/CollaborationStep.types';
+import { useTranslations } from 'next-intl';
 
-const Step = memo(({ image, title, reverse, description, id }: CollaborationStepType) => {
+const Step = memo(({ image, titleKey, reverse, descriptionKey, id }: CollaborationStepType) => {
+  const t = useTranslations();
   const stepClass = `${s.step} ${reverse ? s.stepR : ''}`;
+
+  const title = t(titleKey);
+  const description = t(descriptionKey);
 
   return (
     <AnimationWrapper>

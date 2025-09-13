@@ -29,7 +29,8 @@
     "freeTitle": "Free",
     "ebookTitle": "E-Book",
     "rating": "5.0",
-    "introText": "To start our relationship really well, I'd like to share with you my latest e-book, which you'll get completely free!",
+    "introText": "To start our relationship really well, I'd like to share with you my latest e-book, which you'll get completely",
+    "freeHighlight": "free!",
     "benefits": {
       "benefit1": "Proven learning methods",
       "benefit2": "Practical tips",
@@ -120,35 +121,51 @@
     "title": "My Projects",
     "subtitle": "See what I've created",
     "viewProject": "View project",
-    "viewCode": "View code"
+    "viewCode": "View code",
+    "sourceCode": "Source Code",
+    "liveVersion": "Live Version",
+    "more": "More",
+    "sourceCodeAriaLabel": "View source code on GitHub",
+    "liveVersionAriaLabel": "View live version",
+    "moreAriaLabel": "View more details",
+    "backToProjects": "Back to projects",
+    "technologies": "Technologies",
+    "projectGallery": "Project Gallery",
+    "projectDescription": "Project Description",
+    "mainView": "main view",
+    "subpage": "subpage",
+    "responsive": "responsive"
   },
   "opinions": {
     "title": "Client Reviews",
-    "subtitle": "What they say about my work"
+    "subtitle": "What they say about my work",
+    "viewFullOpinion": "View Full Review",
+    "loadingOpinions": "Loading reviews...",
+    "noOpinionsAvailable": "No reviews available"
   },
   "collaboration": {
     "title": "How Does Collaboration Work?",
     "seeSteps": "See Collaboration Steps With Me",
     "steps": {
-      "consultation": {
+      "step1": {
         "title": "Consultation & Needs Analysis",
-        "description": "At the beginning of our collaboration, I conduct a detailed consultation to understand your needs and business goals."
+        "description": "At the beginning of our collaboration, I conduct a detailed consultation to understand your needs and business goals. As a website creator, I analyze the market, your competition, and target audience to deliver the best-tailored solutions."
       },
-      "design": {
+      "step2": {
         "title": "Design & Website Development",
-        "description": "Then I proceed to design the website. I create unique graphic designs that are both aesthetic and functional."
+        "description": "Then I proceed to design the website. I create unique graphic designs that are both aesthetic and functional. I use the latest technologies to make your site modern and responsive. Every website I create is optimized for SEO, which increases its visibility in search results."
       },
-      "testing": {
+      "step3": {
         "title": "Testing & Implementation",
-        "description": "Before the website goes live, I conduct thorough functionality tests on various devices and browsers."
+        "description": "Before the website goes live, I conduct thorough functionality tests on various devices and browsers. I make sure everything works flawlessly, then deploy the site to hosting, taking care of every detail."
       },
-      "seo": {
+      "step4": {
         "title": "Local SEO",
-        "description": "I offer professional Google My Business optimization services that will help your company stand out in local search results."
+        "description": "I offer professional Google My Business optimization services that will help your company stand out in local search results. Through Google My Business profile optimization, you'll improve your business visibility in Google Maps and search engine, attract more customers, and increase website traffic."
       },
-      "support": {
+      "step5": {
         "title": "Training & Support",
-        "description": "After launching the site, I offer training on its operation and content management. I also provide ongoing technical support."
+        "description": "After launching the site, I offer training on its operation and content management. I also provide ongoing technical support. I'm available to answer your questions and help with further site development and marketing activities."
       }
     },
     "cta": {
@@ -159,6 +176,11 @@
   "contact": {
     "title": "Contact",
     "subtitle": "Get in touch with me",
+    "phone": "Phone",
+    "email": "e-mail",
+    "location": "Location",
+    "locationValue": "Sieradz, Poland",
+    "callNowAriaLabel": "Call now: 693 851 878",
     "form": {
       "name": "Name",
       "email": "Email",

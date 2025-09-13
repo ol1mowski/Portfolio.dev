@@ -1,6 +1,7 @@
 import s from './ProjectHeader.component.module.scss';
 import { formatDate } from '@/utils/dateFormatters';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { useTranslations } from 'next-intl';
 
 interface ProjectHeaderProps {
   title: string;
@@ -10,6 +11,7 @@ interface ProjectHeaderProps {
 }
 
 const ProjectHeader: React.FC<ProjectHeaderProps> = ({ title, date, githubLink, liveLink }) => {
+  const t = useTranslations('projects');
   const formattedDate = formatDate(date);
 
   return (
@@ -25,10 +27,10 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ title, date, githubLink, 
             target="_blank"
             rel="noopener noreferrer"
             className={s.link}
-            aria-label="Zobacz kod źródłowy na GitHub"
+            aria-label={t('sourceCodeAriaLabel')}
           >
             <FaGithub size={20} />
-            <span>Kod źródłowy</span>
+            <span>{t('sourceCode')}</span>
           </a>
         )}
         {liveLink && (
@@ -37,10 +39,10 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ title, date, githubLink, 
             target="_blank"
             rel="noopener noreferrer"
             className={`${s.link} ${s.liveLink}`}
-            aria-label="Zobacz stronę na żywo"
+            aria-label={t('liveVersionAriaLabel')}
           >
             <FaExternalLinkAlt size={18} />
-            <span>Wersja na żywo</span>
+            <span>{t('liveVersion')}</span>
           </a>
         )}
       </div>

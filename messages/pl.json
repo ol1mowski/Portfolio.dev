@@ -5,7 +5,7 @@
       "websites": "Stron Internetowych",
       "shops": "Sklepów Internetowych",
       "graphics": "Projektów Graficznych",
-      "tools": "Narzędzi"
+      "tools": "Narzędzia"
     },
     "description": "Cześć! Nazywam się Oliwier Markiewicz, pomagam lokalnym firmom zwiększyć sprzedaż poprzez tworzenie nowoczesnych stron internetowych, które wyróżniają się na tle konkurencji 🏆",
     "cta": "Zwiększ Swoją Sprzedaż",
@@ -29,7 +29,8 @@
     "freeTitle": "Bezpłatny",
     "ebookTitle": "E-Book",
     "rating": "5.0",
-    "introText": "Aby nasza znajomość zaczęła się naprawdę dobrze, chciałbym podzielić się z Tobą moim najnowszym e-bookiem, który otrzymasz zupełnie za darmo!",
+    "introText": "Aby nasza znajomość zaczęła się naprawdę dobrze, chciałbym podzielić się z Tobą moim najnowszym e-bookiem, który otrzymasz zupełnie",
+    "freeHighlight": "za darmo!",
     "benefits": {
       "benefit1": "Sprawdzone metody nauki",
       "benefit2": "Praktyczne wskazówki",
@@ -120,35 +121,51 @@
     "title": "Moje Projekty",
     "subtitle": "Zobacz co już stworzyłem",
     "viewProject": "Zobacz projekt",
-    "viewCode": "Zobacz kod"
+    "viewCode": "Zobacz kod",
+    "sourceCode": "Kod źródłowy",
+    "liveVersion": "Wersja na żywo",
+    "more": "Więcej",
+    "sourceCodeAriaLabel": "Zobacz kod źródłowy na GitHub",
+    "liveVersionAriaLabel": "Zobacz wersję na żywo",
+    "moreAriaLabel": "Zobacz więcej szczegółów",
+    "backToProjects": "Powrót do projektów",
+    "technologies": "Technologie",
+    "projectGallery": "Galeria projektu",
+    "projectDescription": "Opis projektu",
+    "mainView": "widok główny",
+    "subpage": "podstrona",
+    "responsive": "responsive"
   },
   "opinions": {
     "title": "Opinie Klientów",
-    "subtitle": "Co mówią o mojej pracy"
+    "subtitle": "Co mówią o mojej pracy",
+    "viewFullOpinion": "Zobacz Pełną Opinię",
+    "loadingOpinions": "Ładowanie opinii...",
+    "noOpinionsAvailable": "Brak dostępnych opinii"
   },
   "collaboration": {
     "title": "Jak Wygląda Współpraca?",
     "seeSteps": "Zobacz Etapy Współpracy Ze Mną",
     "steps": {
-      "consultation": {
+      "step1": {
         "title": "Konsultacja I Analiza Potrzeb",
-        "description": "Na początku naszej współpracy przeprowadzam szczegółową konsultację, aby zrozumieć Twoje potrzeby i cele biznesowe."
+        "description": "Na początku naszej współpracy przeprowadzam szczegółową konsultację, aby zrozumieć Twoje potrzeby i cele biznesowe. Jako twórca stron internetowych analizuję rynek, Twoją konkurencję oraz grupę docelową, aby móc dostarczyć najlepiej dopasowane rozwiązania."
       },
-      "design": {
+      "step2": {
         "title": "Projektowanie I Tworzenie Strony",
-        "description": "Następnie przystępuję do projektowania strony internetowej. Tworzę unikalne projekty graficzne, które są zarówno estetyczne, jak i funkcjonalne."
+        "description": "Następnie przystępuję do projektowania strony internetowej. Tworzę unikalne projekty graficzne, które są zarówno estetyczne, jak i funkcjonalne. Wykorzystuję najnowsze technologie, aby Twoja strona była nowoczesna i responsywna. Każda strona internetowa, którą tworzę, jest zoptymalizowana pod kątem SEO, co zwiększa jej widoczność w wynikach wyszukiwania."
       },
-      "testing": {
+      "step3": {
         "title": "Testowanie I Wdrożenie",
-        "description": "Zanim strona internetowa zostanie uruchomiona, przeprowadzam dokładne testy funkcjonalności na różnych urządzeniach i przeglądarkach."
+        "description": "Zanim strona internetowa zostanie uruchomiona, przeprowadzam dokładne testy funkcjonalności na różnych urządzeniach i przeglądarkach. Upewniam się, że wszystko działa bez zarzutu, a następnie wdrażam stronę na hosting, dbając o każdy szczegół."
       },
-      "seo": {
+      "step4": {
         "title": "Pozycjonowanie Lokalne",
-        "description": "Oferuję profesjonalne usługi pozycjonowania wizytówki Google Moja Firma, które pomogą Twojej firmie wyróżnić się w lokalnych wynikach wyszukiwania."
+        "description": "Oferuję profesjonalne usługi pozycjonowania wizytówki Google Moja Firma, które pomogą Twojej firmie wyróżnić się w lokalnych wynikach wyszukiwania. Dzięki optymalizacji profilu Google Moja Firma poprawisz widoczność swojego biznesu w Google Maps i wyszukiwarce, przyciągniesz więcej klientów oraz zwiększysz ruch na stronie internetowej."
       },
-      "support": {
+      "step5": {
         "title": "Szkolenie I Wsparcie",
-        "description": "Po uruchomieniu strony oferuję szkolenie z jej obsługi oraz zarządzania treściami. Zapewniam również ciągłe wsparcie techniczne."
+        "description": "Po uruchomieniu strony oferuję szkolenie z jej obsługi oraz zarządzania treściami. Zapewniam również ciągłe wsparcie techniczne. Jestem dostępny, aby odpowiadać na Twoje pytania i pomagać w dalszym rozwijaniu strony oraz działań marketingowych."
       }
     },
     "cta": {
@@ -159,6 +176,11 @@
   "contact": {
     "title": "Kontakt",
     "subtitle": "Skontaktuj się ze mną",
+    "phone": "Telefon",
+    "email": "e-mail",
+    "location": "Lokalizacja",
+    "locationValue": "Sieradz, Polska",
+    "callNowAriaLabel": "Zadzwoń teraz: 693 851 878",
     "form": {
       "name": "Imię",
       "email": "Email",
@@ -285,10 +307,6 @@
     "youtubeSubscribers": "Subskrybentów YouTube",
     "experienceYears": "Lat doświadczenia",
     "completedProjects": "Zrealizowanych projektów"
-  },
-  "footer": {
-    "copyright": "Wszelkie prawa zastrzeżone",
-    "privacy": "Polityka Prywatności"
   },
   "blog": {
     "loadingError": "Błąd podczas ładowania bloga",
