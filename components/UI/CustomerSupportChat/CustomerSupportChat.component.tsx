@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import s from './CustomerSupportChat.component.module.scss';
+import { useTranslations, useLocale } from 'next-intl';
 
 interface Message {
   id: string;
@@ -18,9 +19,10 @@ const CustomerSupportChat: React.FC = () => {
   const [showPreview, setShowPreview] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations('chat');
+  const locale = useLocale();
 
   useEffect(() => {
-    // Pokaż podgląd po 3 sekundach (tylko podgląd, przycisk jest cały czas)
     const timer = setTimeout(() => {
       setShowPreview(true);
     }, 3000);
@@ -29,7 +31,6 @@ const CustomerSupportChat: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    // Scroll do dołu gdy dodana nowa wiadomość lub gdy bot pisze
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isTyping]);
 
@@ -54,15 +55,13 @@ const CustomerSupportChat: React.FC = () => {
     setMessages(prev => [...prev, userMessage]);
     setNewMessage('');
 
-    // Pokaż animację pisania
     setIsTyping(true);
 
-    // Automatyczna odpowiedź po 2 sekundach (wydłużone dla realizmu)
     setTimeout(() => {
       setIsTyping(false);
       const supportMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: 'Dzięki za wiadomość! 👋 Chat jest jeszcze w budowie, ale już wkrótce będę mógł Ci pomóc. W międzyczasie zapraszam do kontaktu przez email: kontakt@oliwiermarkiewicz.pl',
+        text: t('autoResponse'),
         sender: 'support',
         timestamp: new Date(),
       };
@@ -79,14 +78,13 @@ const CustomerSupportChat: React.FC = () => {
 
   return (
     <>
-      {/* Podgląd wiadomości */}
       {showPreview && !isOpen && (
         <div className={s.preview} onClick={handleToggleChat}>
           <div className={s.preview__content}>
             <div className={s.preview__avatar}>👋</div>
             <div className={s.preview__text}>
-              <div className={s.preview__title}>Cześć! Potrzebujesz pomocy?</div>
-              <div className={s.preview__message}>Jestem tutaj, żeby Ci pomóc</div>
+              <div className={s.preview__title}>{t('preview.title')}</div>
+              <div className={s.preview__message}>{t('preview.message')}</div>
             </div>
             <button
               className={s.preview__close}
@@ -101,22 +99,20 @@ const CustomerSupportChat: React.FC = () => {
         </div>
       )}
 
-      {/* Przycisk chatu - zawsze widoczny z ikonką czatu */}
       <button className={s.chatButton} onClick={handleToggleChat}>
         {hasNotification && !isOpen && <div className={s.chatButton__notification}>1</div>}
         <span className={s.chatButton__icon}>💬</span>
       </button>
 
-      {/* Okno chatu */}
       {isOpen && (
         <div className={s.chatWindow}>
           <div className={s.chatWindow__header}>
             <div className={s.chatWindow__header__info}>
               <div className={s.chatWindow__header__avatar}>👤</div>
               <div className={s.chatWindow__header__details}>
-                <div className={s.chatWindow__header__name}>Obsługa Klienta</div>
+                <div className={s.chatWindow__header__name}>{t('header.customerSupport')}</div>
                 <div className={s.chatWindow__header__status}>
-                  {isTyping ? 'Pisze...' : 'Online'}
+                  {isTyping ? t('header.typing') : t('header.online')}
                 </div>
               </div>
             </div>
@@ -129,7 +125,7 @@ const CustomerSupportChat: React.FC = () => {
             {messages.length === 0 && !isTyping && (
               <div className={s.chatWindow__welcome}>
                 <div className={s.chatWindow__welcome__avatar}>👋</div>
-                <div className={s.chatWindow__welcome__text}>Witaj! W czym mogę Ci pomóc?</div>
+                <div className={s.chatWindow__welcome__text}>{t('welcome')}</div>
               </div>
             )}
 
@@ -140,15 +136,17 @@ const CustomerSupportChat: React.FC = () => {
               >
                 <div className={s.message__bubble}>{message.text}</div>
                 <div className={s.message__time}>
-                  {message.timestamp.toLocaleTimeString('pl-PL', {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                  })}
+                  {message.timestamp.toLocaleTimeString(
+                    locale === 'pl' ? 'pl-PL' : locale === 'en' ? 'en-US' : 'de-DE',
+                    {
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    }
+                  )}
                 </div>
               </div>
             ))}
 
-            {/* Animacja pisania */}
             {isTyping && (
               <div className={`${s.message} ${s.message__support}`}>
                 <div className={s.message__bubble}>
@@ -169,7 +167,7 @@ const CustomerSupportChat: React.FC = () => {
               value={newMessage}
               onChange={e => setNewMessage(e.target.value)}
               onKeyDown={handleKeyPress}
-              placeholder="Napisz wiadomość..."
+              placeholder={t('placeholder')}
               className={s.chatWindow__textarea}
               rows={1}
               disabled={isTyping}

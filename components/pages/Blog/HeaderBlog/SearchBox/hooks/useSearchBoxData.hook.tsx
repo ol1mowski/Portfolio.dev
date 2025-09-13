@@ -8,7 +8,7 @@ interface Suggestion {
   type?: string;
 }
 
-export const useSearchBoxData = () => {
+export const useSearchBoxData = (locale: string) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -60,17 +60,20 @@ export const useSearchBoxData = () => {
     };
   }, [searchTerm, fetchSuggestions]);
 
-  const navigateToSearch = useCallback((query: string) => {
-    setShowSuggestions(false);
-    window.location.href = `/Blog/search?q=${encodeURIComponent(query)}`;
-  }, []);
+  const navigateToSearch = useCallback(
+    (query: string) => {
+      setShowSuggestions(false);
+      window.location.href = `/${locale}/Blog/search?q=${encodeURIComponent(query)}`;
+    },
+    [locale]
+  );
 
   const handleSuggestionClick = useCallback(
     (suggestion: Suggestion) => {
       if (suggestion.type === 'category') {
         navigateToSearch(suggestion.category);
       } else if (suggestion.slug) {
-        window.location.href = `/Blog/posty/${suggestion.slug}`;
+        window.location.href = `/${locale}/Blog/posty/${suggestion.slug}`;
       } else {
         setSearchTerm(suggestion.title);
         navigateToSearch(suggestion.title);

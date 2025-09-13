@@ -295,5 +295,21 @@
       "unknownError": "Ein unbekannter Fehler ist aufgetreten",
       "retry": "Erneut versuchen"
     }
+  },
+  "chat": {
+    "preview": {
+      "title": "Hallo! Brauchen Sie Hilfe?",
+      "message": "Ich bin hier, um Ihnen zu helfen"
+    },
+    "header": {
+      "customerSupport": "Kundensupport",
+      "typing": "Schreibt...",
+      "online": "Online"
+    },
+    "welcome": "Hallo! Wie kann ich Ihnen helfen?",
+    "placeholder": "Nachricht eingeben...",
+    "autoResponse": "Danke für Ihre Nachricht! 👋 Der Chat ist noch in Entwicklung, aber bald kann ich Ihnen helfen. In der Zwischenzeit kontaktieren Sie mich gerne per E-Mail: kontakt@oliwiermarkiewicz.pl",
+    "sendButton": "Senden",
+    "closeButton": "Schließen"
   }
 }

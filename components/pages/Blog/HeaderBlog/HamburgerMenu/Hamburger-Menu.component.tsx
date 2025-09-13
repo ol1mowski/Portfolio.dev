@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import { BlogITEMS, ITEMS } from '../StaticData';
 import Item from '../Item/Item.component';
+import { useLocale } from 'next-intl';
 
 function HamburgerMenuComponent({
   closeMenuHandler,
@@ -12,6 +13,12 @@ function HamburgerMenuComponent({
   closeMenuHandler: () => void;
   type?: string;
 }) {
+  const locale = useLocale();
+
+  const getUpdatedHref = (href: string) => {
+    if (href === '/Blog') return `/${locale}/Blog`;
+    return href;
+  };
   return (
     <menu data-testid="hamburger-menu-component" className={s.hamburgerMenu}>
       <section className={s.hamburgerMenu__close}>
@@ -28,10 +35,10 @@ function HamburgerMenuComponent({
         <ul className={s.hamburgerMenu__nav__items}>
           {type === 'Blog'
             ? BlogITEMS.map(({ id, value, href }) => (
-                <Item key={id} hamburger value={value} href={href} />
+                <Item key={id} hamburger value={value} href={getUpdatedHref(href)} />
               ))
             : ITEMS.map(({ id, value, href }) => (
-                <Item key={id} hamburger value={value} href={href} />
+                <Item key={id} hamburger value={value} href={getUpdatedHref(href)} />
               ))}
         </ul>
         {type === 'Blog' && (

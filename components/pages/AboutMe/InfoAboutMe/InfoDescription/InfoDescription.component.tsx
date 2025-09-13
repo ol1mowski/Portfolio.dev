@@ -2,10 +2,12 @@ import s from './InfoDescription.component.module.scss';
 
 import { memo } from 'react';
 import Link from 'next/link';
+import { useLocale } from 'next-intl';
 
 import Paragraph from '@/components/UI/Word/Paragraph.component';
 
 const InfoDescription = memo(() => {
+  const locale = useLocale();
   return (
     <section className={s.desWrapper}>
       <p className={s.desWrapper__des}>
@@ -31,7 +33,7 @@ const InfoDescription = memo(() => {
       />
       <p className={s.desWrapper__des}>
         <Paragraph value="Prowadzę również " className={s.desWrapper__des} />
-        <a href="/Blog" aria-label="Przejdź do bloga">
+        <a href={`/${locale}/Blog`} aria-label="Przejdź do bloga">
           <span className={s.importantTextDecorate}>Bloga</span>
         </a>
         <Paragraph value=" oraz kanał na " className={s.desWrapper__des} />

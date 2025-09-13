@@ -2,6 +2,7 @@ import { FC } from 'react';
 import s from './TagPageContent.component.module.scss';
 import PostCardComponent from '../../../Posts/PostCardComponent/PostCardComponent.component';
 import { PostsType } from '@/types/PostType.types';
+import { useLocale } from 'next-intl';
 
 interface TagPageContentProps {
   posts: PostsType[];
@@ -18,6 +19,7 @@ export const TagPageContent: FC<TagPageContentProps> = ({
   onLoadMore,
   cleanTag,
 }) => {
+  const locale = useLocale();
   if (posts.length === 0) {
     return (
       <div className={s.noResults}>
@@ -26,7 +28,7 @@ export const TagPageContent: FC<TagPageContentProps> = ({
         <p className={s.noResults__subtitle}>
           Nie ma jeszcze artykułów z tagiem <strong>#{cleanTag}</strong>.
         </p>
-        <a href="/Blog" className={s.noResults__button}>
+        <a href={`/${locale}/Blog`} className={s.noResults__button}>
           Wróć do bloga
         </a>
       </div>

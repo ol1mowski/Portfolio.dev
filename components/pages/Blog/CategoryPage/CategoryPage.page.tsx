@@ -5,6 +5,7 @@ import s from './CategoryPage.page.module.scss';
 import Header from '../HeaderBlog/Header.component.page';
 import PostCardComponent from '../Posts/PostCardComponent/PostCardComponent.component';
 import { PostsType } from '@/types/PostType.types';
+import { useLocale } from 'next-intl';
 
 interface CategoryPageProps {
   category: string;
@@ -26,6 +27,7 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
   const [error, setError] = useState<string | null>(null);
   const [loadingMore, setLoadingMore] = useState(false);
   const [hasMore, setHasMore] = useState(false);
+  const locale = useLocale();
 
   const fetchPosts = useCallback(
     async (reset = false) => {
@@ -114,7 +116,7 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
       <div className={s.container}>
         <div className={s.header}>
           <div className={s.header__breadcrumb}>
-            <a href="/Blog" className={s.header__breadcrumb__link}>
+            <a href={`/${locale}/Blog`} className={s.header__breadcrumb__link}>
               Blog
             </a>
             <span className={s.header__breadcrumb__separator}>›</span>
@@ -175,7 +177,7 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
             <p className={s.noResults__subtitle}>
               W kategorii <strong>{category}</strong> nie ma jeszcze żadnych artykułów.
             </p>
-            <a href="/Blog" className={s.noResults__button}>
+            <a href={`/${locale}/Blog`} className={s.noResults__button}>
               Wróć do bloga
             </a>
           </div>

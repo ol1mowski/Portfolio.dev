@@ -3,9 +3,11 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import s from './NotFound.page.module.scss';
+import { useLocale } from 'next-intl';
 
 function NotFound({ link }: { link: string; info?: string }) {
   const [mounted, setMounted] = useState(false);
+  const locale = useLocale();
 
   useEffect(() => {
     setMounted(true);
@@ -42,7 +44,7 @@ function NotFound({ link }: { link: string; info?: string }) {
               <span className={s.actions__primary__icon}>🏠</span>
               Wróć do strony głównej
             </Link>
-            <Link href="/Blog" className={s.actions__secondary}>
+            <Link href={`/${locale}/Blog`} className={s.actions__secondary}>
               <span className={s.actions__secondary__icon}>📝</span>
               Przejdź do bloga
             </Link>
@@ -52,19 +54,19 @@ function NotFound({ link }: { link: string; info?: string }) {
           <div className={s.quickLinks}>
             <h3 className={s.quickLinks__title}>Może Cię zainteresuje:</h3>
             <div className={s.quickLinks__grid}>
-              <Link href="/Blog/kategorie/React" className={s.quickLinks__item}>
+              <Link href={`/${locale}/Blog/kategorie/React`} className={s.quickLinks__item}>
                 <span className={s.quickLinks__item__icon}>⚛️</span>
                 <span className={s.quickLinks__item__text}>Artykuły React</span>
               </Link>
-              <Link href="/Blog/kategorie/TypeScript" className={s.quickLinks__item}>
+              <Link href={`/${locale}/Blog/kategorie/TypeScript`} className={s.quickLinks__item}>
                 <span className={s.quickLinks__item__icon}>📘</span>
                 <span className={s.quickLinks__item__text}>TypeScript</span>
               </Link>
-              <Link href="/Blog/kategorie/Next.js" className={s.quickLinks__item}>
+              <Link href={`/${locale}/Blog/kategorie/Next.js`} className={s.quickLinks__item}>
                 <span className={s.quickLinks__item__icon}>▲</span>
                 <span className={s.quickLinks__item__text}>Next.js</span>
               </Link>
-              <Link href="/Blog/search" className={s.quickLinks__item}>
+              <Link href={`/${locale}/Blog/search`} className={s.quickLinks__item}>
                 <span className={s.quickLinks__item__icon}>🔍</span>
                 <span className={s.quickLinks__item__text}>Wyszukaj</span>
               </Link>

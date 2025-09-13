@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import RootLayoutClient from '../RootLayoutClient';
+import CustomerSupportChat from '@/components/UI/CustomerSupportChat/CustomerSupportChat.component';
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -28,7 +29,10 @@ export default async function LocaleLayout({
 
   return (
     <RootLayoutClient>
-      <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+      <NextIntlClientProvider messages={messages}>
+        {children}
+        <CustomerSupportChat />
+      </NextIntlClientProvider>
     </RootLayoutClient>
   );
 }

@@ -1,9 +1,11 @@
 import { FC } from 'react';
 import s from './PopularSearches.component.module.scss';
+import { useLocale } from 'next-intl';
 
 const POPULAR_TAGS = ['React', 'TypeScript', 'Next.js', 'JavaScript', 'CSS', 'Node.js'];
 
 export const PopularSearches: FC = () => {
+  const locale = useLocale();
   return (
     <div className={s.popularSearches}>
       <h3 className={s.popularSearches__title}>Popularne wyszukiwania</h3>
@@ -11,7 +13,7 @@ export const PopularSearches: FC = () => {
         {POPULAR_TAGS.map(tag => (
           <a
             key={tag}
-            href={`/Blog/search?q=${encodeURIComponent(tag)}`}
+            href={`/${locale}/Blog/search?q=${encodeURIComponent(tag)}`}
             className={s.popularSearches__tags__tag}
           >
             {tag}

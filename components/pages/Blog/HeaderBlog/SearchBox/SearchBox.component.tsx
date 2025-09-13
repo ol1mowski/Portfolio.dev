@@ -5,8 +5,10 @@ import s from './SearchBox.component.module.scss';
 import { SearchBoxForm } from './components/SearchBoxForm/SearchBoxForm.component';
 import { SearchSuggestions } from './components/SearchSuggestions/SearchSuggestions.component';
 import { useSearchBoxData } from './hooks/useSearchBoxData.hook';
+import { useLocale } from 'next-intl';
 
 const SearchBox = () => {
+  const locale = useLocale();
   const {
     searchTerm,
     setSearchTerm,
@@ -20,7 +22,7 @@ const SearchBox = () => {
     navigateToSearch,
     handleSuggestionClick,
     highlightMatch,
-  } = useSearchBoxData();
+  } = useSearchBoxData(locale);
 
   const searchRef = useRef<HTMLDivElement>(null);
 

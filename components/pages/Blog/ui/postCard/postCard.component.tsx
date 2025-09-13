@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { type FC } from 'react';
 import { type PostsType } from '@/types/PostType.types';
+import { useLocale } from 'next-intl';
 
 import s from './postCard.module.scss';
 
@@ -20,9 +21,11 @@ export const PostCard: FC<PostCardProps> = ({
   authorImage,
   date,
 }) => {
+  const locale = useLocale();
+
   return (
     <article className={s.card} key={`post-${id}-${slug}`}>
-      <a href={`/Blog/posty/${slug}`} className={s.card__link}>
+      <a href={`/${locale}/Blog/posty/${slug}`} className={s.card__link}>
         <div className={s.card__imageContainer}>
           {image && (
             <Image

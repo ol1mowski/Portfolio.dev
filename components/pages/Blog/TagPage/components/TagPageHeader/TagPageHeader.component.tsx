@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import s from './TagPageHeader.component.module.scss';
+import { useLocale } from 'next-intl';
 
 interface TagPageHeaderProps {
   cleanTag: string;
@@ -7,10 +8,11 @@ interface TagPageHeaderProps {
 }
 
 export const TagPageHeader: FC<TagPageHeaderProps> = ({ cleanTag, postsCount }) => {
+  const locale = useLocale();
   return (
     <div className={s.header}>
       <div className={s.header__breadcrumb}>
-        <a href="/Blog" className={s.header__breadcrumb__link}>
+        <a href={`/${locale}/Blog`} className={s.header__breadcrumb__link}>
           Blog
         </a>
         <span className={s.header__breadcrumb__separator}>›</span>

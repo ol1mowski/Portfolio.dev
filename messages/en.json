@@ -295,5 +295,21 @@
       "unknownError": "An unknown error occurred",
       "retry": "Try again"
     }
+  },
+  "chat": {
+    "preview": {
+      "title": "Hi! Need help?",
+      "message": "I'm here to help you"
+    },
+    "header": {
+      "customerSupport": "Customer Support",
+      "typing": "Typing...",
+      "online": "Online"
+    },
+    "welcome": "Hello! How can I help you?",
+    "placeholder": "Type a message...",
+    "autoResponse": "Thanks for your message! 👋 Chat is still under development, but I'll be able to help you soon. In the meantime, feel free to contact me via email: kontakt@oliwiermarkiewicz.pl",
+    "sendButton": "Send",
+    "closeButton": "Close"
   }
 }
