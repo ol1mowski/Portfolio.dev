@@ -3,6 +3,7 @@
 import s from './PostCardComponent.component.module.scss';
 import Image from 'next/image';
 import { type PostCardType } from '@/types/PostType.types';
+import { useLocale } from 'next-intl';
 
 function PostCardComponent({
   title,
@@ -14,6 +15,7 @@ function PostCardComponent({
   slug,
   category = 'React',
 }: PostCardType) {
+  const locale = useLocale();
   const getHashtags = (cat: string) => {
     switch (cat.toLowerCase()) {
       case 'react':
@@ -34,17 +36,17 @@ function PostCardComponent({
   const handleCategoryClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    window.location.href = `/Blog/kategorie/${encodeURIComponent(category)}`;
+    window.location.href = `/${locale}/Blog/kategorie/${encodeURIComponent(category)}`;
   };
 
   const handleTagClick = (e: React.MouseEvent, tag: string) => {
     e.preventDefault();
     e.stopPropagation();
-    window.location.href = `/Blog/tagi/${encodeURIComponent(tag.replace('#', ''))}`;
+    window.location.href = `/${locale}/Blog/tagi/${encodeURIComponent(tag.replace('#', ''))}`;
   };
 
   return (
-    <a href={`/Blog/posty/${slug}`} className={s.postCard}>
+    <a href={`/${locale}/Blog/posty/${slug}`} className={s.postCard}>
       <div className={s.postCard__imageSection}>
         <Image
           className={s.postCard__imageSection__img}

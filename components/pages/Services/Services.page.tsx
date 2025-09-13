@@ -111,7 +111,6 @@ export const Services: FC = () => {
           ))}
         </motion.div>
 
-        {/* Baner konfiguratora */}
         <motion.div className={styles.configuratorBanner} variants={cardVariants}>
           <div className={styles.bannerContent}>
             <div className={styles.bannerText}>

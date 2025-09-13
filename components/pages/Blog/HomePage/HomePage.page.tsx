@@ -8,6 +8,7 @@ import { type PostsType } from '@/types/PostType.types';
 import { useBlogStats, useBlogTags } from '../hooks';
 import { ErrorMessage } from '@/components/UI/shared';
 import { MainArticle, SmallPosts, TrendingTopics, BlogStats } from './components';
+import { useTranslations, useLocale } from 'next-intl';
 
 interface HomePageComponentProps {
   posts: PostsType[];
@@ -16,6 +17,8 @@ interface HomePageComponentProps {
 function HomePageComponent({ posts }: HomePageComponentProps) {
   const { stats, loading: statsLoading, error: statsError, fetchStats } = useBlogStats();
   const { tags, loading: tagsLoading, error: tagsError, fetchTags } = useBlogTags();
+  const t = useTranslations('blog');
+  const locale = useLocale();
 
   useEffect(() => {
     fetchStats();
@@ -23,7 +26,7 @@ function HomePageComponent({ posts }: HomePageComponentProps) {
   }, [fetchStats, fetchTags]);
 
   if (!posts || !posts.length) {
-    return <div role="alert">Nie znaleziono postów.</div>;
+    return <div role="alert">{t('noPostsFound')}</div>;
   }
 
   const featuredPost = posts[0];
@@ -38,18 +41,18 @@ function HomePageComponent({ posts }: HomePageComponentProps) {
     }));
 
   const handleCategoryClick = (category: string) => {
-    window.location.href = `/Blog/kategorie/${encodeURIComponent(category)}`;
+    window.location.href = `/${locale}/Blog/kategorie/${encodeURIComponent(category)}`;
   };
 
   const handleTagClick = (tag: string) => {
     const cleanTag = tag.startsWith('#') ? tag.slice(1) : tag;
-    window.location.href = `/Blog/tagi/${encodeURIComponent(cleanTag)}`;
+    window.location.href = `/${locale}/Blog/tagi/${encodeURIComponent(cleanTag)}`;
   };
 
   if (statsError || tagsError) {
     return (
       <ErrorMessage
-        message={statsError || tagsError || 'Wystąpił nieznany błąd'}
+        message={statsError || tagsError || t('errors.unknownError')}
         variant="page"
         showRetry
         onRetry={() => {
@@ -67,10 +70,8 @@ function HomePageComponent({ posts }: HomePageComponentProps) {
       <section className={s.heroSection}>
         <div className={s.heroSection__header}>
           <div className={s.heroSection__header__left}>
-            <h1 className={s.heroSection__header__title}>Najnowsze artykuły</h1>
-            <p className={s.heroSection__header__subtitle}>
-              Odkryj najświeższe treści z świata technologii
-            </p>
+            <h1 className={s.heroSection__header__title}>{t('latestArticles')}</h1>
+            <p className={s.heroSection__header__subtitle}>{t('discoverContent')}</p>
           </div>
         </div>
 

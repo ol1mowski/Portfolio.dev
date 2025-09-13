@@ -252,5 +252,48 @@
   "footer": {
     "copyright": "All rights reserved",
     "privacy": "Privacy Policy"
+  },
+  "blog": {
+    "loadingError": "Error loading blog",
+    "title": "Blog",
+    "subtitle": "Latest articles from the world of technology",
+    "latestArticles": "Latest articles",
+    "discoverContent": "Discover the latest content from the world of technology",
+    "discoverTrends": "Discover the latest trends and technologies in the IT world",
+    "noPostsFound": "No posts found.",
+    "categories": "Categories",
+    "loadingCategories": "Loading categories...",
+    "noCategories": "No categories",
+    "latestPosts": "Latest posts",
+    "trendingTopics": "Trending topics",
+    "readMore": "Read more",
+    "author": "Author",
+    "publishedOn": "Published on",
+    "inCategory": "in category",
+    "viewsCount": "views",
+    "readingTime": "reading time",
+    "minutes": "min",
+    "tags": "Tags",
+    "shareArticle": "Share article",
+    "relatedArticles": "Related articles",
+    "backToBlog": "Back to blog",
+    "searchPlaceholder": "Search articles...",
+    "searchResults": "Search results",
+    "noSearchResults": "No articles found matching your search.",
+    "filterByCategory": "Filter by category",
+    "allCategories": "All categories",
+    "stats": {
+      "title": "Blog Statistics",
+      "articles": "Articles",
+      "readers": "Readers",
+      "authors": "Authors",
+      "categories": "Categories",
+      "views": "Views",
+      "comments": "Comments"
+    },
+    "errors": {
+      "unknownError": "An unknown error occurred",
+      "retry": "Try again"
+    }
   }
 }

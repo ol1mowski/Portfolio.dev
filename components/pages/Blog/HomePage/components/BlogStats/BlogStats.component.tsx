@@ -1,4 +1,5 @@
 import s from '../../HomePage.page.module.scss';
+import { useTranslations } from 'next-intl';
 
 interface BlogStatsProps {
   stats: {
@@ -10,25 +11,27 @@ interface BlogStatsProps {
 }
 
 export default function BlogStats({ stats }: BlogStatsProps) {
+  const t = useTranslations('blog.stats');
+
   return (
     <div className={s.blogStats}>
-      <h3 className={s.blogStats__title}>Statystyki bloga</h3>
+      <h3 className={s.blogStats__title}>{t('title')}</h3>
       <div className={s.blogStats__grid}>
         <div className={s.blogStats__grid__item}>
           <span className={s.blogStats__grid__item__number}>{stats.articles}</span>
-          <span className={s.blogStats__grid__item__label}>Artykułów</span>
+          <span className={s.blogStats__grid__item__label}>{t('articles')}</span>
         </div>
         <div className={s.blogStats__grid__item}>
           <span className={s.blogStats__grid__item__number}>{stats.readers}</span>
-          <span className={s.blogStats__grid__item__label}>Czytelników</span>
+          <span className={s.blogStats__grid__item__label}>{t('readers')}</span>
         </div>
         <div className={s.blogStats__grid__item}>
           <span className={s.blogStats__grid__item__number}>{stats.authors}</span>
-          <span className={s.blogStats__grid__item__label}>Autorów</span>
+          <span className={s.blogStats__grid__item__label}>{t('authors')}</span>
         </div>
         <div className={s.blogStats__grid__item}>
           <span className={s.blogStats__grid__item__number}>{stats.categories}</span>
-          <span className={s.blogStats__grid__item__label}>Kategorii</span>
+          <span className={s.blogStats__grid__item__label}>{t('categories')}</span>
         </div>
       </div>
     </div>

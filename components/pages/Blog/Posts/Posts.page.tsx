@@ -8,6 +8,7 @@ import PostsButton from './PostsButton/PostsButton.component';
 import { type PostsType } from '@/types/PostType.types';
 import { useBlogCategories } from '../hooks';
 import { Loading, ErrorMessage } from '@/components/UI/shared';
+import { useTranslations, useLocale } from 'next-intl';
 
 interface CategoryData {
   name: string;
@@ -17,6 +18,8 @@ interface CategoryData {
 
 function PostsComponent({ posts }: { posts: PostsType[] }) {
   const { categories, loading, error, fetchCategories } = useBlogCategories();
+  const t = useTranslations('blog');
+  const locale = useLocale();
 
   const latestPosts = posts.slice(0, 3);
 
@@ -36,10 +39,8 @@ function PostsComponent({ posts }: { posts: PostsType[] }) {
   return (
     <section className={s.container} id="posts" data-testid="posts-section">
       <div className={s.container__header}>
-        <h2 className={s.container__header__title}>Najnowsze artykuły</h2>
-        <p className={s.container__header__subtitle}>
-          Odkryj najnowsze trendy i technologie w świecie IT
-        </p>
+        <h2 className={s.container__header__title}>{t('latestArticles')}</h2>
+        <p className={s.container__header__subtitle}>{t('discoverTrends')}</p>
       </div>
 
       <div className={s.container__content}>
@@ -70,16 +71,16 @@ function PostsComponent({ posts }: { posts: PostsType[] }) {
 
         <aside className={s.container__content__sidebar}>
           <div className={s.sidebarWidget}>
-            <h3 className={s.sidebarWidget__title}>📂 Kategorie</h3>
+            <h3 className={s.sidebarWidget__title}>📂 {t('categories')}</h3>
             {loading ? (
-              <Loading message="Ładowanie kategorii..." size="small" />
+              <Loading message={t('loadingCategories')} size="small" />
             ) : (
               <div className={s.categoriesList}>
                 {formattedCategories.length > 0 ? (
                   formattedCategories.map((category, index) => (
                     <a
                       key={index}
-                      href={`/Blog/kategorie/${encodeURIComponent(category.name)}`}
+                      href={`/${locale}/Blog/kategorie/${encodeURIComponent(category.name)}`}
                       className={s.categoriesList__item}
                     >
                       <span className={s.categoriesList__item__name}>{category.name}</span>
@@ -87,17 +88,21 @@ function PostsComponent({ posts }: { posts: PostsType[] }) {
                     </a>
                   ))
                 ) : (
-                  <p className={s.categoriesList__empty}>Brak kategorii</p>
+                  <p className={s.categoriesList__empty}>{t('noCategories')}</p>
                 )}
               </div>
             )}
           </div>
 
           <div className={s.sidebarWidget}>
-            <h3 className={s.sidebarWidget__title}>📰 Najnowsze posty</h3>
+            <h3 className={s.sidebarWidget__title}>📰 {t('latestPosts')}</h3>
             <div className={s.latestPosts}>
               {latestPosts.map((post, index) => (
-                <a key={index} href={`/Blog/posty/${post.slug}`} className={s.latestPosts__item}>
+                <a
+                  key={index}
+                  href={`/${locale}/Blog/posty/${post.slug}`}
+                  className={s.latestPosts__item}
+                >
                   <h4 className={s.latestPosts__item__title}>{post.title}</h4>
                   <span className={s.latestPosts__item__date}>{post.date}</span>
                 </a>

@@ -252,5 +252,48 @@
   "footer": {
     "copyright": "Alle Rechte vorbehalten",
     "privacy": "Datenschutzrichtlinie"
+  },
+  "blog": {
+    "loadingError": "Fehler beim Laden des Blogs",
+    "title": "Blog",
+    "subtitle": "Neueste Artikel aus der Welt der Technologie",
+    "latestArticles": "Neueste Artikel",
+    "discoverContent": "Entdecken Sie die neuesten Inhalte aus der Welt der Technologie",
+    "discoverTrends": "Entdecken Sie die neuesten Trends und Technologien in der IT-Welt",
+    "noPostsFound": "Keine Beiträge gefunden.",
+    "categories": "Kategorien",
+    "loadingCategories": "Kategorien werden geladen...",
+    "noCategories": "Keine Kategorien",
+    "latestPosts": "Neueste Beiträge",
+    "trendingTopics": "Trending Topics",
+    "readMore": "Weiterlesen",
+    "author": "Autor",
+    "publishedOn": "Veröffentlicht am",
+    "inCategory": "in Kategorie",
+    "viewsCount": "Aufrufe",
+    "readingTime": "Lesezeit",
+    "minutes": "Min",
+    "tags": "Tags",
+    "shareArticle": "Artikel teilen",
+    "relatedArticles": "Verwandte Artikel",
+    "backToBlog": "Zurück zum Blog",
+    "searchPlaceholder": "Artikel suchen...",
+    "searchResults": "Suchergebnisse",
+    "noSearchResults": "Keine Artikel gefunden, die Ihrer Suche entsprechen.",
+    "filterByCategory": "Nach Kategorie filtern",
+    "allCategories": "Alle Kategorien",
+    "stats": {
+      "title": "Blog-Statistiken",
+      "articles": "Artikel",
+      "readers": "Leser",
+      "authors": "Autoren",
+      "categories": "Kategorien",
+      "views": "Aufrufe",
+      "comments": "Kommentare"
+    },
+    "errors": {
+      "unknownError": "Ein unbekannter Fehler ist aufgetreten",
+      "retry": "Erneut versuchen"
+    }
   }
 }

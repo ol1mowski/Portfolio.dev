@@ -8,6 +8,7 @@ import NotFound from '../NotFound/NotFound.page';
 import PostVisibleContext from '@/store/PostVisible.context';
 
 import { type PostsType } from '@/types/PostType.types';
+import { useTranslations, useLocale } from 'next-intl';
 
 import Header from '../HeaderBlog/Header.component.page';
 import PostHeader from './PostHeader/PostHeader.component';
@@ -23,9 +24,11 @@ type PostSiteProps = {
 function PostSiteComponent({ post, allPosts }: PostSiteProps) {
   const { sectionVisible } = useContext(PostVisibleContext);
   const { isVisible, sectionName } = sectionVisible;
+  const t = useTranslations('blog');
+  const locale = useLocale();
 
   if (!post) {
-    return <NotFound link="/Blog" info="Nie znaleziono takiego postu" />;
+    return <NotFound link={`/${locale}/Blog`} info={t('noPostsFound')} />;
   }
 
   return (

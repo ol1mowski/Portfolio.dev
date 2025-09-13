@@ -252,5 +252,48 @@
   "footer": {
     "copyright": "Wszelkie prawa zastrzeżone",
     "privacy": "Polityka Prywatności"
+  },
+  "blog": {
+    "loadingError": "Błąd podczas ładowania bloga",
+    "title": "Blog",
+    "subtitle": "Najnowsze artykuły z świata technologii",
+    "latestArticles": "Najnowsze artykuły",
+    "discoverContent": "Odkryj najświeższe treści z świata technologii",
+    "discoverTrends": "Odkryj najnowsze trendy i technologie w świecie IT",
+    "noPostsFound": "Nie znaleziono postów.",
+    "categories": "Kategorie",
+    "loadingCategories": "Ładowanie kategorii...",
+    "noCategories": "Brak kategorii",
+    "latestPosts": "Najnowsze posty",
+    "trendingTopics": "Popularne tematy",
+    "readMore": "Czytaj więcej",
+    "author": "Autor",
+    "publishedOn": "Opublikowano",
+    "inCategory": "w kategorii",
+    "viewsCount": "wyświetleń",
+    "readingTime": "czas czytania",
+    "minutes": "min",
+    "tags": "Tagi",
+    "shareArticle": "Udostępnij artykuł",
+    "relatedArticles": "Powiązane artykuły",
+    "backToBlog": "Powrót do bloga",
+    "searchPlaceholder": "Szukaj artykułów...",
+    "searchResults": "Wyniki wyszukiwania",
+    "noSearchResults": "Nie znaleziono artykułów pasujących do wyszukiwania.",
+    "filterByCategory": "Filtruj według kategorii",
+    "allCategories": "Wszystkie kategorie",
+    "stats": {
+      "title": "Statystyki bloga",
+      "articles": "Artykuły",
+      "readers": "Czytelnicy",
+      "authors": "Autorzy",
+      "categories": "Kategorie",
+      "views": "Wyświetlenia",
+      "comments": "Komentarze"
+    },
+    "errors": {
+      "unknownError": "Wystąpił nieznany błąd",
+      "retry": "Spróbuj ponownie"
+    }
   }
 }

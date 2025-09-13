@@ -1,5 +1,6 @@
 import s from '../../HomePage.page.module.scss';
 import { Loading } from '@/components/UI/shared';
+import { useTranslations } from 'next-intl';
 
 interface TrendingTopicsProps {
   topics: Array<{ name: string; growth: string }>;
@@ -8,11 +9,13 @@ interface TrendingTopicsProps {
 }
 
 export default function TrendingTopics({ topics, isLoading, onTagClick }: TrendingTopicsProps) {
+  const t = useTranslations('blog');
+
   return (
     <div className={s.trendingTopics}>
-      <h3 className={s.trendingTopics__title}>📈 Trending Topics</h3>
+      <h3 className={s.trendingTopics__title}>📈 {t('trendingTopics')}</h3>
       {isLoading ? (
-        <Loading message="Ładowanie trendów..." size="small" />
+        <Loading message={t('loadingCategories')} size="small" />
       ) : (
         <div className={s.trendingTopics__list}>
           {topics.length > 0 ? (
@@ -27,7 +30,7 @@ export default function TrendingTopics({ topics, isLoading, onTagClick }: Trendi
               </div>
             ))
           ) : (
-            <div className={s.noData}>Brak trending topics</div>
+            <div className={s.noData}>{t('trendingTopics')}</div>
           )}
         </div>
       )}
