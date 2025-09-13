@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import s from './MaterialsGrid.component.module.scss';
 import { MaterialType } from '@/types/Materials.types';
 import { Loading } from '@/components/UI/shared';
+import { useTranslations } from 'next-intl';
 
 const DynamicMaterialCard = dynamic(() => import('../MaterialCard/MaterialCard.component'), {
   loading: () => <Loading message="Ładowanie karty..." size="small" />,
@@ -30,6 +31,8 @@ const MaterialsGrid = memo(
     hasMore = false,
     onDownload,
   }: MaterialsGridProps) => {
+    const t = useTranslations('blog');
+
     return (
       <section className={s.materialsGrid}>
         <div className={s.materialsGrid__header}>
@@ -64,7 +67,7 @@ const MaterialsGrid = memo(
                   className={s.materialsGrid__loadMoreBtn}
                   disabled={loading}
                 >
-                  {loading ? 'Ładowanie...' : 'Załaduj więcej'}
+                  {loading ? t('loadMore.loading') : t('loadMore.loadMoreResults')}
                 </button>
               </div>
             )}

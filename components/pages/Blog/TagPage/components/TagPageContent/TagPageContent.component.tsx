@@ -2,7 +2,7 @@ import { FC } from 'react';
 import s from './TagPageContent.component.module.scss';
 import PostCardComponent from '../../../Posts/PostCardComponent/PostCardComponent.component';
 import { PostsType } from '@/types/PostType.types';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 interface TagPageContentProps {
   posts: PostsType[];
@@ -20,6 +20,7 @@ export const TagPageContent: FC<TagPageContentProps> = ({
   cleanTag,
 }) => {
   const locale = useLocale();
+  const t = useTranslations('blog');
   if (posts.length === 0) {
     return (
       <div className={s.noResults}>
@@ -60,10 +61,10 @@ export const TagPageContent: FC<TagPageContentProps> = ({
             {loadingMore ? (
               <>
                 <div className={s.loadMore__button__spinner}></div>
-                Ładowanie...
+                {t('loadMore.loading')}
               </>
             ) : (
-              'Załaduj więcej artykułów'
+              t('loadMore.button')
             )}
           </button>
         </div>

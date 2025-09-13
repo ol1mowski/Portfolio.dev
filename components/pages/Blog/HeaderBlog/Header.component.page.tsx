@@ -10,9 +10,11 @@ import HeaderLogo from './HeaderLogo/HeaderLogo.component';
 import HamburgerMenuIcon from './HamburgerMenuIcon/HamburgerMenuIcon.component';
 import DesktopNavMenu from './DesktopNavMenu/DesktopNavMenu.component';
 import SearchBox from './SearchBox/SearchBox.component';
+import { useTranslations } from 'next-intl';
 
 function Header({ type, post }: { type?: string; post?: boolean }) {
   const { isOpen, setOpen } = useContext(HamburgerClickContext);
+  const t = useTranslations('header');
 
   const closeMenuHandler = () => {
     setOpen(false);
@@ -35,7 +37,7 @@ function Header({ type, post }: { type?: string; post?: boolean }) {
             rel="noopener noreferrer"
             className={s.headerWrapper__rightSection__jobsButton}
           >
-            Oferty pracy
+            {t('jobOffers')}
           </a>
         )}
         <HamburgerMenuIcon post={post} />

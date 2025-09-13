@@ -294,7 +294,50 @@
     "errors": {
       "unknownError": "Ein unbekannter Fehler ist aufgetreten",
       "retry": "Erneut versuchen"
+    },
+    "loadMore": {
+      "button": "Mehr Artikel laden",
+      "loading": "Wird geladen...",
+      "loadMoreResults": "Mehr Ergebnisse laden"
     }
+  },
+  "header": {
+    "jobOffers": "Stellenangebote",
+    "searchPlaceholder": "Suchen...",
+    "menu": "Menü"
+  },
+  "footer": {
+    "copyright": "Alle Rechte vorbehalten",
+    "privacy": "Datenschutzrichtlinie",
+    "allRightsReserved": "Alle Rechte vorbehalten"
+  },
+  "searchResults": {
+    "title": "Artikel-Suche",
+    "subtitle": "Verwenden Sie die Suchleiste oben, um interessante Artikel zu finden",
+    "searching": "Suche läuft...",
+    "noResults": "Keine Ergebnisse",
+    "resultsFor": "Ergebnisse für"
+  },
+  "searchBox": {
+    "placeholder": "Artikel suchen...",
+    "noResults": "Keine Ergebnisse für",
+    "searchInDatabase": "Klicken Sie, um in der gesamten Datenbank zu suchen",
+    "searchButton": "Suchen",
+    "searching": "Suche läuft..."
+  },
+  "aboutMe": {
+    "title": "Über Mich",
+    "greeting": "Hallo, Mein Name ist",
+    "name": "Oliwier Markiewicz",
+    "description": "Ich beschäftige mich mit der Gestaltung und Erstellung moderner und funktionaler Websites, Shops und Webanwendungen mit Technologien wie",
+    "descriptionEnd": ", die individuelle Kundenbedürfnisse erfüllen.",
+    "helpDescription": "Ich helfe kleinen Unternehmen dabei, online präsent zu werden, durch Google My Business-Positionierung, die die Sichtbarkeit erhöht und neue Kunden anzieht.",
+    "blogLink": "Schauen Sie sich meinen Blog an",
+    "blogText": "Ich führe auch",
+    "blogLabel": "Zum Blog gehen",
+    "youtubeText": "und einen Kanal auf",
+    "youtubeLabel": "Zum YouTube-Kanal gehen",
+    "finalDescription": "wo ich Wissen über Programmierung und Webentwicklung teile."
   },
   "chat": {
     "preview": {

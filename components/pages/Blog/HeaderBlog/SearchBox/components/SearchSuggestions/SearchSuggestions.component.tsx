@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import s from './SearchSuggestions.component.module.scss';
 import { Loading } from '@/components/UI/shared';
+import { useTranslations } from 'next-intl';
 
 interface Suggestion {
   id: string;
@@ -33,10 +34,11 @@ export const SearchSuggestions: FC<SearchSuggestionsProps> = ({
   onNoResultsClick,
   highlightMatch,
 }) => {
+  const t = useTranslations('searchBox');
   return (
     <div className={s.suggestionsDropdown}>
       <div className={s.suggestionsDropdown__list}>
-        {isLoading && <Loading message="Wyszukiwanie..." size="small" variant="dots" />}
+        {isLoading && <Loading message={t('searching')} size="small" variant="dots" />}
 
         {!isLoading &&
           suggestions.length > 0 &&
@@ -66,14 +68,12 @@ export const SearchSuggestions: FC<SearchSuggestionsProps> = ({
             <div className={s.noResultsMessage__icon}>🔍</div>
             <div className={s.noResultsMessage__content}>
               <div className={s.noResultsMessage__content__title}>
-                Brak wyników dla &quot;{searchTerm}&quot;
+                {t('noResults')} &quot;{searchTerm}&quot;
               </div>
-              <div className={s.noResultsMessage__content__subtitle}>
-                Kliknij aby wyszukać w całej bazie
-              </div>
+              <div className={s.noResultsMessage__content__subtitle}>{t('searchInDatabase')}</div>
             </div>
             <button className={s.noResultsMessage__button} onClick={onNoResultsClick}>
-              Szukaj &quot;{searchTerm}&quot; →
+              {t('searchButton')} &quot;{searchTerm}&quot; →
             </button>
           </div>
         )}

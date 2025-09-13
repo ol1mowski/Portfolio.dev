@@ -249,10 +249,6 @@
     "experienceYears": "Years of Experience",
     "completedProjects": "Completed Projects"
   },
-  "footer": {
-    "copyright": "All rights reserved",
-    "privacy": "Privacy Policy"
-  },
   "blog": {
     "loadingError": "Error loading blog",
     "title": "Blog",
@@ -294,7 +290,50 @@
     "errors": {
       "unknownError": "An unknown error occurred",
       "retry": "Try again"
+    },
+    "loadMore": {
+      "button": "Load more articles",
+      "loading": "Loading...",
+      "loadMoreResults": "Load more results"
     }
+  },
+  "header": {
+    "jobOffers": "Job Offers",
+    "searchPlaceholder": "Search...",
+    "menu": "Menu"
+  },
+  "footer": {
+    "copyright": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "allRightsReserved": "All rights reserved"
+  },
+  "searchResults": {
+    "title": "Article Search",
+    "subtitle": "Use the search bar above to find articles that interest you",
+    "searching": "Searching...",
+    "noResults": "No results",
+    "resultsFor": "Results for"
+  },
+  "searchBox": {
+    "placeholder": "Search articles...",
+    "noResults": "No results for",
+    "searchInDatabase": "Click to search in the entire database",
+    "searchButton": "Search",
+    "searching": "Searching..."
+  },
+  "aboutMe": {
+    "title": "About Me",
+    "greeting": "Hi, My name is",
+    "name": "Oliwier Markiewicz",
+    "description": "I specialize in designing and creating modern and functional websites, stores and web applications using technologies such as",
+    "descriptionEnd": ", which meet individual client needs.",
+    "helpDescription": "I help small businesses establish their presence online through Google My Business positioning, which increases visibility and attracts new customers.",
+    "blogLink": "Check out my blog",
+    "blogText": "I also run",
+    "blogLabel": "Go to blog",
+    "youtubeText": "and a channel on",
+    "youtubeLabel": "Go to YouTube channel",
+    "finalDescription": "where I share knowledge about programming and web development."
   },
   "chat": {
     "preview": {

@@ -1,5 +1,6 @@
 import { FC, useRef } from 'react';
 import s from './SearchBoxForm.component.module.scss';
+import { useTranslations } from 'next-intl';
 
 interface SearchBoxFormProps {
   searchTerm: string;
@@ -19,6 +20,7 @@ export const SearchBoxForm: FC<SearchBoxFormProps> = ({
   onFocus,
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
+  const t = useTranslations('searchBox');
 
   return (
     <form className={s.searchBox} onSubmit={onSubmit}>
@@ -46,7 +48,7 @@ export const SearchBoxForm: FC<SearchBoxFormProps> = ({
       <input
         ref={inputRef}
         type="text"
-        placeholder="Szukaj artykułów..."
+        placeholder={t('placeholder')}
         value={searchTerm}
         onChange={e => onSearchChange(e.target.value)}
         onKeyDown={onKeyDown}

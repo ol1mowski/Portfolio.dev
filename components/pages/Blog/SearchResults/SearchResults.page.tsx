@@ -7,10 +7,12 @@ import { SearchResultsHeader } from './components/SearchResultsHeader/SearchResu
 import { SearchResultsContent } from './components/SearchResultsContent/SearchResultsContent.component';
 import { PopularSearches } from './components/PopularSearches/PopularSearches.component';
 import { useSearchResultsData } from './hooks/useSearchResultsData.hook';
+import { useTranslations } from 'next-intl';
 
 function SearchResults() {
   const searchParams = useSearchParams();
   const query = searchParams.get('q') || '';
+  const t = useTranslations('searchResults');
 
   const { searchResults, isLoading, error } = useSearchResultsData(query);
 
@@ -18,10 +20,8 @@ function SearchResults() {
     return (
       <section className={s.container}>
         <div className={s.emptyState}>
-          <h1 className={s.emptyState__title}>Wyszukiwarka artykułów</h1>
-          <p className={s.emptyState__subtitle}>
-            Użyj paska wyszukiwania powyżej, aby znaleźć interesujące Cię artykuły
-          </p>
+          <h1 className={s.emptyState__title}>{t('title')}</h1>
+          <p className={s.emptyState__subtitle}>{t('subtitle')}</p>
         </div>
       </section>
     );
@@ -31,7 +31,7 @@ function SearchResults() {
     <section className={s.container}>
       <SearchResultsHeader query={query} message={searchResults?.message} />
 
-      {isLoading && <Loading message="Wyszukiwanie..." />}
+      {isLoading && <Loading message={t('searching')} />}
 
       {error && (
         <ErrorMessage

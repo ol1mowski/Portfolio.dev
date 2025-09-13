@@ -5,7 +5,7 @@ import s from './CategoryPage.page.module.scss';
 import Header from '../HeaderBlog/Header.component.page';
 import PostCardComponent from '../Posts/PostCardComponent/PostCardComponent.component';
 import { PostsType } from '@/types/PostType.types';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 interface CategoryPageProps {
   category: string;
@@ -28,6 +28,7 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
   const [loadingMore, setLoadingMore] = useState(false);
   const [hasMore, setHasMore] = useState(false);
   const locale = useLocale();
+  const t = useTranslations('blog');
 
   const fetchPosts = useCallback(
     async (reset = false) => {
@@ -161,10 +162,10 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
                   {loadingMore ? (
                     <>
                       <div className={s.loadMore__button__spinner}></div>
-                      Ładowanie...
+                      {t('loadMore.loading')}
                     </>
                   ) : (
-                    'Załaduj więcej artykułów'
+                    t('loadMore.button')
                   )}
                 </button>
               </div>

@@ -294,7 +294,50 @@
     "errors": {
       "unknownError": "Wystąpił nieznany błąd",
       "retry": "Spróbuj ponownie"
+    },
+    "loadMore": {
+      "button": "Załaduj więcej artykułów",
+      "loading": "Ładowanie...",
+      "loadMoreResults": "Załaduj więcej wyników"
     }
+  },
+  "header": {
+    "jobOffers": "Oferty pracy",
+    "searchPlaceholder": "Szukaj...",
+    "menu": "Menu"
+  },
+  "footer": {
+    "copyright": "Wszelkie prawa zastrzeżone",
+    "privacy": "Polityka Prywatności",
+    "allRightsReserved": "Wszelkie prawa zastrzeżone"
+  },
+  "searchResults": {
+    "title": "Wyszukiwarka artykułów",
+    "subtitle": "Użyj paska wyszukiwania powyżej, aby znaleźć interesujące Cię artykuły",
+    "searching": "Wyszukiwanie...",
+    "noResults": "Brak wyników",
+    "resultsFor": "Wyniki dla"
+  },
+  "searchBox": {
+    "placeholder": "Szukaj artykułów...",
+    "noResults": "Brak wyników dla",
+    "searchInDatabase": "Kliknij aby wyszukać w całej bazie",
+    "searchButton": "Szukaj",
+    "searching": "Wyszukiwanie..."
+  },
+  "aboutMe": {
+    "title": "O Mnie",
+    "greeting": "Cześć, Nazywam się",
+    "name": "Oliwier Markiewicz",
+    "description": "Zajmuję się projektowaniem oraz tworzeniem nowoczesnych i funkcjonalnych stron, sklepów i aplikacji internetowych w technologiach takich jak",
+    "descriptionEnd": ", które spełniają indywidualne potrzeby klientów.",
+    "helpDescription": "Pomagam małym firmom zaistnieć w internecie, poprzez Pozycjonowanie wizytówki Google Moja Firma, które zwiększają widoczność i przyciąga nowych klientów.",
+    "blogLink": "Sprawdź mój blog",
+    "blogText": "Prowadzę również",
+    "blogLabel": "Przejdź do bloga",
+    "youtubeText": "oraz kanał na",
+    "youtubeLabel": "Przejdź do kanału YouTube",
+    "finalDescription": "gdzie dzielę się wiedzą z zakresu programowania oraz tworzenia stron internetowych."
   },
   "chat": {
     "preview": {
