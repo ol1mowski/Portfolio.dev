@@ -847,5 +847,14 @@
       "cookies": "Cookies",
       "error": "Sie müssen die Datenschutzrichtlinie und Cookies akzeptieren"
     }
+  },
+  "project": {
+    "notFound": {
+      "title": "Projekt nicht gefunden",
+      "description": "Wir konnten das angeforderte Projekt nicht finden"
+    },
+    "metadata": {
+      "caseStudy": "Case Study"
+    }
   }
 }

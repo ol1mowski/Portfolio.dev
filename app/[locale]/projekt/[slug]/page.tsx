@@ -1,7 +1,12 @@
 import { notFound } from 'next/navigation';
+import { setRequestLocale } from 'next-intl/server';
+import { type Locale } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import ProjectDetails from '@/components/pages/ProjectDetails/ProjectDetails.page';
 import { getProjects } from '@/actions/projects.actions';
 import { ProjectType } from '@/types/PostType.types';
+import Header from '@/components/pages/Header/Header.component';
+import Footer from '@/components/pages/Footer/Footer.page';
 
 const generateSlug = (title: string): string => {
   return title
@@ -11,15 +16,19 @@ const generateSlug = (title: string): string => {
     .replace(/^-+|-+$/g, '');
 };
 
-// @ts-expect-error - Next.js wymaga specyficznych typów
-export async function generateMetadata({ params }) {
-  const { slug } = params;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale; slug: string }>;
+}) {
+  const { slug, locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'project' });
   const projectsData = await getProjects();
 
   if (!projectsData || !projectsData.length) {
     return {
-      title: 'Projekt nie znaleziony',
-      description: 'Nie mogliśmy znaleźć szukanego projektu',
+      title: t('notFound.title'),
+      description: t('notFound.description'),
     };
   }
 
@@ -34,13 +43,13 @@ export async function generateMetadata({ params }) {
 
   if (!currentProject) {
     return {
-      title: 'Projekt nie znaleziony',
-      description: 'Nie mogliśmy znaleźć szukanego projektu',
+      title: t('notFound.title'),
+      description: t('notFound.description'),
     };
   }
 
   return {
-    title: `${currentProject.title} | Case Study`,
+    title: `${currentProject.title} | ${t('metadata.caseStudy')}`,
     description: currentProject.description,
     openGraph: {
       images: [currentProject.image],
@@ -48,9 +57,14 @@ export async function generateMetadata({ params }) {
   };
 }
 
-// @ts-expect-error - Next.js wymaga specyficznych typów
-export default async function ProjectPage({ params }) {
-  const { slug } = params;
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale; slug: string }>;
+}) {
+  const { slug, locale } = await params;
+  setRequestLocale(locale);
+
   const projectsData = await getProjects();
 
   if (!projectsData || !projectsData.length) {
@@ -70,5 +84,11 @@ export default async function ProjectPage({ params }) {
     return notFound();
   }
 
-  return <ProjectDetails project={currentProject} />;
+  return (
+    <>
+      <Header />
+      <ProjectDetails project={currentProject} />
+      <Footer />
+    </>
+  );
 }

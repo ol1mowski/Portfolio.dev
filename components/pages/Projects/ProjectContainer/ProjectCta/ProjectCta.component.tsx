@@ -1,6 +1,6 @@
 import s from './ProjectCta.component.module.scss';
 import { FaGithub, FaExternalLinkAlt, FaInfoCircle } from 'react-icons/fa';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 interface ProjectCtaProps {
   liveLink: string;
@@ -10,6 +10,7 @@ interface ProjectCtaProps {
 
 const ProjectCta = ({ liveLink, githubLink, title }: ProjectCtaProps) => {
   const t = useTranslations('projects');
+  const locale = useLocale();
 
   const projectSlug = title
     ? title
@@ -52,7 +53,11 @@ const ProjectCta = ({ liveLink, githubLink, title }: ProjectCtaProps) => {
       )}
 
       {title && (
-        <a href={`/projekt/${projectSlug}`} className={s.ctaLink} aria-label={t('moreAriaLabel')}>
+        <a
+          href={`/${locale}/projekt/${projectSlug}`}
+          className={s.ctaLink}
+          aria-label={t('moreAriaLabel')}
+        >
           <div className={`${s.ctaButton} ${s.moreButton}`}>
             <FaInfoCircle />
             <span>{t('more')}</span>

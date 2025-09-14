@@ -6,7 +6,7 @@ import ProjectGallery from './ProjectGallery/ProjectGallery.component';
 import ProjectHeader from './ProjectHeader/ProjectHeader.component';
 import ProjectDescription from './ProjectDescription/ProjectDescription.component';
 import { SectionContainer } from '@/components/UI/shared';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { GoArrowLeft } from 'react-icons/go';
 
 interface ProjectDetailsProps {
@@ -15,6 +15,7 @@ interface ProjectDetailsProps {
 
 const ProjectDetails = ({ project }: ProjectDetailsProps) => {
   const t = useTranslations('projects');
+  const locale = useLocale();
   const { title, image, description, technologies, githubLink, liveLink, date } = project;
 
   const galleryImages = [
@@ -26,7 +27,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
   return (
     <div className={s.projectDetailsContainer}>
       <div className={s.backButtonWrapper}>
-        <a href="/#projekty" className={s.backButton}>
+        <a href={`/${locale}/#projekty`} className={s.backButton}>
           <GoArrowLeft size={20} />
           <span>{t('backToProjects')}</span>
         </a>

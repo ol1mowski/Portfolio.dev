@@ -843,5 +843,14 @@
       "cookies": "cookies",
       "error": "You must accept the privacy policy and cookies"
     }
+  },
+  "project": {
+    "notFound": {
+      "title": "Project not found",
+      "description": "We couldn't find the requested project"
+    },
+    "metadata": {
+      "caseStudy": "Case Study"
+    }
   }
 }
