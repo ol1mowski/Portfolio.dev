@@ -88,6 +88,18 @@
         "beforeEach": "readonly",
         "afterEach": "readonly"
       }
+    },
+    {
+      "files": ["**/*.setup.js", "**/*.setup.ts", "jest.setup.js", "vitest.setup.ts"],
+      "globals": {
+        "jest": "readonly",
+        "vi": "readonly",
+        "describe": "readonly",
+        "it": "readonly",
+        "expect": "readonly",
+        "beforeEach": "readonly",
+        "afterEach": "readonly"
+      }
     }
   ]
 }
