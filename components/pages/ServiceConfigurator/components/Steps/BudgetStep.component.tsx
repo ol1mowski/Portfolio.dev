@@ -1,6 +1,6 @@
 import React from 'react';
 import s from '../../ServiceConfigurator.page.module.scss';
-import { budgets } from '../../constants/ServiceConfigurator.constants';
+import { useTranslations } from 'next-intl';
 
 interface BudgetStepProps {
   selectedBudget: string;
@@ -8,10 +8,19 @@ interface BudgetStepProps {
 }
 
 const BudgetStep: React.FC<BudgetStepProps> = ({ selectedBudget, onSelect }) => {
+  const t = useTranslations('configurator.steps.budget');
+
+  const budgets = [
+    { id: 'low', title: t('options.low'), range: [1000, 2000] },
+    { id: 'medium', title: t('options.medium'), range: [2000, 10000] },
+    { id: 'high', title: t('options.high'), range: [10000, 30000] },
+    { id: 'premium', title: t('options.premium'), range: [30000, 100000] },
+  ];
+
   return (
     <div className={s.stepContent}>
-      <h1 className={s.stepContent__title}>Jaki jest Twój budżet?</h1>
-      <p className={s.stepContent__subtitle}>Pomoże nam to dopasować najlepszą ofertę</p>
+      <h1 className={s.stepContent__title}>{t('title')}</h1>
+      <p className={s.stepContent__subtitle}>{t('subtitle')}</p>
 
       <div className={s.options}>
         {budgets.map(budget => (

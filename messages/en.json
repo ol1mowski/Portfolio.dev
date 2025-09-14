@@ -442,5 +442,118 @@
     "autoResponse": "Thanks for your message! 👋 Chat is still under development, but I'll be able to help you soon. In the meantime, feel free to contact me via email: kontakt@oliwiermarkiewicz.pl",
     "sendButton": "Send",
     "closeButton": "Close"
+  },
+  "configurator": {
+    "title": "Service Configurator",
+    "steps": {
+      "projectType": {
+        "title": "What type of project interests you?",
+        "subtitle": "Choose one option that best describes your needs",
+        "options": {
+          "website": {
+            "title": "Website",
+            "desc": "Business card, portfolio, landing page"
+          },
+          "ecommerce": {
+            "title": "Online Store",
+            "desc": "Online sales, e-commerce"
+          },
+          "webapp": {
+            "title": "Web Application",
+            "desc": "System, panel, platform"
+          },
+          "blog": {
+            "title": "Blog/CMS",
+            "desc": "Blog, portal, content system"
+          }
+        }
+      },
+      "solutionType": {
+        "title": "What type of solution do you prefer?",
+        "subtitle": "Each option has its advantages - choose the best one for you",
+        "options": {
+          "template": {
+            "title": "Template (fast)",
+            "desc": "Ready template adapted to needs"
+          },
+          "semi-custom": {
+            "title": "Semi-custom",
+            "desc": "Combination of template with custom features"
+          },
+          "custom": {
+            "title": "Fully custom",
+            "desc": "Unique project from scratch"
+          }
+        }
+      },
+      "features": {
+        "title": "What features interest you?",
+        "subtitle": "Select all that might be useful (optional)",
+        "options": [
+          "Responsive design",
+          "SEO optimization",
+          "Payment integration",
+          "Admin panel",
+          "Blog/News",
+          "Contact form",
+          "Photo gallery",
+          "Calendar/Bookings",
+          "Newsletter",
+          "Multilang",
+          "Analytics",
+          "Live Chat"
+        ],
+        "additional": {
+          "loginSystem": "Login system",
+          "api": "API",
+          "cms": "CMS system"
+        }
+      },
+      "timeline": {
+        "title": "What's your timeline?",
+        "subtitle": "Choose your preferred project completion time",
+        "options": {
+          "urgent": "Urgent (1-2 weeks)",
+          "standard": "Standard (3-4 weeks)",
+          "flexible": "Flexible (5-8 weeks)"
+        },
+        "default": "Standard"
+      },
+      "budget": {
+        "title": "What's your budget?",
+        "subtitle": "This will help us match the best offer",
+        "options": {
+          "low": "Up to 2,000 PLN",
+          "medium": "2,000 - 10,000 PLN",
+          "high": "10,000 - 30,000 PLN",
+          "premium": "Above 30,000 PLN"
+        }
+      }
+    },
+    "navigation": {
+      "back": "← Back",
+      "next": "Next →",
+      "getRecommendation": "Get recommendation →"
+    },
+    "result": {
+      "title": "Your recommendation",
+      "subtitle": "Based on your answers, we've prepared the perfect offer",
+      "currency": "from",
+      "timeline": "Completion:",
+      "featuresTitle": "Your project will include:",
+      "actions": {
+        "sendInquiry": "📧 Send inquiry",
+        "startAgain": "🔄 Start again"
+      },
+      "emailSubject": "Project inquiry",
+      "emailBody": "Hello, I'm interested in project implementation...",
+      "descriptions": {
+        "template": "Professional",
+        "semi-custom": "Professional",
+        "custom": "Unique",
+        "suffix": "tailored to your needs"
+      },
+      "currency": "PLN"
+    }
   }
 }

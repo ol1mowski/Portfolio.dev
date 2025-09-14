@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { FormData, ServiceRecommendation } from '../types/ServiceConfigurator.types';
-import { TOTAL_STEPS, timelines } from '../constants/ServiceConfigurator.constants';
+import { TOTAL_STEPS } from '../constants/ServiceConfigurator.constants';
 
 const initialFormData: FormData = {
   projectType: '',
@@ -14,38 +15,54 @@ export const useServiceConfigurator = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [recommendation, setRecommendation] = useState<ServiceRecommendation | null>(null);
+  const t = useTranslations('configurator.steps');
+  const tResult = useTranslations('configurator.result');
 
   const calculateRecommendation = (): ServiceRecommendation => {
     let basePrice = 900;
-    let title = 'Strona internetowa';
+    let title = t('projectType.options.website.title');
     let features: string[] = [];
 
     // Cena bazowa na podstawie typu projektu
     switch (formData.projectType) {
       case 'website':
         basePrice = 900; // Strona na szablonie od 900zł
-        title = 'Strona internetowa';
-        features = ['Responsywny design', 'Optymalizacja SEO', 'Formularz kontaktowy'];
+        title = t('projectType.options.website.title');
+        features = [
+          t('features.options.0'), // Responsywny design
+          t('features.options.1'), // Optymalizacja SEO
+          t('features.options.5'), // Formularz kontaktowy
+        ];
         break;
       case 'ecommerce':
         basePrice = 2500; // Sklep od 2500zł
-        title = 'Sklep internetowy';
+        title = t('projectType.options.ecommerce.title');
         features = [
-          'Responsywny design',
-          'Integracja płatności',
-          'Panel administratora',
-          'Optymalizacja SEO',
+          t('features.options.0'), // Responsywny design
+          t('features.options.2'), // Integracja płatności
+          t('features.options.3'), // Panel administratora
+          t('features.options.1'), // Optymalizacja SEO
         ];
         break;
       case 'webapp':
         basePrice = 1500; // Aplikacje od 1500zł
-        title = 'Aplikacja webowa';
-        features = ['Panel administratora', 'System logowania', 'API', 'Responsywny design'];
+        title = t('projectType.options.webapp.title');
+        features = [
+          t('features.options.3'), // Panel administratora
+          t('features.additional.loginSystem'), // System logowania
+          t('features.additional.api'), // API
+          t('features.options.0'), // Responsywny design
+        ];
         break;
       case 'blog':
         basePrice = 900; // Blog podobnie jak strona
-        title = 'Blog/Portal';
-        features = ['System CMS', 'Blog/Aktualności', 'Responsywny design', 'Optymalizacja SEO'];
+        title = t('projectType.options.blog.title');
+        features = [
+          t('features.additional.cms'), // System CMS
+          t('features.options.4'), // Blog/Aktualności
+          t('features.options.0'), // Responsywny design
+          t('features.options.1'), // Optymalizacja SEO
+        ];
         break;
     }
 
@@ -67,18 +84,26 @@ export const useServiceConfigurator = () => {
     features = [...features, ...formData.features];
 
     // Mnożnik czasowy
-    const timelineMultiplier = timelines.find(t => t.id === formData.timeline)?.multiplier || 1;
+    const timelineMultipliers = {
+      urgent: 1.5,
+      standard: 1,
+      flexible: 0.9,
+    };
+    const timelineMultiplier =
+      timelineMultipliers[formData.timeline as keyof typeof timelineMultipliers] || 1;
     basePrice *= timelineMultiplier;
 
     // Zaokrąglenie do pełnych setek
     const finalPrice = Math.round(basePrice / 100) * 100;
 
+    // Pobierz tłumaczenie timeline
+    const timelineText = t(`timeline.options.${formData.timeline}`).split(' ')[0];
+
     return {
       title,
-      description: `${formData.solutionType === 'custom' ? 'Unikalny' : 'Profesjonalny'} ${title.toLowerCase()} dopasowany do Twoich potrzeb`,
-      price: `${finalPrice.toLocaleString()} zł`,
-      timeline:
-        timelines.find(t => t.id === formData.timeline)?.title.split(' ')[0] || 'Standardowo',
+      description: `${tResult(`descriptions.${formData.solutionType}`)} ${title.toLowerCase()} ${tResult('descriptions.suffix')}`,
+      price: `${finalPrice.toLocaleString()} ${tResult('currency')}`,
+      timeline: timelineText || t('timeline.default'),
       features: [...new Set(features)], // Usunięcie duplikatów
     };
   };

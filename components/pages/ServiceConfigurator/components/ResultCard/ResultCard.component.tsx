@@ -1,5 +1,6 @@
 import React from 'react';
 import s from '../../ServiceConfigurator.page.module.scss';
+import { useTranslations } from 'next-intl';
 import { ServiceRecommendation } from '../../types/ServiceConfigurator.types';
 
 interface ResultCardProps {
@@ -8,9 +9,10 @@ interface ResultCardProps {
 }
 
 const ResultCard: React.FC<ResultCardProps> = ({ recommendation, onReset }) => {
+  const t = useTranslations('configurator.result');
+
   const handleEmailClick = () => {
-    window.location.href =
-      'mailto:kontakt@oliwiermarkiewicz.pl?subject=Zapytanie o projekt&body=Dzień dobry, jestem zainteresowany/a realizacją projektu...';
+    window.location.href = `mailto:oliwier.markiewicz.dev@gmail.com?subject=${t('emailSubject')}&body=${t('emailBody')}`;
   };
 
   return (
@@ -18,10 +20,8 @@ const ResultCard: React.FC<ResultCardProps> = ({ recommendation, onReset }) => {
       <div className={s.result}>
         <div className={s.result__header}>
           <div className={s.result__icon}>🎉</div>
-          <h1 className={s.result__title}>Twoja rekomendacja</h1>
-          <p className={s.result__subtitle}>
-            Na podstawie Twoich odpowiedzi przygotowaliśmy idealną ofertę
-          </p>
+          <h1 className={s.result__title}>{t('title')}</h1>
+          <p className={s.result__subtitle}>{t('subtitle')}</p>
         </div>
 
         <div className={s.result__card}>
@@ -32,16 +32,16 @@ const ResultCard: React.FC<ResultCardProps> = ({ recommendation, onReset }) => {
 
           <div className={s.result__card__pricing}>
             <div className={s.result__card__pricing__price}>
-              <span className={s.result__card__pricing__currency}>od</span>
+              <span className={s.result__card__pricing__currency}>{t('currency')}</span>
               <span className={s.result__card__pricing__amount}>{recommendation.price}</span>
             </div>
             <div className={s.result__card__pricing__timeline}>
-              Realizacja: {recommendation.timeline}
+              {t('timeline')} {recommendation.timeline}
             </div>
           </div>
 
           <div className={s.result__card__features}>
-            <h3>Twój projekt będzie zawierał:</h3>
+            <h3>{t('featuresTitle')}</h3>
             <ul>
               {recommendation.features.map((feature, index) => (
                 <li key={index}>
@@ -54,10 +54,10 @@ const ResultCard: React.FC<ResultCardProps> = ({ recommendation, onReset }) => {
 
           <div className={s.result__card__actions}>
             <button className={s.result__card__actions__primary} onClick={handleEmailClick}>
-              📧 Wyślij zapytanie
+              {t('actions.sendInquiry')}
             </button>
             <button className={s.result__card__actions__secondary} onClick={onReset}>
-              🔄 Rozpocznij ponownie
+              {t('actions.startAgain')}
             </button>
           </div>
         </div>

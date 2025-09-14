@@ -1,6 +1,6 @@
 import React from 'react';
 import s from '../../ServiceConfigurator.page.module.scss';
-import { availableFeatures } from '../../constants/ServiceConfigurator.constants';
+import { useTranslations } from 'next-intl';
 
 interface FeaturesStepProps {
   selectedFeatures: string[];
@@ -8,12 +8,14 @@ interface FeaturesStepProps {
 }
 
 const FeaturesStep: React.FC<FeaturesStepProps> = ({ selectedFeatures, onToggle }) => {
+  const t = useTranslations('configurator.steps.features');
+
+  const availableFeatures = t.raw('options') as string[];
+
   return (
     <div className={s.stepContent}>
-      <h1 className={s.stepContent__title}>Jakie funkcjonalności Cię interesują?</h1>
-      <p className={s.stepContent__subtitle}>
-        Wybierz wszystkie, które mogą być przydatne (opcjonalne)
-      </p>
+      <h1 className={s.stepContent__title}>{t('title')}</h1>
+      <p className={s.stepContent__subtitle}>{t('subtitle')}</p>
 
       <div className={s.features}>
         {availableFeatures.map(feature => (

@@ -1,6 +1,8 @@
 import React from 'react';
 import s from '../../ServiceConfigurator.page.module.scss';
-import { TOTAL_STEPS } from '../../constants/ServiceConfigurator.constants';
+import { useTranslations } from 'next-intl';
+
+const TOTAL_STEPS = 5;
 
 interface NavigationProps {
   currentStep: number;
@@ -15,15 +17,17 @@ const Navigation: React.FC<NavigationProps> = ({
   onPrevStep,
   onNextStep,
 }) => {
+  const t = useTranslations('configurator.navigation');
+
   return (
     <div className={s.navigation}>
       {currentStep > 1 && (
         <button className={s.navigation__back} onClick={onPrevStep}>
-          ← Wstecz
+          {t('back')}
         </button>
       )}
       <button className={s.navigation__next} onClick={onNextStep} disabled={!isStepValid}>
-        {currentStep === TOTAL_STEPS ? 'Zobacz rekomendację' : 'Dalej'} →
+        {currentStep === TOTAL_STEPS ? t('getRecommendation') : t('next')}
       </button>
     </div>
   );

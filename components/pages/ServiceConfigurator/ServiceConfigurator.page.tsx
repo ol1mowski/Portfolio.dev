@@ -2,6 +2,7 @@
 
 import React from 'react';
 import s from './ServiceConfigurator.page.module.scss';
+import { useTranslations } from 'next-intl';
 
 import { useServiceConfigurator } from './hooks/useServiceConfigurator';
 

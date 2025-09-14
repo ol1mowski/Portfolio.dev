@@ -1,6 +1,6 @@
 import React from 'react';
 import s from '../../ServiceConfigurator.page.module.scss';
-import { solutionTypes } from '../../constants/ServiceConfigurator.constants';
+import { useTranslations } from 'next-intl';
 
 interface SolutionTypeStepProps {
   selectedType: string;
@@ -8,12 +8,22 @@ interface SolutionTypeStepProps {
 }
 
 const SolutionTypeStep: React.FC<SolutionTypeStepProps> = ({ selectedType, onSelect }) => {
+  const t = useTranslations('configurator.steps.solutionType');
+
+  const solutionTypes = [
+    { id: 'template', title: t('options.template.title'), desc: t('options.template.desc') },
+    {
+      id: 'semi-custom',
+      title: t('options.semi-custom.title'),
+      desc: t('options.semi-custom.desc'),
+    },
+    { id: 'custom', title: t('options.custom.title'), desc: t('options.custom.desc') },
+  ];
+
   return (
     <div className={s.stepContent}>
-      <h1 className={s.stepContent__title}>Jakiego typu rozwiązanie preferujesz?</h1>
-      <p className={s.stepContent__subtitle}>
-        Każda opcja ma swoje zalety - wybierz najlepszą dla siebie
-      </p>
+      <h1 className={s.stepContent__title}>{t('title')}</h1>
+      <p className={s.stepContent__subtitle}>{t('subtitle')}</p>
 
       <div className={s.options}>
         {solutionTypes.map(type => (

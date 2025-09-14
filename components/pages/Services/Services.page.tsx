@@ -2,11 +2,12 @@
 
 import { FC } from 'react';
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import styles from './Services.page.module.scss';
 
 export const Services: FC = () => {
   const t = useTranslations('services');
+  const locale = useLocale();
 
   const services = [
     {
@@ -129,7 +130,7 @@ export const Services: FC = () => {
               <h3 className={styles.bannerTitle}>{t('undecided.title')}</h3>
               <p className={styles.bannerSubtitle}>{t('undecided.subtitle')}</p>
             </div>
-            <a href="/konfigurator" className={styles.bannerButton}>
+            <a href={`/${locale}/konfigurator`} className={styles.bannerButton}>
               <span className={styles.buttonIcon}>⚙️</span>
               {t('undecided.button')}
               <span className={styles.buttonArrow}>→</span>
