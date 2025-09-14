@@ -528,7 +528,11 @@
       },
       "success": "Access unlocked! Redirecting...",
       "loadingError": "Error loading materials",
-      "retry": "Try again"
+      "retry": "Try again",
+      "knowledgeLibrary": {
+        "title": "Knowledge Library",
+        "description": "Access to 50+ e-books, notes and practical guides"
+      }
     }
   },
   "chat": {

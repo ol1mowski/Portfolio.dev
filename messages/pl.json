@@ -528,7 +528,11 @@
       },
       "success": "Dostęp odblokowany! Przekierowuję...",
       "loadingError": "Błąd podczas ładowania materiałów",
-      "retry": "Spróbuj ponownie"
+      "retry": "Spróbuj ponownie",
+      "knowledgeLibrary": {
+        "title": "Biblioteka wiedzy",
+        "description": "Dostęp do 50+ e-booków, notatek i praktycznych przewodników"
+      }
     }
   },
   "chat": {

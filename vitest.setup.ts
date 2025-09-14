@@ -31,7 +31,6 @@ vi.mock('next-intl', () => ({
 
     const namespaceTranslations = translations[namespace];
     if (namespaceTranslations) {
-      // Handle nested keys like 'loadMore.button'
       const keys = key.split('.');
       let result = namespaceTranslations;
       for (const k of keys) {

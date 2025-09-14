@@ -532,7 +532,11 @@
       },
       "success": "Zugang freigeschaltet! Weiterleitung...",
       "loadingError": "Fehler beim Laden der Materialien",
-      "retry": "Erneut versuchen"
+      "retry": "Erneut versuchen",
+      "knowledgeLibrary": {
+        "title": "Wissensbibliothek",
+        "description": "Zugang zu 50+ E-Books, Notizen und praktischen Leitfäden"
+      }
     }
   },
   "chat": {
