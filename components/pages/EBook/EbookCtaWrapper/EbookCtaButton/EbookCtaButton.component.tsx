@@ -1,15 +1,16 @@
 import { FC, memo } from 'react';
 import s from './EbookCtaButton.component.module.scss';
 import Button from '@/components/UI/Button/Button.component';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 export const EbookCtaButton: FC = memo(() => {
   const t = useTranslations('ebook');
+  const locale = useLocale();
 
   return (
     <section className={s.buttonWrapper}>
       <a
-        href="/materialy"
+        href={`/${locale}/materialy`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`${t('ctaButton')} - ${t('ebookTitle')}`}

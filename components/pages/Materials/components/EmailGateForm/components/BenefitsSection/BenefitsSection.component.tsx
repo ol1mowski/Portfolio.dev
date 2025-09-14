@@ -1,14 +1,20 @@
 import { FC } from 'react';
+import { useTranslations } from 'next-intl';
 import s from './BenefitsSection.component.module.scss';
-import { MATERIALS_CONSTANTS } from '../../../../constants/materials.constants';
+
+interface Benefit {
+  icon: string;
+  title: string;
+  description: string;
+}
 
 export const BenefitsSection: FC = () => {
-  const { BENEFITS } = MATERIALS_CONSTANTS;
+  const t = useTranslations('materials.benefits');
 
   return (
     <>
       <div className={s.leftBenefits}>
-        {BENEFITS.LEFT.map((benefit, index) => (
+        {(t('left') as unknown as Benefit[]).map((benefit, index) => (
           <div key={`left-benefit-${benefit.title}-${index}`} className={s.sideBenefitCard}>
             <div className={s.sideBenefitIcon}>{benefit.icon}</div>
             <h3 className={s.sideBenefitTitle}>{benefit.title}</h3>
@@ -18,7 +24,7 @@ export const BenefitsSection: FC = () => {
       </div>
 
       <div className={s.rightBenefits}>
-        {BENEFITS.RIGHT.map((benefit, index) => (
+        {(t('right') as unknown as Benefit[]).map((benefit, index) => (
           <div key={`right-benefit-${benefit.title}-${index}`} className={s.sideBenefitCard}>
             <div className={s.sideBenefitIcon}>{benefit.icon}</div>
             <h3 className={s.sideBenefitTitle}>{benefit.title}</h3>

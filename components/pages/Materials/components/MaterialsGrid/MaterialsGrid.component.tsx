@@ -6,7 +6,7 @@ import { Loading } from '@/components/UI/shared';
 import { useTranslations } from 'next-intl';
 
 const DynamicMaterialCard = dynamic(() => import('../MaterialCard/MaterialCard.component'), {
-  loading: () => <Loading message="Ładowanie karty..." size="small" />,
+  loading: () => <Loading message="Loading card..." size="small" />,
 });
 
 interface MaterialsGridProps {
@@ -31,23 +31,23 @@ const MaterialsGrid = memo(
     hasMore = false,
     onDownload,
   }: MaterialsGridProps) => {
-    const t = useTranslations('blog');
+    const t = useTranslations('materials.grid');
 
     return (
       <section className={s.materialsGrid}>
         <div className={s.materialsGrid__header}>
           <h2 className={s.materialsGrid__title}>
-            {loading ? 'Ładowanie...' : `Znaleziono ${resultsCount} materiałów`}
+            {loading ? t('loading') : t('foundMaterials', { count: resultsCount })}
           </h2>
           {hasActiveFilters && (
             <button onClick={onClearFilters} className={s.materialsGrid__clearBtn}>
-              <span>Wyczyść filtry</span>
+              <span>{t('clearFilters')}</span>
             </button>
           )}
         </div>
 
         {loading && materials.length === 0 ? (
-          <Loading message="Ładowanie materiałów..." />
+          <Loading message={t('loadingMaterials')} />
         ) : materials.length > 0 ? (
           <>
             <div className={s.materialsGrid__items}>
@@ -67,7 +67,7 @@ const MaterialsGrid = memo(
                   className={s.materialsGrid__loadMoreBtn}
                   disabled={loading}
                 >
-                  {loading ? t('loadMore.loading') : t('loadMore.loadMoreResults')}
+                  {loading ? t('loading') : 'Load more results'}
                 </button>
               </div>
             )}
@@ -75,12 +75,10 @@ const MaterialsGrid = memo(
         ) : (
           <div className={s.materialsGrid__noResults}>
             <div className={s.materialsGrid__noResultsIcon}>🔍</div>
-            <h3 className={s.materialsGrid__noResultsTitle}>Nie znaleziono materiałów</h3>
-            <p className={s.materialsGrid__noResultsText}>
-              Spróbuj zmienić kryteria wyszukiwania lub wyczyść filtry.
-            </p>
+            <h3 className={s.materialsGrid__noResultsTitle}>{t('noResults.title')}</h3>
+            <p className={s.materialsGrid__noResultsText}>{t('noResults.text')}</p>
             <button onClick={onClearFilters} className={s.materialsGrid__clearBtn}>
-              <span>Wyczyść wszystkie filtry</span>
+              <span>{t('clearAllFilters')}</span>
             </button>
           </div>
         )}

@@ -1,6 +1,7 @@
 'use client';
 
 import s from './MaterialsHub.component.module.scss';
+import { useTranslations } from 'next-intl';
 
 import { memo, useCallback, useEffect } from 'react';
 
@@ -14,12 +15,15 @@ import { useMaterialsSearch } from './hooks/useMaterialsSearch.hook';
 import { useMaterialsSorting } from '../MaterialsControls/hooks/useMaterialsSorting.hook';
 import { useMaterialsFetching } from './hooks/useMaterialsFetching.hook';
 import { useDownloadCount } from './hooks/useDownloadCount.hook';
+import { MaterialType } from '@/types/Materials.types';
 
 interface MaterialsHubProps {
-  initialMaterials?: any[];
+  initialMaterials?: MaterialType[];
 }
 
 const MaterialsHub = memo(({ initialMaterials = [] }: MaterialsHubProps) => {
+  const t = useTranslations('materials');
+
   const {
     searchTerm,
     debouncedSearchTerm,
@@ -66,13 +70,13 @@ const MaterialsHub = memo(({ initialMaterials = [] }: MaterialsHubProps) => {
     return (
       <>
         <Header />
-        <main className={s.container} aria-label="Centrum materiałów edukacyjnych">
+        <main className={s.container} aria-label={t('emailGate.title')}>
           <MaterialsHeader />
           <div className={s.errorContainer}>
-            <h2>Błąd podczas ładowania materiałów</h2>
+            <h2>{t('emailGate.loadingError')}</h2>
             <p>{error}</p>
             <button onClick={refetch} className={s.retryButton}>
-              Spróbuj ponownie
+              {t('emailGate.retry')}
             </button>
           </div>
         </main>
@@ -84,7 +88,7 @@ const MaterialsHub = memo(({ initialMaterials = [] }: MaterialsHubProps) => {
   return (
     <>
       <Header />
-      <main className={s.container} aria-label="Centrum materiałów edukacyjnych">
+      <main className={s.container} aria-label={t('emailGate.title')}>
         <MaterialsHeader />
 
         <MaterialsControls

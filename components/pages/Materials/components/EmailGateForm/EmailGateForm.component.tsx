@@ -2,6 +2,7 @@
 
 import { memo } from 'react';
 import s from './EmailGateForm.component.module.scss';
+import { useTranslations } from 'next-intl';
 import { EmailGateForm as EmailGateFormComponent } from './components/EmailGateForm/EmailGateForm.component';
 
 interface EmailGateFormProps {
@@ -9,6 +10,8 @@ interface EmailGateFormProps {
 }
 
 const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
+  const t = useTranslations('materials.emailGate');
+
   return (
     <div className={s.materialsGate}>
       <div className={s.floatingIcons}>
@@ -38,21 +41,17 @@ const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
         <div className={s.leftContent}>
           <div className={s.contentHeader}>
             <h1 className={s.mainTitle}>
-              Odblokuj <span className={s.highlight}>Centrum Materiałów</span>
+              {t('title').split(' ')[0]}{' '}
+              <span className={s.highlight}>{t('title').split(' ').slice(1).join(' ')}</span>
             </h1>
-            <p className={s.mainSubtitle}>
-              Podaj swój adres email i uzyskaj natychmiastowy dostęp do wszystkich materiałów
-              edukacyjnych, e-booków i zasobów dla programistów.
-            </p>
+            <p className={s.mainSubtitle}>{t('subtitle')}</p>
           </div>
 
           <div className={s.knowledgeLibrary}>
             <div className={s.libraryIcon}>📚</div>
             <div className={s.libraryContent}>
-              <h3 className={s.libraryTitle}>Biblioteka wiedzy</h3>
-              <p className={s.libraryDescription}>
-                Dostęp do 50+ e-booków, notatek i praktycznych przewodników
-              </p>
+              <h3 className={s.libraryTitle}>{t('knowledgeLibrary.title')}</h3>
+              <p className={s.libraryDescription}>{t('knowledgeLibrary.description')}</p>
             </div>
           </div>
         </div>

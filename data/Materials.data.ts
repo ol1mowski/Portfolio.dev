@@ -138,6 +138,6 @@ export const CATEGORIES = [
   'Narzędzia',
 ];
 
-export const CATEGORY_TYPES = ['techniczne', 'rozwojowe'];
+export const CATEGORY_TYPES = ['techniczne', 'rozwojowe', 'technologiczne'];
 
 export const MATERIAL_TYPES = ['note', 'ebook'];

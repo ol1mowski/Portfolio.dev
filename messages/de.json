@@ -399,18 +399,120 @@
     "finalDescription": "wo ich Wissen über Programmierung und Webentwicklung teile."
   },
   "materials": {
+    "header": {
+      "title": "Materialien",
+      "titleGradient": "Zentrum",
+      "subtitle": "Entdecken Sie die besten Bildungsmaterialien - E-Books, Notizen und zusätzliche Ressourcen. Alles an einem Ort, mit erweiterten Filteroptionen."
+    },
+    "search": {
+      "placeholder": "Materialien, Kategorien, Tags suchen...",
+      "ariaLabel": "Materialien suchen"
+    },
+    "controls": {
+      "sortLabel": "Sortieren:",
+      "sortOptions": {
+        "newest": "Neueste",
+        "popular": "Beliebteste",
+        "title": "Alphabetisch"
+      }
+    },
+    "filters": {
+      "title": "Filter",
+      "toggle": "Filter",
+      "expand": "Filter-Panel erweitern",
+      "collapse": "Filter-Panel einklappen",
+      "clearAll": "Alle löschen",
+      "materialType": "Materialtyp",
+      "category": "Kategorie",
+      "categoryType": "Kategorietyp",
+      "typeLabels": {
+        "ebook": "E-Books",
+        "note": "Notizen",
+        "material": "Materialien"
+      },
+      "categoryTypeLabels": {
+        "techniczne": "Technisch",
+        "rozwojowe": "Entwicklungsbezogen",
+        "technologiczne": "Technologisch"
+      }
+    },
+    "grid": {
+      "loading": "Laden...",
+      "foundMaterials": "{count} Materialien gefunden",
+      "loadingMaterials": "Materialien werden geladen...",
+      "loadingCard": "Karte wird geladen...",
+      "clearFilters": "Filter löschen",
+      "clearAllFilters": "Alle Filter löschen",
+      "noResults": {
+        "title": "Keine Materialien gefunden",
+        "text": "Versuchen Sie, die Suchkriterien zu ändern oder Filter zu löschen."
+      }
+    },
+    "card": {
+      "typeLabels": {
+        "ebook": "E-Book",
+        "note": "Notiz"
+      },
+      "categoryTypeLabels": {
+        "techniczne": "Technisch",
+        "rozwojowe": "Entwicklungsbezogen",
+        "technologiczne": "Technologisch"
+      },
+      "downloadText": {
+        "ebook": "E-Book herunterladen",
+        "note": "Notiz herunterladen"
+      },
+      "downloading": "Herunterladen...",
+      "noteLabel": "NOTIZ"
+    },
+    "benefits": {
+      "left": [
+        {
+          "icon": "📚",
+          "title": "Wissensbibliothek",
+          "description": "Zugang zu 50+ E-Books, Notizen und praktischen Leitfäden"
+        },
+        {
+          "icon": "🚀",
+          "title": "Exklusive Inhalte",
+          "description": "Erster Blick auf neue Materialien und Beta-Versionen"
+        },
+        {
+          "icon": "💎",
+          "title": "Premium-Ressourcen",
+          "description": "Vorlagen, Checklisten und fertige Projektlösungen"
+        }
+      ],
+      "right": [
+        {
+          "icon": "💡",
+          "title": "Wöchentliche Tipps",
+          "description": "Beste Programmierpraktiken direkt per E-Mail"
+        },
+        {
+          "icon": "🎯",
+          "title": "Personalisierte Pfade",
+          "description": "Materialien angepasst an Ihr Können"
+        },
+        {
+          "icon": "🔥",
+          "title": "Aktuelle Trends",
+          "description": "Neueste Technologien, Tools und IT-Trends"
+        }
+      ]
+    },
     "emailGate": {
-      "title": "Materialzentrum freischalten",
-      "subtitle": "Geben Sie Ihre E-Mail-Adresse ein und erhalten Sie sofortigen Zugang zu allen Bildungsmaterialien, E-Books und Ressourcen für Programmierer.",
+      "title": "Materialien-Zentrum freischalten",
+      "subtitle": "Geben Sie Ihre E-Mail-Adresse ein und erhalten Sie sofortigen Zugang zu allen Bildungsmaterialien, E-Books und Ressourcen für Entwickler.",
       "form": {
         "title": "Jetzt starten!",
         "subtitle": "Kostenloser Zugang für immer",
         "nameLabel": "Ihr Name",
-        "namePlaceholder": "z.B. Hans Müller",
+        "namePlaceholder": "z.B. Max Mustermann",
         "emailLabel": "Geben Sie Ihre E-Mail-Adresse ein",
-        "emailPlaceholder": "z.B. hans.mueller@gmail.com",
+        "emailPlaceholder": "z.B. max.mustermann@gmail.com",
         "submitButton": "Zugang freischalten",
-        "loadingButton": "Freischalten..."
+        "loadingButton": "Wird freigeschaltet..."
       },
       "policy": {
         "checkboxText": "Ich akzeptiere",
@@ -425,10 +527,12 @@
       },
       "errors": {
         "fillFields": "Bitte füllen Sie alle Felder aus",
-        "saveError": "Beim Speichern ist ein Fehler aufgetreten",
-        "connectionError": "Ein Verbindungsfehler ist aufgetreten. Bitte versuchen Sie es erneut."
+        "saveError": "Fehler beim Speichern aufgetreten",
+        "connectionError": "Verbindungsfehler aufgetreten. Bitte versuchen Sie es erneut."
       },
-      "success": "Zugang freigeschaltet! Weiterleitung..."
+      "success": "Zugang freigeschaltet! Weiterleitung...",
+      "loadingError": "Fehler beim Laden der Materialien",
+      "retry": "Erneut versuchen"
     }
   },
   "chat": {

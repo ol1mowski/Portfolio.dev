@@ -29,10 +29,15 @@ interface LanguageSwitchProps {
 }
 
 export default function LanguageSwitch({ variant = 'header' }: LanguageSwitchProps) {
-  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  const pathSegments = pathname.split('/');
+  const pathLocale = pathSegments[1] || 'pl';
+
+  const intlLocale = useLocale();
+  const locale = intlLocale || pathLocale;
 
   const currentLanguage = languages.find(lang => lang.code === locale) || languages[0];
 

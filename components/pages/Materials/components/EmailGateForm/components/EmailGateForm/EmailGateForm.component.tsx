@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import s from './EmailGateForm.component.module.scss';
 import { ErrorMessage } from '@/components/UI/shared';
 import { saveClientData } from '@/actions/client.actions';
-import { MATERIALS_CONSTANTS } from '../../../../constants/materials.constants';
+import { useTranslations } from 'next-intl';
 
 interface EmailGateFormProps {
   onEmailSubmit: (email: string) => void;
@@ -16,18 +16,18 @@ export const EmailGateForm: FC<EmailGateFormProps> = ({ onEmailSubmit }) => {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
-  const { EMAIL_GATE } = MATERIALS_CONSTANTS;
+  const t = useTranslations('materials.emailGate');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!email || !email.includes('@') || !name.trim()) {
-      setError(EMAIL_GATE.ERRORS.FILL_FIELDS);
+      setError(t('errors.fillFields'));
       return;
     }
 
     if (!acceptPolicy) {
-      setError(EMAIL_GATE.POLICY.ERROR);
+      setError(t('policy.error'));
       return;
     }
 
@@ -43,13 +43,13 @@ export const EmailGateForm: FC<EmailGateFormProps> = ({ onEmailSubmit }) => {
       const result = await saveClientData(formData);
 
       if (result.success) {
-        setSuccess(EMAIL_GATE.SUCCESS);
+        setSuccess(t('success'));
         onEmailSubmit(email);
       } else {
-        setError(result.error || EMAIL_GATE.ERRORS.SAVE_ERROR);
+        setError(result.error || t('errors.saveError'));
       }
     } catch (err) {
-      setError(EMAIL_GATE.ERRORS.CONNECTION_ERROR);
+      setError(t('errors.connectionError'));
       console.error('Error saving email:', err);
     } finally {
       setIsSubmitting(false);
@@ -59,8 +59,8 @@ export const EmailGateForm: FC<EmailGateFormProps> = ({ onEmailSubmit }) => {
   return (
     <form onSubmit={handleSubmit} className={s.emailForm}>
       <div className={s.formHeader}>
-        <h3 className={s.formTitle}>{EMAIL_GATE.FORM.TITLE}</h3>
-        <p className={s.formSubtitle}>{EMAIL_GATE.FORM.SUBTITLE}</p>
+        <h3 className={s.formTitle}>{t('form.title')}</h3>
+        <p className={s.formSubtitle}>{t('form.subtitle')}</p>
       </div>
 
       {error && <ErrorMessage message={error} variant="alert" />}
@@ -69,7 +69,7 @@ export const EmailGateForm: FC<EmailGateFormProps> = ({ onEmailSubmit }) => {
       <div className={s.inputWrapper}>
         <div className={s.inputGroup}>
           <label htmlFor="name-input" className={s.inputLabel}>
-            {EMAIL_GATE.FORM.NAME_LABEL}
+            {t('form.nameLabel')}
           </label>
           <div className={s.inputContainer}>
             <span className={s.inputIcon}>👤</span>
@@ -78,7 +78,7 @@ export const EmailGateForm: FC<EmailGateFormProps> = ({ onEmailSubmit }) => {
               type="text"
               value={name}
               onChange={e => setName(e.target.value)}
-              placeholder={EMAIL_GATE.FORM.NAME_PLACEHOLDER}
+              placeholder={t('form.namePlaceholder')}
               className={s.nameInput}
               required
               disabled={isSubmitting}
@@ -88,7 +88,7 @@ export const EmailGateForm: FC<EmailGateFormProps> = ({ onEmailSubmit }) => {
 
         <div className={s.inputGroup}>
           <label htmlFor="email-input" className={s.inputLabel}>
-            {EMAIL_GATE.FORM.EMAIL_LABEL}
+            {t('form.emailLabel')}
           </label>
           <div className={s.inputContainer}>
             <span className={s.inputIcon}>📧</span>
@@ -97,7 +97,7 @@ export const EmailGateForm: FC<EmailGateFormProps> = ({ onEmailSubmit }) => {
               type="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
-              placeholder={EMAIL_GATE.FORM.EMAIL_PLACEHOLDER}
+              placeholder={t('form.emailPlaceholder')}
               className={s.emailInput}
               required
               disabled={isSubmitting}
@@ -115,23 +115,23 @@ export const EmailGateForm: FC<EmailGateFormProps> = ({ onEmailSubmit }) => {
               disabled={isSubmitting}
             />
             <span className={s.checkboxText}>
-              {EMAIL_GATE.POLICY.CHECKBOX_TEXT}{' '}
+              {t('policy.checkboxText')}{' '}
               <a
                 href="/prywatnosc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={s.policyLink}
               >
-                {EMAIL_GATE.POLICY.PRIVACY_POLICY}
+                {t('policy.privacyPolicy')}
               </a>{' '}
-              {EMAIL_GATE.POLICY.AND}{' '}
+              {t('policy.and')}{' '}
               <a
                 href="/prywatnosc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={s.policyLink}
               >
-                {EMAIL_GATE.POLICY.COOKIES}
+                {t('policy.cookies')}
               </a>
             </span>
           </label>
@@ -142,13 +142,13 @@ export const EmailGateForm: FC<EmailGateFormProps> = ({ onEmailSubmit }) => {
           className={s.submitButton}
           disabled={isSubmitting || !email.includes('@') || !name.trim() || !acceptPolicy}
         >
-          {isSubmitting ? EMAIL_GATE.FORM.LOADING_BUTTON : EMAIL_GATE.FORM.SUBMIT_BUTTON}
+          {isSubmitting ? t('form.loadingButton') : t('form.submitButton')}
         </button>
       </div>
 
       <div className={s.formFooter}>
-        <p className={s.privacy}>{EMAIL_GATE.FOOTER.PRIVACY}</p>
-        <p className={s.guarantee}>{EMAIL_GATE.FOOTER.GUARANTEE}</p>
+        <p className={s.privacy}>{t('footer.privacy')}</p>
+        <p className={s.guarantee}>{t('footer.guarantee')}</p>
       </div>
     </form>
   );

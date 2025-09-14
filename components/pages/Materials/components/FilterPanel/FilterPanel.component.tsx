@@ -3,6 +3,7 @@
 import s from './FilterPanel.component.module.scss';
 
 import { memo, useState, useRef, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { FilterOptions } from '@/types/Materials.types';
 import { CATEGORIES, CATEGORY_TYPES, MATERIAL_TYPES } from '@/data/Materials.data';
 
@@ -15,17 +16,7 @@ interface FilterPanelProps {
 const FilterPanel = memo(({ selectedFilters, onFilterChange, onClearAll }: FilterPanelProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const filterPanelRef = useRef<HTMLDivElement>(null);
-
-  const typeLabels = {
-    ebook: 'E-booki',
-    note: 'Notatki',
-    material: 'Materiały',
-  };
-
-  const categoryTypeLabels = {
-    techniczne: 'Techniczne',
-    rozwojowe: 'Rozwojowe',
-  };
+  const t = useTranslations('materials.filters');
 
   // Obsługa kliknięć poza komponentem
   useEffect(() => {
@@ -68,10 +59,10 @@ const FilterPanel = memo(({ selectedFilters, onFilterChange, onClearAll }: Filte
         className={s.filterToggle}
         onClick={() => setIsExpanded(!isExpanded)}
         aria-expanded={isExpanded}
-        aria-label={`${isExpanded ? 'Zwiń' : 'Rozwiń'} panel filtrów`}
+        aria-label={`${isExpanded ? t('collapse') : t('expand')}`}
       >
         <span className={s.filterIcon}>⚙️</span>
-        <span>Filtry</span>
+        <span>{t('toggle')}</span>
         {activeCount > 0 && <span className={s.activeCount}>{activeCount}</span>}
         <span className={`${s.chevron} ${isExpanded ? s.expanded : ''}`}>▼</span>
       </button>
@@ -79,17 +70,17 @@ const FilterPanel = memo(({ selectedFilters, onFilterChange, onClearAll }: Filte
       {isExpanded && (
         <div className={s.filterContent}>
           <div className={s.filterHeader}>
-            <h3>Filtry</h3>
+            <h3>{t('title')}</h3>
             {activeCount > 0 && (
               <button onClick={onClearAll} className={s.clearAll}>
-                <span>Wyczyść wszystkie</span>
+                <span>{t('clearAll')}</span>
               </button>
             )}
           </div>
 
           <div className={s.filterGroups}>
             <div className={s.filterGroup}>
-              <h4 className={s.filterGroupTitle}>Typ materiału</h4>
+              <h4 className={s.filterGroupTitle}>{t('materialType')}</h4>
               <div className={s.filterOptions}>
                 {MATERIAL_TYPES.map(type => (
                   <label key={type} className={s.filterOption}>
@@ -99,9 +90,7 @@ const FilterPanel = memo(({ selectedFilters, onFilterChange, onClearAll }: Filte
                       onChange={() => handleFilterToggle('type', type)}
                       className={s.filterCheckbox}
                     />
-                    <span className={s.filterLabel}>
-                      {typeLabels[type as keyof typeof typeLabels]}
-                    </span>
+                    <span className={s.filterLabel}>{t(`typeLabels.${type}`)}</span>
                     <span className={s.filterCheckmark}>✓</span>
                   </label>
                 ))}
@@ -109,7 +98,7 @@ const FilterPanel = memo(({ selectedFilters, onFilterChange, onClearAll }: Filte
             </div>
 
             <div className={s.filterGroup}>
-              <h4 className={s.filterGroupTitle}>Kategoria</h4>
+              <h4 className={s.filterGroupTitle}>{t('category')}</h4>
               <div className={s.filterOptions}>
                 {CATEGORIES.map(category => (
                   <label key={category} className={s.filterOption}>
@@ -127,7 +116,7 @@ const FilterPanel = memo(({ selectedFilters, onFilterChange, onClearAll }: Filte
             </div>
 
             <div className={s.filterGroup}>
-              <h4 className={s.filterGroupTitle}>Kategoria typu</h4>
+              <h4 className={s.filterGroupTitle}>{t('categoryType')}</h4>
               <div className={s.filterOptions}>
                 {CATEGORY_TYPES.map(categoryType => (
                   <label key={categoryType} className={s.filterOption}>
@@ -137,9 +126,7 @@ const FilterPanel = memo(({ selectedFilters, onFilterChange, onClearAll }: Filte
                       onChange={() => handleFilterToggle('categoryType', categoryType)}
                       className={s.filterCheckbox}
                     />
-                    <span className={s.filterLabel}>
-                      {categoryTypeLabels[categoryType as keyof typeof categoryTypeLabels]}
-                    </span>
+                    <span className={s.filterLabel}>{t(`categoryTypeLabels.${categoryType}`)}</span>
                     <span className={s.filterCheckmark}>✓</span>
                   </label>
                 ))}

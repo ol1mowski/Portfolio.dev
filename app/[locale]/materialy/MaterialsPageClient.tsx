@@ -12,8 +12,7 @@ interface MaterialsPageClientProps {
 export default function MaterialsPageClient({ hasSession }: MaterialsPageClientProps) {
   const [hasEmailAccess, setHasEmailAccess] = useState(hasSession);
 
-  const handleEmailSubmit = (email: string) => {
-    console.log('Email submitted:', email);
+  const handleEmailSubmit = () => {
     setHasEmailAccess(true);
   };
 

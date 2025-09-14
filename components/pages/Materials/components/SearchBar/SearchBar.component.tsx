@@ -1,5 +1,6 @@
 import s from './SearchBar.component.module.scss';
 import { memo, useRef, useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { Loading } from '@/components/UI/shared';
 
 interface SearchBarProps {
@@ -9,48 +10,47 @@ interface SearchBarProps {
   loading?: boolean;
 }
 
-const SearchBar = memo(
-  ({ value, onChange, placeholder = 'Szukaj...', loading = false }: SearchBarProps) => {
-    const inputRef = useRef<HTMLInputElement>(null);
-    const [isFocused, setIsFocused] = useState(false);
+const SearchBar = memo(({ value, onChange, placeholder, loading = false }: SearchBarProps) => {
+  const t = useTranslations('materials.search');
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [isFocused, setIsFocused] = useState(false);
 
-    useEffect(() => {
-      if (isFocused && inputRef.current) {
-        inputRef.current.focus();
-      }
-    }, [isFocused, loading]);
+  useEffect(() => {
+    if (isFocused && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isFocused, loading]);
 
-    const handleFocus = () => {
-      setIsFocused(true);
-    };
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
 
-    const handleBlur = () => {
-      setIsFocused(false);
-    };
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
 
-    return (
-      <div className={s.searchBar}>
-        <div className={s.searchWrapper}>
-          <div className={s.searchIcon}>
-            {loading ? <Loading size="small" variant="dots" /> : '🔍'}
-          </div>
-          <input
-            ref={inputRef}
-            type="text"
-            value={value}
-            onChange={e => onChange(e.target.value)}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            placeholder={placeholder}
-            className={s.searchInput}
-            aria-label="Wyszukaj materiały"
-            disabled={loading}
-          />
+  return (
+    <div className={s.searchBar}>
+      <div className={s.searchWrapper}>
+        <div className={s.searchIcon}>
+          {loading ? <Loading size="small" variant="dots" /> : '🔍'}
         </div>
+        <input
+          ref={inputRef}
+          type="text"
+          value={value}
+          onChange={e => onChange(e.target.value)}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          placeholder={placeholder || t('placeholder')}
+          className={s.searchInput}
+          aria-label={t('ariaLabel')}
+          disabled={loading}
+        />
       </div>
-    );
-  }
-);
+    </div>
+  );
+});
 
 SearchBar.displayName = 'SearchBar';
 

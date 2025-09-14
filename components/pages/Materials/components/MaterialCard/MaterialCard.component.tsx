@@ -3,6 +3,7 @@
 import s from './MaterialCard.component.module.scss';
 
 import { memo, useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -17,6 +18,7 @@ interface MaterialCardProps {
 const MaterialCard = memo(({ material, onDownload }: MaterialCardProps) => {
   const [localDownloadCount, setLocalDownloadCount] = useState(material.downloadCount);
   const [isUpdating, setIsUpdating] = useState(false);
+  const t = useTranslations('materials.card');
 
   useEffect(() => {
     setLocalDownloadCount(material.downloadCount);
@@ -37,17 +39,7 @@ const MaterialCard = memo(({ material, onDownload }: MaterialCardProps) => {
     publishDate,
   } = material;
 
-  const typeLabels = {
-    ebook: 'E-book',
-    note: 'Notatka',
-  };
-
-  const categoryTypeLabels = {
-    techniczne: 'Techniczne',
-    rozwojowe: 'Rozwojowe',
-  };
-
-  const downloadText = type === 'ebook' ? 'Pobierz E-book' : 'Pobierz Notatkę';
+  const downloadText = type === 'ebook' ? t('downloadText.ebook') : t('downloadText.note');
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('pl-PL', {
@@ -101,12 +93,12 @@ const MaterialCard = memo(({ material, onDownload }: MaterialCardProps) => {
       <div className={s.imageWrapper}>
         {type === 'note' ? (
           <div className={s.noteBackground}>
-            <div className={s.text}>NOTATKA</div>
+            <div className={s.text}>{t('noteLabel')}</div>
           </div>
         ) : (
           <Image
             src={image}
-            alt={`${typeLabels[type]} ${title}`}
+            alt={`${t(`typeLabels.${type}`)} ${title}`}
             width={400}
             height={300}
             className={s.image}
@@ -130,12 +122,12 @@ const MaterialCard = memo(({ material, onDownload }: MaterialCardProps) => {
       <div className={s.content}>
         <div className={s.header}>
           <div className={s.meta}>
-            <span className={`${s.typeTag} ${s[type]}`}>{typeLabels[type]}</span>
+            <span className={`${s.typeTag} ${s[type]}`}>{t(`typeLabels.${type}`)}</span>
             <span className={s.category}>{category}</span>
           </div>
           <h3 className={s.title}>{title}</h3>
           <span className={`${s.categoryType} ${s[categoryType]}`}>
-            {categoryTypeLabels[categoryType]}
+            {t(`categoryTypeLabels.${categoryType}`)}
           </span>
         </div>
 
@@ -162,7 +154,7 @@ const MaterialCard = memo(({ material, onDownload }: MaterialCardProps) => {
               onClick={handleDownload}
               style={{ pointerEvents: isUpdating ? 'none' : 'auto' }}
             >
-              <Button type="normal" value={isUpdating ? 'Pobieranie...' : downloadText} />
+              <Button type="normal" value={isUpdating ? t('downloading') : downloadText} />
             </Link>
           </div>
         </div>

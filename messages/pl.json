@@ -395,6 +395,108 @@
     "finalDescription": "gdzie dzielę się wiedzą z zakresu programowania oraz tworzenia stron internetowych."
   },
   "materials": {
+    "header": {
+      "title": "Centrum",
+      "titleGradient": "Materiałów",
+      "subtitle": "Odkryj najlepsze materiały edukacyjne - e-booki, notatki i zasoby dodatkowe. Wszystko w jednym miejscu, z zaawansowanym filtrowaniem."
+    },
+    "search": {
+      "placeholder": "Szukaj materiałów, kategorii, tagów...",
+      "ariaLabel": "Wyszukaj materiały"
+    },
+    "controls": {
+      "sortLabel": "Sortuj:",
+      "sortOptions": {
+        "newest": "Najnowsze",
+        "popular": "Najpopularniejsze",
+        "title": "Alfabetycznie"
+      }
+    },
+    "filters": {
+      "title": "Filtry",
+      "toggle": "Filtry",
+      "expand": "Rozwiń panel filtrów",
+      "collapse": "Zwiń panel filtrów",
+      "clearAll": "Wyczyść wszystkie",
+      "materialType": "Typ materiału",
+      "category": "Kategoria",
+      "categoryType": "Kategoria typu",
+      "typeLabels": {
+        "ebook": "E-booki",
+        "note": "Notatki",
+        "material": "Materiały"
+      },
+      "categoryTypeLabels": {
+        "techniczne": "Techniczne",
+        "rozwojowe": "Rozwojowe",
+        "technologiczne": "Technologiczne"
+      }
+    },
+    "grid": {
+      "loading": "Ładowanie...",
+      "foundMaterials": "Znaleziono {count} materiałów",
+      "loadingMaterials": "Ładowanie materiałów...",
+      "loadingCard": "Ładowanie karty...",
+      "clearFilters": "Wyczyść filtry",
+      "clearAllFilters": "Wyczyść wszystkie filtry",
+      "noResults": {
+        "title": "Nie znaleziono materiałów",
+        "text": "Spróbuj zmienić kryteria wyszukiwania lub wyczyść filtry."
+      }
+    },
+    "card": {
+      "typeLabels": {
+        "ebook": "E-book",
+        "note": "Notatka"
+      },
+      "categoryTypeLabels": {
+        "techniczne": "Techniczne",
+        "rozwojowe": "Rozwojowe",
+        "technologiczne": "Technologiczne"
+      },
+      "downloadText": {
+        "ebook": "Pobierz E-book",
+        "note": "Pobierz Notatkę"
+      },
+      "downloading": "Pobieranie...",
+      "noteLabel": "NOTATKA"
+    },
+    "benefits": {
+      "left": [
+        {
+          "icon": "📚",
+          "title": "Biblioteka wiedzy",
+          "description": "Dostęp do 50+ e-booków, notatek i praktycznych przewodników"
+        },
+        {
+          "icon": "🚀",
+          "title": "Ekskluzywne treści",
+          "description": "Pierwsze spojrzenie na nowe materiały i beta wersje"
+        },
+        {
+          "icon": "💎",
+          "title": "Premium zasoby",
+          "description": "Szablony, checklist i gotowe rozwiązania do projektów"
+        }
+      ],
+      "right": [
+        {
+          "icon": "💡",
+          "title": "Cotygodniowe wskazówki",
+          "description": "Najlepsze praktyki programowania prosto na email"
+        },
+        {
+          "icon": "🎯",
+          "title": "Spersonalizowane ścieżki",
+          "description": "Materiały dostosowane do Twojego poziomu zaawansowania"
+        },
+        {
+          "icon": "🔥",
+          "title": "Aktualne trendy",
+          "description": "Najnowsze technologie, narzędzia i trendy w branży IT"
+        }
+      ]
+    },
     "emailGate": {
       "title": "Odblokuj Centrum Materiałów",
       "subtitle": "Podaj swój adres email i uzyskaj natychmiastowy dostęp do wszystkich materiałów edukacyjnych, e-booków i zasobów dla programistów.",
@@ -424,7 +526,9 @@
         "saveError": "Wystąpił błąd podczas zapisywania",
         "connectionError": "Wystąpił błąd połączenia. Spróbuj ponownie."
       },
-      "success": "Dostęp odblokowany! Przekierowuję..."
+      "success": "Dostęp odblokowany! Przekierowuję...",
+      "loadingError": "Błąd podczas ładowania materiałów",
+      "retry": "Spróbuj ponownie"
     }
   },
   "chat": {
@@ -538,7 +642,7 @@
     "result": {
       "title": "Twoja rekomendacja",
       "subtitle": "Na podstawie Twoich odpowiedzi przygotowaliśmy idealną ofertę",
-      "currency": "od",
+      "currency": "zł",
       "timeline": "Realizacja:",
       "featuresTitle": "Twój projekt będzie zawierał:",
       "actions": {
@@ -552,8 +656,7 @@
         "semi-custom": "Profesjonalny",
         "custom": "Unikalny",
         "suffix": "dopasowany do Twoich potrzeb"
-      },
-      "currency": "zł"
+      }
     }
   }
 }

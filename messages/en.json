@@ -395,9 +395,111 @@
     "finalDescription": "where I share knowledge about programming and web development."
   },
   "materials": {
+    "header": {
+      "title": "Materials",
+      "titleGradient": "Center",
+      "subtitle": "Discover the best educational materials - e-books, notes and additional resources. Everything in one place, with advanced filtering."
+    },
+    "search": {
+      "placeholder": "Search materials, categories, tags...",
+      "ariaLabel": "Search materials"
+    },
+    "controls": {
+      "sortLabel": "Sort:",
+      "sortOptions": {
+        "newest": "Newest",
+        "popular": "Most Popular",
+        "title": "Alphabetically"
+      }
+    },
+    "filters": {
+      "title": "Filters",
+      "toggle": "Filters",
+      "expand": "Expand filter panel",
+      "collapse": "Collapse filter panel",
+      "clearAll": "Clear all",
+      "materialType": "Material type",
+      "category": "Category",
+      "categoryType": "Category type",
+      "typeLabels": {
+        "ebook": "E-books",
+        "note": "Notes",
+        "material": "Materials"
+      },
+      "categoryTypeLabels": {
+        "techniczne": "Technical",
+        "rozwojowe": "Developmental",
+        "technologiczne": "Technological"
+      }
+    },
+    "grid": {
+      "loading": "Loading...",
+      "foundMaterials": "Found {count} materials",
+      "loadingMaterials": "Loading materials...",
+      "loadingCard": "Loading card...",
+      "clearFilters": "Clear filters",
+      "clearAllFilters": "Clear all filters",
+      "noResults": {
+        "title": "No materials found",
+        "text": "Try changing search criteria or clear filters."
+      }
+    },
+    "card": {
+      "typeLabels": {
+        "ebook": "E-book",
+        "note": "Note"
+      },
+      "categoryTypeLabels": {
+        "techniczne": "Technical",
+        "rozwojowe": "Developmental",
+        "technologiczne": "Technological"
+      },
+      "downloadText": {
+        "ebook": "Download E-book",
+        "note": "Download Note"
+      },
+      "downloading": "Downloading...",
+      "noteLabel": "NOTE"
+    },
+    "benefits": {
+      "left": [
+        {
+          "icon": "📚",
+          "title": "Knowledge Library",
+          "description": "Access to 50+ e-books, notes and practical guides"
+        },
+        {
+          "icon": "🚀",
+          "title": "Exclusive Content",
+          "description": "First look at new materials and beta versions"
+        },
+        {
+          "icon": "💎",
+          "title": "Premium Resources",
+          "description": "Templates, checklists and ready-made project solutions"
+        }
+      ],
+      "right": [
+        {
+          "icon": "💡",
+          "title": "Weekly Tips",
+          "description": "Best programming practices straight to your email"
+        },
+        {
+          "icon": "🎯",
+          "title": "Personalized Paths",
+          "description": "Materials tailored to your skill level"
+        },
+        {
+          "icon": "🔥",
+          "title": "Current Trends",
+          "description": "Latest technologies, tools and IT industry trends"
+        }
+      ]
+    },
     "emailGate": {
       "title": "Unlock Materials Center",
-      "subtitle": "Enter your email address and get instant access to all educational materials, e-books and resources for programmers.",
+      "subtitle": "Enter your email address and get instant access to all educational materials, e-books and resources for developers.",
       "form": {
         "title": "Start now!",
         "subtitle": "Free access forever",
@@ -424,7 +526,9 @@
         "saveError": "An error occurred while saving",
         "connectionError": "A connection error occurred. Please try again."
       },
-      "success": "Access unlocked! Redirecting..."
+      "success": "Access unlocked! Redirecting...",
+      "loadingError": "Error loading materials",
+      "retry": "Try again"
     }
   },
   "chat": {

@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { useTranslations } from 'next-intl';
 import s from './MaterialsControls.component.module.scss';
 
 import SearchBar from '../SearchBar/SearchBar.component';
@@ -28,13 +29,15 @@ const MaterialsControls = memo(
     onSortChange,
     onClearFilters,
   }: MaterialsControlsProps) => {
+    const t = useTranslations('materials');
+
     return (
       <section className={s.materialsControls}>
         <div className={s.materialsControls__searchWrapper}>
           <SearchBar
             value={searchTerm}
             onChange={onSearchChange}
-            placeholder="Szukaj materiałów, kategorii, tagów..."
+            placeholder={t('search.placeholder')}
             loading={loading}
           />
         </div>
@@ -51,7 +54,7 @@ const MaterialsControls = memo(
           <div className={s.materialsControls__optionsSection}>
             <div className={s.materialsControls__sortControls}>
               <label htmlFor="materials-sort-select" className={s.materialsControls__sortLabel}>
-                Sortuj:
+                {t('controls.sortLabel')}
               </label>
               <select
                 id="materials-sort-select"
@@ -59,9 +62,9 @@ const MaterialsControls = memo(
                 onChange={onSortChange}
                 className={s.materialsControls__sortSelect}
               >
-                <option value="newest">Najnowsze</option>
-                <option value="popular">Najpopularniejsze</option>
-                <option value="title">Alfabetycznie</option>
+                <option value="newest">{t('controls.sortOptions.newest')}</option>
+                <option value="popular">{t('controls.sortOptions.popular')}</option>
+                <option value="title">{t('controls.sortOptions.title')}</option>
               </select>
             </div>
           </div>
