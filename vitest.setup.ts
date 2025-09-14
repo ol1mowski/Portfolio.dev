@@ -4,7 +4,7 @@ import { vi } from 'vitest';
 // Mock next-intl
 vi.mock('next-intl', () => ({
   useTranslations: (namespace: string) => (key: string) => {
-    const translations: Record<string, Record<string, string>> = {
+    const translations: Record<string, Record<string, any>> = {
       blog: {
         latestArticles: 'Najnowsze artykuły',
         discoverTrends: 'Odkryj trendy',

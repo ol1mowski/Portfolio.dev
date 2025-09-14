@@ -90,7 +90,13 @@
       }
     },
     {
-      "files": ["**/*.setup.js", "**/*.setup.ts", "jest.setup.js", "vitest.setup.ts"],
+      "files": [
+        "**/*.setup.js",
+        "**/*.setup.ts",
+        "jest.setup.js",
+        "vitest.setup.ts",
+        "jest.setup.env.js"
+      ],
       "globals": {
         "jest": "readonly",
         "vi": "readonly",
