@@ -14,7 +14,7 @@ const getUnsubscribeLink = (email: string) => {
   const secret = process.env.UNSUBSCRIBE_SECRET || 'default-secret-key';
   const token = createHash('sha256').update(`${email}${secret}`).digest('hex').substring(0, 16);
 
-  return `${baseUrl}/unsubscribe?token=${token}`;
+  return `${baseUrl}/pl/unsubscribe?token=${token}`;
 };
 
 export const sendThankYouEmail = async (client: EmailClientData): Promise<boolean> => {

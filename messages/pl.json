@@ -801,5 +801,46 @@
         }
       }
     }
+  },
+  "unsubscribe": {
+    "howToUnsubscribe": {
+      "title": "Jak zrezygnować?",
+      "items": {
+        "link": "Kliknij link \"Wypisz się\" w ostatnim otrzymanym mailu",
+        "reply": "Lub odpowiedz na dowolny mail z prośbą o rezygnację",
+        "contact": "Lub skontaktuj się z nami bezpośrednio"
+      }
+    },
+    "whatHappensAfter": {
+      "title": "Co się stanie po rezygnacji?",
+      "items": {
+        "deleteEmail": "Twój adres email zostanie usunięty z naszej bazy danych",
+        "stopMessages": "Przestaniesz otrzymywać nasze wiadomości",
+        "stopNotifications": "Nie będziesz już otrzymywać powiadomień o nowych materiałach",
+        "rejoin": "Możesz w każdej chwili ponownie dołączyć do bazy danych"
+      }
+    },
+    "titles": {
+      "main": "Rezygnacja z bazy danych",
+      "withToken": "Potwierdź rezygnację z otrzymywania wiadomości",
+      "withoutToken": "Aby zrezygnować z otrzymywania wiadomości, użyj linku z ostatniego maila lub skontaktuj się z nami."
+    },
+    "buttons": {
+      "submit": "Zrezygnuj z bazy danych",
+      "loading": "Przetwarzanie..."
+    },
+    "labels": {
+      "token": "Token bezpieczeństwa:"
+    },
+    "placeholders": {
+      "token": "Token z linku"
+    },
+    "policy": {
+      "checkbox": "Akceptuję",
+      "privacyPolicy": "politykę prywatności",
+      "and": "i",
+      "cookies": "cookies",
+      "error": "Musisz zaakceptować politykę prywatności i cookies"
+    }
   }
 }

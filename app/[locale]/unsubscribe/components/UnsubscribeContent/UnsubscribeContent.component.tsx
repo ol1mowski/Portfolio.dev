@@ -2,13 +2,14 @@
 
 import s from '../../page.module.scss';
 import { useUnsubscribe } from '../../hooks/useUnsubscribe.hook';
-import { UNSUBSCRIBE_CONSTANTS } from '../../constants/unsubscribe.constants';
+import { useTranslations } from 'next-intl';
 import UnsubscribeHeader from '../UnsubscribeHeader/UnsubscribeHeader.component';
 import UnsubscribeForm from '../UnsubscribeForm/UnsubscribeForm.component';
 import UnsubscribeMessage from '../UnsubscribeMessage/UnsubscribeMessage.component';
 import UnsubscribeInfo from '../UnsubscribeInfo/UnsubscribeInfo.component';
 
 export default function UnsubscribeContent() {
+  const t = useTranslations('unsubscribe');
   const { token, isLoading, message, isSuccess, isValidToken, setToken, handleSubmit } =
     useUnsubscribe();
 
@@ -16,13 +17,14 @@ export default function UnsubscribeContent() {
     return (
       <main className={s.container}>
         <div className={s.content}>
-          <UnsubscribeHeader
-            title={UNSUBSCRIBE_CONSTANTS.TITLES.main}
-            subtitle={UNSUBSCRIBE_CONSTANTS.TITLES.withoutToken}
-          />
+          <UnsubscribeHeader title={t('titles.main')} subtitle={t('titles.withoutToken')} />
           <UnsubscribeInfo
-            title={UNSUBSCRIBE_CONSTANTS.HOW_TO_UNSUBSCRIBE.title}
-            items={UNSUBSCRIBE_CONSTANTS.HOW_TO_UNSUBSCRIBE.items}
+            title={t('howToUnsubscribe.title')}
+            items={[
+              t('howToUnsubscribe.items.link'),
+              t('howToUnsubscribe.items.reply'),
+              t('howToUnsubscribe.items.contact'),
+            ]}
           />
         </div>
       </main>
@@ -32,10 +34,7 @@ export default function UnsubscribeContent() {
   return (
     <main className={s.container}>
       <div className={s.content}>
-        <UnsubscribeHeader
-          title={UNSUBSCRIBE_CONSTANTS.TITLES.main}
-          subtitle={UNSUBSCRIBE_CONSTANTS.TITLES.withToken}
-        />
+        <UnsubscribeHeader title={t('titles.main')} subtitle={t('titles.withToken')} />
 
         <UnsubscribeForm
           token={token}
@@ -47,8 +46,13 @@ export default function UnsubscribeContent() {
         <UnsubscribeMessage message={message} isSuccess={isSuccess} />
 
         <UnsubscribeInfo
-          title={UNSUBSCRIBE_CONSTANTS.WHAT_HAPPENS_AFTER.title}
-          items={UNSUBSCRIBE_CONSTANTS.WHAT_HAPPENS_AFTER.items}
+          title={t('whatHappensAfter.title')}
+          items={[
+            t('whatHappensAfter.items.deleteEmail'),
+            t('whatHappensAfter.items.stopMessages'),
+            t('whatHappensAfter.items.stopNotifications'),
+            t('whatHappensAfter.items.rejoin'),
+          ]}
         />
       </div>
     </main>

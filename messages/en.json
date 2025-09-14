@@ -802,5 +802,46 @@
         }
       }
     }
+  },
+  "unsubscribe": {
+    "howToUnsubscribe": {
+      "title": "How to unsubscribe?",
+      "items": {
+        "link": "Click the \"Unsubscribe\" link in the last received email",
+        "reply": "Or reply to any email with a request to unsubscribe",
+        "contact": "Or contact us directly"
+      }
+    },
+    "whatHappensAfter": {
+      "title": "What happens after unsubscribing?",
+      "items": {
+        "deleteEmail": "Your email address will be removed from our database",
+        "stopMessages": "You will stop receiving our messages",
+        "stopNotifications": "You will no longer receive notifications about new materials",
+        "rejoin": "You can rejoin the database at any time"
+      }
+    },
+    "titles": {
+      "main": "Database unsubscription",
+      "withToken": "Confirm unsubscription from receiving messages",
+      "withoutToken": "To unsubscribe from receiving messages, use the link from the last email or contact us."
+    },
+    "buttons": {
+      "submit": "Unsubscribe from database",
+      "loading": "Processing..."
+    },
+    "labels": {
+      "token": "Security token:"
+    },
+    "placeholders": {
+      "token": "Token from link"
+    },
+    "policy": {
+      "checkbox": "I accept",
+      "privacyPolicy": "privacy policy",
+      "and": "and",
+      "cookies": "cookies",
+      "error": "You must accept the privacy policy and cookies"
+    }
   }
 }

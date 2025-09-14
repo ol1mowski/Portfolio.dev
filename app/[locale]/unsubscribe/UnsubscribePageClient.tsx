@@ -6,7 +6,7 @@ import Header from '@/components/pages/Header/Header.component';
 import UnsubscribeContent from './components/UnsubscribeContent/UnsubscribeContent.component';
 import LoadingFallback from './components/LoadingFallback/LoadingFallback.component';
 
-export default function UnsubscribePage() {
+export default function UnsubscribePageClient() {
   return (
     <>
       <Header />

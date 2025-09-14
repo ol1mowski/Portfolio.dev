@@ -7,7 +7,7 @@ function FooterPrivacy() {
 
   return (
     <div className={s.links}>
-      <a target="_blank" href={`/${locale}/prywatnosc`} rel="noreferrer">
+      <a target="_blank" href={`/${locale}/prywatnosc`} rel="noopener noreferrer">
         <span className={s.links__span}>{t('privacy')}</span>
       </a>
     </div>

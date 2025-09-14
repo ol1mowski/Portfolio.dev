@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import s from '../../page.module.scss';
+import { useTranslations } from 'next-intl';
 
 interface UnsubscribeFormProps {
   token: string;
@@ -16,11 +17,12 @@ export default function UnsubscribeForm({
   onSubmit,
   isLoading,
 }: UnsubscribeFormProps) {
+  const t = useTranslations('unsubscribe');
   return (
     <form onSubmit={onSubmit} className={s.form}>
       <div className={s.formGroup}>
         <label htmlFor="token" className={s.label}>
-          Token bezpieczeństwa:
+          {t('labels.token')}
         </label>
         <input
           type="text"
@@ -28,7 +30,7 @@ export default function UnsubscribeForm({
           value={token}
           onChange={e => onTokenChange(e.target.value)}
           className={s.input}
-          placeholder="Token z linku"
+          placeholder={t('placeholders.token')}
           required
           disabled={isLoading}
         />
@@ -39,7 +41,7 @@ export default function UnsubscribeForm({
         className={`${s.button} ${isLoading ? s.loading : ''}`}
         disabled={isLoading || !token.trim()}
       >
-        {isLoading ? 'Przetwarzanie...' : 'Zrezygnuj z bazy danych'}
+        {isLoading ? t('buttons.loading') : t('buttons.submit')}
       </button>
     </form>
   );

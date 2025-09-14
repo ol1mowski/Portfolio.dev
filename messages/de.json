@@ -806,5 +806,46 @@
         }
       }
     }
+  },
+  "unsubscribe": {
+    "howToUnsubscribe": {
+      "title": "Wie kann man sich abmelden?",
+      "items": {
+        "link": "Klicken Sie auf den \"Abmelden\"-Link in der letzten erhaltenen E-Mail",
+        "reply": "Oder antworten Sie auf eine beliebige E-Mail mit der Bitte um Abmeldung",
+        "contact": "Oder kontaktieren Sie uns direkt"
+      }
+    },
+    "whatHappensAfter": {
+      "title": "Was passiert nach der Abmeldung?",
+      "items": {
+        "deleteEmail": "Ihre E-Mail-Adresse wird aus unserer Datenbank entfernt",
+        "stopMessages": "Sie erhalten keine Nachrichten mehr von uns",
+        "stopNotifications": "Sie erhalten keine Benachrichtigungen über neue Materialien mehr",
+        "rejoin": "Sie können jederzeit wieder der Datenbank beitreten"
+      }
+    },
+    "titles": {
+      "main": "Datenbank-Abmeldung",
+      "withToken": "Bestätigen Sie die Abmeldung vom Empfang von Nachrichten",
+      "withoutToken": "Um sich vom Empfang von Nachrichten abzumelden, verwenden Sie den Link aus der letzten E-Mail oder kontaktieren Sie uns."
+    },
+    "buttons": {
+      "submit": "Von Datenbank abmelden",
+      "loading": "Verarbeitung..."
+    },
+    "labels": {
+      "token": "Sicherheitstoken:"
+    },
+    "placeholders": {
+      "token": "Token vom Link"
+    },
+    "policy": {
+      "checkbox": "Ich akzeptiere",
+      "privacyPolicy": "Datenschutzrichtlinie",
+      "and": "und",
+      "cookies": "Cookies",
+      "error": "Sie müssen die Datenschutzrichtlinie und Cookies akzeptieren"
+    }
   }
 }
