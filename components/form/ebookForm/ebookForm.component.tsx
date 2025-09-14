@@ -7,6 +7,7 @@ import { CheckboxField } from '../checkboxField/checkboxField.component';
 import { useFormValidation } from '@/hooks/form/useFormValidation.hook';
 import s from './ebookForm.module.scss';
 import { ErrorMessage } from '@/components/UI/shared';
+import { useLocale } from 'next-intl';
 
 interface EbookFormProps {
   action: (formData: FormData) => Promise<{ success: boolean } | void>;
@@ -14,6 +15,7 @@ interface EbookFormProps {
 }
 
 export const EbookForm: FC<EbookFormProps> = ({ action, redirectPath = '/materialy' }) => {
+  const locale = useLocale();
   const { formState, formRefs, handleSubmit } = useFormValidation({
     action,
     redirectPath,
@@ -42,7 +44,7 @@ export const EbookForm: FC<EbookFormProps> = ({ action, redirectPath = '/materia
       />
 
       <CheckboxField name="privacy" innerRef={formRefs.privacy} error={errors.privacy}>
-        *Akceptuję <a href="/prywatnosc">Politykę Prywatności i pliki cookies</a>
+        *Akceptuję <a href={`/${locale}/prywatnosc`}>Politykę Prywatności i pliki cookies</a>
       </CheckboxField>
 
       <Button value={isPending ? 'Wysyłanie...' : 'Odbieram Bezpłatnie'} type="small" />

@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import s from './EmailGateForm.component.module.scss';
 import { ErrorMessage } from '@/components/UI/shared';
 import { saveClientData } from '@/actions/client.actions';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 interface EmailGateFormProps {
   onEmailSubmit: (email: string) => void;
@@ -17,6 +17,7 @@ export const EmailGateForm: FC<EmailGateFormProps> = ({ onEmailSubmit }) => {
   const [success, setSuccess] = useState<string | null>(null);
 
   const t = useTranslations('materials.emailGate');
+  const locale = useLocale();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -117,7 +118,7 @@ export const EmailGateForm: FC<EmailGateFormProps> = ({ onEmailSubmit }) => {
             <span className={s.checkboxText}>
               {t('policy.checkboxText')}{' '}
               <a
-                href="/prywatnosc"
+                href={`/${locale}/prywatnosc`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={s.policyLink}
@@ -126,7 +127,7 @@ export const EmailGateForm: FC<EmailGateFormProps> = ({ onEmailSubmit }) => {
               </a>{' '}
               {t('policy.and')}{' '}
               <a
-                href="/prywatnosc"
+                href={`/${locale}/prywatnosc`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={s.policyLink}

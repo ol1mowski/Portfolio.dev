@@ -659,5 +659,148 @@
       },
       "currency": "PLN"
     }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "sections": {
+      "generalInfo": {
+        "title": "1. General Information",
+        "content": {
+          "serviceInfo": "This policy applies to the Website operating at the URL: oliwiermarkiewicz.pl",
+          "operator": "The service operator and Personal Data Administrator is: Oliwier Markiewicz",
+          "contactEmail": "Contact email address of the operator: oliwier.markiewicz.dev@gmail.com",
+          "dataController": "The Operator is the Administrator of your personal data in relation to data provided voluntarily in the Service.",
+          "dataPurposes": "The Service uses personal data for the following purposes:",
+          "purposes": {
+            "newsletter": "Conducting newsletters",
+            "forum": "Conducting internet forums",
+            "presentation": "Presentation of offers or information"
+          },
+          "dataCollection": "The Service performs functions of obtaining information about users and their behavior in the following way:",
+          "collectionMethod": "Through voluntarily entered data in forms, which are entered into the Operator's systems."
+        }
+      },
+      "dataProtection": {
+        "title": "2. Selected data protection methods used by the Operator",
+        "content": {
+          "ssl": "Login and personal data entry locations are protected in the transmission layer (SSL certificate). This means that personal data and login data entered on the site are encrypted in the user's computer and can only be read on the target server.",
+          "backups": "To protect data, the Operator regularly performs security backups.",
+          "updates": "An important element of data protection is the regular updating of all software used by the Operator to process personal data, which in particular means regular updates of programming components."
+        }
+      },
+      "hosting": {
+        "title": "3. Hosting",
+        "content": {
+          "hostingProvider": "The Service is hosted (technically maintained) on the operator's servers: Vercel",
+          "logs": "The hosting company maintains server-level logs to ensure technical reliability. The following may be recorded:",
+          "logTypes": {
+            "url": "resources identified by URL (addresses of requested resources - pages, files)",
+            "time": "request arrival time",
+            "responseTime": "response sending time",
+            "clientName": "client station name - identification performed by HTTP protocol",
+            "errors": "information about errors that occurred during HTTP transaction execution",
+            "referer": "URL address of the page previously visited by the user (referer link) - in case the transition to the Service occurred through a link",
+            "browser": "information about the user's browser",
+            "ip": "information about IP address",
+            "diagnostics": "diagnostic information related to the process of self-ordering services through page recorders",
+            "email": "information related to handling electronic mail directed to the Operator and sent by the Operator"
+          }
+        }
+      },
+      "rights": {
+        "title": "4. Your rights and additional information about data usage",
+        "content": {
+          "dataRecipients": "In some situations, the Administrator has the right to transfer your personal data to other recipients, if it is necessary to perform the contract concluded with you or to fulfill the obligations incumbent on the Administrator. This applies to such groups of recipients:",
+          "recipients": {
+            "authorized": "persons authorized by us, employees and associates who must have access to personal data to perform their duties",
+            "hosting": "hosting company",
+            "mailing": "mailing companies",
+            "sms": "SMS messaging companies",
+            "marketing": "companies with which the Administrator cooperates in the field of own marketing",
+            "couriers": "couriers",
+            "insurers": "insurers",
+            "legal": "law firms and debt collectors",
+            "banks": "banks",
+            "payments": "payment operators",
+            "authorities": "public authorities"
+          },
+          "retention": "Your personal data processed by the Administrator is not processed longer than necessary to perform activities related to them specified in separate regulations (e.g., on accounting). Regarding marketing data, data will not be processed longer than 3 years.",
+          "userRights": "You have the right to request from the Administrator:",
+          "rights": {
+            "access": "access to personal data concerning you",
+            "rectification": "their rectification",
+            "erasure": "deletion",
+            "restriction": "processing restriction",
+            "portability": "and data portability"
+          },
+          "objection": "You have the right to object to processing specified in point 3.2 regarding personal data processing for the purpose of performing legally justified interests pursued by the Administrator, including profiling, whereby the right to object cannot be exercised in case of existence of important legally justified grounds for processing, overriding your interests, rights and freedoms, in particular establishing, pursuing or defending claims.",
+          "complaint": "A complaint to the President of the Personal Data Protection Office, ul. Stawki 2, 00-193 Warsaw, is available for the Administrator's actions.",
+          "voluntary": "Providing personal data is voluntary, but necessary for the Service operation.",
+          "automation": "Actions consisting of automated decision-making, including profiling for the purpose of providing services under the concluded contract and for the purpose of conducting direct marketing by the Administrator, may be taken against you.",
+          "thirdCountries": "Personal data is not transferred from third countries within the meaning of personal data protection regulations. This means that we do not transfer them outside the European Union."
+        }
+      },
+      "forms": {
+        "title": "5. Information in forms",
+        "content": {
+          "voluntaryData": "The Service collects information provided voluntarily by the user, including personal data, if provided.",
+          "connectionParams": "The Service may save information about connection parameters (time designation, IP address).",
+          "emailLinking": "The Service, in some cases, may save information facilitating linking data in the form with the email address of the user filling out the form. In such a case, the user's email address appears inside the URL address of the page containing the form.",
+          "processing": "Data provided in the form is processed for the purpose resulting from the function of the specific form, e.g., to perform the service request handling process or commercial contact, service registration, etc. Each time the context and description of the form clearly informs what it is used for."
+        }
+      },
+      "adminLogs": {
+        "title": "6. Administrator logs",
+        "content": {
+          "behaviorLogging": "Information about user behavior in the service may be subject to logging. This data is used for service administration purposes."
+        }
+      },
+      "marketing": {
+        "title": "7. Important marketing techniques",
+        "content": {
+          "analytics": "The Operator uses statistical analysis of website traffic through Google Analytics (Google Inc. based in the USA). The Operator does not transfer personal data to this service operator, only anonymized information. The service is based on the use of cookies on the user's end device. Regarding information about user preferences collected by Google's advertising network, the user can view and edit information resulting from cookies using the tool: https://www.google.com/ads/preferences/",
+          "remarketing": "The Operator uses remarketing techniques, allowing for matching advertising messages to user behavior on the site, which may give the impression that the user's personal data is used to track them, but in practice no personal data is transferred from the Operator to advertising operators. The technological condition for such actions is enabled cookie support.",
+          "facebookPixel": "The Operator uses Facebook pixel. This technology causes the Facebook service (Facebook Inc. based in the USA) to know that a person registered in it uses the Service. It is based in this case on data for which it is itself the administrator, the Operator does not transfer any additional personal data to the Facebook service. The service is based on the use of cookies on the user's end device.",
+          "heatmaps": "The Operator uses a solution examining user behavior through creating heat maps and recording behavior on the site. This information is anonymized before being sent to the service operator so that they do not know which natural person it concerns. In particular, entered passwords and other personal data are not subject to recording.",
+          "automation": "The Operator uses a solution automating the Service's operation in relation to users, e.g., able to send an email to the user after visiting a specific subpage, provided they have consented to receiving commercial correspondence from the Operator.",
+          "profiling": "The Operator may use profiling within the meaning of personal data protection regulations"
+        }
+      },
+      "cookies": {
+        "title": "8. Information about cookies",
+        "content": {
+          "usage": "The Service uses cookies.",
+          "definition": "Cookies (so-called \"cookies\") are IT data, in particular text files, which are stored on the Service User's end device and are intended for using the Service's websites. Cookies usually contain the name of the website they come from, the time they are stored on the end device and a unique number.",
+          "controller": "The entity placing cookies on the Service User's end device and gaining access to them is the Service operator.",
+          "purposes": "Cookies are used for the following purposes:",
+          "sessionMaintenance": "maintaining the Service User's session (after logging in), thanks to which the user does not have to re-enter login and password on each Service subpage",
+          "types": "Within the Service, two basic types of cookies are used: \"session\" (session cookies) and \"persistent\" (persistent cookies). \"Session\" cookies are temporary files that are stored on the User's end device until logging out, leaving the website or turning off the software (web browser). \"Persistent\" cookies are stored on the User's end device for the time specified in the cookie parameters or until they are deleted by the User.",
+          "browserSettings": "Software for browsing websites (web browser) usually allows storing cookies on the User's end device by default. Service Users can change settings in this regard. The web browser allows deleting cookies. It is also possible to automatically block cookies. Detailed information on this subject is contained in the help or documentation of the web browser.",
+          "limitations": "Restrictions on the use of cookies may affect some functionalities available on the Service's websites.",
+          "thirdParty": "Cookies placed on the Service User's end device may also be used by entities cooperating with the Service operator, in particular this applies to companies: Google (Google Inc. based in the USA), Facebook (Facebook Inc. based in the USA), Twitter (Twitter Inc. based in the USA)."
+        }
+      },
+      "cookieManagement": {
+        "title": "9. Cookie management - how to express and withdraw consent in practice?",
+        "content": {
+          "disableCookies": "If the user does not want to receive cookies, they can change browser settings. We reserve that disabling cookies necessary for authentication processes, security, maintaining user preferences may make it difficult, and in extreme cases may prevent the use of websites",
+          "browserInstructions": "To manage cookie settings, select the web browser you use from the list below and follow the instructions:",
+          "browsers": {
+            "edge": "Edge",
+            "ie": "Internet Explorer",
+            "chrome": "Chrome",
+            "safari": "Safari",
+            "firefox": "Firefox",
+            "opera": "Opera"
+          },
+          "mobileDevices": "Mobile devices:",
+          "mobileBrowsers": {
+            "android": "Android",
+            "ios": "Safari (iOS)",
+            "windowsPhone": "Windows Phone"
+          }
+        }
+      }
+    }
   }
 }
