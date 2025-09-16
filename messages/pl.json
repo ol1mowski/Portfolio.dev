@@ -41,12 +41,12 @@
     "title": "Usługi",
     "subtitle": "Co mogę dla Ciebie zrobić?",
     "website": {
-      "title": "Strony Internetowe",
-      "description": "Tworzę nowoczesne, responsywne strony internetowe",
+      "title": "Strony i Aplikacje Internetowe",
+      "description": "Tworzę nowoczesne, responsywne strony i aplikacje internetowe",
       "features": {
         "feature1": "Strony wizytówkowe firm",
         "feature2": "Landing page'y sprzedażowe",
-        "feature3": "Portale internetowe"
+        "feature3": "Aplikacje internetowe"
       },
       "highlight": "100% responsywne"
     },
@@ -81,11 +81,11 @@
   },
   "about": {
     "title": "O mnie",
-    "description": "Web Developer z pasją do tworzenia rozwiązań, które rzeczywiście pomagają biznesom rosnąć. Pomagam przedsiębiorcom zamieniać pomysły w zyskowne strony oraz aplikacje internetowe.",
+    "description": "Fullstack Developer z pasją do tworzenia rozwiązań, które rzeczywiście pomagają biznesom rosnąć. Pomagam przedsiębiorcom zamieniać pomysły w zyskowne strony oraz aplikacje internetowe.",
     "detailedDescription": "Prowadzę kanał YouTube Oliwier Markiewicz gdzie dzielę się wiedzą o programowaniu i biznesie online. Regularnie publikuję też artykuły na moim blogu o najnowszych trendach w web developmencie.",
     "philosophy": "Wierzę, że dobra aplikacja to nie tylko kod - to strategia biznesowa, psychologia użytkownika i perfekcyjne wykonanie w jednym. Dlatego moi klienci nie tylko dostają piękne strony, ale przede wszystkim narzędzia do zarabiania pieniędzy.",
     "highlightedDescription": {
-      "part1": "Web Developer",
+      "part1": "Fullstack Developer",
       "part2": "Oliwier Markiewicz",
       "part3": "dobra aplikacja to nie tylko kod"
     },
@@ -119,7 +119,7 @@
   },
   "projects": {
     "title": "Moje Projekty",
-    "subtitle": "Zobacz co już stworzyłem",
+    "subtitle": "Zobacz co ostatnio stworzyłem",
     "viewProject": "Zobacz projekt",
     "viewCode": "Zobacz kod",
     "sourceCode": "Kod źródłowy",
@@ -196,7 +196,7 @@
     "mainOffer": {
       "badge": "+40% ROI",
       "title": "Zwiększam Twoje zyski o 40%",
-      "description": "Nie robię \"ładnych stron\". Tworzę maszynę do zarabiania pieniędzy. Moi klienci w ciągu pierwszych 3 miesięcy odnotowują średnio 40% wzrost sprzedaży.",
+      "description": "Nie robię \"Ładnych stron\". Tworzę maszynę do zarabiania pieniędzy. Moi klienci w ciągu pierwszych 3 miesięcy odnotowują średnio 40% wzrost sprzedaży.",
       "features": {
         "feature1": "Optymalizacja konwersji oparta na danych",
         "feature2": "A/B testing każdego elementu",
@@ -598,10 +598,8 @@
         "title": "Jakie funkcjonalności Cię interesują?",
         "subtitle": "Wybierz wszystkie, które mogą być przydatne (opcjonalne)",
         "options": [
-          "Responsywny design",
           "Optymalizacja SEO",
           "Integracja płatności",
-          "Panel administratora",
           "Blog/Aktualności",
           "Formularz kontaktowy",
           "Galeria zdjęć",

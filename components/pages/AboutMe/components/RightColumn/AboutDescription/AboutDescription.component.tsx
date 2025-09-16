@@ -15,8 +15,8 @@ export const AboutDescription: FC = () => {
       transition={{ duration: 0.6, delay: 0.4 }}
     >
       <p>
-        <span className={styles.highlight}>Web Developer</span>{' '}
-        {t('description').replace('Web Developer', '').trim()}
+        <span className={styles.highlight}>Fullstack Developer</span>{' '}
+        {t('description').replace('Fullstack Developer', '').trim()}
       </p>
       <p>
         {t('detailedDescription')

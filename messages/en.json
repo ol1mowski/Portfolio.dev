@@ -41,12 +41,12 @@
     "title": "Services",
     "subtitle": "What can I do for you?",
     "website": {
-      "title": "Websites",
+      "title": "Websites and Web Applications",
       "description": "I create modern, responsive websites",
       "features": {
         "feature1": "Business websites",
         "feature2": "Sales landing pages",
-        "feature3": "Web portals"
+        "feature3": "Web applications"
       },
       "highlight": "100% responsive"
     },
@@ -81,11 +81,11 @@
   },
   "about": {
     "title": "About Me",
-    "description": "Web Developer with a passion for creating solutions that truly help businesses grow. I help entrepreneurs turn ideas into profitable websites and web applications.",
+    "description": "Fullstack Developer with a passion for creating solutions that truly help businesses grow. I help entrepreneurs turn ideas into profitable websites and web applications.",
     "detailedDescription": "I run the YouTube channel Oliwier Markiewicz where I share knowledge about programming and online business. I also regularly publish articles on my blog about the latest trends in web development.",
     "philosophy": "I believe that a good application is not just code - it's business strategy, user psychology and perfect execution in one. That's why my clients don't just get beautiful websites, but above all tools for making money.",
     "highlightedDescription": {
-      "part1": "Web Developer",
+      "part1": "Fullstack Developer",
       "part2": "Oliwier Markiewicz",
       "part3": "a good application is not just code"
     },
@@ -119,7 +119,7 @@
   },
   "projects": {
     "title": "My Projects",
-    "subtitle": "See what I've created",
+    "subtitle": "See what I've created recently",
     "viewProject": "View project",
     "viewCode": "View code",
     "sourceCode": "Source Code",

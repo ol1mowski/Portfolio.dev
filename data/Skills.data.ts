@@ -41,21 +41,15 @@ export const KEY_TECHNOLOGIES: Skill[] = [
 
 export const SKILLS: Skill[] = [
   {
-    id: 'java',
-    alt: 'java icon',
-    src: 'https://res.cloudinary.com/dbbuav0rj/image/upload/v1748532770/Portfolio/Icons/java-svgrepo-com_jlal6l.svg',
-    href: '#',
-  },
-  {
     id: 'react',
     alt: 'react icon',
     src: 'https://res.cloudinary.com/dbbuav0rj/image/upload/v1729949256/Portfolio/Icons/react_kedjpd.svg',
     href: '#',
   },
   {
-    id: 'nodejs',
-    alt: 'nodejs icon',
-    src: 'https://res.cloudinary.com/dbbuav0rj/image/upload/v1745385997/Portfolio/Icons/nodejs-logo-svgrepo-com_m32nvw.svg',
+    id: 'java',
+    alt: 'java icon',
+    src: 'https://res.cloudinary.com/dbbuav0rj/image/upload/v1748532770/Portfolio/Icons/java-svgrepo-com_jlal6l.svg',
     href: '#',
   },
   {
@@ -89,12 +83,6 @@ export const SKILLS: Skill[] = [
     id: 'figma',
     alt: 'figma icon',
     src: 'https://res.cloudinary.com/dbbuav0rj/image/upload/v1729949658/Portfolio/Icons/figma_tn9mnb.svg',
-    href: '#',
-  },
-  {
-    id: 'python',
-    alt: 'python icon',
-    src: 'https://res.cloudinary.com/dbbuav0rj/image/upload/v1729949256/Portfolio/Icons/python_tzphxz.svg',
     href: '#',
   },
   {

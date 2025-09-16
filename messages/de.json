@@ -41,12 +41,12 @@
     "title": "Dienstleistungen",
     "subtitle": "Was kann ich für Sie tun?",
     "website": {
-      "title": "Webseiten",
+      "title": "Webseiten und Webanwendungen",
       "description": "Ich erstelle moderne, responsive Websites",
       "features": {
         "feature1": "Firmen-Visitenkarten-Websites",
         "feature2": "Verkaufs-Landing-Pages",
-        "feature3": "Webportale"
+        "feature3": "Webanwendungen"
       },
       "highlight": "100% responsiv"
     },
@@ -81,11 +81,11 @@
   },
   "about": {
     "title": "Über mich",
-    "description": "Web Developer mit einer Leidenschaft für die Entwicklung von Lösungen, die Unternehmen wirklich beim Wachstum helfen. Ich helfe Unternehmern dabei, Ideen in profitable Websites und Webanwendungen umzuwandeln.",
+    "description": "Fullstack Developer mit einer Leidenschaft für die Entwicklung von Lösungen, die Unternehmen wirklich beim Wachstum helfen. Ich helfe Unternehmern dabei, Ideen in profitable Websites und Webanwendungen umzuwandeln.",
     "detailedDescription": "Ich betreibe den YouTube-Kanal Oliwier Markiewicz, wo ich Wissen über Programmierung und Online-Business teile. Regelmäßig veröffentliche ich auch Artikel in meinem Blog über die neuesten Trends in der Webentwicklung.",
     "philosophy": "Ich glaube, dass eine gute Anwendung nicht nur Code ist - es ist Geschäftsstrategie, Benutzerpsychologie und perfekte Ausführung in einem. Deshalb erhalten meine Kunden nicht nur schöne Websites, sondern vor allem Werkzeuge zum Geldverdienen.",
     "highlightedDescription": {
-      "part1": "Web Developer",
+      "part1": "Fullstack Developer",
       "part2": "Oliwier Markiewicz",
       "part3": "eine gute Anwendung ist nicht nur Code"
     },
@@ -119,7 +119,7 @@
   },
   "projects": {
     "title": "Meine Projekte",
-    "subtitle": "Sehen Sie, was ich erstellt habe",
+    "subtitle": "Sehen Sie, was ich ostatlich erstellt habe",
     "viewProject": "Projekt ansehen",
     "viewCode": "Code ansehen",
     "sourceCode": "Quellcode",
@@ -307,10 +307,6 @@
     "youtubeSubscribers": "YouTube-Abonnenten",
     "experienceYears": "Jahre Erfahrung",
     "completedProjects": "Abgeschlossene Projekte"
-  },
-  "footer": {
-    "copyright": "Alle Rechte vorbehalten",
-    "privacy": "Datenschutzrichtlinie"
   },
   "blog": {
     "loadingError": "Fehler beim Laden des Blogs",

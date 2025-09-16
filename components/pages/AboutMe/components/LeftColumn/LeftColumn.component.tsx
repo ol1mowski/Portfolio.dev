@@ -21,7 +21,7 @@ export const LeftColumn: FC<LeftColumnProps> = ({ stats }) => {
         <div className={styles.photoContainer}>
           <Image
             src="https://res.cloudinary.com/dbbuav0rj/image/upload/v1731069658/Portfolio/images/me_gmqeii.webp"
-            alt="Oliwier Markiewicz - Web Developer"
+            alt="Oliwier Markiewicz - Fullstack Developer"
             width={300}
             height={300}
             className={styles.photo}
