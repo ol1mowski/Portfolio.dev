@@ -3,7 +3,6 @@ export interface FormData {
   solutionType: string;
   features: string[];
   timeline: string;
-  budget: string;
 }
 
 export interface ServiceRecommendation {

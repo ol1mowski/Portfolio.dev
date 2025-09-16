@@ -1,6 +1,6 @@
 import { ProjectType, SolutionType, Timeline, Budget } from '../types/ServiceConfigurator.types';
 
-export const TOTAL_STEPS = 5;
+export const TOTAL_STEPS = 3;
 
 export const projectTypes: ProjectType[] = [
   { id: 'website', title: 'Strona internetowa', desc: 'Wizytówka, portfolio, landing page' },

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import s from './ServiceConfigurator.page.module.scss';
-import { useTranslations } from 'next-intl';
 
 import { useServiceConfigurator } from './hooks/useServiceConfigurator';
 
@@ -13,8 +12,6 @@ import ResultCard from './components/ResultCard/ResultCard.component';
 import ProjectTypeStep from './components/Steps/ProjectTypeStep.component';
 import SolutionTypeStep from './components/Steps/SolutionTypeStep.component';
 import FeaturesStep from './components/Steps/FeaturesStep.component';
-import TimelineStep from './components/Steps/TimelineStep.component';
-import BudgetStep from './components/Steps/BudgetStep.component';
 
 const ServiceConfigurator: React.FC = () => {
   const {
@@ -27,8 +24,6 @@ const ServiceConfigurator: React.FC = () => {
     handleProjectTypeSelect,
     handleSolutionTypeSelect,
     handleFeatureToggle,
-    handleTimelineSelect,
-    handleBudgetSelect,
     isStepValid,
   } = useServiceConfigurator();
 
@@ -51,12 +46,6 @@ const ServiceConfigurator: React.FC = () => {
         );
       case 3:
         return <FeaturesStep selectedFeatures={formData.features} onToggle={handleFeatureToggle} />;
-      case 4:
-        return (
-          <TimelineStep selectedTimeline={formData.timeline} onSelect={handleTimelineSelect} />
-        );
-      case 5:
-        return <BudgetStep selectedBudget={formData.budget} onSelect={handleBudgetSelect} />;
       default:
         return null;
     }

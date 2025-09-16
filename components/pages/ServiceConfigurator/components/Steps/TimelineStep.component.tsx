@@ -13,7 +13,6 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ selectedTimeline, onSelect 
   const timelines = [
     { id: 'urgent', title: t('options.urgent'), multiplier: 1.5 },
     { id: 'standard', title: t('options.standard'), multiplier: 1 },
-    { id: 'flexible', title: t('options.flexible'), multiplier: 0.9 },
   ];
 
   return (
