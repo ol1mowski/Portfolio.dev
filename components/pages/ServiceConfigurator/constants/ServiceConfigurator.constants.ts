@@ -6,7 +6,7 @@ export const projectTypes: ProjectType[] = [
   { id: 'website', title: 'Strona internetowa', desc: 'Wizytówka, portfolio, landing page' },
   { id: 'ecommerce', title: 'Sklep internetowy', desc: 'Sprzedaż online, e-commerce' },
   { id: 'webapp', title: 'Aplikacja webowa', desc: 'System, panel, platforma' },
-  { id: 'blog', title: 'Blog/CMS', desc: 'Blog, portal, system treści' },
+  { id: 'uiux', title: 'Projekt UI/UX', desc: 'Makiety, prototypy, design system' },
 ];
 
 export const solutionTypes: SolutionType[] = [

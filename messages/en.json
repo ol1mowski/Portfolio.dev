@@ -570,9 +570,9 @@
             "title": "Web Application",
             "desc": "System, panel, platform"
           },
-          "blog": {
-            "title": "Blog/CMS",
-            "desc": "Blog, portal, content system"
+          "uiux": {
+            "title": "UI/UX Project",
+            "desc": "Wireframes, prototypes, design system"
           }
         }
       },

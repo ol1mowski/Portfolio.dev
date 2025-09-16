@@ -570,9 +570,9 @@
             "title": "Aplikacja webowa",
             "desc": "System, panel, platforma"
           },
-          "blog": {
-            "title": "Blog/CMS",
-            "desc": "Blog, portal, system treści"
+          "uiux": {
+            "title": "Projekt UI/UX",
+            "desc": "Makiety, prototypy, design system"
           }
         }
       },

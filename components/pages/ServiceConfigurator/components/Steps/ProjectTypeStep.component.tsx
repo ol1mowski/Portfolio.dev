@@ -14,7 +14,7 @@ const ProjectTypeStep: React.FC<ProjectTypeStepProps> = ({ selectedType, onSelec
     { id: 'website', title: t('options.website.title'), desc: t('options.website.desc') },
     { id: 'ecommerce', title: t('options.ecommerce.title'), desc: t('options.ecommerce.desc') },
     { id: 'webapp', title: t('options.webapp.title'), desc: t('options.webapp.desc') },
-    { id: 'blog', title: t('options.blog.title'), desc: t('options.blog.desc') },
+    { id: 'uiux', title: t('options.uiux.title'), desc: t('options.uiux.desc') },
   ];
 
   return (

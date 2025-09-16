@@ -32,11 +32,7 @@ const ResultCard: React.FC<ResultCardProps> = ({ recommendation, onReset }) => {
 
           <div className={s.result__card__pricing}>
             <div className={s.result__card__pricing__price}>
-              <span className={s.result__card__pricing__currency}>{t('currency')}</span>
               <span className={s.result__card__pricing__amount}>{recommendation.price}</span>
-            </div>
-            <div className={s.result__card__pricing__timeline}>
-              {t('timeline')} {recommendation.timeline}
             </div>
           </div>
 

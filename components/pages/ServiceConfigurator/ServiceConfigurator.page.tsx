@@ -38,14 +38,26 @@ const ServiceConfigurator: React.FC = () => {
           <ProjectTypeStep selectedType={formData.projectType} onSelect={handleProjectTypeSelect} />
         );
       case 2:
-        return (
+        return formData.projectType === 'uiux' ? (
+          <FeaturesStep
+            selectedFeatures={formData.features}
+            onToggle={handleFeatureToggle}
+            projectType={formData.projectType}
+          />
+        ) : (
           <SolutionTypeStep
             selectedType={formData.solutionType}
             onSelect={handleSolutionTypeSelect}
           />
         );
       case 3:
-        return <FeaturesStep selectedFeatures={formData.features} onToggle={handleFeatureToggle} />;
+        return (
+          <FeaturesStep
+            selectedFeatures={formData.features}
+            onToggle={handleFeatureToggle}
+            projectType={formData.projectType}
+          />
+        );
       default:
         return null;
     }

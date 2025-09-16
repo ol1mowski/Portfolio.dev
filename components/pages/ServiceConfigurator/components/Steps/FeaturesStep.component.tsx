@@ -5,12 +5,21 @@ import { useTranslations } from 'next-intl';
 interface FeaturesStepProps {
   selectedFeatures: string[];
   onToggle: (feature: string) => void;
+  projectType: string;
 }
 
-const FeaturesStep: React.FC<FeaturesStepProps> = ({ selectedFeatures, onToggle }) => {
+const FeaturesStep: React.FC<FeaturesStepProps> = ({ selectedFeatures, onToggle, projectType }) => {
   const t = useTranslations('configurator.steps.features');
 
-  const availableFeatures = t.raw('options') as string[];
+  const allFeatures = t.raw('options') as string[];
+  const typeToFeatureIndexes: Record<string, number[]> = {
+    website: [0, 1, 5, 6],
+    ecommerce: [0, 1, 2, 3],
+    webapp: [0, 3, 9, 10],
+    blog: [0, 9, 10, 11],
+  };
+  const indexes = typeToFeatureIndexes[projectType] ?? [];
+  const availableFeatures = indexes.map(i => allFeatures[i]).filter(Boolean);
 
   return (
     <div className={s.stepContent}>

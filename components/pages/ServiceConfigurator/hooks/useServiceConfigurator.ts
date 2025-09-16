@@ -18,26 +18,26 @@ export const useServiceConfigurator = () => {
   const tResult = useTranslations('configurator.result');
 
   const calculateRecommendation = (): ServiceRecommendation => {
-    let basePrice = 900;
+    let basePrice = 999;
     let title = t('projectType.options.website.title');
     let features: string[] = [];
 
     switch (formData.projectType) {
       case 'website':
-        basePrice = 900;
+        basePrice = 999;
         title = t('projectType.options.website.title');
         break;
       case 'ecommerce':
-        basePrice = 2500;
+        basePrice = 2499;
         title = t('projectType.options.ecommerce.title');
         break;
       case 'webapp':
-        basePrice = 1500;
+        basePrice = 1499;
         title = t('projectType.options.webapp.title');
         break;
-      case 'blog':
-        basePrice = 900;
-        title = t('projectType.options.blog.title');
+      case 'uiux':
+        basePrice = 990;
+        title = t('projectType.options.uiux.title');
         break;
     }
 
@@ -68,6 +68,11 @@ export const useServiceConfigurator = () => {
   };
 
   const nextStep = () => {
+    if (formData.projectType === 'uiux' && currentStep === 1) {
+      setCurrentStep(3);
+      return;
+    }
+
     if (currentStep < TOTAL_STEPS) {
       setCurrentStep(currentStep + 1);
     } else {
@@ -77,6 +82,10 @@ export const useServiceConfigurator = () => {
   };
 
   const prevStep = () => {
+    if (formData.projectType === 'uiux' && currentStep === 3) {
+      setCurrentStep(1);
+      return;
+    }
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
     }
@@ -112,7 +121,7 @@ export const useServiceConfigurator = () => {
       case 1:
         return formData.projectType !== '';
       case 2:
-        return formData.solutionType !== '';
+        return formData.projectType === 'uiux' ? true : formData.solutionType !== '';
       case 3:
         return true;
       case 4:
