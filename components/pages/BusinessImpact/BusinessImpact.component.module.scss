@@ -81,22 +81,7 @@
   }
 }
 
-.content {
-  display: grid;
-  grid-template-columns: 2.5fr 1fr;
-  gap: 4rem;
-  align-items: start;
-
-  @media screen and (max-width: $big-tablet) {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    align-items: start;
-  }
-
-  @media screen and (max-width: $tablet) {
-    gap: 2rem;
-  }
-}
+// content grid removed to allow full-width mainOffer
 
 .mainOffer {
   background: linear-gradient(135deg, #4285f4 0%, #1e40af 100%);
@@ -206,6 +191,65 @@
 .importantText {
   font-weight: 700;
   color: inherit;
+}
+
+.teaser {
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #4285f4 0%, #1e40af 100%);
+  color: #f8fafc;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+
+  @media screen and (max-width: $tablet) {
+    grid-template-columns: 1fr;
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  &__stat {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  &__number {
+    @include headerFont();
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+  }
+
+  &__label {
+    @include textFont();
+    font-size: 0.9rem;
+    color: #e2e8f0;
+  }
+
+  &__content {
+    @include textFont();
+    color: #f1f5f9;
+  }
+
+  &__title {
+    @include headerFont();
+    color: #e2e8f0;
+    margin: 0 0 0.5rem 0;
+  }
+
+  &__desc {
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+  }
 }
 
 .benefits {

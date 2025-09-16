@@ -21,36 +21,18 @@ export const useBusinessImpactData = (): BusinessImpactData => {
           t('mainOffer.features.feature3'),
         ],
       },
-      benefits: [
-        {
-          id: 'timeline',
-          type: 'stat',
-          icon: 'clock',
-          number: t('benefits.timeline.number'),
-          label: t('benefits.timeline.label'),
-        },
-        {
-          id: 'express',
-          type: 'description',
-          icon: 'clock',
-          title: t('benefits.express.title'),
-          description: t('benefits.express.description'),
-        },
-        {
-          id: 'guarantee',
-          type: 'stat',
-          icon: 'shield',
-          number: t('benefits.guarantee.number'),
-          label: t('benefits.guarantee.label'),
-        },
-        {
-          id: 'zero-risk',
-          type: 'description',
-          icon: 'shield',
-          title: t('benefits.zeroRisk.title'),
-          description: t('benefits.zeroRisk.description'),
-        },
-      ],
+
+      benefits: [],
+      teaser: {
+        timelineNumber: t('benefits.timeline.number'),
+        timelineLabel: t('benefits.timeline.label'),
+        expressTitle: t('benefits.express.title'),
+        expressDescription: t('benefits.express.description'),
+        guaranteeNumber: t('benefits.guarantee.number'),
+        guaranteeLabel: t('benefits.guarantee.label'),
+        zeroRiskTitle: t('benefits.zeroRisk.title'),
+        zeroRiskDescription: t('benefits.zeroRisk.description'),
+      },
     }),
     [t]
   );

@@ -22,6 +22,17 @@ export interface BusinessImpactData {
   };
   mainOffer: MainOfferData;
   benefits: BenefitCardData[];
+  teaser: {
+    timelineNumber: string;
+    timelineLabel: string;
+    expressTitle: string;
+    expressDescription: string;
+    guaranteeNumber: string;
+    guaranteeLabel: string;
+    zeroRiskTitle: string;
+    zeroRiskDescription: string;
+    cta?: string;
+  };
 }
 
 export interface AnimationProps {
