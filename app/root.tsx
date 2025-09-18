@@ -20,6 +20,15 @@ function Root({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPR2VJMXJ3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-TPR2VJMXJ3');
+      </script>
       <body>
         <HamburgerClickContext.Provider
           value={{
