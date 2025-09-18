@@ -3,6 +3,7 @@
 import HamburgerClickContext from '@/store/HamburgerClickContext';
 import PostVisibleContext from '@/store/PostVisible.context';
 import React, { useState } from 'react';
+import Script from 'next/script';
 
 function Root({
   children,
@@ -19,16 +20,24 @@ function Root({
     <html lang="pl-PL">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <Script
+              id="ga-loader"
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);} 
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
       </head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPR2VJMXJ3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-TPR2VJMXJ3');
-      </script>
       <body>
         <HamburgerClickContext.Provider
           value={{
