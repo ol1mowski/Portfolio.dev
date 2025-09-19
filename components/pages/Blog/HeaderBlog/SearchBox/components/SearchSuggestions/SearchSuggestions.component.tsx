@@ -70,11 +70,7 @@ export const SearchSuggestions: FC<SearchSuggestionsProps> = ({
               <div className={s.noResultsMessage__content__title}>
                 {t('noResults')} &quot;{searchTerm}&quot;
               </div>
-              <div className={s.noResultsMessage__content__subtitle}>{t('searchInDatabase')}</div>
             </div>
-            <button className={s.noResultsMessage__button} onClick={onNoResultsClick}>
-              {t('searchButton')} &quot;{searchTerm}&quot; →
-            </button>
           </div>
         )}
       </div>

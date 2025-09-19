@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { BlogITEMS, ITEMS } from '../StaticData';
 import Item from '../Item/Item.component';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 function HamburgerMenuComponent({
   closeMenuHandler,
@@ -14,10 +14,16 @@ function HamburgerMenuComponent({
   type?: string;
 }) {
   const locale = useLocale();
+  const t = useTranslations('header');
 
   const getUpdatedHref = (href: string) => {
     if (href === '/Blog') return `/${locale}/Blog`;
     return href;
+  };
+
+  const getTranslatedValue = (value: string) => {
+    if (value === 'aboutUs') return t('aboutUs');
+    return value;
   };
   return (
     <menu data-testid="hamburger-menu-component" className={s.hamburgerMenu}>
@@ -35,7 +41,12 @@ function HamburgerMenuComponent({
         <ul className={s.hamburgerMenu__nav__items}>
           {type === 'Blog'
             ? BlogITEMS.map(({ id, value, href }) => (
-                <Item key={id} hamburger value={value} href={getUpdatedHref(href)} />
+                <Item
+                  key={id}
+                  hamburger
+                  value={getTranslatedValue(value)}
+                  href={getUpdatedHref(href)}
+                />
               ))
             : ITEMS.map(({ id, value, href }) => (
                 <Item key={id} hamburger value={value} href={getUpdatedHref(href)} />
@@ -49,7 +60,7 @@ function HamburgerMenuComponent({
               rel="noopener noreferrer"
               className={s.hamburgerMenu__nav__jobsButton__link}
             >
-              Oferty pracy
+              {t('jobOffers')}
             </a>
           </div>
         )}

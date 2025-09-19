@@ -85,27 +85,7 @@
 .noResultsMessage__content__title {
   font-weight: 500;
   color: #1f2937;
-  margin-bottom: 0.25rem;
-}
-
-.noResultsMessage__content__subtitle {
-  font-size: 0.875rem;
-  color: #6b7280;
-}
-
-.noResultsMessage__button {
-  background: #3b82f6;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
   white-space: nowrap;
-
-  &:hover {
-    background: #2563eb;
-  }
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

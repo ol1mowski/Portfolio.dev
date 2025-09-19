@@ -359,7 +359,8 @@
   "header": {
     "jobOffers": "Job Offers",
     "searchPlaceholder": "Search...",
-    "menu": "Menu"
+    "menu": "Menu",
+    "aboutUs": "About Us"
   },
   "footer": {
     "copyright": "All rights reserved",
