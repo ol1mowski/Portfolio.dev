@@ -16,21 +16,18 @@ function NotFound({ link }: { link: string; info?: string }) {
   return (
     <section className={s.container}>
       <div className={s.content}>
-        {/* Animated 404 Number */}
         <div className={`${s.number} ${mounted ? s.animate : ''}`}>
           <span className={s.number__digit}>4</span>
           <span className={s.number__digit}>0</span>
           <span className={s.number__digit}>4</span>
         </div>
 
-        {/* Floating Elements */}
         <div className={s.floatingElements}>
           <div className={s.floatingElements__circle}></div>
           <div className={s.floatingElements__triangle}></div>
           <div className={s.floatingElements__square}></div>
         </div>
 
-        {/* Main Content */}
         <div className={s.mainContent}>
           <h1 className={s.mainContent__title}>Ups! Strona nie została znaleziona</h1>
           <p className={s.mainContent__subtitle}>
@@ -38,7 +35,6 @@ function NotFound({ link }: { link: string; info?: string }) {
             Nie martw się - pomożemy Ci znaleźć to, czego szukasz!
           </p>
 
-          {/* Action Buttons */}
           <div className={s.actions}>
             <Link href={link} className={s.actions__primary}>
               <span className={s.actions__primary__icon}>🏠</span>
@@ -50,7 +46,6 @@ function NotFound({ link }: { link: string; info?: string }) {
             </Link>
           </div>
 
-          {/* Quick Links */}
           <div className={s.quickLinks}>
             <h3 className={s.quickLinks__title}>Może Cię zainteresuje:</h3>
             <div className={s.quickLinks__grid}>
