@@ -3,11 +3,12 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import s from './NotFound.page.module.scss';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 function NotFound({ link }: { link: string; info?: string }) {
   const [mounted, setMounted] = useState(false);
   const locale = useLocale();
+  const t = useTranslations('notFound');
 
   useEffect(() => {
     setMounted(true);
@@ -29,41 +30,38 @@ function NotFound({ link }: { link: string; info?: string }) {
         </div>
 
         <div className={s.mainContent}>
-          <h1 className={s.mainContent__title}>Ups! Strona nie została znaleziona</h1>
-          <p className={s.mainContent__subtitle}>
-            Strona, której szukasz, mogła zostać przeniesiona, usunięta lub po prostu nie istnieje.
-            Nie martw się - pomożemy Ci znaleźć to, czego szukasz!
-          </p>
+          <h1 className={s.mainContent__title}>{t('title')}</h1>
+          <p className={s.mainContent__subtitle}>{t('subtitle')}</p>
 
           <div className={s.actions}>
             <Link href={link} className={s.actions__primary}>
               <span className={s.actions__primary__icon}>🏠</span>
-              Wróć do strony głównej
+              {t('backHome')}
             </Link>
             <Link href={`/${locale}/Blog`} className={s.actions__secondary}>
               <span className={s.actions__secondary__icon}>📝</span>
-              Przejdź do bloga
+              {t('goToBlog')}
             </Link>
           </div>
 
           <div className={s.quickLinks}>
-            <h3 className={s.quickLinks__title}>Może Cię zainteresuje:</h3>
+            <h3 className={s.quickLinks__title}>{t('maybeInteresting')}</h3>
             <div className={s.quickLinks__grid}>
               <Link href={`/${locale}/Blog/kategorie/React`} className={s.quickLinks__item}>
                 <span className={s.quickLinks__item__icon}>⚛️</span>
-                <span className={s.quickLinks__item__text}>Artykuły React</span>
+                <span className={s.quickLinks__item__text}>{t('reactArticles')}</span>
               </Link>
               <Link href={`/${locale}/Blog/kategorie/TypeScript`} className={s.quickLinks__item}>
                 <span className={s.quickLinks__item__icon}>📘</span>
-                <span className={s.quickLinks__item__text}>TypeScript</span>
+                <span className={s.quickLinks__item__text}>{t('typescriptArticles')}</span>
               </Link>
               <Link href={`/${locale}/Blog/kategorie/Next.js`} className={s.quickLinks__item}>
                 <span className={s.quickLinks__item__icon}>▲</span>
-                <span className={s.quickLinks__item__text}>Next.js</span>
+                <span className={s.quickLinks__item__text}>{t('nextjsArticles')}</span>
               </Link>
               <Link href={`/${locale}/Blog/search`} className={s.quickLinks__item}>
                 <span className={s.quickLinks__item__icon}>🔍</span>
-                <span className={s.quickLinks__item__text}>Wyszukaj</span>
+                <span className={s.quickLinks__item__text}>{t('search')}</span>
               </Link>
             </div>
           </div>

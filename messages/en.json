@@ -856,5 +856,16 @@
     "metadata": {
       "caseStudy": "Case Study"
     }
+  },
+  "notFound": {
+    "title": "Oops! Page not found",
+    "subtitle": "The page you are looking for might have been moved, deleted, or simply doesn't exist. Don't worry - we'll help you find what you're looking for!",
+    "backHome": "Back to homepage",
+    "goToBlog": "Go to blog",
+    "maybeInteresting": "You might be interested in:",
+    "reactArticles": "React Articles",
+    "typescriptArticles": "TypeScript",
+    "nextjsArticles": "Next.js",
+    "search": "Search"
   }
 }

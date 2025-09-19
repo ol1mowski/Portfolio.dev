@@ -855,5 +855,16 @@
     "metadata": {
       "caseStudy": "Case Study"
     }
+  },
+  "notFound": {
+    "title": "Ups! Seite nicht gefunden",
+    "subtitle": "Die Seite, die Sie suchen, wurde möglicherweise verschoben, gelöscht oder existiert einfach nicht. Keine Sorge – wir helfen Ihnen, das zu finden, was Sie suchen!",
+    "backHome": "Zur Startseite",
+    "goToBlog": "Zum Blog",
+    "maybeInteresting": "Das könnte Sie interessieren:",
+    "reactArticles": "React-Artikel",
+    "typescriptArticles": "TypeScript",
+    "nextjsArticles": "Next.js",
+    "search": "Suchen"
   }
 }
