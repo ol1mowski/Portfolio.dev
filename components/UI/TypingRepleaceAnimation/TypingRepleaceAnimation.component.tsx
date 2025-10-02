@@ -5,67 +5,84 @@ import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook'
 
 const TypingReplaceAnimation = ({ className }: { className: string }) => {
   const t = useOptimizedTranslations('hero');
-
   const texts = useMemo(
-    () => [t('animatedTexts.websites'), t('animatedTexts.shops'), t('animatedTexts.graphics')],
+    () => [
+      t('animatedTexts.apps'),
+      t('animatedTexts.websites'),
+      t('animatedTexts.shops'),
+      t('animatedTexts.graphics'),
+    ],
     [t]
   );
+
   const [displayText, setDisplayText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
-    let index = 0;
+    const currentText = texts[currentIndex];
 
-    const typeText = () => {
-      const fullText = texts[currentIndex];
+    if (!isDeleting) {
+      if (displayText.length < currentText.length) {
+        const timeout = setTimeout(
+          () => {
+            setDisplayText(currentText.substring(0, displayText.length + 1));
+          },
+          80 + Math.random() * 40
+        );
 
-      if (index <= fullText.length) {
-        setDisplayText(fullText.substring(0, index));
-        index++;
+        return () => clearTimeout(timeout);
       } else {
-        clearInterval(typingInterval);
-        setTimeout(() => setIsDeleting(true), 1000);
+        const timeout = setTimeout(() => {
+          setIsDeleting(true);
+        }, 2000);
+
+        return () => clearTimeout(timeout);
       }
-    };
+    } else {
+      if (displayText.length > 0) {
+        const timeout = setTimeout(
+          () => {
+            setDisplayText(displayText.substring(0, displayText.length - 1));
+          },
+          50 + Math.random() * 30
+        );
 
-    const typingInterval = setInterval(typeText, 100);
+        return () => clearTimeout(timeout);
+      } else {
+        setIsDeleting(false);
 
-    return () => clearInterval(typingInterval);
-  }, [currentIndex, texts]);
+        if (currentIndex + 1 === texts.length) {
+          setIsFinished(true);
+        } else {
+          setCurrentIndex(prev => prev + 1);
+        }
+      }
+    }
+  }, [displayText, currentIndex, isDeleting, texts]);
 
   useEffect(() => {
-    if (isDeleting) {
-      const deletingInterval = setInterval(() => {
-        if (displayText.length > 0) {
-          setDisplayText(prev => prev.slice(0, -1));
-        } else {
-          clearInterval(deletingInterval);
-          setIsDeleting(false);
-
-          if (currentIndex + 1 === texts.length) {
-            setIsFinished(true);
-          } else {
-            setCurrentIndex(prevIndex => prevIndex + 1);
-          }
-        }
-      }, 100);
-
-      return () => clearInterval(deletingInterval);
-    }
-  }, [isDeleting, displayText, currentIndex, texts.length]);
+    setDisplayText('');
+    setCurrentIndex(0);
+    setIsDeleting(false);
+    setIsFinished(false);
+  }, [texts]);
 
   if (isFinished) {
     return (
       <div>
-        <span className={className}>{t('animatedTexts.websites')}</span>
+        <span className={className}>{t('animatedTexts.apps')}</span>
       </div>
     );
   }
+
   return (
     <div>
-      <span className={className}>{displayText}</span>
+      <span className={className}>
+        {displayText}
+        <span className="animate-pulse">|</span>
+      </span>
     </div>
   );
 };
