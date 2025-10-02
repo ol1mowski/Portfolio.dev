@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import styles from '../../ProfitabilitySection.component.module.scss';
 import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface ProfitabilityHeaderProps {
   title: string;
   subtitle: string;
-  itemVariants: Record<string, unknown>;
+  itemVariants: Variants;
 }
 
 export const ProfitabilityHeader = memo<ProfitabilityHeaderProps>(({ subtitle, itemVariants }) => {
