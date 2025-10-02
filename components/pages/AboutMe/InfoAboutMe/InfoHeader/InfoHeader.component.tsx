@@ -1,9 +1,9 @@
 import Paragraph from '@/components/UI/Word/Paragraph.component';
 import s from './InfoHeader.component.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 function InfoHeader() {
-  const t = useTranslations('aboutMe');
+  const t = useOptimizedTranslations('aboutMe');
 
   return (
     <section className={s.headerContainer}>

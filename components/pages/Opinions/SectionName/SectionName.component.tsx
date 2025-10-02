@@ -1,8 +1,8 @@
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import s from './SectionName.component.module.scss';
 
 function SectionName() {
-  const t = useTranslations('opinions');
+  const t = useOptimizedTranslations('opinions');
 
   return (
     <div className={s.sectionInfoWrapper}>

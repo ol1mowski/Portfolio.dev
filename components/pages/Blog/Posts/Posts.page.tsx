@@ -8,7 +8,8 @@ import PostsButton from './PostsButton/PostsButton.component';
 import { type PostsType } from '@/types/PostType.types';
 import { useBlogCategories } from '../hooks';
 import { Loading, ErrorMessage } from '@/components/UI/shared';
-import { useTranslations, useLocale } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
+import { useLocale } from 'next-intl';
 
 interface CategoryData {
   name: string;
@@ -18,7 +19,7 @@ interface CategoryData {
 
 function PostsComponent({ posts }: { posts: PostsType[] }) {
   const { categories, loading, error, fetchCategories } = useBlogCategories();
-  const t = useTranslations('blog');
+  const t = useOptimizedTranslations('blog');
   const locale = useLocale();
 
   const latestPosts = posts.slice(0, 3);

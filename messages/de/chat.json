@@ -1,0 +1,18 @@
+{
+  "chat": {
+    "preview": {
+      "title": "Cześć! Potrzebujesz pomocy?",
+      "message": "Jestem tutaj, żeby Ci pomóc"
+    },
+    "header": {
+      "customerSupport": "Obsługa Klienta",
+      "typing": "Pisze...",
+      "online": "Online"
+    },
+    "welcome": "Witaj! W czym mogę Ci pomóc?",
+    "placeholder": "Napisz wiadomość...",
+    "autoResponse": "Dzięki za wiadomość! 👋 Chat jest jeszcze w budowie, ale już wkrótce będę mógł Ci pomóc. W międzyczasie zapraszam do kontaktu przez email: kontakt@oliwiermarkiewicz.pl",
+    "sendButton": "Wyślij",
+    "closeButton": "Zamknij"
+  }
+}

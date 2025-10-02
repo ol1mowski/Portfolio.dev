@@ -1,0 +1,44 @@
+{
+  "services": {
+    "title": "Usługi",
+    "subtitle": "Co mogę dla Ciebie zrobić?",
+    "website": {
+      "title": "Strony i Aplikacje Internetowe",
+      "description": "Tworzę nowoczesne, responsywne strony i aplikacje internetowe",
+      "features": {
+        "feature1": "Strony wizytówkowe firm",
+        "feature2": "Landing page'y sprzedażowe",
+        "feature3": "Aplikacje internetowe"
+      },
+      "highlight": "100% responsywne"
+    },
+    "ecommerce": {
+      "title": "Sklepy Online",
+      "description": "Kompleksowe rozwiązania e-commerce",
+      "features": {
+        "feature1": "Sklepy e-commerce",
+        "feature2": "Integracje płatności",
+        "feature3": "Zarządzanie produktami"
+      },
+      "highlight": "Optymalizacja konwersji"
+    },
+    "seo": {
+      "title": "Pozycjonowanie SEO",
+      "description": "Optymalizacja dla wyszukiwarek internetowych"
+    },
+    "graphics": {
+      "title": "Projekty Graficzne",
+      "features": {
+        "feature1": "Identyfikacja wizualna",
+        "feature2": "Projekty UI/UX",
+        "feature3": "Materiały marketingowe"
+      },
+      "highlight": "Spójny branding"
+    },
+    "undecided": {
+      "title": "Nie możesz się zdecydować? 🤔",
+      "subtitle": "Badź nie wiesz, czego dokładnie potrzebujesz? Skorzystaj z naszego bezpłatnego konfiguratora!",
+      "button": "Sprawdź Konfigurator"
+    }
+  }
+}

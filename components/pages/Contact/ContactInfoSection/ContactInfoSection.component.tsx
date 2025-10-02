@@ -1,7 +1,7 @@
 import s from './ContactInfoSection.component.module.scss';
 
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 function ContactInfoSection({
   title,
@@ -12,7 +12,7 @@ function ContactInfoSection({
   content: string;
   link: string;
 }) {
-  const t = useTranslations('contact');
+  const t = useOptimizedTranslations('contact');
 
   return (
     <div className={s.icon}>

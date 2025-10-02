@@ -1,9 +1,9 @@
 import s from './FooterCopyright,component.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 function FooterCopyright() {
   const date = new Date();
-  const t = useTranslations('footer');
+  const t = useOptimizedTranslations('footer');
 
   return (
     <div className={s.header}>

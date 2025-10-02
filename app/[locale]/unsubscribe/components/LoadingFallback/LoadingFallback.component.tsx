@@ -1,8 +1,8 @@
 import s from '../../page.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 export default function LoadingFallback() {
-  const t = useTranslations('unsubscribe');
+  const t = useOptimizedTranslations('unsubscribe');
   return (
     <main className={s.container}>
       <div className={s.content}>

@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import s from './EmailGateHeader.component.module.scss';
 
 export const EmailGateHeader: FC = () => {
-  const t = useTranslations('materials.emailGate');
+  const t = useOptimizedTranslations('materials.emailGate');
 
   return (
     <div className={s.header}>

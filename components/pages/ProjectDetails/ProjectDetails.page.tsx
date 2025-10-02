@@ -6,7 +6,8 @@ import ProjectGallery from './ProjectGallery/ProjectGallery.component';
 import ProjectHeader from './ProjectHeader/ProjectHeader.component';
 import ProjectDescription from './ProjectDescription/ProjectDescription.component';
 import { SectionContainer } from '@/components/UI/shared';
-import { useTranslations, useLocale } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import { GoArrowLeft } from 'react-icons/go';
 
 interface ProjectDetailsProps {
@@ -14,7 +15,7 @@ interface ProjectDetailsProps {
 }
 
 const ProjectDetails = ({ project }: ProjectDetailsProps) => {
-  const t = useTranslations('projects');
+  const t = useOptimizedTranslations('projects');
   const locale = useLocale();
   const { title, image, description, technologies, githubLink, liveLink, date } = project;
 

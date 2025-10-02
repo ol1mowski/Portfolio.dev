@@ -1,0 +1,20 @@
+{
+  "ebook": {
+    "title": "Pobierz Darmowy E-book",
+    "subtitle": "10-krotnie szybsza i skuteczniejsza nauka",
+    "description": "Odkryj sekrety efektywnej nauki programowania i zdobądź umiejętności, które pomogą Ci w karierze developera.",
+    "cta": "Pobierz Za Darmo",
+    "ctaButton": "Odbierz Bezpłatnie",
+    "myTitle": "Mój",
+    "freeTitle": "Bezpłatny",
+    "ebookTitle": "E-Book",
+    "rating": "5.0",
+    "introText": "Aby nasza znajomość zaczęła się naprawdę dobrze, chciałbym podzielić się z Tobą moim najnowszym e-bookiem, który otrzymasz zupełnie",
+    "freeHighlight": "za darmo!",
+    "benefits": {
+      "benefit1": "Sprawdzone metody nauki",
+      "benefit2": "Praktyczne wskazówki",
+      "benefit3": "Szybsze osiągnięcie celów"
+    }
+  }
+}

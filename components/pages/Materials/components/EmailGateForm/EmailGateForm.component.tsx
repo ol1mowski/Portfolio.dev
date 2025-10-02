@@ -2,7 +2,7 @@
 
 import { memo } from 'react';
 import s from './EmailGateForm.component.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import { EmailGateForm as EmailGateFormComponent } from './components/EmailGateForm/EmailGateForm.component';
 
 interface EmailGateFormProps {
@@ -10,7 +10,7 @@ interface EmailGateFormProps {
 }
 
 const EmailGateForm = memo(({ onEmailSubmit }: EmailGateFormProps) => {
-  const t = useTranslations('materials.emailGate');
+  const t = useOptimizedTranslations('materials.emailGate');
 
   return (
     <div className={s.materialsGate}>

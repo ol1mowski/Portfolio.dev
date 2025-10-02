@@ -1,14 +1,14 @@
 import s from './InfoDescription.component.module.scss';
 
 import { memo } from 'react';
-import Link from 'next/link';
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 import Paragraph from '@/components/UI/Word/Paragraph.component';
 
 const InfoDescription = memo(() => {
   const locale = useLocale();
-  const t = useTranslations('aboutMe');
+  const t = useOptimizedTranslations('aboutMe');
   return (
     <section className={s.desWrapper}>
       <p className={s.desWrapper__des}>

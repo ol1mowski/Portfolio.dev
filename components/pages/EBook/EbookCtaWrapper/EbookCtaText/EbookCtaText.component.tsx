@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import Paragraph from '@/components/UI/Word/Paragraph.component';
 import s from './EbookCtaText.component.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 export const EbookCtaText: FC = () => {
-  const t = useTranslations('ebook');
+  const t = useOptimizedTranslations('ebook');
 
   return (
     <section className={s.pWrapper}>

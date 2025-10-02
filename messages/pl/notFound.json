@@ -1,0 +1,13 @@
+{
+  "notFound": {
+    "title": "Ups! Strona nie została znaleziona",
+    "subtitle": "Strona, której szukasz, mogła zostać przeniesiona, usunięta lub po prostu nie istnieje. Nie martw się - pomożemy Ci znaleźć to, czego szukasz!",
+    "backHome": "Wróć do strony głównej",
+    "goToBlog": "Przejdź do bloga",
+    "maybeInteresting": "Może Cię zainteresuje:",
+    "reactArticles": "Artykuły React",
+    "typescriptArticles": "TypeScript",
+    "nextjsArticles": "Next.js",
+    "search": "Wyszukaj"
+  }
+}

@@ -2,11 +2,11 @@ import s from './CollaborationCta.component.module.scss';
 
 import { memo } from 'react';
 import Button from '@/components/UI/Button/Button.component';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 const CollaborationCta = memo(() => {
-  const t = useTranslations('collaboration.cta');
-  const tContact = useTranslations('contact');
+  const t = useOptimizedTranslations('collaboration.cta');
+  const tContact = useOptimizedTranslations('contact');
 
   return (
     <section className={s.cta} aria-label="Sekcja kontaktowa">

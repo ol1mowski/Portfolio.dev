@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import styles from '../../AboutMe.page.module.scss';
 import { SiteStats } from '@/actions/stats.actions';
 
@@ -9,7 +9,7 @@ interface LeftColumnProps {
 }
 
 export const LeftColumn: FC<LeftColumnProps> = ({ stats }) => {
-  const t = useTranslations('about.stats');
+  const t = useOptimizedTranslations('about.stats');
 
   return (
     <div className={styles.leftColumn}>

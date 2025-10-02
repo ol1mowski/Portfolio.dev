@@ -1,10 +1,10 @@
 'use client';
 
 import { useEffect, useState, useMemo } from 'react';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 const TypingReplaceAnimation = ({ className }: { className: string }) => {
-  const t = useTranslations('hero.animatedTexts');
+  const t = useOptimizedTranslations('hero.animatedTexts');
 
   const texts = useMemo(() => [t('websites'), t('shops'), t('graphics'), t('tools')], [t]);
   const [displayText, setDisplayText] = useState('');

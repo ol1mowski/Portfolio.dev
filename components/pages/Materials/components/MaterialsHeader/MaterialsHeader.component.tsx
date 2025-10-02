@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import s from './MaterialsHeader.component.module.scss';
 
 interface MaterialsHeaderProps {
@@ -7,7 +7,7 @@ interface MaterialsHeaderProps {
 }
 
 const MaterialsHeader = memo(({ subtitle }: MaterialsHeaderProps) => {
-  const t = useTranslations('materials.header');
+  const t = useOptimizedTranslations('materials.header');
 
   return (
     <section className={s.materialsHeader}>

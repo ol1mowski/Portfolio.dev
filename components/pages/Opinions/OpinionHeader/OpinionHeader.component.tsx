@@ -1,9 +1,9 @@
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import Paragraph from '@/components/UI/Word/Paragraph.component';
 import s from './OpinionHeader.component.module.scss';
 
 function OpinionHeader() {
-  const t = useTranslations('opinions');
+  const t = useOptimizedTranslations('opinions');
 
   return (
     <div className={s.headerWrapper}>

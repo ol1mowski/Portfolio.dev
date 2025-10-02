@@ -1,6 +1,6 @@
 import s from './SearchBar.component.module.scss';
 import { memo, useRef, useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import { Loading } from '@/components/UI/shared';
 
 interface SearchBarProps {
@@ -11,7 +11,7 @@ interface SearchBarProps {
 }
 
 const SearchBar = memo(({ value, onChange, placeholder, loading = false }: SearchBarProps) => {
-  const t = useTranslations('materials.search');
+  const t = useOptimizedTranslations('materials.search');
   const inputRef = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState(false);
 

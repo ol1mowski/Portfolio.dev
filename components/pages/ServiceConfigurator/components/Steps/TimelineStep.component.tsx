@@ -1,6 +1,6 @@
 import React from 'react';
 import s from '../../ServiceConfigurator.page.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface TimelineStepProps {
   selectedTimeline: string;
@@ -8,7 +8,7 @@ interface TimelineStepProps {
 }
 
 const TimelineStep: React.FC<TimelineStepProps> = ({ selectedTimeline, onSelect }) => {
-  const t = useTranslations('configurator.steps.timeline');
+  const t = useOptimizedTranslations('configurator.steps.timeline');
 
   const timelines = [
     { id: 'urgent', title: t('options.urgent'), multiplier: 1.5 },

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import s from './SearchSuggestions.component.module.scss';
 import { Loading } from '@/components/UI/shared';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface Suggestion {
   id: string;
@@ -34,11 +34,11 @@ export const SearchSuggestions: FC<SearchSuggestionsProps> = ({
   onNoResultsClick,
   highlightMatch,
 }) => {
-  const t = useTranslations('searchBox');
+  const t = useOptimizedTranslations('blog');
   return (
     <div className={s.suggestionsDropdown}>
       <div className={s.suggestionsDropdown__list}>
-        {isLoading && <Loading message={t('searching')} size="small" variant="dots" />}
+        {isLoading && <Loading message={t('searchBox.searching')} size="small" variant="dots" />}
 
         {!isLoading &&
           suggestions.length > 0 &&
@@ -68,7 +68,7 @@ export const SearchSuggestions: FC<SearchSuggestionsProps> = ({
             <div className={s.noResultsMessage__icon}>🔍</div>
             <div className={s.noResultsMessage__content}>
               <div className={s.noResultsMessage__content__title}>
-                {t('noResults')} &quot;{searchTerm}&quot;
+                {t('searchBox.noResults')} &quot;{searchTerm}&quot;
               </div>
             </div>
           </div>

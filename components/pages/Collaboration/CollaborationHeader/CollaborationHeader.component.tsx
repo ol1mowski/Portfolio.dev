@@ -1,9 +1,9 @@
 import { memo } from 'react';
 import s from './CollaborationHeader.component.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 const CollaborationHeader = memo(() => {
-  const t = useTranslations('collaboration');
+  const t = useOptimizedTranslations('collaboration');
 
   return (
     <header className={s.contentSection}>

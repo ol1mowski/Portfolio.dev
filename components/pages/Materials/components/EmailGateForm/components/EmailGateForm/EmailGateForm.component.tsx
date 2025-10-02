@@ -2,7 +2,8 @@ import { FC, useState } from 'react';
 import s from './EmailGateForm.component.module.scss';
 import { ErrorMessage } from '@/components/UI/shared';
 import { saveClientData } from '@/actions/client.actions';
-import { useTranslations, useLocale } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface EmailGateFormProps {
   onEmailSubmit: (email: string) => void;
@@ -16,7 +17,7 @@ export const EmailGateForm: FC<EmailGateFormProps> = ({ onEmailSubmit }) => {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
-  const t = useTranslations('materials.emailGate');
+  const t = useOptimizedTranslations('materials.emailGate');
   const locale = useLocale();
 
   const handleSubmit = async (e: React.FormEvent) => {

@@ -2,10 +2,10 @@ import style from './Contact.page.module.scss';
 
 import ContactInfoSection from './ContactInfoSection/ContactInfoSection.component';
 import ContectHeaderSection from './ContectHeaderSection/ContectHeaderSection.component';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 const Contact = () => {
-  const t = useTranslations('contact');
+  const t = useOptimizedTranslations('contact');
 
   return (
     <>

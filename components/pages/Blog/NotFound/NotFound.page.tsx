@@ -3,12 +3,13 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import s from './NotFound.page.module.scss';
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 function NotFound({ link }: { link: string; info?: string }) {
   const [mounted, setMounted] = useState(false);
   const locale = useLocale();
-  const t = useTranslations('notFound');
+  const t = useOptimizedTranslations('notFound');
 
   useEffect(() => {
     setMounted(true);

@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import s from './CustomerSupportChat.component.module.scss';
-import { useTranslations, useLocale } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface Message {
   id: string;
@@ -19,7 +20,7 @@ const CustomerSupportChat: React.FC = () => {
   const [showPreview, setShowPreview] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const t = useTranslations('chat');
+  const t = useOptimizedTranslations('chat');
   const locale = useLocale();
 
   useEffect(() => {

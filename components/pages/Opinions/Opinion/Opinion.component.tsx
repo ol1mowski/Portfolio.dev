@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import s from './Opinion.component.module.scss';
 import { SingleOpinionType } from '@/types/Opinions.types';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 function Opinion({ opinion }: { opinion: SingleOpinionType }) {
-  const t = useTranslations('opinions');
+  const t = useOptimizedTranslations('opinions');
   const { content, link, companyImage, companyName } = opinion;
   return (
     <div className={s.opinion}>

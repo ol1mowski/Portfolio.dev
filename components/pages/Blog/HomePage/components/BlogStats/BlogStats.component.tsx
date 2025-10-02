@@ -1,5 +1,5 @@
 import s from '../../HomePage.page.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface BlogStatsProps {
   stats: {
@@ -11,7 +11,7 @@ interface BlogStatsProps {
 }
 
 export default function BlogStats({ stats }: BlogStatsProps) {
-  const t = useTranslations('blog.stats');
+  const t = useOptimizedTranslations('blog.stats');
 
   return (
     <div className={s.blogStats}>

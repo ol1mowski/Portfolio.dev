@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import { FormData, ServiceRecommendation } from '../types/ServiceConfigurator.types';
 import { TOTAL_STEPS } from '../constants/ServiceConfigurator.constants';
 
@@ -14,8 +14,8 @@ export const useServiceConfigurator = () => {
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [recommendation, setRecommendation] = useState<ServiceRecommendation | null>(null);
-  const t = useTranslations('configurator.steps');
-  const tResult = useTranslations('configurator.result');
+  const t = useOptimizedTranslations('configurator.steps');
+  const tResult = useOptimizedTranslations('configurator.result');
 
   const calculateRecommendation = (): ServiceRecommendation => {
     let basePrice = 999;

@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import s from './MaterialsGrid.component.module.scss';
 import { MaterialType } from '@/types/Materials.types';
 import { Loading } from '@/components/UI/shared';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 const DynamicMaterialCard = dynamic(() => import('../MaterialCard/MaterialCard.component'), {
   loading: () => <Loading message="Loading card..." size="small" />,
@@ -31,7 +31,7 @@ const MaterialsGrid = memo(
     hasMore = false,
     onDownload,
   }: MaterialsGridProps) => {
-    const t = useTranslations('materials.grid');
+    const t = useOptimizedTranslations('materials.grid');
 
     return (
       <section className={s.materialsGrid}>

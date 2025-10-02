@@ -1,6 +1,6 @@
 import s from '../../HomePage.page.module.scss';
 import { Loading } from '@/components/UI/shared';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface TrendingTopicsProps {
   topics: Array<{ name: string; growth: string }>;
@@ -9,7 +9,7 @@ interface TrendingTopicsProps {
 }
 
 export default function TrendingTopics({ topics, isLoading, onTagClick }: TrendingTopicsProps) {
-  const t = useTranslations('blog');
+  const t = useOptimizedTranslations('blog');
 
   return (
     <div className={s.trendingTopics}>

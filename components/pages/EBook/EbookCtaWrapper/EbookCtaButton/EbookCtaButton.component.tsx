@@ -1,10 +1,11 @@
 import { FC, memo } from 'react';
 import s from './EbookCtaButton.component.module.scss';
 import Button from '@/components/UI/Button/Button.component';
-import { useTranslations, useLocale } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
+import { useLocale } from 'next-intl';
 
 export const EbookCtaButton: FC = memo(() => {
-  const t = useTranslations('ebook');
+  const t = useOptimizedTranslations('ebook');
   const locale = useLocale();
 
   return (

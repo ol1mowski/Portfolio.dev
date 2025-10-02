@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import s from '../../page.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface UnsubscribeFormProps {
   token: string;
@@ -17,7 +17,7 @@ export default function UnsubscribeForm({
   onSubmit,
   isLoading,
 }: UnsubscribeFormProps) {
-  const t = useTranslations('unsubscribe');
+  const t = useOptimizedTranslations('unsubscribe');
   return (
     <form onSubmit={onSubmit} className={s.form}>
       <div className={s.formGroup}>

@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import s from './MaterialsControls.component.module.scss';
 
 import SearchBar from '../SearchBar/SearchBar.component';
@@ -29,7 +29,7 @@ const MaterialsControls = memo(
     onSortChange,
     onClearFilters,
   }: MaterialsControlsProps) => {
-    const t = useTranslations('materials');
+    const t = useOptimizedTranslations('materials');
 
     return (
       <section className={s.materialsControls}>

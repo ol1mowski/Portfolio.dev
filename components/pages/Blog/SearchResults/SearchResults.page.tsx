@@ -7,12 +7,12 @@ import { SearchResultsHeader } from './components/SearchResultsHeader/SearchResu
 import { SearchResultsContent } from './components/SearchResultsContent/SearchResultsContent.component';
 import { PopularSearches } from './components/PopularSearches/PopularSearches.component';
 import { useSearchResultsData } from './hooks/useSearchResultsData.hook';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 function SearchResults() {
   const searchParams = useSearchParams();
   const query = searchParams.get('q') || '';
-  const t = useTranslations('searchResults');
+  const t = useOptimizedTranslations('searchResults');
 
   const { searchResults, isLoading, error } = useSearchResultsData(query);
 

@@ -8,7 +8,8 @@ import { type PostsType } from '@/types/PostType.types';
 import { useBlogStats, useBlogTags } from '../hooks';
 import { ErrorMessage } from '@/components/UI/shared';
 import { MainArticle, SmallPosts, TrendingTopics, BlogStats } from './components';
-import { useTranslations, useLocale } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
+import { useLocale } from 'next-intl';
 
 interface HomePageComponentProps {
   posts: PostsType[];
@@ -17,7 +18,7 @@ interface HomePageComponentProps {
 function HomePageComponent({ posts }: HomePageComponentProps) {
   const { stats, loading: statsLoading, error: statsError, fetchStats } = useBlogStats();
   const { tags, loading: tagsLoading, error: tagsError, fetchTags } = useBlogTags();
-  const t = useTranslations('blog');
+  const t = useOptimizedTranslations('blog');
   const locale = useLocale();
 
   useEffect(() => {

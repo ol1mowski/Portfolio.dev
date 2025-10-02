@@ -1,0 +1,112 @@
+{
+  "configurator": {
+    "title": "Konfigurator Usług",
+    "steps": {
+      "projectType": {
+        "title": "Jaki typ projektu Cię interesuje?",
+        "subtitle": "Wybierz jedną opcję, która najlepiej opisuje Twoje potrzeby",
+        "options": {
+          "website": {
+            "title": "Strona internetowa",
+            "desc": "Wizytówka, portfolio, landing page"
+          },
+          "ecommerce": {
+            "title": "Sklep internetowy",
+            "desc": "Sprzedaż online, e-commerce"
+          },
+          "webapp": {
+            "title": "Aplikacja webowa",
+            "desc": "System, panel, platforma"
+          },
+          "uiux": {
+            "title": "Projekt UI/UX",
+            "desc": "Makiety, prototypy, design system"
+          }
+        }
+      },
+      "solutionType": {
+        "title": "Jakiego typu rozwiązanie preferujesz?",
+        "subtitle": "Każda opcja ma swoje zalety - wybierz najlepszą dla siebie",
+        "options": {
+          "template": {
+            "title": "Szablon (szybko)",
+            "desc": "Gotowy szablon dostosowany do potrzeb"
+          },
+          "semi-custom": {
+            "title": "Częściowo na zamówienie",
+            "desc": "Połączenie szablonu z custom features"
+          },
+          "custom": {
+            "title": "W pełni na zamówienie",
+            "desc": "Unikalny projekt od podstaw"
+          }
+        }
+      },
+      "features": {
+        "title": "Jakie funkcjonalności Cię interesują?",
+        "subtitle": "Wybierz wszystkie, które mogą być przydatne (opcjonalne)",
+        "options": [
+          "Optymalizacja SEO",
+          "Integracja płatności",
+          "Blog/Aktualności",
+          "Formularz kontaktowy",
+          "Galeria zdjęć",
+          "Kalendarz/Rezerwacje",
+          "Newsletter",
+          "Multilang",
+          "Analytics",
+          "Live Chat"
+        ],
+        "additional": {
+          "loginSystem": "System logowania",
+          "api": "API",
+          "cms": "System CMS"
+        }
+      },
+      "timeline": {
+        "title": "Jaki masz harmonogram?",
+        "subtitle": "Wybierz preferowany czas realizacji projektu",
+        "options": {
+          "urgent": "Pilnie (1-2 tygodnie)",
+          "standard": "Standardowo (3-4 tygodnie)",
+          "flexible": "Elastycznie (5-8 tygodni)"
+        },
+        "default": "Standardowo"
+      },
+      "budget": {
+        "title": "Jaki jest Twój budżet?",
+        "subtitle": "Pomoże nam to dopasować najlepszą ofertę",
+        "options": {
+          "low": "Do 2 000 zł",
+          "medium": "2 000 - 10 000 zł",
+          "high": "10 000 - 30 000 zł",
+          "premium": "Powyżej 30 000 zł"
+        }
+      }
+    },
+    "navigation": {
+      "back": "← Wstecz",
+      "next": "Dalej →",
+      "getRecommendation": "Zobacz rekomendację →"
+    },
+    "result": {
+      "title": "Twoja rekomendacja",
+      "subtitle": "Na podstawie Twoich odpowiedzi przygotowaliśmy idealną ofertę",
+      "currency": "zł",
+      "timeline": "Realizacja:",
+      "featuresTitle": "Twój projekt będzie zawierał:",
+      "actions": {
+        "sendInquiry": "📧 Wyślij zapytanie",
+        "startAgain": "🔄 Rozpocznij ponownie"
+      },
+      "emailSubject": "Zapytanie o projekt",
+      "emailBody": "Dzień dobry, jestem zainteresowany/a realizacją projektu...",
+      "descriptions": {
+        "template": "Profesjonalny",
+        "semi-custom": "Profesjonalny",
+        "custom": "Unikalny",
+        "suffix": "dopasowany do Twoich potrzeb"
+      }
+    }
+  }
+}

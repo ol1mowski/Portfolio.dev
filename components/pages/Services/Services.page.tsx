@@ -2,11 +2,12 @@
 
 import { FC } from 'react';
 import { motion } from 'framer-motion';
-import { useTranslations, useLocale } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
+import { useLocale } from 'next-intl';
 import styles from './Services.page.module.scss';
 
 export const Services: FC = () => {
-  const t = useTranslations('services');
+  const t = useOptimizedTranslations('services');
   const locale = useLocale();
 
   const services = [

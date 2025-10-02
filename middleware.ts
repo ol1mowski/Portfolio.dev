@@ -19,5 +19,12 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/', '/(de|en|pl)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)', '/Thanks/:path*'],
+  matcher: [
+    // Skip all internal paths (_next, api, etc.)
+    '/((?!api|_next|_vercel|.*\\..*).*)',
+    // Always run for locale routes
+    '/(de|en|pl)/:path*',
+    // Protected routes
+    '/Thanks/:path*',
+  ],
 };

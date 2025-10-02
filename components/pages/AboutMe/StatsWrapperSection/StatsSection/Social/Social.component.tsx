@@ -1,9 +1,9 @@
 import s from './Social.component.module.scss';
 import IconElement from '../IconElement/IconElement.component';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 function Social() {
-  const t = useTranslations('about.socialMedia');
+  const t = useOptimizedTranslations('about.socialMedia');
 
   return (
     <div className={s.infoWrapper}>

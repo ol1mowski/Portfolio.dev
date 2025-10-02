@@ -1,13 +1,13 @@
 import s from './HeroCta.component.module.scss';
 
 import { memo } from 'react';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 import Text from '@/components/Utils/Text-component/Text.component';
 import Button from '@/components/UI/Button/Button.component';
 
 const HeroCta = memo(() => {
-  const t = useTranslations('hero');
+  const t = useOptimizedTranslations('hero');
 
   return (
     <section className={s.cta}>

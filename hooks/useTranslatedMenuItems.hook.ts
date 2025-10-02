@@ -1,8 +1,9 @@
-import { useTranslations, useLocale } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import { type MenuItemType } from '@/types/MenuItemType.types';
 
 export const useTranslatedMenuItems = (): MenuItemType[] => {
-  const t = useTranslations('navigation');
+  const t = useOptimizedTranslations('navigation');
   const locale = useLocale();
 
   return [

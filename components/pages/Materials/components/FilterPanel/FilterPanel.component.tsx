@@ -3,7 +3,7 @@
 import s from './FilterPanel.component.module.scss';
 
 import { memo, useState, useRef, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import { FilterOptions } from '@/types/Materials.types';
 import { CATEGORIES, CATEGORY_TYPES, MATERIAL_TYPES } from '@/data/Materials.data';
 
@@ -16,9 +16,8 @@ interface FilterPanelProps {
 const FilterPanel = memo(({ selectedFilters, onFilterChange, onClearAll }: FilterPanelProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const filterPanelRef = useRef<HTMLDivElement>(null);
-  const t = useTranslations('materials.filters');
+  const t = useOptimizedTranslations('materials.filters');
 
-  // Obsługa kliknięć poza komponentem
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (filterPanelRef.current && !filterPanelRef.current.contains(event.target as Node)) {

@@ -1,9 +1,9 @@
 import TypingReplaceAnimation from '@/components/UI/TypingRepleaceAnimation/TypingRepleaceAnimation.component';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import s from './HeroHeader.component.module.scss';
 
 function HeroHeader() {
-  const t = useTranslations('hero');
+  const t = useOptimizedTranslations('hero');
 
   return (
     <h1 className={s.h1}>

@@ -1,0 +1,9 @@
+{
+  "opinions": {
+    "title": "Opinie Klientów",
+    "subtitle": "Co mówią o mojej pracy",
+    "viewFullOpinion": "Zobacz Pełną Opinię",
+    "loadingOpinions": "Ładowanie opinii...",
+    "noOpinionsAvailable": "Brak dostępnych opinii"
+  }
+}

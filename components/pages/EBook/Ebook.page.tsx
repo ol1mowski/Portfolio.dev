@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import { useDynamicImport } from './hooks/useDynamicImport.hook';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import { EbookWrapper } from './EbookWrapper/EbookWrapper.component';
 import { EbookCtaWrapper } from './EbookCtaWrapper/EbookCtaWrapper.component';
 import { EbookCtaHeader } from './EbookCtaWrapper/EbookCtaHeader/EbookCtaHeader.component';
@@ -9,7 +9,7 @@ import { EbookCtaText } from './EbookCtaWrapper/EbookCtaText/EbookCtaText.compon
 import { EbookCtaButton } from './EbookCtaWrapper/EbookCtaButton/EbookCtaButton.component';
 
 const Ebook: FC = () => {
-  const t = useTranslations('ebook');
+  const t = useOptimizedTranslations('ebook');
 
   const EbookImageSide = useDynamicImport(
     () => import('./EbookImageSide/EbookImageSide.component'),

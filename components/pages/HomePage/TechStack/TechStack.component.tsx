@@ -2,10 +2,10 @@ import { FC, memo } from 'react';
 import s from './techStack.module.scss';
 import { SKILLS } from '@/data/Skills.data';
 import Tech from './Tech/Tech.component';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 export const TechStack: FC = memo(() => {
-  const t = useTranslations('hero.animatedTexts');
+  const t = useOptimizedTranslations('hero.animatedTexts');
 
   return (
     <section className={s.techStackContainer} aria-label="Technologie i narzędzia">

@@ -10,11 +10,11 @@ import HeaderLogo from './HeaderLogo/HeaderLogo.component';
 import HamburgerMenuIcon from './HamburgerMenuIcon/HamburgerMenuIcon.component';
 import DesktopNavMenu from './DesktopNavMenu/DesktopNavMenu.component';
 import SearchBox from './SearchBox/SearchBox.component';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 function Header({ type, post }: { type?: string; post?: boolean }) {
   const { isOpen, setOpen } = useContext(HamburgerClickContext);
-  const t = useTranslations('header');
+  const t = useOptimizedTranslations('header');
 
   const closeMenuHandler = () => {
     setOpen(false);

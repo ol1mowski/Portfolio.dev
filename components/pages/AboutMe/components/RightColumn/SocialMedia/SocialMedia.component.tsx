@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import styles from '../../../AboutMe.page.module.scss';
 
 export const SocialMedia: FC = () => {
-  const t = useTranslations('about.socialMedia');
+  const t = useOptimizedTranslations('about.socialMedia');
 
   const socialLinks = [
     {

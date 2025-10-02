@@ -1,6 +1,6 @@
 import React from 'react';
 import s from '../../ServiceConfigurator.page.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface ProjectTypeStepProps {
   selectedType: string;
@@ -8,7 +8,7 @@ interface ProjectTypeStepProps {
 }
 
 const ProjectTypeStep: React.FC<ProjectTypeStepProps> = ({ selectedType, onSelect }) => {
-  const t = useTranslations('configurator.steps.projectType');
+  const t = useOptimizedTranslations('configurator.steps.projectType');
 
   const projectTypes = [
     { id: 'website', title: t('options.website.title'), desc: t('options.website.desc') },

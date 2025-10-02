@@ -1,6 +1,6 @@
 import React from 'react';
 import s from '../../ServiceConfigurator.page.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface SolutionTypeStepProps {
   selectedType: string;
@@ -8,7 +8,7 @@ interface SolutionTypeStepProps {
 }
 
 const SolutionTypeStep: React.FC<SolutionTypeStepProps> = ({ selectedType, onSelect }) => {
-  const t = useTranslations('configurator.steps.solutionType');
+  const t = useOptimizedTranslations('configurator.steps.solutionType');
 
   const solutionTypes = [
     { id: 'template', title: t('options.template.title'), desc: t('options.template.desc') },

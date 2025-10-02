@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import styles from '../../BusinessImpact.component.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface BusinessImpactHeaderProps {
   subtitle: string;
@@ -10,7 +10,7 @@ interface BusinessImpactHeaderProps {
 
 export const BusinessImpactHeader = memo<BusinessImpactHeaderProps>(
   ({ subtitle, itemVariants }) => {
-    const t = useTranslations('businessImpact.header');
+    const t = useOptimizedTranslations('businessImpact.header');
 
     return (
       <motion.div className={styles.header} variants={itemVariants}>

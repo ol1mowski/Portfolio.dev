@@ -1,29 +1,27 @@
 import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import styles from '../../ProfitabilitySection.component.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface ProfitabilityHeaderProps {
   title: string;
   subtitle: string;
-  itemVariants: any;
+  itemVariants: Record<string, unknown>;
 }
 
-export const ProfitabilityHeader = memo<ProfitabilityHeaderProps>(
-  ({ title, subtitle, itemVariants }) => {
-    const t = useTranslations('profitability.header');
+export const ProfitabilityHeader = memo<ProfitabilityHeaderProps>(({ subtitle, itemVariants }) => {
+  const t = useOptimizedTranslations('profitability.header');
 
-    return (
-      <motion.div className={styles.header} variants={itemVariants}>
-        <motion.h2 className={styles.header__title} variants={itemVariants}>
-          {t('title')}
-        </motion.h2>
-        <motion.p className={styles.header__subtitle} variants={itemVariants}>
-          {subtitle}
-        </motion.p>
-      </motion.div>
-    );
-  }
-);
+  return (
+    <motion.div className={styles.header} variants={itemVariants}>
+      <motion.h2 className={styles.header__title} variants={itemVariants}>
+        {t('title')}
+      </motion.h2>
+      <motion.p className={styles.header__subtitle} variants={itemVariants}>
+        {subtitle}
+      </motion.p>
+    </motion.div>
+  );
+});
 
 ProfitabilityHeader.displayName = 'ProfitabilityHeader';

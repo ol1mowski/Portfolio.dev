@@ -1,7 +1,7 @@
 import s from './ProjectHeader.component.module.scss';
 import { formatDate } from '@/utils/dateFormatters';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface ProjectHeaderProps {
   title: string;
@@ -11,7 +11,7 @@ interface ProjectHeaderProps {
 }
 
 const ProjectHeader: React.FC<ProjectHeaderProps> = ({ title, date, githubLink, liveLink }) => {
-  const t = useTranslations('projects');
+  const t = useOptimizedTranslations('projects');
   const formattedDate = formatDate(date);
 
   return (

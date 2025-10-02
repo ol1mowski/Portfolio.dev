@@ -1,6 +1,6 @@
 import React from 'react';
 import s from '../../ServiceConfigurator.page.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface FeaturesStepProps {
   selectedFeatures: string[];
@@ -9,9 +9,9 @@ interface FeaturesStepProps {
 }
 
 const FeaturesStep: React.FC<FeaturesStepProps> = ({ selectedFeatures, onToggle, projectType }) => {
-  const t = useTranslations('configurator.steps.features');
+  const t = useOptimizedTranslations('configurator.steps.features');
 
-  const allFeatures = t.raw('options') as string[];
+  const allFeatures = t('options') as unknown as string[];
   const typeToFeatureIndexes: Record<string, number[]> = {
     website: [0, 1, 5, 6],
     ecommerce: [0, 1, 2, 3],

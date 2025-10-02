@@ -8,7 +8,8 @@ import NotFound from '../NotFound/NotFound.page';
 import PostVisibleContext from '@/store/PostVisible.context';
 
 import { type PostsType } from '@/types/PostType.types';
-import { useTranslations, useLocale } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 import Header from '../HeaderBlog/Header.component.page';
 import PostHeader from './PostHeader/PostHeader.component';
@@ -24,7 +25,7 @@ type PostSiteProps = {
 function PostSiteComponent({ post, allPosts }: PostSiteProps) {
   const { sectionVisible } = useContext(PostVisibleContext);
   const { isVisible, sectionName } = sectionVisible;
-  const t = useTranslations('blog');
+  const t = useOptimizedTranslations('blog');
   const locale = useLocale();
 
   if (!post) {

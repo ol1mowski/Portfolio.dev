@@ -1,6 +1,7 @@
 import s from './ProjectCta.component.module.scss';
 import { FaGithub, FaExternalLinkAlt, FaInfoCircle } from 'react-icons/fa';
-import { useTranslations, useLocale } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface ProjectCtaProps {
   liveLink: string;
@@ -9,7 +10,7 @@ interface ProjectCtaProps {
 }
 
 const ProjectCta = ({ liveLink, githubLink, title }: ProjectCtaProps) => {
-  const t = useTranslations('projects');
+  const t = useOptimizedTranslations('projects');
   const locale = useLocale();
 
   const projectSlug = title

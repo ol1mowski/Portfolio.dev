@@ -10,14 +10,14 @@ import { OPINIONS_ARIA_LABEL, OPINIONS_SECTION_ID } from './constants/opinions.c
 import { SectionContainer, Loading, ErrorMessage } from '@/components/UI/shared';
 import { OpinionsType, SingleOpinionType } from '@/types/Opinions.types';
 import { useOpinionsData } from './hooks/useOpinionsData.hook';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface OpinionsProps {
   opinions: OpinionsType[];
 }
 
 const Opinions = ({ opinions }: OpinionsProps) => {
-  const t = useTranslations('opinions');
+  const t = useOptimizedTranslations('opinions');
   const { opinions: fetchedOpinions, loading, error, fetchOpinions } = useOpinionsData();
 
   useEffect(() => {

@@ -1,8 +1,8 @@
 import s from './PostsButton.component.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 function PostsButton() {
-  const t = useTranslations('blog');
+  const t = useOptimizedTranslations('blog');
 
   return (
     <div className={s.buttonWrapper}>

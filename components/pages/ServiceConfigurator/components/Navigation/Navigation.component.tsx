@@ -1,6 +1,6 @@
 import React from 'react';
 import s from '../../ServiceConfigurator.page.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 const TOTAL_STEPS = 5;
 
@@ -17,7 +17,7 @@ const Navigation: React.FC<NavigationProps> = ({
   onPrevStep,
   onNextStep,
 }) => {
-  const t = useTranslations('configurator.navigation');
+  const t = useOptimizedTranslations('configurator.navigation');
 
   return (
     <div className={s.navigation}>

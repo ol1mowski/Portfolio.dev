@@ -3,7 +3,7 @@
 import s from './MaterialCard.component.module.scss';
 
 import { memo, useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -18,7 +18,7 @@ interface MaterialCardProps {
 const MaterialCard = memo(({ material, onDownload }: MaterialCardProps) => {
   const [localDownloadCount, setLocalDownloadCount] = useState(material.downloadCount);
   const [isUpdating, setIsUpdating] = useState(false);
-  const t = useTranslations('materials.card');
+  const t = useOptimizedTranslations('materials.card');
 
   useEffect(() => {
     setLocalDownloadCount(material.downloadCount);

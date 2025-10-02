@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import s from './BenefitsSection.component.module.scss';
 
 interface Benefit {
@@ -9,7 +9,7 @@ interface Benefit {
 }
 
 export const BenefitsSection: FC = () => {
-  const t = useTranslations('materials.benefits');
+  const t = useOptimizedTranslations('materials.benefits');
 
   return (
     <>

@@ -1,0 +1,17 @@
+{
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Skontaktuj się ze mną",
+    "phone": "Telefon",
+    "email": "e-mail",
+    "location": "Lokalizacja",
+    "locationValue": "Sieradz, Polska",
+    "callNowAriaLabel": "Zadzwoń teraz: 693 851 878",
+    "form": {
+      "name": "Imię",
+      "email": "Email",
+      "message": "Wiadomość",
+      "send": "Wyślij wiadomość"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "blog": "Blog",
+    "opinions": "Reviews",
+    "contact": "Contact"
+  },
+  "header": {
+    "jobOffers": "Job Offers",
+    "searchPlaceholder": "Search...",
+    "menu": "Menu",
+    "aboutUs": "About Us"
+  },
+  "footer": {
+    "copyright": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "allRightsReserved": "All rights reserved"
+  },
+  "stats": {
+    "title": "Statistics",
+    "youtubeViews": "YouTube Views",
+    "youtubeVideos": "Free Videos",
+    "blogPosts": "Free Blog Posts",
+    "youtubeSubscribers": "YouTube Subscribers",
+    "experienceYears": "Years of Experience",
+    "completedProjects": "Completed Projects"
+  }
+}

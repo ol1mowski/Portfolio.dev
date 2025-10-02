@@ -4,7 +4,8 @@ import Image from 'next/image';
 
 import { BlogITEMS, ITEMS } from '../StaticData';
 import Item from '../Item/Item.component';
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 function HamburgerMenuComponent({
   closeMenuHandler,
@@ -14,7 +15,7 @@ function HamburgerMenuComponent({
   type?: string;
 }) {
   const locale = useLocale();
-  const t = useTranslations('header');
+  const t = useOptimizedTranslations('header');
 
   const getUpdatedHref = (href: string) => {
     if (href === '/Blog') return `/${locale}/Blog`;

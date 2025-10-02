@@ -1,10 +1,10 @@
 import s from './Privacy.page.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 import Caption from '@/components/UI/Caption/Caption.component';
 
 function Privacy() {
-  const t = useTranslations('privacy');
+  const t = useOptimizedTranslations('privacy');
 
   return (
     <section className={s.container}>

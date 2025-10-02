@@ -1,6 +1,6 @@
 import React from 'react';
 import s from '../../ServiceConfigurator.page.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import { ServiceRecommendation } from '../../types/ServiceConfigurator.types';
 
 interface ResultCardProps {
@@ -9,7 +9,7 @@ interface ResultCardProps {
 }
 
 const ResultCard: React.FC<ResultCardProps> = ({ recommendation, onReset }) => {
-  const t = useTranslations('configurator.result');
+  const t = useOptimizedTranslations('configurator.result');
 
   const handleEmailClick = () => {
     window.location.href = `mailto:oliwier.markiewicz.dev@gmail.com?subject=${t('emailSubject')}&body=${t('emailBody')}`;

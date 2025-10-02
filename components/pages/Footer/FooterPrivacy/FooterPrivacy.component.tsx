@@ -1,8 +1,9 @@
 import s from './FooterPrivacy.component.module.scss';
-import { useTranslations, useLocale } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 function FooterPrivacy() {
-  const t = useTranslations('footer');
+  const t = useOptimizedTranslations('footer');
   const locale = useLocale();
 
   return (

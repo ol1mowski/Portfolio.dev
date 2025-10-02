@@ -1,8 +1,8 @@
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import s from './ContectHeaderSection.component.module.scss';
 
 function ContectHeaderSection() {
-  const t = useTranslations('contact');
+  const t = useOptimizedTranslations('contact');
 
   return (
     <div className={s.title}>

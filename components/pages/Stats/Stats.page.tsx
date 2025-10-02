@@ -2,7 +2,7 @@ import s from './Stats.page.module.scss';
 
 import { memo } from 'react';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 import CounterAnimation from '@/components/UI/CounterAnimation/CounterAnimation.component';
 import { SiteStats } from '@/actions/stats.actions';
@@ -43,7 +43,7 @@ interface StatsProps {
 }
 
 const Stats = memo(({ stats }: StatsProps) => {
-  const t = useTranslations('stats');
+  const t = useOptimizedTranslations('stats');
 
   const STATS_DATA = [
     {

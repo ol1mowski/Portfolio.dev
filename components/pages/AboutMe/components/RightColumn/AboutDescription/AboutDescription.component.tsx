@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import styles from '../../../AboutMe.page.module.scss';
 
 export const AboutDescription: FC = () => {
-  const t = useTranslations('about');
+  const t = useOptimizedTranslations('about');
 
   return (
     <motion.div

@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import type { ProfitabilitySectionData } from '../types/ProfitabilitySection.types';
 
 export const useProfitabilityData = (): ProfitabilitySectionData => {
-  const t = useTranslations('profitability');
+  const t = useOptimizedTranslations('profitability');
 
   const data = useMemo(
     (): ProfitabilitySectionData => ({

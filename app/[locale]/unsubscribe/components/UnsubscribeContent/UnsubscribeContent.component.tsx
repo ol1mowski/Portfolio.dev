@@ -2,14 +2,14 @@
 
 import s from '../../page.module.scss';
 import { useUnsubscribe } from '../../hooks/useUnsubscribe.hook';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 import UnsubscribeHeader from '../UnsubscribeHeader/UnsubscribeHeader.component';
 import UnsubscribeForm from '../UnsubscribeForm/UnsubscribeForm.component';
 import UnsubscribeMessage from '../UnsubscribeMessage/UnsubscribeMessage.component';
 import UnsubscribeInfo from '../UnsubscribeInfo/UnsubscribeInfo.component';
 
 export default function UnsubscribeContent() {
-  const t = useTranslations('unsubscribe');
+  const t = useOptimizedTranslations('unsubscribe');
   const { token, isLoading, message, isSuccess, isValidToken, setToken, handleSubmit } =
     useUnsubscribe();
 

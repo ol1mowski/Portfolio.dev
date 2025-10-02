@@ -1,0 +1,30 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "O mnie",
+    "projects": "Projekty",
+    "blog": "Blog",
+    "opinions": "Opinie",
+    "contact": "Kontakt"
+  },
+  "header": {
+    "jobOffers": "Oferty pracy",
+    "searchPlaceholder": "Szukaj...",
+    "menu": "Menu",
+    "aboutUs": "O nas"
+  },
+  "footer": {
+    "copyright": "Wszelkie prawa zastrzeżone",
+    "privacy": "Polityka Prywatności",
+    "allRightsReserved": "Wszelkie prawa zastrzeżone"
+  },
+  "stats": {
+    "title": "Statystyki",
+    "youtubeViews": "Wyświetleń na YouTube",
+    "youtubeVideos": "Darmowych Filmów",
+    "blogPosts": "Darmowych Wpisów Na Blogu",
+    "youtubeSubscribers": "Subskrybentów YouTube",
+    "experienceYears": "Lat doświadczenia",
+    "completedProjects": "Zrealizowanych projektów"
+  }
+}

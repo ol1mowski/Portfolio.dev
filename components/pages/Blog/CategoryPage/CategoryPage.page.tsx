@@ -5,7 +5,8 @@ import s from './CategoryPage.page.module.scss';
 import Header from '../HeaderBlog/Header.component.page';
 import PostCardComponent from '../Posts/PostCardComponent/PostCardComponent.component';
 import { PostsType } from '@/types/PostType.types';
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface CategoryPageProps {
   category: string;
@@ -28,7 +29,7 @@ const CategoryPage = ({ category }: CategoryPageProps) => {
   const [loadingMore, setLoadingMore] = useState(false);
   const [hasMore, setHasMore] = useState(false);
   const locale = useLocale();
-  const t = useTranslations('blog');
+  const t = useOptimizedTranslations('blog');
 
   const fetchPosts = useCallback(
     async (reset = false) => {

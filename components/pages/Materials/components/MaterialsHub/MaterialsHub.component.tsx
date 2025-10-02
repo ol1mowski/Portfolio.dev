@@ -1,7 +1,7 @@
 'use client';
 
 import s from './MaterialsHub.component.module.scss';
-import { useTranslations } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 import { memo, useCallback, useEffect } from 'react';
 
@@ -22,7 +22,7 @@ interface MaterialsHubProps {
 }
 
 const MaterialsHub = memo(({ initialMaterials = [] }: MaterialsHubProps) => {
-  const t = useTranslations('materials');
+  const t = useOptimizedTranslations('materials');
 
   const {
     searchTerm,

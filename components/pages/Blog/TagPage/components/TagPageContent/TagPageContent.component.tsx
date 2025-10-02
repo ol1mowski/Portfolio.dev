@@ -2,7 +2,8 @@ import { FC } from 'react';
 import s from './TagPageContent.component.module.scss';
 import PostCardComponent from '../../../Posts/PostCardComponent/PostCardComponent.component';
 import { PostsType } from '@/types/PostType.types';
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 interface TagPageContentProps {
   posts: PostsType[];
@@ -20,7 +21,7 @@ export const TagPageContent: FC<TagPageContentProps> = ({
   cleanTag,
 }) => {
   const locale = useLocale();
-  const t = useTranslations('blog');
+  const t = useOptimizedTranslations('blog');
   if (posts.length === 0) {
     return (
       <div className={s.noResults}>
