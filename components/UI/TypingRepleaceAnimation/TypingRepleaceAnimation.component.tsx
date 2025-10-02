@@ -4,9 +4,12 @@ import { useEffect, useState, useMemo } from 'react';
 import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 const TypingReplaceAnimation = ({ className }: { className: string }) => {
-  const t = useOptimizedTranslations('hero.animatedTexts');
+  const t = useOptimizedTranslations('hero');
 
-  const texts = useMemo(() => [t('websites'), t('shops'), t('graphics'), t('tools')], [t]);
+  const texts = useMemo(
+    () => [t('animatedTexts.websites'), t('animatedTexts.shops'), t('animatedTexts.graphics')],
+    [t]
+  );
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -56,7 +59,7 @@ const TypingReplaceAnimation = ({ className }: { className: string }) => {
   if (isFinished) {
     return (
       <div>
-        <span className={className}>{t('websites')}</span>
+        <span className={className}>{t('animatedTexts.websites')}</span>
       </div>
     );
   }

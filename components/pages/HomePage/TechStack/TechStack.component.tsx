@@ -5,7 +5,7 @@ import Tech from './Tech/Tech.component';
 import { useOptimizedTranslations } from '@/hooks/useOptimizedTranslations.hook';
 
 export const TechStack: FC = memo(() => {
-  const t = useOptimizedTranslations('hero.animatedTexts');
+  const t = useOptimizedTranslations('hero');
 
   return (
     <section className={s.techStackContainer} aria-label="Technologie i narzędzia">
