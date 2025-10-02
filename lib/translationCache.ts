@@ -1,8 +1,3 @@
-/**
- * Translation cache utility for better performance
- * Caches loaded translations to avoid repeated imports
- */
-
 interface CacheEntry {
   data: any;
   timestamp: number;
@@ -11,7 +6,7 @@ interface CacheEntry {
 
 class TranslationCache {
   private cache = new Map<string, CacheEntry>();
-  private readonly DEFAULT_TTL = 5 * 60 * 1000; // 5 minutes
+  private readonly DEFAULT_TTL = 5 * 60 * 1000;
 
   set(key: string, data: any, ttl: number = this.DEFAULT_TTL): void {
     this.cache.set(key, {
@@ -28,7 +23,6 @@ class TranslationCache {
       return null;
     }
 
-    // Check if entry has expired
     if (Date.now() - entry.timestamp > entry.ttl) {
       this.cache.delete(key);
       return null;
@@ -44,7 +38,6 @@ class TranslationCache {
       return false;
     }
 
-    // Check if entry has expired
     if (Date.now() - entry.timestamp > entry.ttl) {
       this.cache.delete(key);
       return false;
@@ -65,7 +58,6 @@ class TranslationCache {
     return this.cache.size;
   }
 
-  // Clean up expired entries
   cleanup(): void {
     const now = Date.now();
 
@@ -77,10 +69,8 @@ class TranslationCache {
   }
 }
 
-// Singleton instance
 export const translationCache = new TranslationCache();
 
-// Cleanup expired entries every 10 minutes
 if (typeof window !== 'undefined') {
   setInterval(
     () => {

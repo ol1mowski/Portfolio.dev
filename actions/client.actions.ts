@@ -4,7 +4,7 @@ import { createAuthSession } from '@/lib/auth';
 import { saveClient } from '@/lib/api/client/client.service';
 import { SaveClientResponse } from '@/lib/api/client/client.types';
 import { validateEmail } from '@/utils/validation';
-import { sendThankYouEmail } from '@/lib/email/email.service';
+import { addSubscriberToMailerLite } from '@/lib/mailerlite';
 
 export const saveClientData = async (formData: FormData): Promise<SaveClientResponse> => {
   try {
@@ -38,9 +38,14 @@ export const saveClientData = async (formData: FormData): Promise<SaveClientResp
     }
 
     try {
-      await sendThankYouEmail({ name, email });
-    } catch (emailError) {
-      console.error('Error sending thank you email:', emailError);
+      const mailerLiteResult = await addSubscriberToMailerLite(email, name);
+      if (!mailerLiteResult.success) {
+        console.error('MailerLite subscription failed:', mailerLiteResult.error);
+      } else {
+        console.log('✅ Successfully added to MailerLite:', email);
+      }
+    } catch (mailerLiteError) {
+      console.error('Error adding to MailerLite:', mailerLiteError);
     }
 
     return {

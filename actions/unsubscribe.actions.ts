@@ -1,6 +1,6 @@
 'use server';
 
-import { deleteClient } from '@/lib/api/client/client.service';
+import { removeSubscriberFromMailerLite } from '@/lib/mailerlite';
 import { createHash } from 'crypto';
 
 const verifyUnsubscribeToken = (email: string, token: string): boolean => {
@@ -45,18 +45,18 @@ export const unsubscribeClient = async (
       };
     }
 
-    const result = await deleteClient(targetEmail);
+    const result = await removeSubscriberFromMailerLite(targetEmail);
 
     if (result.success) {
       return {
         success: true,
         message:
-          'Pomyślnie usunięto z bazy danych. Nie będziesz już otrzymywać naszych wiadomości.',
+          'Pomyślnie wypisano z newslettera. Nie będziesz już otrzymywać naszych wiadomości.',
       };
     } else {
       return {
         success: false,
-        error: result.error || 'Nie udało się usunąć z bazy danych',
+        error: result.error || 'Nie udało się wypisać z newslettera',
       };
     }
   } catch (error) {
