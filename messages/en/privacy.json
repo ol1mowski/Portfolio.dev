@@ -1,129 +1,129 @@
 {
   "privacy": {
-    "title": "Polityka Prywatności",
+    "title": "Privacy Policy",
     "sections": {
       "generalInfo": {
-        "title": "1. Informacje Ogólne",
+        "title": "1. General Information",
         "content": {
-          "serviceInfo": "Niniejsza polityka dotyczy Serwisu www, funkcjonującego pod adresem url: oliwiermarkiewicz.pl",
-          "operator": "Operatorem serwisu oraz Administratorem danych osobowych jest: Oliwier Markiewicz",
-          "contactEmail": "Adres kontaktowy poczty elektronicznej operatora: oliwier.markiewicz.dev@gmail.com",
-          "dataController": "Operator jest Administratorem Twoich danych osobowych w odniesieniu do danych podanych dobrowolnie w Serwisie.",
-          "dataPurposes": "Serwis wykorzystuje dane osobowe w następujących celach:",
+          "serviceInfo": "This policy applies to the website available at: oliwiermarkiewicz.pl",
+          "operator": "The operator of the website and the controller of personal data is: Oliwier Markiewicz",
+          "contactEmail": "Operator contact email address: oliwier.markiewicz.dev@gmail.com",
+          "dataController": "The Operator is the Controller of your personal data with respect to the data voluntarily provided on the Website.",
+          "dataPurposes": "The Website processes personal data for the following purposes:",
           "purposes": {
-            "newsletter": "Prowadzenie newslettera",
-            "forum": "Prowadzenie forum internetowego",
-            "presentation": "Prezentacja oferty lub informacji"
+            "newsletter": "Newsletter delivery",
+            "forum": "Operating an online forum",
+            "presentation": "Presentation of offers or information"
           },
-          "dataCollection": "Serwis realizuje funkcje pozyskiwania informacji o użytkownikach i ich zachowaniu w następujący sposób:",
-          "collectionMethod": "Poprzez dobrowolnie wprowadzone w formularzach dane, które zostają wprowadzone do systemów Operatora."
+          "dataCollection": "The Website collects information about users and their behavior in the following ways:",
+          "collectionMethod": "Through data voluntarily entered in forms, which are then entered into the Operator's systems."
         }
       },
       "dataProtection": {
-        "title": "2. Wybrane metody ochrony danych stosowane przez Operatora",
+        "title": "2. Selected data protection methods used by the Operator",
         "content": {
-          "ssl": "Miejsca logowania i wprowadzania danych osobowych są chronione w warstwie transmisji (certyfikat SSL). Dzięki temu dane osobowe i dane logowania, wprowadzone na stronie, zostają zaszyfrowane w komputerze użytkownika i mogą być odczytane jedynie na docelowym serwerze.",
-          "backups": "W celu ochrony danych Operator regularnie wykonuje kopie bezpieczeństwa.",
-          "updates": "Istotnym elementem ochrony danych jest regularna aktualizacja wszelkiego oprogramowania, wykorzystywanego przez Operatora do przetwarzania danych osobowych, co w szczególności oznacza regularne aktualizacje komponentów programistycznych."
+          "ssl": "Login areas and places where personal data is entered are protected at the transport layer (SSL certificate). This ensures that personal data and login data entered on the site are encrypted on the user's computer and can be read only on the target server.",
+          "backups": "To protect data, the Operator regularly performs backups.",
+          "updates": "An important part of data protection is the regular updating of all software used by the Operator to process personal data, in particular the regular updating of development components."
         }
       },
       "hosting": {
         "title": "3. Hosting",
         "content": {
-          "hostingProvider": "Serwis jest hostowany (technicznie utrzymywany) na serwerach operatora: Vercel",
-          "logs": "Firma hostingowa w celu zapewnienia niezawodności technicznej prowadzi logi na poziomie serwera. Zapisowi mogą podlegać:",
+          "hostingProvider": "The Website is hosted (technically maintained) on the servers of the provider: Vercel",
+          "logs": "To ensure technical reliability, the hosting company keeps server‑level logs. The following may be recorded:",
           "logTypes": {
-            "url": "zasoby określone identyfikatorem URL (adresy żądanych zasobów – stron, plików)",
-            "time": "czas nadejścia zapytania",
-            "responseTime": "czas wysłania odpowiedzi",
-            "clientName": "nazwę stacji klienta – identyfikacja realizowana przez protokół HTTP",
-            "errors": "informacje o błędach jakie nastąpiły przy realizacji transakcji HTTP",
-            "referer": "adres URL strony poprzednio odwiedzanej przez użytkownika (referer link) – w przypadku gdy przejście do Serwisu nastąpiło przez odnośnik",
-            "browser": "informacje o przeglądarce użytkownika",
-            "ip": "informacje o adresie IP",
-            "diagnostics": "informacje diagnostyczne związane z procesem samodzielnego zamawiania usług poprzez rejestratory na stronie",
-            "email": "informacje związane z obsługą poczty elektronicznej kierowanej do Operatora oraz wysyłanej przez Operatora"
+            "url": "resources identified by URL (addresses of requested resources – pages, files)",
+            "time": "time of the request",
+            "responseTime": "time the response was sent",
+            "clientName": "name of the client station – identification performed by the HTTP protocol",
+            "errors": "information about errors that occurred during HTTP transactions",
+            "referer": "URL of the page previously visited by the user (referrer link) – if the transition to the Website was made via a link",
+            "browser": "information about the user's browser",
+            "ip": "information about the IP address",
+            "diagnostics": "diagnostic information related to the process of self‑ordering services via forms on the site",
+            "email": "information related to the handling of email addressed to the Operator and sent by the Operator"
           }
         }
       },
       "rights": {
-        "title": "4. Twoje prawa i dodatkowe informacje o sposobie wykorzystania danych",
+        "title": "4. Your rights and additional information on how data is used",
         "content": {
-          "dataRecipients": "W niektórych sytuacjach Administrator ma prawo przekazywać Twoje dane osobowe innym odbiorcom, jeśli będzie to niezbędne do wykonania zawartej z Tobą umowy lub do zrealizowania obowiązków ciążących na Administratorze. Dotyczy to takich grup odbiorców:",
+          "dataRecipients": "In certain situations, the Controller has the right to transfer your personal data to other recipients if this is necessary to perform the contract concluded with you or to fulfill obligations incumbent on the Controller. This applies to the following groups of recipients:",
           "recipients": {
-            "authorized": "osoby upoważnione przez nas, pracownicy i współpracownicy, którzy muszą mieć dostęp do danych osobowych w celu wykonywania swoich obowiązków",
-            "hosting": "firma hostingowa",
-            "mailing": "firmy obsługująca mailingi",
-            "sms": "firmy obsługująca komunikaty SMS",
-            "marketing": "firmy, z którymi Administrator współpracuje w zakresie marketingu własnego",
-            "couriers": "kurierzy",
-            "insurers": "ubezpieczyciele",
-            "legal": "kancelarie prawne i windykatorzy",
-            "banks": "banki",
-            "payments": "operatorzy płatności",
-            "authorities": "organy publiczne"
+            "authorized": "persons authorized by us, employees and associates who must have access to personal data to perform their duties",
+            "hosting": "hosting company",
+            "mailing": "mailing service providers",
+            "sms": "SMS communication service providers",
+            "marketing": "companies with which the Controller cooperates in the scope of own marketing",
+            "couriers": "courier companies",
+            "insurers": "insurers",
+            "legal": "law firms and debt collectors",
+            "banks": "banks",
+            "payments": "payment operators",
+            "authorities": "public authorities"
           },
-          "retention": "Twoje dane osobowe przetwarzane przez Administratora nie dłużej, niż jest to konieczne do wykonania związanych z nimi czynności określonych osobnymi przepisami (np. o prowadzeniu rachunkowości). W odniesieniu do danych marketingowych dane nie będą przetwarzane dłużej niż przez 3 lata.",
-          "userRights": "Przysługuje Ci prawo żądania od Administratora:",
+          "retention": "Your personal data is processed by the Controller no longer than necessary to perform activities related to it, as defined by separate regulations (e.g. accounting). With regard to marketing data, the data will not be processed for longer than 3 years.",
+          "userRights": "You have the right to request from the Controller:",
           "rights": {
-            "access": "dostępu do danych osobowych Ciebie dotyczących",
-            "rectification": "ich sprostowania",
-            "erasure": "usunięcia",
-            "restriction": "ograniczenia przetwarzania",
-            "portability": "oraz przenoszenia danych"
+            "access": "access to personal data concerning you",
+            "rectification": "rectification",
+            "erasure": "erasure",
+            "restriction": "restriction of processing",
+            "portability": "and data portability"
           },
-          "objection": "Przysługuje Ci prawo do złożenia sprzeciwu w zakresie przetwarzania wskazanego w pkt 3.2 wobec przetwarzania danych osobowych w celu wykonania prawnie uzasadnionych interesów realizowanych przez Administratora, w tym profilowania, przy czym prawo sprzeciwu nie będzie mogło być wykonane w przypadku istnienia ważnych prawnie uzasadnionych podstaw do przetwarzania, nadrzędnych wobec Ciebie interesów, praw i wolności, w szczególności ustalenia, dochodzenia lub obrony roszczeń.",
-          "complaint": "Na działania Administratora przysługuje skarga do Prezesa Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193 Warszawa.",
-          "voluntary": "Podanie danych osobowych jest dobrowolne, lecz niezbędne do obsługi Serwisu.",
-          "automation": "W stosunku do Ciebie mogą być podejmowane czynności polegające na zautomatyzowanym podejmowaniu decyzji, w tym profilowaniu w celu świadczenia usług w ramach zawartej umowy oraz w celu prowadzenia przez Administratora marketingu bezpośredniego.",
-          "thirdCountries": "Dane osobowe nie są przekazywane od krajów trzecich w rozumieniu przepisów o ochronie danych osobowych. Oznacza to, że nie przesyłamy ich poza teren Unii Europejskiej."
+          "objection": "You have the right to object to the processing referred to in point 3.2 with respect to the processing of personal data for the purposes of the legitimate interests pursued by the Controller, including profiling, whereby the right to object may not be exercised if there are compelling legitimate grounds for the processing which override your interests, rights and freedoms, in particular the establishment, exercise or defense of legal claims.",
+          "complaint": "You have the right to lodge a complaint with the competent Data Protection Authority.",
+          "voluntary": "Providing personal data is voluntary, but necessary to operate the Website.",
+          "automation": "Automated decision‑making, including profiling, may be carried out with respect to you in order to provide services under the concluded contract and for the Controller's direct marketing.",
+          "thirdCountries": "Personal data is not transferred to third countries within the meaning of data protection regulations. This means that we do not send it outside the European Union."
         }
       },
       "forms": {
-        "title": "5. Informacje w formularzach",
+        "title": "5. Information in forms",
         "content": {
-          "voluntaryData": "Serwis zbiera informacje podane dobrowolnie przez użytkownika, w tym dane osobowe, o ile zostaną one podane.",
-          "connectionParams": "Serwis może zapisać informacje o parametrach połączenia (oznaczenie czasu, adres IP).",
-          "emailLinking": "Serwis, w niektórych wypadkach, może zapisać informację ułatwiającą powiązanie danych w formularzu z adresem e-mail użytkownika wypełniającego formularz. W takim wypadku adres e-mail użytkownika pojawia się wewnątrz adresu url strony zawierającej formularz.",
-          "processing": "Dane podane w formularzu są przetwarzane w celu wynikającym z funkcji konkretnego formularza, np. w celu dokonania procesu obsługi zgłoszenia serwisowego lub kontaktu handlowego, rejestracji usług itp. Każdorazowo kontekst i opis formularza w czytelny sposób informuje, do czego on służy."
+          "voluntaryData": "The Website collects information voluntarily provided by the user, including personal data, if provided.",
+          "connectionParams": "The Website may save information about connection parameters (time marking, IP address).",
+          "emailLinking": "In some cases, the Website may save information facilitating the linking of data in the form to the email address of the user completing the form. In such cases, the user's email address appears within the URL of the page containing the form.",
+          "processing": "Data provided in the form is processed for the purpose resulting from the function of the specific form, e.g. to carry out a service request or commercial contact, service registration, etc. Each time, the context and description of the form clearly informs what it is used for."
         }
       },
       "adminLogs": {
-        "title": "6. Logi Administratora",
+        "title": "6. Administrator logs",
         "content": {
-          "behaviorLogging": "Informacje zachowaniu użytkowników w serwisie mogą podlegać logowaniu. Dane te są wykorzystywane w celu administrowania serwisem."
+          "behaviorLogging": "Information about user behavior on the Website may be logged. These data are used to administer the Website."
         }
       },
       "marketing": {
-        "title": "7. Istotne techniki marketingowe",
+        "title": "7. Important marketing techniques",
         "content": {
-          "analytics": "Operator stosuje analizę statystyczną ruchu na stronie, poprzez Google Analytics (Google Inc. z siedzibą w USA). Operator nie przekazuje do operatora tej usługi danych osobowych, a jedynie zanonimizowane informacje. Usługa bazuje na wykorzystaniu ciasteczek w urządzeniu końcowym użytkownika. W zakresie informacji o preferencjach użytkownika gromadzonych przez sieć reklamową Google użytkownik może przeglądać i edytować informacje wynikające z plików cookies przy pomocy narzędzia: https://www.google.com/ads/preferences/",
-          "remarketing": "Operator stosuje techniki remarketingowe, pozwalające na dopasowanie przekazów reklamowych do zachowania użytkownika na stronie, co może dawać złudzenie, że dane osobowe użytkownika są wykorzystywane do jego śledzenia, jednak w praktyce nie dochodzi do przekazania żadnych danych osobowych od Operatora do operatorom reklam. Technologicznym warunkiem takich działań jest włączona obsługa plików cookie.",
-          "facebookPixel": "Operator stosuje korzysta z piksela Facebooka. Ta technologia powoduje, że serwis Facebook (Facebook Inc. z siedzibą w USA) wie, że dana osoba w nim zarejestrowana korzysta z Serwisu. Bazuje w tym wypadku na danych, wobec których sam jest administratorem, Operator nie przekazuje od siebie żadnych dodatkowych danych osobowych serwisowi Facebook. Usługa bazuje na wykorzystaniu ciasteczek w urządzeniu końcowym użytkownika.",
-          "heatmaps": "Operator stosuje rozwiązanie badające zachowanie użytkowników poprzez tworzenie map ciepła oraz nagrywanie zachowania na stronie. Te informacje są anonimizowane zanim zostaną przesłane do operatora usługi tak, że nie wie on jakiej osoby fizycznej one dotyczą. W szczególności nagrywaniu nie podlegają wpisywane hasła oraz inne dane osobowe.",
-          "automation": "Operator stosuje rozwiązanie automatyzujące działanie Serwisu w odniesieniu do użytkowników, np. mogące przesłać maila do użytkownika po odwiedzeniu konkretnej podstrony, o ile wyraził on zgodę na otrzymywanie korespondencji handlowej od Operatora.",
-          "profiling": "Operator może stosować profilowanie w rozumieniu przepisów o ochronie danych osobowych"
+          "analytics": "The Operator uses statistical analysis of website traffic through Google Analytics (Google Inc., USA). The Operator does not provide the operator of this service with personal data, only anonymized information. The service is based on the use of cookies on the user's end device. Regarding information about user preferences collected by Google's advertising network, the user can view and edit information resulting from cookies using the tool: https://www.google.com/ads/preferences/",
+          "remarketing": "The Operator uses remarketing techniques that allow advertising messages to be tailored to the user's behavior on the site, which may give the impression that the user's personal data is being used to track them, but in practice no personal data is transferred by the Operator to advertisers. The technological condition of such activities is the enabled handling of cookies.",
+          "facebookPixel": "The Operator uses the Facebook pixel. This technology causes the Facebook service (Facebook Inc., USA) to know that a registered person is using the Website. In this case it is based on data for which Facebook itself is the controller; the Operator does not provide any additional personal data to Facebook. The service is based on the use of cookies on the user's end device.",
+          "heatmaps": "The Operator uses a solution that studies user behavior by creating heat maps and recording behavior on the site. This information is anonymized before being sent to the service provider so that they do not know which natural person it concerns. In particular, typed passwords and other personal data are not recorded.",
+          "automation": "The Operator uses a solution that automates the operation of the Website with respect to users, e.g. capable of sending an email to a user after visiting a specific subpage, provided that the user has agreed to receive commercial correspondence from the Operator.",
+          "profiling": "The Operator may use profiling within the meaning of data protection regulations"
         }
       },
       "cookies": {
-        "title": "8. Informacja o plikach cookies",
+        "title": "8. Information about cookies",
         "content": {
-          "usage": "Serwis korzysta z plików cookies.",
-          "definition": "Pliki cookies (tzw. \"ciasteczka\") stanowią dane informatyczne, w szczególności pliki tekstowe, które przechowywane są w urządzeniu końcowym Użytkownika Serwisu i przeznaczone są do korzystania ze stron internetowych Serwisu. Cookies zazwyczaj zawierają nazwę strony internetowej, z której pochodzą, czas przechowywania ich na urządzeniu końcowym oraz unikalny numer.",
-          "controller": "Podmiotem zamieszczającym na urządzeniu końcowym Użytkownika Serwisu pliki cookies oraz uzyskującym do nich dostęp jest operator Serwisu.",
-          "purposes": "Pliki cookies wykorzystywane są w następujących celach:",
-          "sessionMaintenance": "utrzymanie sesji użytkownika Serwisu (po zalogowaniu), dzięki której użytkownik nie musi na każdej podstronie Serwisu ponownie wpisywać loginu i hasła",
-          "types": "W ramach Serwisu stosowane są dwa zasadnicze rodzaje plików cookies: \"sesyjne\" (session cookies) oraz \"stałe\" (persistent cookies). Cookies \"sesyjne\" są plikami tymczasowymi, które przechowywane są w urządzeniu końcowym Użytkownika do czasu wylogowania, opuszczenia strony internetowej lub wyłączenia oprogramowania (przeglądarki internetowej). \"Stałe\" pliki cookies przechowywane są w urządzeniu końcowym Użytkownika przez czas określony w parametrach plików cookies lub do czasu ich usunięcia przez Użytkownika.",
-          "browserSettings": "Oprogramowanie do przeglądania stron internetowych (przeglądarka internetowa) zazwyczaj domyślnie dopuszcza przechowywanie plików cookies w urządzeniu końcowym Użytkownika. Użytkownicy Serwisu mogą dokonać zmiany ustawień w tym zakresie. Przeglądarka internetowa umożliwia usunięcie plików cookies. Możliwe jest także automatyczne blokowanie plików cookies Szczegółowe informacje na ten temat zawiera pomoc lub dokumentacja przeglądarki internetowej.",
-          "limitations": "Ograniczenia stosowania plików cookies mogą wpłynąć na niektóre funkcjonalności dostępne na stronach internetowych Serwisu.",
-          "thirdParty": "Pliki cookies zamieszczane w urządzeniu końcowym Użytkownika Serwisu wykorzystywane mogą być również przez współpracujące z operatorem Serwisu podmioty, w szczególności dotyczy to firm: Google (Google Inc. z siedzibą w USA), Facebook (Facebook Inc. z siedzibą w USA), Twitter (Twitter Inc. z siedzibą w USA)."
+          "usage": "The Website uses cookies.",
+          "definition": "Cookies are IT data, in particular text files, which are stored on the end device of the Website User and are intended for the use of the Website's pages. Cookies usually contain the name of the website they come from, the time they are stored on the end device and a unique number.",
+          "controller": "The entity placing cookies on the end device of the Website User and obtaining access to them is the operator of the Website.",
+          "purposes": "Cookies are used for the following purposes:",
+          "sessionMaintenance": "maintaining the Website User's session (after logging in), thanks to which the user does not have to re‑enter the login and password on each subpage of the Website",
+          "types": "Two basic types of cookies are used within the Website: \"session\" cookies and \"persistent\" cookies. \"Session\" cookies are temporary files that are stored on the User's end device until logging out, leaving the website or turning off the software (web browser). \"Persistent\" cookies are stored on the User's end device for the time specified in the cookie parameters or until they are deleted by the User.",
+          "browserSettings": "Software for browsing websites (web browser) usually allows cookies to be stored on the User's end device by default. Users of the Website may change the settings in this regard. The web browser allows the deletion of cookies. It is also possible to automatically block cookies. Detailed information on this subject can be found in the help or documentation of the web browser.",
+          "limitations": "Restrictions on the use of cookies may affect some of the functionalities available on the Website's pages.",
+          "thirdParty": "Cookies placed on the User's end device may also be used by entities cooperating with the operator of the Website, in particular this applies to the following companies: Google (Google Inc., USA), Facebook (Facebook Inc., USA), Twitter (Twitter Inc., USA)."
         }
       },
       "cookieManagement": {
-        "title": "9. Zarządzanie plikami cookies – jak w praktyce wyrażać i cofać zgodę?",
+        "title": "9. Managing cookies – how to give and withdraw consent in practice?",
         "content": {
-          "disableCookies": "Jeśli użytkownik nie chce otrzymywać plików cookies, może zmienić ustawienia przeglądarki. Zastrzegamy, że wyłączenie obsługi plików cookies niezbędnych dla procesów uwierzytelniania, bezpieczeństwa, utrzymania preferencji użytkownika może utrudnić, a w skrajnych przypadkach może uniemożliwić korzystanie ze stron www",
-          "browserInstructions": "W celu zarządzania ustawienia cookies wybierz z listy poniżej przeglądarkę internetową, której używasz i postępuj zgodnie z instrukcjami:",
+          "disableCookies": "If the user does not wish to receive cookies, they can change the browser settings. Please note that disabling cookies necessary for authentication, security and maintaining user preferences may make it difficult or, in extreme cases, impossible to use websites.",
+          "browserInstructions": "To manage cookie settings, select the web browser you use from the list below and follow the instructions:",
           "browsers": {
             "edge": "Edge",
             "ie": "Internet Explorer",
@@ -132,7 +132,7 @@
             "firefox": "Firefox",
             "opera": "Opera"
           },
-          "mobileDevices": "Urządzenia mobilne:",
+          "mobileDevices": "Mobile devices:",
           "mobileBrowsers": {
             "android": "Android",
             "ios": "Safari (iOS)",
@@ -144,43 +144,43 @@
   },
   "unsubscribe": {
     "howToUnsubscribe": {
-      "title": "Jak zrezygnować?",
+      "title": "How to unsubscribe?",
       "items": {
-        "link": "Kliknij link \"Wypisz się\" w ostatnim otrzymanym mailu",
-        "reply": "Lub odpowiedz na dowolny mail z prośbą o rezygnację",
-        "contact": "Lub skontaktuj się z nami bezpośrednio"
+        "link": "Click the 'Unsubscribe' link in the last email you received",
+        "reply": "Or reply to any email with a request to unsubscribe",
+        "contact": "Or contact us directly"
       }
     },
     "whatHappensAfter": {
-      "title": "Co się stanie po rezygnacji?",
+      "title": "What happens after you unsubscribe?",
       "items": {
-        "deleteEmail": "Twój adres email zostanie usunięty z naszej bazy danych",
-        "stopMessages": "Przestaniesz otrzymywać nasze wiadomości",
-        "stopNotifications": "Nie będziesz już otrzymywać powiadomień o nowych materiałach",
-        "rejoin": "Możesz w każdej chwili ponownie dołączyć do bazy danych"
+        "deleteEmail": "Your email address will be removed from our database",
+        "stopMessages": "You will stop receiving our messages",
+        "stopNotifications": "You will no longer receive notifications about new materials",
+        "rejoin": "You can rejoin the database at any time"
       }
     },
     "titles": {
-      "main": "Rezygnacja z bazy danych",
-      "withToken": "Potwierdź rezygnację z otrzymywania wiadomości",
-      "withoutToken": "Aby zrezygnować z otrzymywania wiadomości, użyj linku z ostatniego maila lub skontaktuj się z nami."
+      "main": "Unsubscribe from database",
+      "withToken": "Confirm that you want to stop receiving messages",
+      "withoutToken": "To unsubscribe from receiving messages, use the link from the last email or contact us."
     },
     "buttons": {
-      "submit": "Zrezygnuj z bazy danych",
-      "loading": "Przetwarzanie..."
+      "submit": "Unsubscribe from database",
+      "loading": "Processing..."
     },
     "labels": {
-      "token": "Token bezpieczeństwa:"
+      "token": "Security token:"
     },
     "placeholders": {
-      "token": "Token z linku"
+      "token": "Token from the link"
     },
     "policy": {
-      "checkbox": "Akceptuję",
-      "privacyPolicy": "politykę prywatności",
-      "and": "i",
+      "checkbox": "I accept",
+      "privacyPolicy": "the privacy policy",
+      "and": "and",
       "cookies": "cookies",
-      "error": "Musisz zaakceptować politykę prywatności i cookies"
+      "error": "You must accept the privacy policy and cookies"
     }
   }
 }

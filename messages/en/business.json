@@ -1,112 +1,112 @@
 {
   "businessImpact": {
     "header": {
-      "title": "Nie tylko koduję",
-      "subtitle": "Buduję imperium Twojego biznesu"
+      "title": "I don't just code",
+      "subtitle": "I build the empire of your business"
     },
     "mainOffer": {
       "badge": "+40% ROI",
-      "title": "Zwiększam Twoje zyski o 40%",
-      "description": "Nie robię \"Ładnych stron\". Tworzę maszynę do zarabiania pieniędzy. Moi klienci w ciągu pierwszych 3 miesięcy odnotowują średnio 40% wzrost sprzedaży.",
+      "title": "I increase your profits by 40%",
+      "description": "I don't make \"pretty websites\". I build a money‑making machine. My clients see an average 40% increase in sales within the first 3 months.",
       "features": {
-        "feature1": "Optymalizacja konwersji oparta na danych",
-        "feature2": "A/B testing każdego elementu",
-        "feature3": "Psychologia sprzedaży w każdym pikselu"
+        "feature1": "Data‑driven conversion optimization",
+        "feature2": "A/B testing of every element",
+        "feature3": "Sales psychology in every pixel"
       }
     },
     "benefits": {
       "timeline": {
         "number": "3-14",
-        "label": "dni realizacji"
+        "label": "days to deliver"
       },
       "express": {
-        "title": "Express bez kompromisów",
-        "description": "Podczas gdy inni obiecują \"za miesiąc\", ja dostarczam gotową stronę w maksymalnie 2 tygodnie. Bez uszczerbku na jakości."
+        "title": "Express without compromise",
+        "description": "While others promise \"in a month\", I deliver a finished website in up to 2 weeks. No compromise on quality."
       },
       "guarantee": {
         "number": "100%",
-        "label": "gwarancji"
+        "label": "guarantee"
       },
       "zeroRisk": {
-        "title": "Zero ryzyka",
-        "description": "6 miesięcy wsparcia + 30 dni na zwrot pieniędzy. Płacisz dopiero gdy jesteś w 100% zadowolony."
+        "title": "Zero risk",
+        "description": "6 months of support + 30‑day money‑back guarantee. You pay only when you're 100% satisfied."
       }
     }
   },
   "profitability": {
     "header": {
-      "title": "Ale czy to się opłaci?",
-      "subtitle": "Rozumiem Twoje wątpliwości. Oto brutalna prawda:"
+      "title": "But will it pay off?",
+      "subtitle": "I understand your doubts. Here's the hard truth:"
     },
     "objections": {
       "expensive": {
-        "title": "To za drogie",
-        "subtitle": "Najczęstsza obiekcja",
+        "title": "It's too expensive",
+        "subtitle": "The most common objection",
         "benefits": {
-          "benefit1": "Zwrot w 2-3 miesiące",
-          "benefit2": "Profesjonalna strona to inwestycja, nie koszt",
-          "benefit3": "Oszczędzasz 100+ godzin",
-          "benefit4": "Twój czas jest wart więcej niż myślisz",
-          "benefit5": "Unikasz kosztownych błędów",
-          "benefit6": "Jeden błąd może kosztować więcej niż cała strona"
+          "benefit1": "Payback in 2–3 months",
+          "benefit2": "A professional site is an investment, not a cost",
+          "benefit3": "Save 100+ hours",
+          "benefit4": "Your time is worth more than you think",
+          "benefit5": "Avoid costly mistakes",
+          "benefit6": "One mistake can cost more than the entire site"
         }
       },
       "noTime": {
-        "title": "Nie mam czasu",
-        "subtitle": "Właśnie dlatego powinieneś zacząć",
+        "title": "I don't have time",
+        "subtitle": "That's exactly why you should start",
         "benefits": {
-          "benefit1": "Każdy dzień = straceni klienci",
-          "benefit2": "Twoja konkurencja nie śpi",
-          "benefit3": "Ja robię wszystko za Ciebie",
-          "benefit4": "Ty tylko akceptujesz gotowe rozwiązania",
-          "benefit5": "Maksymalnie 30 minut tygodniowo",
-          "benefit6": "Mniej niż jeden odcinek serialu"
+          "benefit1": "Every day = lost customers",
+          "benefit2": "Your competition isn't sleeping",
+          "benefit3": "I handle everything for you",
+          "benefit4": "You only approve ready solutions",
+          "benefit5": "Max 30 minutes per week",
+          "benefit6": "Less than one episode of a TV show"
         }
       },
       "noBudget": {
-        "title": "Nie mam budżetu",
-        "subtitle": "Myślisz krótkookresowo",
+        "title": "I don't have the budget",
+        "subtitle": "Short‑term thinking",
         "benefits": {
-          "benefit1": "Tracisz klientów każdego dnia",
-          "benefit2": "Konkurencja cię wyprzedza",
-          "benefit3": "Inwestycja zwraca się w 2 miesiące",
-          "benefit4": "Możliwość rozłożenia płatności",
-          "benefit5": "Lepiej zacząć dziś niż za rok"
+          "benefit1": "You're losing customers every day",
+          "benefit2": "Competition is getting ahead",
+          "benefit3": "Investment pays off in 2 months",
+          "benefit4": "Payment in installments possible",
+          "benefit5": "Better to start today than a year from now"
         }
       },
       "tooRisky": {
-        "title": "To zbyt ryzykowne",
-        "subtitle": "Zero ryzyka dla Ciebie",
+        "title": "It's too risky",
+        "subtitle": "Zero risk for you",
         "benefits": {
-          "benefit1": "30 dni gwarancji zwrotu pieniędzy",
-          "benefit2": "6 miesięcy bezpłatnego wsparcia",
-          "benefit3": "Hosting i domena w cenie na rok",
-          "benefit4": "Backup codziennie",
-          "benefit5": "SSL i zabezpieczenia",
-          "benefit6": "Nie płacisz dopóki nie jesteś zadowolony"
+          "benefit1": "30‑day money‑back guarantee",
+          "benefit2": "6 months of free support",
+          "benefit3": "Hosting and domain included for one year",
+          "benefit4": "Daily backups",
+          "benefit5": "SSL and security",
+          "benefit6": "You don't pay until you're satisfied"
         }
       }
     },
     "stats": {
       "roiTime": {
-        "number": "2-3 mies.",
-        "label": "czas zwrotu inwestycji",
-        "description": "Średni czas, po którym klienci odnotowują zwrot inwestycji"
+        "number": "2–3 mo.",
+        "label": "time to ROI",
+        "description": "Average time until clients see return on investment"
       },
       "timeWeekly": {
         "number": "30 min",
-        "label": "tygodniowo Twojego czasu",
-        "description": "Maksymalny czas, jakiego potrzebuję od Ciebie w trakcie projektu"
+        "label": "per week of your time",
+        "description": "Maximum time I need from you during the project"
       },
       "satisfaction": {
         "number": "100%",
-        "label": "gwarancji zadowolenia",
-        "description": "30 dni na zwrot pieniędzy jeśli nie jesteś zadowolony"
+        "label": "satisfaction guarantee",
+        "description": "30 days money back if you're not satisfied"
       },
       "conversion": {
         "number": "400%",
-        "label": "wzrost konwersji",
-        "description": "Średni wzrost sprzedaży po wdrożeniu nowej strony"
+        "label": "increase in conversions",
+        "description": "Average sales increase after launching the new website"
       }
     }
   }

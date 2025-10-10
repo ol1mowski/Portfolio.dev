@@ -1,27 +1,27 @@
 {
   "projects": {
-    "title": "Moje Projekty",
-    "subtitle": "Zobacz co ostatnio stworzyłem",
-    "viewProject": "Zobacz projekt",
-    "viewCode": "Zobacz kod",
-    "sourceCode": "Kod źródłowy",
-    "liveVersion": "Wersja na żywo",
-    "more": "Więcej",
-    "sourceCodeAriaLabel": "Zobacz kod źródłowy na GitHub",
-    "liveVersionAriaLabel": "Zobacz wersję na żywo",
-    "moreAriaLabel": "Zobacz więcej szczegółów",
-    "backToProjects": "Powrót do projektów",
-    "technologies": "Technologie",
-    "projectGallery": "Galeria projektu",
-    "projectDescription": "Opis projektu",
-    "mainView": "widok główny",
-    "subpage": "podstrona",
+    "title": "My Projects",
+    "subtitle": "See what I've built recently",
+    "viewProject": "View project",
+    "viewCode": "View code",
+    "sourceCode": "Source code",
+    "liveVersion": "Live version",
+    "more": "More",
+    "sourceCodeAriaLabel": "View source code on GitHub",
+    "liveVersionAriaLabel": "View live version",
+    "moreAriaLabel": "View more details",
+    "backToProjects": "Back to projects",
+    "technologies": "Technologies",
+    "projectGallery": "Project gallery",
+    "projectDescription": "Project description",
+    "mainView": "main view",
+    "subpage": "subpage",
     "responsive": "responsive"
   },
   "project": {
     "notFound": {
-      "title": "Projekt nie znaleziony",
-      "description": "Nie mogliśmy znaleźć szukanego projektu"
+      "title": "Project not found",
+      "description": "We couldn't find the project you're looking for"
     },
     "metadata": {
       "caseStudy": "Case Study"

@@ -1,54 +1,54 @@
 {
   "about": {
-    "title": "O mnie",
-    "description": "Fullstack Developer z pasją do tworzenia rozwiązań, które rzeczywiście pomagają biznesom rosnąć. Pomagam przedsiębiorcom zamieniać pomysły w zyskowne strony oraz aplikacje internetowe.",
-    "detailedDescription": "Prowadzę kanał YouTube Oliwier Markiewicz gdzie dzielę się wiedzą o programowaniu i biznesie online. Regularnie publikuję też artykuły na moim blogu o najnowszych trendach w web developmencie.",
-    "philosophy": "Wierzę, że dobra aplikacja to nie tylko kod - to strategia biznesowa, psychologia użytkownika i perfekcyjne wykonanie w jednym. Dlatego moi klienci nie tylko dostają piękne strony, ale przede wszystkim narzędzia do zarabiania pieniędzy.",
+    "title": "About me",
+    "description": "Full‑stack developer passionate about building solutions that truly help businesses grow. I help entrepreneurs turn ideas into profitable websites and web applications.",
+    "detailedDescription": "I run the YouTube channel Oliwier Markiewicz where I share knowledge about programming and online business. I also regularly publish articles on my blog about the latest trends in web development.",
+    "philosophy": "I believe a great application is more than just code – it’s business strategy, user psychology and flawless execution in one. That’s why my clients receive not only beautiful websites, but above all tools for making money.",
     "highlightedDescription": {
-      "part1": "Fullstack Developer",
+      "part1": "Full‑stack Developer",
       "part2": "Oliwier Markiewicz",
-      "part3": "dobra aplikacja to nie tylko kod"
+      "part3": "a great app is more than code"
     },
     "stats": {
-      "experience": "Lat doświadczenia",
-      "experienceYears": "lat doświadczenia",
-      "projects": "Zrealizowanych projektów",
-      "clients": "Zadowolonych klientów",
-      "youtubeSubscribers": "subskrybentów YT",
-      "youtubeViews": "wyświetleń YouTube",
-      "youtubeVideos": "filmów na YouTube",
-      "blogPosts": "wpisów na blogu",
-      "completedProjects": "ukończonych projektów"
+      "experience": "Years of experience",
+      "experienceYears": "years of experience",
+      "projects": "Projects delivered",
+      "clients": "Happy clients",
+      "youtubeSubscribers": "YT subscribers",
+      "youtubeViews": "YouTube views",
+      "youtubeVideos": "YouTube videos",
+      "blogPosts": "Blog posts",
+      "completedProjects": "Completed projects"
     },
     "skills": {
-      "title": "Moje umiejętności",
-      "frontend": "Frontend Development",
+      "title": "My skills",
+      "frontend": "Frontend development",
       "react": "React & Next.js",
       "typescript": "TypeScript",
-      "design": "UI/UX Design",
-      "responsive": "Responsive Design",
-      "performance": "Optymalizacja wydajności"
+      "design": "UI/UX design",
+      "responsive": "Responsive design",
+      "performance": "Performance optimization"
     },
     "journey": {
-      "title": "Moja droga",
-      "description": "Od pierwszej linii kodu do profesjonalnego developera - poznaj moją historię i to, co mnie motywuje do ciągłego rozwoju."
+      "title": "My journey",
+      "description": "From the first line of code to a professional developer – discover my story and what drives my continuous growth."
     },
     "socialMedia": {
-      "title": "Znajdź mnie w social media"
+      "title": "Find me on social media"
     }
   },
   "aboutMe": {
-    "title": "O Mnie",
-    "greeting": "Cześć, Nazywam się",
+    "title": "About me",
+    "greeting": "Hi, my name is",
     "name": "Oliwier Markiewicz",
-    "description": "Zajmuję się projektowaniem oraz tworzeniem nowoczesnych i funkcjonalnych stron, sklepów i aplikacji internetowych w technologiach takich jak",
-    "descriptionEnd": ", które spełniają indywidualne potrzeby klientów.",
-    "helpDescription": "Pomagam małym firmom zaistnieć w internecie, poprzez Pozycjonowanie wizytówki Google Moja Firma, które zwiększają widoczność i przyciąga nowych klientów.",
-    "blogLink": "Sprawdź mój blog",
-    "blogText": "Prowadzę również",
-    "blogLabel": "Przejdź do bloga",
-    "youtubeText": "oraz kanał na",
-    "youtubeLabel": "Przejdź do kanału YouTube",
-    "finalDescription": "gdzie dzielę się wiedzą z zakresu programowania oraz tworzenia stron internetowych."
+    "description": "I design and develop modern and functional websites, stores and web applications using technologies such as",
+    "descriptionEnd": ", tailored to individual client needs.",
+    "helpDescription": "I help small businesses grow online, including by optimizing their Google Business Profile to increase visibility and attract new customers.",
+    "blogLink": "Check my blog",
+    "blogText": "I also run a",
+    "blogLabel": "Go to blog",
+    "youtubeText": "and a channel on",
+    "youtubeLabel": "Go to YouTube channel",
+    "finalDescription": "where I share knowledge about programming and building websites."
   }
 }

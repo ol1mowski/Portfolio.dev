@@ -1,142 +1,142 @@
 {
   "materials": {
     "header": {
-      "title": "Centrum",
-      "titleGradient": "Materiałów",
-      "subtitle": "Odkryj najlepsze materiały edukacyjne - e-booki, notatki i zasoby dodatkowe. Wszystko w jednym miejscu, z zaawansowanym filtrowaniem."
+      "title": "Materials",
+      "titleGradient": "Center",
+      "subtitle": "Discover top learning resources – e‑books, notes and extra assets. All in one place, with advanced filtering."
     },
     "search": {
-      "placeholder": "Szukaj materiałów, kategorii, tagów...",
-      "ariaLabel": "Wyszukaj materiały"
+      "placeholder": "Search materials, categories, tags...",
+      "ariaLabel": "Search materials"
     },
     "controls": {
-      "sortLabel": "Sortuj:",
+      "sortLabel": "Sort:",
       "sortOptions": {
-        "newest": "Najnowsze",
-        "popular": "Najpopularniejsze",
-        "title": "Alfabetycznie"
+        "newest": "Newest",
+        "popular": "Most popular",
+        "title": "Alphabetical"
       }
     },
     "filters": {
-      "title": "Filtry",
-      "toggle": "Filtry",
-      "expand": "Rozwiń panel filtrów",
-      "collapse": "Zwiń panel filtrów",
-      "clearAll": "Wyczyść wszystkie",
-      "materialType": "Typ materiału",
-      "category": "Kategoria",
-      "categoryType": "Kategoria typu",
+      "title": "Filters",
+      "toggle": "Filters",
+      "expand": "Expand filters panel",
+      "collapse": "Collapse filters panel",
+      "clearAll": "Clear all",
+      "materialType": "Material type",
+      "category": "Category",
+      "categoryType": "Category type",
       "typeLabels": {
-        "ebook": "E-booki",
-        "note": "Notatki",
-        "material": "Materiały"
+        "ebook": "E‑books",
+        "note": "Notes",
+        "material": "Materials"
       },
       "categoryTypeLabels": {
-        "techniczne": "Techniczne",
-        "rozwojowe": "Rozwojowe",
-        "technologiczne": "Technologiczne"
+        "techniczne": "Technical",
+        "rozwojowe": "Personal growth",
+        "technologiczne": "Technological"
       }
     },
     "grid": {
-      "loading": "Ładowanie...",
-      "foundMaterials": "Znaleziono {count} materiałów",
-      "loadingMaterials": "Ładowanie materiałów...",
-      "loadingCard": "Ładowanie karty...",
-      "clearFilters": "Wyczyść filtry",
-      "clearAllFilters": "Wyczyść wszystkie filtry",
+      "loading": "Loading...",
+      "foundMaterials": "Found {count} materials",
+      "loadingMaterials": "Loading materials...",
+      "loadingCard": "Loading card...",
+      "clearFilters": "Clear filters",
+      "clearAllFilters": "Clear all filters",
       "noResults": {
-        "title": "Nie znaleziono materiałów",
-        "text": "Spróbuj zmienić kryteria wyszukiwania lub wyczyść filtry."
+        "title": "No materials found",
+        "text": "Try changing the search criteria or clear the filters."
       }
     },
     "card": {
       "typeLabels": {
-        "ebook": "E-book",
-        "note": "Notatka"
+        "ebook": "E‑book",
+        "note": "Note"
       },
       "categoryTypeLabels": {
-        "techniczne": "Techniczne",
-        "rozwojowe": "Rozwojowe",
-        "technologiczne": "Technologiczne"
+        "techniczne": "Technical",
+        "rozwojowe": "Personal growth",
+        "technologiczne": "Technological"
       },
       "downloadText": {
-        "ebook": "Pobierz E-book",
-        "note": "Pobierz Notatkę"
+        "ebook": "Download E‑book",
+        "note": "Download note"
       },
-      "downloading": "Pobieranie...",
-      "noteLabel": "NOTATKA"
+      "downloading": "Downloading...",
+      "noteLabel": "NOTE"
     },
     "benefits": {
       "left": [
         {
           "icon": "📚",
-          "title": "Biblioteka wiedzy",
-          "description": "Dostęp do 50+ e-booków, notatek i praktycznych przewodników"
+          "title": "Knowledge library",
+          "description": "Access to 50+ e‑books, notes and practical guides"
         },
         {
           "icon": "🚀",
-          "title": "Ekskluzywne treści",
-          "description": "Pierwsze spojrzenie na nowe materiały i beta wersje"
+          "title": "Exclusive content",
+          "description": "First look at new materials and beta versions"
         },
         {
           "icon": "💎",
-          "title": "Premium zasoby",
-          "description": "Szablony, checklist i gotowe rozwiązania do projektów"
+          "title": "Premium resources",
+          "description": "Templates, checklists and ready‑made project solutions"
         }
       ],
       "right": [
         {
           "icon": "💡",
-          "title": "Cotygodniowe wskazówki",
-          "description": "Najlepsze praktyki programowania prosto na email"
+          "title": "Weekly tips",
+          "description": "Best programming practices straight to your email"
         },
         {
           "icon": "🎯",
-          "title": "Spersonalizowane ścieżki",
-          "description": "Materiały dostosowane do Twojego poziomu zaawansowania"
+          "title": "Personalized paths",
+          "description": "Materials tailored to your level"
         },
         {
           "icon": "🔥",
-          "title": "Aktualne trendy",
-          "description": "Najnowsze technologie, narzędzia i trendy w branży IT"
+          "title": "Current trends",
+          "description": "Latest technologies, tools and trends in the IT industry"
         }
       ]
     },
     "emailGate": {
-      "title": "Odblokuj Centrum Materiałów",
-      "subtitle": "Podaj swój adres email i uzyskaj natychmiastowy dostęp do wszystkich materiałów edukacyjnych, e-booków i zasobów dla programistów.",
+      "title": "Unlock the Materials Center",
+      "subtitle": "Enter your email and get instant access to all learning materials, e‑books and developer resources.",
       "form": {
-        "title": "Zacznij już teraz!",
-        "subtitle": "Bezpłatny dostęp na zawsze",
-        "nameLabel": "Twoje imię",
-        "namePlaceholder": "np. Jan Kowalski",
-        "emailLabel": "Podaj swój adres email",
-        "emailPlaceholder": "np. jan.kowalski@gmail.com",
-        "submitButton": "Odblokuj dostęp",
-        "loadingButton": "Odblokowuję..."
+        "title": "Start now!",
+        "subtitle": "Free access forever",
+        "nameLabel": "Your name",
+        "namePlaceholder": "e.g. John Smith",
+        "emailLabel": "Enter your email address",
+        "emailPlaceholder": "e.g. john.smith@gmail.com",
+        "submitButton": "Unlock access",
+        "loadingButton": "Unlocking..."
       },
       "policy": {
-        "checkboxText": "Akceptuję",
-        "privacyPolicy": "politykę prywatności",
-        "and": "i",
+        "checkboxText": "I accept",
+        "privacyPolicy": "the privacy policy",
+        "and": "and",
         "cookies": "cookies",
-        "error": "Musisz zaakceptować politykę prywatności i cookies"
+        "error": "You must accept the privacy policy and cookies"
       },
       "footer": {
-        "privacy": "🔒 Twoje dane są bezpieczne. Nie wysyłamy spamu.",
-        "guarantee": "✅ 100% bezpłatne."
+        "privacy": "🔒 Your data is safe. No spam.",
+        "guarantee": "✅ 100% free."
       },
       "errors": {
-        "fillFields": "Proszę wypełnić wszystkie pola",
-        "saveError": "Wystąpił błąd podczas zapisywania",
-        "connectionError": "Wystąpił błąd połączenia. Spróbuj ponownie."
+        "fillFields": "Please fill in all fields",
+        "saveError": "An error occurred while saving",
+        "connectionError": "A connection error occurred. Try again."
       },
-      "success": "Dostęp odblokowany! Przekierowuję...",
-      "loadingError": "Błąd podczas ładowania materiałów",
-      "retry": "Spróbuj ponownie",
+      "success": "Access unlocked! Redirecting...",
+      "loadingError": "Error while loading materials",
+      "retry": "Try again",
       "knowledgeLibrary": {
-        "title": "Biblioteka wiedzy",
-        "description": "Dostęp do 50+ e-booków, notatek i praktycznych przewodników"
+        "title": "Knowledge library",
+        "description": "Access to 50+ e‑books, notes and practical guides"
       }
     }
   }

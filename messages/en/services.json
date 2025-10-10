@@ -1,44 +1,44 @@
 {
   "services": {
-    "title": "Usługi",
-    "subtitle": "Co mogę dla Ciebie zrobić?",
+    "title": "Services",
+    "subtitle": "What can I do for you?",
     "website": {
-      "title": "Strony i Aplikacje Internetowe",
-      "description": "Tworzę nowoczesne, responsywne strony i aplikacje internetowe",
+      "title": "Websites and Web Apps",
+      "description": "I build modern, responsive websites and web applications",
       "features": {
-        "feature1": "Strony wizytówkowe firm",
-        "feature2": "Landing page'y sprzedażowe",
-        "feature3": "Aplikacje internetowe"
+        "feature1": "Company brochure websites",
+        "feature2": "Sales landing pages",
+        "feature3": "Web applications"
       },
-      "highlight": "100% responsywne"
+      "highlight": "100% responsive"
     },
     "ecommerce": {
-      "title": "Sklepy Online",
-      "description": "Kompleksowe rozwiązania e-commerce",
+      "title": "Online stores",
+      "description": "End‑to‑end e‑commerce solutions",
       "features": {
-        "feature1": "Sklepy e-commerce",
-        "feature2": "Integracje płatności",
-        "feature3": "Zarządzanie produktami"
+        "feature1": "E‑commerce shops",
+        "feature2": "Payment integrations",
+        "feature3": "Product management"
       },
-      "highlight": "Optymalizacja konwersji"
+      "highlight": "Conversion optimization"
     },
     "seo": {
-      "title": "Pozycjonowanie SEO",
-      "description": "Optymalizacja dla wyszukiwarek internetowych"
+      "title": "SEO optimization",
+      "description": "Search engine optimization"
     },
     "graphics": {
-      "title": "Projekty Graficzne",
+      "title": "Graphic design",
       "features": {
-        "feature1": "Identyfikacja wizualna",
-        "feature2": "Projekty UI/UX",
-        "feature3": "Materiały marketingowe"
+        "feature1": "Visual identity",
+        "feature2": "UI/UX designs",
+        "feature3": "Marketing materials"
       },
-      "highlight": "Spójny branding"
+      "highlight": "Consistent branding"
     },
     "undecided": {
-      "title": "Nie możesz się zdecydować? 🤔",
-      "subtitle": "Badź nie wiesz, czego dokładnie potrzebujesz? Skorzystaj z naszego bezpłatnego konfiguratora!",
-      "button": "Sprawdź Konfigurator"
+      "title": "Can't decide? 🤔",
+      "subtitle": "Or not sure what you need? Use our free configurator!",
+      "button": "Open configurator"
     }
   }
 }
