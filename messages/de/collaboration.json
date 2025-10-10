@@ -1,32 +1,32 @@
 {
   "collaboration": {
-    "title": "Jak Wygląda Współpraca?",
-    "seeSteps": "Zobacz Etapy Współpracy Ze Mną",
+    "title": "Wie sieht die Zusammenarbeit aus?",
+    "seeSteps": "Sieh dir die Schritte der Zusammenarbeit mit mir an",
     "steps": {
       "step1": {
-        "title": "Konsultacja I Analiza Potrzeb",
-        "description": "Na początku naszej współpracy przeprowadzam szczegółową konsultację, aby zrozumieć Twoje potrzeby i cele biznesowe. Jako twórca stron internetowych analizuję rynek, Twoją konkurencję oraz grupę docelową, aby móc dostarczyć najlepiej dopasowane rozwiązania."
+        "title": "Konsultation und Bedarfsanalyse",
+        "description": "Zu Beginn unserer Zusammenarbeit führe ich eine ausführliche Beratung durch, um deine Bedürfnisse und Geschäftsziele zu verstehen. Als Web‑Entwickler analysiere ich den Markt, deine Konkurrenz und die Zielgruppe, um die bestmöglichen Lösungen zu liefern."
       },
       "step2": {
-        "title": "Projektowanie I Tworzenie Strony",
-        "description": "Następnie przystępuję do projektowania strony internetowej. Tworzę unikalne projekty graficzne, które są zarówno estetyczne, jak i funkcjonalne. Wykorzystuję najnowsze technologie, aby Twoja strona była nowoczesna i responsywna. Każda strona internetowa, którą tworzę, jest zoptymalizowana pod kątem SEO, co zwiększa jej widoczność w wynikach wyszukiwania."
+        "title": "Design und Entwicklung der Website",
+        "description": "Anschließend beginne ich mit dem Design der Website. Ich erstelle einzigartige, sowohl ästhetische als auch funktionale Designs. Ich nutze die neuesten Technologien, damit deine Seite modern und responsiv ist. Jede von mir erstellte Website ist für SEO optimiert, was ihre Sichtbarkeit in den Suchergebnissen erhöht."
       },
       "step3": {
-        "title": "Testowanie I Wdrożenie",
-        "description": "Zanim strona internetowa zostanie uruchomiona, przeprowadzam dokładne testy funkcjonalności na różnych urządzeniach i przeglądarkach. Upewniam się, że wszystko działa bez zarzutu, a następnie wdrażam stronę na hosting, dbając o każdy szczegół."
+        "title": "Testen und Implementierung",
+        "description": "Bevor die Website live geht, teste ich sie sorgfältig auf verschiedenen Geräten und Browsern. Ich stelle sicher, dass alles reibungslos funktioniert, und implementiere die Seite anschließend auf dem Hosting – mit Blick auf jedes Detail."
       },
       "step4": {
-        "title": "Pozycjonowanie Lokalne",
-        "description": "Oferuję profesjonalne usługi pozycjonowania wizytówki Google Moja Firma, które pomogą Twojej firmie wyróżnić się w lokalnych wynikach wyszukiwania. Dzięki optymalizacji profilu Google Moja Firma poprawisz widoczność swojego biznesu w Google Maps i wyszukiwarce, przyciągniesz więcej klientów oraz zwiększysz ruch na stronie internetowej."
+        "title": "Lokales SEO",
+        "description": "Ich biete professionelle Optimierung für das Google‑Unternehmensprofil an, damit sich dein Unternehmen in lokalen Suchergebnissen abhebt. Durch die Optimierung deines Profils verbesserst du die Sichtbarkeit in Google Maps und der Suche, gewinnst mehr Kunden und steigerst den Traffic auf deiner Website."
       },
       "step5": {
-        "title": "Szkolenie I Wsparcie",
-        "description": "Po uruchomieniu strony oferuję szkolenie z jej obsługi oraz zarządzania treściami. Zapewniam również ciągłe wsparcie techniczne. Jestem dostępny, aby odpowiadać na Twoje pytania i pomagać w dalszym rozwijaniu strony oraz działań marketingowych."
+        "title": "Schulung und Support",
+        "description": "Nach dem Go‑Live biete ich eine Schulung zur Bedienung und Content‑Pflege an. Außerdem stelle ich kontinuierlichen technischen Support bereit. Ich bin verfügbar, um Fragen zu beantworten und die Website sowie Marketing‑Aktivitäten weiterzuentwickeln."
       }
     },
     "cta": {
-      "title": "Umów Się na Darmową Konsultację",
-      "button": "Zadzwoń: 693 851 878"
+      "title": "Vereinbare eine kostenlose Beratung",
+      "button": "Anrufen: 693 851 878"
     }
   }
 }

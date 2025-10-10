@@ -1,142 +1,142 @@
 {
   "materials": {
     "header": {
-      "title": "Centrum",
-      "titleGradient": "Materiałów",
-      "subtitle": "Odkryj najlepsze materiały edukacyjne - e-booki, notatki i zasoby dodatkowe. Wszystko w jednym miejscu, z zaawansowanym filtrowaniem."
+      "title": "Zentrum",
+      "titleGradient": "der Materialien",
+      "subtitle": "Entdecke die besten Lernmaterialien – E‑Books, Notizen und zusätzliche Ressourcen. Alles an einem Ort, mit fortgeschrittener Filterung."
     },
     "search": {
-      "placeholder": "Szukaj materiałów, kategorii, tagów...",
-      "ariaLabel": "Wyszukaj materiały"
+      "placeholder": "Suche nach Materialien, Kategorien, Tags...",
+      "ariaLabel": "Materialien suchen"
     },
     "controls": {
-      "sortLabel": "Sortuj:",
+      "sortLabel": "Sortieren:",
       "sortOptions": {
-        "newest": "Najnowsze",
-        "popular": "Najpopularniejsze",
-        "title": "Alfabetycznie"
+        "newest": "Neueste",
+        "popular": "Am beliebtesten",
+        "title": "Alphabetisch"
       }
     },
     "filters": {
-      "title": "Filtry",
-      "toggle": "Filtry",
-      "expand": "Rozwiń panel filtrów",
-      "collapse": "Zwiń panel filtrów",
-      "clearAll": "Wyczyść wszystkie",
-      "materialType": "Typ materiału",
-      "category": "Kategoria",
-      "categoryType": "Kategoria typu",
+      "title": "Filter",
+      "toggle": "Filter",
+      "expand": "Filterbereich erweitern",
+      "collapse": "Filterbereich einklappen",
+      "clearAll": "Alle löschen",
+      "materialType": "Materialtyp",
+      "category": "Kategorie",
+      "categoryType": "Kategorie‑Typ",
       "typeLabels": {
-        "ebook": "E-booki",
-        "note": "Notatki",
-        "material": "Materiały"
+        "ebook": "E‑Books",
+        "note": "Notizen",
+        "material": "Materialien"
       },
       "categoryTypeLabels": {
-        "techniczne": "Techniczne",
-        "rozwojowe": "Rozwojowe",
-        "technologiczne": "Technologiczne"
+        "techniczne": "Technisch",
+        "rozwojowe": "Persönliche Entwicklung",
+        "technologiczne": "Technologisch"
       }
     },
     "grid": {
-      "loading": "Ładowanie...",
-      "foundMaterials": "Znaleziono {count} materiałów",
-      "loadingMaterials": "Ładowanie materiałów...",
-      "loadingCard": "Ładowanie karty...",
-      "clearFilters": "Wyczyść filtry",
-      "clearAllFilters": "Wyczyść wszystkie filtry",
+      "loading": "Laden...",
+      "foundMaterials": "{count} Materialien gefunden",
+      "loadingMaterials": "Materialien werden geladen...",
+      "loadingCard": "Karte wird geladen...",
+      "clearFilters": "Filter löschen",
+      "clearAllFilters": "Alle Filter löschen",
       "noResults": {
-        "title": "Nie znaleziono materiałów",
-        "text": "Spróbuj zmienić kryteria wyszukiwania lub wyczyść filtry."
+        "title": "Keine Materialien gefunden",
+        "text": "Versuche, die Suchkriterien zu ändern oder lösche die Filter."
       }
     },
     "card": {
       "typeLabels": {
-        "ebook": "E-book",
-        "note": "Notatka"
+        "ebook": "E‑Book",
+        "note": "Notiz"
       },
       "categoryTypeLabels": {
-        "techniczne": "Techniczne",
-        "rozwojowe": "Rozwojowe",
-        "technologiczne": "Technologiczne"
+        "techniczne": "Technisch",
+        "rozwojowe": "Persönliche Entwicklung",
+        "technologiczne": "Technologisch"
       },
       "downloadText": {
-        "ebook": "Pobierz E-book",
-        "note": "Pobierz Notatkę"
+        "ebook": "E‑Book herunterladen",
+        "note": "Notiz herunterladen"
       },
-      "downloading": "Pobieranie...",
-      "noteLabel": "NOTATKA"
+      "downloading": "Wird heruntergeladen...",
+      "noteLabel": "NOTIZ"
     },
     "benefits": {
       "left": [
         {
           "icon": "📚",
-          "title": "Biblioteka wiedzy",
-          "description": "Dostęp do 50+ e-booków, notatek i praktycznych przewodników"
+          "title": "Wissensbibliothek",
+          "description": "Zugang zu 50+ E‑Books, Notizen und praktischen Leitfäden"
         },
         {
           "icon": "🚀",
-          "title": "Ekskluzywne treści",
-          "description": "Pierwsze spojrzenie na nowe materiały i beta wersje"
+          "title": "Exklusive Inhalte",
+          "description": "Früher Zugang zu neuen Materialien und Beta‑Versionen"
         },
         {
           "icon": "💎",
-          "title": "Premium zasoby",
-          "description": "Szablony, checklist i gotowe rozwiązania do projektów"
+          "title": "Premium‑Ressourcen",
+          "description": "Vorlagen, Checklisten und fertige Lösungen für Projekte"
         }
       ],
       "right": [
         {
           "icon": "💡",
-          "title": "Cotygodniowe wskazówki",
-          "description": "Najlepsze praktyki programowania prosto na email"
+          "title": "Wöchentliche Tipps",
+          "description": "Best Practices in der Programmierung direkt per E‑Mail"
         },
         {
           "icon": "🎯",
-          "title": "Spersonalizowane ścieżki",
-          "description": "Materiały dostosowane do Twojego poziomu zaawansowania"
+          "title": "Personalisierte Lernpfade",
+          "description": "Materialien, die deinem Niveau entsprechen"
         },
         {
           "icon": "🔥",
-          "title": "Aktualne trendy",
-          "description": "Najnowsze technologie, narzędzia i trendy w branży IT"
+          "title": "Aktuelle Trends",
+          "description": "Die neuesten Technologien, Tools und Trends der IT‑Branche"
         }
       ]
     },
     "emailGate": {
-      "title": "Odblokuj Centrum Materiałów",
-      "subtitle": "Podaj swój adres email i uzyskaj natychmiastowy dostęp do wszystkich materiałów edukacyjnych, e-booków i zasobów dla programistów.",
+      "title": "Material‑Center freischalten",
+      "subtitle": "Gib deine E‑Mail‑Adresse ein und erhalte sofortigen Zugriff auf alle Lernmaterialien, E‑Books und Ressourcen für Entwickler.",
       "form": {
-        "title": "Zacznij już teraz!",
-        "subtitle": "Bezpłatny dostęp na zawsze",
-        "nameLabel": "Twoje imię",
-        "namePlaceholder": "np. Jan Kowalski",
-        "emailLabel": "Podaj swój adres email",
-        "emailPlaceholder": "np. jan.kowalski@gmail.com",
-        "submitButton": "Odblokuj dostęp",
-        "loadingButton": "Odblokowuję..."
+        "title": "Jetzt starten!",
+        "subtitle": "Für immer kostenloser Zugang",
+        "nameLabel": "Dein Name",
+        "namePlaceholder": "z. B. Jan Kowalski",
+        "emailLabel": "Gib deine E‑Mail‑Adresse ein",
+        "emailPlaceholder": "z. B. jan.kowalski@gmail.com",
+        "submitButton": "Zugang freischalten",
+        "loadingButton": "Wird freigeschaltet..."
       },
       "policy": {
-        "checkboxText": "Akceptuję",
-        "privacyPolicy": "politykę prywatności",
-        "and": "i",
-        "cookies": "cookies",
-        "error": "Musisz zaakceptować politykę prywatności i cookies"
+        "checkboxText": "Ich akzeptiere",
+        "privacyPolicy": "die Datenschutzrichtlinie",
+        "and": "und",
+        "cookies": "Cookies",
+        "error": "Du musst die Datenschutzrichtlinie und Cookies akzeptieren"
       },
       "footer": {
-        "privacy": "🔒 Twoje dane są bezpieczne. Nie wysyłamy spamu.",
-        "guarantee": "✅ 100% bezpłatne."
+        "privacy": "🔒 Deine Daten sind sicher. Kein Spam.",
+        "guarantee": "✅ 100% kostenlos."
       },
       "errors": {
-        "fillFields": "Proszę wypełnić wszystkie pola",
-        "saveError": "Wystąpił błąd podczas zapisywania",
-        "connectionError": "Wystąpił błąd połączenia. Spróbuj ponownie."
+        "fillFields": "Bitte alle Felder ausfüllen",
+        "saveError": "Beim Speichern ist ein Fehler aufgetreten",
+        "connectionError": "Verbindungsfehler. Bitte versuche es erneut."
       },
-      "success": "Dostęp odblokowany! Przekierowuję...",
-      "loadingError": "Błąd podczas ładowania materiałów",
-      "retry": "Spróbuj ponownie",
+      "success": "Zugang freigeschaltet! Weiterleitung...",
+      "loadingError": "Fehler beim Laden der Materialien",
+      "retry": "Erneut versuchen",
       "knowledgeLibrary": {
-        "title": "Biblioteka wiedzy",
-        "description": "Dostęp do 50+ e-booków, notatek i praktycznych przewodników"
+        "title": "Wissensbibliothek",
+        "description": "Zugang zu 50+ E‑Books, Notizen und praktischen Leitfäden"
       }
     }
   }

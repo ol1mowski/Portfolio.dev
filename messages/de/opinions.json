@@ -1,9 +1,9 @@
 {
   "opinions": {
-    "title": "Opinie Klientów",
-    "subtitle": "Co mówią o mojej pracy",
-    "viewFullOpinion": "Zobacz Pełną Opinię",
-    "loadingOpinions": "Ładowanie opinii...",
-    "noOpinionsAvailable": "Brak dostępnych opinii"
+    "title": "Kundenstimmen",
+    "subtitle": "Was über meine Arbeit gesagt wird",
+    "viewFullOpinion": "Ganze Meinung anzeigen",
+    "loadingOpinions": "Bewertungen werden geladen...",
+    "noOpinionsAvailable": "Keine Bewertungen verfügbar"
   }
 }

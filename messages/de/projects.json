@@ -1,27 +1,27 @@
 {
   "projects": {
-    "title": "Moje Projekty",
-    "subtitle": "Zobacz co ostatnio stworzyłem",
-    "viewProject": "Zobacz projekt",
-    "viewCode": "Zobacz kod",
-    "sourceCode": "Kod źródłowy",
-    "liveVersion": "Wersja na żywo",
-    "more": "Więcej",
-    "sourceCodeAriaLabel": "Zobacz kod źródłowy na GitHub",
-    "liveVersionAriaLabel": "Zobacz wersję na żywo",
-    "moreAriaLabel": "Zobacz więcej szczegółów",
-    "backToProjects": "Powrót do projektów",
-    "technologies": "Technologie",
-    "projectGallery": "Galeria projektu",
-    "projectDescription": "Opis projektu",
-    "mainView": "widok główny",
-    "subpage": "podstrona",
-    "responsive": "responsive"
+    "title": "Meine Projekte",
+    "subtitle": "Sieh dir an, was ich zuletzt erstellt habe",
+    "viewProject": "Projekt anzeigen",
+    "viewCode": "Code ansehen",
+    "sourceCode": "Quellcode",
+    "liveVersion": "Live‑Version",
+    "more": "Mehr",
+    "sourceCodeAriaLabel": "Quellcode auf GitHub ansehen",
+    "liveVersionAriaLabel": "Live‑Version ansehen",
+    "moreAriaLabel": "Weitere Details anzeigen",
+    "backToProjects": "Zurück zu den Projekten",
+    "technologies": "Technologien",
+    "projectGallery": "Projektgalerie",
+    "projectDescription": "Projektbeschreibung",
+    "mainView": "Hauptansicht",
+    "subpage": "Unterseite",
+    "responsive": "responsiv"
   },
   "project": {
     "notFound": {
-      "title": "Projekt nie znaleziony",
-      "description": "Nie mogliśmy znaleźć szukanego projektu"
+      "title": "Projekt nicht gefunden",
+      "description": "Das gesuchte Projekt konnte nicht gefunden werden"
     },
     "metadata": {
       "caseStudy": "Case Study"

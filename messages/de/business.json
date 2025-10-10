@@ -1,112 +1,112 @@
 {
   "businessImpact": {
     "header": {
-      "title": "Nie tylko koduję",
-      "subtitle": "Buduję imperium Twojego biznesu"
+      "title": "Ich schreibe nicht nur Code",
+      "subtitle": "Ich baue das Imperium deines Unternehmens auf"
     },
     "mainOffer": {
       "badge": "+40% ROI",
-      "title": "Zwiększam Twoje zyski o 40%",
-      "description": "Nie robię \"Ładnych stron\". Tworzę maszynę do zarabiania pieniędzy. Moi klienci w ciągu pierwszych 3 miesięcy odnotowują średnio 40% wzrost sprzedaży.",
+      "title": "Ich steigere deinen Gewinn um 40%",
+      "description": "Ich mache keine \"schönen Webseiten\". Ich baue eine Geldmaschine. Meine Kunden verzeichnen in den ersten 3 Monaten durchschnittlich 40% Umsatzsteigerung.",
       "features": {
-        "feature1": "Optymalizacja konwersji oparta na danych",
-        "feature2": "A/B testing każdego elementu",
-        "feature3": "Psychologia sprzedaży w każdym pikselu"
+        "feature1": "Datengetriebene Conversion‑Optimierung",
+        "feature2": "A/B‑Tests für jedes Element",
+        "feature3": "Verkaufspsychologie in jedem Pixel"
       }
     },
     "benefits": {
       "timeline": {
         "number": "3-14",
-        "label": "dni realizacji"
+        "label": "Tage Umsetzung"
       },
       "express": {
-        "title": "Express bez kompromisów",
-        "description": "Podczas gdy inni obiecują \"za miesiąc\", ja dostarczam gotową stronę w maksymalnie 2 tygodnie. Bez uszczerbku na jakości."
+        "title": "Express ohne Kompromisse",
+        "description": "Während andere \"in einem Monat\" versprechen, liefere ich eine fertige Website in maximal 2 Wochen. Ohne Qualitätsverlust."
       },
       "guarantee": {
         "number": "100%",
-        "label": "gwarancji"
+        "label": "Garantie"
       },
       "zeroRisk": {
-        "title": "Zero ryzyka",
-        "description": "6 miesięcy wsparcia + 30 dni na zwrot pieniędzy. Płacisz dopiero gdy jesteś w 100% zadowolony."
+        "title": "Null Risiko",
+        "description": "6 Monate Support + 30 Tage Geld‑zurück‑Garantie. Du zahlst erst, wenn du 100% zufrieden bist."
       }
     }
   },
   "profitability": {
     "header": {
-      "title": "Ale czy to się opłaci?",
-      "subtitle": "Rozumiem Twoje wątpliwości. Oto brutalna prawda:"
+      "title": "Lohnt sich das überhaupt?",
+      "subtitle": "Ich verstehe deine Zweifel. Hier ist die harte Wahrheit:"
     },
     "objections": {
       "expensive": {
-        "title": "To za drogie",
-        "subtitle": "Najczęstsza obiekcja",
+        "title": "Das ist zu teuer",
+        "subtitle": "Die häufigste Einwand",
         "benefits": {
-          "benefit1": "Zwrot w 2-3 miesiące",
-          "benefit2": "Profesjonalna strona to inwestycja, nie koszt",
-          "benefit3": "Oszczędzasz 100+ godzin",
-          "benefit4": "Twój czas jest wart więcej niż myślisz",
-          "benefit5": "Unikasz kosztownych błędów",
-          "benefit6": "Jeden błąd może kosztować więcej niż cała strona"
+          "benefit1": "Amortisation in 2–3 Monaten",
+          "benefit2": "Eine professionelle Seite ist eine Investition, kein Kostenpunkt",
+          "benefit3": "Du sparst 100+ Stunden",
+          "benefit4": "Deine Zeit ist mehr wert, als du denkst",
+          "benefit5": "Du vermeidest teure Fehler",
+          "benefit6": "Ein Fehler kann mehr kosten als die ganze Website"
         }
       },
       "noTime": {
-        "title": "Nie mam czasu",
-        "subtitle": "Właśnie dlatego powinieneś zacząć",
+        "title": "Ich habe keine Zeit",
+        "subtitle": "Genau deshalb solltest du anfangen",
         "benefits": {
-          "benefit1": "Każdy dzień = straceni klienci",
-          "benefit2": "Twoja konkurencja nie śpi",
-          "benefit3": "Ja robię wszystko za Ciebie",
-          "benefit4": "Ty tylko akceptujesz gotowe rozwiązania",
-          "benefit5": "Maksymalnie 30 minut tygodniowo",
-          "benefit6": "Mniej niż jeden odcinek serialu"
+          "benefit1": "Jeder Tag = verlorene Kunden",
+          "benefit2": "Deine Konkurrenz schläft nicht",
+          "benefit3": "Ich mache alles für dich",
+          "benefit4": "Du musst nur fertige Lösungen abnehmen",
+          "benefit5": "Maximal 30 Minuten pro Woche",
+          "benefit6": "Weniger als eine Serienfolge"
         }
       },
       "noBudget": {
-        "title": "Nie mam budżetu",
-        "subtitle": "Myślisz krótkookresowo",
+        "title": "Ich habe kein Budget",
+        "subtitle": "Kurzfristiges Denken",
         "benefits": {
-          "benefit1": "Tracisz klientów każdego dnia",
-          "benefit2": "Konkurencja cię wyprzedza",
-          "benefit3": "Inwestycja zwraca się w 2 miesiące",
-          "benefit4": "Możliwość rozłożenia płatności",
-          "benefit5": "Lepiej zacząć dziś niż za rok"
+          "benefit1": "Du verlierst täglich Kunden",
+          "benefit2": "Die Konkurrenz überholt dich",
+          "benefit3": "Die Investition amortisiert sich in 2 Monaten",
+          "benefit4": "Möglichkeit zur Ratenzahlung",
+          "benefit5": "Besser heute starten als in einem Jahr"
         }
       },
       "tooRisky": {
-        "title": "To zbyt ryzykowne",
-        "subtitle": "Zero ryzyka dla Ciebie",
+        "title": "Das ist zu riskant",
+        "subtitle": "Null Risiko für dich",
         "benefits": {
-          "benefit1": "30 dni gwarancji zwrotu pieniędzy",
-          "benefit2": "6 miesięcy bezpłatnego wsparcia",
-          "benefit3": "Hosting i domena w cenie na rok",
-          "benefit4": "Backup codziennie",
-          "benefit5": "SSL i zabezpieczenia",
-          "benefit6": "Nie płacisz dopóki nie jesteś zadowolony"
+          "benefit1": "30 Tage Geld‑zurück‑Garantie",
+          "benefit2": "6 Monate kostenloser Support",
+          "benefit3": "Hosting und Domain ein Jahr inklusive",
+          "benefit4": "Tägliche Backups",
+          "benefit5": "SSL und Sicherheitsmaßnahmen",
+          "benefit6": "Du zahlst erst, wenn du zufrieden bist"
         }
       }
     },
     "stats": {
       "roiTime": {
-        "number": "2-3 mies.",
-        "label": "czas zwrotu inwestycji",
-        "description": "Średni czas, po którym klienci odnotowują zwrot inwestycji"
+        "number": "2–3 Mon.",
+        "label": "Amortisationszeit",
+        "description": "Durchschnittliche Zeit bis zur Kapitalrendite"
       },
       "timeWeekly": {
-        "number": "30 min",
-        "label": "tygodniowo Twojego czasu",
-        "description": "Maksymalny czas, jakiego potrzebuję od Ciebie w trakcie projektu"
+        "number": "30 Min",
+        "label": "pro Woche deiner Zeit",
+        "description": "Maximale Zeit, die ich während des Projekts von dir brauche"
       },
       "satisfaction": {
         "number": "100%",
-        "label": "gwarancji zadowolenia",
-        "description": "30 dni na zwrot pieniędzy jeśli nie jesteś zadowolony"
+        "label": "Zufriedenheitsgarantie",
+        "description": "30 Tage Geld zurück, wenn du nicht zufrieden bist"
       },
       "conversion": {
         "number": "400%",
-        "label": "wzrost konwersji",
-        "description": "Średni wzrost sprzedaży po wdrożeniu nowej strony"
+        "label": "Conversion‑Steigerung",
+        "description": "Durchschnittlicher Verkaufsanstieg nach Einführung der neuen Website"
       }
     }
   }

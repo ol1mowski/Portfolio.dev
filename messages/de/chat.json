@@ -1,18 +1,18 @@
 {
   "chat": {
     "preview": {
-      "title": "Cześć! Potrzebujesz pomocy?",
-      "message": "Jestem tutaj, żeby Ci pomóc"
+      "title": "Hallo! Benötigst du Hilfe?",
+      "message": "Ich bin hier, um dir zu helfen"
     },
     "header": {
-      "customerSupport": "Obsługa Klienta",
-      "typing": "Pisze...",
+      "customerSupport": "Kundenservice",
+      "typing": "Schreibt...",
       "online": "Online"
     },
-    "welcome": "Witaj! W czym mogę Ci pomóc?",
-    "placeholder": "Napisz wiadomość...",
-    "autoResponse": "Dzięki za wiadomość! 👋 Chat jest jeszcze w budowie, ale już wkrótce będę mógł Ci pomóc. W międzyczasie zapraszam do kontaktu przez email: kontakt@oliwiermarkiewicz.pl",
-    "sendButton": "Wyślij",
-    "closeButton": "Zamknij"
+    "welcome": "Willkommen! Wobei kann ich dir helfen?",
+    "placeholder": "Nachricht schreiben...",
+    "autoResponse": "Danke für deine Nachricht! 👋 Der Chat befindet sich noch im Aufbau, aber bald kann ich dir hier helfen. In der Zwischenzeit kontaktiere mich bitte per E-Mail: kontakt@oliwiermarkiewicz.pl",
+    "sendButton": "Senden",
+    "closeButton": "Schließen"
   }
 }

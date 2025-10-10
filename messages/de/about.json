@@ -1,54 +1,54 @@
 {
   "about": {
-    "title": "O mnie",
-    "description": "Fullstack Developer z pasją do tworzenia rozwiązań, które rzeczywiście pomagają biznesom rosnąć. Pomagam przedsiębiorcom zamieniać pomysły w zyskowne strony oraz aplikacje internetowe.",
-    "detailedDescription": "Prowadzę kanał YouTube Oliwier Markiewicz gdzie dzielę się wiedzą o programowaniu i biznesie online. Regularnie publikuję też artykuły na moim blogu o najnowszych trendach w web developmencie.",
-    "philosophy": "Wierzę, że dobra aplikacja to nie tylko kod - to strategia biznesowa, psychologia użytkownika i perfekcyjne wykonanie w jednym. Dlatego moi klienci nie tylko dostają piękne strony, ale przede wszystkim narzędzia do zarabiania pieniędzy.",
+    "title": "Über mich",
+    "description": "Fullstack-Entwickler mit Leidenschaft für Lösungen, die Unternehmen wirklich wachsen lassen. Ich helfe Unternehmern, Ideen in profitable Websites und Webanwendungen zu verwandeln.",
+    "detailedDescription": "Ich betreibe den YouTube-Kanal Oliwier Markiewicz, auf dem ich Wissen über Programmierung und Online-Business teile. Außerdem veröffentliche ich regelmäßig Artikel auf meinem Blog über die neuesten Trends im Webdevelopment.",
+    "philosophy": "Ich glaube, dass eine gute Anwendung nicht nur aus Code besteht – sie ist eine Mischung aus Geschäftsstrategie, Nutzerpsychologie und perfekter Umsetzung. Deshalb erhalten meine Kunden nicht nur schöne Websites, sondern vor allem Werkzeuge zum Geldverdienen.",
     "highlightedDescription": {
-      "part1": "Fullstack Developer",
+      "part1": "Fullstack-Entwickler",
       "part2": "Oliwier Markiewicz",
-      "part3": "dobra aplikacja to nie tylko kod"
+      "part3": "eine gute Anwendung ist mehr als nur Code"
     },
     "stats": {
-      "experience": "Lat doświadczenia",
-      "experienceYears": "lat doświadczenia",
-      "projects": "Zrealizowanych projektów",
-      "clients": "Zadowolonych klientów",
-      "youtubeSubscribers": "subskrybentów YT",
-      "youtubeViews": "wyświetleń YouTube",
-      "youtubeVideos": "filmów na YouTube",
-      "blogPosts": "wpisów na blogu",
-      "completedProjects": "ukończonych projektów"
+      "experience": "Jahre Erfahrung",
+      "experienceYears": "Jahre Erfahrung",
+      "projects": "Realisierte Projekte",
+      "clients": "Zufriedene Kunden",
+      "youtubeSubscribers": "YT-Abonnenten",
+      "youtubeViews": "YouTube-Aufrufe",
+      "youtubeVideos": "YouTube-Videos",
+      "blogPosts": "Blogbeiträge",
+      "completedProjects": "Abgeschlossene Projekte"
     },
     "skills": {
-      "title": "Moje umiejętności",
-      "frontend": "Frontend Development",
+      "title": "Meine Fähigkeiten",
+      "frontend": "Frontend-Entwicklung",
       "react": "React & Next.js",
       "typescript": "TypeScript",
-      "design": "UI/UX Design",
+      "design": "UI/UX-Design",
       "responsive": "Responsive Design",
-      "performance": "Optymalizacja wydajności"
+      "performance": "Leistungsoptimierung"
     },
     "journey": {
-      "title": "Moja droga",
-      "description": "Od pierwszej linii kodu do profesjonalnego developera - poznaj moją historię i to, co mnie motywuje do ciągłego rozwoju."
+      "title": "Mein Weg",
+      "description": "Von der ersten Codezeile zum professionellen Entwickler – lerne meine Geschichte kennen und was mich zu kontinuierlicher Entwicklung motiviert."
     },
     "socialMedia": {
-      "title": "Znajdź mnie w social media"
+      "title": "Finde mich in den sozialen Medien"
     }
   },
   "aboutMe": {
-    "title": "O Mnie",
-    "greeting": "Cześć, Nazywam się",
+    "title": "Über mich",
+    "greeting": "Hallo, ich heiße",
     "name": "Oliwier Markiewicz",
-    "description": "Zajmuję się projektowaniem oraz tworzeniem nowoczesnych i funkcjonalnych stron, sklepów i aplikacji internetowych w technologiach takich jak",
-    "descriptionEnd": ", które spełniają indywidualne potrzeby klientów.",
-    "helpDescription": "Pomagam małym firmom zaistnieć w internecie, poprzez Pozycjonowanie wizytówki Google Moja Firma, które zwiększają widoczność i przyciąga nowych klientów.",
-    "blogLink": "Sprawdź mój blog",
-    "blogText": "Prowadzę również",
-    "blogLabel": "Przejdź do bloga",
-    "youtubeText": "oraz kanał na",
-    "youtubeLabel": "Przejdź do kanału YouTube",
-    "finalDescription": "gdzie dzielę się wiedzą z zakresu programowania oraz tworzenia stron internetowych."
+    "description": "Ich entwerfe und entwickle moderne und funktionale Websites, Shops und Webanwendungen in Technologien wie",
+    "descriptionEnd": ", die individuellen Kundenbedürfnissen entsprechen.",
+    "helpDescription": "Ich helfe kleinen Unternehmen, online sichtbar zu werden – unter anderem durch die Optimierung des Google-Unternehmensprofils, was die Sichtbarkeit erhöht und neue Kunden anzieht.",
+    "blogLink": "Schau dir meinen Blog an",
+    "blogText": "Ich betreibe außerdem",
+    "blogLabel": "Zum Blog",
+    "youtubeText": "sowie einen Kanal auf",
+    "youtubeLabel": "Zum YouTube-Kanal",
+    "finalDescription": "auf dem ich Wissen rund um Programmierung und Webentwicklung teile."
   }
 }
