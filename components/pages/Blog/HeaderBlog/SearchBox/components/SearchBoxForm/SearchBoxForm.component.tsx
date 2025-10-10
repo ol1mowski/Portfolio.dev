@@ -48,7 +48,7 @@ export const SearchBoxForm: FC<SearchBoxFormProps> = ({
       <input
         ref={inputRef}
         type="text"
-        placeholder={t('searchBox.placeholder')}
+        placeholder={t('searchPlaceholder')}
         value={searchTerm}
         onChange={e => onSearchChange(e.target.value)}
         onKeyDown={onKeyDown}
