@@ -31,14 +31,14 @@ export const SearchSuggestions: FC<SearchSuggestionsProps> = ({
   activeSuggestion,
   onSuggestionClick,
   onSuggestionHover,
-  onNoResultsClick,
   highlightMatch,
 }) => {
   const t = useOptimizedTranslations('blog');
+  const tSearchResults = useOptimizedTranslations('blog.searchResults');
   return (
     <div className={s.suggestionsDropdown}>
       <div className={s.suggestionsDropdown__list}>
-        {isLoading && <Loading message={t('searchBox.searching')} size="small" variant="dots" />}
+        {isLoading && <Loading message={tSearchResults('searching')} size="small" variant="dots" />}
 
         {!isLoading &&
           suggestions.length > 0 &&
@@ -68,7 +68,7 @@ export const SearchSuggestions: FC<SearchSuggestionsProps> = ({
             <div className={s.noResultsMessage__icon}>🔍</div>
             <div className={s.noResultsMessage__content}>
               <div className={s.noResultsMessage__content__title}>
-                {t('searchBox.noResults')} &quot;{searchTerm}&quot;
+                {t('noSearchResults')} &quot;{searchTerm}&quot;
               </div>
             </div>
           </div>
