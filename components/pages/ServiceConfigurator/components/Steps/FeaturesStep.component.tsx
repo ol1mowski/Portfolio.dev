@@ -11,7 +11,10 @@ interface FeaturesStepProps {
 const FeaturesStep: React.FC<FeaturesStepProps> = ({ selectedFeatures, onToggle, projectType }) => {
   const t = useOptimizedTranslations('configurator.steps.features');
 
-  const allFeatures = t('options') as unknown as string[];
+  const optionsRaw = (t as unknown as { raw: (key: string) => unknown }).raw('options') as
+    | string[]
+    | Record<string, string>;
+  const allFeatures = Array.isArray(optionsRaw) ? optionsRaw : Object.values(optionsRaw ?? {});
   const typeToFeatureIndexes: Record<string, number[]> = {
     website: [0, 1, 5, 6],
     ecommerce: [0, 1, 2, 3],

@@ -58,9 +58,10 @@ export const useServiceConfigurator = () => {
 
     const finalPrice = Math.round(basePrice / 100) * 100;
 
+    const solutionKey = formData.solutionType || 'template';
     return {
       title,
-      description: `${tResult(`descriptions.${formData.solutionType}`)} ${title.toLowerCase()} ${tResult('descriptions.suffix')}`,
+      description: `${tResult(`descriptions.${solutionKey}`)} ${title.toLowerCase()} ${tResult('descriptions.suffix')}`,
       price: `${finalPrice.toLocaleString()} ${tResult('currency')}`,
       timeline: '',
       features: [...new Set(features)],
