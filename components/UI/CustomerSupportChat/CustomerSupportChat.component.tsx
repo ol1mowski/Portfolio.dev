@@ -43,8 +43,8 @@ const CustomerSupportChat: React.FC = () => {
     }
   };
 
-  const handleSendMessage = () => {
-    if (!newMessage.trim()) return;
+  const handleSendMessage = async () => {
+    if (!newMessage.trim() || isTyping) return;
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -58,16 +58,45 @@ const CustomerSupportChat: React.FC = () => {
 
     setIsTyping(true);
 
-    setTimeout(() => {
-      setIsTyping(false);
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          messages: [...messages, userMessage],
+          locale,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to get AI response');
+      }
+
+      const data = await response.json();
+      const aiResponse = data.response || t('autoResponse');
+
       const supportMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        text: aiResponse,
+        sender: 'support',
+        timestamp: new Date(),
+      };
+
+      setMessages(prev => [...prev, supportMessage]);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         text: t('autoResponse'),
         sender: 'support',
         timestamp: new Date(),
       };
-      setMessages(prev => [...prev, supportMessage]);
-    }, 2000);
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsTyping(false);
+    }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
